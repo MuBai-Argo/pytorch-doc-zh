@@ -1,0 +1,1908 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>计算机视觉的迁移学习教程 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="21.html" />
+    
+    
+    <link rel="prev" href="19.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 中文官方教程 1.7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.html">
+            
+                <a href="01.html">
+            
+                    
+                    学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="02.html">
+            
+                <a href="02.html">
+            
+                    
+                    PyTorch 深度学习：60 分钟的突击
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="03.html">
+            
+                <a href="03.html">
+            
+                    
+                    张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="04.html">
+            
+                <a href="04.html">
+            
+                    
+                    torch.autograd的简要介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="05.html">
+            
+                <a href="05.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="06.html">
+            
+                <a href="06.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="07.html">
+            
+                <a href="07.html">
+            
+                    
+                    通过示例学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="08.html">
+            
+                <a href="08.html">
+            
+                    
+                    热身：NumPy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="09.html">
+            
+                <a href="09.html">
+            
+                    
+                    PyTorch：张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    PyTorch：张量和 Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    PyTorch：定义新的 Autograd 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    PyTorch：nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    PyTorch：optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="14.html">
+            
+                <a href="14.html">
+            
+                    
+                    PyTorch：自定义nn模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    PyTorch：控制流 + 权重共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="16.html">
+            
+                <a href="16.html">
+            
+                    
+                    torch.nn到底是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    使用 TensorBoard 可视化模型，数据和训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    图片/视频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    torchvision对象检测微调教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    计算机视觉的迁移学习教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    对抗示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    DCGAN 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="23.html">
+            
+                <a href="23.html">
+            
+                    
+                    音频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="24.html">
+            
+                <a href="24.html">
+            
+                    
+                    音频 I/O 和torchaudio的预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="25.html">
+            
+                <a href="25.html">
+            
+                    
+                    使用torchaudio的语音命令识别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="26.html">
+            
+                <a href="26.html">
+            
+                    
+                    文本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="27.html">
+            
+                <a href="27.html">
+            
+                    
+                    使用nn.Transformer和torchtext的序列到序列建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="28.html">
+            
+                <a href="28.html">
+            
+                    
+                    从零开始的 NLP：使用字符级 RNN 分类名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="29.html">
+            
+                <a href="29.html">
+            
+                    
+                    从零开始的 NLP：使用字符级 RNN 生成名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="30.html">
+            
+                <a href="30.html">
+            
+                    
+                    从零开始的 NLP：使用序列到序列网络和注意力的翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    使用torchtext的文本分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="32.html">
+            
+                <a href="32.html">
+            
+                    
+                    torchtext语言翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="33.html">
+            
+                <a href="33.html">
+            
+                    
+                    强化学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="34.html">
+            
+                <a href="34.html">
+            
+                    
+                    强化学习（DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="35.html">
+            
+                <a href="35.html">
+            
+                    
+                    训练玩马里奥的 RL 智能体
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    在生产中部署 PyTorch 模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="37.html">
+            
+                <a href="37.html">
+            
+                    
+                    通过使用 Flask 的 REST API 在 Python 中部署 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="38.html">
+            
+                <a href="38.html">
+            
+                    
+                    TorchScript 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="39.html">
+            
+                <a href="39.html">
+            
+                    
+                    在 C++ 中加载 TorchScript 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="40.html">
+            
+                <a href="40.html">
+            
+                    
+                    将模型从 PyTorch 导出到 ONNX 并使用 ONNX 运行时运行它（可选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="41.html">
+            
+                <a href="41.html">
+            
+                    
+                    前端 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="42.html">
+            
+                <a href="42.html">
+            
+                    
+                    PyTorch 中的命名张量简介（原型）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="43.html">
+            
+                <a href="43.html">
+            
+                    
+                    PyTorch 中通道在最后的内存格式（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="44.html">
+            
+                <a href="44.html">
+            
+                    
+                    使用 PyTorch C++ 前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="45.html">
+            
+                <a href="45.html">
+            
+                    
+                    自定义 C++ 和 CUDA 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="46.html">
+            
+                <a href="46.html">
+            
+                    
+                    使用自定义 C++ 运算符扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="47.html">
+            
+                <a href="47.html">
+            
+                    
+                    使用自定义 C++ 类扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="48.html">
+            
+                <a href="48.html">
+            
+                    
+                    TorchScript 中的动态并行性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="49.html">
+            
+                <a href="49.html">
+            
+                    
+                    C++ 前端中的 Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="50.html">
+            
+                <a href="50.html">
+            
+                    
+                    在 C++ 中注册调度运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="51.html">
+            
+                <a href="51.html">
+            
+                    
+                    模型优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="52.html">
+            
+                <a href="52.html">
+            
+                    
+                    分析您的 PyTorch 模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="53.html">
+            
+                <a href="53.html">
+            
+                    
+                    使用 Ray Tune 的超参数调整
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="54.html">
+            
+                <a href="54.html">
+            
+                    
+                    模型剪裁教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="55.html">
+            
+                <a href="55.html">
+            
+                    
+                    LSTM 单词语言模型上的动态量化（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="56.html">
+            
+                <a href="56.html">
+            
+                    
+                    BERT 上的动态量化（Beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="57.html">
+            
+                <a href="57.html">
+            
+                    
+                    PyTorch 中使用 Eager 模式的静态量化（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="58.html">
+            
+                <a href="58.html">
+            
+                    
+                    计算机视觉的量化迁移学习教程（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="59.html">
+            
+                <a href="59.html">
+            
+                    
+                    并行和分布式训练
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="60.html">
+            
+                <a href="60.html">
+            
+                    
+                    PyTorch 分布式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="61.html">
+            
+                <a href="61.html">
+            
+                    
+                    单机模型并行最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="62.html">
+            
+                <a href="62.html">
+            
+                    
+                    分布式数据并行入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="63.html">
+            
+                <a href="63.html">
+            
+                    
+                    用 PyTorch 编写分布式应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="64.html">
+            
+                <a href="64.html">
+            
+                    
+                    分布式 RPC 框架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="65.html">
+            
+                <a href="65.html">
+            
+                    
+                    使用分布式 RPC 框架实现参数服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="66.html">
+            
+                <a href="66.html">
+            
+                    
+                    使用 RPC 的分布式管道并行化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="67.html">
+            
+                <a href="67.html">
+            
+                    
+                    使用异步执行实现批量 RPC 处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="68.html">
+            
+                <a href="68.html">
+            
+                    
+                    将分布式DataParallel与分布式 RPC 框架相结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >计算机视觉的迁移学习教程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x7684;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x6559;&#x7A0B;">&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x7684;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x6559;&#x7A0B;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A;<a href="https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html" target="_blank">https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html</a></p>
+</blockquote>
+<p><strong>&#x4F5C;&#x8005;</strong>&#xFF1A; <a href="https://chsasank.github.io" target="_blank">Sasank Chilamkurthy</a></p>
+<p>&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x60A8;&#x5C06;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x8BAD;&#x7EC3;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x8FDB;&#x884C;&#x56FE;&#x50CF;&#x5206;&#x7C7B;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x5728; <a href="https://cs231n.github.io/transfer-learning/" target="_blank">cs231n &#x7B14;&#x8BB0;</a>&#x4E2D;&#x9605;&#x8BFB;&#x6709;&#x5173;&#x8F6C;&#x5B66;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5F15;&#x7528;&#x8FD9;&#x4E9B;&#x6CE8;&#x89E3;&#xFF0C;</p>
+<blockquote>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5F88;&#x5C11;&#x6709;&#x4EBA;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#x6574;&#x4E2A;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#xFF08;&#x4F7F;&#x7528;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x62E5;&#x6709;&#x8DB3;&#x591F;&#x5927;&#x5C0F;&#x7684;&#x6570;&#x636E;&#x96C6;&#x76F8;&#x5BF9;&#x5F88;&#x5C11;&#x3002; &#x76F8;&#x53CD;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x975E;&#x5E38;&#x5927;&#x7684;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x5BF9; ConvNet &#x8FDB;&#x884C;&#x9884;&#x8BAD;&#x7EC3;&#xFF08;&#x4F8B;&#x5982; ImageNet&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B; 120 &#x4E07;&#x4E2A;&#x5177;&#x6709; 1000 &#x4E2A;&#x7C7B;&#x522B;&#x7684;&#x56FE;&#x50CF;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5C06; ConvNet &#x7528;&#x4F5C;&#x521D;&#x59CB;&#x5316;&#x6216;&#x56FA;&#x5B9A;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x5668;&#x4EE5;&#x5B8C;&#x6210;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+</blockquote>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x65B9;&#x6848;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<ul>
+<li><strong>&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x7684;&#x5FAE;&#x8C03;</strong>&#xFF1A;&#x4EE3;&#x66FF;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7ECF;&#x8FC7;&#x9884;&#x8BAD;&#x7EC3;&#x7684;&#x7F51;&#x7EDC;&#x521D;&#x59CB;&#x5316;&#x7F51;&#x7EDC;&#xFF0C;&#x4F8B;&#x5982;&#x5728; imagenet 1000 &#x6570;&#x636E;&#x96C6;&#x4E0A;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x7684;&#x7F51;&#x7EDC;&#x3002; &#x5176;&#x4F59;&#x7684;&#x8BAD;&#x7EC3;&#x7167;&#x5E38;&#x8FDB;&#x884C;&#x3002;</li>
+<li><strong>&#x4F5C;&#x4E3A;&#x56FA;&#x5B9A;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x5668;&#x7684; ConvNet</strong>&#xFF1A;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x51BB;&#x7ED3;&#x9664;&#x6700;&#x7EC8;&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x7F51;&#x7EDC;&#x7684;&#x6743;&#x91CD;&#x3002; &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#x5C06;&#x66FF;&#x6362;&#x4E3A;&#x5177;&#x6709;&#x968F;&#x673A;&#x6743;&#x91CD;&#x7684;&#x65B0;&#x5C42;&#xFF0C;&#x5E76;&#x4E14;&#x4EC5;&#x8BAD;&#x7EC3;&#x8BE5;&#x5C42;&#x3002;</li>
+</ul>
+<pre><code class="lang-py"><span class="hljs-comment"># License: BSD</span>
+<span class="hljs-comment"># Author: Sasank Chilamkurthy</span>
+
+<span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function, division
+
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.optim <span class="hljs-keyword">as</span> optim
+<span class="hljs-keyword">from</span> torch.optim <span class="hljs-keyword">import</span> lr_scheduler
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> torchvision
+<span class="hljs-keyword">from</span> torchvision <span class="hljs-keyword">import</span> datasets, models, transforms
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> copy
+
+plt.ion()   <span class="hljs-comment"># interactive mode</span>
+</code></pre>
+<h2 id="&#x52A0;&#x8F7D;&#x6570;&#x636E;">&#x52A0;&#x8F7D;&#x6570;&#x636E;</h2>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;<code>torchvision</code>&#x548C;<code>torch.utils.data</code>&#x5305;&#x6765;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4ECA;&#x5929;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x662F;&#x8BAD;&#x7EC3;&#x4E00;&#x4E2A;&#x6A21;&#x578B;&#x6765;&#x5BF9;<strong>&#x8682;&#x8681;</strong>&#x548C;<strong>&#x871C;&#x8702;</strong>&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002; &#x6211;&#x4EEC;&#x4E3A;&#x8682;&#x8681;&#x548C;&#x871C;&#x8702;&#x63D0;&#x4F9B;&#x4E86;&#x5927;&#x7EA6; 120 &#x5F20;&#x8BAD;&#x7EC3;&#x56FE;&#x50CF;&#x3002; &#x6BCF;&#x4E2A;&#x7C7B;&#x522B;&#x6709; 75 &#x4E2A;&#x9A8C;&#x8BC1;&#x56FE;&#x50CF;&#x3002; &#x901A;&#x5E38;&#xFF0C;&#x5982;&#x679C;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x6570;&#x636E;&#x96C6;&#x3002; &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x5F88;&#x597D;&#x5730;&#x6982;&#x62EC;&#x3002;</p>
+<p>&#x8BE5;&#x6570;&#x636E;&#x96C6;&#x662F; imagenet &#x7684;&#x5F88;&#x5C0F;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x4ECE;&#x7684;&#x4E0B;&#x8F7D;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x63D0;&#x53D6;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Data augmentation and normalization for training</span>
+<span class="hljs-comment"># Just normalization for validation</span>
+data_transforms = {
+    <span class="hljs-string">&apos;train&apos;</span>: transforms.Compose([
+        transforms.RandomResizedCrop(<span class="hljs-number">224</span>),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize([<span class="hljs-number">0.485</span>, <span class="hljs-number">0.456</span>, <span class="hljs-number">0.406</span>], [<span class="hljs-number">0.229</span>, <span class="hljs-number">0.224</span>, <span class="hljs-number">0.225</span>])
+    ]),
+    <span class="hljs-string">&apos;val&apos;</span>: transforms.Compose([
+        transforms.Resize(<span class="hljs-number">256</span>),
+        transforms.CenterCrop(<span class="hljs-number">224</span>),
+        transforms.ToTensor(),
+        transforms.Normalize([<span class="hljs-number">0.485</span>, <span class="hljs-number">0.456</span>, <span class="hljs-number">0.406</span>], [<span class="hljs-number">0.229</span>, <span class="hljs-number">0.224</span>, <span class="hljs-number">0.225</span>])
+    ]),
+}
+
+data_dir = <span class="hljs-string">&apos;data/hymenoptera_data&apos;</span>
+image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
+                                          data_transforms[x])
+                  <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> [<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>]}
+dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=<span class="hljs-number">4</span>,
+                                             shuffle=<span class="hljs-keyword">True</span>, num_workers=<span class="hljs-number">4</span>)
+              <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> [<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>]}
+dataset_sizes = {x: len(image_datasets[x]) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> [<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>]}
+class_names = image_datasets[<span class="hljs-string">&apos;train&apos;</span>].classes
+
+device = torch.device(<span class="hljs-string">&quot;cuda:0&quot;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)
+</code></pre>
+<h3 id="&#x53EF;&#x89C6;&#x5316;&#x4E00;&#x4E9B;&#x56FE;&#x50CF;">&#x53EF;&#x89C6;&#x5316;&#x4E00;&#x4E9B;&#x56FE;&#x50CF;</h3>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x53EF;&#x89C6;&#x5316;&#x4E00;&#x4E9B;&#x8BAD;&#x7EC3;&#x56FE;&#x50CF;&#xFF0C;&#x4EE5;&#x4E86;&#x89E3;&#x6570;&#x636E;&#x6269;&#x5145;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">imshow</span><span class="hljs-params">(inp, title=None)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Imshow for Tensor.&quot;&quot;&quot;</span>
+    inp = inp.numpy().transpose((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>))
+    mean = np.array([<span class="hljs-number">0.485</span>, <span class="hljs-number">0.456</span>, <span class="hljs-number">0.406</span>])
+    std = np.array([<span class="hljs-number">0.229</span>, <span class="hljs-number">0.224</span>, <span class="hljs-number">0.225</span>])
+    inp = std * inp + mean
+    inp = np.clip(inp, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)
+    plt.imshow(inp)
+    <span class="hljs-keyword">if</span> title <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+        plt.title(title)
+    plt.pause(<span class="hljs-number">0.001</span>)  <span class="hljs-comment"># pause a bit so that plots are updated</span>
+
+<span class="hljs-comment"># Get a batch of training data</span>
+inputs, classes = next(iter(dataloaders[<span class="hljs-string">&apos;train&apos;</span>]))
+
+<span class="hljs-comment"># Make a grid from batch</span>
+out = torchvision.utils.make_grid(inputs)
+
+imshow(out, title=[class_names[x] <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> classes])
+</code></pre>
+<p><img src="img/be538c850b645a41a7a77ff388954e14.png" alt="../_img/sphx_glr_transfer_learning_tutorial_001.png"></p>
+<h2 id="&#x8BAD;&#x7EC3;&#x6A21;&#x578B;">&#x8BAD;&#x7EC3;&#x6A21;&#x578B;</h2>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x51FD;&#x6570;&#x6765;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x3002; &#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>&#x5B89;&#x6392;&#x5B66;&#x4E60;&#x7387;</li>
+<li>&#x4FDD;&#x5B58;&#x6700;&#x4F73;&#x6A21;&#x578B;</li>
+</ul>
+<p>&#x4EE5;&#x4E0B;&#xFF0C;&#x53C2;&#x6570;<code>scheduler</code>&#x662F;&#x6765;&#x81EA;<code>torch.optim.lr_scheduler</code>&#x7684; LR &#x8C03;&#x5EA6;&#x5668;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">train_model</span><span class="hljs-params">(model, criterion, optimizer, scheduler, num_epochs=<span class="hljs-number">25</span>)</span>:</span>
+    since = time.time()
+
+    best_model_wts = copy.deepcopy(model.state_dict())
+    best_acc = <span class="hljs-number">0.0</span>
+
+    <span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(num_epochs):
+        print(<span class="hljs-string">&apos;Epoch {}/{}&apos;</span>.format(epoch, num_epochs - <span class="hljs-number">1</span>))
+        print(<span class="hljs-string">&apos;-&apos;</span> * <span class="hljs-number">10</span>)
+
+        <span class="hljs-comment"># Each epoch has a training and validation phase</span>
+        <span class="hljs-keyword">for</span> phase <span class="hljs-keyword">in</span> [<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>]:
+            <span class="hljs-keyword">if</span> phase == <span class="hljs-string">&apos;train&apos;</span>:
+                model.train()  <span class="hljs-comment"># Set model to training mode</span>
+            <span class="hljs-keyword">else</span>:
+                model.eval()   <span class="hljs-comment"># Set model to evaluate mode</span>
+
+            running_loss = <span class="hljs-number">0.0</span>
+            running_corrects = <span class="hljs-number">0</span>
+
+            <span class="hljs-comment"># Iterate over data.</span>
+            <span class="hljs-keyword">for</span> inputs, labels <span class="hljs-keyword">in</span> dataloaders[phase]:
+                inputs = inputs.to(device)
+                labels = labels.to(device)
+
+                <span class="hljs-comment"># zero the parameter gradients</span>
+                optimizer.zero_grad()
+
+                <span class="hljs-comment"># forward</span>
+                <span class="hljs-comment"># track history if only in train</span>
+                <span class="hljs-keyword">with</span> torch.set_grad_enabled(phase == <span class="hljs-string">&apos;train&apos;</span>):
+                    outputs = model(inputs)
+                    _, preds = torch.max(outputs, <span class="hljs-number">1</span>)
+                    loss = criterion(outputs, labels)
+
+                    <span class="hljs-comment"># backward + optimize only if in training phase</span>
+                    <span class="hljs-keyword">if</span> phase == <span class="hljs-string">&apos;train&apos;</span>:
+                        loss.backward()
+                        optimizer.step()
+
+                <span class="hljs-comment"># statistics</span>
+                running_loss += loss.item() * inputs.size(<span class="hljs-number">0</span>)
+                running_corrects += torch.sum(preds == labels.data)
+            <span class="hljs-keyword">if</span> phase == <span class="hljs-string">&apos;train&apos;</span>:
+                scheduler.step()
+
+            epoch_loss = running_loss / dataset_sizes[phase]
+            epoch_acc = running_corrects.double() / dataset_sizes[phase]
+
+            print(<span class="hljs-string">&apos;{} Loss: {:.4f} Acc: {:.4f}&apos;</span>.format(
+                phase, epoch_loss, epoch_acc))
+
+            <span class="hljs-comment"># deep copy the model</span>
+            <span class="hljs-keyword">if</span> phase == <span class="hljs-string">&apos;val&apos;</span> <span class="hljs-keyword">and</span> epoch_acc &gt; best_acc:
+                best_acc = epoch_acc
+                best_model_wts = copy.deepcopy(model.state_dict())
+
+        print()
+
+    time_elapsed = time.time() - since
+    print(<span class="hljs-string">&apos;Training complete in {:.0f}m {:.0f}s&apos;</span>.format(
+        time_elapsed // <span class="hljs-number">60</span>, time_elapsed % <span class="hljs-number">60</span>))
+    print(<span class="hljs-string">&apos;Best val Acc: {:4f}&apos;</span>.format(best_acc))
+
+    <span class="hljs-comment"># load best model weights</span>
+    model.load_state_dict(best_model_wts)
+    <span class="hljs-keyword">return</span> model
+</code></pre>
+<h3 id="&#x53EF;&#x89C6;&#x5316;&#x6A21;&#x578B;&#x9884;&#x6D4B;">&#x53EF;&#x89C6;&#x5316;&#x6A21;&#x578B;&#x9884;&#x6D4B;</h3>
+<p>&#x901A;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x663E;&#x793A;&#x4E00;&#x4E9B;&#x56FE;&#x50CF;&#x7684;&#x9884;&#x6D4B;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">visualize_model</span><span class="hljs-params">(model, num_images=<span class="hljs-number">6</span>)</span>:</span>
+    was_training = model.training
+    model.eval()
+    images_so_far = <span class="hljs-number">0</span>
+    fig = plt.figure()
+
+    <span class="hljs-keyword">with</span> torch.no_grad():
+        <span class="hljs-keyword">for</span> i, (inputs, labels) <span class="hljs-keyword">in</span> enumerate(dataloaders[<span class="hljs-string">&apos;val&apos;</span>]):
+            inputs = inputs.to(device)
+            labels = labels.to(device)
+
+            outputs = model(inputs)
+            _, preds = torch.max(outputs, <span class="hljs-number">1</span>)
+
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(inputs.size()[<span class="hljs-number">0</span>]):
+                images_so_far += <span class="hljs-number">1</span>
+                ax = plt.subplot(num_img//<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, images_so_far)
+                ax.axis(<span class="hljs-string">&apos;off&apos;</span>)
+                ax.set_title(<span class="hljs-string">&apos;predicted: {}&apos;</span>.format(class_names[preds[j]]))
+                imshow(inputs.cpu().data[j])
+
+                <span class="hljs-keyword">if</span> images_so_far == num_images:
+                    model.train(mode=was_training)
+                    <span class="hljs-keyword">return</span>
+        model.train(mode=was_training)
+</code></pre>
+<h2 id="&#x5FAE;&#x8C03;-convnet">&#x5FAE;&#x8C03; ConvNet</h2>
+<p>&#x52A0;&#x8F7D;&#x9884;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x5E76;&#x91CD;&#x7F6E;&#x6700;&#x7EC8;&#x7684;&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#x3002;</p>
+<pre><code class="lang-py">model_ft = models.resnet18(pretrained=<span class="hljs-keyword">True</span>)
+num_ftrs = model_ft.fc.in_features
+<span class="hljs-comment"># Here the size of each output sample is set to 2.</span>
+<span class="hljs-comment"># Alternatively, it can be generalized to nn.Linear(num_ftrs, len(class_names)).</span>
+model_ft.fc = nn.Linear(num_ftrs, <span class="hljs-number">2</span>)
+
+model_ft = model_ft.to(device)
+
+criterion = nn.CrossEntropyLoss()
+
+<span class="hljs-comment"># Observe that all parameters are being optimized</span>
+optimizer_ft = optim.SGD(model_ft.parameters(), lr=<span class="hljs-number">0.001</span>, momentum=<span class="hljs-number">0.9</span>)
+
+<span class="hljs-comment"># Decay LR by a factor of 0.1 every 7 epochs</span>
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=<span class="hljs-number">7</span>, gamma=<span class="hljs-number">0.1</span>)
+</code></pre>
+<h3 id="&#x8BAD;&#x7EC3;&#x548C;&#x8BC4;&#x4F30;">&#x8BAD;&#x7EC3;&#x548C;&#x8BC4;&#x4F30;</h3>
+<p>&#x5728; CPU &#x4E0A;&#x5927;&#x7EA6;&#x9700;&#x8981; 15-25 &#x5206;&#x949F;&#x3002; &#x4F46;&#x662F;&#x5728; GPU &#x4E0A;&#xFF0C;&#x6B64;&#x8FC7;&#x7A0B;&#x4E0D;&#x5230;&#x4E00;&#x5206;&#x949F;&#x3002;</p>
+<pre><code class="lang-py">model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
+                       num_epochs=<span class="hljs-number">25</span>)
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">Epoch <span class="hljs-number">0</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.6303</span> Acc: <span class="hljs-number">0.6926</span>
+val Loss: <span class="hljs-number">0.1492</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">1</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.5511</span> Acc: <span class="hljs-number">0.7869</span>
+val Loss: <span class="hljs-number">0.2577</span> Acc: <span class="hljs-number">0.8889</span>
+
+Epoch <span class="hljs-number">2</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4885</span> Acc: <span class="hljs-number">0.8115</span>
+val Loss: <span class="hljs-number">0.3390</span> Acc: <span class="hljs-number">0.8758</span>
+
+Epoch <span class="hljs-number">3</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.5158</span> Acc: <span class="hljs-number">0.7992</span>
+val Loss: <span class="hljs-number">0.5070</span> Acc: <span class="hljs-number">0.8366</span>
+
+Epoch <span class="hljs-number">4</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.5878</span> Acc: <span class="hljs-number">0.7992</span>
+val Loss: <span class="hljs-number">0.2706</span> Acc: <span class="hljs-number">0.8758</span>
+
+Epoch <span class="hljs-number">5</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4396</span> Acc: <span class="hljs-number">0.8279</span>
+val Loss: <span class="hljs-number">0.2870</span> Acc: <span class="hljs-number">0.8954</span>
+
+Epoch <span class="hljs-number">6</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4612</span> Acc: <span class="hljs-number">0.8238</span>
+val Loss: <span class="hljs-number">0.2809</span> Acc: <span class="hljs-number">0.9150</span>
+
+Epoch <span class="hljs-number">7</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4387</span> Acc: <span class="hljs-number">0.8402</span>
+val Loss: <span class="hljs-number">0.1853</span> Acc: <span class="hljs-number">0.9281</span>
+
+Epoch <span class="hljs-number">8</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2998</span> Acc: <span class="hljs-number">0.8648</span>
+val Loss: <span class="hljs-number">0.1926</span> Acc: <span class="hljs-number">0.9085</span>
+
+Epoch <span class="hljs-number">9</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3383</span> Acc: <span class="hljs-number">0.9016</span>
+val Loss: <span class="hljs-number">0.1762</span> Acc: <span class="hljs-number">0.9281</span>
+
+Epoch <span class="hljs-number">10</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2969</span> Acc: <span class="hljs-number">0.8730</span>
+val Loss: <span class="hljs-number">0.1872</span> Acc: <span class="hljs-number">0.8954</span>
+
+Epoch <span class="hljs-number">11</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3117</span> Acc: <span class="hljs-number">0.8811</span>
+val Loss: <span class="hljs-number">0.1807</span> Acc: <span class="hljs-number">0.9150</span>
+
+Epoch <span class="hljs-number">12</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3005</span> Acc: <span class="hljs-number">0.8770</span>
+val Loss: <span class="hljs-number">0.1930</span> Acc: <span class="hljs-number">0.9085</span>
+
+Epoch <span class="hljs-number">13</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3129</span> Acc: <span class="hljs-number">0.8689</span>
+val Loss: <span class="hljs-number">0.2184</span> Acc: <span class="hljs-number">0.9150</span>
+
+Epoch <span class="hljs-number">14</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3776</span> Acc: <span class="hljs-number">0.8607</span>
+val Loss: <span class="hljs-number">0.1869</span> Acc: <span class="hljs-number">0.9216</span>
+
+Epoch <span class="hljs-number">15</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2245</span> Acc: <span class="hljs-number">0.9016</span>
+val Loss: <span class="hljs-number">0.1742</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">16</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3105</span> Acc: <span class="hljs-number">0.8607</span>
+val Loss: <span class="hljs-number">0.2056</span> Acc: <span class="hljs-number">0.9216</span>
+
+Epoch <span class="hljs-number">17</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2729</span> Acc: <span class="hljs-number">0.8893</span>
+val Loss: <span class="hljs-number">0.1722</span> Acc: <span class="hljs-number">0.9085</span>
+
+Epoch <span class="hljs-number">18</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3210</span> Acc: <span class="hljs-number">0.8730</span>
+val Loss: <span class="hljs-number">0.1977</span> Acc: <span class="hljs-number">0.9281</span>
+
+Epoch <span class="hljs-number">19</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3231</span> Acc: <span class="hljs-number">0.8566</span>
+val Loss: <span class="hljs-number">0.1811</span> Acc: <span class="hljs-number">0.9216</span>
+
+Epoch <span class="hljs-number">20</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3206</span> Acc: <span class="hljs-number">0.8648</span>
+val Loss: <span class="hljs-number">0.2033</span> Acc: <span class="hljs-number">0.9150</span>
+
+Epoch <span class="hljs-number">21</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2917</span> Acc: <span class="hljs-number">0.8648</span>
+val Loss: <span class="hljs-number">0.1694</span> Acc: <span class="hljs-number">0.9150</span>
+
+Epoch <span class="hljs-number">22</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2412</span> Acc: <span class="hljs-number">0.8852</span>
+val Loss: <span class="hljs-number">0.1757</span> Acc: <span class="hljs-number">0.9216</span>
+
+Epoch <span class="hljs-number">23</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2508</span> Acc: <span class="hljs-number">0.8975</span>
+val Loss: <span class="hljs-number">0.1662</span> Acc: <span class="hljs-number">0.9281</span>
+
+Epoch <span class="hljs-number">24</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3283</span> Acc: <span class="hljs-number">0.8566</span>
+val Loss: <span class="hljs-number">0.1761</span> Acc: <span class="hljs-number">0.9281</span>
+
+Training complete <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>m <span class="hljs-number">10</span>s
+Best val Acc: <span class="hljs-number">0.934641</span>
+</code></pre>
+<pre><code class="lang-py">visualize_model(model_ft)
+</code></pre>
+<p><img src="img/ebec7787362bc53fe2289e5740da5756.png" alt="../_img/sphx_glr_transfer_learning_tutorial_002.png"></p>
+<h2 id="&#x4F5C;&#x4E3A;&#x56FA;&#x5B9A;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x5668;&#x7684;-convnet">&#x4F5C;&#x4E3A;&#x56FA;&#x5B9A;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x5668;&#x7684; ConvNet</h2>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x51BB;&#x7ED3;&#x9664;&#x6700;&#x540E;&#x4E00;&#x5C42;&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;&#x7F51;&#x7EDC;&#x3002; &#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;<code>requires_grad == False</code>&#x51BB;&#x7ED3;&#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0D;&#x5728;<code>backward()</code>&#x4E2D;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x3002;</p>
+<p><a href="https://pytorch.org/docs/notes/autograd.html#excluding-subgraphs-from-backward" target="_blank">&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x9605;&#x8BFB;&#x6709;&#x5173;&#x6B64;&#x5185;&#x5BB9;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;</a>&#x3002;</p>
+<pre><code class="lang-py">model_conv = torchvision.models.resnet18(pretrained=<span class="hljs-keyword">True</span>)
+<span class="hljs-keyword">for</span> param <span class="hljs-keyword">in</span> model_conv.parameters():
+    param.requires_grad = <span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># Parameters of newly constructed modules have requires_grad=True by default</span>
+num_ftrs = model_conv.fc.in_features
+model_conv.fc = nn.Linear(num_ftrs, <span class="hljs-number">2</span>)
+
+model_conv = model_conv.to(device)
+
+criterion = nn.CrossEntropyLoss()
+
+<span class="hljs-comment"># Observe that only parameters of final layer are being optimized as</span>
+<span class="hljs-comment"># opposed to before.</span>
+optimizer_conv = optim.SGD(model_conv.fc.parameters(), lr=<span class="hljs-number">0.001</span>, momentum=<span class="hljs-number">0.9</span>)
+
+<span class="hljs-comment"># Decay LR by a factor of 0.1 every 7 epochs</span>
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_conv, step_size=<span class="hljs-number">7</span>, gamma=<span class="hljs-number">0.1</span>)
+</code></pre>
+<h3 id="&#x8BAD;&#x7EC3;&#x548C;&#x8BC4;&#x4F30;">&#x8BAD;&#x7EC3;&#x548C;&#x8BC4;&#x4F30;</h3>
+<p>&#x4E0E;&#x4EE5;&#x524D;&#x7684;&#x65B9;&#x6848;&#x76F8;&#x6BD4;&#xFF0C;&#x5728; CPU &#x4E0A;&#x5C06;&#x82B1;&#x8D39;&#x5927;&#x7EA6;&#x4E00;&#x534A;&#x7684;&#x65F6;&#x95F4;&#x3002; &#x8FD9;&#x662F;&#x53EF;&#x4EE5;&#x9884;&#x671F;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x9700;&#x8981;&#x4E3A;&#x5927;&#x591A;&#x6570;&#x7F51;&#x7EDC;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x786E;&#x5B9E;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x6B63;&#x5411;&#x3002;</p>
+<pre><code class="lang-py">model_conv = train_model(model_conv, criterion, optimizer_conv,
+                         exp_lr_scheduler, num_epochs=<span class="hljs-number">25</span>)
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">Epoch <span class="hljs-number">0</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.7258</span> Acc: <span class="hljs-number">0.6148</span>
+val Loss: <span class="hljs-number">0.2690</span> Acc: <span class="hljs-number">0.9020</span>
+
+Epoch <span class="hljs-number">1</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.5342</span> Acc: <span class="hljs-number">0.7500</span>
+val Loss: <span class="hljs-number">0.1905</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">2</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4262</span> Acc: <span class="hljs-number">0.8320</span>
+val Loss: <span class="hljs-number">0.1903</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">3</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4103</span> Acc: <span class="hljs-number">0.8197</span>
+val Loss: <span class="hljs-number">0.2658</span> Acc: <span class="hljs-number">0.8954</span>
+
+Epoch <span class="hljs-number">4</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3938</span> Acc: <span class="hljs-number">0.8115</span>
+val Loss: <span class="hljs-number">0.2871</span> Acc: <span class="hljs-number">0.8954</span>
+
+Epoch <span class="hljs-number">5</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4623</span> Acc: <span class="hljs-number">0.8361</span>
+val Loss: <span class="hljs-number">0.1651</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">6</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.5348</span> Acc: <span class="hljs-number">0.7869</span>
+val Loss: <span class="hljs-number">0.1944</span> Acc: <span class="hljs-number">0.9477</span>
+
+Epoch <span class="hljs-number">7</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3827</span> Acc: <span class="hljs-number">0.8402</span>
+val Loss: <span class="hljs-number">0.1846</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">8</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3655</span> Acc: <span class="hljs-number">0.8443</span>
+val Loss: <span class="hljs-number">0.1873</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">9</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3275</span> Acc: <span class="hljs-number">0.8525</span>
+val Loss: <span class="hljs-number">0.2091</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">10</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3375</span> Acc: <span class="hljs-number">0.8320</span>
+val Loss: <span class="hljs-number">0.1798</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">11</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3077</span> Acc: <span class="hljs-number">0.8648</span>
+val Loss: <span class="hljs-number">0.1942</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">12</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.4336</span> Acc: <span class="hljs-number">0.7787</span>
+val Loss: <span class="hljs-number">0.1934</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">13</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3149</span> Acc: <span class="hljs-number">0.8566</span>
+val Loss: <span class="hljs-number">0.2062</span> Acc: <span class="hljs-number">0.9281</span>
+
+Epoch <span class="hljs-number">14</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3617</span> Acc: <span class="hljs-number">0.8320</span>
+val Loss: <span class="hljs-number">0.1761</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">15</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3066</span> Acc: <span class="hljs-number">0.8361</span>
+val Loss: <span class="hljs-number">0.1799</span> Acc: <span class="hljs-number">0.9281</span>
+
+Epoch <span class="hljs-number">16</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3952</span> Acc: <span class="hljs-number">0.8443</span>
+val Loss: <span class="hljs-number">0.1666</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">17</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3552</span> Acc: <span class="hljs-number">0.8443</span>
+val Loss: <span class="hljs-number">0.1928</span> Acc: <span class="hljs-number">0.9412</span>
+
+Epoch <span class="hljs-number">18</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3106</span> Acc: <span class="hljs-number">0.8648</span>
+val Loss: <span class="hljs-number">0.1964</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">19</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3675</span> Acc: <span class="hljs-number">0.8566</span>
+val Loss: <span class="hljs-number">0.1813</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">20</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3565</span> Acc: <span class="hljs-number">0.8320</span>
+val Loss: <span class="hljs-number">0.1758</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">21</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2922</span> Acc: <span class="hljs-number">0.8566</span>
+val Loss: <span class="hljs-number">0.2295</span> Acc: <span class="hljs-number">0.9216</span>
+
+Epoch <span class="hljs-number">22</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3283</span> Acc: <span class="hljs-number">0.8402</span>
+val Loss: <span class="hljs-number">0.2267</span> Acc: <span class="hljs-number">0.9281</span>
+
+Epoch <span class="hljs-number">23</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.2875</span> Acc: <span class="hljs-number">0.8770</span>
+val Loss: <span class="hljs-number">0.1878</span> Acc: <span class="hljs-number">0.9346</span>
+
+Epoch <span class="hljs-number">24</span>/<span class="hljs-number">24</span>
+----------
+train Loss: <span class="hljs-number">0.3172</span> Acc: <span class="hljs-number">0.8689</span>
+val Loss: <span class="hljs-number">0.1849</span> Acc: <span class="hljs-number">0.9412</span>
+
+Training complete <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>m <span class="hljs-number">34</span>s
+Best val Acc: <span class="hljs-number">0.947712</span>
+</code></pre>
+<pre><code class="lang-py">visualize_model(model_conv)
+
+plt.ioff()
+plt.show()
+</code></pre>
+<p><img src="img/54625e60404f9c98f34cf32ca56bb118.png" alt="../_img/sphx_glr_transfer_learning_tutorial_003.png"></p>
+<h2 id="&#x8FDB;&#x4E00;&#x6B65;&#x5B66;&#x4E60;">&#x8FDB;&#x4E00;&#x6B65;&#x5B66;&#x4E60;</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x60F3;&#x4E86;&#x89E3;&#x6709;&#x5173;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x67E5;&#x770B;&#x6211;&#x4EEC;&#x7684;<a href="https://pytorch.org/tutorials/intermediate/quantized_transfer_learning_tutorial.html" target="_blank">&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x6559;&#x7A0B;&#x7684;&#x91CF;&#x5316;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;</a>&#x3002;</p>
+<p><strong>&#x811A;&#x672C;&#x7684;&#x603B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;</strong>&#xFF1A;&#xFF08;1 &#x5206;&#x949F; 56.157 &#x79D2;&#xFF09;</p>
+<p><a href="../_downloads/07d5af1ef41e43c07f848afaf5a1c3cc/transfer_learning_tutorial.py">&#x4E0B;&#x8F7D; Python &#x6E90;&#x7801;&#xFF1A;<code>transfer_learning_tutorial.py</code></a></p>
+<p><a href="../_downloads/62840b1eece760d5e42593187847261f/transfer_learning_tutorial.ipynb">&#x4E0B;&#x8F7D; Jupyter &#x7B14;&#x8BB0;&#x672C;&#xFF1A;<code>transfer_learning_tutorial.ipynb</code></a></p>
+<p><a href="https://sphinx-gallery.readthedocs.io" target="_blank">&#x7531; Sphinx &#x753B;&#x5ECA;</a>&#x751F;&#x6210;&#x7684;&#x753B;&#x5ECA;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="19.html" class="navigation navigation-prev " aria-label="Previous page: torchvision对象检测微调教程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="21.html" class="navigation navigation-next " aria-label="Next page: 对抗示例生成">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"计算机视觉的迁移学习教程","level":"1.3.2","depth":2,"next":{"title":"对抗示例生成","level":"1.3.3","depth":2,"path":"21.md","ref":"21.md","articles":[]},"previous":{"title":"torchvision对象检测微调教程","level":"1.3.1","depth":2,"path":"19.md","ref":"19.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.7"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"20.md","mtime":"2021-04-12T06:14:20.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:16:46.997Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

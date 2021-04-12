@@ -1,0 +1,2392 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>LSTM Word 语言模型上的(实验）动态量化 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="45.html" />
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 1.4 教程&文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    入门
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    使用 PyTorch 进行深度学习：60 分钟的闪电战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="blitz/tensor_tutorial.html">
+            
+                <a href="blitz/tensor_tutorial.html">
+            
+                    
+                    什么是PyTorch？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="blitz/autograd_tutorial.html">
+            
+                <a href="blitz/autograd_tutorial.html">
+            
+                    
+                    Autograd：自动求导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="blitz/neural_networks_tutorial.html">
+            
+                <a href="blitz/neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="blitz/cifar10_tutorial.html">
+            
+                <a href="blitz/cifar10_tutorial.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="blitz/data_parallel_tutorial.html">
+            
+                <a href="blitz/data_parallel_tutorial.html">
+            
+                    
+                    可选：数据并行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    编写自定义数据集，数据加载器和转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    使用 TensorBoard 可视化模型，数据和训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    图片
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    TorchVision 对象检测微调教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    转移学习的计算机视觉教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    空间变压器网络教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    使用 PyTorch 进行神经传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    对抗示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    DCGAN 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    音频
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    torchaudio 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    文本
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    NLP From Scratch: 使用char-RNN对姓氏进行分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    NLP From Scratch: 生成名称与字符级RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    NLP From Scratch: 基于注意力机制的 seq2seq 神经网络翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    使用 TorchText 进行文本分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    使用 TorchText 进行语言翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    使用 nn.Transformer 和 TorchText 进行序列到序列建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    命名为 Tensor(实验性）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="24.html">
+            
+                <a href="24.html">
+            
+                    
+                    (实验性）PyTorch 中的命名张量简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    强化学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="26.html">
+            
+                <a href="26.html">
+            
+                    
+                    强化学习(DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    在生产中部署 PyTorch 模型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="28.html">
+            
+                <a href="28.html">
+            
+                    
+                    通过带有 Flask 的 REST API 在 Python 中部署 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="29.html">
+            
+                <a href="29.html">
+            
+                    
+                    TorchScript 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="30.html">
+            
+                <a href="30.html">
+            
+                    
+                    在 C ++中加载 TorchScript 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    (可选）将模型从 PyTorch 导出到 ONNX 并使用 ONNX Runtime 运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    并行和分布式训练
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="33.html">
+            
+                <a href="33.html">
+            
+                    
+                    单机模型并行最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="34.html">
+            
+                <a href="34.html">
+            
+                    
+                    分布式数据并行入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="35.html">
+            
+                <a href="35.html">
+            
+                    
+                    用 PyTorch 编写分布式应用程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    分布式 RPC 框架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="37.html">
+            
+                <a href="37.html">
+            
+                    
+                    (高级）带有 Amazon AWS 的 PyTorch 1.0 分布式训练师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    扩展 PyTorch
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="39.html">
+            
+                <a href="39.html">
+            
+                    
+                    使用自定义 C ++运算符扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="40.html">
+            
+                <a href="40.html">
+            
+                    
+                    使用自定义 C ++类扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="41.html">
+            
+                <a href="41.html">
+            
+                    
+                    使用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="42.html">
+            
+                <a href="42.html">
+            
+                    
+                    自定义 C ++和 CUDA 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    模型优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.11.1" data-path="44.html">
+            
+                <a href="44.html">
+            
+                    
+                    LSTM Word 语言模型上的(实验）动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="45.html">
+            
+                <a href="45.html">
+            
+                    
+                    (实验性）在 PyTorch 中使用 Eager 模式进行静态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="46.html">
+            
+                <a href="46.html">
+            
+                    
+                    (实验性）计算机视觉教程的量化转移学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="47.html">
+            
+                <a href="47.html">
+            
+                    
+                    (实验）BERT 上的动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="48.html">
+            
+                <a href="48.html">
+            
+                    
+                    修剪教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    PyTorch 用其他语言
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="50.html">
+            
+                <a href="50.html">
+            
+                    
+                    使用 PyTorch C ++前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    PyTorch 基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="52.html">
+            
+                <a href="52.html">
+            
+                    
+                    通过示例学习 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="53.html">
+            
+                <a href="53.html">
+            
+                    
+                    torch.nn 到底是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    文件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="56.html">
+            
+                <a href="56.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="57.html">
+            
+                <a href="57.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="58.html">
+            
+                <a href="58.html">
+            
+                    
+                    CPU 线程和 TorchScript 推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="59.html">
+            
+                <a href="59.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="60.html">
+            
+                <a href="60.html">
+            
+                    
+                    分布式 Autograd 设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="61.html">
+            
+                <a href="61.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="62.html">
+            
+                <a href="62.html">
+            
+                    
+                    经常问的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="63.html">
+            
+                <a href="63.html">
+            
+                    
+                    大规模部署的功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="64.html">
+            
+                <a href="64.html">
+            
+                    
+                    并行处理最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.10" data-path="65.html">
+            
+                <a href="65.html">
+            
+                    
+                    重现性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.11" data-path="66.html">
+            
+                <a href="66.html">
+            
+                    
+                    远程参考协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.12" data-path="67.html">
+            
+                <a href="67.html">
+            
+                    
+                    序列化语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.13" data-path="68.html">
+            
+                <a href="68.html">
+            
+                    
+                    Windows 常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.14" data-path="69.html">
+            
+                <a href="69.html">
+            
+                    
+                    XLA 设备上的 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    语言绑定
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="71.html">
+            
+                <a href="71.html">
+            
+                    
+                    PyTorch C ++ API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="72.html">
+            
+                <a href="72.html">
+            
+                    
+                    PyTorch Java API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="74.html">
+            
+                <a href="74.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="75.html">
+            
+                <a href="75.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="76.html">
+            
+                <a href="76.html">
+            
+                    
+                    torch功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="77.html">
+            
+                <a href="77.html">
+            
+                    
+                    torch张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="78.html">
+            
+                <a href="78.html">
+            
+                    
+                    张量属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.6" data-path="79.html">
+            
+                <a href="79.html">
+            
+                    
+                    自动差分包-Torch.Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.7" data-path="80.html">
+            
+                <a href="80.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.8" data-path="81.html">
+            
+                <a href="81.html">
+            
+                    
+                    分布式通讯包-Torch.Distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.9" data-path="82.html">
+            
+                <a href="82.html">
+            
+                    
+                    概率分布-torch分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.10" data-path="83.html">
+            
+                <a href="83.html">
+            
+                    
+                    torch.hub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.11" data-path="84.html">
+            
+                <a href="84.html">
+            
+                    
+                    torch脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.12" data-path="85.html">
+            
+                <a href="85.html">
+            
+                    
+                    torch.nn.init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.13" data-path="86.html">
+            
+                <a href="86.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.14" data-path="87.html">
+            
+                <a href="87.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.15" data-path="88.html">
+            
+                <a href="88.html">
+            
+                    
+                    量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.16" data-path="89.html">
+            
+                <a href="89.html">
+            
+                    
+                    分布式 RPC 框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.17" data-path="90.html">
+            
+                <a href="90.html">
+            
+                    
+                    torch随机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.18" data-path="91.html">
+            
+                <a href="91.html">
+            
+                    
+                    torch稀疏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.19" data-path="92.html">
+            
+                <a href="92.html">
+            
+                    
+                    torch存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.20" data-path="93.html">
+            
+                <a href="93.html">
+            
+                    
+                    torch.utils.bottleneck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.21" data-path="94.html">
+            
+                <a href="94.html">
+            
+                    
+                    torch.utils.checkpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.22" data-path="95.html">
+            
+                <a href="95.html">
+            
+                    
+                    torch.utils.cpp_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.23" data-path="96.html">
+            
+                <a href="96.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.24" data-path="97.html">
+            
+                <a href="97.html">
+            
+                    
+                    torch.utils.dlpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.25" data-path="98.html">
+            
+                <a href="98.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.26" data-path="99.html">
+            
+                <a href="99.html">
+            
+                    
+                    torch.utils.tensorboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.27" data-path="100.html">
+            
+                <a href="100.html">
+            
+                    
+                    类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.28" data-path="101.html">
+            
+                <a href="101.html">
+            
+                    
+                    命名张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.29" data-path="102.html">
+            
+                <a href="102.html">
+            
+                    
+                    命名为 Tensors 操作员范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.30" data-path="103.html">
+            
+                <a href="103.html">
+            
+                    
+                    糟糕！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    torchvision参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="105.html">
+            
+                <a href="105.html">
+            
+                    
+                    torchvision
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    音频参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="107.html">
+            
+                <a href="107.html">
+            
+                    
+                    torchaudio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    torchtext参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="109.html">
+            
+                <a href="109.html">
+            
+                    
+                    torchtext
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    社区
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="111.html">
+            
+                <a href="111.html">
+            
+                    
+                    PyTorch 贡献指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="112.html">
+            
+                <a href="112.html">
+            
+                    
+                    PyTorch 治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="113.html">
+            
+                <a href="113.html">
+            
+                    
+                    PyTorch 治理| 感兴趣的人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >LSTM Word 语言模型上的(实验）动态量化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lstm-word-&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x4E0A;&#x7684;&#x5B9E;&#x9A8C;&#xFF09;&#x52A8;&#x6001;&#x91CF;&#x5316;">LSTM Word &#x8BED;&#x8A00;&#x6A21;&#x578B;&#x4E0A;&#x7684;(&#x5B9E;&#x9A8C;&#xFF09;&#x52A8;&#x6001;&#x91CF;&#x5316;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A; <a href="https://pytorch.org/tutorials/advanced/dynamic_quantization_tutorial.html" target="_blank">https://pytorch.org/tutorials/advanced/dynamic_quantization_tutorial.html</a></p>
+</blockquote>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x5355;&#x51FB;&#x6B64;&#x5904;&#x7684;<a href="#sphx-glr-download-advanced-dynamic-quantization-tutorial-py">&#x4E0B;&#x8F7D;&#x5B8C;&#x6574;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;</a></p>
+<p><strong>&#x4F5C;&#x8005;</strong>&#xFF1A; <a href="https://github.com/jamesr66a" target="_blank">James Reed</a></p>
+<p><strong>&#x7531;</strong>&#x7F16;&#x8F91;&#xFF1A;<a href="https://github.com/SethHWeidman/" target="_blank">&#x8D5B;&#x65AF;&#xB7;&#x9B4F;&#x5FB7;&#x66FC;</a></p>
+<h2 id="&#x4ECB;&#x7ECD;">&#x4ECB;&#x7ECD;</h2>
+<p>&#x91CF;&#x5316;&#x6D89;&#x53CA;&#x5C06;&#x6A21;&#x578B;&#x7684;&#x6743;&#x91CD;&#x548C;&#x6FC0;&#x6D3B;&#x4ECE; float &#x8F6C;&#x6362;&#x4E3A; int&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6A21;&#x578B;&#x5C3A;&#x5BF8;&#x66F4;&#x5C0F;&#xFF0C;&#x63A8;&#x65AD;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#xFF0C;&#x800C;&#x5BF9;&#x51C6;&#x786E;&#x6027;&#x7684;&#x5F71;&#x54CD;&#x5F88;&#x5C0F;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6700;&#x7B80;&#x5355;&#x7684;&#x91CF;&#x5316;&#x5F62;&#x5F0F;-<a href="https://pytorch.org/docs/stable/quantization.html#torch.quantization.quantize_dynamic" target="_blank">&#x52A8;&#x6001;&#x91CF;&#x5316;</a>&#x5E94;&#x7528;&#x4E8E;&#x57FA;&#x4E8E; LSTM &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x9884;&#x6D4B;&#x6A21;&#x578B;&#xFF0C;&#x7D27;&#x7D27;&#x9075;&#x5FAA; PyTorch &#x793A;&#x4F8B;&#x4E2D;&#x7684;<a href="https://github.com/pytorch/examples/tree/master/word_language_model" target="_blank">&#x5355;&#x8BCD;&#x8BED;&#x8A00;&#x6A21;&#x578B;</a> &#x3002;</p>
+<pre><code># imports
+import os
+from io import open
+import time
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+</code></pre><h2 id="1&#x5B9A;&#x4E49;&#x6A21;&#x578B;">1.&#x5B9A;&#x4E49;&#x6A21;&#x578B;</h2>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x8BCD;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x793A;&#x4F8B;&#x4E2D;&#x7684;<a href="https://github.com/pytorch/examples/blob/master/word_language_model/model.py" target="_blank">&#x6A21;&#x578B;</a>&#x5B9A;&#x4E49; LSTM &#x6A21;&#x578B;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x3002;</p>
+<pre><code>class LSTMModel(nn.Module):
+    &quot;&quot;&quot;Container module with an encoder, a recurrent module, and a decoder.&quot;&quot;&quot;
+
+    def __init__(self, ntoken, ninp, nhid, nlayers, dropout=0.5):
+        super(LSTMModel, self).__init__()
+        self.drop = nn.Dropout(dropout)
+        self.encoder = nn.Embedding(ntoken, ninp)
+        self.rnn = nn.LSTM(ninp, nhid, nlayers, dropout=dropout)
+        self.decoder = nn.Linear(nhid, ntoken)
+
+        self.init_weights()
+
+        self.nhid = nhid
+        self.nlayers = nlayers
+
+    def init_weights(self):
+        initrange = 0.1
+        self.encoder.weight.data.uniform_(-initrange, initrange)
+        self.decoder.bias.data.zero_()
+        self.decoder.weight.data.uniform_(-initrange, initrange)
+
+    def forward(self, input, hidden):
+        emb = self.drop(self.encoder(input))
+        output, hidden = self.rnn(emb, hidden)
+        output = self.drop(output)
+        decoded = self.decoder(output)
+        return decoded, hidden
+
+    def init_hidden(self, bsz):
+        weight = next(self.parameters())
+        return (weight.new_zeros(self.nlayers, bsz, self.nhid),
+                weight.new_zeros(self.nlayers, bsz, self.nhid))
+</code></pre><h2 id="2&#x52A0;&#x8F7D;&#x6587;&#x672C;&#x6570;&#x636E;">2.&#x52A0;&#x8F7D;&#x6587;&#x672C;&#x6570;&#x636E;</h2>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x6839;&#x636E;&#x5355;&#x8BCD;&#x6A21;&#x578B;&#x793A;&#x4F8B;&#x5BF9;<a href="https://github.com/pytorch/examples/blob/master/word_language_model/data.py" target="_blank">&#x9884;&#x5904;&#x7406;</a>&#xFF0C;&#x5C06; <a href="https://www.google.com/search?q=wikitext+2+data" target="_blank">Wikitext-2 &#x6570;&#x636E;&#x96C6;</a>&#x52A0;&#x8F7D;&#x5230;&lt;cite&gt;&#x8BED;&#x6599;&#x5E93;&lt;/cite&gt;&#x4E2D;&#x3002;</p>
+<pre><code>class Dictionary(object):
+    def __init__(self):
+        self.word2idx = {}
+        self.idx2word = []
+
+    def add_word(self, word):
+        if word not in self.word2idx:
+            self.idx2word.append(word)
+            self.word2idx[word] = len(self.idx2word) - 1
+        return self.word2idx[word]
+
+    def __len__(self):
+        return len(self.idx2word)
+
+class Corpus(object):
+    def __init__(self, path):
+        self.dictionary = Dictionary()
+        self.train = self.tokenize(os.path.join(path, &apos;train.txt&apos;))
+        self.valid = self.tokenize(os.path.join(path, &apos;valid.txt&apos;))
+        self.test = self.tokenize(os.path.join(path, &apos;test.txt&apos;))
+
+    def tokenize(self, path):
+        &quot;&quot;&quot;Tokenizes a text file.&quot;&quot;&quot;
+        assert os.path.exists(path)
+        # Add words to the dictionary
+        with open(path, &apos;r&apos;, encoding=&quot;utf8&quot;) as f:
+            for line in f:
+                words = line.split() + [&apos;&lt;eos&gt;&apos;]
+                for word in words:
+                    self.dictionary.add_word(word)
+
+        # Tokenize file content
+        with open(path, &apos;r&apos;, encoding=&quot;utf8&quot;) as f:
+            idss = []
+            for line in f:
+                words = line.split() + [&apos;&lt;eos&gt;&apos;]
+                ids = []
+                for word in words:
+                    ids.append(self.dictionary.word2idx[word])
+                idss.append(torch.tensor(ids).type(torch.int64))
+            ids = torch.cat(idss)
+
+        return ids
+
+model_data_filepath = &apos;data/&apos;
+
+corpus = Corpus(model_data_filepath + &apos;wikitext-2&apos;)
+</code></pre><h2 id="3&#x52A0;&#x8F7D;&#x9884;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;">3.&#x52A0;&#x8F7D;&#x9884;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;</h2>
+<p>&#x8FD9;&#x662F;&#x6709;&#x5173;&#x52A8;&#x6001;&#x91CF;&#x5316;&#x7684;&#x6559;&#x7A0B;&#xFF0C;&#x52A8;&#x6001;&#x91CF;&#x5316;&#x662F;&#x5728;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x540E;&#x5E94;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x91CF;&#x5316;&#x6280;&#x672F;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x5C06;&#x4E00;&#x4E9B;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x6743;&#x91CD;&#x52A0;&#x8F7D;&#x5230;&#x6B64;&#x6A21;&#x578B;&#x67B6;&#x6784;&#x4E2D;&#x5373;&#x53EF;&#xFF1B; &#x8FD9;&#x4E9B;&#x6743;&#x91CD;&#x662F;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x5355;&#x8BCD;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x793A;&#x4F8B;&#x4E2D;&#x7684;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x8BAD;&#x7EC3;&#x4E94;&#x4E2A;&#x7EAA;&#x5143;&#x800C;&#x83B7;&#x5F97;&#x7684;&#x3002;</p>
+<pre><code>ntokens = len(corpus.dictionary)
+
+model = LSTMModel(
+    ntoken = ntokens,
+    ninp = 512,
+    nhid = 256,
+    nlayers = 5,
+)
+
+model.load_state_dict(
+    torch.load(
+        model_data_filepath + &apos;word_language_model_quantize.pth&apos;,
+        map_location=torch.device(&apos;cpu&apos;)
+        )
+    )
+
+model.eval()
+print(model)
+</code></pre><p>&#x51FA;&#xFF1A;</p>
+<pre><code>LSTMModel(
+  (drop): Dropout(p=0.5, inplace=False)
+  (encoder): Embedding(33278, 512)
+  (rnn): LSTM(512, 256, num_layers=5, dropout=0.5)
+  (decoder): Linear(in_features=256, out_features=33278, bias=True)
+)
+</code></pre><p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x751F;&#x6210;&#x4E00;&#x4E9B;&#x6587;&#x672C;&#x4EE5;&#x786E;&#x4FDD;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;-&#x4E0E;&#x4EE5;&#x524D;&#x7C7B;&#x4F3C;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x6B64;&#x5904;&#x9075;&#x5FAA;<a href="https://github.com/pytorch/examples/blob/master/word_language_model/generate.py" target="_blank"></a></p>
+<pre><code>input_ = torch.randint(ntokens, (1, 1), dtype=torch.long)
+hidden = model.init_hidden(1)
+temperature = 1.0
+num_words = 1000
+
+with open(model_data_filepath + &apos;out.txt&apos;, &apos;w&apos;) as outf:
+    with torch.no_grad():  # no tracking history
+        for i in range(num_words):
+            output, hidden = model(input_, hidden)
+            word_weights = output.squeeze().div(temperature).exp().cpu()
+            word_idx = torch.multinomial(word_weights, 1)[0]
+            input_.fill_(word_idx)
+
+            word = corpus.dictionary.idx2word[word_idx]
+
+            outf.write(str(word.encode(&apos;utf-8&apos;)) + (&apos;\n&apos; if i % 20 == 19 else &apos; &apos;))
+
+            if i % 100 == 0:
+                print(&apos;| Generated {}/{} words&apos;.format(i, 1000))
+
+with open(model_data_filepath + &apos;out.txt&apos;, &apos;r&apos;) as outf:
+    all_output = outf.read()
+    print(all_output)
+</code></pre><p>Out:</p>
+<pre><code>| Generated 0/1000 words
+| Generated 100/1000 words
+| Generated 200/1000 words
+| Generated 300/1000 words
+| Generated 400/1000 words
+| Generated 500/1000 words
+| Generated 600/1000 words
+| Generated 700/1000 words
+| Generated 800/1000 words
+| Generated 900/1000 words
+b&apos;and&apos; b&apos;O&apos; b&apos;\xe2\x80\x99&apos; b&apos;Gacy&apos; b&apos;,&apos; b&apos;and&apos; b&apos;then&apos; b&apos;defined&apos; b&apos;that&apos; b&apos;next&apos; b&apos;novel&apos; b&apos;succeeded&apos; b&apos;large&apos; b&apos;property&apos; b&apos;,&apos; b&apos;so&apos; b&apos;neither&apos; b&apos;number&apos; b&apos;is&apos; b&apos;currently&apos;
+b&apos;a&apos; b&apos;identical&apos; b&apos;planet&apos; b&apos;by&apos; b&apos;stiff&apos; b&apos;culture&apos; b&apos;.&apos; b&apos;Mosley&apos; b&apos;may&apos; b&apos;settle&apos; b&apos;in&apos; b&apos;non&apos; b&apos;@-@&apos; b&apos;bands&apos; b&apos;for&apos; b&apos;the&apos; b&apos;beginning&apos; b&apos;of&apos; b&apos;its&apos; b&apos;home&apos;
+b&apos;stations&apos; b&apos;,&apos; b&apos;being&apos; b&apos;also&apos; b&apos;in&apos; b&apos;charge&apos; b&apos;for&apos; b&apos;two&apos; b&apos;other&apos; b&apos;@-@&apos; b&apos;month&apos; b&apos;ceremonies&apos; b&apos;.&apos; b&apos;The&apos; b&apos;first&apos; b&apos;Star&apos; b&apos;Overseas&apos; b&apos;took&apos; b&apos;to&apos; b&apos;have&apos;
+b&apos;met&apos; b&apos;its&apos; b&apos;leadership&apos; b&apos;for&apos; b&apos;investigation&apos; b&apos;such&apos; b&apos;as&apos; b&apos;Discovered&apos; b&apos;lbw&apos; b&apos;,&apos; b&apos;club&apos; b&apos;,&apos; b&apos;&lt;unk&gt;&apos; b&apos;,&apos; b&apos;&lt;unk&gt;&apos; b&apos;,&apos; b&apos;or&apos; b&apos;Crac&apos; b&quot;&apos;Malley&quot; b&apos;,&apos;
+b&apos;although&apos; b&apos;with&apos; b&apos;the&apos; b&apos;other&apos; b&apos;victory&apos; b&apos;,&apos; b&apos;assumes&apos; b&apos;it&apos; b&apos;.&apos; b&apos;(&apos; b&apos;not&apos; b&apos;containment&apos; b&apos;to&apos; b&apos;a&apos; b&apos;recent&apos; b&apos;problem&apos; b&apos;)&apos; b&apos;.&apos; b&apos;His&apos; b&apos;traditional&apos;
+b&apos;scheme&apos; b&apos;process&apos; b&apos;is&apos; b&apos;proceeded&apos; b&apos;outdoor&apos; b&apos;in&apos; b&apos;overweight&apos; b&apos;clusters&apos; b&apos;;&apos; b&apos;God&apos; b&apos;Davis&apos; b&apos;was&apos; b&apos;interested&apos; b&apos;on&apos; b&apos;her&apos; b&apos;right&apos; b&apos;touring&apos; b&apos;,&apos; b&apos;although&apos; b&apos;they&apos;
+b&apos;had&apos; b&apos;previously&apos; b&apos;previously&apos; b&apos;risen&apos; b&apos;near&apos; b&apos;eclipse&apos; b&apos;in&apos; b&apos;his&apos; b&apos;work&apos; b&apos;by&apos; b&apos;the&apos; b&apos;latter&apos; b&apos;@-@&apos; b&apos;perspective&apos; b&apos;.&apos; b&apos;During&apos; b&apos;the&apos; b&apos;release&apos; b&apos;of&apos; b&apos;Bell&apos;
+b&apos;,&apos; b&apos;the&apos; b&apos;first&apos; b&apos;promotional&apos; b&apos;mention&apos; b&apos;included&apos; b&apos;a&apos; b&apos;Magnetic&apos; b&apos;seam&apos; b&apos;was&apos; b&apos;put&apos; b&apos;into&apos; b&apos;Shakespeare&apos; b&quot;&apos;s&quot; b&apos;Special&apos; b&apos;Company&apos; b&apos;is&apos; b&apos;katra&apos; b&apos;than&apos; b&apos;chops&apos;
+b&apos;@-@&apos; b&apos;up&apos; b&apos;history&apos; b&apos;for&apos; b&apos;frets&apos; b&apos;of&apos; b&apos;actions&apos; b&apos;.&apos; b&apos;&lt;eos&gt;&apos; b&apos;Until&apos; b&apos;arrival&apos; b&apos;,&apos; b&apos;Griffin&apos; b&apos;wrote&apos; b&apos;that&apos; b&apos;a&apos; b&apos;&quot;&apos; b&apos;sense&apos; b&apos;&quot;&apos; b&apos;included&apos;
+b&apos;especially&apos; b&apos;declining&apos; b&apos;individual&apos; b&apos;forces&apos; b&apos;,&apos; b&apos;though&apos; b&apos;are&apos; b&apos;stronger&apos; b&apos;&lt;unk&gt;&apos; b&apos;.&apos; b&apos;According&apos; b&apos;to&apos; b&apos;lessen&apos; b&apos;very&apos; b&apos;role&apos; b&apos;,&apos; b&apos;Ceres&apos; b&apos;believed&apos; b&apos;he&apos; b&apos;each&apos;
+b&apos;conflicted&apos; b&apos;pump&apos; b&apos;fight&apos; b&apos;follows&apos; b&apos;the&apos; b&apos;malignant&apos; b&apos;polynomial&apos; b&apos;to&apos; b&apos;make&apos; b&apos;Albani&apos; b&apos;.&apos; b&apos;The&apos; b&apos;nobility&apos; b&apos;found&apos; b&apos;a&apos; b&apos;spinners&apos; b&apos;from&apos; b&apos;a&apos; b&apos;special&apos; b&apos;to&apos;
+b&apos;vertical&apos; b&apos;@-@&apos; b&apos;term&apos; b&apos;crimes&apos; b&apos;,&apos; b&apos;and&apos; b&apos;the&apos; b&apos;Neapolitan&apos; b&apos;apparent&apos; b&apos;&lt;unk&gt;&apos; b&apos;show&apos; b&apos;forcing&apos; b&apos;no&apos; b&apos;of&apos; b&apos;the&apos; b&apos;worst&apos; b&apos;traditions&apos; b&apos;of&apos; b&apos;tallest&apos; b&apos;&lt;unk&gt;&apos;
+b&apos;teacher&apos; b&apos;+&apos; b&apos;green&apos; b&apos;crushing&apos; b&apos;,&apos; b&apos;with&apos; b&apos;4&apos; b&apos;%&apos; b&apos;,&apos; b&apos;and&apos; b&apos;560&apos; b&apos;doctrines&apos; b&apos;,&apos; b&apos;with&apos; b&apos;other&apos; b&apos;Asian&apos; b&apos;assistance&apos; b&apos;&lt;unk&gt;&apos; b&apos;.&apos; b&apos;The&apos;
+b&apos;game&apos; b&apos;is&apos; b&apos;unadorned&apos; b&apos;,&apos; b&apos;especially&apos; b&apos;or&apos; b&apos;steadily&apos; b&apos;favoured&apos; b&apos;according&apos; b&apos;to&apos; b&apos;its&apos; b&apos;inside&apos; b&apos;,&apos; b&apos;leading&apos; b&apos;to&apos; b&apos;the&apos; b&apos;removal&apos; b&apos;of&apos; b&apos;gauges&apos; b&apos;.&apos;
+b&apos;vanishing&apos; b&apos;,&apos; b&apos;a&apos; b&apos;jagged&apos; b&apos;race&apos; b&apos;rested&apos; b&apos;with&apos; b&apos;be&apos; b&apos;rich&apos; b&apos;if&apos; b&apos;these&apos; b&apos;legislation&apos; b&apos;remained&apos; b&apos;together&apos; b&apos;.&apos; b&apos;The&apos; b&apos;anthology&apos; b&apos;and&apos; b&apos;initially&apos; b&apos;regularly&apos;
+b&apos;Cases&apos; b&apos;Cererian&apos; b&apos;and&apos; b&apos;acknowledge&apos; b&apos;individual&apos; b&apos;being&apos; b&apos;poured&apos; b&apos;with&apos; b&apos;the&apos; b&apos;Chicago&apos; b&apos;melee&apos; b&apos;.&apos; b&apos;Europium&apos; b&apos;,&apos; b&apos;&lt;unk&gt;&apos; b&apos;,&apos; b&apos;and&apos; b&apos;Lars&apos; b&apos;life&apos; b&apos;for&apos;
+b&apos;electron&apos; b&apos;plumage&apos; b&apos;,&apos; b&apos;will&apos; b&apos;deprive&apos; b&apos;themselves&apos; b&apos;.&apos; b&apos;The&apos; b&apos;&lt;unk&gt;&apos; b&apos;gryllotalpa&apos; b&apos;behave&apos; b&apos;have&apos; b&apos;Emerald&apos; b&apos;doubt&apos; b&apos;.&apos; b&apos;When&apos; b&apos;limited&apos; b&apos;cubs&apos; b&apos;are&apos; b&apos;rather&apos;
+b&apos;attempting&apos; b&apos;to&apos; b&apos;address&apos; b&apos;.&apos; b&apos;Two&apos; b&apos;birds&apos; b&apos;as&apos; b&apos;being&apos; b&apos;also&apos; b&apos;&lt;unk&gt;&apos; b&apos;,&apos; b&apos;such&apos; b&apos;as&apos; b&apos;&quot;&apos; b&apos;&lt;unk&gt;&apos; b&apos;&quot;&apos; b&apos;,&apos; b&apos;and&apos; b&apos;possessing&apos; b&apos;criminal&apos;
+b&apos;spots&apos; b&apos;,&apos; b&apos;lambskin&apos; b&apos;ponderosa&apos; b&apos;mosses&apos; b&apos;,&apos; b&apos;which&apos; b&apos;might&apos; b&apos;seek&apos; b&apos;to&apos; b&apos;begin&apos; b&apos;less&apos; b&apos;different&apos; b&apos;delineated&apos; b&apos;techniques&apos; b&apos;.&apos; b&apos;Known&apos; b&apos;,&apos; b&apos;on&apos; b&apos;the&apos;
+b&apos;ground&apos; b&apos;,&apos; b&apos;and&apos; b&apos;only&apos; b&apos;cooler&apos; b&apos;,&apos; b&apos;first&apos; b&apos;on&apos; b&apos;other&apos; b&apos;females&apos; b&apos;factory&apos; b&apos;in&apos; b&apos;mathematics&apos; b&apos;.&apos; b&apos;Pilgrim&apos; b&apos;alone&apos; b&apos;has&apos; b&apos;a&apos; b&apos;critical&apos; b&apos;substance&apos;
+b&apos;,&apos; b&apos;probably&apos; b&apos;in&apos; b&apos;line&apos; b&apos;.&apos; b&apos;He&apos; b&apos;used&apos; b&apos;a&apos; b&apos;&lt;unk&gt;&apos; b&apos;,&apos; b&apos;with&apos; b&apos;the&apos; b&apos;resin&apos; b&apos;being&apos; b&apos;transported&apos; b&apos;to&apos; b&apos;the&apos; b&apos;12th&apos; b&apos;island&apos; b&apos;during&apos;
+b&apos;the&apos; b&apos;year&apos; b&apos;of&apos; b&apos;a&apos; b&apos;mixture&apos; b&apos;show&apos; b&apos;that&apos; b&apos;it&apos; b&apos;is&apos; b&apos;serving&apos; b&apos;;&apos; b&apos;they&apos; b&apos;are&apos; b&apos;headed&apos; b&apos;by&apos; b&apos;prone&apos; b&apos;too&apos; b&apos;species&apos; b&apos;,&apos; b&apos;rather&apos;
+b&apos;than&apos; b&apos;the&apos; b&apos;risk&apos; b&apos;of&apos; b&apos;carbon&apos; b&apos;.&apos; b&apos;In&apos; b&apos;all&apos; b&apos;other&apos; b&apos;typical&apos; b&apos;,&apos; b&apos;faith&apos; b&apos;consist&apos; b&apos;of&apos; b&apos;&lt;unk&gt;&apos; b&apos;whereas&apos; b&apos;&lt;unk&gt;&apos; b&apos;when&apos; b&apos;quotes&apos; b&apos;they&apos;
+b&apos;Abrams&apos; b&apos;restructuring&apos; b&apos;vessels&apos; b&apos;.&apos; b&apos;It&apos; b&apos;also&apos; b&apos;emerged&apos; b&apos;even&apos; b&apos;when&apos; b&apos;any&apos; b&apos;lack&apos; b&apos;of&apos; b&apos;birds&apos; b&apos;has&apos; b&apos;wide&apos; b&apos;pinkish&apos; b&apos;structures&apos; b&apos;,&apos; b&apos;directing&apos; b&apos;a&apos;
+b&apos;chelicerae&apos; b&apos;of&apos; b&apos;amputated&apos; b&apos;elementary&apos; b&apos;,&apos; b&apos;only&apos; b&apos;they&apos; b&apos;on&apos; b&apos;objects&apos; b&apos;.&apos; b&apos;A&apos; b&apos;female&apos; b&apos;and&apos; b&apos;a&apos; b&apos;female&apos; b&apos;Leisler&apos; b&apos;@-@&apos; b&apos;shaped&apos; b&apos;image&apos; b&apos;for&apos;
+b&apos;51&apos; b&apos;@.@&apos; b&apos;5&apos; b&apos;m&apos; b&apos;(&apos; b&apos;5&apos; b&apos;lb&apos; b&apos;)&apos; b&apos;Frenchman&apos; b&apos;2&apos; b&apos;at&apos; b&apos;sea&apos; b&apos;times&apos; b&apos;is&apos; b&apos;approximately&apos; b&apos;2&apos; b&apos;years&apos; b&apos;ago&apos; b&apos;,&apos; b&apos;particularly&apos;
+b&apos;behind&apos; b&apos;reducing&apos; b&apos;Trujillo&apos; b&quot;&apos;s&quot; b&apos;and&apos; b&apos;food&apos; b&apos;specific&apos; b&apos;spores&apos; b&apos;.&apos; b&apos;Males&apos; b&apos;fibrous&apos; b&apos;females&apos; b&apos;can&apos; b&apos;be&apos; b&apos;severely&apos; b&apos;gregarious&apos; b&apos;.&apos; b&apos;The&apos; b&apos;same&apos; b&apos;brood&apos;
+b&apos;behind&apos; b&apos;100&apos; b&apos;minutes&apos; b&apos;after&apos; b&apos;it&apos; b&apos;is&apos; b&apos;estimated&apos; b&apos;by&apos; b&apos;damaging&apos; b&apos;the&apos; b&apos;nest&apos; b&apos;base&apos; b&apos;,&apos; b&apos;with&apos; b&apos;some&apos; b&apos;other&apos; b&apos;rare&apos; b&apos;birds&apos; b&apos;and&apos; b&apos;behavior&apos;
+b&apos;,&apos; b&apos;no&apos; b&apos;transport&apos; b&apos;and&apos; b&apos;Duty&apos; b&apos;demand&apos; b&apos;.&apos; b&apos;Two&apos; b&apos;rare&apos; b&apos;chicks&apos; b&apos;have&apos; b&apos;from&apos; b&apos;feed&apos; b&apos;engage&apos; b&apos;to&apos; b&apos;come&apos; b&apos;with&apos; b&apos;some&apos; b&apos;part&apos; b&apos;of&apos;
+b&apos;nesting&apos; b&apos;.&apos; b&apos;The&apos; b&apos;1808&apos; b&apos;to&apos; b&apos;be&apos; b&apos;reduced&apos; b&apos;to&apos; b&apos;Scots&apos; b&apos;and&apos; b&apos;fine&apos; b&apos;stones&apos; b&apos;.&apos; b&apos;There&apos; b&apos;they&apos; b&apos;also&apos; b&apos;purple&apos; b&apos;limitations&apos; b&apos;of&apos; b&apos;certain&apos;
+b&apos;skin&apos; b&apos;material&apos; b&apos;usually&apos; b&apos;move&apos; b&apos;during&apos; b&apos;somewhat&apos; b&apos;.&apos; b&apos;A&apos; b&apos;mothers&apos; b&apos;of&apos; b&apos;external&apos; b&apos;take&apos; b&apos;from&apos; b&apos;poaching&apos; b&apos;,&apos; b&apos;typically&apos; b&apos;have&apos; b&apos;people&apos; b&apos;processes&apos; b&apos;and&apos;
+b&apos;toll&apos; b&apos;;&apos; b&apos;while&apos; b&apos;bird&apos; b&apos;plumage&apos; b&apos;differs&apos; b&apos;to&apos; b&apos;Fight&apos; b&apos;,&apos; b&apos;they&apos; b&apos;may&apos; b&apos;be&apos; b&apos;open&apos; b&apos;after&apos; b&apos;&lt;unk&gt;&apos; b&apos;,&apos; b&apos;thus&apos; b&apos;rarely&apos; b&apos;their&apos; b&apos;&lt;unk&gt;&apos;
+b&apos;for&apos; b&apos;a&apos; b&apos;emotional&apos; b&apos;circle&apos; b&apos;.&apos; b&apos;Rough&apos; b&apos;Dahlan&apos; b&apos;probably&apos; b&apos;suggested&apos; b&apos;how&apos; b&apos;they&apos; b&apos;impose&apos; b&apos;their&apos; b&apos;cross&apos; b&apos;of&apos; b&apos;relapse&apos; b&apos;where&apos; b&apos;they&apos; b&apos;changed&apos; b&apos;.&apos;
+b&apos;They&apos; b&apos;popularisation&apos; b&apos;them&apos; b&apos;of&apos; b&apos;their&apos; b&apos;&lt;unk&gt;&apos; b&apos;,&apos; b&apos;charming&apos; b&apos;by&apos; b&apos;limited&apos; b&apos;or&apos; b&apos;Palestinians&apos; b&apos;the&apos; b&apos;&lt;unk&gt;&apos; b&apos;&lt;unk&gt;&apos; b&apos;.&apos; b&apos;Traffic&apos; b&apos;of&apos; b&apos;areas&apos; b&apos;headed&apos;
+b&apos;,&apos; b&apos;and&apos; b&apos;their&apos; b&apos;push&apos; b&apos;will&apos; b&apos;articulate&apos; b&apos;.&apos; b&apos;&lt;eos&gt;&apos; b&apos;&lt;unk&gt;&apos; b&apos;would&apos; b&apos;be&apos; b&apos;criticized&apos; b&apos;by&apos; b&apos;protein&apos; b&apos;rice&apos; b&apos;,&apos; b&apos;particularly&apos; b&apos;often&apos; b&apos;rather&apos; b&apos;of&apos;
+b&apos;the&apos; b&apos;cellular&apos; b&apos;extent&apos; b&apos;.&apos; b&apos;They&apos; b&apos;could&apos; b&apos;overlap&apos; b&apos;forward&apos; b&apos;,&apos; b&apos;and&apos; b&apos;there&apos; b&apos;are&apos; b&apos;no&apos; b&apos;governing&apos; b&apos;land&apos; b&apos;,&apos; b&apos;they&apos; b&apos;do&apos; b&apos;not&apos; b&apos;find&apos;
+b&apos;it&apos; b&apos;.&apos; b&apos;In&apos; b&apos;one&apos; b&apos;place&apos; b&apos;,&apos; b&apos;reddish&apos; b&apos;kakapo&apos; b&apos;(&apos; b&apos;kakapo&apos; b&apos;&lt;unk&gt;&apos; b&apos;)&apos; b&apos;might&apos; b&apos;be&apos; b&apos;performed&apos; b&apos;that&apos; b&apos;conduct&apos; b&apos;,&apos; b&apos;stadia&apos; b&apos;,&apos;
+b&apos;gene&apos; b&apos;or&apos; b&apos;air&apos; b&apos;,&apos; b&apos;noise&apos; b&apos;,&apos; b&apos;and&apos; b&apos;offensive&apos; b&apos;or&apos; b&apos;skin&apos; b&apos;,&apos; b&apos;which&apos; b&apos;may&apos; b&apos;be&apos; b&apos;commercially&apos; b&apos;organized&apos; b&apos;strong&apos; b&apos;method&apos; b&apos;.&apos; b&apos;In&apos;
+b&apos;changing&apos; b&apos;,&apos; b&apos;Chen&apos; b&apos;and&apos; b&apos;eukaryotes&apos; b&apos;were&apos; b&apos;Membrane&apos; b&apos;spiders&apos; b&apos;in&apos; b&apos;larger&apos; b&apos;growth&apos; b&apos;,&apos; b&apos;by&apos; b&apos;some&apos; b&apos;regions&apos; b&apos;.&apos; b&apos;If&apos; b&apos;up&apos; b&apos;about&apos; b&apos;5&apos;
+b&apos;%&apos; b&apos;of&apos; b&apos;the&apos; b&apos;males&apos; b&apos;,&apos; b&apos;there&apos; b&apos;are&apos; b&apos;displays&apos; b&apos;that&apos; b&apos;shift&apos; b&apos;the&apos; b&apos;bird&apos; b&apos;inclination&apos; b&apos;after&apos; b&apos;supreme&apos; b&apos;&lt;unk&gt;&apos; b&apos;to&apos; b&apos;move&apos; b&apos;outside&apos; b&apos;tests&apos;
+b&apos;.&apos; b&apos;The&apos; b&apos;aim&apos; b&apos;of&apos; b&apos;Mouquet&apos; b&apos;Sites&apos; b&apos;is&apos; b&apos;faster&apos; b&apos;as&apos; b&apos;an&apos; b&apos;easy&apos; b&apos;asteroid&apos; b&apos;,&apos; b&apos;with&apos; b&apos;ocean&apos; b&apos;or&apos; b&apos;grey&apos; b&apos;,&apos; b&apos;albeit&apos; b&apos;,&apos;
+b&apos;as&apos; b&apos;they&apos; b&apos;they&apos; b&apos;CBs&apos; b&apos;,&apos; b&apos;and&apos; b&apos;do&apos; b&apos;not&apos; b&apos;be&apos; b&apos;performed&apos; b&apos;,&apos; b&apos;greatly&apos; b&apos;on&apos; b&apos;other&apos; b&apos;insects&apos; b&apos;,&apos; b&apos;they&apos; b&apos;can&apos; b&apos;write&apos; b&apos;chromosomes&apos;
+b&apos;,&apos; b&apos;and&apos; b&apos;planners&apos; b&apos;,&apos; b&apos;galericulata&apos; b&apos;should&apos; b&apos;be&apos; b&apos;a&apos; b&apos;bird&apos; b&apos;.&apos; b&apos;Also&apos; b&apos;on&apos; b&apos;a&apos; b&apos;holodeck&apos; b&apos;they&apos; b&apos;were&apos; b&apos;divine&apos; b&apos;out&apos; b&apos;of&apos; b&apos;bare&apos;
+b&apos;handwriting&apos; b&apos;.&apos; b&apos;Unlike&apos; b&apos;this&apos; b&apos;,&apos; b&apos;they&apos; b&apos;makes&apos; b&apos;only&apos; b&apos;anything&apos; b&apos;a&apos; b&apos;variation&apos; b&apos;of&apos; b&apos;skin&apos; b&apos;skeletons&apos; b&apos;further&apos; b&apos;.&apos; b&apos;They&apos; b&apos;have&apos; b&apos;to&apos; b&apos;be&apos;
+b&apos;able&apos; b&apos;under&apos; b&apos;their&apos; b&apos;herding&apos; b&apos;tree&apos; b&apos;,&apos; b&apos;or&apos; b&apos;dart&apos; b&apos;.&apos; b&apos;When&apos; b&apos;many&apos; b&apos;hypothesis&apos; b&apos;(&apos; b&apos;plant&apos; b&apos;,&apos; b&apos;they&apos; b&apos;were&apos; b&apos;@-@&apos; b&apos;looped&apos; b&apos;aged&apos;
+b&apos;play&apos; b&apos;)&apos; b&apos;is&apos; b&apos;very&apos; b&apos;clear&apos; b&apos;as&apos; b&apos;very&apos; b&apos;on&apos; b&apos;comparison&apos; b&apos;.&apos; b&apos;&lt;eos&gt;&apos; b&apos;Furthermore&apos; b&apos;,&apos; b&apos;Wikimania&apos; b&apos;decorations&apos; b&apos;@-@&apos; b&apos;sponsored&apos; b&apos;naming&apos; b&apos;hydrogen&apos; b&apos;when&apos;
+b&apos;the&apos; b&apos;kakapo&apos; b&apos;commenced&apos; b&apos;,&apos; b&apos;they&apos; b&apos;are&apos; b&apos;slowly&apos; b&apos;on&apos; b&apos;heavy&apos; b&apos;isolation&apos; b&apos;.&apos; b&apos;Sometimes&apos; b&apos;that&apos; b&apos;Larssen&apos; b&apos;leave&apos; b&apos;gently&apos; b&apos;,&apos; b&apos;they&apos; b&apos;usually&apos; b&apos;made&apos;
+b&apos;short&apos; b&apos;care&apos; b&apos;of&apos; b&apos;feral&apos; b&apos;or&apos; b&apos;any&apos; b&apos;dual&apos; b&apos;species&apos; b&apos;.&apos; b&apos;&lt;eos&gt;&apos; b&apos;Further&apos; b&apos;males&apos; b&apos;that&apos; b&apos;outfitting&apos; b&apos;,&apos; b&apos;when&apos; b&apos;there&apos; b&apos;are&apos; b&apos;two&apos; b&apos;envelope&apos;
+b&apos;shorter&apos; b&apos;flocks&apos; b&apos;to&apos; b&apos;be&apos; b&apos;males&apos; b&apos;ideally&apos; b&apos;they&apos; b&apos;are&apos; b&apos;highly&apos; b&apos;emission&apos; b&apos;.&apos; b&apos;&lt;eos&gt;&apos; b&apos;As&apos; b&apos;of&apos; b&apos;danger&apos; b&apos;,&apos; b&apos;taking&apos; b&apos;in&apos; b&apos;one&apos; b&apos;of&apos;
+b&apos;the&apos; b&apos;other&apos; b&apos;surviving&apos; b&apos;structure&apos; b&apos;of&apos; b&apos;Ceres&apos; b&apos;can&apos; b&apos;be&apos; b&apos;rebuffed&apos; b&apos;to&apos; b&apos;be&apos; b&apos;caused&apos; b&apos;by&apos; b&apos;any&apos; b&apos;combination&apos; b&apos;of&apos; b&apos;food&apos; b&apos;or&apos; b&apos;modified&apos; b&apos;its&apos;
+</code></pre><p>&#x5B83;&#x4E0D;&#x662F; GPT-2&#xFF0C;&#x4F46;&#x770B;&#x8D77;&#x6765;&#x8BE5;&#x6A21;&#x578B;&#x5DF2;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x8BED;&#x8A00;&#x7ED3;&#x6784;&#xFF01;</p>
+<p>&#x6211;&#x4EEC;&#x51E0;&#x4E4E;&#x51C6;&#x5907;&#x597D;&#x6F14;&#x793A;&#x52A8;&#x6001;&#x91CF;&#x5316;&#x3002; &#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>bptt = 25
+criterion = nn.CrossEntropyLoss()
+eval_batch_size = 1
+
+# create test data set
+def batchify(data, bsz):
+    # Work out how cleanly we can divide the dataset into bsz parts.
+    nbatch = data.size(0) // bsz
+    # Trim off any extra elements that wouldn&apos;t cleanly fit (remainders).
+    data = data.narrow(0, 0, nbatch * bsz)
+    # Evenly divide the data across the bsz batches.
+    return data.view(bsz, -1).t().contiguous()
+
+test_data = batchify(corpus.test, eval_batch_size)
+
+# Evaluation functions
+def get_batch(source, i):
+    seq_len = min(bptt, len(source) - 1 - i)
+    data = source[i:i+seq_len]
+    target = source[i+1:i+1+seq_len].view(-1)
+    return data, target
+
+def repackage_hidden(h):
+  &quot;&quot;&quot;Wraps hidden states in new Tensors, to detach them from their history.&quot;&quot;&quot;
+
+  if isinstance(h, torch.Tensor):
+      return h.detach()
+  else:
+      return tuple(repackage_hidden(v) for v in h)
+
+def evaluate(model_, data_source):
+    # Turn on evaluation mode which disables dropout.
+    model_.eval()
+    total_loss = 0.
+    hidden = model_.init_hidden(eval_batch_size)
+    with torch.no_grad():
+        for i in range(0, data_source.size(0) - 1, bptt):
+            data, targets = get_batch(data_source, i)
+            output, hidden = model_(data, hidden)
+            hidden = repackage_hidden(hidden)
+            output_flat = output.view(-1, ntokens)
+            total_loss += len(data) * criterion(output_flat, targets).item()
+    return total_loss / (len(data_source) - 1)
+</code></pre><h2 id="4&#x6D4B;&#x8BD5;&#x52A8;&#x6001;&#x91CF;&#x5316;">4.&#x6D4B;&#x8BD5;&#x52A8;&#x6001;&#x91CF;&#x5316;</h2>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x578B;&#x4E0A;&#x8C03;&#x7528;<code>torch.quantization.quantize_dynamic</code>&#xFF01; &#x7279;&#x522B;&#xFF0C;</p>
+<ul>
+<li>&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x6211;&#x4EEC;&#x8981;&#x5BF9;&#x6A21;&#x578B;&#x4E2D;&#x7684;<code>nn.LSTM</code>&#x548C;<code>nn.Linear</code>&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x91CF;&#x5316;</li>
+<li>&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x5E0C;&#x671B;&#x5C06;&#x6743;&#x91CD;&#x8F6C;&#x6362;&#x4E3A;<code>int8</code>&#x503C;</li>
+</ul>
+<pre><code>import torch.quantization
+
+quantized_model = torch.quantization.quantize_dynamic(
+    model, {nn.LSTM, nn.Linear}, dtype=torch.qint8
+)
+print(quantized_model)
+</code></pre><p>Out:</p>
+<pre><code>LSTMModel(
+  (drop): Dropout(p=0.5, inplace=False)
+  (encoder): Embedding(33278, 512)
+  (rnn): DynamicQuantizedLSTM(
+    512, 256, num_layers=5, dropout=0.5
+    (_all_weight_values): ModuleList(
+      (0): PackedParameter()
+      (1): PackedParameter()
+      (2): PackedParameter()
+      (3): PackedParameter()
+      (4): PackedParameter()
+      (5): PackedParameter()
+      (6): PackedParameter()
+      (7): PackedParameter()
+      (8): PackedParameter()
+      (9): PackedParameter()
+    )
+  )
+  (decoder): DynamicQuantizedLinear(
+    in_features=256, out_features=33278
+    (_packed_params): LinearPackedParams()
+  )
+)
+</code></pre><p>&#x8BE5;&#x6A21;&#x578B;&#x770B;&#x8D77;&#x6765;&#x76F8;&#x540C;&#xFF1B; &#x8FD9;&#x5BF9;&#x6211;&#x4EEC;&#x6709;&#x4EC0;&#x4E48;&#x597D;&#x5904;&#xFF1F; &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x6A21;&#x578B;&#x5C3A;&#x5BF8;&#x663E;&#x7740;&#x51CF;&#x5C0F;&#xFF1A;</p>
+<pre><code>def print_size_of_model(model):
+    torch.save(model.state_dict(), &quot;temp.p&quot;)
+    print(&apos;Size (MB):&apos;, os.path.getsize(&quot;temp.p&quot;)/1e6)
+    os.remove(&apos;temp.p&apos;)
+
+print_size_of_model(model)
+print_size_of_model(quantized_model)
+</code></pre><p>Out:</p>
+<pre><code>Size (MB): 113.941574
+Size (MB): 76.807204
+</code></pre><p>&#x5176;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;&#x66F4;&#x5FEB;&#x7684;&#x63A8;&#x65AD;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x8BC4;&#x4F30;&#x635F;&#x5931;&#x6CA1;&#x6709;&#x5DEE;&#x5F02;&#xFF1A;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x7531;&#x4E8E;&#x91CF;&#x5316;&#x6A21;&#x578B;&#x8FD0;&#x884C;&#x5355;&#x7EBF;&#x7A0B;&#xFF0C;&#x56E0;&#x6B64;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x6BD4;&#x8F83;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x4E3A; 1&#x3002;</p>
+<pre><code>torch.set_num_threads(1)
+
+def time_model_evaluation(model, test_data):
+    s = time.time()
+    loss = evaluate(model, test_data)
+    elapsed = time.time() - s
+    print(&apos;&apos;&apos;loss: {0:.3f}\nelapsed time (seconds): {1:.1f}&apos;&apos;&apos;.format(loss, elapsed))
+
+time_model_evaluation(model, test_data)
+time_model_evaluation(quantized_model, test_data)
+</code></pre><p>Out:</p>
+<pre><code>loss: 5.167
+elapsed time (seconds): 233.9
+loss: 5.168
+elapsed time (seconds): 164.9
+</code></pre><p>&#x5728; MacBook Pro &#x4E0A;&#x672C;&#x5730;&#x8FD0;&#x884C;&#x6B64;&#x7A0B;&#x5E8F;&#xFF0C;&#x65E0;&#x9700;&#x8FDB;&#x884C;&#x91CF;&#x5316;&#xFF0C;&#x63A8;&#x7406;&#x5927;&#x7EA6;&#x9700;&#x8981; 200 &#x79D2;&#xFF0C;&#x800C;&#x8FDB;&#x884C;&#x91CF;&#x5316;&#x5219;&#x53EA;&#x9700;&#x5927;&#x7EA6; 100 &#x79D2;&#x3002;</p>
+<h2 id="&#x7ED3;&#x8BBA;">&#x7ED3;&#x8BBA;</h2>
+<p>&#x52A8;&#x6001;&#x91CF;&#x5316;&#x53EF;&#x80FD;&#x662F;&#x51CF;&#x5C0F;&#x6A21;&#x578B;&#x5927;&#x5C0F;&#x7684;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x5BF9;&#x7CBE;&#x5EA6;&#x7684;&#x5F71;&#x54CD;&#x6709;&#x9650;&#x3002;</p>
+<p>&#x8C22;&#x8C22;&#x9605;&#x8BFB;&#xFF01; &#x4E0E;&#x5F80;&#x5E38;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x6B22;&#x8FCE;&#x60A8;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x53CD;&#x9988;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x5728;&#x6B64;&#x5904;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x95EE;&#x9898;<a href="https://github.com/pytorch/pytorch/issues" target="_blank">&#x3002;</a></p>
+<p><strong>&#x811A;&#x672C;&#x7684;&#x603B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF1A;</strong>(6 &#x5206;&#x949F; 43.291 &#x79D2;&#xFF09;</p>
+<p><a href="../_downloads/3fa656e39c210acc81b96b164a3da032/dynamic_quantization_tutorial.py"><code>Download Python source code: dynamic_quantization_tutorial.py</code></a> <a href="../_downloads/9387e74b1a614d9ed5642654e06b1728/dynamic_quantization_tutorial.ipynb"><code>Download Jupyter notebook: dynamic_quantization_tutorial.ipynb</code></a></p>
+<p><a href="https://sphinx-gallery.readthedocs.io" target="_blank">&#x7531;&#x72EE;&#x8EAB;&#x4EBA;&#x9762;&#x50CF;&#x753B;&#x5ECA;</a>&#x751F;&#x6210;&#x7684;&#x753B;&#x5ECA;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="45.html" class="navigation navigation-next navigation-unique" aria-label="Next page: (实验性）在 PyTorch 中使用 Eager 模式进行静态量化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LSTM Word 语言模型上的(实验）动态量化","level":"1.11.1","depth":2,"next":{"title":"(实验性）在 PyTorch 中使用 Eager 模式进行静态量化","level":"1.11.2","depth":2,"path":"45.md","ref":"45.md","articles":[]},"previous":{"title":"模型优化","level":"1.11","depth":1,"ref":"","articles":[{"title":"LSTM Word 语言模型上的(实验）动态量化","level":"1.11.1","depth":2,"path":"44.md","ref":"44.md","articles":[]},{"title":"(实验性）在 PyTorch 中使用 Eager 模式进行静态量化","level":"1.11.2","depth":2,"path":"45.md","ref":"45.md","articles":[]},{"title":"(实验性）计算机视觉教程的量化转移学习","level":"1.11.3","depth":2,"path":"46.md","ref":"46.md","articles":[]},{"title":"(实验）BERT 上的动态量化","level":"1.11.4","depth":2,"path":"47.md","ref":"47.md","articles":[]},{"title":"修剪教程","level":"1.11.5","depth":2,"path":"48.md","ref":"48.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.4"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"44.md","mtime":"2021-04-12T06:14:20.261Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:16:19.672Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

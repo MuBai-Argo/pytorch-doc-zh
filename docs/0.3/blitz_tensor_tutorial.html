@@ -1,0 +1,1570 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>PyTorch 是什么？ · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="blitz_autograd_tutorial.html" />
+    
+    
+    <link rel="prev" href="deep_learning_60min_blitz.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 0.3 中文文档 & 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="tut.html">
+            
+                <a href="tut.html">
+            
+                    
+                    中文教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="beginner_tutorials.html">
+            
+                <a href="beginner_tutorials.html">
+            
+                    
+                    初学者教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="deep_learning_60min_blitz.html">
+            
+                <a href="deep_learning_60min_blitz.html">
+            
+                    
+                    PyTorch 深度学习: 60 分钟极速入门教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1.1" data-path="blitz_tensor_tutorial.html">
+            
+                <a href="blitz_tensor_tutorial.html">
+            
+                    
+                    PyTorch 是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="blitz_autograd_tutorial.html">
+            
+                <a href="blitz_autograd_tutorial.html">
+            
+                    
+                    自动求导: 自动微分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="blitz_neural_networks_tutorial.html">
+            
+                <a href="blitz_neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.4" data-path="blitz_cifar10_tutorial.html">
+            
+                <a href="blitz_cifar10_tutorial.html">
+            
+                    
+                    训练一个分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.5" data-path="blitz_data_parallel_tutorial.html">
+            
+                <a href="blitz_data_parallel_tutorial.html">
+            
+                    
+                    可选: 数据并行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="former_torchies_tutorial.html">
+            
+                <a href="former_torchies_tutorial.html">
+            
+                    
+                    PyTorch for former Torch users
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="former_torchies_tensor_tutorial.html">
+            
+                <a href="former_torchies_tensor_tutorial.html">
+            
+                    
+                    Tensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="former_torchies_autograd_tutorial.html">
+            
+                <a href="former_torchies_autograd_tutorial.html">
+            
+                    
+                    Autograd (自动求导)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.3" data-path="former_torchies_nn_tutorial.html">
+            
+                <a href="former_torchies_nn_tutorial.html">
+            
+                    
+                    nn package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.4" data-path="former_torchies_parallelism_tutorial.html">
+            
+                <a href="former_torchies_parallelism_tutorial.html">
+            
+                    
+                    Multi-GPU examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="pytorch_with_examples.html">
+            
+                <a href="pytorch_with_examples.html">
+            
+                    
+                    跟着例子学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="pytorch_with_examples_warm-up-numpy.html">
+            
+                <a href="pytorch_with_examples_warm-up-numpy.html">
+            
+                    
+                    Warm-up: numpy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="pytorch_with_examples_pytorch-tensors.html">
+            
+                <a href="pytorch_with_examples_pytorch-tensors.html">
+            
+                    
+                    PyTorch: Tensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.3" data-path="pytorch_with_examples_pytorch-variables-and-autograd.html">
+            
+                <a href="pytorch_with_examples_pytorch-variables-and-autograd.html">
+            
+                    
+                    PyTorch: 变量和autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.4" data-path="pytorch_with_examples_pytorch-defining-new-autograd-functions.html">
+            
+                <a href="pytorch_with_examples_pytorch-defining-new-autograd-functions.html">
+            
+                    
+                    PyTorch: 定义新的autograd函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.5" data-path="pytorch_with_examples_tensorflow-static-graphs.html">
+            
+                <a href="pytorch_with_examples_tensorflow-static-graphs.html">
+            
+                    
+                    TensorFlow: 静态图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.6" data-path="pytorch_with_examples_pytorch-nn.html">
+            
+                <a href="pytorch_with_examples_pytorch-nn.html">
+            
+                    
+                    PyTorch: nn包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.7" data-path="pytorch_with_examples_pytorch-optim.html">
+            
+                <a href="pytorch_with_examples_pytorch-optim.html">
+            
+                    
+                    PyTorch: optim包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.8" data-path="pytorch_with_examples_pytorch-custom-nn-modules.html">
+            
+                <a href="pytorch_with_examples_pytorch-custom-nn-modules.html">
+            
+                    
+                    PyTorch: 定制化nn模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.9" data-path="pytorch_with_examples_pytorch-control-flow-weight-sharing.html">
+            
+                <a href="pytorch_with_examples_pytorch-control-flow-weight-sharing.html">
+            
+                    
+                    PyTorch: 动态控制流程 + 权重共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="transfer_learning_tutorial.html">
+            
+                <a href="transfer_learning_tutorial.html">
+            
+                    
+                    迁移学习教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="data_loading_tutorial.html">
+            
+                <a href="data_loading_tutorial.html">
+            
+                    
+                    数据加载和处理教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="deep_learning_nlp_tutorial.html">
+            
+                <a href="deep_learning_nlp_tutorial.html">
+            
+                    
+                    针对NLP的Pytorch深度学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.1" data-path="nlp_pytorch_tutorial.html">
+            
+                <a href="nlp_pytorch_tutorial.html">
+            
+                    
+                    PyTorch介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.2" data-path="nlp_deep_learning_tutorial.html">
+            
+                <a href="nlp_deep_learning_tutorial.html">
+            
+                    
+                    PyTorch深度学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3" data-path="nlp_word_embeddings_tutorial.html">
+            
+                <a href="nlp_word_embeddings_tutorial.html">
+            
+                    
+                    词汇嵌入:编码词汇语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.4" data-path="nlp_sequence_models_tutorial.html">
+            
+                <a href="nlp_sequence_models_tutorial.html">
+            
+                    
+                    序列模型和 LSTM 网络(长短记忆网络）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.5" data-path="nlp_advanced_tutorial.html">
+            
+                <a href="nlp_advanced_tutorial.html">
+            
+                    
+                    高级教程: 作出动态决策和 Bi-LSTM CRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="intermediate_tutorials.html">
+            
+                <a href="intermediate_tutorials.html">
+            
+                    
+                    中级教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="char_rnn_classification_tutorial.html">
+            
+                <a href="char_rnn_classification_tutorial.html">
+            
+                    
+                    用字符级RNN分类名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="char_rnn_generation_tutorial.html">
+            
+                <a href="char_rnn_generation_tutorial.html">
+            
+                    
+                    基与字符级RNN(Char-RNN）的人名生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="seq2seq_translation_tutorial.html">
+            
+                <a href="seq2seq_translation_tutorial.html">
+            
+                    
+                    用基于注意力机制的seq2seq神经网络进行翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="reinforcement_q_learning.html">
+            
+                <a href="reinforcement_q_learning.html">
+            
+                    
+                    强化学习(DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="dist_tuto.html">
+            
+                <a href="dist_tuto.html">
+            
+                    
+                    Writing Distributed Applications with PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="spatial_transformer_tutorial.html">
+            
+                <a href="spatial_transformer_tutorial.html">
+            
+                    
+                    空间转换网络 (Spatial Transformer Networks) 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="advanced_tutorials.html">
+            
+                <a href="advanced_tutorials.html">
+            
+                    
+                    高级教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="neural_style_tutorial.html">
+            
+                <a href="neural_style_tutorial.html">
+            
+                    
+                    用 PyTorch 做 神经转换 (Neural Transfer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="numpy_extensions_tutorial.html">
+            
+                <a href="numpy_extensions_tutorial.html">
+            
+                    
+                    使用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="super_resolution_with_caffe2.html">
+            
+                <a href="super_resolution_with_caffe2.html">
+            
+                    
+                    使用 ONNX 将模型从 PyTorch 迁移到 Caffe2 和 Mobile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="c_extension.html">
+            
+                <a href="c_extension.html">
+            
+                    
+                    为 pytorch 自定义 C 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="doc.html">
+            
+                <a href="doc.html">
+            
+                    
+                    中文文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="notes.html">
+            
+                <a href="notes.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="notes_autograd.html">
+            
+                <a href="notes_autograd.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="notes_broadcasting.html">
+            
+                <a href="notes_broadcasting.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="notes_cuda.html">
+            
+                <a href="notes_cuda.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="notes_extending.html">
+            
+                <a href="notes_extending.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="notes_multiprocessing.html">
+            
+                <a href="notes_multiprocessing.html">
+            
+                    
+                    多进程的最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="notes_serialization.html">
+            
+                <a href="notes_serialization.html">
+            
+                    
+                    序列化语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="package_reference.html">
+            
+                <a href="package_reference.html">
+            
+                    
+                    Package 参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="torch.html">
+            
+                <a href="torch.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="tensors.html">
+            
+                <a href="tensors.html">
+            
+                    
+                    torch.Tensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="sparse.html">
+            
+                <a href="sparse.html">
+            
+                    
+                    torch.sparse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="storage.html">
+            
+                <a href="storage.html">
+            
+                    
+                    torch.Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="nn.html">
+            
+                <a href="nn.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="optim.html">
+            
+                <a href="optim.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="autograd.html">
+            
+                <a href="autograd.html">
+            
+                    
+                    Automatic differentiation package - torch.autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="distributions.html">
+            
+                <a href="distributions.html">
+            
+                    
+                    Probability distributions - torch.distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="multiprocessing.html">
+            
+                <a href="multiprocessing.html">
+            
+                    
+                    Multiprocessing package - torch.multiprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="distributed.html">
+            
+                <a href="distributed.html">
+            
+                    
+                    Distributed communication package - torch.distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="legacy.html">
+            
+                <a href="legacy.html">
+            
+                    
+                    Legacy package - torch.legacy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="cuda.html">
+            
+                <a href="cuda.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="ffi.html">
+            
+                <a href="ffi.html">
+            
+                    
+                    torch.utils.ffi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="model_zoo.html">
+            
+                <a href="model_zoo.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="onnx.html">
+            
+                <a href="onnx.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="torchvision_reference.html">
+            
+                <a href="torchvision_reference.html">
+            
+                    
+                    torchvision 参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="torchvision.html">
+            
+                <a href="torchvision.html">
+            
+                    
+                    torchvision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="datasets.html">
+            
+                <a href="datasets.html">
+            
+                    
+                    torchvision.datasets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="models.html">
+            
+                <a href="models.html">
+            
+                    
+                    torchvision.models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="transforms.html">
+            
+                <a href="transforms.html">
+            
+                    
+                    torchvision.transforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="utils.html">
+            
+                <a href="utils.html">
+            
+                    
+                    torchvision.utils
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >PyTorch 是什么？</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pytorch-&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">PyTorch &#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h1>
+<blockquote>
+<p>&#x8BD1;&#x8005;&#xFF1A;<a href="https://github.com/VPrincekin" target="_blank">@&#x5C0F;&#x738B;&#x5B50;</a></p>
+<p>&#x6821;&#x5BF9;&#x8005;&#xFF1A;<a href="https://github.com/liziwenzzzz" target="_blank">@&#x674E;&#x5B50;&#x6587;</a></p>
+</blockquote>
+<p>&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Python &#x7684;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x5305;, &#x5176;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4E24;&#x7C7B;&#x573A;&#x666F;:</p>
+<ul>
+<li>NumPy &#x7684;&#x66FF;&#x4EE3;&#x54C1;, &#x4EE5;&#x4F7F;&#x7528; GPU &#x7684;&#x5F3A;&#x5927;&#x52A0;&#x901F;&#x529F;&#x80FD;</li>
+<li>&#x4E00;&#x4E2A;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7814;&#x7A76;&#x5E73;&#x53F0;, &#x63D0;&#x4F9B;&#x6700;&#x5927;&#x7684;&#x7075;&#x6D3B;&#x6027;&#x548C;&#x901F;&#x5EA6;</li>
+</ul>
+<h2 id="&#x65B0;&#x624B;&#x5165;&#x95E8;">&#x65B0;&#x624B;&#x5165;&#x95E8;</h2>
+<h3 id="tensors&#x5F20;&#x91CF;&#xFF09;">Tensors(&#x5F20;&#x91CF;&#xFF09;</h3>
+<p>Tensors &#x4E0E; NumPy &#x7684; ndarrays &#x975E;&#x5E38;&#x76F8;&#x4F3C;, &#x9664;&#x6B64;&#x4E4B;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x5728; GPU &#x4E0A;&#x4F7F;&#x7528;&#x5F20;&#x91CF;&#x6765;&#x52A0;&#x901F;&#x8BA1;&#x7B97;.</p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function
+<span class="hljs-keyword">import</span> torch
+</code></pre>
+<p>&#x6784;&#x5EFA;&#x4E00;&#x4E2A; 5x3 &#x7684;&#x77E9;&#x9635;, &#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;:</p>
+<pre><code class="lang-py">x = torch.Tensor(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)
+print(x)
+</code></pre>
+<p>&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x77E9;&#x9635;:</p>
+<pre><code class="lang-py">x = torch.rand(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)
+print(x)
+</code></pre>
+<p>&#x83B7;&#x5F97; size:</p>
+<pre><code class="lang-py">print(x.size())
+</code></pre>
+<p>&#x6CE8;&#x89E3;&#xFF1A;</p>
+<p><code>torch.Size</code> &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A; tuple(&#x5143;&#x7EC4;&#xFF09;, &#x6240;&#x4EE5;&#x5B83;&#x652F;&#x6301;&#x6240;&#x6709; tuple(&#x5143;&#x7EC4;&#xFF09;&#x7684;&#x64CD;&#x4F5C;.</p>
+<h3 id="&#x64CD;&#x4F5C;">&#x64CD;&#x4F5C;</h3>
+<p>&#x9488;&#x5BF9;&#x64CD;&#x4F5C;&#x6709;&#x8BB8;&#x591A;&#x8BED;&#x6CD5;. &#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;, &#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;.</p>
+<p>&#x52A0;&#x6CD5;: &#x8BED;&#x6CD5; 1</p>
+<pre><code class="lang-py">y = torch.rand(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)
+print(x + y)
+</code></pre>
+<p>&#x52A0;&#x6CD5;: &#x8BED;&#x6CD5; 2</p>
+<pre><code class="lang-py">print(torch.add(x, y))
+</code></pre>
+<p>&#x52A0;&#x6CD5;: &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8F93;&#x51FA; tensor &#x4F5C;&#x4E3A;&#x53C2;&#x6570;</p>
+<pre><code class="lang-py">result = torch.Tensor(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)
+torch.add(x, y, out = result)
+print(result)
+</code></pre>
+<p>&#x52A0;&#x6CD5;: in-place(&#x5C31;&#x5730;&#x64CD;&#x4F5C;&#xFF09;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># adds x to y</span>
+y.add_(x)
+print(y)
+</code></pre>
+<p>&#x6CE8;&#x89E3;&#xFF1A;</p>
+<p>&#x4EFB;&#x4F55;&#x6539;&#x53D8;&#x5F20;&#x91CF;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x90FD;&#x662F;&#x4EE5;&#x540E;&#x7F00; <code>_</code> &#x7ED3;&#x5C3E;&#x7684;. &#x4F8B;&#x5982;: <code>x.copy_(y)</code>, <code>x.t_()</code>, &#x5C06;&#x6539;&#x53D8;&#x5F20;&#x91CF; <code>x</code>.</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x7C7B;&#x4F3C;Numpy&#x7684;&#x7D22;&#x5F15;&#x6765;&#x5904;&#x7406;&#x6240;&#x6709;&#x7684;&#x5F20;&#x91CF;&#xFF01;</p>
+<pre><code class="lang-py">print(x[:, <span class="hljs-number">1</span>])
+</code></pre>
+<p>&#x6539;&#x53D8;&#x5927;&#x5C0F;: &#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x53BB;&#x6539;&#x53D8;tensor&#x7684;&#x5927;&#x5C0F;, &#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>torch.view</code>:</p>
+<pre><code class="lang-py">x = torch.randn(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>)
+y = x.view(<span class="hljs-number">16</span>)
+z = x.view(<span class="hljs-number">-1</span>, <span class="hljs-number">8</span>)  <span class="hljs-comment"># the size -1 is inferred from other dimensions</span>
+print(x.size(), y.size(), z.size())
+</code></pre>
+<p><strong>&#x7A0D;&#x5019;&#x9605;&#x8BFB;:</strong></p>
+<blockquote>
+<p>100+ Tensor &#x64CD;&#x4F5C;, &#x5305;&#x62EC;&#x6362;&#x4F4D;, &#x7D22;&#x5F15;, &#x5207;&#x7247;, &#x6570;&#x5B66;&#x8FD0;&#x7B97;, &#x7EBF;&#x6027;&#x4EE3;&#x6570;, &#x968F;&#x673A;&#x6570;, &#x7B49;&#x7B49;, &#x90FD;&#x5728; <a href="http://pytorch.apachecn.org/cn/docs/0.3.0/torch.html" target="_blank">&#x8FD9;&#x91CC;</a> &#x6709;&#x63CF;&#x8FF0;.</p>
+</blockquote>
+<h2 id="numpy-bridge">NumPy Bridge</h2>
+<p>&#x5C06;&#x4E00;&#x4E2A; Torch Tensor &#x8F6C;&#x6362;&#x4E3A; NumPy &#x6570;&#x7EC4;, &#x53CD;&#x4E4B;&#x4EA6;&#x7136;.</p>
+<p>Torch Tensor &#x548C; NumPy &#x6570;&#x7EC4;&#x5C06;&#x4F1A;&#x5171;&#x4EAB;&#x5B83;&#x4EEC;&#x7684;&#x5B9E;&#x9645;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;, &#x6539;&#x53D8;&#x4E00;&#x4E2A;&#x53E6;&#x4E00;&#x4E2A;&#x4E5F;&#x4F1A;&#x8DDF;&#x7740;&#x6539;&#x53D8;.</p>
+<h3 id="&#x8F6C;&#x6362;&#x4E00;&#x4E2A;-torch-tensor-&#x4E3A;-numpy-&#x6570;&#x7EC4;">&#x8F6C;&#x6362;&#x4E00;&#x4E2A; Torch Tensor &#x4E3A; NumPy &#x6570;&#x7EC4;</h3>
+<pre><code class="lang-py">a = torch.ones(<span class="hljs-number">5</span>)
+print(a)
+</code></pre>
+<pre><code class="lang-py">b = a.numpy()
+print(b)
+</code></pre>
+<p>&#x67E5;&#x770B; numpy &#x6570;&#x7EC4;&#x662F;&#x5982;&#x4F55;&#x6539;&#x53D8;&#x7684;.</p>
+<pre><code class="lang-py">a.add_(<span class="hljs-number">1</span>)
+print(a)
+print(b)
+</code></pre>
+<h3 id="&#x8F6C;&#x6362;-numpy-&#x6570;&#x7EC4;&#x4E3A;-torch-tensor">&#x8F6C;&#x6362; NumPy &#x6570;&#x7EC4;&#x4E3A; Torch Tensor</h3>
+<p>&#x770B;&#x770B;&#x6539;&#x53D8; np &#x6570;&#x7EC4;&#x4E4B;&#x540E; Torch Tensor &#x662F;&#x5982;&#x4F55;&#x81EA;&#x52A8;&#x6539;&#x53D8;&#x7684;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+a = np.ones(<span class="hljs-number">5</span>)
+b = torch.from_numpy(a)
+np.add(a, <span class="hljs-number">1</span>, out = a)
+print(a)
+print(b)
+</code></pre>
+<p>&#x9664;&#x4E86; CharTensor &#x4E4B;&#x5916;, CPU &#x4E0A;&#x7684;&#x6240;&#x6709; Tensor &#x90FD;&#x652F;&#x6301;&#x4E0E;Numpy&#x8FDB;&#x884C;&#x4E92;&#x76F8;&#x8F6C;&#x6362;</p>
+<h2 id="cuda-tensors">CUDA Tensors</h2>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>.cuda</code> &#x65B9;&#x6CD5;&#x5C06; Tensors &#x5728;GPU&#x4E0A;&#x8FD0;&#x884C;.</p>
+<pre><code class="lang-py"><span class="hljs-comment"># &#x53EA;&#x8981;&#x5728;  CUDA &#x662F;&#x53EF;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">if</span> torch.cuda.is_available():
+    x = x.cuda()
+    y = y.cuda()
+    x + y
+</code></pre>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="deep_learning_60min_blitz.html" class="navigation navigation-prev " aria-label="Previous page: PyTorch 深度学习: 60 分钟极速入门教程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="blitz_autograd_tutorial.html" class="navigation navigation-next " aria-label="Next page: 自动求导: 自动微分">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"PyTorch 是什么？","level":"1.2.1.1.1","depth":4,"next":{"title":"自动求导: 自动微分","level":"1.2.1.1.2","depth":4,"path":"blitz_autograd_tutorial.md","ref":"blitz_autograd_tutorial.md","articles":[]},"previous":{"title":"PyTorch 深度学习: 60 分钟极速入门教程","level":"1.2.1.1","depth":3,"path":"deep_learning_60min_blitz.md","ref":"deep_learning_60min_blitz.md","articles":[{"title":"PyTorch 是什么？","level":"1.2.1.1.1","depth":4,"path":"blitz_tensor_tutorial.md","ref":"blitz_tensor_tutorial.md","articles":[]},{"title":"自动求导: 自动微分","level":"1.2.1.1.2","depth":4,"path":"blitz_autograd_tutorial.md","ref":"blitz_autograd_tutorial.md","articles":[]},{"title":"神经网络","level":"1.2.1.1.3","depth":4,"path":"blitz_neural_networks_tutorial.md","ref":"blitz_neural_networks_tutorial.md","articles":[]},{"title":"训练一个分类器","level":"1.2.1.1.4","depth":4,"path":"blitz_cifar10_tutorial.md","ref":"blitz_cifar10_tutorial.md","articles":[]},{"title":"可选: 数据并行","level":"1.2.1.1.5","depth":4,"path":"blitz_data_parallel_tutorial.md","ref":"blitz_data_parallel_tutorial.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/0.3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"blitz_tensor_tutorial.md","mtime":"2021-04-12T06:14:20.173Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:15:33.033Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

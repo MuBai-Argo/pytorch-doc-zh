@@ -1,0 +1,2009 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>DCGAN 教程 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="23.html" />
+    
+    
+    <link rel="prev" href="21.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 中文官方教程 1.7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.html">
+            
+                <a href="01.html">
+            
+                    
+                    学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="02.html">
+            
+                <a href="02.html">
+            
+                    
+                    PyTorch 深度学习：60 分钟的突击
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="03.html">
+            
+                <a href="03.html">
+            
+                    
+                    张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="04.html">
+            
+                <a href="04.html">
+            
+                    
+                    torch.autograd的简要介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="05.html">
+            
+                <a href="05.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="06.html">
+            
+                <a href="06.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="07.html">
+            
+                <a href="07.html">
+            
+                    
+                    通过示例学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="08.html">
+            
+                <a href="08.html">
+            
+                    
+                    热身：NumPy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="09.html">
+            
+                <a href="09.html">
+            
+                    
+                    PyTorch：张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    PyTorch：张量和 Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    PyTorch：定义新的 Autograd 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    PyTorch：nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    PyTorch：optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="14.html">
+            
+                <a href="14.html">
+            
+                    
+                    PyTorch：自定义nn模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    PyTorch：控制流 + 权重共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="16.html">
+            
+                <a href="16.html">
+            
+                    
+                    torch.nn到底是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    使用 TensorBoard 可视化模型，数据和训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    图片/视频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    torchvision对象检测微调教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    计算机视觉的迁移学习教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    对抗示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    DCGAN 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="23.html">
+            
+                <a href="23.html">
+            
+                    
+                    音频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="24.html">
+            
+                <a href="24.html">
+            
+                    
+                    音频 I/O 和torchaudio的预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="25.html">
+            
+                <a href="25.html">
+            
+                    
+                    使用torchaudio的语音命令识别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="26.html">
+            
+                <a href="26.html">
+            
+                    
+                    文本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="27.html">
+            
+                <a href="27.html">
+            
+                    
+                    使用nn.Transformer和torchtext的序列到序列建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="28.html">
+            
+                <a href="28.html">
+            
+                    
+                    从零开始的 NLP：使用字符级 RNN 分类名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="29.html">
+            
+                <a href="29.html">
+            
+                    
+                    从零开始的 NLP：使用字符级 RNN 生成名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="30.html">
+            
+                <a href="30.html">
+            
+                    
+                    从零开始的 NLP：使用序列到序列网络和注意力的翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    使用torchtext的文本分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="32.html">
+            
+                <a href="32.html">
+            
+                    
+                    torchtext语言翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="33.html">
+            
+                <a href="33.html">
+            
+                    
+                    强化学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="34.html">
+            
+                <a href="34.html">
+            
+                    
+                    强化学习（DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="35.html">
+            
+                <a href="35.html">
+            
+                    
+                    训练玩马里奥的 RL 智能体
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    在生产中部署 PyTorch 模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="37.html">
+            
+                <a href="37.html">
+            
+                    
+                    通过使用 Flask 的 REST API 在 Python 中部署 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="38.html">
+            
+                <a href="38.html">
+            
+                    
+                    TorchScript 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="39.html">
+            
+                <a href="39.html">
+            
+                    
+                    在 C++ 中加载 TorchScript 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="40.html">
+            
+                <a href="40.html">
+            
+                    
+                    将模型从 PyTorch 导出到 ONNX 并使用 ONNX 运行时运行它（可选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="41.html">
+            
+                <a href="41.html">
+            
+                    
+                    前端 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="42.html">
+            
+                <a href="42.html">
+            
+                    
+                    PyTorch 中的命名张量简介（原型）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="43.html">
+            
+                <a href="43.html">
+            
+                    
+                    PyTorch 中通道在最后的内存格式（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="44.html">
+            
+                <a href="44.html">
+            
+                    
+                    使用 PyTorch C++ 前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="45.html">
+            
+                <a href="45.html">
+            
+                    
+                    自定义 C++ 和 CUDA 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="46.html">
+            
+                <a href="46.html">
+            
+                    
+                    使用自定义 C++ 运算符扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="47.html">
+            
+                <a href="47.html">
+            
+                    
+                    使用自定义 C++ 类扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="48.html">
+            
+                <a href="48.html">
+            
+                    
+                    TorchScript 中的动态并行性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="49.html">
+            
+                <a href="49.html">
+            
+                    
+                    C++ 前端中的 Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="50.html">
+            
+                <a href="50.html">
+            
+                    
+                    在 C++ 中注册调度运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="51.html">
+            
+                <a href="51.html">
+            
+                    
+                    模型优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="52.html">
+            
+                <a href="52.html">
+            
+                    
+                    分析您的 PyTorch 模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="53.html">
+            
+                <a href="53.html">
+            
+                    
+                    使用 Ray Tune 的超参数调整
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="54.html">
+            
+                <a href="54.html">
+            
+                    
+                    模型剪裁教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="55.html">
+            
+                <a href="55.html">
+            
+                    
+                    LSTM 单词语言模型上的动态量化（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="56.html">
+            
+                <a href="56.html">
+            
+                    
+                    BERT 上的动态量化（Beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="57.html">
+            
+                <a href="57.html">
+            
+                    
+                    PyTorch 中使用 Eager 模式的静态量化（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="58.html">
+            
+                <a href="58.html">
+            
+                    
+                    计算机视觉的量化迁移学习教程（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="59.html">
+            
+                <a href="59.html">
+            
+                    
+                    并行和分布式训练
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="60.html">
+            
+                <a href="60.html">
+            
+                    
+                    PyTorch 分布式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="61.html">
+            
+                <a href="61.html">
+            
+                    
+                    单机模型并行最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="62.html">
+            
+                <a href="62.html">
+            
+                    
+                    分布式数据并行入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="63.html">
+            
+                <a href="63.html">
+            
+                    
+                    用 PyTorch 编写分布式应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="64.html">
+            
+                <a href="64.html">
+            
+                    
+                    分布式 RPC 框架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="65.html">
+            
+                <a href="65.html">
+            
+                    
+                    使用分布式 RPC 框架实现参数服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="66.html">
+            
+                <a href="66.html">
+            
+                    
+                    使用 RPC 的分布式管道并行化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="67.html">
+            
+                <a href="67.html">
+            
+                    
+                    使用异步执行实现批量 RPC 处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="68.html">
+            
+                <a href="68.html">
+            
+                    
+                    将分布式DataParallel与分布式 RPC 框架相结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >DCGAN 教程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dcgan-&#x6559;&#x7A0B;">DCGAN &#x6559;&#x7A0B;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A;<a href="https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html" target="_blank">https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html</a></p>
+</blockquote>
+<p><strong>&#x4F5C;&#x8005;</strong>&#xFF1A; <a href="https://github.com/inkawhich" target="_blank">Nathan Inkawhich</a></p>
+<h2 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h2>
+<p>&#x672C;&#x6559;&#x7A0B;&#x5C06;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x5BF9; DCGAN &#x8FDB;&#x884C;&#x4ECB;&#x7ECD;&#x3002; &#x5728;&#x5411;&#x5176;&#x5C55;&#x793A;&#x8BB8;&#x591A;&#x771F;&#x5B9E;&#x540D;&#x4EBA;&#x7684;&#x7167;&#x7247;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BAD;&#x7EC3;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x5BF9;&#x6297;&#x7F51;&#x7EDC;&#xFF08;GAN&#xFF09;&#x6765;&#x4EA7;&#x751F;&#x65B0;&#x540D;&#x4EBA;&#x3002; &#x6B64;&#x5904;&#x7684;&#x5927;&#x591A;&#x6570;&#x4EE3;&#x7801;&#x6765;&#x81EA;<a href="https://github.com/pytorch/examples" target="_blank"><code>pytorch/examples</code></a>&#x4E2D;&#x7684; dcgan &#x5B9E;&#x73B0;&#xFF0C;&#x5E76;&#x4E14;&#x672C;&#x6587;&#x6863;&#x5C06;&#x5BF9;&#x8BE5;&#x5B9E;&#x73B0;&#x8FDB;&#x884C;&#x8BE6;&#x5C3D;&#x7684;&#x89E3;&#x91CA;&#xFF0C;&#x5E76;&#x9610;&#x660E;&#x6B64;&#x6A21;&#x578B;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x548C;&#x539F;&#x56E0;&#x3002; &#x4F46;&#x8BF7;&#x653E;&#x5FC3;&#xFF0C;&#x4E0D;&#x9700;&#x8981; GAN &#x7684;&#x5148;&#x9A8C;&#x77E5;&#x8BC6;&#xFF0C;&#x4F46;&#x8FD9;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x65B0;&#x624B;&#x82B1;&#x4E00;&#x4E9B;&#x65F6;&#x95F4;&#x6765;&#x63A8;&#x7406;&#x5E55;&#x540E;&#x5B9E;&#x9645;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#x3002; &#x540C;&#x6837;&#xFF0C;&#x4E3A;&#x4E86;&#x8282;&#x7701;&#x65F6;&#x95F4;&#xFF0C;&#x62E5;&#x6709;&#x4E00;&#x4E24;&#x4E2A; GPU &#x4E5F;&#x5C06;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x3002;</p>
+<h2 id="&#x751F;&#x6210;&#x5BF9;&#x6297;&#x7F51;&#x7EDC;">&#x751F;&#x6210;&#x5BF9;&#x6297;&#x7F51;&#x7EDC;</h2>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;-gan&#xFF1F;">&#x4EC0;&#x4E48;&#x662F; GAN&#xFF1F;</h3>
+<p>GAN &#x662F;&#x7528;&#x4E8E;&#x6559;&#x6388; DL &#x6A21;&#x578B;&#x4EE5;&#x6355;&#x83B7;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x5206;&#x5E03;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x540C;&#x4E00;&#x5206;&#x5E03;&#x4E2D;&#x751F;&#x6210;&#x65B0;&#x6570;&#x636E;&#x3002; GAN &#x7531; Ian Goodfellow &#x4E8E; 2014 &#x5E74;&#x53D1;&#x660E;&#xFF0C;&#x5E76;&#x5728;&#x8BBA;&#x6587;<a href="https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf" target="_blank">&#x300A;&#x751F;&#x6210;&#x5BF9;&#x6297;&#x7F51;&#x7EDC;&#x300B;</a>&#x4E2D;&#x9996;&#x6B21;&#x8FDB;&#x884C;&#x4E86;&#x63CF;&#x8FF0;&#x3002; &#x5B83;&#x4EEC;&#x7531;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x578B;&#x7EC4;&#x6210;&#xFF1A;<em>&#x751F;&#x6210;&#x5668;</em>&#x548C;<em>&#x5224;&#x522B;&#x5668;</em>&#x3002; &#x751F;&#x6210;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x662F;&#x751F;&#x6210;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8BAD;&#x7EC3;&#x56FE;&#x50CF;&#x7684;&#x201C;&#x5047;&#x201D;&#x56FE;&#x50CF;&#x3002; &#x5224;&#x522B;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x662F;&#x67E5;&#x770B;&#x56FE;&#x50CF;&#x5E76;&#x4ECE;&#x751F;&#x6210;&#x5668;&#x8F93;&#x51FA;&#x5B83;&#x662F;&#x771F;&#x5B9E;&#x7684;&#x8BAD;&#x7EC3;&#x56FE;&#x50CF;&#x8FD8;&#x662F;&#x4F2A;&#x56FE;&#x50CF;&#x3002; &#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x751F;&#x6210;&#x5668;&#x4E0D;&#x65AD;&#x5C1D;&#x8BD5;&#x901A;&#x8FC7;&#x751F;&#x6210;&#x8D8A;&#x6765;&#x8D8A;&#x597D;&#x7684;&#x4F2A;&#x9020;&#x54C1;&#x800C;&#x4F7F;&#x5224;&#x522B;&#x5668;&#x7684;&#x8868;&#x73B0;&#x8D85;&#x8FC7;&#x667A;&#x8005;&#xFF0C;&#x800C;&#x5224;&#x522B;&#x5668;&#x6B63;&#x5728;&#x52AA;&#x529B;&#x6210;&#x4E3A;&#x66F4;&#x597D;&#x7684;&#x4FA6;&#x63A2;&#x5E76;&#x6B63;&#x786E;&#x5730;&#x5BF9;&#x771F;&#x5B9E;&#x548C;&#x4F2A;&#x9020;&#x56FE;&#x50CF;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002; &#x535A;&#x5F08;&#x7684;&#x5E73;&#x8861;&#x70B9;&#x662F;&#x5F53;&#x751F;&#x6210;&#x5668;&#x751F;&#x6210;&#x7684;&#x4F2A;&#x9020;&#x54C1;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x76F4;&#x63A5;&#x6765;&#x81EA;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x800C;&#x5224;&#x522B;&#x5668;&#x5219;&#x603B;&#x662F;&#x731C;&#x6D4B;&#x751F;&#x6210;&#x5668;&#x8F93;&#x51FA;&#x662F;&#x771F;&#x5B9E;&#x8FD8;&#x662F;&#x4F2A;&#x9020;&#x54C1;&#x7684; 50% &#x7F6E;&#x4FE1;&#x5EA6;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x4ECE;&#x5224;&#x522B;&#x5668;&#x5F00;&#x59CB;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x5728;&#x6574;&#x4E2A;&#x6559;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x7B26;&#x53F7;&#x3002; &#x4EE4;<code>x</code>&#x4E3A;&#x4EE3;&#x8868;&#x56FE;&#x50CF;&#x7684;&#x6570;&#x636E;&#x3002; <code>D(x)</code>&#x662F;&#x5224;&#x522B;&#x5668;&#x7F51;&#x7EDC;&#xFF0C;&#x5176;&#x8F93;&#x51FA;<code>x</code>&#x6765;&#x81EA;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x800C;&#x4E0D;&#x662F;&#x751F;&#x6210;&#x5668;&#x7684;&#xFF08;&#x6807;&#x91CF;&#xFF09;&#x6982;&#x7387;&#x3002; &#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x8981;&#x5904;&#x7406;&#x56FE;&#x50CF;&#xFF0C;&#x56E0;&#x6B64;<code>D(x)</code>&#x7684;&#x8F93;&#x5165;&#x662F; CHW &#x5927;&#x5C0F;&#x4E3A;<code>3x64x64</code>&#x7684;&#x56FE;&#x50CF;&#x3002; &#x76F4;&#x89C2;&#x5730;&#xFF0C;&#x5F53;<code>x</code>&#x6765;&#x81EA;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x65F6;&#xFF0C;<code>D(x)</code>&#x5E94;&#x8BE5;&#x4E3A;&#x9AD8;&#xFF0C;&#x800C;&#x5F53;<code>x</code>&#x6765;&#x81EA;&#x751F;&#x6210;&#x5668;&#x65F6;&#xFF0C;&#x5B83;&#x5E94;&#x8BE5;&#x4E3A;&#x4F4E;&#x3002; <code>D(x)</code>&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4F20;&#x7EDF;&#x7684;&#x4E8C;&#x5206;&#x7C7B;&#x5668;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x751F;&#x6210;&#x5668;&#x7684;&#x8868;&#x793A;&#x6CD5;&#xFF0C;&#x4EE4;<code>z</code>&#x662F;&#x4ECE;&#x6807;&#x51C6;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x4E2D;&#x91C7;&#x6837;&#x7684;&#x6F5C;&#x5728;&#x7A7A;&#x95F4;&#x5411;&#x91CF;&#x3002; <code>G(z)</code>&#x8868;&#x793A;&#x5C06;&#x9690;&#x5411;&#x91CF;<code>z</code>&#x6620;&#x5C04;&#x5230;&#x6570;&#x636E;&#x7A7A;&#x95F4;&#x7684;&#x751F;&#x6210;&#x5668;&#x51FD;&#x6570;&#x3002; <code>G</code>&#x7684;&#x76EE;&#x6807;&#x662F;&#x4F30;&#x8BA1;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x6765;&#x81EA;<code>p_data</code>&#x7684;&#x5206;&#x5E03;&#xFF0C;&#x4EE5;&#x4FBF;&#x5B83;&#x53EF;&#x4EE5;&#x4ECE;&#x8BE5;&#x4F30;&#x8BA1;&#x5206;&#x5E03;&#xFF08;<code>p_g</code>&#xFF09;&#x751F;&#x6210;&#x5047;&#x6837;&#x672C;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;<code>D(G(z))</code>&#x662F;&#x751F;&#x6210;&#x5668;<code>G</code>&#x7684;&#x8F93;&#x51FA;&#x662F;&#x771F;&#x5B9E;&#x56FE;&#x50CF;&#x7684;&#x6982;&#x7387;&#xFF08;&#x6807;&#x91CF;&#xFF09;&#x3002; &#x5982; <a href="https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf" target="_blank">Goodfellow &#x7684;&#x8BBA;&#x6587;</a>&#x4E2D;&#x6240;&#x8FF0;&#xFF0C;<code>D</code>&#x548C;<code>G</code>&#x73A9;&#x4E00;&#x4E2A; minimax &#x6E38;&#x620F;&#xFF0C;&#x5176;&#x4E2D;<code>D</code>&#x8BD5;&#x56FE;&#x6700;&#x5927;&#x5316;&#x5176;&#x6B63;&#x786E;&#x5206;&#x7C7B;&#x5B9E;&#x7269;&#x548C;&#x5047;&#x7269;<code>log D(x)</code>&#xFF0C;&#x5E76;&#x4E14;<code>G</code>&#x5C1D;&#x8BD5;&#x6700;&#x5C0F;&#x5316;<code>D</code>&#x9884;&#x6D4B;&#x5176;&#x8F93;&#x51FA;&#x4E3A;&#x5047;&#x7684;&#x6982;&#x7387;<code>log(1 - D(G(g(x))))</code>&#x3002; &#x4ECE;&#x672C;&#x6587;&#x6765;&#x770B;&#xFF0C;GAN &#x635F;&#x5931;&#x51FD;&#x6570;&#x4E3A;</p>
+<p><img src="img/tex22-1.gif" alt=""></p>
+<p>&#x4ECE;&#x7406;&#x8BBA;&#x4E0A;&#x8BB2;&#xFF0C;&#x6B64;&#x6781;&#x5C0F;&#x6781;&#x5927;&#x6E38;&#x620F;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;<code>p_g = p_data</code>&#xFF0C;&#x5224;&#x522B;&#x5668;&#x4F1A;&#x968F;&#x673A;&#x731C;&#x6D4B;&#x8F93;&#x5165;&#x662F;&#x771F;&#x5B9E;&#x7684;&#x8FD8;&#x662F;&#x5047;&#x7684;&#x3002; &#x4F46;&#x662F;&#xFF0C;GAN &#x7684;&#x6536;&#x655B;&#x7406;&#x8BBA;&#x4ECD;&#x5728;&#x79EF;&#x6781;&#x7814;&#x7A76;&#x4E2D;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6A21;&#x578B;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x80FD;&#x8FBE;&#x5230;&#x8FD9;&#x4E00;&#x76EE;&#x7684;&#x3002;</p>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;-dcgan&#xFF1F;">&#x4EC0;&#x4E48;&#x662F; DCGAN&#xFF1F;</h3>
+<p>DCGAN &#x662F;&#x4E0A;&#x8FF0; GAN &#x7684;&#x76F4;&#x63A5;&#x6269;&#x5C55;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#xFF0C;DCGAN &#x5206;&#x522B;&#x5728;&#x5224;&#x522B;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;&#x4E2D;&#x5206;&#x522B;&#x4F7F;&#x7528;&#x5377;&#x79EF;&#x548C;&#x5377;&#x79EF;&#x8F6C;&#x7F6E;&#x5C42;&#x3002; &#x5B83;&#x6700;&#x65E9;&#x7531; Radford &#x7B49;&#x4EBA;&#xFF0C;&#x5728;&#x8BBA;&#x6587;<a href="https://arxiv.org/pdf/1511.06434.pdf" target="_blank">&#x300A;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6;&#x5377;&#x79EF;&#x751F;&#x6210;&#x5BF9;&#x6297;&#x7F51;&#x7EDC;&#x7684;&#x65E0;&#x76D1;&#x7763;&#x8868;&#x793A;&#x5B66;&#x4E60;&#x300B;</a>&#x4E2D;&#x63CF;&#x8FF0;&#x3002; &#x5224;&#x522B;&#x5668;&#x7531;&#x5206;&#x5C42;&#x7684;<a href="https://pytorch.org/docs/stable/nn.html#torch.nn.Conv2d" target="_blank">&#x5377;&#x79EF;&#x5C42;</a>&#xFF0C;<a href="https://pytorch.org/docs/stable/nn.html#torch.nn.BatchNorm2d" target="_blank">&#x6279;&#x91CF;&#x89C4;&#x8303;&#x5C42;</a>&#x548C; <a href="https://pytorch.org/docs/stable/nn.html#torch.nn.LeakyReLU" target="_blank">LeakyReLU</a> &#x6FC0;&#x6D3B;&#x7EC4;&#x6210;&#x3002; &#x8F93;&#x5165;&#x662F;<code>3x64x64</code>&#x7684;&#x8F93;&#x5165;&#x56FE;&#x50CF;&#xFF0C;&#x8F93;&#x51FA;&#x662F;&#x8F93;&#x5165;&#x6765;&#x81EA;&#x771F;&#x5B9E;&#x6570;&#x636E;&#x5206;&#x5E03;&#x7684;&#x6807;&#x91CF;&#x6982;&#x7387;&#x3002; &#x751F;&#x6210;&#x5668;&#x7531;<a href="https://pytorch.org/docs/stable/nn.html#torch.nn.ConvTranspose2d" target="_blank">&#x8F6C;&#x7F6E;&#x5377;&#x79EF;&#x5C42;</a>&#xFF0C;&#x6279;&#x91CF;&#x89C4;&#x8303;&#x5C42;&#x548C; <a href="https://pytorch.org/docs/stable/nn.html#relu" target="_blank">ReLU</a> &#x6FC0;&#x6D3B;&#x7EC4;&#x6210;&#x3002; &#x8F93;&#x5165;&#x662F;&#x4ECE;&#x6807;&#x51C6;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x4E2D;&#x63D0;&#x53D6;&#x7684;&#x6F5C;&#x5411;&#x91CF;<code>z</code>&#xFF0C;&#x8F93;&#x51FA;&#x662F;<code>3x64x64</code> RGB &#x56FE;&#x50CF;&#x3002; &#x8DE8;&#x6B65;&#x7684;&#x8F6C;&#x7F6E;&#x5C42;&#x4F7F;&#x6F5C;&#x5411;&#x91CF;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x5177;&#x6709;&#x4E0E;&#x56FE;&#x50CF;&#x76F8;&#x540C;&#x5F62;&#x72B6;&#x7684;&#x4F53;&#x79EF;&#x3002; &#x5728;&#x672C;&#x6587;&#x4E2D;&#xFF0C;&#x4F5C;&#x8005;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x5173;&#x5982;&#x4F55;&#x8BBE;&#x7F6E;&#x4F18;&#x5316;&#x5668;&#xFF0C;&#x5982;&#x4F55;&#x8BA1;&#x7B97;&#x635F;&#x5931;&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x521D;&#x59CB;&#x5316;&#x6A21;&#x578B;&#x6743;&#x91CD;&#x7684;&#x63D0;&#x793A;&#xFF0C;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x90FD;&#x5C06;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x90E8;&#x5206;&#x4E2D;&#x8FDB;&#x884C;&#x89E3;&#x91CA;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function
+<span class="hljs-comment">#%matplotlib inline</span>
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> random
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.parallel
+<span class="hljs-keyword">import</span> torch.backends.cudnn <span class="hljs-keyword">as</span> cudnn
+<span class="hljs-keyword">import</span> torch.optim <span class="hljs-keyword">as</span> optim
+<span class="hljs-keyword">import</span> torch.utils.data
+<span class="hljs-keyword">import</span> torchvision.datasets <span class="hljs-keyword">as</span> dset
+<span class="hljs-keyword">import</span> torchvision.transforms <span class="hljs-keyword">as</span> transforms
+<span class="hljs-keyword">import</span> torchvision.utils <span class="hljs-keyword">as</span> vutils
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> matplotlib.animation <span class="hljs-keyword">as</span> animation
+<span class="hljs-keyword">from</span> IPython.display <span class="hljs-keyword">import</span> HTML
+
+<span class="hljs-comment"># Set random seed for reproducibility</span>
+manualSeed = <span class="hljs-number">999</span>
+<span class="hljs-comment">#manualSeed = random.randint(1, 10000) # use if you want new results</span>
+print(<span class="hljs-string">&quot;Random Seed: &quot;</span>, manualSeed)
+random.seed(manualSeed)
+torch.manual_seed(manualSeed)
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">Random Seed:  <span class="hljs-number">999</span>
+</code></pre>
+<h2 id="&#x8F93;&#x5165;">&#x8F93;&#x5165;</h2>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x4E3A;&#x8DD1;&#x6B65;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x8F93;&#x5165;&#xFF1A;</p>
+<ul>
+<li><code>dataroot</code>-&#x6570;&#x636E;&#x96C6;&#x6587;&#x4EF6;&#x5939;&#x6839;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x8282;&#x4E2D;&#x8FDB;&#x4E00;&#x6B65;&#x8BA8;&#x8BBA;&#x6570;&#x636E;&#x96C6;</li>
+<li><code>worker</code>-&#x4F7F;&#x7528;<code>DataLoader</code>&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x6570;</li>
+<li><code>batch_size</code>-&#x8BAD;&#x7EC3;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6279;&#x91CF;&#x5927;&#x5C0F;&#x3002; DCGAN &#x7EB8;&#x4F7F;&#x7528;&#x7684;&#x6279;&#x91CF;&#x5927;&#x5C0F;&#x4E3A; 128</li>
+<li><code>image_size</code>-&#x7528;&#x4E8E;&#x8BAD;&#x7EC3;&#x7684;&#x56FE;&#x50CF;&#x7684;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#x3002; &#x6B64;&#x5B9E;&#x73B0;&#x9ED8;&#x8BA4;&#x4E3A;<code>64x64</code>&#x3002; &#x5982;&#x679C;&#x9700;&#x8981;&#x5176;&#x4ED6;&#x5C3A;&#x5BF8;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x66F4;&#x6539;<code>D</code>&#x548C;<code>G</code>&#x7684;&#x7ED3;&#x6784;&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="https://github.com/pytorch/examples/issues/70" target="_blank">&#x6B64;&#x5904;</a>&#x3002;</li>
+<li><code>nc</code>-&#x8F93;&#x5165;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x5F69;&#x8272;&#x901A;&#x9053;&#x6570;&#x3002; &#x5BF9;&#x4E8E;&#x5F69;&#x8272;&#x56FE;&#x50CF;&#xFF0C;&#x8FD9;&#x662F; 3</li>
+<li><code>nz</code>-&#x6F5C;&#x5411;&#x91CF;&#x7684;&#x957F;&#x5EA6;</li>
+<li><code>ngf</code>-&#x4E0E;&#x901A;&#x8FC7;&#x751F;&#x6210;&#x5668;&#x4F20;&#x9001;&#x7684;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x7684;&#x6DF1;&#x5EA6;&#x6709;&#x5173;</li>
+<li><code>ndf</code>-&#x8BBE;&#x7F6E;&#x901A;&#x8FC7;&#x5224;&#x522B;&#x5668;&#x4F20;&#x64AD;&#x7684;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x7684;&#x6DF1;&#x5EA6;</li>
+<li><code>num_epochs</code>-&#x8981;&#x8FD0;&#x884C;&#x7684;&#x8BAD;&#x7EC3;&#x5468;&#x671F;&#x6570;&#x3002; &#x8BAD;&#x7EC3;&#x66F4;&#x957F;&#x7684;&#x65F6;&#x95F4;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x66F4;&#x597D;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4F46;&#x4E5F;&#x4F1A;&#x82B1;&#x8D39;&#x66F4;&#x957F;&#x7684;&#x65F6;&#x95F4;</li>
+<li><code>lr</code>-&#x8BAD;&#x7EC3;&#x7684;&#x5B66;&#x4E60;&#x7387;&#x3002; &#x5982; DCGAN &#x6587;&#x4EF6;&#x4E2D;&#x6240;&#x8FF0;&#xFF0C;&#x6B64;&#x6570;&#x5B57;&#x5E94;&#x4E3A; 0.0002</li>
+<li><code>beta1</code>-Adam &#x4F18;&#x5316;&#x5668;&#x7684;<code>beta1</code>&#x8D85;&#x53C2;&#x6570;&#x3002; &#x5982;&#x8BBA;&#x6587;&#x6240;&#x8FF0;&#xFF0C;&#x8BE5;&#x6570;&#x5B57;&#x5E94;&#x4E3A; 0.5</li>
+<li><code>ngpu</code>-&#x53EF;&#x7528;&#x7684; GPU &#x6570;&#x91CF;&#x3002; &#x5982;&#x679C;&#x4E3A; 0&#xFF0C;&#x5219;&#x4EE3;&#x7801;&#x5C06;&#x5728; CPU &#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C;&#x3002; &#x5982;&#x679C;&#x6B64;&#x6570;&#x5B57;&#x5927;&#x4E8E; 0&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x8BE5;&#x6570;&#x91CF;&#x7684; GPU &#x4E0A;&#x8FD0;&#x884C;</li>
+</ul>
+<pre><code class="lang-py"><span class="hljs-comment"># Root directory for dataset</span>
+dataroot = <span class="hljs-string">&quot;data/celeba&quot;</span>
+
+<span class="hljs-comment"># Number of workers for dataloader</span>
+workers = <span class="hljs-number">2</span>
+
+<span class="hljs-comment"># Batch size during training</span>
+batch_size = <span class="hljs-number">128</span>
+
+<span class="hljs-comment"># Spatial size of training images. All images will be resized to this</span>
+<span class="hljs-comment">#   size using a transformer.</span>
+image_size = <span class="hljs-number">64</span>
+
+<span class="hljs-comment"># Number of channels in the training images. For color images this is 3</span>
+nc = <span class="hljs-number">3</span>
+
+<span class="hljs-comment"># Size of z latent vector (i.e. size of generator input)</span>
+nz = <span class="hljs-number">100</span>
+
+<span class="hljs-comment"># Size of feature maps in generator</span>
+ngf = <span class="hljs-number">64</span>
+
+<span class="hljs-comment"># Size of feature maps in discriminator</span>
+ndf = <span class="hljs-number">64</span>
+
+<span class="hljs-comment"># Number of training epochs</span>
+num_epochs = <span class="hljs-number">5</span>
+
+<span class="hljs-comment"># Learning rate for optimizers</span>
+lr = <span class="hljs-number">0.0002</span>
+
+<span class="hljs-comment"># Beta1 hyperparam for Adam optimizers</span>
+beta1 = <span class="hljs-number">0.5</span>
+
+<span class="hljs-comment"># Number of GPUs available. Use 0 for CPU mode.</span>
+ngpu = <span class="hljs-number">1</span>
+</code></pre>
+<h2 id="&#x6570;&#x636E;">&#x6570;&#x636E;</h2>
+<p>&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528; <a href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">Celeb-A Faces &#x6570;&#x636E;&#x96C6;</a>&#xFF0C;&#x8BE5;&#x6570;&#x636E;&#x96C6;&#x53EF;&#x5728;&#x94FE;&#x63A5;&#x7684;&#x7AD9;&#x70B9;&#x6216; <a href="https://drive.google.com/drive/folders/0B7EVK8r0v71pTUZsaXdaSnZBZzg" target="_blank">Google &#x4E91;&#x7AEF;&#x786C;&#x76D8;</a>&#x4E2D;&#x4E0B;&#x8F7D;&#x3002; &#x6570;&#x636E;&#x96C6;&#x5C06;&#x4E0B;&#x8F7D;&#x4E3A;&#x540D;&#x4E3A;<code>img_align_celeba.zip</code>&#x7684;&#x6587;&#x4EF6;&#x3002; &#x4E0B;&#x8F7D;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>celeba</code>&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x5C06; zip &#x6587;&#x4EF6;&#x89E3;&#x538B;&#x7F29;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x4E2D;&#x3002; &#x7136;&#x540E;&#xFF0C;&#x5C06;&#x6B64;&#x7B14;&#x8BB0;&#x672C;&#x7684;<code>dataroot</code>&#x8F93;&#x5165;&#x8BBE;&#x7F6E;&#x4E3A;&#x521A;&#x521B;&#x5EFA;&#x7684;<code>celeba</code>&#x76EE;&#x5F55;&#x3002; &#x7ED3;&#x679C;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5E94;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-py">/path/to/celeba
+    -&gt; img_align_celeba
+        -&gt; 188242.jpg
+        -&gt; 173822.jpg
+        -&gt; 284702.jpg
+        -&gt; 537394.jpg
+           ...
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x6B65;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;<code>ImageFolder</code>&#x6570;&#x636E;&#x96C6;&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x8981;&#x6C42;&#x6570;&#x636E;&#x96C6;&#x7684;&#x6839;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x6709;&#x5B50;&#x76EE;&#x5F55;&#x3002; &#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x5C06;&#x8BBE;&#x5907;&#x8BBE;&#x7F6E;&#x4E3A;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x6700;&#x7EC8;&#x53EF;&#x89C6;&#x5316;&#x4E00;&#x4E9B;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># We can use an image folder dataset the way we have it setup.</span>
+<span class="hljs-comment"># Create the dataset</span>
+dataset = dset.ImageFolder(root=dataroot,
+                           transform=transforms.Compose([
+                               transforms.Resize(image_size),
+                               transforms.CenterCrop(image_size),
+                               transforms.ToTensor(),
+                               transforms.Normalize((<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>), (<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>)),
+                           ]))
+<span class="hljs-comment"># Create the dataloader</span>
+dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size,
+                                         shuffle=<span class="hljs-keyword">True</span>, num_workers=workers)
+
+<span class="hljs-comment"># Decide which device we want to run on</span>
+device = torch.device(<span class="hljs-string">&quot;cuda:0&quot;</span> <span class="hljs-keyword">if</span> (torch.cuda.is_available() <span class="hljs-keyword">and</span> ngpu &gt; <span class="hljs-number">0</span>) <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)
+
+<span class="hljs-comment"># Plot some training images</span>
+real_batch = next(iter(dataloader))
+plt.figure(figsize=(<span class="hljs-number">8</span>,<span class="hljs-number">8</span>))
+plt.axis(<span class="hljs-string">&quot;off&quot;</span>)
+plt.title(<span class="hljs-string">&quot;Training Images&quot;</span>)
+plt.imshow(np.transpose(vutils.make_grid(real_batch[<span class="hljs-number">0</span>].to(device)[:<span class="hljs-number">64</span>], padding=<span class="hljs-number">2</span>, normalize=<span class="hljs-keyword">True</span>).cpu(),(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>)))
+</code></pre>
+<p><img src="img/04fb3a8ed8e63cf7cffb5f29224decca.png" alt="../_img/sphx_glr_dcgan_faces_tutorial_001.png"></p>
+<h2 id="&#x5B9E;&#x73B0;">&#x5B9E;&#x73B0;</h2>
+<p>&#x8BBE;&#x7F6E;&#x597D;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x5E76;&#x51C6;&#x5907;&#x597D;&#x6570;&#x636E;&#x96C6;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x5B9E;&#x73B0;&#x4E86;&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x6743;&#x91CD;&#x521D;&#x59CB;&#x5316;&#x7B56;&#x7565;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x5224;&#x522B;&#x5668;&#xFF0C;&#x635F;&#x5931;&#x51FD;&#x6570;&#x548C;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#x3002;</p>
+<h3 id="&#x6743;&#x91CD;&#x521D;&#x59CB;&#x5316;">&#x6743;&#x91CD;&#x521D;&#x59CB;&#x5316;</h3>
+<p>&#x5728; DCGAN &#x8BBA;&#x6587;&#x4E2D;&#xFF0C;&#x4F5C;&#x8005;&#x6307;&#x5B9A;&#x6240;&#x6709;&#x6A21;&#x578B;&#x6743;&#x91CD;&#x5747;&#x5E94;&#x4ECE;&#x5747;&#x503C;&#x4E3A; 0&#xFF0C;<code>stdev = 0.02</code>&#x7684;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x4E2D;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#x3002; <code>weights_init</code>&#x51FD;&#x6570;&#x91C7;&#x7528;&#x5DF2;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6A21;&#x578B;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316;&#x6240;&#x6709;&#x5377;&#x79EF;&#xFF0C;&#x5377;&#x79EF;&#x8F6C;&#x7F6E;&#x548C;&#x6279;&#x91CF;&#x5F52;&#x4E00;&#x5316;&#x5C42;&#x4EE5;&#x6EE1;&#x8DB3;&#x6B64;&#x6807;&#x51C6;&#x3002; &#x521D;&#x59CB;&#x5316;&#x540E;&#x7ACB;&#x5373;&#x5C06;&#x6B64;&#x51FD;&#x6570;&#x5E94;&#x7528;&#x4E8E;&#x6A21;&#x578B;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># custom weights initialization called on netG and netD</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">weights_init</span><span class="hljs-params">(m)</span>:</span>
+    classname = m.__class__.__name__
+    <span class="hljs-keyword">if</span> classname.find(<span class="hljs-string">&apos;Conv&apos;</span>) != <span class="hljs-number">-1</span>:
+        nn.init.normal_(m.weight.data, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.02</span>)
+    <span class="hljs-keyword">elif</span> classname.find(<span class="hljs-string">&apos;BatchNorm&apos;</span>) != <span class="hljs-number">-1</span>:
+        nn.init.normal_(m.weight.data, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.02</span>)
+        nn.init.constant_(m.bias.data, <span class="hljs-number">0</span>)
+</code></pre>
+<h3 id="&#x751F;&#x6210;&#x5668;">&#x751F;&#x6210;&#x5668;</h3>
+<p>&#x751F;&#x6210;&#x5668;<code>G</code>&#x7528;&#x4E8E;&#x5C06;&#x6F5C;&#x5728;&#x7A7A;&#x95F4;&#x5411;&#x91CF;&#xFF08;<code>z</code>&#xFF09;&#x6620;&#x5C04;&#x5230;&#x6570;&#x636E;&#x7A7A;&#x95F4;&#x3002; &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x6570;&#x636E;&#x662F;&#x56FE;&#x50CF;&#xFF0C;&#x56E0;&#x6B64;&#x5C06;<code>z</code>&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x636E;&#x7A7A;&#x95F4;&#x610F;&#x5473;&#x7740;&#x6700;&#x7EC8;&#x521B;&#x5EFA;&#x4E0E;&#x8BAD;&#x7EC3;&#x56FE;&#x50CF;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#x7684; RGB &#x56FE;&#x50CF;&#xFF08;&#x5373;<code>3x64x64</code>&#xFF09;&#x3002; &#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#xFF0C;&#x8FD9;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x8DE8;&#x6B65;&#x7684;&#x4E8C;&#x7EF4;&#x5377;&#x79EF;&#x8F6C;&#x7F6E;&#x5C42;&#x6765;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x5C42;&#x90FD;&#x4E0E; 2d &#x6279;&#x91CF;&#x89C4;&#x8303;&#x5C42;&#x548C; relu &#x6FC0;&#x6D3B;&#x914D;&#x5BF9;&#x3002; &#x751F;&#x6210;&#x5668;&#x7684;&#x8F93;&#x51FA;&#x901A;&#x8FC7; tanh &#x51FD;&#x6570;&#x9988;&#x9001;&#xFF0C;&#x4EE5;&#x4F7F;&#x5176;&#x8FD4;&#x56DE;&#x5230;&#x8F93;&#x5165;&#x6570;&#x636E;&#x8303;&#x56F4;<code>[-1,1]</code>&#x3002; &#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x5377;&#x79EF;&#x8F6C;&#x7F6E;&#x5C42;&#x4E4B;&#x540E;&#x5B58;&#x5728;&#x6279;&#x91CF;&#x89C4;&#x8303;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F; DCGAN &#x8BBA;&#x6587;&#x7684;&#x5173;&#x952E;&#x8D21;&#x732E;&#x3002; &#x8FD9;&#x4E9B;&#x5C42;&#x6709;&#x52A9;&#x4E8E;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x68AF;&#x5EA6;&#x6D41;&#x52A8;&#x3002; DCGAN &#x7EB8;&#x751F;&#x6210;&#x7684;&#x56FE;&#x50CF;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/85974d98be6202902f21ce274418953f.png" alt="dcgan_generator"></p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8F93;&#x5165;&#x90E8;&#x5206;&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x8F93;&#x5165;&#xFF08;<code>nz</code>&#xFF0C;<code>ngf</code>&#x548C;<code>nc</code>&#xFF09;&#x5982;&#x4F55;&#x5F71;&#x54CD;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x751F;&#x6210;&#x5668;&#x67B6;&#x6784;&#x3002; <code>nz</code>&#x662F;<code>z</code>&#x8F93;&#x5165;&#x5411;&#x91CF;&#x7684;&#x957F;&#x5EA6;&#xFF0C;<code>ngf</code>&#x4E0E;&#x901A;&#x8FC7;&#x751F;&#x6210;&#x5668;&#x4F20;&#x64AD;&#x7684;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x7684;&#x5927;&#x5C0F;&#x6709;&#x5173;&#xFF0C; <code>nc</code>&#x662F;&#x8F93;&#x51FA;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x901A;&#x9053;&#xFF08;&#x5BF9;&#x4E8E; RGB &#x56FE;&#x50CF;&#x8BBE;&#x7F6E;&#x4E3A; 3&#xFF09;&#x3002; &#x4E0B;&#x9762;&#x662F;&#x751F;&#x6210;&#x5668;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Generator Code</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Generator</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, ngpu)</span>:</span>
+        super(Generator, self).__init__()
+        self.ngpu = ngpu
+        self.main = nn.Sequential(
+            <span class="hljs-comment"># input is Z, going into a convolution</span>
+            nn.ConvTranspose2d( nz, ngf * <span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.BatchNorm2d(ngf * <span class="hljs-number">8</span>),
+            nn.ReLU(<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ngf*8) x 4 x 4</span>
+            nn.ConvTranspose2d(ngf * <span class="hljs-number">8</span>, ngf * <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.BatchNorm2d(ngf * <span class="hljs-number">4</span>),
+            nn.ReLU(<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ngf*4) x 8 x 8</span>
+            nn.ConvTranspose2d( ngf * <span class="hljs-number">4</span>, ngf * <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.BatchNorm2d(ngf * <span class="hljs-number">2</span>),
+            nn.ReLU(<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ngf*2) x 16 x 16</span>
+            nn.ConvTranspose2d( ngf * <span class="hljs-number">2</span>, ngf, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.BatchNorm2d(ngf),
+            nn.ReLU(<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ngf) x 32 x 32</span>
+            nn.ConvTranspose2d( ngf, nc, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.Tanh()
+            <span class="hljs-comment"># state size. (nc) x 64 x 64</span>
+        )
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, input)</span>:</span>
+        <span class="hljs-keyword">return</span> self.main(input)
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x4F8B;&#x5316;&#x751F;&#x6210;&#x5668;&#x5E76;&#x5E94;&#x7528;<code>weights_init</code>&#x51FD;&#x6570;&#x3002; &#x7B7E;&#x51FA;&#x6253;&#x5370;&#x7684;&#x6A21;&#x578B;&#x4EE5;&#x67E5;&#x770B;&#x751F;&#x6210;&#x5668;&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Create the generator</span>
+netG = Generator(ngpu).to(device)
+
+<span class="hljs-comment"># Handle multi-gpu if desired</span>
+<span class="hljs-keyword">if</span> (device.type == <span class="hljs-string">&apos;cuda&apos;</span>) <span class="hljs-keyword">and</span> (ngpu &gt; <span class="hljs-number">1</span>):
+    netG = nn.DataParallel(netG, list(range(ngpu)))
+
+<span class="hljs-comment"># Apply the weights_init function to randomly initialize all weights</span>
+<span class="hljs-comment">#  to mean=0, stdev=0.2.</span>
+netG.apply(weights_init)
+
+<span class="hljs-comment"># Print the model</span>
+print(netG)
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">Generator(
+  (main): Sequential(
+    (<span class="hljs-number">0</span>): ConvTranspose2d(<span class="hljs-number">100</span>, <span class="hljs-number">512</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">1</span>): BatchNorm2d(<span class="hljs-number">512</span>, eps=<span class="hljs-number">1e-05</span>, momentum=<span class="hljs-number">0.1</span>, affine=<span class="hljs-keyword">True</span>, track_running_stats=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">2</span>): ReLU(inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">3</span>): ConvTranspose2d(<span class="hljs-number">512</span>, <span class="hljs-number">256</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">4</span>): BatchNorm2d(<span class="hljs-number">256</span>, eps=<span class="hljs-number">1e-05</span>, momentum=<span class="hljs-number">0.1</span>, affine=<span class="hljs-keyword">True</span>, track_running_stats=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">5</span>): ReLU(inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">6</span>): ConvTranspose2d(<span class="hljs-number">256</span>, <span class="hljs-number">128</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">7</span>): BatchNorm2d(<span class="hljs-number">128</span>, eps=<span class="hljs-number">1e-05</span>, momentum=<span class="hljs-number">0.1</span>, affine=<span class="hljs-keyword">True</span>, track_running_stats=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">8</span>): ReLU(inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">9</span>): ConvTranspose2d(<span class="hljs-number">128</span>, <span class="hljs-number">64</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">10</span>): BatchNorm2d(<span class="hljs-number">64</span>, eps=<span class="hljs-number">1e-05</span>, momentum=<span class="hljs-number">0.1</span>, affine=<span class="hljs-keyword">True</span>, track_running_stats=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">11</span>): ReLU(inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">12</span>): ConvTranspose2d(<span class="hljs-number">64</span>, <span class="hljs-number">3</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">13</span>): Tanh()
+  )
+)
+</code></pre>
+<h3 id="&#x5224;&#x522B;&#x5668;">&#x5224;&#x522B;&#x5668;</h3>
+<p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x5224;&#x522B;&#x5668;<code>D</code>&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x5206;&#x7C7B;&#x7F51;&#x7EDC;&#xFF0C;&#x5C06;&#x56FE;&#x50CF;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x5E76;&#x8F93;&#x51FA;&#x6807;&#x91CF;&#x6982;&#x7387;&#xFF0C;&#x5373;&#x8F93;&#x5165;&#x56FE;&#x50CF;&#x662F;&#x771F;&#x5B9E;&#x7684;&#xFF08;&#x4E0E;&#x5047;&#x7684;&#x76F8;&#x5BF9;&#xFF09;&#x3002; &#x5728;&#x8FD9;&#x91CC;&#xFF0C;<code>D</code>&#x62CD;&#x6444;<code>3x64x64</code>&#x7684;&#x8F93;&#x5165;&#x56FE;&#x50CF;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x7684;<code>Conv2d</code>&#xFF0C;<code>BatchNorm2d</code>&#x548C;<code>LeakyReLU</code>&#x5C42;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7; Sigmoid &#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x8F93;&#x51FA;&#x6700;&#x7EC8;&#x6982;&#x7387;&#x3002; &#x5982;&#x679C;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x66F4;&#x591A;&#x5C42;&#x6269;&#x5C55;&#x6B64;&#x67B6;&#x6784;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x8DE8;&#x6B65;&#x5377;&#x79EF;&#xFF0C;<code>BatchNorm</code>&#x548C;<code>LeakyReLU</code>&#x4ECD;&#x7136;&#x5F88;&#x91CD;&#x8981;&#x3002; DCGAN &#x8BBA;&#x6587;&#x63D0;&#x5230;&#xFF0C;&#x4F7F;&#x7528;&#x8DE8;&#x6B65;&#x5377;&#x79EF;&#x800C;&#x4E0D;&#x662F;&#x901A;&#x8FC7;&#x6C60;&#x5316;&#x6765;&#x8FDB;&#x884C;&#x4E0B;&#x91C7;&#x6837;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x4E60;&#x60EF;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x4EE5;&#x8BA9;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x81EA;&#x5DF1;&#x7684;&#x6C60;&#x5316;&#x7279;&#x5F81;&#x3002; &#x6279;&#x91CF;&#x89C4;&#x8303;&#x548C;&#x6CC4;&#x6F0F; ReLU &#x51FD;&#x6570;&#x8FD8;&#x53EF;&#x4EE5;&#x4FC3;&#x8FDB;&#x5065;&#x5EB7;&#x7684;&#x68AF;&#x5EA6;&#x6D41;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;<code>G</code>&#x548C;<code>D</code>&#x7684;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x90FD;&#x662F;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#x3002;</p>
+<p>&#x9274;&#x522B;&#x7801;</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Discriminator</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, ngpu)</span>:</span>
+        super(Discriminator, self).__init__()
+        self.ngpu = ngpu
+        self.main = nn.Sequential(
+            <span class="hljs-comment"># input is (nc) x 64 x 64</span>
+            nn.Conv2d(nc, ndf, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.LeakyReLU(<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ndf) x 32 x 32</span>
+            nn.Conv2d(ndf, ndf * <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.BatchNorm2d(ndf * <span class="hljs-number">2</span>),
+            nn.LeakyReLU(<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ndf*2) x 16 x 16</span>
+            nn.Conv2d(ndf * <span class="hljs-number">2</span>, ndf * <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.BatchNorm2d(ndf * <span class="hljs-number">4</span>),
+            nn.LeakyReLU(<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ndf*4) x 8 x 8</span>
+            nn.Conv2d(ndf * <span class="hljs-number">4</span>, ndf * <span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.BatchNorm2d(ndf * <span class="hljs-number">8</span>),
+            nn.LeakyReLU(<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>),
+            <span class="hljs-comment"># state size. (ndf*8) x 4 x 4</span>
+            nn.Conv2d(ndf * <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, bias=<span class="hljs-keyword">False</span>),
+            nn.Sigmoid()
+        )
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, input)</span>:</span>
+        <span class="hljs-keyword">return</span> self.main(input)
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x4E0E;&#x751F;&#x6210;&#x5668;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x5224;&#x522B;&#x5668;&#xFF0C;&#x5E94;&#x7528;<code>weights_init</code>&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x6253;&#x5370;&#x6A21;&#x578B;&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Create the Discriminator</span>
+netD = Discriminator(ngpu).to(device)
+
+<span class="hljs-comment"># Handle multi-gpu if desired</span>
+<span class="hljs-keyword">if</span> (device.type == <span class="hljs-string">&apos;cuda&apos;</span>) <span class="hljs-keyword">and</span> (ngpu &gt; <span class="hljs-number">1</span>):
+    netD = nn.DataParallel(netD, list(range(ngpu)))
+
+<span class="hljs-comment"># Apply the weights_init function to randomly initialize all weights</span>
+<span class="hljs-comment">#  to mean=0, stdev=0.2.</span>
+netD.apply(weights_init)
+
+<span class="hljs-comment"># Print the model</span>
+print(netD)
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">Discriminator(
+  (main): Sequential(
+    (<span class="hljs-number">0</span>): Conv2d(<span class="hljs-number">3</span>, <span class="hljs-number">64</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">1</span>): LeakyReLU(negative_slope=<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">2</span>): Conv2d(<span class="hljs-number">64</span>, <span class="hljs-number">128</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">3</span>): BatchNorm2d(<span class="hljs-number">128</span>, eps=<span class="hljs-number">1e-05</span>, momentum=<span class="hljs-number">0.1</span>, affine=<span class="hljs-keyword">True</span>, track_running_stats=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">4</span>): LeakyReLU(negative_slope=<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">5</span>): Conv2d(<span class="hljs-number">128</span>, <span class="hljs-number">256</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">6</span>): BatchNorm2d(<span class="hljs-number">256</span>, eps=<span class="hljs-number">1e-05</span>, momentum=<span class="hljs-number">0.1</span>, affine=<span class="hljs-keyword">True</span>, track_running_stats=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">7</span>): LeakyReLU(negative_slope=<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">8</span>): Conv2d(<span class="hljs-number">256</span>, <span class="hljs-number">512</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), padding=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">9</span>): BatchNorm2d(<span class="hljs-number">512</span>, eps=<span class="hljs-number">1e-05</span>, momentum=<span class="hljs-number">0.1</span>, affine=<span class="hljs-keyword">True</span>, track_running_stats=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">10</span>): LeakyReLU(negative_slope=<span class="hljs-number">0.2</span>, inplace=<span class="hljs-keyword">True</span>)
+    (<span class="hljs-number">11</span>): Conv2d(<span class="hljs-number">512</span>, <span class="hljs-number">1</span>, kernel_size=(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), stride=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), bias=<span class="hljs-keyword">False</span>)
+    (<span class="hljs-number">12</span>): Sigmoid()
+  )
+)
+</code></pre>
+<h3 id="&#x635F;&#x5931;&#x51FD;&#x6570;&#x548C;&#x4F18;&#x5316;&#x5668;">&#x635F;&#x5931;&#x51FD;&#x6570;&#x548C;&#x4F18;&#x5316;&#x5668;</h3>
+<p>&#x4F7F;&#x7528;<code>D</code>&#x548C;<code>G</code>&#x8BBE;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5B83;&#x4EEC;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x635F;&#x5931;&#x51FD;&#x6570;&#x548C;&#x4F18;&#x5316;&#x5668;&#x5B66;&#x4E60;&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x5728; PyTorch &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4EA4;&#x53C9;&#x71B5;&#x635F;&#x5931;&#xFF08;<a href="https://pytorch.org/docs/stable/nn.html#torch.nn.BCELoss" target="_blank">BCELoss</a>&#xFF09;&#x51FD;&#x6570;&#xFF1A;</p>
+<p><img src="img/tex22-2.gif" alt=""></p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6B64;&#x51FD;&#x6570;&#x5982;&#x4F55;&#x63D0;&#x4F9B;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x4E2D;&#x4E24;&#x4E2A;&#x5BF9;&#x6570;&#x5206;&#x91CF;&#x7684;&#x8BA1;&#x7B97;&#xFF08;&#x5373;<code>log D(x)</code>&#x548C;<code>log(1 - D(G(z)))</code>&#xFF09;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;<code>y</code>&#x8F93;&#x5165;&#x4F7F;&#x7528; BCE &#x65B9;&#x7A0B;&#x7684;&#x54EA;&#x4E00;&#x90E8;&#x5206;&#x3002; &#x8FD9;&#x662F;&#x5728;&#x5373;&#x5C06;&#x5230;&#x6765;&#x7684;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#x4E2D;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x4F46;&#x91CD;&#x8981;&#x7684;&#x662F;&#x8981;&#x4E86;&#x89E3;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4EC5;&#x901A;&#x8FC7;&#x66F4;&#x6539;<code>y</code>&#xFF08;&#x5373;<code>GT</code>&#x6807;&#x7B7E;&#xFF09;&#x5373;&#x53EF;&#x9009;&#x62E9;&#x5E0C;&#x671B;&#x8BA1;&#x7B97;&#x7684;&#x5206;&#x91CF;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B9E;&#x9645;&#x6807;&#x7B7E;&#x5B9A;&#x4E49;&#x4E3A; 1&#xFF0C;&#x5C06;&#x5047;&#x6807;&#x7B7E;&#x5B9A;&#x4E49;&#x4E3A; 0&#x3002;&#x8FD9;&#x4E9B;&#x6807;&#x7B7E;&#x5C06;&#x5728;&#x8BA1;&#x7B97;<code>D</code>&#x548C;<code>G</code>&#x7684;&#x635F;&#x5931;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F; GAN &#x539F;&#x59CB;&#x8BBA;&#x6587;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x60EF;&#x4F8B; &#x3002; &#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E86;&#x4E24;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x4F18;&#x5316;&#x5668;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;<code>D</code>&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;<code>G</code>&#x3002; &#x5982; DCGAN &#x8BBA;&#x6587;&#x4E2D;&#x6240;&#x6307;&#x5B9A;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x90FD;&#x662F;&#x5B66;&#x4E60;&#x901F;&#x5EA6;&#x4E3A; 0.0002 &#x548C;<code>Beta1 = 0.5</code>&#x7684; Adam &#x4F18;&#x5316;&#x5668;&#x3002; &#x4E3A;&#x4E86;&#x8DDF;&#x8E2A;&#x751F;&#x6210;&#x5668;&#x7684;&#x5B66;&#x4E60;&#x8FDB;&#x5EA6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x751F;&#x6210;&#x4E00;&#x6279;&#x56FA;&#x5B9A;&#x7684;&#x6F5C;&#x5728;&#x5411;&#x91CF;&#xFF0C;&#x8FD9;&#x4E9B;&#x5411;&#x91CF;&#x662F;&#x4ECE;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF08;&#x5373;<code>fixed_noise</code>&#xFF09;&#x4E2D;&#x63D0;&#x53D6;&#x7684;&#x3002; &#x5728;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B9A;&#x671F;&#x5C06;&#x6B64;<code>fixed_noise</code>&#x8F93;&#x5165;&#x5230;<code>G</code>&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x5230;&#x56FE;&#x50CF;&#x5F62;&#x6210;&#x4E8E;&#x566A;&#x58F0;&#x4E4B;&#x5916;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Initialize BCELoss function</span>
+criterion = nn.BCELoss()
+
+<span class="hljs-comment"># Create batch of latent vectors that we will use to visualize</span>
+<span class="hljs-comment">#  the progression of the generator</span>
+fixed_noise = torch.randn(<span class="hljs-number">64</span>, nz, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, device=device)
+
+<span class="hljs-comment"># Establish convention for real and fake labels during training</span>
+real_label = <span class="hljs-number">1.</span>
+fake_label = <span class="hljs-number">0.</span>
+
+<span class="hljs-comment"># Setup Adam optimizers for both G and D</span>
+optimizerD = optim.Adam(netD.parameters(), lr=lr, betas=(beta1, <span class="hljs-number">0.999</span>))
+optimizerG = optim.Adam(netG.parameters(), lr=lr, betas=(beta1, <span class="hljs-number">0.999</span>))
+</code></pre>
+<h3 id="&#x8BAD;&#x7EC3;">&#x8BAD;&#x7EC3;</h3>
+<p>&#x6700;&#x540E;&#xFF0C;&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x4E86; GAN &#x6846;&#x67B6;&#x7684;&#x6240;&#x6709;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8BAD;&#x7EC3; GAN &#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x827A;&#x672F;&#x5F62;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4F1A;&#x5BFC;&#x81F4;&#x6A21;&#x5F0F;&#x5D29;&#x6E83;&#xFF0C;&#x800C;&#x5BF9;&#x5931;&#x8D25;&#x7684;&#x539F;&#x56E0;&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x89E3;&#x91CA;&#x3002; &#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E25;&#x683C;&#x9075;&#x5FAA; Goodfellow &#x8BBA;&#x6587;&#x4E2D;&#x7684;&#x7B97;&#x6CD5; 1&#xFF0C;&#x540C;&#x65F6;&#x9075;&#x5B88;<a href="https://github.com/soumith/ganhacks" target="_blank"><code>ganhacks</code></a>&#x4E2D;&#x663E;&#x793A;&#x7684;&#x4E00;&#x4E9B;&#x6700;&#x4F73;&#x505A;&#x6CD5;&#x3002; &#x5373;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x201C;&#x4E3A;&#x771F;&#x5B9E;&#x548C;&#x4F2A;&#x9020;&#x6784;&#x5EFA;&#x4E0D;&#x540C;&#x7684;&#x5C0F;&#x6279;&#x91CF;&#x201D;&#x56FE;&#x50CF;&#xFF0C;&#x5E76;&#x8C03;&#x6574;<code>G</code>&#x7684;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x4EE5;&#x6700;&#x5927;&#x5316;<code>log D(G(z))</code>&#x3002; &#x8BAD;&#x7EC3;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x90E8;&#x5206;&#x3002; &#x7B2C; 1 &#x90E8;&#x5206;&#x66F4;&#x65B0;&#x4E86;&#x5224;&#x522B;&#x5668;&#xFF0C;&#x7B2C; 2 &#x90E8;&#x5206;&#x66F4;&#x65B0;&#x4E86;&#x751F;&#x6210;&#x5668;&#x3002;</p>
+<p><strong>&#x7B2C; 1 &#x90E8;&#x5206;-&#x8BAD;&#x7EC3;&#x5224;&#x522B;&#x5668;</strong></p>
+<p>&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x8BAD;&#x7EC3;&#x5224;&#x522B;&#x5668;&#x7684;&#x76EE;&#x7684;&#x662F;&#x6700;&#x5927;&#x7A0B;&#x5EA6;&#x5730;&#x63D0;&#x9AD8;&#x5C06;&#x7ED9;&#x5B9A;&#x8F93;&#x5165;&#x6B63;&#x786E;&#x5206;&#x7C7B;&#x4E3A;&#x771F;&#x5B9E;&#x6216;&#x4F2A;&#x9020;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x3002; &#x5C31;&#x53E4;&#x5FB7;&#x8D39;&#x7F57;&#x800C;&#x8A00;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x201C;&#x901A;&#x8FC7;&#x63D0;&#x9AD8;&#x5176;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x6765;&#x66F4;&#x65B0;&#x5224;&#x522B;&#x5668;&#x201D;&#x3002; &#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6700;&#x5927;&#x5316;<code>log D(x) + log(1 - D(G(z))</code>&#x3002; &#x7531;&#x4E8E; ganhacks &#x63D0;&#x51FA;&#x4E86;&#x5355;&#x72EC;&#x7684;&#x5C0F;&#x6279;&#x91CF;&#x5EFA;&#x8BAE;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5C06;&#x5206;&#x4E24;&#x6B65;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002; &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x6784;&#x9020;&#x4E00;&#x6279;&#x771F;&#x5B9E;&#x6837;&#x672C;&#xFF0C;&#x5411;&#x524D;&#x901A;&#x8FC7;<code>D</code>&#xFF0C;&#x8BA1;&#x7B97;&#x635F;&#x5931;&#xFF08;<code>log D(x)</code>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5411;&#x540E;&#x901A;&#x8FC7;&#x4E2D;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x3002; &#x5176;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x751F;&#x6210;&#x5668;&#x6784;&#x9020;&#x4E00;&#x6279;&#x5047;&#x6837;&#x672C;&#xFF0C;&#x5C06;&#x8FD9;&#x6279;&#x4F2A;&#x9020;&#x901A;&#x8FC7;<code>D</code>&#xFF0C;&#x8BA1;&#x7B97;&#x635F;&#x5931;&#xFF08;<code>log(1 - D(G(z)))</code>&#xFF09;&#xFF0C;&#x7136;&#x540E;<em>&#x53CD;&#x5411;&#x7D2F;&#x79EF;</em>&#x68AF;&#x5EA6;&#x3002; &#x73B0;&#x5728;&#xFF0C;&#x5229;&#x7528;&#x5168;&#x6279;&#x91CF;&#x548C;&#x5168;&#x6279;&#x91CF;&#x7684;&#x7D2F;&#x79EF;&#x68AF;&#x5EA6;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x5224;&#x522B;&#x5668;&#x4F18;&#x5316;&#x7A0B;&#x5E8F;&#x7684;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x3002;</p>
+<p><strong>&#x7B2C; 2 &#x90E8;&#x5206;-&#x8BAD;&#x7EC3;&#x751F;&#x6210;&#x5668;</strong></p>
+<p>&#x5982;&#x539F;&#x59CB;&#x8BBA;&#x6587;&#x6240;&#x8FF0;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x901A;&#x8FC7;&#x6700;&#x5C0F;&#x5316;<code>log(1 - D(G(z)))</code>&#x6765;&#x8BAD;&#x7EC3;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x4EE5;&#x4EA7;&#x751F;&#x66F4;&#x597D;&#x7684;&#x5047;&#x8D27;&#x3002; &#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;Goodfellow &#x8BC1;&#x660E;&#x8FD9;&#x4E0D;&#x80FD;&#x63D0;&#x4F9B;&#x8DB3;&#x591F;&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5728;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x7684;&#x65E9;&#x671F;&#x3002; &#x4F5C;&#x4E3A;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x6700;&#x5927;&#x5316;<code>log D(G(z))</code>&#x3002; &#x5728;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x6765;&#x5B9E;&#x73B0;&#x6B64;&#x76EE;&#x7684;&#xFF1A;&#x5C06;&#x7B2C; 1 &#x90E8;&#x5206;&#x7684;&#x751F;&#x6210;&#x5668;&#x8F93;&#x51FA;&#x4E0E;&#x5224;&#x522B;&#x5668;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#xFF0C;&#x4F7F;&#x7528;&#x5B9E;&#x6570;&#x6807;&#x7B7E;<code>GT</code>&#x8BA1;&#x7B97;<code>G</code>&#x7684;&#x635F;&#x5931;&#xFF0C;&#x53CD;&#x5411;&#x8BA1;&#x7B97;<code>G</code>&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x6700;&#x540E;&#x4F7F;&#x7528;&#x4F18;&#x5316;&#x5668;&#x6B65;&#x9AA4;&#x66F4;&#x65B0;<code>G</code>&#x7684;&#x53C2;&#x6570;&#x3002; &#x5C06;&#x771F;&#x5B9E;&#x6807;&#x7B7E;&#x7528;&#x4F5C;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;<code>GT</code>&#x6807;&#x7B7E;&#x4F3C;&#x4E4E;&#x662F;&#x8FDD;&#x53CD;&#x76F4;&#x89C9;&#x7684;&#xFF0C;&#x4F46;&#x8FD9;&#x4F7F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; BCELoss &#x7684;<code>log(x)</code>&#x90E8;&#x5206;&#xFF08;&#x800C;&#x4E0D;&#x662F;<code>log(1 - x)</code>&#x90E8;&#x5206;&#xFF09;&#xFF0C;&#x8FD9;&#x6B63;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x7EDF;&#x8BA1;&#x62A5;&#x544A;&#xFF0C;&#x5E76;&#x5728;&#x6BCF;&#x4E2A;&#x5468;&#x671F;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x5C06;&#x6211;&#x4EEC;&#x7684;<code>fixed_noise</code>&#x6279;&#x91CF;&#x63A8;&#x9001;&#x5230;&#x751F;&#x6210;&#x5668;&#x4E2D;&#xFF0C;&#x4EE5;&#x76F4;&#x89C2;&#x5730;&#x8DDF;&#x8E2A;<code>G</code>&#x7684;&#x8BAD;&#x7EC3;&#x8FDB;&#x5EA6;&#x3002; &#x62A5;&#x544A;&#x7684;&#x8BAD;&#x7EC3;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x662F;&#xFF1A;</p>
+<ul>
+<li><code>Loss_D</code>-&#x5224;&#x522B;&#x5668;&#x635F;&#x5931;&#xFF0C;&#x8BA1;&#x7B97;&#x4E3A;&#x6240;&#x6709;&#x771F;&#x5B9E;&#x6279;&#x91CF;&#x548C;&#x6240;&#x6709;&#x5047;&#x6279;&#x91CF;&#x7684;&#x635F;&#x5931;&#x603B;&#x548C;&#xFF08;<code>log D(x) + log D(G(z))</code>&#xFF09;&#x3002;</li>
+<li><code>Loss_G</code>-&#x751F;&#x6210;&#x5668;&#x635F;&#x5931;&#x8BA1;&#x7B97;&#x4E3A;<code>log D(G(z))</code></li>
+<li><code>D(x)</code>-&#x6240;&#x6709;&#x771F;&#x5B9E;&#x6279;&#x91CF;&#x7684;&#x5224;&#x522B;&#x5668;&#x7684;&#x5E73;&#x5747;&#x8F93;&#x51FA;&#xFF08;&#x6574;&#x4E2A;&#x6279;&#x91CF;&#xFF09;&#x3002; &#x8FD9;&#x5E94;&#x8BE5;&#x4ECE;&#x63A5;&#x8FD1; 1 &#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x5728;<code>G</code>&#x53D8;&#x5F97;&#x66F4;&#x597D;&#x65F6;&#x7406;&#x8BBA;&#x4E0A;&#x6536;&#x655B;&#x5230; 0.5&#x3002; &#x60F3;&#x60F3;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x3002;</li>
+<li><code>D(G(z))</code>-&#x6240;&#x6709;&#x5047;&#x6279;&#x91CF;&#x7684;&#x5E73;&#x5747;&#x5224;&#x522B;&#x5668;&#x8F93;&#x51FA;&#x3002; &#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x5728;<code>D</code>&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6570;&#x5B57;&#x5728;<code>D</code>&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x3002; &#x8FD9;&#x4E9B;&#x6570;&#x5B57;&#x5E94;&#x4ECE; 0 &#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x968F;&#x7740;<code>G</code>&#x7684;&#x63D0;&#x9AD8;&#x6536;&#x655B;&#x5230; 0.5&#x3002; &#x60F3;&#x60F3;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x3002;</li>
+</ul>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x6B64;&#x6B65;&#x9AA4;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x5177;&#x4F53;&#x53D6;&#x51B3;&#x4E8E;&#x60A8;&#x8FD0;&#x884C;&#x4E86;&#x591A;&#x5C11;&#x4E2A;&#x5468;&#x671F;&#x4EE5;&#x53CA;&#x662F;&#x5426;&#x4ECE;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x5220;&#x9664;&#x4E86;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Training Loop</span>
+
+<span class="hljs-comment"># Lists to keep track of progress</span>
+img_list = []
+G_losses = []
+D_losses = []
+iters = <span class="hljs-number">0</span>
+
+print(<span class="hljs-string">&quot;Starting Training Loop...&quot;</span>)
+<span class="hljs-comment"># For each epoch</span>
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(num_epochs):
+    <span class="hljs-comment"># For each batch in the dataloader</span>
+    <span class="hljs-keyword">for</span> i, data <span class="hljs-keyword">in</span> enumerate(dataloader, <span class="hljs-number">0</span>):
+
+        <span class="hljs-comment">############################</span>
+        <span class="hljs-comment"># (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))</span>
+        <span class="hljs-comment">###########################</span>
+        <span class="hljs-comment">## Train with all-real batch</span>
+        netD.zero_grad()
+        <span class="hljs-comment"># Format batch</span>
+        real_cpu = data[<span class="hljs-number">0</span>].to(device)
+        b_size = real_cpu.size(<span class="hljs-number">0</span>)
+        label = torch.full((b_size,), real_label, dtype=torch.float, device=device)
+        <span class="hljs-comment"># Forward pass real batch through D</span>
+        output = netD(real_cpu).view(<span class="hljs-number">-1</span>)
+        <span class="hljs-comment"># Calculate loss on all-real batch</span>
+        errD_real = criterion(output, label)
+        <span class="hljs-comment"># Calculate gradients for D in backward pass</span>
+        errD_real.backward()
+        D_x = output.mean().item()
+
+        <span class="hljs-comment">## Train with all-fake batch</span>
+        <span class="hljs-comment"># Generate batch of latent vectors</span>
+        noise = torch.randn(b_size, nz, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, device=device)
+        <span class="hljs-comment"># Generate fake image batch with G</span>
+        fake = netG(noise)
+        label.fill_(fake_label)
+        <span class="hljs-comment"># Classify all fake batch with D</span>
+        output = netD(fake.detach()).view(<span class="hljs-number">-1</span>)
+        <span class="hljs-comment"># Calculate D&apos;s loss on the all-fake batch</span>
+        errD_fake = criterion(output, label)
+        <span class="hljs-comment"># Calculate the gradients for this batch</span>
+        errD_fake.backward()
+        D_G_z1 = output.mean().item()
+        <span class="hljs-comment"># Add the gradients from the all-real and all-fake batches</span>
+        errD = errD_real + errD_fake
+        <span class="hljs-comment"># Update D</span>
+        optimizerD.step()
+
+        <span class="hljs-comment">############################</span>
+        <span class="hljs-comment"># (2) Update G network: maximize log(D(G(z)))</span>
+        <span class="hljs-comment">###########################</span>
+        netG.zero_grad()
+        label.fill_(real_label)  <span class="hljs-comment"># fake labels are real for generator cost</span>
+        <span class="hljs-comment"># Since we just updated D, perform another forward pass of all-fake batch through D</span>
+        output = netD(fake).view(<span class="hljs-number">-1</span>)
+        <span class="hljs-comment"># Calculate G&apos;s loss based on this output</span>
+        errG = criterion(output, label)
+        <span class="hljs-comment"># Calculate gradients for G</span>
+        errG.backward()
+        D_G_z2 = output.mean().item()
+        <span class="hljs-comment"># Update G</span>
+        optimizerG.step()
+
+        <span class="hljs-comment"># Output training stats</span>
+        <span class="hljs-keyword">if</span> i % <span class="hljs-number">50</span> == <span class="hljs-number">0</span>:
+            print(<span class="hljs-string">&apos;[%d/%d][%d/%d]\tLoss_D: %.4f\tLoss_G: %.4f\tD(x): %.4f\tD(G(z)): %.4f / %.4f&apos;</span>
+                  % (epoch, num_epochs, i, len(dataloader),
+                     errD.item(), errG.item(), D_x, D_G_z1, D_G_z2))
+
+        <span class="hljs-comment"># Save Losses for plotting later</span>
+        G_losses.append(errG.item())
+        D_losses.append(errD.item())
+
+        <span class="hljs-comment"># Check how the generator is doing by saving G&apos;s output on fixed_noise</span>
+        <span class="hljs-keyword">if</span> (iters % <span class="hljs-number">500</span> == <span class="hljs-number">0</span>) <span class="hljs-keyword">or</span> ((epoch == num_epochs<span class="hljs-number">-1</span>) <span class="hljs-keyword">and</span> (i == len(dataloader)<span class="hljs-number">-1</span>)):
+            <span class="hljs-keyword">with</span> torch.no_grad():
+                fake = netG(fixed_noise).detach().cpu()
+            img_list.append(vutils.make_grid(fake, padding=<span class="hljs-number">2</span>, normalize=<span class="hljs-keyword">True</span>))
+
+        iters += <span class="hljs-number">1</span>
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">Starting Training Loop...
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">0</span>/<span class="hljs-number">1583</span>]   Loss_D: <span class="hljs-number">1.9847</span>  Loss_G: <span class="hljs-number">5.5914</span>  D(x): <span class="hljs-number">0.6004</span>    D(G(z)): <span class="hljs-number">0.6680</span> / <span class="hljs-number">0.0062</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">50</span>/<span class="hljs-number">1583</span>]  Loss_D: <span class="hljs-number">0.7168</span>  Loss_G: <span class="hljs-number">35.7954</span> D(x): <span class="hljs-number">0.7127</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">100</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0007</span>  Loss_G: <span class="hljs-number">28.2580</span> D(x): <span class="hljs-number">0.9994</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">150</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0001</span>  Loss_G: <span class="hljs-number">42.5731</span> D(x): <span class="hljs-number">0.9999</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">200</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0138</span>  Loss_G: <span class="hljs-number">42.3603</span> D(x): <span class="hljs-number">0.9933</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">250</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0010</span>  Loss_G: <span class="hljs-number">42.2029</span> D(x): <span class="hljs-number">0.9991</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">300</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">41.9521</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">350</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">41.7962</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">400</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">41.6345</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">450</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">41.6058</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">500</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0001</span>  Loss_G: <span class="hljs-number">41.6208</span> D(x): <span class="hljs-number">0.9999</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">550</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">41.3979</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">600</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">41.2545</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">650</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">41.0200</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">700</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">39.6461</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">750</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.8834</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">800</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.5914</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">850</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.8209</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">900</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.9713</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">950</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.4995</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1000</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0001</span>  Loss_G: <span class="hljs-number">38.5549</span> D(x): <span class="hljs-number">0.9999</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1050</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">39.1773</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1100</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">39.0142</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1150</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.6368</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1200</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.7159</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1250</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.7660</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1300</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.5522</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1350</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0001</span>  Loss_G: <span class="hljs-number">38.6703</span> D(x): <span class="hljs-number">0.9999</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1400</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.5487</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1450</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.0378</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1500</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.1258</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">0</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1550</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.3473</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">0</span>/<span class="hljs-number">1583</span>]   Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">37.8825</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">50</span>/<span class="hljs-number">1583</span>]  Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.2248</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">100</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.2204</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">150</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.0967</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">200</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">38.0669</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">250</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">37.4736</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">300</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">37.0766</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">350</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.0000</span>  Loss_G: <span class="hljs-number">36.6055</span> D(x): <span class="hljs-number">1.0000</span>    D(G(z)): <span class="hljs-number">0.0000</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">400</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">2.5403</span>  Loss_G: <span class="hljs-number">12.8251</span> D(x): <span class="hljs-number">0.8672</span>    D(G(z)): <span class="hljs-number">0.8088</span> / <span class="hljs-number">0.0000</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">450</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.3779</span>  Loss_G: <span class="hljs-number">2.0631</span>  D(x): <span class="hljs-number">0.5850</span>    D(G(z)): <span class="hljs-number">0.4734</span> / <span class="hljs-number">0.1820</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">500</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.0299</span>  Loss_G: <span class="hljs-number">2.4048</span>  D(x): <span class="hljs-number">0.5165</span>    D(G(z)): <span class="hljs-number">0.1698</span> / <span class="hljs-number">0.1333</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">550</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.4922</span>  Loss_G: <span class="hljs-number">3.2383</span>  D(x): <span class="hljs-number">0.5854</span>    D(G(z)): <span class="hljs-number">0.4773</span> / <span class="hljs-number">0.0888</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">600</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9283</span>  Loss_G: <span class="hljs-number">1.8533</span>  D(x): <span class="hljs-number">0.6231</span>    D(G(z)): <span class="hljs-number">0.2962</span> / <span class="hljs-number">0.2153</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">650</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8065</span>  Loss_G: <span class="hljs-number">2.9684</span>  D(x): <span class="hljs-number">0.6684</span>    D(G(z)): <span class="hljs-number">0.2624</span> / <span class="hljs-number">0.0715</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">700</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6909</span>  Loss_G: <span class="hljs-number">2.8746</span>  D(x): <span class="hljs-number">0.7910</span>    D(G(z)): <span class="hljs-number">0.3013</span> / <span class="hljs-number">0.0819</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">750</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.3242</span>  Loss_G: <span class="hljs-number">2.5236</span>  D(x): <span class="hljs-number">0.7183</span>    D(G(z)): <span class="hljs-number">0.5300</span> / <span class="hljs-number">0.1090</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">800</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.0871</span>  Loss_G: <span class="hljs-number">2.0203</span>  D(x): <span class="hljs-number">0.4993</span>    D(G(z)): <span class="hljs-number">0.1716</span> / <span class="hljs-number">0.1727</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">850</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.7561</span>  Loss_G: <span class="hljs-number">4.9674</span>  D(x): <span class="hljs-number">0.8542</span>    D(G(z)): <span class="hljs-number">0.7052</span> / <span class="hljs-number">0.0133</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">900</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8294</span>  Loss_G: <span class="hljs-number">2.5024</span>  D(x): <span class="hljs-number">0.6913</span>    D(G(z)): <span class="hljs-number">0.2910</span> / <span class="hljs-number">0.1178</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">950</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9390</span>  Loss_G: <span class="hljs-number">2.2087</span>  D(x): <span class="hljs-number">0.5508</span>    D(G(z)): <span class="hljs-number">0.1638</span> / <span class="hljs-number">0.1617</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1000</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.8202</span>  Loss_G: <span class="hljs-number">1.2178</span>  D(x): <span class="hljs-number">0.2535</span>    D(G(z)): <span class="hljs-number">0.0684</span> / <span class="hljs-number">0.3527</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1050</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9816</span>  Loss_G: <span class="hljs-number">3.7976</span>  D(x): <span class="hljs-number">0.7310</span>    D(G(z)): <span class="hljs-number">0.3944</span> / <span class="hljs-number">0.0343</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1100</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9798</span>  Loss_G: <span class="hljs-number">2.0990</span>  D(x): <span class="hljs-number">0.5963</span>    D(G(z)): <span class="hljs-number">0.2328</span> / <span class="hljs-number">0.1660</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1150</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7173</span>  Loss_G: <span class="hljs-number">2.7879</span>  D(x): <span class="hljs-number">0.6385</span>    D(G(z)): <span class="hljs-number">0.1424</span> / <span class="hljs-number">0.1057</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1200</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8903</span>  Loss_G: <span class="hljs-number">2.3547</span>  D(x): <span class="hljs-number">0.7371</span>    D(G(z)): <span class="hljs-number">0.3589</span> / <span class="hljs-number">0.1251</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1250</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6137</span>  Loss_G: <span class="hljs-number">2.1031</span>  D(x): <span class="hljs-number">0.7491</span>    D(G(z)): <span class="hljs-number">0.2062</span> / <span class="hljs-number">0.1588</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1300</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.0179</span>  Loss_G: <span class="hljs-number">5.0280</span>  D(x): <span class="hljs-number">0.7465</span>    D(G(z)): <span class="hljs-number">0.4325</span> / <span class="hljs-number">0.0129</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1350</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7131</span>  Loss_G: <span class="hljs-number">3.6670</span>  D(x): <span class="hljs-number">0.7931</span>    D(G(z)): <span class="hljs-number">0.3270</span> / <span class="hljs-number">0.0398</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1400</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.0736</span>  Loss_G: <span class="hljs-number">4.2392</span>  D(x): <span class="hljs-number">0.8172</span>    D(G(z)): <span class="hljs-number">0.4861</span> / <span class="hljs-number">0.0351</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1450</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6050</span>  Loss_G: <span class="hljs-number">2.6052</span>  D(x): <span class="hljs-number">0.7590</span>    D(G(z)): <span class="hljs-number">0.2240</span> / <span class="hljs-number">0.1019</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1500</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.3370</span>  Loss_G: <span class="hljs-number">1.9105</span>  D(x): <span class="hljs-number">0.3786</span>    D(G(z)): <span class="hljs-number">0.0405</span> / <span class="hljs-number">0.2013</span>
+[<span class="hljs-number">1</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1550</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6698</span>  Loss_G: <span class="hljs-number">2.3040</span>  D(x): <span class="hljs-number">0.6444</span>    D(G(z)): <span class="hljs-number">0.1071</span> / <span class="hljs-number">0.1372</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">0</span>/<span class="hljs-number">1583</span>]   Loss_D: <span class="hljs-number">1.3043</span>  Loss_G: <span class="hljs-number">2.1213</span>  D(x): <span class="hljs-number">0.4073</span>    D(G(z)): <span class="hljs-number">0.0423</span> / <span class="hljs-number">0.1682</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">50</span>/<span class="hljs-number">1583</span>]  Loss_D: <span class="hljs-number">1.3636</span>  Loss_G: <span class="hljs-number">3.4322</span>  D(x): <span class="hljs-number">0.7959</span>    D(G(z)): <span class="hljs-number">0.6129</span> / <span class="hljs-number">0.0510</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">100</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8047</span>  Loss_G: <span class="hljs-number">3.4262</span>  D(x): <span class="hljs-number">0.9067</span>    D(G(z)): <span class="hljs-number">0.4371</span> / <span class="hljs-number">0.0536</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">150</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7103</span>  Loss_G: <span class="hljs-number">2.4974</span>  D(x): <span class="hljs-number">0.6212</span>    D(G(z)): <span class="hljs-number">0.0862</span> / <span class="hljs-number">0.1273</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">200</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8335</span>  Loss_G: <span class="hljs-number">2.9292</span>  D(x): <span class="hljs-number">0.7340</span>    D(G(z)): <span class="hljs-number">0.3396</span> / <span class="hljs-number">0.0772</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">250</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.4766</span>  Loss_G: <span class="hljs-number">1.4532</span>  D(x): <span class="hljs-number">0.3469</span>    D(G(z)): <span class="hljs-number">0.0140</span> / <span class="hljs-number">0.3162</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">300</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8063</span>  Loss_G: <span class="hljs-number">2.5363</span>  D(x): <span class="hljs-number">0.6939</span>    D(G(z)): <span class="hljs-number">0.2714</span> / <span class="hljs-number">0.1160</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">350</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">2.4655</span>  Loss_G: <span class="hljs-number">1.7710</span>  D(x): <span class="hljs-number">0.1625</span>    D(G(z)): <span class="hljs-number">0.0049</span> / <span class="hljs-number">0.2345</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">400</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9256</span>  Loss_G: <span class="hljs-number">1.4698</span>  D(x): <span class="hljs-number">0.5101</span>    D(G(z)): <span class="hljs-number">0.1192</span> / <span class="hljs-number">0.2926</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">450</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7932</span>  Loss_G: <span class="hljs-number">3.1267</span>  D(x): <span class="hljs-number">0.8831</span>    D(G(z)): <span class="hljs-number">0.4330</span> / <span class="hljs-number">0.0657</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">500</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.0515</span>  Loss_G: <span class="hljs-number">1.8415</span>  D(x): <span class="hljs-number">0.4922</span>    D(G(z)): <span class="hljs-number">0.0817</span> / <span class="hljs-number">0.2372</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">550</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.1575</span>  Loss_G: <span class="hljs-number">2.3904</span>  D(x): <span class="hljs-number">0.8286</span>    D(G(z)): <span class="hljs-number">0.5113</span> / <span class="hljs-number">0.1394</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">600</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8667</span>  Loss_G: <span class="hljs-number">4.0253</span>  D(x): <span class="hljs-number">0.8805</span>    D(G(z)): <span class="hljs-number">0.4499</span> / <span class="hljs-number">0.0329</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">650</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9943</span>  Loss_G: <span class="hljs-number">3.0625</span>  D(x): <span class="hljs-number">0.8224</span>    D(G(z)): <span class="hljs-number">0.4700</span> / <span class="hljs-number">0.0678</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">700</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7634</span>  Loss_G: <span class="hljs-number">3.7297</span>  D(x): <span class="hljs-number">0.7855</span>    D(G(z)): <span class="hljs-number">0.3507</span> / <span class="hljs-number">0.0369</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">750</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6280</span>  Loss_G: <span class="hljs-number">2.7439</span>  D(x): <span class="hljs-number">0.7664</span>    D(G(z)): <span class="hljs-number">0.2518</span> / <span class="hljs-number">0.0897</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">800</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9011</span>  Loss_G: <span class="hljs-number">1.3725</span>  D(x): <span class="hljs-number">0.5495</span>    D(G(z)): <span class="hljs-number">0.1341</span> / <span class="hljs-number">0.3033</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">850</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.4595</span>  Loss_G: <span class="hljs-number">3.0410</span>  D(x): <span class="hljs-number">0.8186</span>    D(G(z)): <span class="hljs-number">0.1808</span> / <span class="hljs-number">0.0721</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">900</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8331</span>  Loss_G: <span class="hljs-number">1.3725</span>  D(x): <span class="hljs-number">0.5696</span>    D(G(z)): <span class="hljs-number">0.1528</span> / <span class="hljs-number">0.3128</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">950</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.2701</span>  Loss_G: <span class="hljs-number">4.4360</span>  D(x): <span class="hljs-number">0.9365</span>    D(G(z)): <span class="hljs-number">0.6218</span> / <span class="hljs-number">0.0226</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1000</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.5165</span>  Loss_G: <span class="hljs-number">3.2817</span>  D(x): <span class="hljs-number">0.7543</span>    D(G(z)): <span class="hljs-number">0.1460</span> / <span class="hljs-number">0.0651</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1050</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.5562</span>  Loss_G: <span class="hljs-number">2.5533</span>  D(x): <span class="hljs-number">0.8034</span>    D(G(z)): <span class="hljs-number">0.2385</span> / <span class="hljs-number">0.1047</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1100</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9842</span>  Loss_G: <span class="hljs-number">3.5247</span>  D(x): <span class="hljs-number">0.7936</span>    D(G(z)): <span class="hljs-number">0.4511</span> / <span class="hljs-number">0.0446</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1150</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6793</span>  Loss_G: <span class="hljs-number">3.2208</span>  D(x): <span class="hljs-number">0.8038</span>    D(G(z)): <span class="hljs-number">0.3133</span> / <span class="hljs-number">0.0571</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1200</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.8110</span>  Loss_G: <span class="hljs-number">5.4461</span>  D(x): <span class="hljs-number">0.8337</span>    D(G(z)): <span class="hljs-number">0.7185</span> / <span class="hljs-number">0.0090</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1250</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6310</span>  Loss_G: <span class="hljs-number">2.8066</span>  D(x): <span class="hljs-number">0.7859</span>    D(G(z)): <span class="hljs-number">0.2644</span> / <span class="hljs-number">0.0822</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1300</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6009</span>  Loss_G: <span class="hljs-number">1.6727</span>  D(x): <span class="hljs-number">0.6759</span>    D(G(z)): <span class="hljs-number">0.1297</span> / <span class="hljs-number">0.2422</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1350</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.5156</span>  Loss_G: <span class="hljs-number">3.5893</span>  D(x): <span class="hljs-number">0.8552</span>    D(G(z)): <span class="hljs-number">0.2686</span> / <span class="hljs-number">0.0385</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1400</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7672</span>  Loss_G: <span class="hljs-number">1.0321</span>  D(x): <span class="hljs-number">0.5755</span>    D(G(z)): <span class="hljs-number">0.0938</span> / <span class="hljs-number">0.4195</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1450</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6583</span>  Loss_G: <span class="hljs-number">2.0611</span>  D(x): <span class="hljs-number">0.6727</span>    D(G(z)): <span class="hljs-number">0.1675</span> / <span class="hljs-number">0.1591</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1500</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.2956</span>  Loss_G: <span class="hljs-number">3.7047</span>  D(x): <span class="hljs-number">0.9324</span>    D(G(z)): <span class="hljs-number">0.6345</span> / <span class="hljs-number">0.0479</span>
+[<span class="hljs-number">2</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1550</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8555</span>  Loss_G: <span class="hljs-number">3.0119</span>  D(x): <span class="hljs-number">0.8243</span>    D(G(z)): <span class="hljs-number">0.4237</span> / <span class="hljs-number">0.0696</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">0</span>/<span class="hljs-number">1583</span>]   Loss_D: <span class="hljs-number">0.7295</span>  Loss_G: <span class="hljs-number">2.0605</span>  D(x): <span class="hljs-number">0.7051</span>    D(G(z)): <span class="hljs-number">0.2466</span> / <span class="hljs-number">0.1671</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">50</span>/<span class="hljs-number">1583</span>]  Loss_D: <span class="hljs-number">0.6551</span>  Loss_G: <span class="hljs-number">3.0267</span>  D(x): <span class="hljs-number">0.8502</span>    D(G(z)): <span class="hljs-number">0.3419</span> / <span class="hljs-number">0.0676</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">100</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9209</span>  Loss_G: <span class="hljs-number">1.3069</span>  D(x): <span class="hljs-number">0.5238</span>    D(G(z)): <span class="hljs-number">0.1032</span> / <span class="hljs-number">0.3367</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">150</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6289</span>  Loss_G: <span class="hljs-number">1.8684</span>  D(x): <span class="hljs-number">0.6835</span>    D(G(z)): <span class="hljs-number">0.1555</span> / <span class="hljs-number">0.1994</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">200</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.0600</span>  Loss_G: <span class="hljs-number">1.3343</span>  D(x): <span class="hljs-number">0.4512</span>    D(G(z)): <span class="hljs-number">0.0575</span> / <span class="hljs-number">0.3259</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">250</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7251</span>  Loss_G: <span class="hljs-number">1.7242</span>  D(x): <span class="hljs-number">0.6128</span>    D(G(z)): <span class="hljs-number">0.1340</span> / <span class="hljs-number">0.2269</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">300</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7097</span>  Loss_G: <span class="hljs-number">1.7072</span>  D(x): <span class="hljs-number">0.7143</span>    D(G(z)): <span class="hljs-number">0.2623</span> / <span class="hljs-number">0.2238</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">350</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8045</span>  Loss_G: <span class="hljs-number">2.7455</span>  D(x): <span class="hljs-number">0.7958</span>    D(G(z)): <span class="hljs-number">0.3825</span> / <span class="hljs-number">0.0901</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">400</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8351</span>  Loss_G: <span class="hljs-number">1.6116</span>  D(x): <span class="hljs-number">0.5394</span>    D(G(z)): <span class="hljs-number">0.1106</span> / <span class="hljs-number">0.2425</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">450</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.4829</span>  Loss_G: <span class="hljs-number">0.5346</span>  D(x): <span class="hljs-number">0.3523</span>    D(G(z)): <span class="hljs-number">0.0987</span> / <span class="hljs-number">0.6289</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">500</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6972</span>  Loss_G: <span class="hljs-number">2.1915</span>  D(x): <span class="hljs-number">0.7656</span>    D(G(z)): <span class="hljs-number">0.2987</span> / <span class="hljs-number">0.1450</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">550</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7369</span>  Loss_G: <span class="hljs-number">1.7250</span>  D(x): <span class="hljs-number">0.6402</span>    D(G(z)): <span class="hljs-number">0.1899</span> / <span class="hljs-number">0.2224</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">600</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8170</span>  Loss_G: <span class="hljs-number">2.6806</span>  D(x): <span class="hljs-number">0.7843</span>    D(G(z)): <span class="hljs-number">0.3880</span> / <span class="hljs-number">0.0929</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">650</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.1531</span>  Loss_G: <span class="hljs-number">0.9077</span>  D(x): <span class="hljs-number">0.4340</span>    D(G(z)): <span class="hljs-number">0.1224</span> / <span class="hljs-number">0.4550</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">700</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8751</span>  Loss_G: <span class="hljs-number">1.0230</span>  D(x): <span class="hljs-number">0.5587</span>    D(G(z)): <span class="hljs-number">0.1808</span> / <span class="hljs-number">0.4021</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">750</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7169</span>  Loss_G: <span class="hljs-number">2.1268</span>  D(x): <span class="hljs-number">0.6690</span>    D(G(z)): <span class="hljs-number">0.2219</span> / <span class="hljs-number">0.1588</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">800</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9772</span>  Loss_G: <span class="hljs-number">3.1279</span>  D(x): <span class="hljs-number">0.8451</span>    D(G(z)): <span class="hljs-number">0.5081</span> / <span class="hljs-number">0.0632</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">850</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6574</span>  Loss_G: <span class="hljs-number">1.9605</span>  D(x): <span class="hljs-number">0.7010</span>    D(G(z)): <span class="hljs-number">0.2120</span> / <span class="hljs-number">0.1775</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">900</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6153</span>  Loss_G: <span class="hljs-number">2.8981</span>  D(x): <span class="hljs-number">0.8399</span>    D(G(z)): <span class="hljs-number">0.3197</span> / <span class="hljs-number">0.0697</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">950</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.9155</span>  Loss_G: <span class="hljs-number">1.1091</span>  D(x): <span class="hljs-number">0.5482</span>    D(G(z)): <span class="hljs-number">0.1730</span> / <span class="hljs-number">0.3799</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1000</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9873</span>  Loss_G: <span class="hljs-number">3.9150</span>  D(x): <span class="hljs-number">0.8838</span>    D(G(z)): <span class="hljs-number">0.5423</span> / <span class="hljs-number">0.0284</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1050</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8369</span>  Loss_G: <span class="hljs-number">2.1366</span>  D(x): <span class="hljs-number">0.8039</span>    D(G(z)): <span class="hljs-number">0.4067</span> / <span class="hljs-number">0.1533</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1100</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9522</span>  Loss_G: <span class="hljs-number">3.4744</span>  D(x): <span class="hljs-number">0.8732</span>    D(G(z)): <span class="hljs-number">0.5049</span> / <span class="hljs-number">0.0412</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1150</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.6371</span>  Loss_G: <span class="hljs-number">2.1278</span>  D(x): <span class="hljs-number">0.7648</span>    D(G(z)): <span class="hljs-number">0.2672</span> / <span class="hljs-number">0.1424</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1200</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.0349</span>  Loss_G: <span class="hljs-number">2.7710</span>  D(x): <span class="hljs-number">0.7604</span>    D(G(z)): <span class="hljs-number">0.4512</span> / <span class="hljs-number">0.0920</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1250</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9350</span>  Loss_G: <span class="hljs-number">2.7946</span>  D(x): <span class="hljs-number">0.8007</span>    D(G(z)): <span class="hljs-number">0.4649</span> / <span class="hljs-number">0.0805</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1300</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7655</span>  Loss_G: <span class="hljs-number">2.7838</span>  D(x): <span class="hljs-number">0.7965</span>    D(G(z)): <span class="hljs-number">0.3724</span> / <span class="hljs-number">0.0803</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1350</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7623</span>  Loss_G: <span class="hljs-number">2.2647</span>  D(x): <span class="hljs-number">0.7979</span>    D(G(z)): <span class="hljs-number">0.3641</span> / <span class="hljs-number">0.1414</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1400</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9361</span>  Loss_G: <span class="hljs-number">3.1341</span>  D(x): <span class="hljs-number">0.8601</span>    D(G(z)): <span class="hljs-number">0.4938</span> / <span class="hljs-number">0.0628</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1450</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7966</span>  Loss_G: <span class="hljs-number">3.1544</span>  D(x): <span class="hljs-number">0.8568</span>    D(G(z)): <span class="hljs-number">0.4211</span> / <span class="hljs-number">0.0623</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1500</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.0768</span>  Loss_G: <span class="hljs-number">3.8304</span>  D(x): <span class="hljs-number">0.8364</span>    D(G(z)): <span class="hljs-number">0.5348</span> / <span class="hljs-number">0.0353</span>
+[<span class="hljs-number">3</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1550</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8528</span>  Loss_G: <span class="hljs-number">3.3978</span>  D(x): <span class="hljs-number">0.8824</span>    D(G(z)): <span class="hljs-number">0.4788</span> / <span class="hljs-number">0.0491</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">0</span>/<span class="hljs-number">1583</span>]   Loss_D: <span class="hljs-number">0.8361</span>  Loss_G: <span class="hljs-number">1.9086</span>  D(x): <span class="hljs-number">0.6756</span>    D(G(z)): <span class="hljs-number">0.2975</span> / <span class="hljs-number">0.1872</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">50</span>/<span class="hljs-number">1583</span>]  Loss_D: <span class="hljs-number">0.7666</span>  Loss_G: <span class="hljs-number">2.3647</span>  D(x): <span class="hljs-number">0.7698</span>    D(G(z)): <span class="hljs-number">0.3487</span> / <span class="hljs-number">0.1232</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">100</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7536</span>  Loss_G: <span class="hljs-number">1.6556</span>  D(x): <span class="hljs-number">0.6398</span>    D(G(z)): <span class="hljs-number">0.2084</span> / <span class="hljs-number">0.2423</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">150</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8390</span>  Loss_G: <span class="hljs-number">1.7737</span>  D(x): <span class="hljs-number">0.6400</span>    D(G(z)): <span class="hljs-number">0.2714</span> / <span class="hljs-number">0.2181</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">200</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8608</span>  Loss_G: <span class="hljs-number">2.5683</span>  D(x): <span class="hljs-number">0.7898</span>    D(G(z)): <span class="hljs-number">0.4126</span> / <span class="hljs-number">0.1009</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">250</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8651</span>  Loss_G: <span class="hljs-number">1.8416</span>  D(x): <span class="hljs-number">0.6033</span>    D(G(z)): <span class="hljs-number">0.2312</span> / <span class="hljs-number">0.1954</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">300</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8790</span>  Loss_G: <span class="hljs-number">1.2224</span>  D(x): <span class="hljs-number">0.5099</span>    D(G(z)): <span class="hljs-number">0.0960</span> / <span class="hljs-number">0.3501</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">350</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">2.0809</span>  Loss_G: <span class="hljs-number">0.5006</span>  D(x): <span class="hljs-number">0.1907</span>    D(G(z)): <span class="hljs-number">0.0415</span> / <span class="hljs-number">0.6501</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">400</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.0178</span>  Loss_G: <span class="hljs-number">2.6912</span>  D(x): <span class="hljs-number">0.7134</span>    D(G(z)): <span class="hljs-number">0.4299</span> / <span class="hljs-number">0.0977</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">450</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7773</span>  Loss_G: <span class="hljs-number">1.5577</span>  D(x): <span class="hljs-number">0.6859</span>    D(G(z)): <span class="hljs-number">0.2705</span> / <span class="hljs-number">0.2527</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">500</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.0217</span>  Loss_G: <span class="hljs-number">2.8968</span>  D(x): <span class="hljs-number">0.8227</span>    D(G(z)): <span class="hljs-number">0.5103</span> / <span class="hljs-number">0.0755</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">550</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6428</span>  Loss_G: <span class="hljs-number">2.8346</span>  D(x): <span class="hljs-number">0.8293</span>    D(G(z)): <span class="hljs-number">0.3290</span> / <span class="hljs-number">0.0793</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">600</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.7683</span>  Loss_G: <span class="hljs-number">4.1924</span>  D(x): <span class="hljs-number">0.9236</span>    D(G(z)): <span class="hljs-number">0.7656</span> / <span class="hljs-number">0.0211</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">650</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8692</span>  Loss_G: <span class="hljs-number">2.2491</span>  D(x): <span class="hljs-number">0.7046</span>    D(G(z)): <span class="hljs-number">0.3386</span> / <span class="hljs-number">0.1336</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">700</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.8933</span>  Loss_G: <span class="hljs-number">1.5814</span>  D(x): <span class="hljs-number">0.6256</span>    D(G(z)): <span class="hljs-number">0.2963</span> / <span class="hljs-number">0.2476</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">750</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.2154</span>  Loss_G: <span class="hljs-number">2.6798</span>  D(x): <span class="hljs-number">0.8082</span>    D(G(z)): <span class="hljs-number">0.5792</span> / <span class="hljs-number">0.0862</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">800</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.7252</span>  Loss_G: <span class="hljs-number">1.6059</span>  D(x): <span class="hljs-number">0.6257</span>    D(G(z)): <span class="hljs-number">0.1717</span> / <span class="hljs-number">0.2486</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">850</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">0.6888</span>  Loss_G: <span class="hljs-number">2.4141</span>  D(x): <span class="hljs-number">0.7470</span>    D(G(z)): <span class="hljs-number">0.2786</span> / <span class="hljs-number">0.1207</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">900</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.0490</span>  Loss_G: <span class="hljs-number">1.1737</span>  D(x): <span class="hljs-number">0.4731</span>    D(G(z)): <span class="hljs-number">0.1746</span> / <span class="hljs-number">0.3528</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">950</span>/<span class="hljs-number">1583</span>] Loss_D: <span class="hljs-number">1.1517</span>  Loss_G: <span class="hljs-number">0.5954</span>  D(x): <span class="hljs-number">0.4083</span>    D(G(z)): <span class="hljs-number">0.0727</span> / <span class="hljs-number">0.5876</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1000</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7451</span>  Loss_G: <span class="hljs-number">2.1440</span>  D(x): <span class="hljs-number">0.7385</span>    D(G(z)): <span class="hljs-number">0.3118</span> / <span class="hljs-number">0.1455</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1050</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.2439</span>  Loss_G: <span class="hljs-number">0.8178</span>  D(x): <span class="hljs-number">0.3806</span>    D(G(z)): <span class="hljs-number">0.0852</span> / <span class="hljs-number">0.4825</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1100</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8468</span>  Loss_G: <span class="hljs-number">3.3432</span>  D(x): <span class="hljs-number">0.8220</span>    D(G(z)): <span class="hljs-number">0.4289</span> / <span class="hljs-number">0.0484</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1150</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.9824</span>  Loss_G: <span class="hljs-number">0.8542</span>  D(x): <span class="hljs-number">0.4712</span>    D(G(z)): <span class="hljs-number">0.1120</span> / <span class="hljs-number">0.4808</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1200</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.1658</span>  Loss_G: <span class="hljs-number">3.3930</span>  D(x): <span class="hljs-number">0.8771</span>    D(G(z)): <span class="hljs-number">0.5939</span> / <span class="hljs-number">0.0450</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1250</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8152</span>  Loss_G: <span class="hljs-number">1.3158</span>  D(x): <span class="hljs-number">0.5988</span>    D(G(z)): <span class="hljs-number">0.1721</span> / <span class="hljs-number">0.3111</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1300</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7013</span>  Loss_G: <span class="hljs-number">2.0752</span>  D(x): <span class="hljs-number">0.6751</span>    D(G(z)): <span class="hljs-number">0.2173</span> / <span class="hljs-number">0.1596</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1350</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8809</span>  Loss_G: <span class="hljs-number">3.0340</span>  D(x): <span class="hljs-number">0.8292</span>    D(G(z)): <span class="hljs-number">0.4574</span> / <span class="hljs-number">0.0636</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1400</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.7911</span>  Loss_G: <span class="hljs-number">2.7713</span>  D(x): <span class="hljs-number">0.7982</span>    D(G(z)): <span class="hljs-number">0.3830</span> / <span class="hljs-number">0.0829</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1450</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">1.0299</span>  Loss_G: <span class="hljs-number">2.8774</span>  D(x): <span class="hljs-number">0.7987</span>    D(G(z)): <span class="hljs-number">0.4941</span> / <span class="hljs-number">0.0761</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1500</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8572</span>  Loss_G: <span class="hljs-number">2.5340</span>  D(x): <span class="hljs-number">0.7273</span>    D(G(z)): <span class="hljs-number">0.3717</span> / <span class="hljs-number">0.1009</span>
+[<span class="hljs-number">4</span>/<span class="hljs-number">5</span>][<span class="hljs-number">1550</span>/<span class="hljs-number">1583</span>]        Loss_D: <span class="hljs-number">0.8135</span>  Loss_G: <span class="hljs-number">1.6428</span>  D(x): <span class="hljs-number">0.5799</span>    D(G(z)): <span class="hljs-number">0.1693</span> / <span class="hljs-number">0.2267</span>
+</code></pre>
+<h2 id="&#x7ED3;&#x679C;">&#x7ED3;&#x679C;</h2>
+<p>&#x6700;&#x540E;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x6211;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x505A;&#x5230;&#x7684;&#x3002; &#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x4E09;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#x3002; &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E86;&#x89E3;<code>D</code>&#x548C;<code>G</code>&#x7684;&#x635F;&#x5931;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x5982;&#x4F55;&#x53D8;&#x5316;&#x3002; &#x5176;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x6BCF;&#x4E2A;&#x5468;&#x671F;&#x5C06;<code>G</code>&#x7684;&#x8F93;&#x51FA;&#x663E;&#x793A;&#x4E3A;<code>fixed_noise</code>&#x6279;&#x91CF;&#x3002; &#x7B2C;&#x4E09;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x67E5;&#x770B;&#x4E00;&#x6279;&#x771F;&#x5B9E;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x6765;&#x81EA;<code>G</code>&#x7684;&#x4E00;&#x6279;&#x4F2A;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>&#x635F;&#x5931;&#x4E0E;&#x8BAD;&#x7EC3;&#x8FED;&#x4EE3;</strong></p>
+<p>&#x4E0B;&#x9762;&#x662F;<code>D&amp;G</code>&#x7684;&#x635F;&#x5931;&#x4E0E;&#x8BAD;&#x7EC3;&#x8FED;&#x4EE3;&#x7684;&#x5173;&#x7CFB;&#x56FE;&#x3002;</p>
+<pre><code class="lang-py">plt.figure(figsize=(<span class="hljs-number">10</span>,<span class="hljs-number">5</span>))
+plt.title(<span class="hljs-string">&quot;Generator and Discriminator Loss During Training&quot;</span>)
+plt.plot(G_losses,label=<span class="hljs-string">&quot;G&quot;</span>)
+plt.plot(D_losses,label=<span class="hljs-string">&quot;D&quot;</span>)
+plt.xlabel(<span class="hljs-string">&quot;iterations&quot;</span>)
+plt.ylabel(<span class="hljs-string">&quot;Loss&quot;</span>)
+plt.legend()
+plt.show()
+</code></pre>
+<p><img src="img/097cd68a7de6371c697afbe4230ef328.png" alt="../_img/sphx_glr_dcgan_faces_tutorial_002.png"></p>
+<p><strong>&#x53EF;&#x89C6;&#x5316;<code>G</code>&#x7684;&#x8FDB;&#x5EA6;</strong></p>
+<p>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x5728;&#x6BCF;&#x6B21;&#x8BAD;&#x7EC3;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5C06;&#x751F;&#x6210;&#x5668;&#x7684;&#x8F93;&#x51FA;&#x4FDD;&#x5B58;&#x4E3A;<code>fixed_noise</code>&#x6279;&#x91CF;&#x3002; &#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x52A8;&#x753B;&#x5F62;&#x8C61;&#x5316;<code>G</code>&#x7684;&#x8BAD;&#x7EC3;&#x8FDB;&#x5EA6;&#x3002; &#x6309;&#x4E0B;&#x64AD;&#x653E;&#x6309;&#x94AE;&#x5F00;&#x59CB;&#x52A8;&#x753B;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment">#%%capture</span>
+fig = plt.figure(figsize=(<span class="hljs-number">8</span>,<span class="hljs-number">8</span>))
+plt.axis(<span class="hljs-string">&quot;off&quot;</span>)
+ims = [[plt.imshow(np.transpose(i,(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>)), animated=<span class="hljs-keyword">True</span>)] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> img_list]
+ani = animation.ArtistAnimation(fig, ims, interval=<span class="hljs-number">1000</span>, repeat_delay=<span class="hljs-number">1000</span>, blit=<span class="hljs-keyword">True</span>)
+
+HTML(ani.to_jshtml())
+</code></pre>
+<p><img src="img/2a31b55ef7bfff0c24c35bc635656078.png" alt="../_img/sphx_glr_dcgan_faces_tutorial_003.png"></p>
+<p><strong>&#x771F;&#x5B9E;&#x56FE;&#x50CF;&#x548C;&#x4F2A;&#x56FE;&#x50CF;</strong></p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5E76;&#x6392;&#x67E5;&#x770B;&#x4E00;&#x4E9B;&#x771F;&#x5B9E;&#x56FE;&#x50CF;&#x548C;&#x4F2A;&#x56FE;&#x50CF;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Grab a batch of real images from the dataloader</span>
+real_batch = next(iter(dataloader))
+
+<span class="hljs-comment"># Plot the real images</span>
+plt.figure(figsize=(<span class="hljs-number">15</span>,<span class="hljs-number">15</span>))
+plt.subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)
+plt.axis(<span class="hljs-string">&quot;off&quot;</span>)
+plt.title(<span class="hljs-string">&quot;Real Images&quot;</span>)
+plt.imshow(np.transpose(vutils.make_grid(real_batch[<span class="hljs-number">0</span>].to(device)[:<span class="hljs-number">64</span>], padding=<span class="hljs-number">5</span>, normalize=<span class="hljs-keyword">True</span>).cpu(),(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>)))
+
+<span class="hljs-comment"># Plot the fake images from the last epoch</span>
+plt.subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>)
+plt.axis(<span class="hljs-string">&quot;off&quot;</span>)
+plt.title(<span class="hljs-string">&quot;Fake Images&quot;</span>)
+plt.imshow(np.transpose(img_list[<span class="hljs-number">-1</span>],(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>)))
+plt.show()
+</code></pre>
+<p><img src="img/c0f8a413c1f6dd23bb137d8adff1adda.png" alt="../_img/sphx_glr_dcgan_faces_tutorial_004.png"></p>
+<h2 id="&#x4E0B;&#x4E00;&#x6B65;&#x53BB;&#x54EA;&#x91CC;">&#x4E0B;&#x4E00;&#x6B65;&#x53BB;&#x54EA;&#x91CC;</h2>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8D70;&#x5230;&#x4E86;&#x65C5;&#x7A0B;&#x7684;&#x5C3D;&#x5934;&#xFF0C;&#x4F46;&#x662F;&#x60A8;&#x53EF;&#x4EE5;&#x4ECE;&#x8FD9;&#x91CC;&#x5230;&#x8FBE;&#x51E0;&#x4E2A;&#x5730;&#x65B9;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#xFF1A;</p>
+<ul>
+<li>&#x8BAD;&#x7EC3;&#x66F4;&#x957F;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x770B;&#x770B;&#x6548;&#x679C;&#x5982;&#x4F55;</li>
+<li>&#x4FEE;&#x6539;&#x6B64;&#x6A21;&#x578B;&#x4EE5;&#x91C7;&#x7528;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x5E76;&#x53EF;&#x80FD;&#x66F4;&#x6539;&#x56FE;&#x50CF;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x6A21;&#x578B;&#x67B6;&#x6784;</li>
+<li>&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x4E0D;&#x9519;&#x7684; GAN &#x9879;&#x76EE;</li>
+<li><a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/" target="_blank">&#x521B;&#x5EFA;&#x53EF;&#x751F;&#x6210;&#x97F3;&#x4E50;&#x7684; GAN</a></li>
+</ul>
+<p><strong>&#x811A;&#x672C;&#x7684;&#x603B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;</strong>&#xFF1A;&#xFF08;29 &#x5206;&#x949F; 17.480 &#x79D2;&#xFF09;</p>
+<p><a href="../_downloads/dc0e6f475c6735eb8d233374f8f462eb/dcgan_faces_tutorial.py">&#x4E0B;&#x8F7D; Python &#x6E90;&#x7801;&#xFF1A;<code>dcgan_faces_tutorial.py</code></a></p>
+<p><a href="../_downloads/e9c8374ecc202120dc94db26bf08a00f/dcgan_faces_tutorial.ipynb">&#x4E0B;&#x8F7D; Jupyter &#x7B14;&#x8BB0;&#x672C;&#xFF1A;<code>dcgan_faces_tutorial.ipynb</code></a></p>
+<p><a href="https://sphinx-gallery.readthedocs.io" target="_blank">&#x7531; Sphinx &#x753B;&#x5ECA;</a>&#x751F;&#x6210;&#x7684;&#x753B;&#x5ECA;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="21.html" class="navigation navigation-prev " aria-label="Previous page: 对抗示例生成">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="23.html" class="navigation navigation-next " aria-label="Next page: 音频">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DCGAN 教程","level":"1.3.4","depth":2,"next":{"title":"音频","level":"1.4","depth":1,"path":"23.md","ref":"23.md","articles":[{"title":"音频 I/O 和torchaudio的预处理","level":"1.4.1","depth":2,"path":"24.md","ref":"24.md","articles":[]},{"title":"使用torchaudio的语音命令识别","level":"1.4.2","depth":2,"path":"25.md","ref":"25.md","articles":[]}]},"previous":{"title":"对抗示例生成","level":"1.3.3","depth":2,"path":"21.md","ref":"21.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.7"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"22.md","mtime":"2021-04-12T06:14:20.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:16:46.997Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

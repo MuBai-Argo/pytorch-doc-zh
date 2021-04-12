@@ -1,0 +1,2396 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Other Operations · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="torch_math_operations_blas_lapack_ops.html" />
+    
+    
+    <link rel="prev" href="torch_math_operations_spectral_ops.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    中文教程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="tut_getting_started.html">
+            
+                <a href="tut_getting_started.html">
+            
+                    
+                    起步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="deep_learning_60min_blitz.html">
+            
+                <a href="deep_learning_60min_blitz.html">
+            
+                    
+                    PyTorch 深度学习: 60 分钟极速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="blitz_tensor_tutorial.html">
+            
+                <a href="blitz_tensor_tutorial.html">
+            
+                    
+                    什么是 PyTorch？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="blitz_autograd_tutorial.html">
+            
+                <a href="blitz_autograd_tutorial.html">
+            
+                    
+                    Autograd：自动求导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="blitz_neural_networks_tutorial.html">
+            
+                <a href="blitz_neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.4" data-path="blitz_cifar10_tutorial.html">
+            
+                <a href="blitz_cifar10_tutorial.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.5" data-path="blitz_data_parallel_tutorial.html">
+            
+                <a href="blitz_data_parallel_tutorial.html">
+            
+                    
+                    可选：数据并行处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="data_loading_tutorial.html">
+            
+                <a href="data_loading_tutorial.html">
+            
+                    
+                    数据加载和处理教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="pytorch_with_examples.html">
+            
+                <a href="pytorch_with_examples.html">
+            
+                    
+                    用例子学习 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="transfer_learning_tutorial.html">
+            
+                <a href="transfer_learning_tutorial.html">
+            
+                    
+                    迁移学习教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="deploy_seq2seq_hybrid_frontend_tutorial.html">
+            
+                <a href="deploy_seq2seq_hybrid_frontend_tutorial.html">
+            
+                    
+                    混合前端的 seq2seq 模型部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="saving_loading_models.html">
+            
+                <a href="saving_loading_models.html">
+            
+                    
+                    Saving and Loading Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="nn_tutorial.html">
+            
+                <a href="nn_tutorial.html">
+            
+                    
+                    What is torch.nn really?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="tut_image.html">
+            
+                <a href="tut_image.html">
+            
+                    
+                    图像
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="finetuning_torchvision_models_tutorial.html">
+            
+                <a href="finetuning_torchvision_models_tutorial.html">
+            
+                    
+                    Torchvision 模型微调
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="spatial_transformer_tutorial.html">
+            
+                <a href="spatial_transformer_tutorial.html">
+            
+                    
+                    空间变换器网络教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="neural_style_tutorial.html">
+            
+                <a href="neural_style_tutorial.html">
+            
+                    
+                    使用 PyTorch 进行图像风格转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="fgsm_tutorial.html">
+            
+                <a href="fgsm_tutorial.html">
+            
+                    
+                    对抗性示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="super_resolution_with_caffe2.html">
+            
+                <a href="super_resolution_with_caffe2.html">
+            
+                    
+                    使用 ONNX 将模型从 PyTorch 传输到 Caffe2 和移动端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="tut_text.html">
+            
+                <a href="tut_text.html">
+            
+                    
+                    文本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="chatbot_tutorial.html">
+            
+                <a href="chatbot_tutorial.html">
+            
+                    
+                    聊天机器人教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="char_rnn_generation_tutorial.html">
+            
+                <a href="char_rnn_generation_tutorial.html">
+            
+                    
+                    使用字符级别特征的 RNN 网络生成姓氏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="char_rnn_classification_tutorial.html">
+            
+                <a href="char_rnn_classification_tutorial.html">
+            
+                    
+                    使用字符级别特征的 RNN 网络进行姓氏分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="deep_learning_nlp_tutorial.html">
+            
+                <a href="deep_learning_nlp_tutorial.html">
+            
+                    
+                    Deep Learning for NLP with Pytorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.4.1" data-path="nlp_pytorch_tutorial.html">
+            
+                <a href="nlp_pytorch_tutorial.html">
+            
+                    
+                    PyTorch 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.2" data-path="nlp_deep_learning_tutorial.html">
+            
+                <a href="nlp_deep_learning_tutorial.html">
+            
+                    
+                    使用 PyTorch 进行深度学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.3" data-path="nlp_word_embeddings_tutorial.html">
+            
+                <a href="nlp_word_embeddings_tutorial.html">
+            
+                    
+                    Word Embeddings: Encoding Lexical Semantics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.4" data-path="nlp_sequence_models_tutorial.html">
+            
+                <a href="nlp_sequence_models_tutorial.html">
+            
+                    
+                    序列模型和 LSTM 网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.5" data-path="nlp_advanced_tutorial.html">
+            
+                <a href="nlp_advanced_tutorial.html">
+            
+                    
+                    Advanced: Making Dynamic Decisions and the Bi-LSTM CRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="seq2seq_translation_tutorial.html">
+            
+                <a href="seq2seq_translation_tutorial.html">
+            
+                    
+                    基于注意力机制的 seq2seq 神经网络翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="tut_generative.html">
+            
+                <a href="tut_generative.html">
+            
+                    
+                    生成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="dcgan_faces_tutorial.html">
+            
+                <a href="dcgan_faces_tutorial.html">
+            
+                    
+                    DCGAN Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="tut_reinforcement_learning.html">
+            
+                <a href="tut_reinforcement_learning.html">
+            
+                    
+                    强化学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="reinforcement_q_learning.html">
+            
+                <a href="reinforcement_q_learning.html">
+            
+                    
+                    Reinforcement Learning (DQN) Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="tut_extending_pytorch.html">
+            
+                <a href="tut_extending_pytorch.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="numpy_extensions_tutorial.html">
+            
+                <a href="numpy_extensions_tutorial.html">
+            
+                    
+                    用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="cpp_extension.html">
+            
+                <a href="cpp_extension.html">
+            
+                    
+                    Custom C++   and CUDA Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="torch_script_custom_ops.html">
+            
+                <a href="torch_script_custom_ops.html">
+            
+                    
+                    Extending TorchScript with Custom C++   Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="tut_production_usage.html">
+            
+                <a href="tut_production_usage.html">
+            
+                    
+                    生产性使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="dist_tuto.html">
+            
+                <a href="dist_tuto.html">
+            
+                    
+                    Writing Distributed Applications with PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="aws_distributed_training_tutorial.html">
+            
+                <a href="aws_distributed_training_tutorial.html">
+            
+                    
+                    使用 Amazon AWS 进行分布式训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="ONNXLive.html">
+            
+                <a href="ONNXLive.html">
+            
+                    
+                    ONNX 现场演示教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="cpp_export.html">
+            
+                <a href="cpp_export.html">
+            
+                    
+                    在 C++ 中加载 PYTORCH 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="tut_other_language.html">
+            
+                <a href="tut_other_language.html">
+            
+                    
+                    其它语言中的 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="cpp_frontend.html">
+            
+                <a href="cpp_frontend.html">
+            
+                    
+                    使用 PyTorch C++ 前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    中文文档
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="docs_notes.html">
+            
+                <a href="docs_notes.html">
+            
+                    
+                    注解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="notes_autograd.html">
+            
+                <a href="notes_autograd.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="notes_broadcasting.html">
+            
+                <a href="notes_broadcasting.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="notes_cuda.html">
+            
+                <a href="notes_cuda.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="notes_extending.html">
+            
+                <a href="notes_extending.html">
+            
+                    
+                    Extending PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="notes_faq.html">
+            
+                <a href="notes_faq.html">
+            
+                    
+                    Frequently Asked Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="notes_multiprocessing.html">
+            
+                <a href="notes_multiprocessing.html">
+            
+                    
+                    Multiprocessing best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="notes_randomness.html">
+            
+                <a href="notes_randomness.html">
+            
+                    
+                    Reproducibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="notes_serialization.html">
+            
+                <a href="notes_serialization.html">
+            
+                    
+                    Serialization semantics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.9" data-path="notes_windows.html">
+            
+                <a href="notes_windows.html">
+            
+                    
+                    Windows FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="docs_package_ref.html">
+            
+                <a href="docs_package_ref.html">
+            
+                    
+                    包参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="torch.html">
+            
+                <a href="torch.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1.1" data-path="torch_tensors.html">
+            
+                <a href="torch_tensors.html">
+            
+                    
+                    Tensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.2" data-path="torch_random_sampling.html">
+            
+                <a href="torch_random_sampling.html">
+            
+                    
+                    Random sampling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.3" data-path="torch_serialization_parallelism_utilities.html">
+            
+                <a href="torch_serialization_parallelism_utilities.html">
+            
+                    
+                    Serialization, Parallelism, Utilities
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4" data-path="torch_math_operations.html">
+            
+                <a href="torch_math_operations.html">
+            
+                    
+                    Math operations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1.4.1" data-path="torch_math_operations_pointwise_ops.html">
+            
+                <a href="torch_math_operations_pointwise_ops.html">
+            
+                    
+                    Pointwise Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.2" data-path="torch_math_operations_reduction_ops.html">
+            
+                <a href="torch_math_operations_reduction_ops.html">
+            
+                    
+                    Reduction Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.3" data-path="torch_math_operations_comparison_ops.html">
+            
+                <a href="torch_math_operations_comparison_ops.html">
+            
+                    
+                    Comparison Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.4" data-path="torch_math_operations_spectral_ops.html">
+            
+                <a href="torch_math_operations_spectral_ops.html">
+            
+                    
+                    Spectral Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.1.4.5" data-path="torch_math_operations_other_ops.html">
+            
+                <a href="torch_math_operations_other_ops.html">
+            
+                    
+                    Other Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.6" data-path="torch_math_operations_blas_lapack_ops.html">
+            
+                <a href="torch_math_operations_blas_lapack_ops.html">
+            
+                    
+                    BLAS and LAPACK Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="tensors.html">
+            
+                <a href="tensors.html">
+            
+                    
+                    torch.Tensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="tensor_attributes.html">
+            
+                <a href="tensor_attributes.html">
+            
+                    
+                    Tensor Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="type_info.html">
+            
+                <a href="type_info.html">
+            
+                    
+                    数据类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="sparse.html">
+            
+                <a href="sparse.html">
+            
+                    
+                    torch.sparse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="cuda.html">
+            
+                <a href="cuda.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="storage.html">
+            
+                <a href="storage.html">
+            
+                    
+                    torch.Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="nn.html">
+            
+                <a href="nn.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="nn_functional.html">
+            
+                <a href="nn_functional.html">
+            
+                    
+                    torch.nn.functional
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="nn_init.html">
+            
+                <a href="nn_init.html">
+            
+                    
+                    torch.nn.init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="optim.html">
+            
+                <a href="optim.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="autograd.html">
+            
+                <a href="autograd.html">
+            
+                    
+                    Automatic differentiation package - torch.autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="distributed.html">
+            
+                <a href="distributed.html">
+            
+                    
+                    Distributed communication package - torch.distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="distributions.html">
+            
+                <a href="distributions.html">
+            
+                    
+                    Probability distributions - torch.distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="jit.html">
+            
+                <a href="jit.html">
+            
+                    
+                    Torch Script
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="multiprocessing.html">
+            
+                <a href="multiprocessing.html">
+            
+                    
+                    多进程包 - torch.multiprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.17" data-path="bottleneck.html">
+            
+                <a href="bottleneck.html">
+            
+                    
+                    torch.utils.bottleneck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.18" data-path="checkpoint.html">
+            
+                <a href="checkpoint.html">
+            
+                    
+                    torch.utils.checkpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.19" data-path="docs_cpp_extension.html">
+            
+                <a href="docs_cpp_extension.html">
+            
+                    
+                    torch.utils.cpp_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.20" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.21" data-path="dlpack.html">
+            
+                <a href="dlpack.html">
+            
+                    
+                    torch.utils.dlpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.22" data-path="hub.html">
+            
+                <a href="hub.html">
+            
+                    
+                    torch.hub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.23" data-path="model_zoo.html">
+            
+                <a href="model_zoo.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.24" data-path="onnx.html">
+            
+                <a href="onnx.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.25" data-path="distributed_deprecated.html">
+            
+                <a href="distributed_deprecated.html">
+            
+                    
+                    Distributed communication package (deprecated) - torch.distributed.deprecated
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="docs_torchvision_ref.html">
+            
+                <a href="docs_torchvision_ref.html">
+            
+                    
+                    torchvision 参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="torchvision_datasets.html">
+            
+                <a href="torchvision_datasets.html">
+            
+                    
+                    torchvision.datasets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="torchvision_models.html">
+            
+                <a href="torchvision_models.html">
+            
+                    
+                    torchvision.models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="torchvision_transforms.html">
+            
+                <a href="torchvision_transforms.html">
+            
+                    
+                    torchvision.transforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="torchvision_utils.html">
+            
+                <a href="torchvision_utils.html">
+            
+                    
+                    torchvision.utils
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Other Operations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x5176;&#x4ED6;&#x884C;&#x52A8;">&#x5176;&#x4ED6;&#x884C;&#x52A8;</h3>
+<blockquote>
+<p>&#x8BD1;&#x8005;&#xFF1A;<a href="https://github.com/apachecn" target="_blank">ApacheCN</a></p>
+</blockquote>
+<pre><code class="lang-py">torch.bincount(self, weights=<span class="hljs-keyword">None</span>, minlength=<span class="hljs-number">0</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x8BA1;&#x7B97;&#x975E;&#x8D1F;&#x7684;int&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E2A;&#x503C;&#x7684;&#x9891;&#x7387;&#x3002;</p>
+<p>&#x9664;&#x975E;<code>input</code>&#x4E3A;&#x7A7A;&#xFF0C;&#x5426;&#x5219;&#x7BB1;&#x6570;(&#x5927;&#x5C0F;&#x4E3A;1&#xFF09;&#x6BD4;<code>input</code>&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x5927;1&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#x5927;&#x5C0F;&#x4E3A;0.&#x5982;&#x679C;&#x6307;&#x5B9A;<code>minlength</code>&#xFF0C;&#x5219;&#x7BB1;&#x6570;&#x4E3A;&#x81F3;&#x5C11;<code>minlength</code>&#x5E76;&#x4E14;&#x5982;&#x679C;<code>input</code>&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x7ED3;&#x679C;&#x662F;&#x586B;&#x5145;&#x96F6;&#x7684;&#x5927;&#x5C0F;<code>minlength</code>&#x7684;&#x5F20;&#x91CF;&#x3002;&#x5982;&#x679C;<code>n</code>&#x662F;&#x4F4D;&#x7F6E;<code>i</code>&#x7684;&#x503C;&#xFF0C;<code>out[n] += weights[i]</code>&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E86;<code>weights</code>&#xFF0C;&#x5219;<code>out[n] += 1</code>&#x3002;</p>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x4F7F;&#x7528;CUDA&#x540E;&#x7AEF;&#x65F6;&#xFF0C;&#x6B64;&#x64CD;&#x4F5C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4E0D;&#x5BB9;&#x6613;&#x5173;&#x95ED;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x884C;&#x4E3A;&#x3002;&#x6709;&#x5173;&#x80CC;&#x666F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/notes/randomness.html">&#x518D;&#x73B0;&#x6027;</a>&#x7684;&#x6CE8;&#x91CA;&#x3002;</p>
+<p>&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - 1-d int&#x5F20;&#x91CF;</li>
+<li><strong>&#x6743;&#x91CD;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x53EF;&#x9009;&#xFF0C;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#x4E2D;&#x6BCF;&#x4E2A;&#x503C;&#x7684;&#x6743;&#x91CD;&#x3002;&#x5E94;&#x4E0E;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#x3002;</li>
+<li><strong>minlength</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a>&#xFF09; - &#x53EF;&#x9009;&#x7684;&#x6700;&#x5C0F;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x3002;&#x5E94;&#x8BE5;&#x662F;&#x975E;&#x8D1F;&#x9762;&#x7684;&#x3002;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8FD4;&#x56DE;&#xFF1A;</th>
+<th>&#x5982;&#x679C;<code>input</code>&#x975E;&#x7A7A;&#xFF0C;&#x5219;&#x4E3A;&#x5F62;&#x72B6;&#x5F20;&#x91CF;<code>Size([max(input) + 1])</code>&#xFF0C;&#x5426;&#x5219;&#x4E3A;<code>Size(0)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF1A;</td>
+<td>&#x8F93;&#x51FA; (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor">Tensor</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>input = torch.randint(<span class="hljs-number">0</span>, <span class="hljs-number">8</span>, (<span class="hljs-number">5</span>,), dtype=torch.int64)
+<span class="hljs-meta">&gt;&gt;&gt; </span>weights = torch.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, steps=<span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>input, weights
+(tensor([<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]),
+ tensor([ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.2500</span>,  <span class="hljs-number">0.5000</span>,  <span class="hljs-number">0.7500</span>,  <span class="hljs-number">1.0000</span>])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.bincount(input)
+tensor([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>input.bincount(weights)
+tensor([<span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">1.0000</span>, <span class="hljs-number">1.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.5000</span>])
+</code></pre>
+<pre><code class="lang-py">torch.broadcast_tensors(*tensors) &#x2192; List of Tensors
+</code></pre>
+<p>&#x6839;&#x636E;_broadcasting-semantics&#x5E7F;&#x64AD;&#x7ED9;&#x5B9A;&#x7684;&#x5F20;&#x91CF;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#xFF1A;</th>
+<th><em> <em>*&#x5F20;&#x91CF;</em></em> - &#x4EFB;&#x4F55;&#x6570;&#x91CF;&#x7684;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5F20;&#x91CF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.arange(<span class="hljs-number">3</span>).view(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>y = torch.arange(<span class="hljs-number">2</span>).view(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a, b = torch.broadcast_tensors(x, y)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.size()
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
+ [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]])
+</code></pre>
+<pre><code class="lang-py">torch.cross(input, other, dim=<span class="hljs-number">-1</span>, out=<span class="hljs-keyword">None</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x8FD4;&#x56DE;<code>input</code>&#x548C;<code>other</code>&#x7684;&#x7EF4;&#x5EA6;<code>dim</code>&#x4E2D;&#x77E2;&#x91CF;&#x7684;&#x53C9;&#x79EF;&#x3002;</p>
+<p><code>input</code>&#x548C;<code>other</code>&#x5FC5;&#x987B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5C3A;&#x5BF8;&#xFF0C;&#x5E76;&#x4E14;<code>dim</code>&#x5C3A;&#x5BF8;&#x7684;&#x5927;&#x5C0F;&#x5E94;&#x4E3A;3&#x3002;</p>
+<p>&#x5982;&#x679C;&#x672A;&#x7ED9;&#x51FA;<code>dim</code>&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;&#x627E;&#x5230;&#x5927;&#x5C0F;&#x4E3A;3&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>&#x5176;&#x4ED6;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>dim</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x91C7;&#x53D6;&#x4EA4;&#x53C9;&#x79EF;&#x7684;&#x7EF4;&#x5EA6;&#x3002;</li>
+<li><strong>out</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x8F93;&#x51FA;&#x5F20;&#x91CF;</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">4</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([[<span class="hljs-number">-0.3956</span>,  <span class="hljs-number">1.1455</span>,  <span class="hljs-number">1.6895</span>],
+ [<span class="hljs-number">-0.5849</span>,  <span class="hljs-number">1.3672</span>,  <span class="hljs-number">0.3599</span>],
+ [<span class="hljs-number">-1.1626</span>,  <span class="hljs-number">0.7180</span>, <span class="hljs-number">-0.0521</span>],
+ [<span class="hljs-number">-0.1339</span>,  <span class="hljs-number">0.9902</span>, <span class="hljs-number">-2.0225</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = torch.randn(<span class="hljs-number">4</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>b
+tensor([[<span class="hljs-number">-0.0257</span>, <span class="hljs-number">-1.4725</span>, <span class="hljs-number">-1.2251</span>],
+ [<span class="hljs-number">-1.1479</span>, <span class="hljs-number">-0.7005</span>, <span class="hljs-number">-1.9757</span>],
+ [<span class="hljs-number">-1.3904</span>,  <span class="hljs-number">0.3726</span>, <span class="hljs-number">-1.1836</span>],
+ [<span class="hljs-number">-0.9688</span>, <span class="hljs-number">-0.7153</span>,  <span class="hljs-number">0.2159</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.cross(a, b, dim=<span class="hljs-number">1</span>)
+tensor([[ <span class="hljs-number">1.0844</span>, <span class="hljs-number">-0.5281</span>,  <span class="hljs-number">0.6120</span>],
+ [<span class="hljs-number">-2.4490</span>, <span class="hljs-number">-1.5687</span>,  <span class="hljs-number">1.9792</span>],
+ [<span class="hljs-number">-0.8304</span>, <span class="hljs-number">-1.3037</span>,  <span class="hljs-number">0.5650</span>],
+ [<span class="hljs-number">-1.2329</span>,  <span class="hljs-number">1.9883</span>,  <span class="hljs-number">1.0551</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.cross(a, b)
+tensor([[ <span class="hljs-number">1.0844</span>, <span class="hljs-number">-0.5281</span>,  <span class="hljs-number">0.6120</span>],
+ [<span class="hljs-number">-2.4490</span>, <span class="hljs-number">-1.5687</span>,  <span class="hljs-number">1.9792</span>],
+ [<span class="hljs-number">-0.8304</span>, <span class="hljs-number">-1.3037</span>,  <span class="hljs-number">0.5650</span>],
+ [<span class="hljs-number">-1.2329</span>,  <span class="hljs-number">1.9883</span>,  <span class="hljs-number">1.0551</span>]])
+</code></pre>
+<pre><code class="lang-py">torch.diag(input, diagonal=<span class="hljs-number">0</span>, out=<span class="hljs-keyword">None</span>) &#x2192; Tensor
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;<code>input</code>&#x662F;&#x77E2;&#x91CF;(1-D&#x5F20;&#x91CF;&#xFF09;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;2-D&#x5E73;&#x65B9;&#x5F20;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;<code>input</code>&#x7684;&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>input</code>&#x662F;&#x77E9;&#x9635;(2-D&#x5F20;&#x91CF;&#xFF09;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x5177;&#x6709;<code>input</code>&#x7684;&#x5BF9;&#x89D2;&#x5143;&#x7D20;&#x7684;1-D&#x5F20;&#x91CF;&#x3002;</li>
+</ul>
+<p>&#x53C2;&#x6570; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> &#x63A7;&#x5236;&#x8981;&#x8003;&#x8651;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> = 0&#xFF0C;&#x5219;&#x5B83;&#x662F;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</li>
+<li>&#x5982;&#x679C; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> &gt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x65B9;&#x3002;</li>
+<li>&#x5982;&#x679C; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> &#xFF06;lt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0B;&#x9762;&#x3002;</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>&#x5BF9;&#x89D2;&#x7EBF;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x53EF;&#x9009;</em>&#xFF09; - &#x8981;&#x8003;&#x8651;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;</li>
+<li><strong>out</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x8F93;&#x51FA;&#x5F20;&#x91CF;</li>
+</ul>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x770B;</p>
+<p><a href="#torch.diagonal" title="torch.diagonal"><code>torch.diagonal()</code></a> &#x59CB;&#x7EC8;&#x8FD4;&#x56DE;&#x5176;&#x8F93;&#x5165;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</p>
+<p><a href="#torch.diagflat" title="torch.diagflat"><code>torch.diagflat()</code></a> &#x603B;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7531;&#x8F93;&#x5165;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x89D2;&#x5143;&#x7D20;&#x7684;&#x5F20;&#x91CF;&#x3002;</p>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>&#x83B7;&#x53D6;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x4E3A;&#x5BF9;&#x89D2;&#x7EBF;&#x7684;&#x65B9;&#x9635;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([ <span class="hljs-number">0.5950</span>,<span class="hljs-number">-0.0872</span>, <span class="hljs-number">2.3298</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diag(a)
+tensor([[ <span class="hljs-number">0.5950</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,<span class="hljs-number">-0.0872</span>, <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">2.3298</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diag(a, <span class="hljs-number">1</span>)
+tensor([[ <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.5950</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>,<span class="hljs-number">-0.0872</span>, <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">2.3298</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>, <span class="hljs-number">0.0000</span>]])
+</code></pre>
+<p>&#x83B7;&#x53D6;&#x7ED9;&#x5B9A;&#x77E9;&#x9635;&#x7684;&#x7B2C;k&#x4E2A;&#x5BF9;&#x89D2;&#x7EBF;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([[<span class="hljs-number">-0.4264</span>, <span class="hljs-number">0.0255</span>,<span class="hljs-number">-0.1064</span>],
+ [ <span class="hljs-number">0.8795</span>,<span class="hljs-number">-0.2429</span>, <span class="hljs-number">0.1374</span>],
+ [ <span class="hljs-number">0.1029</span>,<span class="hljs-number">-0.6482</span>,<span class="hljs-number">-1.6300</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diag(a, <span class="hljs-number">0</span>)
+tensor([<span class="hljs-number">-0.4264</span>,<span class="hljs-number">-0.2429</span>,<span class="hljs-number">-1.6300</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diag(a, <span class="hljs-number">1</span>)
+tensor([ <span class="hljs-number">0.0255</span>, <span class="hljs-number">0.1374</span>])
+</code></pre>
+<pre><code class="lang-py">torch.diag_embed(input, offset=<span class="hljs-number">0</span>, dim1=<span class="hljs-number">-2</span>, dim2=<span class="hljs-number">-1</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F20;&#x91CF;&#xFF0C;&#x5176;&#x67D0;&#x4E9B;2D&#x5E73;&#x9762;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;(&#x7531;<code>dim1</code>&#x548C;<code>dim2</code>&#x6307;&#x5B9A;&#xFF09;&#x7531;<code>input</code>&#x586B;&#x5145;&#x3002;&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x521B;&#x5EFA;&#x6279;&#x91CF;&#x5BF9;&#x89D2;&#x77E9;&#x9635;&#xFF0C;&#x9ED8;&#x8BA4;&#x9009;&#x62E9;&#x7531;&#x8FD4;&#x56DE;&#x5F20;&#x91CF;&#x7684;&#x6700;&#x540E;&#x4E24;&#x4E2A;&#x7EF4;&#x5EA6;&#x5F62;&#x6210;&#x7684;2D&#x5E73;&#x9762;&#x3002;</p>
+<p>&#x53C2;&#x6570;<code>offset</code>&#x63A7;&#x5236;&#x8981;&#x8003;&#x8651;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C;<code>offset</code> = 0&#xFF0C;&#x5219;&#x5B83;&#x662F;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>offset</code>&gt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x65B9;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>offset</code>&#xFF06;lt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0B;&#x9762;&#x3002;</li>
+</ul>
+<p>&#x5C06;&#x8BA1;&#x7B97;&#x65B0;&#x77E9;&#x9635;&#x7684;&#x5927;&#x5C0F;&#x4EE5;&#x4F7F;&#x5F97;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x5177;&#x6709;&#x6700;&#x540E;&#x8F93;&#x5165;&#x7EF4;&#x5EA6;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5BF9;&#x4E8E; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/28256dd5af833c877d63bfabfaa7b301.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/28256dd5af833c877d63bfabfaa7b301.jpg" alt=""></a> &#x4EE5;&#x5916;&#x7684;<code>offset</code>&#xFF0C;<code>dim1</code>&#x548C;<code>dim2</code>&#x7684;&#x987A;&#x5E8F;&#x5F88;&#x91CD;&#x8981;&#x3002;&#x4EA4;&#x6362;&#x5B83;&#x4EEC;&#x76F8;&#x5F53;&#x4E8E;&#x6539;&#x53D8;<code>offset</code>&#x7684;&#x7B26;&#x53F7;&#x3002;</p>
+<p>&#x5C06; <a href="#torch.diagonal" title="torch.diagonal"><code>torch.diagonal()</code></a> &#x5E94;&#x7528;&#x4E8E;&#x5177;&#x6709;&#x76F8;&#x540C;&#x53C2;&#x6570;&#x7684;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x5C06;&#x4EA7;&#x751F;&#x4E0E;&#x8F93;&#x5165;&#x76F8;&#x540C;&#x7684;&#x77E9;&#x9635;&#x3002;&#x4F46;&#x662F;&#xFF0C; <a href="#torch.diagonal" title="torch.diagonal"><code>torch.diagonal()</code></a> &#x5177;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x9ED8;&#x8BA4;&#x5C3A;&#x5BF8;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;&#x3002;&#x5FC5;&#x987B;&#x81F3;&#x5C11;&#x662F;&#x4E00;&#x7EF4;&#x7684;&#x3002;</li>
+<li><strong>&#x504F;&#x79FB;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x5BF9;&#x89D2;&#x7EBF;&#x8003;&#x8651;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;0(&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#xFF09;&#x3002;</li>
+<li><strong>dim1</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x91C7;&#x53D6;&#x5BF9;&#x89D2;&#x7EBF;&#x7684;&#x7B2C;&#x4E00;&#x7EF4;&#x5EA6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;-2&#x3002;</li>
+<li><strong>dim2</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x91C7;&#x53D6;&#x5BF9;&#x89D2;&#x7EBF;&#x7684;&#x7B2C;&#x4E8C;&#x7EF4;&#x5EA6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;-1&#x3002;</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diag_embed(a)
+tensor([[[ <span class="hljs-number">1.5410</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.2934</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-2.1788</span>]],
+
+ [[ <span class="hljs-number">0.5684</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">-1.0845</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-1.3986</span>]]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diag_embed(a, offset=<span class="hljs-number">1</span>, dim1=<span class="hljs-number">0</span>, dim2=<span class="hljs-number">2</span>)
+tensor([[[ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">1.5410</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.5684</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>]],
+
+ [[ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.2934</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-1.0845</span>,  <span class="hljs-number">0.0000</span>]],
+
+ [[ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-2.1788</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-1.3986</span>]],
+
+ [[ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>]]])
+</code></pre>
+<pre><code class="lang-py">torch.diagflat(input, diagonal=<span class="hljs-number">0</span>) &#x2192; Tensor
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;<code>input</code>&#x662F;&#x77E2;&#x91CF;(1-D&#x5F20;&#x91CF;&#xFF09;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;2-D&#x5E73;&#x65B9;&#x5F20;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;<code>input</code>&#x7684;&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>input</code>&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x591A;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x5F20;&#x91CF;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x5F20;&#x91CF;&#xFF0C;&#x5176;&#x5BF9;&#x89D2;&#x7EBF;&#x5143;&#x7D20;&#x7B49;&#x4E8E;&#x4E00;&#x4E2A;&#x5C55;&#x5E73;&#x7684;<code>input</code>&#x3002;</li>
+</ul>
+<p>The argument <code>offset</code> controls which diagonal to consider:</p>
+<ul>
+<li>&#x5982;&#x679C;<code>offset</code> = 0&#xFF0C;&#x5219;&#x5B83;&#x662F;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>offset</code>&gt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x65B9;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>offset</code>&#xFF06;lt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0B;&#x9762;&#x3002;</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>&#x504F;&#x79FB;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x5BF9;&#x89D2;&#x7EBF;&#x8003;&#x8651;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;0(&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#xFF09;&#x3002;</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([<span class="hljs-number">-0.2956</span>, <span class="hljs-number">-0.9068</span>,  <span class="hljs-number">0.1695</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diagflat(a)
+tensor([[<span class="hljs-number">-0.2956</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.9068</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.1695</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diagflat(a, <span class="hljs-number">1</span>)
+tensor([[ <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.2956</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.9068</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.1695</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([[ <span class="hljs-number">0.2094</span>, <span class="hljs-number">-0.3018</span>],
+ [<span class="hljs-number">-0.1516</span>,  <span class="hljs-number">1.9342</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diagflat(a)
+tensor([[ <span class="hljs-number">0.2094</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.3018</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.1516</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">1.9342</span>]])
+</code></pre>
+<pre><code class="lang-py">torch.diagonal(input, offset=<span class="hljs-number">0</span>, dim1=<span class="hljs-number">0</span>, dim2=<span class="hljs-number">1</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x8FD4;&#x56DE;<code>input</code>&#x7684;&#x5C40;&#x90E8;&#x89C6;&#x56FE;&#xFF0C;&#x5176;&#x5BF9;&#x89D2;&#x7EBF;&#x5143;&#x7D20;&#x76F8;&#x5BF9;&#x4E8E;<code>dim1</code>&#x548C;<code>dim2</code>&#x4F5C;&#x4E3A;&#x5F62;&#x72B6;&#x672B;&#x5C3E;&#x7684;&#x5C3A;&#x5BF8;&#x9644;&#x52A0;&#x3002;</p>
+<p>The argument <code>offset</code> controls which diagonal to consider:</p>
+<ul>
+<li>&#x5982;&#x679C;<code>offset</code> = 0&#xFF0C;&#x5219;&#x5B83;&#x662F;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>offset</code>&gt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x65B9;&#x3002;</li>
+<li>&#x5982;&#x679C;<code>offset</code>&#xFF06;lt; 0&#xFF0C;&#x5B83;&#x5728;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0B;&#x9762;&#x3002;</li>
+</ul>
+<p>&#x5C06; <a href="#torch.diag_embed" title="torch.diag_embed"><code>torch.diag_embed()</code></a> &#x5E94;&#x7528;&#x4E8E;&#x5177;&#x6709;&#x76F8;&#x540C;&#x53C2;&#x6570;&#x7684;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x5C06;&#x751F;&#x6210;&#x5E26;&#x6709;&#x8F93;&#x5165;&#x5BF9;&#x89D2;&#x7EBF;&#x6761;&#x76EE;&#x7684;&#x5BF9;&#x89D2;&#x77E9;&#x9635;&#x3002;&#x4F46;&#x662F;&#xFF0C; <a href="#torch.diag_embed" title="torch.diag_embed"><code>torch.diag_embed()</code></a> &#x5177;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x9ED8;&#x8BA4;&#x5C3A;&#x5BF8;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;&#x3002;&#x5FC5;&#x987B;&#x81F3;&#x5C11;&#x662F;&#x4E8C;&#x7EF4;&#x7684;&#x3002;</li>
+<li><strong>&#x504F;&#x79FB;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x5BF9;&#x89D2;&#x7EBF;&#x8003;&#x8651;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;0(&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#xFF09;&#x3002;</li>
+<li><strong>dim1</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x91C7;&#x53D6;&#x5BF9;&#x89D2;&#x7EBF;&#x7684;&#x7B2C;&#x4E00;&#x7EF4;&#x5EA6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;0&#x3002;</li>
+<li><strong>dim2</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x91C7;&#x53D6;&#x5BF9;&#x89D2;&#x7EBF;&#x7684;&#x7B2C;&#x4E8C;&#x7EF4;&#x5EA6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;1&#x3002;</li>
+</ul>
+<p>Note</p>
+<p>&#x8981;&#x91C7;&#x7528;&#x6279;&#x5BF9;&#x89D2;&#x7EBF;&#xFF0C;&#x4F20;&#x5165;dim1 = -2&#xFF0C;dim2 = -1&#x3002;</p>
+<p>Examples:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([[<span class="hljs-number">-1.0854</span>,  <span class="hljs-number">1.1431</span>, <span class="hljs-number">-0.1752</span>],
+ [ <span class="hljs-number">0.8536</span>, <span class="hljs-number">-0.0905</span>,  <span class="hljs-number">0.0360</span>],
+ [ <span class="hljs-number">0.6927</span>, <span class="hljs-number">-0.3735</span>, <span class="hljs-number">-0.4945</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diagonal(a, <span class="hljs-number">0</span>)
+tensor([<span class="hljs-number">-1.0854</span>, <span class="hljs-number">-0.0905</span>, <span class="hljs-number">-0.4945</span>])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diagonal(a, <span class="hljs-number">1</span>)
+tensor([ <span class="hljs-number">1.1431</span>,  <span class="hljs-number">0.0360</span>])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.diagonal(x, offset=<span class="hljs-number">-1</span>, dim1=<span class="hljs-number">1</span>, dim2=<span class="hljs-number">2</span>)
+tensor([[[<span class="hljs-number">-1.2631</span>,  <span class="hljs-number">0.3755</span>, <span class="hljs-number">-1.5977</span>, <span class="hljs-number">-1.8172</span>],
+ [<span class="hljs-number">-1.1065</span>,  <span class="hljs-number">1.0401</span>, <span class="hljs-number">-0.2235</span>, <span class="hljs-number">-0.7938</span>]],
+
+ [[<span class="hljs-number">-1.7325</span>, <span class="hljs-number">-0.3081</span>,  <span class="hljs-number">0.6166</span>,  <span class="hljs-number">0.2335</span>],
+ [ <span class="hljs-number">1.0500</span>,  <span class="hljs-number">0.7336</span>, <span class="hljs-number">-0.3836</span>, <span class="hljs-number">-1.1015</span>]]])
+</code></pre>
+<pre><code class="lang-py">torch.einsum(equation, *operands) &#x2192; Tensor
+</code></pre>
+<p>&#x8BE5;&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x4F7F;&#x7528;&#x7231;&#x56E0;&#x65AF;&#x5766;&#x6C42;&#x548C;&#x7EA6;&#x5B9A;&#x6765;&#x8BA1;&#x7B97;&#x591A;&#x7EBF;&#x6027;&#x8868;&#x8FBE;&#x5F0F;(&#x5373;&#x4E58;&#x79EF;&#x548C;&#xFF09;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x7B49;&#x5F0F;</strong> (<em>string</em> ) - &#x8BE5;&#x7B49;&#x5F0F;&#x6839;&#x636E;&#x4E0E;&#x64CD;&#x4F5C;&#x6570;&#x548C;&#x7ED3;&#x679C;&#x7684;&#x6BCF;&#x4E2A;&#x7EF4;&#x5EA6;&#x76F8;&#x5173;&#x8054;&#x7684;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;(&#x7D22;&#x5F15;&#xFF09;&#x7ED9;&#x51FA;&#x3002;&#x5DE6;&#x4FA7;&#x5217;&#x51FA;&#x4E86;&#x64CD;&#x4F5C;&#x6570;&#x5C3A;&#x5BF8;&#xFF0C;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;&#x3002;&#x6BCF;&#x4E2A;&#x5F20;&#x91CF;&#x7EF4;&#x5EA6;&#x5E94;&#x8BE5;&#x6709;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x5B57;&#x6BCD;&#x3002;&#x53F3;&#x4FA7;&#x8DDF;&#x5728;<code>-&amp;gt;</code>&#x4E4B;&#x540E;&#xFF0C;&#x5E76;&#x7ED9;&#x51FA;&#x8F93;&#x51FA;&#x7684;&#x7D22;&#x5F15;&#x3002;&#x5982;&#x679C;&#x7701;&#x7565;<code>-&amp;gt;</code>&#x548C;&#x53F3;&#x4FA7;&#xFF0C;&#x5219;&#x5B83;&#x9690;&#x5F0F;&#x5730;&#x5B9A;&#x4E49;&#x4E3A;&#x5728;&#x5DE6;&#x4FA7;&#x6070;&#x597D;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x6240;&#x6709;&#x7D22;&#x5F15;&#x7684;&#x6309;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#x7684;&#x5217;&#x8868;&#x3002;&#x5728;&#x64CD;&#x4F5C;&#x6570;&#x8F93;&#x5165;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;&#x8F93;&#x51FA;&#x4E2D;&#x672A;&#x663E;&#x793A;&#x7684;&#x7D22;&#x5F15;&#x6C42;&#x548C;&#x3002;&#x5982;&#x679C;&#x7D22;&#x5F15;&#x5BF9;&#x540C;&#x4E00;&#x64CD;&#x4F5C;&#x6570;&#x591A;&#x6B21;&#x51FA;&#x73B0;&#xFF0C;&#x5219;&#x91C7;&#x7528;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;&#x7701;&#x7565;&#x53F7;<code>&#x2026;</code>&#x8868;&#x793A;&#x56FA;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x7EF4;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x63A8;&#x65AD;&#x51FA;&#x53F3;&#x4FA7;&#xFF0C;&#x5219;&#x7701;&#x7565;&#x53F7;&#x7EF4;&#x5EA6;&#x4F4D;&#x4E8E;&#x8F93;&#x51FA;&#x7684;&#x5F00;&#x5934;&#x3002;</li>
+<li><strong>&#x64CD;&#x4F5C;&#x6570;</strong>(<em>&#x5F20;&#x91CF;&#x5217;&#x8868;</em>&#xFF09; - &#x8BA1;&#x7B97;&#x7231;&#x56E0;&#x65AF;&#x5766;&#x548C;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x64CD;&#x4F5C;&#x6570;&#x4F5C;&#x4E3A;&#x5217;&#x8868;&#x4F20;&#x9012;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F5C;&#x4E3A;&#x5355;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x3002;</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.randn(<span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>y = torch.randn(<span class="hljs-number">4</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.einsum(<span class="hljs-string">&apos;i,j-&gt;ij&apos;</span>, x, y)  <span class="hljs-comment"># outer product</span>
+tensor([[<span class="hljs-number">-0.0570</span>, <span class="hljs-number">-0.0286</span>, <span class="hljs-number">-0.0231</span>,  <span class="hljs-number">0.0197</span>],
+ [ <span class="hljs-number">1.2616</span>,  <span class="hljs-number">0.6335</span>,  <span class="hljs-number">0.5113</span>, <span class="hljs-number">-0.4351</span>],
+ [ <span class="hljs-number">1.4452</span>,  <span class="hljs-number">0.7257</span>,  <span class="hljs-number">0.5857</span>, <span class="hljs-number">-0.4984</span>],
+ [<span class="hljs-number">-0.4647</span>, <span class="hljs-number">-0.2333</span>, <span class="hljs-number">-0.1883</span>,  <span class="hljs-number">0.1603</span>],
+ [<span class="hljs-number">-1.1130</span>, <span class="hljs-number">-0.5588</span>, <span class="hljs-number">-0.4510</span>,  <span class="hljs-number">0.3838</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>A = torch.randn(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>l = torch.randn(<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>r = torch.randn(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.einsum(<span class="hljs-string">&apos;bn,anm,bm-&gt;ba&apos;</span>, l, A, r) <span class="hljs-comment"># compare torch.nn.functional.bilinear</span>
+tensor([[<span class="hljs-number">-0.3430</span>, <span class="hljs-number">-5.2405</span>,  <span class="hljs-number">0.4494</span>],
+ [ <span class="hljs-number">0.3311</span>,  <span class="hljs-number">5.5201</span>, <span class="hljs-number">-3.0356</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>As = torch.randn(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>Bs = torch.randn(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.einsum(<span class="hljs-string">&apos;bij,bjk-&gt;bik&apos;</span>, As, Bs) <span class="hljs-comment"># batch matrix multiplication</span>
+tensor([[[<span class="hljs-number">-1.0564</span>, <span class="hljs-number">-1.5904</span>,  <span class="hljs-number">3.2023</span>,  <span class="hljs-number">3.1271</span>],
+ [<span class="hljs-number">-1.6706</span>, <span class="hljs-number">-0.8097</span>, <span class="hljs-number">-0.8025</span>, <span class="hljs-number">-2.1183</span>]],
+
+ [[ <span class="hljs-number">4.2239</span>,  <span class="hljs-number">0.3107</span>, <span class="hljs-number">-0.5756</span>, <span class="hljs-number">-0.2354</span>],
+ [<span class="hljs-number">-1.4558</span>, <span class="hljs-number">-0.3460</span>,  <span class="hljs-number">1.5087</span>, <span class="hljs-number">-0.8530</span>]],
+
+ [[ <span class="hljs-number">2.8153</span>,  <span class="hljs-number">1.8787</span>, <span class="hljs-number">-4.3839</span>, <span class="hljs-number">-1.2112</span>],
+ [ <span class="hljs-number">0.3728</span>, <span class="hljs-number">-2.1131</span>,  <span class="hljs-number">0.0921</span>,  <span class="hljs-number">0.8305</span>]]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>A = torch.randn(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.einsum(<span class="hljs-string">&apos;ii-&gt;i&apos;</span>, A) <span class="hljs-comment"># diagonal</span>
+tensor([<span class="hljs-number">-0.7825</span>,  <span class="hljs-number">0.8291</span>, <span class="hljs-number">-0.1936</span>])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>A = torch.randn(<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.einsum(<span class="hljs-string">&apos;...ii-&gt;...i&apos;</span>, A) <span class="hljs-comment"># batch diagonal</span>
+tensor([[<span class="hljs-number">-1.0864</span>,  <span class="hljs-number">0.7292</span>,  <span class="hljs-number">0.0569</span>],
+ [<span class="hljs-number">-0.9725</span>, <span class="hljs-number">-1.0270</span>,  <span class="hljs-number">0.6493</span>],
+ [ <span class="hljs-number">0.5832</span>, <span class="hljs-number">-1.1716</span>, <span class="hljs-number">-1.5084</span>],
+ [ <span class="hljs-number">0.4041</span>, <span class="hljs-number">-1.1690</span>,  <span class="hljs-number">0.8570</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>A = torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.einsum(<span class="hljs-string">&apos;...ij-&gt;...ji&apos;</span>, A).shape <span class="hljs-comment"># batch permute</span>
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>])
+</code></pre>
+<pre><code class="lang-py">torch.flatten(input, start_dim=<span class="hljs-number">0</span>, end_dim=<span class="hljs-number">-1</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x5728;&#x5F20;&#x91CF;&#x4E2D;&#x5C55;&#x5E73;&#x8FDE;&#x7EED;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x53D8;&#x6697;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>start_dim</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a>&#xFF09; - &#x7B2C;&#x4E00;&#x4E2A;&#x6697;&#x6DE1;&#x53D8;&#x5E73;</li>
+<li><strong>end_dim</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a>&#xFF09; - &#x6700;&#x540E;&#x7684;&#x6697;&#x6DE1;&#x53D8;&#x5E73;</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>t = torch.tensor([[[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
+ [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]],
+ [[<span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+ [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>]]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.flatten(t)
+tensor([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.flatten(t, start_dim=<span class="hljs-number">1</span>)
+tensor([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>],
+ [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]])
+</code></pre>
+<pre><code class="lang-py">torch.flip(input, dims) &#x2192; Tensor
+</code></pre>
+<p>&#x5728;dims&#x4E2D;&#x6CBF;&#x7ED9;&#x5B9A;&#x8F74;&#x53CD;&#x8F6C;n-D&#x5F20;&#x91CF;&#x7684;&#x987A;&#x5E8F;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>&#x6697;&#x6DE1;</strong>(<em>&#x4E00;&#x4E2A;&#x5217;&#x8868;</em> <em>&#x6216;</em> <a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)" target="_blank"><em>&#x5143;&#x7EC4;</em></a> - &#x8F74;&#x8981;&#x7FFB;&#x8F6C;</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.arange(<span class="hljs-number">8</span>).view(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+tensor([[[ <span class="hljs-number">0</span>,  <span class="hljs-number">1</span>],
+ [ <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>]],
+
+ [[ <span class="hljs-number">4</span>,  <span class="hljs-number">5</span>],
+ [ <span class="hljs-number">6</span>,  <span class="hljs-number">7</span>]]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.flip(x, [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])
+tensor([[[ <span class="hljs-number">6</span>,  <span class="hljs-number">7</span>],
+ [ <span class="hljs-number">4</span>,  <span class="hljs-number">5</span>]],
+
+ [[ <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>],
+ [ <span class="hljs-number">0</span>,  <span class="hljs-number">1</span>]]])
+</code></pre>
+<pre><code class="lang-py">torch.histc(input, bins=<span class="hljs-number">100</span>, min=<span class="hljs-number">0</span>, max=<span class="hljs-number">0</span>, out=<span class="hljs-keyword">None</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x8BA1;&#x7B97;&#x5F20;&#x91CF;&#x7684;&#x76F4;&#x65B9;&#x56FE;&#x3002;</p>
+<p>&#x5143;&#x7D20;&#x5728; <a href="#torch.min" title="torch.min"><code>min</code></a> &#x548C; <a href="#torch.max" title="torch.max"><code>max</code></a> &#x4E4B;&#x95F4;&#x5206;&#x6210;&#x76F8;&#x7B49;&#x7684;&#x5BBD;&#x5EA6;&#x533A;&#x95F4;&#x3002;&#x5982;&#x679C; <a href="#torch.min" title="torch.min"><code>min</code></a> &#x548C; <a href="#torch.max" title="torch.max"><code>max</code></a> &#x90FD;&#x4E3A;&#x96F6;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x548C;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>&#x7BB1;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a>&#xFF09; - &#x76F4;&#x65B9;&#x56FE;&#x7BB1;&#x6570;</li>
+<li><strong>min</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a>&#xFF09; - &#x8303;&#x56F4;&#x7684;&#x4E0B;&#x9650;(&#x542B;&#xFF09;</li>
+<li><strong>max</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a>&#xFF09; - &#x8303;&#x56F4;&#x7684;&#x4E0A;&#x9650;(&#x542B;&#xFF09;</li>
+<li><strong>out</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x8F93;&#x51FA;&#x5F20;&#x91CF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Returns:</th>
+<th>&#x76F4;&#x65B9;&#x56FE;&#x8868;&#x793A;&#x4E3A;&#x5F20;&#x91CF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return type:</td>
+<td><a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor">Tensor</a></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>torch.histc(torch.tensor([<span class="hljs-number">1.</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]), bins=<span class="hljs-number">4</span>, min=<span class="hljs-number">0</span>, max=<span class="hljs-number">3</span>)
+tensor([ <span class="hljs-number">0.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">0.</span>])
+</code></pre>
+<pre><code class="lang-py">torch.meshgrid(*tensors, **kwargs)
+</code></pre>
+<p>&#x53D6; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/9341d9048ac485106d2b2ee8de14876f.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/9341d9048ac485106d2b2ee8de14876f.jpg" alt=""></a> &#x5F20;&#x91CF;&#xFF0C;&#x6BCF;&#x4E2A;&#x5F20;&#x91CF;&#x53EF;&#x4EE5;&#x662F;&#x6807;&#x91CF;&#x6216;1&#x7EF4;&#x5411;&#x91CF;&#xFF0C;&#x5E76;&#x521B;&#x5EFA; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/9341d9048ac485106d2b2ee8de14876f.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/9341d9048ac485106d2b2ee8de14876f.jpg" alt=""></a> N&#x7EF4;&#x7F51;&#x683C;&#xFF0C;&#x5176;&#x4E2D;&#xFF1A;math&#xFF1A;<a href="#id2">`</a>i<code>&#x901A;&#x8FC7;&#x6269;&#x5C55;&#xFF1A;math&#xFF1A;[</code>](#id4)i` th&#x8F93;&#x5165;&#x5B9A;&#x4E49;&#x7531;&#x5176;&#x4ED6;&#x8F93;&#x5165;&#x5B9A;&#x4E49;&#x7684;&#x7EF4;&#x5EA6;&#x6765;&#x5B9A;&#x4E49;&#x7F51;&#x683C;&#x3002;</p>
+<blockquote>
+<pre><code class="lang-py">Args:
+</code></pre>
+<p>&#x5F20;&#x91CF;(Tensor&#x5217;&#x8868;&#xFF09;&#xFF1A;&#x6807;&#x91CF;&#x5217;&#x8868;&#x6216;1&#x7EF4;&#x5F20;&#x91CF;&#x3002;&#x6807;&#x91CF;&#x5C06;&#x88AB;&#x81EA;&#x52A8;&#x89C6;&#x4E3A;&#x5927;&#x5C0F; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/e800eead21f1007b4005a268169586f7.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/e800eead21f1007b4005a268169586f7.jpg" alt=""></a> &#x7684;&#x5F20;&#x91CF;</p>
+<pre><code class="lang-py">Returns:
+</code></pre>
+<p>seq(&#x5F20;&#x91CF;&#x5E8F;&#x5217;&#xFF09;&#xFF1A;&#x5982;&#x679C;&#x8F93;&#x5165;&#x7684; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/a1c2f8d5b1226e67bdb44b12a6ddf18b.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/a1c2f8d5b1226e67bdb44b12a6ddf18b.jpg" alt=""></a> &#x5F20;&#x91CF;&#x5927;&#x5C0F;&#x4E3A; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/5871a78f7096a5c43c0b08b090b8c4f1.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/5871a78f7096a5c43c0b08b090b8c4f1.jpg" alt=""></a> &#xFF0C;&#x90A3;&#x4E48;&#x8F93;&#x51FA;&#x4E5F;&#x4F1A;&#x6709; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/a1c2f8d5b1226e67bdb44b12a6ddf18b.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/a1c2f8d5b1226e67bdb44b12a6ddf18b.jpg" alt=""></a> &#x5F20;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;&#x6240;&#x6709;&#x5F20;&#x91CF;&#x5747;&#x4E3A; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/771af95b2d780e68358b78d5124091fa.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/771af95b2d780e68358b78d5124091fa.jpg" alt=""></a> &#x3002;</p>
+<p>Example:</p>
+<pre><code class="lang-py">&amp;gt;&amp;gt;&amp;gt; x = torch.tensor([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+&amp;gt;&amp;gt;&amp;gt; y = torch.tensor([<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>])
+&amp;gt;&amp;gt;&amp;gt; grid_x, grid_y = torch.meshgrid(x, y)
+&amp;gt;&amp;gt;&amp;gt; grid_x
+tensor([[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+ [<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>],
+ [<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>]])
+&amp;gt;&amp;gt;&amp;gt; grid_y
+tensor([[<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+ [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+ [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])
+</code></pre>
+</blockquote>
+<pre><code class="lang-py">torch.renorm(input, p, dim, maxnorm, out=<span class="hljs-keyword">None</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x5F20;&#x91CF;&#xFF0C;&#x5176;&#x4E2D;&#x6CBF;&#x7740;&#x7EF4;&#x5EA6;<code>dim</code>&#x7684;<code>input</code>&#x7684;&#x6BCF;&#x4E2A;&#x5B50;&#x5F20;&#x91CF;&#x88AB;&#x5F52;&#x4E00;&#x5316;&#xFF0C;&#x4F7F;&#x5F97;&#x5B50;&#x5F20;&#x91CF;&#x7684;<code>p</code> - &#x8303;&#x6570;&#x4F4E;&#x4E8E;&#x503C;<code>maxnorm</code></p>
+<p>Note</p>
+<p>&#x5982;&#x679C;&#x884C;&#x7684;&#x8303;&#x6570;&#x4F4E;&#x4E8E;<code>maxnorm</code>&#xFF0C;&#x5219;&#x8BE5;&#x884C;&#x4E0D;&#x53D8;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>p</strong>  (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)" target="_blank"><em>float</em></a>&#xFF09; - &#x89C4;&#x8303;&#x8BA1;&#x7B97;&#x7684;&#x52A8;&#x529B;</li>
+<li><strong>dim</strong>  (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a>&#xFF09; - &#x5207;&#x7247;&#x4EE5;&#x83B7;&#x5F97;&#x5B50;&#x5F20;&#x91CF;&#x7684;&#x7EF4;&#x6570;</li>
+<li><strong>maxnorm</strong>  (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)" target="_blank"><em>float</em></a>&#xFF09; - &#x4FDD;&#x6301;&#x6BCF;&#x4E2A;&#x5B50;&#x5F20;&#x91CF;&#x7684;&#x6700;&#x5927;&#x8303;&#x6570;</li>
+<li><strong>out</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x8F93;&#x51FA;&#x5F20;&#x91CF;</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.ones(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>x[<span class="hljs-number">1</span>].fill_(<span class="hljs-number">2</span>)
+tensor([ <span class="hljs-number">2.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">2.</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>x[<span class="hljs-number">2</span>].fill_(<span class="hljs-number">3</span>)
+tensor([ <span class="hljs-number">3.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">3.</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>],
+ [ <span class="hljs-number">2.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">2.</span>],
+ [ <span class="hljs-number">3.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">3.</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.renorm(x, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>)
+tensor([[ <span class="hljs-number">1.0000</span>,  <span class="hljs-number">1.0000</span>,  <span class="hljs-number">1.0000</span>],
+ [ <span class="hljs-number">1.6667</span>,  <span class="hljs-number">1.6667</span>,  <span class="hljs-number">1.6667</span>],
+ [ <span class="hljs-number">1.6667</span>,  <span class="hljs-number">1.6667</span>,  <span class="hljs-number">1.6667</span>]])
+</code></pre>
+<pre><code class="lang-py">torch.tensordot(a, b, dims=<span class="hljs-number">2</span>)
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x591A;&#x7EF4;&#x5EA6;&#x4E0A;a&#x548C;b&#x7684;&#x6536;&#x7F29;&#x3002;</p>
+<p><a href="#torch.tensordot" title="torch.tensordot"><code>tensordot</code></a> &#x5B9E;&#x73B0;&#x4E86;&#x77E9;&#x9635;&#x4E58;&#x79EF;&#x7684;&#x63A8;&#x5E7F;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>a</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>tensor</em></a>) - &#x5DE6;&#x5F20;&#x91CF;&#x6536;&#x7F29;</li>
+<li><strong>b</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>tensor</em></a>) - &#x53F3;&#x5F20;&#x91CF;&#x6536;&#x7F29;</li>
+<li><strong>&#x6697;&#x6DE1;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#x6216;</em> <em>&#x5143;&#x7EC4;&#x7684;&#x4E24;&#x4E2A;python&#x5217;&#x8868;&#xFF1A;&#x6574;&#x6570;</em>&#xFF09; - &#x8981;&#x6536;&#x7F29;&#x7684;&#x7EF4;&#x6570;&#x6216;<code>a</code>&#x548C;<code>b</code>&#x7684;&#x660E;&#x786E;&#x7EF4;&#x5EA6;&#x5217;&#x8868;</li>
+</ul>
+<p>&#x5F53;&#x7528;&#x6574;&#x6570;&#x53C2;&#x6570;<code>dims</code> = <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/9566974d45a96737f7e0ecf302d877b8.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/9566974d45a96737f7e0ecf302d877b8.jpg" alt=""></a> &#x8C03;&#x7528;&#x65F6;&#xFF0C;<code>a</code>&#x548C;<code>b</code>&#x7684;&#x7EF4;&#x6570;&#x662F; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/20ddd8181c2e0d0fb893637e8572d475.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/20ddd8181c2e0d0fb893637e8572d475.jpg" alt=""></a> &#x548C; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/493731e423d5db62086d0b8705dda0c8.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/493731e423d5db62086d0b8705dda0c8.jpg" alt=""></a> &#xFF0C;&#x5B83;&#x5206;&#x522B;&#x8BA1;&#x7B97;</p>
+<p><a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/99b9f5b0cd445ecb19920e143987f33e.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/99b9f5b0cd445ecb19920e143987f33e.jpg" alt=""></a></p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x5217;&#x8868;&#x5F62;&#x5F0F;&#x7684;<code>dims</code>&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x5C06;&#x6536;&#x7F29;&#x7ED9;&#x5B9A;&#x7684;&#x7EF4;&#x5EA6;&#x6765;&#x4EE3;&#x66FF;<code>a</code>&#x7684;&#x6700;&#x540E; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/9566974d45a96737f7e0ecf302d877b8.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/9566974d45a96737f7e0ecf302d877b8.jpg" alt=""></a> &#x548C;<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/6872867a863714d15d9a0d64c20734ce.jpg">&#x7684;&#x7B2C;&#x4E00;&#x4E2A;</a> <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/9566974d45a96737f7e0ecf302d877b8.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/9566974d45a96737f7e0ecf302d877b8.jpg" alt=""></a> ] <img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/6872867a863714d15d9a0d64c20734ce.jpg" alt=""> &#x3002;&#x8FD9;&#x4E9B;&#x5C3A;&#x5BF8;&#x7684;&#x5C3A;&#x5BF8;&#x5FC5;&#x987B;&#x5339;&#x914D;&#xFF0C;&#x4F46; <a href="#torch.tensordot" title="torch.tensordot"><code>tensordot</code></a> &#x5C06;&#x5904;&#x7406;&#x5E7F;&#x64AD;&#x5C3A;&#x5BF8;&#x3002;</p>
+<p>Examples:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.arange(<span class="hljs-number">60.</span>).reshape(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = torch.arange(<span class="hljs-number">24.</span>).reshape(<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tensordot(a, b, dims=([<span class="hljs-number">1</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]))
+tensor([[<span class="hljs-number">4400.</span>, <span class="hljs-number">4730.</span>],
+ [<span class="hljs-number">4532.</span>, <span class="hljs-number">4874.</span>],
+ [<span class="hljs-number">4664.</span>, <span class="hljs-number">5018.</span>],
+ [<span class="hljs-number">4796.</span>, <span class="hljs-number">5162.</span>],
+ [<span class="hljs-number">4928.</span>, <span class="hljs-number">5306.</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, device=<span class="hljs-string">&apos;cuda&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = torch.randn(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, device=<span class="hljs-string">&apos;cuda&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>c = torch.tensordot(a, b, dims=<span class="hljs-number">2</span>).cpu()
+tensor([[ <span class="hljs-number">8.3504</span>, <span class="hljs-number">-2.5436</span>,  <span class="hljs-number">6.2922</span>,  <span class="hljs-number">2.7556</span>, <span class="hljs-number">-1.0732</span>,  <span class="hljs-number">3.2741</span>],
+ [ <span class="hljs-number">3.3161</span>,  <span class="hljs-number">0.0704</span>,  <span class="hljs-number">5.0187</span>, <span class="hljs-number">-0.4079</span>, <span class="hljs-number">-4.3126</span>,  <span class="hljs-number">4.8744</span>],
+ [ <span class="hljs-number">0.8223</span>,  <span class="hljs-number">3.9445</span>,  <span class="hljs-number">3.2168</span>, <span class="hljs-number">-0.2400</span>,  <span class="hljs-number">3.4117</span>,  <span class="hljs-number">1.7780</span>]])
+</code></pre>
+<pre><code class="lang-py">torch.trace(input) &#x2192; Tensor
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x8F93;&#x5165;2-D&#x77E9;&#x9635;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x5143;&#x7D20;&#x7684;&#x603B;&#x548C;&#x3002;</p>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>x = torch.arange(<span class="hljs-number">1.</span>, <span class="hljs-number">10.</span>).view(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],
+ [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>],
+ [ <span class="hljs-number">7.</span>,  <span class="hljs-number">8.</span>,  <span class="hljs-number">9.</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.trace(x)
+tensor(<span class="hljs-number">15.</span>)
+</code></pre>
+<pre><code class="lang-py">torch.tril(input, diagonal=<span class="hljs-number">0</span>, out=<span class="hljs-keyword">None</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x77E9;&#x9635;&#x7684;&#x4E0B;&#x4E09;&#x89D2;&#x90E8;&#x5206;(2-D&#x5F20;&#x91CF;&#xFF09;<code>input</code>&#xFF0C;&#x7ED3;&#x679C;&#x5F20;&#x91CF;<code>out</code>&#x7684;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E3A;0&#x3002;</p>
+<p>&#x77E9;&#x9635;&#x7684;&#x4E0B;&#x4E09;&#x89D2;&#x5F62;&#x90E8;&#x5206;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x548C;&#x4E0B;&#x65B9;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x53C2;&#x6570; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> &#x63A7;&#x5236;&#x8981;&#x8003;&#x8651;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;&#x5982;&#x679C; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> = 0&#xFF0C;&#x5219;&#x4FDD;&#x7559;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x548C;&#x4E0B;&#x65B9;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x3002;&#x6B63;&#x503C;&#x5305;&#x62EC;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x65B9;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x6570;&#x91CF;&#xFF0C;&#x540C;&#x6837;&#x8D1F;&#x503C;&#x4E5F;&#x4E0D;&#x5305;&#x62EC;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0B;&#x65B9;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x6570;&#x91CF;&#x3002;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x662F; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/1bfb3770a124b38b3aba63186b7c8f46.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/1bfb3770a124b38b3aba63186b7c8f46.jpg" alt=""></a> &#x7684;&#x6307;&#x6570; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/6291ea635817db74920cd048cc3cb8d4.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/6291ea635817db74920cd048cc3cb8d4.jpg" alt=""></a> &#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5176;&#x4E2D; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/5ccb16cb4e75340b0c2b2d022fd778a7.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/5ccb16cb4e75340b0c2b2d022fd778a7.jpg" alt=""></a> &#x662F;&#x57FA;&#x8D28;&#x7684;&#x7EF4;&#x5EA6;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>&#x5BF9;&#x89D2;&#x7EBF;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x53EF;&#x9009;</em>&#xFF09; - &#x8981;&#x8003;&#x8651;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;</li>
+<li><strong>out</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x8F93;&#x51FA;&#x5F20;&#x91CF;</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([[<span class="hljs-number">-1.0813</span>, <span class="hljs-number">-0.8619</span>,  <span class="hljs-number">0.7105</span>],
+ [ <span class="hljs-number">0.0935</span>,  <span class="hljs-number">0.1380</span>,  <span class="hljs-number">2.2112</span>],
+ [<span class="hljs-number">-0.3409</span>, <span class="hljs-number">-0.9828</span>,  <span class="hljs-number">0.0289</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tril(a)
+tensor([[<span class="hljs-number">-1.0813</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.0935</span>,  <span class="hljs-number">0.1380</span>,  <span class="hljs-number">0.0000</span>],
+ [<span class="hljs-number">-0.3409</span>, <span class="hljs-number">-0.9828</span>,  <span class="hljs-number">0.0289</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = torch.randn(<span class="hljs-number">4</span>, <span class="hljs-number">6</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>b
+tensor([[ <span class="hljs-number">1.2219</span>,  <span class="hljs-number">0.5653</span>, <span class="hljs-number">-0.2521</span>, <span class="hljs-number">-0.2345</span>,  <span class="hljs-number">1.2544</span>,  <span class="hljs-number">0.3461</span>],
+ [ <span class="hljs-number">0.4785</span>, <span class="hljs-number">-0.4477</span>,  <span class="hljs-number">0.6049</span>,  <span class="hljs-number">0.6368</span>,  <span class="hljs-number">0.8775</span>,  <span class="hljs-number">0.7145</span>],
+ [ <span class="hljs-number">1.1502</span>,  <span class="hljs-number">3.2716</span>, <span class="hljs-number">-1.1243</span>, <span class="hljs-number">-0.5413</span>,  <span class="hljs-number">0.3615</span>,  <span class="hljs-number">0.6864</span>],
+ [<span class="hljs-number">-0.0614</span>, <span class="hljs-number">-0.7344</span>, <span class="hljs-number">-1.3164</span>, <span class="hljs-number">-0.7648</span>, <span class="hljs-number">-1.4024</span>,  <span class="hljs-number">0.0978</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tril(b, diagonal=<span class="hljs-number">1</span>)
+tensor([[ <span class="hljs-number">1.2219</span>,  <span class="hljs-number">0.5653</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.4785</span>, <span class="hljs-number">-0.4477</span>,  <span class="hljs-number">0.6049</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">1.1502</span>,  <span class="hljs-number">3.2716</span>, <span class="hljs-number">-1.1243</span>, <span class="hljs-number">-0.5413</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [<span class="hljs-number">-0.0614</span>, <span class="hljs-number">-0.7344</span>, <span class="hljs-number">-1.3164</span>, <span class="hljs-number">-0.7648</span>, <span class="hljs-number">-1.4024</span>,  <span class="hljs-number">0.0000</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tril(b, diagonal=<span class="hljs-number">-1</span>)
+tensor([[ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.4785</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">1.1502</span>,  <span class="hljs-number">3.2716</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [<span class="hljs-number">-0.0614</span>, <span class="hljs-number">-0.7344</span>, <span class="hljs-number">-1.3164</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>]])
+</code></pre>
+<pre><code class="lang-py">torch.triu(input, diagonal=<span class="hljs-number">0</span>, out=<span class="hljs-keyword">None</span>) &#x2192; Tensor
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x77E9;&#x9635;&#x7684;&#x4E0A;&#x4E09;&#x89D2;&#x90E8;&#x5206;(2-D&#x5F20;&#x91CF;&#xFF09;<code>input</code>&#xFF0C;&#x7ED3;&#x679C;&#x5F20;&#x91CF;<code>out</code>&#x7684;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E3A;0&#x3002;</p>
+<p>&#x77E9;&#x9635;&#x7684;&#x4E0A;&#x4E09;&#x89D2;&#x5F62;&#x90E8;&#x5206;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x65B9;&#x548C;&#x4E0A;&#x65B9;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x53C2;&#x6570; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> &#x63A7;&#x5236;&#x8981;&#x8003;&#x8651;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;&#x5982;&#x679C; <a href="#torch.diagonal" title="torch.diagonal"><code>diagonal</code></a> = 0&#xFF0C;&#x5219;&#x4FDD;&#x7559;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x548C;&#x4E0B;&#x65B9;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x3002;&#x6B63;&#x503C;&#x6392;&#x9664;&#x4E86;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x65B9;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x6570;&#x91CF;&#xFF0C;&#x540C;&#x6837;&#x8D1F;&#x503C;&#x4E5F;&#x5305;&#x62EC;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0B;&#x65B9;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#x6570;&#x91CF;&#x3002;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#x662F; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/1bfb3770a124b38b3aba63186b7c8f46.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/1bfb3770a124b38b3aba63186b7c8f46.jpg" alt=""></a> &#x7684;&#x6307;&#x6570; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/6291ea635817db74920cd048cc3cb8d4.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/6291ea635817db74920cd048cc3cb8d4.jpg" alt=""></a> &#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5176;&#x4E2D; <a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/img/5ccb16cb4e75340b0c2b2d022fd778a7.jpg"><img src="apachecn/pytorch-doc-zh/raw/master/docs/1.0/img/5ccb16cb4e75340b0c2b2d022fd778a7.jpg" alt=""></a> &#x662F;&#x57FA;&#x8D28;&#x7684;&#x7EF4;&#x5EA6;&#x3002;</p>
+<p>Parameters:</p>
+<ul>
+<li><strong>&#x8F93;&#x5165;</strong> (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a>&#xFF09; - &#x8F93;&#x5165;&#x5F20;&#x91CF;</li>
+<li><strong>&#x5BF9;&#x89D2;&#x7EBF;</strong> (<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)" target="_blank"><em>int</em></a><em>&#xFF0C;</em> <em>&#x53EF;&#x9009;</em>&#xFF09; - &#x8981;&#x8003;&#x8651;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;</li>
+<li><strong>out</strong>  (<a href="apachecn/pytorch-doc-zh/blob/master/docs/1.0/tensors.html#torch.Tensor" title="torch.Tensor"><em>Tensor</em></a><em>&#xFF0C;</em> <em>&#x4EFB;&#x9009;</em>&#xFF09; - &#x8F93;&#x51FA;&#x5F20;&#x91CF;</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = torch.randn(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a
+tensor([[ <span class="hljs-number">0.2309</span>,  <span class="hljs-number">0.5207</span>,  <span class="hljs-number">2.0049</span>],
+ [ <span class="hljs-number">0.2072</span>, <span class="hljs-number">-1.0680</span>,  <span class="hljs-number">0.6602</span>],
+ [ <span class="hljs-number">0.3480</span>, <span class="hljs-number">-0.5211</span>, <span class="hljs-number">-0.4573</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.triu(a)
+tensor([[ <span class="hljs-number">0.2309</span>,  <span class="hljs-number">0.5207</span>,  <span class="hljs-number">2.0049</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">-1.0680</span>,  <span class="hljs-number">0.6602</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.4573</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.triu(a, diagonal=<span class="hljs-number">1</span>)
+tensor([[ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.5207</span>,  <span class="hljs-number">2.0049</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.6602</span>],
+ [ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.triu(a, diagonal=<span class="hljs-number">-1</span>)
+tensor([[ <span class="hljs-number">0.2309</span>,  <span class="hljs-number">0.5207</span>,  <span class="hljs-number">2.0049</span>],
+ [ <span class="hljs-number">0.2072</span>, <span class="hljs-number">-1.0680</span>,  <span class="hljs-number">0.6602</span>],
+ [ <span class="hljs-number">0.0000</span>, <span class="hljs-number">-0.5211</span>, <span class="hljs-number">-0.4573</span>]])
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = torch.randn(<span class="hljs-number">4</span>, <span class="hljs-number">6</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>b
+tensor([[ <span class="hljs-number">0.5876</span>, <span class="hljs-number">-0.0794</span>, <span class="hljs-number">-1.8373</span>,  <span class="hljs-number">0.6654</span>,  <span class="hljs-number">0.2604</span>,  <span class="hljs-number">1.5235</span>],
+ [<span class="hljs-number">-0.2447</span>,  <span class="hljs-number">0.9556</span>, <span class="hljs-number">-1.2919</span>,  <span class="hljs-number">1.3378</span>, <span class="hljs-number">-0.1768</span>, <span class="hljs-number">-1.0857</span>],
+ [ <span class="hljs-number">0.4333</span>,  <span class="hljs-number">0.3146</span>,  <span class="hljs-number">0.6576</span>, <span class="hljs-number">-1.0432</span>,  <span class="hljs-number">0.9348</span>, <span class="hljs-number">-0.4410</span>],
+ [<span class="hljs-number">-0.9888</span>,  <span class="hljs-number">1.0679</span>, <span class="hljs-number">-1.3337</span>, <span class="hljs-number">-1.6556</span>,  <span class="hljs-number">0.4798</span>,  <span class="hljs-number">0.2830</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tril(b, diagonal=<span class="hljs-number">1</span>)
+tensor([[ <span class="hljs-number">0.5876</span>, <span class="hljs-number">-0.0794</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [<span class="hljs-number">-0.2447</span>,  <span class="hljs-number">0.9556</span>, <span class="hljs-number">-1.2919</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.4333</span>,  <span class="hljs-number">0.3146</span>,  <span class="hljs-number">0.6576</span>, <span class="hljs-number">-1.0432</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [<span class="hljs-number">-0.9888</span>,  <span class="hljs-number">1.0679</span>, <span class="hljs-number">-1.3337</span>, <span class="hljs-number">-1.6556</span>,  <span class="hljs-number">0.4798</span>,  <span class="hljs-number">0.0000</span>]])
+<span class="hljs-meta">&gt;&gt;&gt; </span>torch.tril(b, diagonal=<span class="hljs-number">-1</span>)
+tensor([[ <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [<span class="hljs-number">-0.2447</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [ <span class="hljs-number">0.4333</span>,  <span class="hljs-number">0.3146</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>],
+ [<span class="hljs-number">-0.9888</span>,  <span class="hljs-number">1.0679</span>, <span class="hljs-number">-1.3337</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>,  <span class="hljs-number">0.0000</span>]])
+</code></pre>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="torch_math_operations_spectral_ops.html" class="navigation navigation-prev " aria-label="Previous page: Spectral Ops">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="torch_math_operations_blas_lapack_ops.html" class="navigation navigation-next " aria-label="Next page: BLAS and LAPACK Operations">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Other Operations","level":"1.3.2.1.4.5","depth":5,"next":{"title":"BLAS and LAPACK Operations","level":"1.3.2.1.4.6","depth":5,"path":"torch_math_operations_blas_lapack_ops.md","ref":"torch_math_operations_blas_lapack_ops.md","articles":[]},"previous":{"title":"Spectral Ops","level":"1.3.2.1.4.4","depth":5,"path":"torch_math_operations_spectral_ops.md","ref":"torch_math_operations_spectral_ops.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.0"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"torch_math_operations_other_ops.md","mtime":"2021-04-12T06:14:20.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:15:51.836Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

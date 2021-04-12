@@ -1,0 +1,3670 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>torch脚本 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="85.html" />
+    
+    
+    <link rel="prev" href="83.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 1.4 教程&文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    入门
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    使用 PyTorch 进行深度学习：60 分钟的闪电战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="blitz/tensor_tutorial.html">
+            
+                <a href="blitz/tensor_tutorial.html">
+            
+                    
+                    什么是PyTorch？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="blitz/autograd_tutorial.html">
+            
+                <a href="blitz/autograd_tutorial.html">
+            
+                    
+                    Autograd：自动求导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="blitz/neural_networks_tutorial.html">
+            
+                <a href="blitz/neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="blitz/cifar10_tutorial.html">
+            
+                <a href="blitz/cifar10_tutorial.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="blitz/data_parallel_tutorial.html">
+            
+                <a href="blitz/data_parallel_tutorial.html">
+            
+                    
+                    可选：数据并行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    编写自定义数据集，数据加载器和转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    使用 TensorBoard 可视化模型，数据和训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    图片
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    TorchVision 对象检测微调教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    转移学习的计算机视觉教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    空间变压器网络教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    使用 PyTorch 进行神经传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    对抗示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    DCGAN 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    音频
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    torchaudio 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    文本
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    NLP From Scratch: 使用char-RNN对姓氏进行分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    NLP From Scratch: 生成名称与字符级RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    NLP From Scratch: 基于注意力机制的 seq2seq 神经网络翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    使用 TorchText 进行文本分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    使用 TorchText 进行语言翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    使用 nn.Transformer 和 TorchText 进行序列到序列建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    命名为 Tensor(实验性）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="24.html">
+            
+                <a href="24.html">
+            
+                    
+                    (实验性）PyTorch 中的命名张量简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    强化学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="26.html">
+            
+                <a href="26.html">
+            
+                    
+                    强化学习(DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    在生产中部署 PyTorch 模型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="28.html">
+            
+                <a href="28.html">
+            
+                    
+                    通过带有 Flask 的 REST API 在 Python 中部署 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="29.html">
+            
+                <a href="29.html">
+            
+                    
+                    TorchScript 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="30.html">
+            
+                <a href="30.html">
+            
+                    
+                    在 C ++中加载 TorchScript 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    (可选）将模型从 PyTorch 导出到 ONNX 并使用 ONNX Runtime 运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    并行和分布式训练
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="33.html">
+            
+                <a href="33.html">
+            
+                    
+                    单机模型并行最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="34.html">
+            
+                <a href="34.html">
+            
+                    
+                    分布式数据并行入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="35.html">
+            
+                <a href="35.html">
+            
+                    
+                    用 PyTorch 编写分布式应用程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    分布式 RPC 框架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="37.html">
+            
+                <a href="37.html">
+            
+                    
+                    (高级）带有 Amazon AWS 的 PyTorch 1.0 分布式训练师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    扩展 PyTorch
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="39.html">
+            
+                <a href="39.html">
+            
+                    
+                    使用自定义 C ++运算符扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="40.html">
+            
+                <a href="40.html">
+            
+                    
+                    使用自定义 C ++类扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="41.html">
+            
+                <a href="41.html">
+            
+                    
+                    使用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="42.html">
+            
+                <a href="42.html">
+            
+                    
+                    自定义 C ++和 CUDA 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    模型优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="44.html">
+            
+                <a href="44.html">
+            
+                    
+                    LSTM Word 语言模型上的(实验）动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="45.html">
+            
+                <a href="45.html">
+            
+                    
+                    (实验性）在 PyTorch 中使用 Eager 模式进行静态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="46.html">
+            
+                <a href="46.html">
+            
+                    
+                    (实验性）计算机视觉教程的量化转移学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="47.html">
+            
+                <a href="47.html">
+            
+                    
+                    (实验）BERT 上的动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="48.html">
+            
+                <a href="48.html">
+            
+                    
+                    修剪教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    PyTorch 用其他语言
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="50.html">
+            
+                <a href="50.html">
+            
+                    
+                    使用 PyTorch C ++前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    PyTorch 基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="52.html">
+            
+                <a href="52.html">
+            
+                    
+                    通过示例学习 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="53.html">
+            
+                <a href="53.html">
+            
+                    
+                    torch.nn 到底是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    文件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="56.html">
+            
+                <a href="56.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="57.html">
+            
+                <a href="57.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="58.html">
+            
+                <a href="58.html">
+            
+                    
+                    CPU 线程和 TorchScript 推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="59.html">
+            
+                <a href="59.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="60.html">
+            
+                <a href="60.html">
+            
+                    
+                    分布式 Autograd 设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="61.html">
+            
+                <a href="61.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="62.html">
+            
+                <a href="62.html">
+            
+                    
+                    经常问的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="63.html">
+            
+                <a href="63.html">
+            
+                    
+                    大规模部署的功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="64.html">
+            
+                <a href="64.html">
+            
+                    
+                    并行处理最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.10" data-path="65.html">
+            
+                <a href="65.html">
+            
+                    
+                    重现性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.11" data-path="66.html">
+            
+                <a href="66.html">
+            
+                    
+                    远程参考协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.12" data-path="67.html">
+            
+                <a href="67.html">
+            
+                    
+                    序列化语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.13" data-path="68.html">
+            
+                <a href="68.html">
+            
+                    
+                    Windows 常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.14" data-path="69.html">
+            
+                <a href="69.html">
+            
+                    
+                    XLA 设备上的 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    语言绑定
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="71.html">
+            
+                <a href="71.html">
+            
+                    
+                    PyTorch C ++ API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="72.html">
+            
+                <a href="72.html">
+            
+                    
+                    PyTorch Java API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="74.html">
+            
+                <a href="74.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="75.html">
+            
+                <a href="75.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="76.html">
+            
+                <a href="76.html">
+            
+                    
+                    torch功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="77.html">
+            
+                <a href="77.html">
+            
+                    
+                    torch张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="78.html">
+            
+                <a href="78.html">
+            
+                    
+                    张量属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.6" data-path="79.html">
+            
+                <a href="79.html">
+            
+                    
+                    自动差分包-Torch.Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.7" data-path="80.html">
+            
+                <a href="80.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.8" data-path="81.html">
+            
+                <a href="81.html">
+            
+                    
+                    分布式通讯包-Torch.Distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.9" data-path="82.html">
+            
+                <a href="82.html">
+            
+                    
+                    概率分布-torch分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.10" data-path="83.html">
+            
+                <a href="83.html">
+            
+                    
+                    torch.hub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17.11" data-path="84.html">
+            
+                <a href="84.html">
+            
+                    
+                    torch脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.12" data-path="85.html">
+            
+                <a href="85.html">
+            
+                    
+                    torch.nn.init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.13" data-path="86.html">
+            
+                <a href="86.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.14" data-path="87.html">
+            
+                <a href="87.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.15" data-path="88.html">
+            
+                <a href="88.html">
+            
+                    
+                    量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.16" data-path="89.html">
+            
+                <a href="89.html">
+            
+                    
+                    分布式 RPC 框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.17" data-path="90.html">
+            
+                <a href="90.html">
+            
+                    
+                    torch随机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.18" data-path="91.html">
+            
+                <a href="91.html">
+            
+                    
+                    torch稀疏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.19" data-path="92.html">
+            
+                <a href="92.html">
+            
+                    
+                    torch存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.20" data-path="93.html">
+            
+                <a href="93.html">
+            
+                    
+                    torch.utils.bottleneck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.21" data-path="94.html">
+            
+                <a href="94.html">
+            
+                    
+                    torch.utils.checkpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.22" data-path="95.html">
+            
+                <a href="95.html">
+            
+                    
+                    torch.utils.cpp_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.23" data-path="96.html">
+            
+                <a href="96.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.24" data-path="97.html">
+            
+                <a href="97.html">
+            
+                    
+                    torch.utils.dlpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.25" data-path="98.html">
+            
+                <a href="98.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.26" data-path="99.html">
+            
+                <a href="99.html">
+            
+                    
+                    torch.utils.tensorboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.27" data-path="100.html">
+            
+                <a href="100.html">
+            
+                    
+                    类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.28" data-path="101.html">
+            
+                <a href="101.html">
+            
+                    
+                    命名张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.29" data-path="102.html">
+            
+                <a href="102.html">
+            
+                    
+                    命名为 Tensors 操作员范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.30" data-path="103.html">
+            
+                <a href="103.html">
+            
+                    
+                    糟糕！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    torchvision参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="105.html">
+            
+                <a href="105.html">
+            
+                    
+                    torchvision
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    音频参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="107.html">
+            
+                <a href="107.html">
+            
+                    
+                    torchaudio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    torchtext参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="109.html">
+            
+                <a href="109.html">
+            
+                    
+                    torchtext
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    社区
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="111.html">
+            
+                <a href="111.html">
+            
+                    
+                    PyTorch 贡献指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="112.html">
+            
+                <a href="112.html">
+            
+                    
+                    PyTorch 治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="113.html">
+            
+                <a href="113.html">
+            
+                    
+                    PyTorch 治理| 感兴趣的人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >torch脚本</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="torch&#x811A;&#x672C;">torch&#x811A;&#x672C;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A; <a href="https://pytorch.org/docs/stable/jit.html" target="_blank">https://pytorch.org/docs/stable/jit.html</a></p>
+</blockquote>
+<ul>
+<li><p><a href="#creating-torchscript-code">&#x521B;&#x5EFA; TorchScript &#x4EE3;&#x7801;</a></p>
+</li>
+<li><p><a href="#mixing-tracing-and-scripting">&#x6DF7;&#x5408;&#x8DDF;&#x8E2A;&#x548C;&#x811A;&#x672C;&#x7F16;&#x5199;</a></p>
+</li>
+<li><p><a href="#migrating-to-pytorch-1-2-recursive-scripting-api">&#x8FC1;&#x79FB;&#x5230; PyTorch 1.2 &#x9012;&#x5F52;&#x811A;&#x672C; API</a></p>
+<ul>
+<li><p><a href="#modules">&#x6A21;&#x5757;</a></p>
+</li>
+<li><p><a href="#functions">&#x529F;&#x80FD;</a></p>
+</li>
+<li><p><a href="#torchscript-classes">TorchScript &#x7C7B;</a></p>
+</li>
+<li><p><a href="#attributes">&#x5C5E;&#x6027;</a></p>
+<ul>
+<li><a href="#python-2">Python 2</a></li>
+</ul>
+</li>
+<li><p><a href="#constants">&#x5E38;&#x6570;</a></p>
+</li>
+<li><p><a href="#variables">&#x53D8;&#x91CF;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#torchscript-language-reference">TorchScript &#x8BED;&#x8A00;&#x53C2;&#x8003;</a></p>
+<ul>
+<li><p><a href="#supported-type">&#x7C7B;&#x578B;</a></p>
+<ul>
+<li><p><a href="#default-types">&#x9ED8;&#x8BA4;&#x7C7B;&#x578B;</a></p>
+</li>
+<li><p><a href="#optional-type-refinement">&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x7EC6;&#x5316;</a></p>
+</li>
+<li><p><a href="#id3">TorchScript &#x7C7B;</a></p>
+</li>
+<li><p><a href="#named-tuples">&#x547D;&#x540D;&#x4E3A;&#x5143;&#x7EC4;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#expressions">&#x8868;&#x8FBE;&#x5F0F;</a></p>
+<ul>
+<li><p><a href="#literals">&#x6587;&#x5B57;</a></p>
+<ul>
+<li><p><a href="#list-construction">&#x5217;&#x8868;&#x7ED3;&#x6784;</a></p>
+</li>
+<li><p><a href="#tuple-construction">&#x5143;&#x7EC4;&#x7ED3;&#x6784;</a></p>
+</li>
+<li><p><a href="#dict-construction">&#x5B57;&#x5178;&#x7ED3;&#x6784;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#id5">&#x53D8;&#x91CF;</a></p>
+</li>
+<li><p><a href="#arithmetic-operators">&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;</a></p>
+</li>
+<li><p><a href="#comparison-operators">&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;</a></p>
+</li>
+<li><p><a href="#logical-operators">&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</a></p>
+</li>
+<li><p><a href="#subscripts-and-slicing">&#x4E0B;&#x6807;&#x548C;&#x5207;&#x7247;</a></p>
+</li>
+<li><p><a href="#function-calls">&#x51FD;&#x6570;&#x8C03;&#x7528;</a></p>
+</li>
+<li><p><a href="#method-calls">&#x65B9;&#x6CD5;&#x8C03;&#x7528;</a></p>
+</li>
+<li><p><a href="#ternary-expressions">&#x4E09;&#x5143;&#x8868;&#x8FBE;&#x5F0F;</a></p>
+</li>
+<li><p><a href="#casts">&#x6F14;&#x5458;&#x8868;</a></p>
+</li>
+<li><p><a href="#accessing-module-parameters">&#x8BBF;&#x95EE;&#x6A21;&#x5757;&#x53C2;&#x6570;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#statements">&#x8BED;&#x53E5;</a></p>
+<ul>
+<li><p><a href="#simple-assignments">&#x7B80;&#x5355;&#x5206;&#x914D;</a></p>
+</li>
+<li><p><a href="#pattern-matching-assignments">&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5206;&#x914D;</a></p>
+</li>
+<li><p><a href="#print-statements">&#x6253;&#x5370;&#x62A5;&#x8868;</a></p>
+</li>
+<li><p><a href="#if-statements">If &#x8BED;&#x53E5;</a></p>
+</li>
+<li><p><a href="#while-loops">While &#x5FAA;&#x73AF;</a></p>
+</li>
+<li><p><a href="#for-loops-with-range">&#x9002;&#x7528;&#x4E8E;&#x8303;&#x56F4;&#x4E3A;</a>&#x7684;&#x5FAA;&#x73AF;</p>
+</li>
+<li><p><a href="#for-loops-over-tuples">&#x7528;&#x4E8E;&#x904D;&#x5386;&#x5143;&#x7EC4;&#x7684;&#x5FAA;&#x73AF;</a></p>
+</li>
+<li><p><a href="#for-loops-over-constant-nn-modulelist">&#x7528;&#x4E8E;&#x5728;&#x5E38;&#x91CF; nn.ModuleList</a> &#x4E0A;&#x5FAA;&#x73AF;</p>
+</li>
+<li><p><a href="#break-and-continue">&#x4E2D;&#x65AD;&#x5E76;&#x7EE7;&#x7EED;</a></p>
+</li>
+<li><p><a href="#return">&#x8FD4;&#x56DE;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#variable-resolution">&#x53EF;&#x53D8;&#x5206;&#x8FA8;&#x7387;</a></p>
+</li>
+<li><p><a href="#use-of-python-values">&#x4F7F;&#x7528; Python &#x503C;</a></p>
+<ul>
+<li><p><a href="#id6">&#x529F;&#x80FD;</a></p>
+</li>
+<li><p><a href="#attribute-lookup-on-python-modules">Python &#x6A21;&#x5757;&#x4E0A;&#x7684;&#x5C5E;&#x6027;&#x67E5;&#x627E;</a></p>
+</li>
+<li><p><a href="#python-defined-constants">Python &#x5B9A;&#x4E49;&#x7684;&#x5E38;&#x91CF;</a></p>
+</li>
+<li><p><a href="#module-attributes">&#x6A21;&#x5757;&#x5C5E;&#x6027;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#debugging">&#x8C03;&#x8BD5;</a></p>
+<ul>
+<li><p><a href="#disable-jit-for-debugging">&#x7981;&#x7528;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x7684; JIT</a></p>
+</li>
+<li><p><a href="#inspecting-code">&#x68C0;&#x67E5;&#x7801;</a></p>
+</li>
+<li><p><a href="#interpreting-graphs">&#x89E3;&#x91CA;&#x56FE;</a></p>
+</li>
+<li><p><a href="#tracing-edge-cases">&#x8FFD;&#x8E2A;&#x6848;&#x4F8B;</a></p>
+</li>
+<li><p><a href="#automatic-trace-checking">&#x81EA;&#x52A8;&#x8DDF;&#x8E2A;&#x68C0;&#x67E5;</a></p>
+</li>
+<li><p><a href="#tracer-warnings">&#x8DDF;&#x8E2A;&#x5668;&#x8B66;&#x544A;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#builtin-functions">&#x5185;&#x7F6E;&#x51FD;&#x6570;</a></p>
+</li>
+</ul>
+</li>
+<li><p><a href="#frequently-asked-questions">&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x89E3;&#x7B54;</a></p>
+</li>
+</ul>
+<p>TorchScript &#x662F;&#x4E00;&#x79CD;&#x4ECE; PyTorch &#x4EE3;&#x7801;&#x521B;&#x5EFA;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53EF;&#x4F18;&#x5316;&#x6A21;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x4EFB;&#x4F55; TorchScript &#x7A0B;&#x5E8F;&#x90FD;&#x53EF;&#x4EE5;&#x4ECE; Python &#x8FDB;&#x7A0B;&#x4E2D;&#x4FDD;&#x5B58;&#x5E76;&#x52A0;&#x8F7D;&#x5230;&#x6CA1;&#x6709; Python &#x4F9D;&#x8D56;&#x9879;&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x5C06;&#x6A21;&#x578B;&#x4ECE;&#x7EAF; Python &#x7A0B;&#x5E8F;&#x9010;&#x6B65;&#x8FC7;&#x6E21;&#x5230;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x4E8E; Python &#x8FD0;&#x884C;&#x7684; TorchScript &#x7A0B;&#x5E8F;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x72EC;&#x7ACB;&#x7684; C ++&#x7A0B;&#x5E8F;&#x4E2D;&#x3002; &#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Python &#x4E2D;&#x719F;&#x6089;&#x7684;&#x5DE5;&#x5177;&#x5728; PyTorch &#x4E2D;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7; TorchScript &#x5C06;&#x6A21;&#x578B;&#x5BFC;&#x51FA;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5728;&#x8BE5;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D; Python &#x7A0B;&#x5E8F;&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x6027;&#x80FD;&#x548C;&#x591A;&#x7EBF;&#x7A0B;&#x539F;&#x56E0;&#x800C;&#x5904;&#x4E8E;&#x4E0D;&#x5229;&#x5730;&#x4F4D;&#x3002;</p>
+<p>&#x6709;&#x5173; TorchScript &#x7684;&#x7B80;&#x8981;&#x4ECB;&#x7ECD;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html" target="_blank">TorchScript &#x7B80;&#x4ECB;</a>&#x6559;&#x7A0B;&#x3002;</p>
+<p>&#x6709;&#x5173;&#x5C06; PyTorch &#x6A21;&#x578B;&#x8F6C;&#x6362;&#x4E3A; TorchScript &#x5E76;&#x5728; C ++&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x793A;&#x4F8B;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="https://pytorch.org/tutorials/advanced/cpp_export.html" target="_blank">&#x5728; C ++&#x4E2D;&#x52A0;&#x8F7D; PyTorch &#x6A21;&#x578B;</a>&#x6559;&#x7A0B;&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;-torchscript-&#x4EE3;&#x7801;"><a href="#id10">&#x521B;&#x5EFA; TorchScript &#x4EE3;&#x7801;</a></h2>
+<hr>
+<pre><code>class torch.jit.ScriptModule&#xB6;
+</code></pre><hr>
+<pre><code>property code&#xB6;
+</code></pre><p>&#x8FD4;&#x56DE;<code>forward</code>&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x90E8;&#x56FE;&#x7684;&#x6F02;&#x4EAE;&#x6253;&#x5370;&#x8868;&#x793A;&#x5F62;&#x5F0F;(&#x4F5C;&#x4E3A;&#x6709;&#x6548;&#x7684; Python &#x8BED;&#x6CD5;&#xFF09;&#x3002; &#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#inspecting-code">&#x68C0;&#x67E5;&#x4EE3;&#x7801;</a>&#x3002;</p>
+<hr>
+<pre><code>property graph&#xB6;
+</code></pre><p>&#x8FD4;&#x56DE;<code>forward</code>&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x90E8;&#x56FE;&#x5F62;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002; &#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#interpreting-graphs">&#x89E3;&#x91CA;&#x56FE;</a>&#x3002;</p>
+<hr>
+<pre><code>save(f, _extra_files=ExtraFilesMap{})&#xB6;
+</code></pre><p>&#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#torch.jit.save" title="torch.jit.save"><code>torch.jit.save</code></a> &#x3002;</p>
+<hr>
+<pre><code>class torch.jit.ScriptFunction&#xB6;
+</code></pre><p>&#x529F;&#x80FD;&#x4E0A;&#x4E0E; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x7B49;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x4EE3;&#x8868;&#x5355;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;&#x6216;&#x53C2;&#x6570;&#x3002;</p>
+<hr>
+<pre><code>torch.jit.script(obj)&#xB6;
+</code></pre><p>&#x4E3A;&#x51FD;&#x6570;&#x6216;<code>nn.Module</code>&#x7F16;&#x5199;&#x811A;&#x672C;&#x5C06;&#x68C0;&#x67E5;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528; TorchScript &#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x5176;&#x7F16;&#x8BD1;&#x4E3A; TorchScript &#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x6216; <a href="#torch.jit.ScriptFunction" title="torch.jit.ScriptFunction"><code>ScriptFunction</code></a> &#x3002; TorchScript &#x672C;&#x8EAB;&#x662F; Python &#x8BED;&#x8A00;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x56E0;&#x6B64; Python &#x5E76;&#x975E;&#x6240;&#x6709;&#x529F;&#x80FD;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x8DB3;&#x591F;&#x7684;&#x529F;&#x80FD;&#x6765;&#x5728;&#x5F20;&#x91CF;&#x4E0A;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x5E76;&#x6267;&#x884C;&#x4E0E;&#x63A7;&#x5236;&#x6709;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002; &#x6709;&#x5173;&#x5B8C;&#x6574;&#x6307;&#x5357;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#torchscript-language-reference">TorchScript &#x8BED;&#x8A00;&#x53C2;&#x8003;</a>&#x3002;</p>
+<p><code>torch.jit.script</code>&#x53EF;&#x7528;&#x4F5C;&#x6A21;&#x5757;&#x548C;&#x529F;&#x80FD;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA; <a href="#torchscript-class">TorchScript &#x7C7B;</a>&#x548C;&#x529F;&#x80FD;&#x7684;&#x4FEE;&#x9970;&#x5668;<code>@torch.jit.script</code>&#x3002;</p>
+<pre><code>Scripting a function
+</code></pre><p><code>@torch.jit.script</code>&#x88C5;&#x9970;&#x5668;&#x5C06;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x51FD;&#x6570;&#x7684;&#x4E3B;&#x4F53;&#x6765;&#x6784;&#x9020; <a href="#torch.jit.ScriptFunction" title="torch.jit.ScriptFunction"><code>ScriptFunction</code></a> &#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x7F16;&#x5199;&#x51FD;&#x6570;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+
+@torch.jit.script
+def foo(x, y):
+    if x.max() &gt; y.max():
+        r = x
+    else:
+        r = y
+    return r
+
+print(type(foo))  # torch.jit.ScriptFuncion
+
+# See the compiled graph as Python code
+print(foo.code)
+
+# Call the function using the TorchScript interpreter
+foo(torch.ones(2, 2), torch.ones(2, 2))
+</code></pre><pre><code>Scripting an nn.Module
+</code></pre><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E3A;<code>nn.Module</code>&#x7F16;&#x5199;&#x811A;&#x672C;&#x5C06;&#x7F16;&#x8BD1;<code>forward</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x9012;&#x5F52;&#x7F16;&#x8BD1;<code>forward</code>&#x8C03;&#x7528;&#x7684;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF0C;&#x5B50;&#x6A21;&#x5757;&#x548C;&#x51FD;&#x6570;&#x3002; &#x5982;&#x679C;<code>nn.Module</code>&#x4EC5;&#x4F7F;&#x7528; TorchScript &#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5219;&#x65E0;&#x9700;&#x66F4;&#x6539;&#x539F;&#x59CB;&#x6A21;&#x5757;&#x4EE3;&#x7801;&#x3002; <code>script</code>&#x5C06;&#x6784;&#x5EFA; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#xFF0C;&#x8BE5;&#x526F;&#x672C;&#x5177;&#x6709;&#x539F;&#x59CB;&#x6A21;&#x5757;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x526F;&#x672C;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x4F7F;&#x7528;&#x53C2;&#x6570;&#x7F16;&#x5199;&#x7B80;&#x5355;&#x6A21;&#x5757;&#x7684;&#x811A;&#x672C;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+
+class MyModule(torch.nn.Module):
+    def __init__(self, N, M):
+        super(MyModule, self).__init__()
+        # This parameter will be copied to the new ScriptModule
+        self.weight = torch.nn.Parameter(torch.rand(N, M))
+
+        # When this submodule is used, it will be compiled
+        self.linear = torch.nn.Linear(N, M)
+
+    def forward(self, input):
+        output = self.weight.mv(input)
+
+        # This calls the `forward` method of the `nn.Linear` module, which will
+        # cause the `self.linear` submodule to be compiled to a `ScriptModule` here
+        output = self.linear(output)
+        return output
+
+scripted_module = torch.jit.script(MyModule(2, 3))
+</code></pre><p>&#x793A;&#x4F8B;(&#x4F7F;&#x7528;&#x8DDF;&#x8E2A;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x7F16;&#x5199;&#x6A21;&#x5757;&#x811A;&#x672C;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class MyModule(nn.Module):
+    def __init__(self):
+        super(MyModule, self).__init__()
+        # torch.jit.trace produces a ScriptModule&apos;s conv1 and conv2
+        self.conv1 = torch.jit.trace(nn.Conv2d(1, 20, 5), torch.rand(1, 1, 16, 16))
+        self.conv2 = torch.jit.trace(nn.Conv2d(20, 20, 5), torch.rand(1, 20, 16, 16))
+
+    def forward(self, input):
+      input = F.relu(self.conv1(input))
+      input = F.relu(self.conv2(input))
+      return input
+
+scripted_module = torch.jit.script(MyModule())
+</code></pre><p>&#x8981;&#x7F16;&#x8BD1;&#x9664;<code>forward</code>&#x4EE5;&#x5916;&#x7684;&#x65B9;&#x6CD5;(&#x5E76;&#x9012;&#x5F52;&#x7F16;&#x8BD1;&#x5176;&#x8C03;&#x7528;&#x7684;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#xFF09;&#xFF0C;&#x8BF7;&#x5C06; <a href="#torch.jit.export" title="torch.jit.export"><code>@torch.jit.export</code></a> &#x88C5;&#x9970;&#x5668;&#x6DFB;&#x52A0;&#x5230;&#x8BE5;&#x65B9;&#x6CD5;&#x3002; &#x8981;&#x9009;&#x62E9;&#x9000;&#x51FA;&#x7F16;&#x8BD1;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <a href="#torch.jit.ignore" title="torch.jit.ignore"><code>@torch.jit.ignore</code></a> &#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x5BFC;&#x51FA;&#x65B9;&#x6CD5;&#x548C;&#x5FFD;&#x7565;&#x65B9;&#x6CD5;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class MyModule(nn.Module):
+    def __init__(self):
+        super(MyModule, self).__init__()
+
+    @torch.jit.export
+    def some_entry_point(self, input):
+        return input + 10
+
+    @torch.jit.ignore
+    def python_only_fn(self, input):
+        # This function won&apos;t be compiled, so any
+        # Python APIs can be used
+        import pdb
+        pdb.set_trace()
+
+    def forward(self, input):
+        if self.training:
+            self.python_only_fn(input)
+        return input * 99
+
+scripted_module = torch.jit.script(MyModule())
+print(scripted_module.some_entry_point(torch.randn(2, 2)))
+print(scripted_module(torch.randn(2, 2)))
+</code></pre><hr>
+<pre><code>torch.jit.trace(func, example_inputs, optimize=None, check_trace=True, check_inputs=None, check_tolerance=1e-5)&#xB6;
+</code></pre><p>&#x8DDF;&#x8E2A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x5C06;&#x4F7F;&#x7528;&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x6216; <a href="#torch.jit.ScriptFunction" title="torch.jit.ScriptFunction"><code>ScriptFunction</code></a> &#x3002; &#x5BF9;&#x4E8E;&#x4EC5;&#x5728;<code>Tensor</code>&#x548C;<code>Tensor</code>&#x7684;&#x5217;&#x8868;&#xFF0C;&#x5B57;&#x5178;&#x548C;&#x5143;&#x7EC4;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8DDF;&#x8E2A;&#x662F;&#x7406;&#x60F3;&#x7684;&#x9009;&#x62E9;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>torch.jit.trace</code>&#x548C; <a href="#torch.jit.trace_module" title="torch.jit.trace_module"><code>torch.jit.trace_module</code></a> &#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x73B0;&#x6709;&#x6A21;&#x5757;&#x6216; Python &#x51FD;&#x6570;&#x8F6C;&#x6362;&#x4E3A; TorchScript <a href="#torch.jit.ScriptFunction" title="torch.jit.ScriptFunction"><code>ScriptFunction</code></a> &#x6216; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x3002; &#x60A8;&#x5FC5;&#x987B;&#x63D0;&#x4F9B;&#x793A;&#x4F8B;&#x8F93;&#x5165;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;&#x8BB0;&#x5F55;&#x5728;&#x6240;&#x6709;&#x5F20;&#x91CF;&#x4E0A;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<ul>
+<li><p>&#x72EC;&#x7ACB;&#x529F;&#x80FD;&#x7684;&#x6700;&#x7EC8;&#x8BB0;&#x5F55;&#x5C06;&#x4EA7;&#x751F; <a href="#torch.jit.ScriptFunction" title="torch.jit.ScriptFunction"><code>ScriptFunction</code></a> &#x3002;</p>
+</li>
+<li><p><code>nn.Module</code>&#x6216;<code>nn.Module</code>&#x7684;<code>forward</code>&#x529F;&#x80FD;&#x7684;&#x6240;&#x5F97;&#x8BB0;&#x5F55;&#x4EA7;&#x751F; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x3002;</p>
+</li>
+</ul>
+<p>&#x8BE5;&#x6A21;&#x5757;&#x8FD8;&#x5305;&#x542B;&#x539F;&#x59CB;&#x6A21;&#x5757;&#x4E5F;&#x5177;&#x6709;&#x7684;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x8B66;&#x544A;</p>
+<p>&#x8DDF;&#x8E2A;&#x4EC5;&#x6B63;&#x786E;&#x8BB0;&#x5F55;&#x4E0D;&#x4F9D;&#x8D56;&#x6570;&#x636E;&#x7684;&#x529F;&#x80FD;&#x548C;&#x6A21;&#x5757;(&#x4F8B;&#x5982;&#xFF0C;&#x5BF9;&#x5F20;&#x91CF;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x6761;&#x4EF6;&#xFF09;&#x5E76;&#x4E14;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x672A;&#x8DDF;&#x8E2A;&#x7684;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x9879;(&#x4F8B;&#x5982;&#xFF0C;&#x6267;&#x884C;&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#x6216;&#x8BBF;&#x95EE;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF09;&#x3002; &#x8DDF;&#x8E2A;&#x4EC5;&#x8BB0;&#x5F55;&#x5728;&#x7ED9;&#x5B9A;&#x5F20;&#x91CF;&#x4E0A;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#x65F6;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x8FD4;&#x56DE;&#x7684; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5C06;&#x59CB;&#x7EC8;&#x5728;&#x4EFB;&#x4F55;&#x8F93;&#x5165;&#x4E0A;&#x8FD0;&#x884C;&#x76F8;&#x540C;&#x7684;&#x8DDF;&#x8E2A;&#x56FE;&#x3002; &#x5F53;&#x671F;&#x671B;&#x6A21;&#x5757;&#x6839;&#x636E;&#x8F93;&#x5165;&#x548C;/&#x6216;&#x6A21;&#x5757;&#x72B6;&#x6001;&#x8FD0;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x96C6;&#x65F6;&#xFF0C;&#x8FD9;&#x5177;&#x6709;&#x91CD;&#x8981;&#x610F;&#x4E49;&#x3002; &#x4F8B;&#x5982;&#xFF0C;</p>
+<ul>
+<li><p>&#x8DDF;&#x8E2A;&#x5C06;&#x4E0D;&#x4F1A;&#x8BB0;&#x5F55;&#x4EFB;&#x4F55;&#x63A7;&#x5236;&#x6D41;&#xFF0C;&#x4F8B;&#x5982; if &#x8BED;&#x53E5;&#x6216;&#x5FAA;&#x73AF;&#x3002; &#x5F53;&#x6574;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x63A7;&#x5236;&#x6D41;&#x6052;&#x5B9A;&#x65F6;&#xFF0C;&#x8FD9;&#x5F88;&#x597D;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x5E38;&#x5185;&#x8054;&#x63A7;&#x5236;&#x6D41;&#x51B3;&#x7B56;&#x3002; &#x4F46;&#x662F;&#x6709;&#x65F6;&#x63A7;&#x5236;&#x6D41;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6A21;&#x578B;&#x672C;&#x8EAB;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5FAA;&#x73AF;&#x7F51;&#x7EDC;&#x662F;&#x8F93;&#x5165;&#x5E8F;&#x5217;(&#x53EF;&#x80FD;&#x662F;&#x52A8;&#x6001;&#xFF09;&#x957F;&#x5EA6;&#x4E0A;&#x7684;&#x5FAA;&#x73AF;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x8FD4;&#x56DE;&#x7684; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x4E2D;&#xFF0C;&#x5728;<code>training</code>&#x548C;<code>eval</code>&#x6A21;&#x5F0F;&#x4E0B;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x884C;&#x4E3A;&#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x59CB;&#x7EC8;&#x50CF;&#x5728;&#x8DDF;&#x8E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E00;&#x6837;&#x5904;&#x4E8E;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x65E0;&#x8BBA;<a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule">&#x662F;&#x54EA;&#x79CD;&#x6A21;&#x5F0F; ] <code>ScriptModule</code></a> &#x5DF2;&#x63D2;&#x5165;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8DDF;&#x8E2A;&#x662F;&#x4E0D;&#x5408;&#x9002;&#x7684;&#xFF0C; <a href="#torch.jit.script" title="torch.jit.script"><code>scripting</code></a> &#x662F;&#x66F4;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002; &#x5982;&#x679C;&#x8DDF;&#x8E2A;&#x6B64;&#x7C7B;&#x6A21;&#x578B;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x5728;&#x968F;&#x540E;&#x7684;&#x6A21;&#x578B;&#x8C03;&#x7528;&#x4E2D;&#x9759;&#x9ED8;&#x5730;&#x5F97;&#x5230;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#x7ED3;&#x679C;&#x3002; &#x5728;&#x6267;&#x884C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4EA7;&#x751F;&#x4E0D;&#x6B63;&#x786E;&#x8DDF;&#x8E2A;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x8DDF;&#x8E2A;&#x5668;&#x5C06;&#x5C1D;&#x8BD5;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x3002;</p>
+<p>&#x53C2;&#x6570;</p>
+<ul>
+<li><p><strong>&#x51FD;&#x6570;</strong>(&#x53EF;&#x8C03;&#x7528;&#x7684;<em>&#x6216;</em> <a href="nn.html#torch.nn.Module" title="torch.nn.Module"><em>torch.nn.Module</em></a>)&#x2013; Python &#x51FD;&#x6570;&#x6216;<code>torch.nn.Module</code> &#x4E0E;<code>example_inputs</code>&#x4E00;&#x8D77;&#x8FD0;&#x884C;&#x3002; <code>func</code>&#x7684;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x5F20;&#x91CF;&#x6216;&#x5305;&#x542B;&#x5F20;&#x91CF;&#x7684;(&#x53EF;&#x80FD;&#x662F;&#x5D4C;&#x5957;&#x7684;&#xFF09;&#x5143;&#x7EC4;&#x3002; &#x5C06;&#x6A21;&#x5757;&#x4F20;&#x9012;&#x5230; <a href="#torch.jit.trace" title="torch.jit.trace"><code>torch.jit.trace</code></a> &#x65F6;&#xFF0C;&#x4EC5;&#x8FD0;&#x884C;&#x5E76;&#x8DDF;&#x8E2A;<code>forward</code>&#x65B9;&#x6CD5;(&#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#torch.jit.trace_module" title="torch.jit.trace_module"><code>torch.jit.trace</code></a>)&#x3002;</p>
+</li>
+<li><p><strong>example_inputs</strong>  (<em>tuple</em> )&#x2013;&#x793A;&#x4F8B;&#x8F93;&#x5165;&#x7684;&#x5143;&#x7EC4;&#xFF0C;&#x5C06;&#x5728;&#x8DDF;&#x8E2A;&#x65F6;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x3002; &#x5047;&#x8BBE;&#x8DDF;&#x8E2A;&#x7684;&#x64CD;&#x4F5C;&#x652F;&#x6301;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x548C;&#x5F62;&#x72B6;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x548C;&#x5F62;&#x72B6;&#x7684;&#x8F93;&#x5165;&#x6765;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x8DDF;&#x8E2A;&#x3002; <code>example_inputs</code>&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5355;&#x4E2A;&#x5F20;&#x91CF;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x5305;&#x88C5;&#x5728;&#x5143;&#x7EC4;&#x4E2D;&#x3002;</p>
+</li>
+</ul>
+<pre><code>Keyword Arguments
+</code></pre><ul>
+<li><p><strong>check_trace</strong> (<code>bool</code>&#xFF0C;&#x53EF;&#x9009;&#xFF09;&#x2013;&#x68C0;&#x67E5;&#x901A;&#x8FC7;&#x8DDF;&#x8E2A;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x7684;&#x76F8;&#x540C;&#x8F93;&#x5165;&#x662F;&#x5426;&#x4EA7;&#x751F;&#x76F8;&#x540C;&#x7684;&#x8F93;&#x51FA;&#x3002; &#x9ED8;&#x8BA4;&#x503C;&#xFF1A;<code>True</code>&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x7684;&#x7F51;&#x7EDC;&#x5305;&#x542B;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x64CD;&#x4F5C;&#xFF0C;&#x6216;&#x8005;&#x5373;&#x4F7F;&#x68C0;&#x67E5;&#x7A0B;&#x5E8F;&#x5931;&#x8D25;&#xFF0C;&#x4F46;&#x60A8;&#x786E;&#x5B9A;&#x7F51;&#x7EDC;&#x6B63;&#x786E;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x8981;&#x7981;&#x7528;&#x6B64;&#x529F;&#x80FD;&#x3002;</p>
+</li>
+<li><p><strong>check_inputs</strong> (<em>&#x5143;&#x7EC4;&#x5217;&#x8868;</em> <em>&#xFF0C;</em> <em>&#x53EF;&#x9009;</em>&#xFF09;&#x2013;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7684;&#x5143;&#x7EC4;&#x5217;&#x8868;&#xFF0C;&#x5E94;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5143;&#x7EC4;&#x6765;&#x68C0;&#x67E5;&#x8DDF;&#x8E2A;&#x5185;&#x5BB9; &#x662F;&#x671F;&#x5F85;&#x3002; &#x6BCF;&#x4E2A;&#x5143;&#x7EC4;&#x7B49;&#x6548;&#x4E8E;<code>example_inputs</code>&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x4E00;&#x7EC4;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x3002; &#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x6700;&#x4F73;&#x7ED3;&#x679C;&#xFF0C;&#x8BF7;&#x4F20;&#x9012;&#x4E00;&#x7EC4;&#x68C0;&#x67E5;&#x8F93;&#x5165;&#xFF0C;&#x8FD9;&#x4E9B;&#x8F93;&#x5165;&#x4EE3;&#x8868;&#x60A8;&#x5E0C;&#x671B;&#x7F51;&#x7EDC;&#x770B;&#x5230;&#x7684;&#x5F62;&#x72B6;&#x548C;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#x7684;&#x7A7A;&#x95F4;&#x3002; &#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x539F;&#x59CB;&#x7684;<code>example_inputs</code>&#x8FDB;&#x884C;&#x68C0;&#x67E5;</p>
+</li>
+<li><p><strong>check_tolerance</strong>  (<em>python&#xFF1A;float</em> <em>&#xFF0C;</em> <em>&#x53EF;&#x9009;</em>&#xFF09;&#x2013;&#x5728;&#x68C0;&#x67E5;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6D6E;&#x70B9;&#x6BD4;&#x8F83;&#x516C;&#x5DEE;&#x3002; &#x5982;&#x679C;&#x7ED3;&#x679C;&#x7531;&#x4E8E;&#x5DF2;&#x77E5;&#x539F;&#x56E0;(&#x4F8B;&#x5982;&#x64CD;&#x4F5C;&#x5458;&#x878D;&#x5408;&#xFF09;&#x800C;&#x5728;&#x6570;&#x503C;&#x4E0A;&#x51FA;&#x73B0;&#x5DEE;&#x5F02;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x6765;&#x653E;&#x677E;&#x68C0;&#x67E5;&#x5668;&#x7684;&#x4E25;&#x683C;&#x6027;&#x3002;</p>
+</li>
+</ul>
+<p>&#x9000;&#x8D27;</p>
+<p>&#x5982;&#x679C;<code>callable</code>&#x662F;<code>nn.Module</code>&#x7684;<code>nn.Module</code>&#x6216;<code>forward</code>&#xFF0C;&#x5219;<code>trace</code>&#x5C06;&#x4F7F;&#x7528;&#x5305;&#x542B;&#x8DDF;&#x8E2A;&#x4EE3;&#x7801;&#x7684;&#x5355;&#x4E2A;<code>forward</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5BF9;&#x8C61;&#x3002; &#x8FD4;&#x56DE;&#x7684; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5C06;&#x5177;&#x6709;&#x4E0E;&#x539F;&#x59CB;<code>nn.Module</code>&#x76F8;&#x540C;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x548C;&#x53C2;&#x6570;&#x96C6;&#x3002; &#x5982;&#x679C;<code>callable</code>&#x662F;&#x72EC;&#x7ACB;&#x529F;&#x80FD;&#xFF0C;&#x5219;<code>trace</code>&#x8FD4;&#x56DE; <a href="#torch.jit.ScriptFunction" title="torch.jit.ScriptFunction"><code>ScriptFunction</code></a></p>
+<p>&#x793A;&#x4F8B;(&#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+
+def foo(x, y):
+    return 2 * x + y
+
+# Run `foo` with the provided inputs and record the tensor operations
+traced_foo = torch.jit.trace(foo, (torch.rand(3), torch.rand(3)))
+
+# `traced_foo` can now be run with the TorchScript interpreter or saved
+# and loaded in a Python-free environment
+</code></pre><p>&#x793A;&#x4F8B;(&#x8DDF;&#x8E2A;&#x73B0;&#x6709;&#x6A21;&#x5757;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv = nn.Conv2d(1, 1, 3)
+
+    def forward(self, x):
+        return self.conv(x)
+
+n = Net()
+example_weight = torch.rand(1, 1, 3, 3)
+example_forward_input = torch.rand(1, 1, 3, 3)
+
+# Trace a specific method and construct `ScriptModule` with
+# a single `forward` method
+module = torch.jit.trace(n.forward, example_forward_input)
+
+# Trace a module (implicitly traces `forward`) and construct a
+# `ScriptModule` with a single `forward` method
+module = torch.jit.trace(n, example_forward_input)
+</code></pre><hr>
+<pre><code>torch.jit.trace_module(mod, inputs, optimize=None, check_trace=True, check_inputs=None, check_tolerance=1e-5)&#xB6;
+</code></pre><p>&#x8DDF;&#x8E2A;&#x6A21;&#x5757;&#x5E76;&#x8FD4;&#x56DE;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5C06;&#x4F7F;&#x7528;&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002; &#x5C06;&#x6A21;&#x5757;&#x4F20;&#x9012;&#x5230; <a href="#torch.jit.trace" title="torch.jit.trace"><code>torch.jit.trace</code></a> &#x65F6;&#xFF0C;&#x4EC5;&#x8FD0;&#x884C;&#x5E76;&#x8DDF;&#x8E2A;<code>forward</code>&#x65B9;&#x6CD5;&#x3002; &#x4F7F;&#x7528;<code>trace_module</code>&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x7684;&#x5B57;&#x5178;&#x4F5C;&#x4E3A;&#x793A;&#x4F8B;&#x8F93;&#x5165;&#xFF0C;&#x4EE5;&#x8DDF;&#x8E2A;&#x4E0B;&#x9762;&#x7684;&#x53C2;&#x6570;(&#x8BF7;&#x53C2;&#x89C1;<code>example_inputs</code>&#xFF09;&#x3002;</p>
+<p>&#x6709;&#x5173;&#x8DDF;&#x8E2A;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#torch.jit.trace" title="torch.jit.trace"><code>torch.jit.trace</code></a> &#x3002;</p>
+<p>Parameters</p>
+<ul>
+<li><p><strong>mod</strong>  (<a href="nn.html#torch.nn.Module" title="torch.nn.Module"><em>Torch.nn.Module</em></a>)&#x2013;&#x4E00;&#x79CD;<code>torch.nn.Module</code>&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x540D;&#x79F0;&#x5728;<code>example_inputs</code>&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x7ED9;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x88AB;&#x7F16;&#x8BD1;&#x4E3A;&#x5355;&#x4E2A; &lt;cite&gt;ScriptModule&lt;/cite&gt; &#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+</li>
+<li><p><strong>example_inputs</strong>  (<em>dict</em> )&#x2013;&#x5305;&#x542B;&#x6837;&#x672C;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x5178;&#xFF0C;&#x8BE5;&#x6837;&#x672C;&#x8F93;&#x5165;&#x7531;<code>mod</code>&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x7D22;&#x5F15;&#x3002; &#x8F93;&#x5165;&#x5C06;&#x5728;&#x8DDF;&#x8E2A;&#x65F6;&#x4F20;&#x9012;&#x7ED9;&#x540D;&#x79F0;&#x4E0E;&#x8F93;&#x5165;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x3002; <code>{ &apos;forward&apos; : example_forward_input, &apos;method2&apos;: example_method2_input}</code></p>
+</li>
+</ul>
+<pre><code>Keyword Arguments
+</code></pre><ul>
+<li><p><strong>check_trace</strong> (<code>bool</code>, optional) &#x2013; Check if the same inputs run through traced code produce the same outputs. Default: <code>True</code>. You might want to disable this if, for example, your network contains non- deterministic ops or if you are sure that the network is correct despite a checker failure.</p>
+</li>
+<li><p><strong>check_inputs</strong> (<em>&#x5B57;&#x5178;&#x5217;&#x8868;</em> <em>&#xFF0C;</em> <em>&#x53EF;&#x9009;</em>&#xFF09;&#x2013;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7684;&#x5B57;&#x5178;&#x5217;&#x8868;&#xFF0C;&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x8DDF;&#x8E2A;&#x5185;&#x5BB9; &#x662F;&#x671F;&#x5F85;&#x3002; &#x6BCF;&#x4E2A;&#x5143;&#x7EC4;&#x7B49;&#x6548;&#x4E8E;<code>example_inputs</code>&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x4E00;&#x7EC4;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x3002; &#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x6700;&#x4F73;&#x7ED3;&#x679C;&#xFF0C;&#x8BF7;&#x4F20;&#x9012;&#x4E00;&#x7EC4;&#x68C0;&#x67E5;&#x8F93;&#x5165;&#xFF0C;&#x8FD9;&#x4E9B;&#x8F93;&#x5165;&#x4EE3;&#x8868;&#x60A8;&#x5E0C;&#x671B;&#x7F51;&#x7EDC;&#x770B;&#x5230;&#x7684;&#x5F62;&#x72B6;&#x548C;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#x7684;&#x7A7A;&#x95F4;&#x3002; &#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x539F;&#x59CB;&#x7684;<code>example_inputs</code>&#x8FDB;&#x884C;&#x68C0;&#x67E5;</p>
+</li>
+<li><p><strong>check_tolerance</strong> (<em>python:float__,</em> <em>optional</em>) &#x2013; Floating-point comparison tolerance to use in the checker procedure. This can be used to relax the checker strictness in the event that results diverge numerically for a known reason, such as operator fusion.</p>
+</li>
+</ul>
+<p>Returns</p>
+<p>&#x5177;&#x6709;&#x5355;&#x4E2A;<code>forward</code>&#x65B9;&#x6CD5;&#x7684; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x8DDF;&#x8E2A;&#x7684;&#x4EE3;&#x7801;&#x3002; &#x5F53;<code>func</code>&#x662F;<code>torch.nn.Module</code>&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x7684; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5C06;&#x5177;&#x6709;&#x4E0E;<code>func</code>&#x76F8;&#x540C;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x548C;&#x53C2;&#x6570;&#x96C6;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x4F7F;&#x7528;&#x591A;&#x79CD;&#x65B9;&#x6CD5;&#x8DDF;&#x8E2A;&#x6A21;&#x5757;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv = nn.Conv2d(1, 1, 3)
+
+    def forward(self, x):
+        return self.conv(x)
+
+    def weighted_kernel_sum(self, weight):
+        return weight * self.conv.weight
+
+n = Net()
+example_weight = torch.rand(1, 1, 3, 3)
+example_forward_input = torch.rand(1, 1, 3, 3)
+
+# Trace a specific method and construct `ScriptModule` with
+# a single `forward` method
+module = torch.jit.trace(n.forward, example_forward_input)
+
+# Trace a module (implicitly traces `forward`) and construct a
+# `ScriptModule` with a single `forward` method
+module = torch.jit.trace(n, example_forward_input)
+
+# Trace specific methods on a module (specified in `inputs`), constructs
+# a `ScriptModule` with `forward` and `weighted_kernel_sum` methods
+inputs = {&apos;forward&apos; : example_forward_input, &apos;weighted_kernel_sum&apos; : example_weight}
+module = torch.jit.trace_module(n, inputs)
+</code></pre><hr>
+<pre><code>torch.jit.save(m, f, _extra_files=ExtraFilesMap{})&#xB6;
+</code></pre><p>&#x4FDD;&#x5B58;&#x6B64;&#x6A21;&#x5757;&#x7684;&#x8131;&#x673A;&#x7248;&#x672C;&#x4EE5;&#x5728;&#x5355;&#x72EC;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x3002; &#x4FDD;&#x5B58;&#x7684;&#x6A21;&#x5757;&#x5C06;&#x5E8F;&#x5217;&#x5316;&#x6B64;&#x6A21;&#x5757;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x5C5E;&#x6027;&#x3002; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>torch::jit::load(filename)</code>&#x5C06;&#x5176;&#x52A0;&#x8F7D;&#x5230; C ++ API &#x4E2D;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528; <a href="#torch.jit.load" title="torch.jit.load"><code>torch.jit.load</code></a> &#x52A0;&#x8F7D;&#x5230; Python API &#x4E2D;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x4FDD;&#x5B58;&#x6A21;&#x5757;&#xFF0C;&#x5B83;&#x4E0D;&#x5F97;&#x5BF9;&#x672C;&#x5730; Python &#x51FD;&#x6570;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x8C03;&#x7528;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x6240;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x4E5F;&#x5FC5;&#x987B;&#x662F;<code>torch.jit.ScriptModule</code>&#x7684;&#x5B50;&#x7C7B;&#x3002;</p>
+<p>&#x5371;&#x9669;</p>
+<p>&#x6240;&#x6709;&#x6A21;&#x5757;&#xFF0C;&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x8BBE;&#x5907;&#xFF0C;&#x90FD;&#x59CB;&#x7EC8;&#x5728;&#x52A0;&#x8F7D;&#x671F;&#x95F4;&#x52A0;&#x8F7D;&#x5230; CPU &#x4E2D;&#x3002; &#x8FD9;&#x4E0E; <a href="#torch.jit.load" title="torch.jit.load"><code>load</code></a> &#x7684;&#x8BED;&#x4E49;&#x4E0D;&#x540C;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x6765;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;</p>
+<p>Parameters</p>
+<ul>
+<li><p><strong>m</strong> &#x2013;&#x8981;&#x4FDD;&#x5B58;&#x7684; ScriptModule&#x3002;</p>
+</li>
+<li><p><strong>f</strong> &#x2013;&#x7C7B;&#x4F3C;&#x4E8E;&#x6587;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;(&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x5199;&#x5165;&#x548C;&#x5237;&#x65B0;&#xFF09;&#x6216;&#x5305;&#x542B;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</li>
+<li><p><strong>_extra_files</strong> -&#x4ECE;&#x6587;&#x4EF6;&#x540D;&#x6620;&#x5C04;&#x5230;&#x5C06;&#x4F5C;&#x4E3A;&#x201C; f&#x201D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x5B58;&#x50A8;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+</li>
+</ul>
+<p>Warning</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Python 2&#xFF0C;<code>torch.jit.save</code>&#x4E0D;&#x652F;&#x6301;<code>StringIO.StringIO</code>&#x4F5C;&#x4E3A;&#x6709;&#x6548;&#x7684;&#x7C7B;&#x4F3C;&#x6587;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;&#x3002; &#x8FD9;&#x662F;&#x56E0;&#x4E3A; write &#x65B9;&#x6CD5;&#x5E94;&#x8FD4;&#x56DE;&#x5199;&#x5165;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF1B; <code>StringIO.write()</code>&#x4E0D;&#x8FD9;&#x6837;&#x505A;&#x3002;</p>
+<p>&#x8BF7;&#x6539;&#x7528;<code>io.BytesIO</code>&#x4E4B;&#x7C7B;&#x7684;&#x4E1C;&#x897F;&#x3002;</p>
+<p>&#x4F8B;&#xFF1A;</p>
+<pre><code>import torch
+import io
+
+class MyModule(torch.nn.Module):
+    def forward(self, x):
+        return x + 10
+
+m = torch.jit.script(MyModule())
+
+# Save to file
+torch.jit.save(m, &apos;scriptmodule.pt&apos;)
+# This line is equivalent to the previous
+m.save(&quot;scriptmodule.pt&quot;)
+
+# Save to io.BytesIO buffer
+buffer = io.BytesIO()
+torch.jit.save(m, buffer)
+
+# Save with extra files
+extra_files = torch._C.ExtraFilesMap()
+extra_files[&apos;foo.txt&apos;] = &apos;bar&apos;
+torch.jit.save(m, &apos;scriptmodule.pt&apos;, _extra_files=extra_files)
+</code></pre><hr>
+<pre><code>torch.jit.load(f, map_location=None, _extra_files=ExtraFilesMap{})&#xB6;
+</code></pre><p>&#x52A0;&#x8F7D;&#x5148;&#x524D;&#x7528; <a href="#torch.jit.save" title="torch.jit.save"><code>torch.jit.save</code></a> &#x4FDD;&#x5B58;&#x7684; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x6216; <a href="#torch.jit.ScriptFunction" title="torch.jit.ScriptFunction"><code>ScriptFunction</code></a></p>
+<p>&#x4E4B;&#x524D;&#x4FDD;&#x5B58;&#x7684;&#x6240;&#x6709;&#x6A21;&#x5757;&#xFF0C;&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x4F55;&#x79CD;&#x8BBE;&#x5907;&#xFF0C;&#x90FD;&#x9996;&#x5148;&#x52A0;&#x8F7D;&#x5230; CPU &#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x79FB;&#x52A8;&#x5230;&#x4FDD;&#x5B58;&#x5B83;&#x4EEC;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x3002; &#x5982;&#x679C;&#x5931;&#x8D25;(&#x4F8B;&#x5982;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD0;&#x884C;&#x65F6;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x67D0;&#x4E9B;&#x8BBE;&#x5907;&#xFF09;&#xFF0C;&#x5219;&#x4F1A;&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#x3002;</p>
+<p>Parameters</p>
+<ul>
+<li><p><strong>f</strong> &#x2013;&#x7C7B;&#x4F3C;&#x4E8E;&#x6587;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;(&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x8BFB;&#x53D6;&#xFF0C;&#x8BFB;&#x53D6;&#x884C;&#xFF0C;&#x544A;&#x8BC9;&#x548C;&#x67E5;&#x627E;&#xFF09;&#xFF0C;&#x6216;&#x5305;&#x542B;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+</li>
+<li><p><strong>map_location</strong> (<em>&#x5B57;&#x7B26;&#x4E32;</em> <em>&#x6216;</em> <a href="tensor_attributes.html#torch.torch.device" title="torch.torch.device"><em>torch&#x8BBE;&#x5907;</em></a>)&#x2013; <code>torch.save</code>&#x4E2D;<code>map_location</code>&#x7684;&#x7B80;&#x5316;&#x7248;&#x672C; &#x7528;&#x4E8E;&#x52A8;&#x6001;&#x5730;&#x5C06;&#x5B58;&#x50A8;&#x91CD;&#x65B0;&#x6620;&#x5C04;&#x5230;&#x53E6;&#x4E00;&#x7EC4;&#x8BBE;&#x5907;&#x3002;</p>
+</li>
+<li><p><strong>_extra_files</strong> (<em>&#x6587;&#x4EF6;&#x540D;&#x5230;&#x5185;&#x5BB9;&#x7684;&#x5B57;&#x5178;</em>&#xFF09;&#x2013;&#x6620;&#x5C04;&#x4E2D;&#x7ED9;&#x5B9A;&#x7684;&#x591A;&#x4F59;&#x6587;&#x4EF6;&#x540D;&#x5C06;&#x88AB;&#x52A0;&#x8F7D;&#xFF0C;&#x5176;&#x5185;&#x5BB9;&#x5C06;&#x5B58;&#x50A8;&#x5728;&#x63D0;&#x4F9B;&#x7684;&#x6620;&#x5C04;&#x4E2D;&#x3002;</p>
+</li>
+</ul>
+<p>Returns</p>
+<p><a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5BF9;&#x8C61;&#x3002;</p>
+<p>Example:</p>
+<pre><code>import torch
+import io
+
+torch.jit.load(&apos;scriptmodule.pt&apos;)
+
+# Load ScriptModule from io.BytesIO object
+with open(&apos;scriptmodule.pt&apos;, &apos;rb&apos;) as f:
+    buffer = io.BytesIO(f.read())
+
+# Load all tensors to the original device
+torch.jit.load(buffer)
+
+# Load all tensors onto CPU, using a device
+buffer.seek(0)
+torch.jit.load(buffer, map_location=torch.device(&apos;cpu&apos;))
+
+# Load all tensors onto CPU, using a string
+buffer.seek(0)
+torch.jit.load(buffer, map_location=&apos;cpu&apos;)
+
+# Load with extra files.
+extra_files = torch._C.ExtraFilesMap()
+extra_files[&apos;foo.txt&apos;] = &apos;bar&apos;
+torch.jit.load(&apos;scriptmodule.pt&apos;, _extra_files=extra_files)
+print(extra_files[&apos;foo.txt&apos;])
+</code></pre><h2 id="&#x6DF7;&#x5408;&#x8DDF;&#x8E2A;&#x548C;&#x811A;&#x672C;&#x7F16;&#x5199;"><a href="#id11">&#x6DF7;&#x5408;&#x8DDF;&#x8E2A;&#x548C;&#x811A;&#x672C;&#x7F16;&#x5199;</a></h2>
+<p>&#x5728;&#x8BB8;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x6A21;&#x578B;&#x8F6C;&#x6362;&#x4E3A; TorchScript &#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8DDF;&#x8E2A;&#x6216;&#x811A;&#x672C;&#x7F16;&#x5199;&#x3002; &#x53EF;&#x4EE5;&#x7EC4;&#x6210;&#x8DDF;&#x8E2A;&#x548C;&#x811A;&#x672C;&#x4EE5;&#x9002;&#x5408;&#x6A21;&#x578B;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x7279;&#x5B9A;&#x8981;&#x6C42;&#x3002;</p>
+<p>&#x811A;&#x672C;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#x3002; &#x5F53;&#x60A8;&#x9700;&#x8981;&#x5728;&#x7B80;&#x5355;&#x7684;&#x524D;&#x9988;&#x6A21;&#x578B;&#x5468;&#x56F4;&#x4F7F;&#x7528;&#x63A7;&#x5236;&#x6D41;&#x65F6;&#xFF0C;&#x8FD9;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x6A21;&#x578B;&#x7684;&#x6CE2;&#x675F;&#x641C;&#x7D22;&#x901A;&#x5E38;&#x5C06;&#x7528;&#x811A;&#x672C;&#x7F16;&#x5199;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x4F7F;&#x7528;&#x8DDF;&#x8E2A;&#x751F;&#x6210;&#x7684;&#x7F16;&#x7801;&#x5668;&#x6A21;&#x5757;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x5728;&#x811A;&#x672C;&#x4E2D;&#x8C03;&#x7528;&#x8DDF;&#x8E2A;&#x7684;&#x51FD;&#x6570;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+
+def foo(x, y):
+    return 2 * x + y
+
+traced_foo = torch.jit.trace(foo, (torch.rand(3), torch.rand(3)))
+
+@torch.jit.script
+def bar(x):
+    return traced_foo(x, x)
+</code></pre><p>&#x8DDF;&#x8E2A;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x811A;&#x672C;&#x51FD;&#x6570;&#x3002; &#x5373;&#x4F7F;&#x5927;&#x90E8;&#x5206;&#x6A21;&#x578B;&#x53EA;&#x662F;&#x524D;&#x9988;&#x7F51;&#x7EDC;&#xFF0C;&#x5F53;&#x6A21;&#x578B;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x63A7;&#x5236;&#x6D41;&#x65F6;&#xFF0C;&#x8FD9;&#x4E5F;&#x5F88;&#x6709;&#x7528;&#x3002; &#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x811A;&#x672C;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x63A7;&#x5236;&#x6D41;&#x5DF2;&#x6B63;&#x786E;&#x4FDD;&#x7559;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x5728;&#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#x811A;&#x672C;&#x51FD;&#x6570;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+
+@torch.jit.script
+def foo(x, y):
+    if x.max() &gt; y.max():
+        r = x
+    else:
+        r = y
+    return r
+
+def bar(x, y, z):
+    return foo(x, y) + z
+
+traced_bar = torch.jit.trace(bar, (torch.rand(3), torch.rand(3), torch.rand(3)))
+</code></pre><p>&#x6B64;&#x7EC4;&#x5408;&#x4E5F;&#x9002;&#x7528;&#x4E8E;<code>nn.Module</code>&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x5B83;&#x53EF;&#x7528;&#x4E8E;&#x901A;&#x8FC7;&#x8DDF;&#x8E2A;&#x6765;&#x751F;&#x6210;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x8BE5;&#x8DDF;&#x8E2A;&#x53EF;&#x4EE5;&#x4ECE;&#x811A;&#x672C;&#x6A21;&#x5757;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x4F7F;&#x7528;&#x8DDF;&#x8E2A;&#x6A21;&#x5757;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torchvision
+
+class MyScriptModule(torch.nn.Module):
+    def __init__(self):
+        super(MyScriptModule, self).__init__()
+        self.means = torch.nn.Parameter(torch.tensor([103.939, 116.779, 123.68])
+                                        .resize_(1, 3, 1, 1))
+        self.resnet = torch.jit.trace(torchvision.models.resnet18(),
+                                      torch.rand(1, 3, 224, 224))
+
+    def forward(self, input):
+        return self.resnet(input - self.means)
+
+my_script_module = torch.jit.script(MyScriptModule())
+</code></pre><h2 id="&#x8FC1;&#x79FB;&#x5230;-pytorch-12-&#x9012;&#x5F52;&#x811A;&#x672C;-api"><a href="#id12">&#x8FC1;&#x79FB;&#x5230; PyTorch 1.2 &#x9012;&#x5F52;&#x811A;&#x672C; API</a></h2>
+<p>&#x672C;&#x8282;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x4E86; PyTorch 1.2 &#x4E2D;&#x5BF9; TorchScript &#x7684;&#x66F4;&#x6539;&#x3002; &#x5982;&#x679C;&#x60A8;&#x4E0D;&#x719F;&#x6089; TorchScript&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x672C;&#x8282;&#x3002; PyTorch 1.2 &#x5BF9; TorchScript API &#x8FDB;&#x884C;&#x4E86;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x66F4;&#x6539;&#x3002;</p>
+<p>1. <a href="#torch.jit.script" title="torch.jit.script"><code>torch.jit.script</code></a> &#x73B0;&#x5728;&#x5C06;&#x5C1D;&#x8BD5;&#x9012;&#x5F52;&#x7F16;&#x8BD1;&#x9047;&#x5230;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x3002; &#x8C03;&#x7528;<code>torch.jit.script</code>&#x540E;&#xFF0C;&#x7F16;&#x8BD1;&#x5C06;&#x662F;&#x201C;&#x9009;&#x62E9;&#x9000;&#x51FA;&#x201D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x201C;&#x9009;&#x62E9;&#x52A0;&#x5165;&#x201D;&#x3002;</p>
+<p>2.&#x73B0;&#x5728;<code>torch.jit.script(nn_module_instance)</code>&#x662F;&#x521B;&#x5EFA; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x7684;&#x9996;&#x9009;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4ECE;<code>torch.jit.ScriptModule</code>&#x7EE7;&#x627F;&#x3002; &#x8FD9;&#x4E9B;&#x66F4;&#x6539;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x7B80;&#x5355;&#x6613;&#x7528;&#x7684; API&#xFF0C;&#x53EF;&#x5C06;&#x60A8;&#x7684;<code>nn.Module</code>&#x8F6C;&#x6362;&#x4E3A; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x975E; Python &#x73AF;&#x5883;&#x4E2D;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x548C;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x65B0;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class Model(nn.Module):
+    def __init__(self):
+        super(Model, self).__init__()
+        self.conv1 = nn.Conv2d(1, 20, 5)
+        self.conv2 = nn.Conv2d(20, 20, 5)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        return F.relu(self.conv2(x))
+
+my_model = Model()
+my_scripted_model = torch.jit.script(my_model)
+</code></pre><ul>
+<li><p>&#x8BE5;&#x6A21;&#x5757;&#x7684;<code>forward</code>&#x662F;&#x9ED8;&#x8BA4;&#x7F16;&#x8BD1;&#x7684;&#x3002; &#x4ECE;<code>forward</code>&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x6309;&#x7167;&#x5728;<code>forward</code>&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x5EF6;&#x8FDF;&#x7F16;&#x8BD1;&#x3002;</p>
+</li>
+<li><p>&#x8981;&#x7F16;&#x8BD1;&#x672A;&#x4ECE;<code>forward</code>&#x8C03;&#x7528;&#x7684;<code>forward</code>&#x4EE5;&#x5916;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8BF7;&#x6DFB;&#x52A0;<code>@torch.jit.export</code>&#x3002;</p>
+</li>
+<li><p>&#x8981;&#x505C;&#x6B62;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x65B9;&#x6CD5;&#xFF0C;&#x8BF7;&#x6DFB;&#x52A0; <a href="#torch.jit.ignore" title="torch.jit.ignore"><code>@torch.jit.ignore</code></a> &#x6216; <a href="#torch.jit.unused" title="torch.jit.unused"><code>@torch.jit.unused</code></a> &#x3002; <code>@ignore</code>&#x79BB;&#x5F00;</p>
+</li>
+<li><p>&#x65B9;&#x6CD5;&#x4F5C;&#x4E3A;&#x5BF9; python &#x7684;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x4E14;<code>@unused</code>&#x5C06;&#x5176;&#x66FF;&#x6362;&#x4E3A;&#x5F02;&#x5E38;&#x3002; <code>@ignored</code>&#x65E0;&#x6CD5;&#x5BFC;&#x51FA;&#xFF1B; <code>@unused</code>&#x53EF;&#x4EE5;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x63A8;&#x65AD;&#x5927;&#x591A;&#x6570;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x8981;<code>torch.jit.Attribute</code>&#x3002; &#x5BF9;&#x4E8E;&#x7A7A;&#x5BB9;&#x5668;&#x7C7B;&#x578B;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <a href="https://www.python.org/dev/peps/pep-0526/#class-and-instance-variable-annotations" target="_blank">PEP 526 &#x6837;&#x5F0F;</a>&#x7C7B;&#x6CE8;&#x91CA;&#x5BF9;&#x5176;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6CE8;&#x91CA;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>Final</code>&#x7C7B;&#x6CE8;&#x91CA;&#x6765;&#x6807;&#x8BB0;&#x5E38;&#x91CF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C06;&#x6210;&#x5458;&#x7684;&#x540D;&#x79F0;&#x6DFB;&#x52A0;&#x5230;<code>__constants__</code>&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Python 3 &#x7C7B;&#x578B;&#x63D0;&#x793A;&#x4EE3;&#x66FF;<code>torch.jit.annotate</code></p>
+</li>
+</ul>
+<pre><code>As a result of these changes, the following items are considered deprecated and should not appear in new code:
+</code></pre><ul>
+<li><p><code>@torch.jit.script_method</code>&#x88C5;&#x9970;&#x5668;</p>
+</li>
+<li><p>&#x7EE7;&#x627F;&#x81EA;<code>torch.jit.ScriptModule</code>&#x7684;&#x7C7B;</p>
+</li>
+<li><p><code>torch.jit.Attribute</code>&#x5305;&#x88C5;&#x5668;&#x7C7B;</p>
+</li>
+<li><p><code>__constants__</code>&#x6570;&#x7EC4;</p>
+</li>
+<li><p><code>torch.jit.annotate</code>&#x529F;&#x80FD;</p>
+</li>
+</ul>
+<h3 id="&#x6A21;&#x5757;"><a href="#id13">&#x6A21;&#x5757;</a></h3>
+<p>Warning</p>
+<p><a href="#torch.jit.ignore" title="torch.jit.ignore"><code>@torch.jit.ignore</code></a> &#x6CE8;&#x91CA;&#x7684;&#x884C;&#x4E3A;&#x5728; PyTorch 1.2 &#x4E2D;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002; &#x5728; PyTorch 1.2 &#x4E4B;&#x524D;&#xFF0C;@ ignore &#x88C5;&#x9970;&#x5668;&#x7528;&#x4E8E;&#x4F7F;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x53EF;&#x4ECE;&#x5BFC;&#x51FA;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x8C03;&#x7528;&#x3002; &#x8981;&#x6062;&#x590D;&#x6B64;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;<code>@torch.jit.unused()</code>&#x3002; <code>@torch.jit.ignore</code>&#x73B0;&#x5728;&#x7B49;&#x540C;&#x4E8E;<code>@torch.jit.ignore(drop=False)</code>&#x3002; &#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#torch.jit.ignore" title="torch.jit.ignore"><code>@torch.jit.ignore</code></a> &#x548C; <a href="#torch.jit.unused" title="torch.jit.unused"><code>@torch.jit.unused</code></a> &#x3002;</p>
+<p>&#x5F53;&#x4F20;&#x9012;&#x7ED9; <a href="#torch.jit.script" title="torch.jit.script"><code>torch.jit.script</code></a> &#x51FD;&#x6570;&#x65F6;&#xFF0C;<code>torch.nn.Module</code>&#x7684;&#x6570;&#x636E;&#x5C06;&#x590D;&#x5236;&#x5230; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#xFF0C;&#x7136;&#x540E; TorchScript &#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x7F16;&#x8BD1;&#x8BE5;&#x6A21;&#x5757;&#x3002; &#x8BE5;&#x6A21;&#x5757;&#x7684;<code>forward</code>&#x9ED8;&#x8BA4;&#x4E3A;&#x7F16;&#x8BD1;&#x72B6;&#x6001;&#x3002; &#x4ECE;<code>forward</code>&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x5728;<code>forward</code>&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x987A;&#x5E8F;&#x90FD;&#x662F;&#x6309;&#x5EF6;&#x8FDF;&#x987A;&#x5E8F;&#x7F16;&#x8BD1;&#x7684;&#x3002;</p>
+<hr>
+<pre><code>torch.jit.export(fn)&#xB6;
+</code></pre><p>&#x6B64;&#x4FEE;&#x9970;&#x7B26;&#x6307;&#x793A;<code>nn.Module</code>&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x7528;&#x4F5C; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x7684;&#x5165;&#x53E3;&#x70B9;&#xFF0C;&#x5E94;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3002;</p>
+<p><code>forward</code>&#x9690;&#x5F0F;&#x5730;&#x5047;&#x5B9A;&#x4E3A;&#x5165;&#x53E3;&#x70B9;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x8981;&#x6B64;&#x88C5;&#x9970;&#x5668;&#x3002; &#x4ECE;<code>forward</code>&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x770B;&#x5230;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x6B64;&#x88C5;&#x9970;&#x5668;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x5728;&#x65B9;&#x6CD5;&#x4E0A;&#x4F7F;&#x7528;<code>@torch.jit.export</code>&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class MyModule(nn.Module):
+    def implicitly_compiled_method(self, x):
+        return x + 99
+
+    # `forward` is implicitly decorated with `@torch.jit.export`,
+    # so adding it here would have no effect
+    def forward(self, x):
+        return x + 10
+
+    @torch.jit.export
+    def another_forward(self, x):
+        # When the compiler sees this call, it will compile
+        # `implicitly_compiled_method`
+        return self.implicitly_compiled_method(x)
+
+    def unused_method(self, x):
+        return x - 20
+
+# `m` will contain compiled methods:
+#     `forward`
+#     `another_forward`
+#     `implicitly_compiled_method`
+# `unused_method` will not be compiled since it was not called from
+# any compiled methods and wasn&apos;t decorated with `@torch.jit.export`
+m = torch.jit.script(MyModule())
+</code></pre><h3 id="&#x529F;&#x80FD;"><a href="#id14">&#x529F;&#x80FD;</a></h3>
+<p>&#x529F;&#x80FD;&#x6CA1;&#x6709;&#x592A;&#x5927;&#x53D8;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x7528; <a href="#torch.jit.ignore" title="torch.jit.ignore"><code>@torch.jit.ignore</code></a> &#x6216; <a href="#torch.jit.unused" title="torch.jit.unused"><code>torch.jit.unused</code></a> &#x88C5;&#x9970;&#x3002;</p>
+<pre><code># Same behavior as pre-PyTorch 1.2
+@torch.jit.script
+def some_fn():
+    return 2
+
+# Marks a function as ignored, if nothing
+# ever calls it then this has no effect
+@torch.jit.ignore
+def some_fn2():
+    return 2
+
+# As with ignore, if nothing calls it then it has no effect.
+# If it is called in script it is replaced with an exception.
+@torch.jit.unused
+def some_fn3():
+  import pdb; pdb.set_trace()
+  return 4
+
+# Doesn&apos;t do anything, this function is already
+# the main entry point
+@torch.jit.export
+def some_fn4():
+    return 2
+</code></pre><h3 id="torchscript-&#x7C7B;"><a href="#id15">TorchScript &#x7C7B;</a></h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x5BFC;&#x51FA;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684; <a href="#torchscript-class">TorchScript &#x7C7B;</a>&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x7528; <a href="#torch.jit.ignore" title="torch.jit.ignore"><code>@torch.jit.ignore</code></a> &#x4FEE;&#x9970;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="&#x5C5E;&#x6027;"><a href="#id16">&#x5C5E;&#x6027;</a></h3>
+<p>TorchScript &#x7F16;&#x8BD1;&#x5668;&#x9700;&#x8981;&#x77E5;&#x9053;<a href="#module-attributes">&#x6A21;&#x5757;&#x5C5E;&#x6027;</a>&#x7684;&#x7C7B;&#x578B;&#x3002; &#x5927;&#x591A;&#x6570;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4ECE;&#x6210;&#x5458;&#x7684;&#x503C;&#x63A8;&#x65AD;&#x51FA;&#x6765;&#x3002; &#x7A7A;&#x5217;&#x8868;&#x548C;&#x5B57;&#x5178;&#x4E0D;&#x80FD;&#x63A8;&#x65AD;&#x5176;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x5FC5;&#x987B;&#x4F7F;&#x7528; <a href="https://www.python.org/dev/peps/pep-0526/#class-and-instance-variable-annotations" target="_blank">PEP 526 &#x6837;&#x5F0F;</a>&#x7C7B;&#x6CE8;&#x91CA;&#x6765;&#x6CE8;&#x91CA;&#x5176;&#x7C7B;&#x578B;&#x3002; &#x5982;&#x679C;&#x65E0;&#x6CD5;&#x63A8;&#x65AD;&#x7C7B;&#x578B;&#x5E76;&#x4E14;&#x672A;&#x5BF9;&#x663E;&#x5F0F;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6CE8;&#x91CA;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x7ED3;&#x679C; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a></p>
+<p>&#x65E7; API&#xFF1A;</p>
+<pre><code>from typing import Dict
+import torch
+
+class MyModule(torch.jit.ScriptModule):
+    def __init__(self):
+        super(MyModule, self).__init__()
+        self.my_dict = torch.jit.Attribute({}, Dict[str, int])
+        self.my_int = torch.jit.Attribute(20, int)
+
+m = MyModule()
+</code></pre><p>&#x65B0; API&#xFF1A;</p>
+<pre><code>from typing import Dict
+
+class MyModule(torch.nn.Module):
+    my_dict: Dict[str, int]
+
+    def __init__(self):
+        super(MyModule, self).__init__()
+        # This type cannot be inferred and must be specified
+        self.my_dict = {}
+
+        # The attribute type here is inferred to be `int`
+        self.my_int = 20
+
+    def forward(self):
+        pass
+
+m = torch.jit.script(MyModule())
+</code></pre><h4 id="python-2"><a href="#id17">Python 2</a></h4>
+<p>&#x5982;&#x679C;&#x60A8;&#x53D7;&#x5236;&#x4E8E; Python 2 &#x5E76;&#x4E14;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x7C7B;&#x6CE8;&#x91CA;&#x8BED;&#x6CD5;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>__annotations__</code>&#x7C7B;&#x6210;&#x5458;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x7C7B;&#x578B;&#x6CE8;&#x91CA;&#x3002;</p>
+<pre><code>from typing import Dict
+
+class MyModule(torch.jit.ScriptModule):
+    __annotations__ = {&apos;my_dict&apos;: Dict[str, int]}
+
+    def __init__(self):
+        super(MyModule, self).__init__()
+        self.my_dict = {}
+        self.my_int = 20
+</code></pre><h3 id="&#x5E38;&#x6570;"><a href="#id18">&#x5E38;&#x6570;</a></h3>
+<p><code>Final</code>&#x7C7B;&#x578B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x53EF;&#x7528;&#x4E8E;&#x5C06;&#x6210;&#x5458;&#x6807;&#x8BB0;&#x4E3A;<a href="#constant">&#x5E38;&#x91CF;</a>&#x3002; &#x5982;&#x679C;&#x6210;&#x5458;&#x672A;&#x6807;&#x8BB0;&#x4E3A;&#x5E38;&#x91CF;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x590D;&#x5236;&#x4E3A;&#x7ED3;&#x679C; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x3002; &#x5982;&#x679C;&#x5DF2;&#x77E5;&#x8BE5;&#x503C;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x5219;&#x4F7F;&#x7528;<code>Final</code>&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x9644;&#x52A0;&#x7684;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x6027;&#x3002;</p>
+<p>Old API:</p>
+<pre><code>class MyModule(torch.jit.ScriptModule):
+    __constants__ = [&apos;my_constant&apos;]
+
+    def __init__(self):
+        super(MyModule, self).__init__()
+        self.my_constant = 2
+
+    def forward(self):
+        pass
+m = MyModule()
+</code></pre><p>New API:</p>
+<pre><code>try:
+    from typing_extensions import Final
+except:
+    # If you don&apos;t have `typing_extensions` installed, you can use a
+    # polyfill from `torch.jit`.
+    from torch.jit import Final
+
+class MyModule(torch.nn.Module):
+
+    my_constant: Final[int]
+
+    def __init__(self):
+        super(MyModule, self).__init__()
+        self.my_constant = 2
+
+    def forward(self):
+        pass
+
+m = torch.jit.script(MyModule())
+</code></pre><h3 id="&#x53D8;&#x91CF;"><a href="#id19">&#x53D8;&#x91CF;</a></h3>
+<p>&#x5047;&#x5B9A;&#x5BB9;&#x5668;&#x7684;&#x7C7B;&#x578B;&#x4E3A;<code>Tensor</code>&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x975E;&#x53EF;&#x9009;&#x7684;(&#x6709;&#x5173;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#default-types">&#x9ED8;&#x8BA4;&#x7C7B;&#x578B;</a>&#xFF09;&#x3002; &#x4EE5;&#x524D;&#xFF0C;<code>torch.jit.annotate</code>&#x7528;&#x6765;&#x544A;&#x8BC9; TorchScript &#x7F16;&#x8BD1;&#x5668;&#x7C7B;&#x578B;&#x662F;&#x4EC0;&#x4E48;&#x3002; &#x73B0;&#x5728;&#x652F;&#x6301; Python 3 &#x6837;&#x5F0F;&#x7C7B;&#x578B;&#x63D0;&#x793A;&#x3002;</p>
+<pre><code>import torch
+from typing import Dict, Optional
+
+@torch.jit.script
+def make_dict(flag: bool):
+    x: Dict[str, int] = {}
+    x[&apos;hi&apos;] = 2
+    b: Optional[int] = None
+    if flag:
+        b = 2
+    return x, b
+</code></pre><h2 id="torchscript-&#x8BED;&#x8A00;&#x53C2;&#x8003;"><a href="#id20">TorchScript &#x8BED;&#x8A00;&#x53C2;&#x8003;</a></h2>
+<p>TorchScript &#x662F; Python &#x7684;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x5B50;&#x96C6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7F16;&#x5199;(&#x4F7F;&#x7528; <a href="#torch.jit.script" title="torch.jit.script"><code>@torch.jit.script</code></a> &#x88C5;&#x9970;&#x5668;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8DDF;&#x8E2A;&#x4ECE; Python &#x4EE3;&#x7801;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x3002; &#x4F7F;&#x7528;&#x8DDF;&#x8E2A;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x4EC5;&#x5728;&#x5F20;&#x91CF;&#x4E0A;&#x8BB0;&#x5F55;&#x5B9E;&#x9645;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x5E76;&#x7B80;&#x5355;&#x5730;&#x6267;&#x884C;&#x548C;&#x4E22;&#x5F03;&#x5176;&#x4ED6;&#x5468;&#x56F4;&#x7684; Python &#x4EE3;&#x7801;&#xFF0C;&#x4EE3;&#x7801;&#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A; Python &#x7684;&#x6B64;&#x5B50;&#x96C6;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>@torch.jit.script</code>&#x88C5;&#x9970;&#x5668;&#x76F4;&#x63A5;&#x7F16;&#x5199; TorchScript &#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x53EA;&#x80FD;&#x4F7F;&#x7528; TorchScript &#x652F;&#x6301;&#x7684; Python &#x5B50;&#x96C6;&#x3002; &#x672C;&#x8282;&#x8BB0;&#x5F55;&#x4E86; TorchScript &#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5C31;&#x50CF;&#x5B83;&#x662F;&#x72EC;&#x7ACB;&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x8A00;&#x53C2;&#x8003;&#x4E00;&#x6837;&#x3002; &#x672C;&#x53C2;&#x8003;&#x4E2D;&#x672A;&#x63D0;&#x53CA;&#x7684; Python &#x7684;&#x4EFB;&#x4F55;&#x529F;&#x80FD;&#x90FD;&#x4E0D;&#x5C5E;&#x4E8E; TorchScript&#x3002; &#x6709;&#x5173;&#x53EF;&#x7528;&#x7684; Pytorch &#x5F20;&#x91CF;&#x65B9;&#x6CD5;&#xFF0C;&#x6A21;&#x5757;&#x548C;&#x529F;&#x80FD;&#x7684;&#x5B8C;&#x6574;&#x53C2;&#x8003;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#builtin-functions">&#x5185;&#x7F6E;&#x51FD;&#x6570;</a>&#x3002;</p>
+<p>&#x4F5C;&#x4E3A; Python &#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x4EFB;&#x4F55;&#x6709;&#x6548;&#x7684; TorchScript &#x51FD;&#x6570;&#x4E5F;&#x662F;&#x6709;&#x6548;&#x7684; Python &#x51FD;&#x6570;&#x3002; &#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;<a href="#disable-torchscript">&#x7981;&#x7528; TorchScript</a> &#x5E76;&#x4F7F;&#x7528;<code>pdb</code>&#x4E4B;&#x7C7B;&#x7684;&#x6807;&#x51C6; Python &#x5DE5;&#x5177;&#x8C03;&#x8BD5;&#x8BE5;&#x529F;&#x80FD;&#x3002; &#x53CD;&#x4E4B;&#x5219;&#x4E0D;&#x6210;&#x7ACB;&#xFF1A;&#x6709;&#x8BB8;&#x591A;&#x6709;&#x6548;&#x7684; Python &#x7A0B;&#x5E8F;&#x4E0D;&#x662F;&#x6709;&#x6548;&#x7684; TorchScript &#x7A0B;&#x5E8F;&#x3002; &#x76F8;&#x53CD;&#xFF0C;TorchScript &#x7279;&#x522B;&#x4E13;&#x6CE8;&#x4E8E;&#x8868;&#x793A; PyTorch &#x4E2D;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x6240;&#x9700;&#x7684; Python &#x529F;&#x80FD;&#x3002;</p>
+<h3 id="&#x7C7B;&#x578B;"><a href="#id21">&#x7C7B;&#x578B;</a></h3>
+<p>TorchScript &#x4E0E;&#x5B8C;&#x6574;&#x7684; Python &#x8BED;&#x8A00;&#x4E4B;&#x95F4;&#x7684;&#x6700;&#x5927;&#x533A;&#x522B;&#x662F; TorchScript &#x4EC5;&#x652F;&#x6301;&#x8868;&#x8FBE;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x6240;&#x9700;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x7C7B;&#x578B;&#x3002; &#x7279;&#x522B;&#x662F;&#xFF0C;TorchScript &#x652F;&#x6301;&#xFF1A;</p>
+<p>| </p>
+<p>&#x7C7B;&#x578B;</p>
+<p> | </p>
+<p>&#x63CF;&#x8FF0;</p>
+<p> |
+| --- | --- |
+| <code>Tensor</code> | &#x4EFB;&#x4F55; dtype&#xFF0C;&#x5C3A;&#x5BF8;&#x6216;&#x540E;&#x7AEF;&#x7684; PyTorch &#x5F20;&#x91CF; |
+| <code>Tuple[T0, T1, ...]</code> | &#x5305;&#x542B;&#x5B50;&#x7C7B;&#x578B;<code>T0</code>&#xFF0C;<code>T1</code>&#x7B49;(&#x4F8B;&#x5982;<code>Tuple[Tensor, Tensor]</code>&#xFF09;&#x7684;&#x5143;&#x7EC4; |
+| <code>bool</code> | &#x5E03;&#x5C14;&#x503C; |
+| <code>int</code> | &#x6807;&#x91CF;&#x6574;&#x6570; |
+| <code>float</code> | &#x6807;&#x91CF;&#x6D6E;&#x70B9;&#x6570; |
+| <code>str</code> | &#x4E00;&#x4E32; |
+| <code>List[T]</code> | &#x6240;&#x6709;&#x6210;&#x5458;&#x5747;&#x4E3A;<code>T</code>&#x7C7B;&#x578B;&#x7684;&#x5217;&#x8868; |
+| <code>Optional[T]</code> | &#x65E0;&#x6216;&#x8F93;&#x5165;<code>T</code>&#x7684;&#x503C; |
+| <code>Dict[K, V]</code> | &#x952E;&#x7C7B;&#x578B;&#x4E3A;<code>K</code>&#x800C;&#x503C;&#x7C7B;&#x578B;&#x4E3A;<code>V</code>&#x7684;&#x5B57;&#x5178;&#x3002; &#x53EA;&#x80FD;&#x5C06;<code>str</code>&#xFF0C;<code>int</code>&#x548C;<code>float</code>&#x4F5C;&#x4E3A;&#x5BC6;&#x200B;&#x200B;&#x94A5;&#x7C7B;&#x578B;&#x3002; |
+| <code>T</code> | &#x4E00;&#x4E2A; <a href="#torchscript-class">TorchScript &#x7C7B;</a> |
+| <code>NamedTuple[T0, T1, ...]</code> | <code>collections.namedtuple</code>&#x5143;&#x7EC4;&#x7C7B;&#x578B; |</p>
+<p>&#x4E0E; Python &#x4E0D;&#x540C;&#xFF0C;TorchScript &#x51FD;&#x6570;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x90FD;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x3002; &#x8FD9;&#x4F7F;&#x4F18;&#x5316; TorchScript &#x51FD;&#x6570;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x7C7B;&#x578B;&#x4E0D;&#x5339;&#x914D;&#xFF09;</p>
+<pre><code>import torch
+
+@torch.jit.script
+def an_error(x):
+    if x:
+        r = torch.rand(1)
+    else:
+        r = 4
+    return r
+</code></pre><pre><code>Traceback (most recent call last):
+  ...
+RuntimeError: ...
+
+Type mismatch: r is set to type Tensor in the true branch and type int in the false branch:
+@torch.jit.script
+def an_error(x):
+    if x:
+    ~~~~~...  &lt;--- HERE
+        r = torch.rand(1)
+    else:
+and was used here:
+    else:
+        r = 4
+    return r
+           ~ &lt;--- HERE
+...
+</code></pre><h4 id="&#x9ED8;&#x8BA4;&#x7C7B;&#x578B;"><a href="#id22">&#x9ED8;&#x8BA4;&#x7C7B;&#x578B;</a></h4>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;TorchScript &#x51FD;&#x6570;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#x5747;&#x5047;&#x5B9A;&#x4E3A; Tensor&#x3002; &#x8981;&#x6307;&#x5B9A; TorchScript &#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x5217;&#x51FA;&#x7684;&#x7C7B;&#x578B;&#x4F7F;&#x7528; MyPy &#x6837;&#x5F0F;&#x7684;&#x7C7B;&#x578B;&#x6CE8;&#x91CA;&#x3002;</p>
+<pre><code>import torch
+
+@torch.jit.script
+def foo(x, tup):
+    # type: (int, Tuple[Tensor, Tensor]) -&gt; Tensor
+    t0, t1 = tup
+    return t0 + t1 + x
+
+print(foo(3, (torch.rand(3), torch.rand(3))))
+</code></pre><p>&#x6CE8;&#x610F;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>typing</code>&#x6A21;&#x5757;&#x4E2D;&#x7684; Python 3 &#x7C7B;&#x578B;&#x63D0;&#x793A;&#x6765;&#x6CE8;&#x91CA;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code>import torch
+from typing import Tuple
+
+@torch.jit.script
+def foo(x: int, tup: Tuple[torch.Tensor, torch.Tensor]) -&gt; torch.Tensor:
+    t0, t1 = tup
+    return t0 + t1 + x
+
+print(foo(3, (torch.rand(3), torch.rand(3))))
+</code></pre><p>&#x5728;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x6CE8;&#x91CA;&#x7684;&#x7C7B;&#x578B;&#x63D0;&#x793A;&#x6765;&#x786E;&#x4FDD; Python 2 &#x7684;&#x517C;&#x5BB9;&#x6027;&#x3002;</p>
+<p>&#x5047;&#x5B9A;&#x7A7A;&#x5217;&#x8868;&#x4E3A;<code>List[Tensor]</code>&#xFF0C;&#x7A7A;&#x5B57;&#x5178;&#x4E3A;<code>Dict[str, Tensor]</code>&#x3002; &#x8981;&#x5B9E;&#x4F8B;&#x5316;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x7A7A;&#x5217;&#x8868;&#x6216;&#x5B57;&#x5178;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <a href="#python-3-type-hints">Python 3 &#x7C7B;&#x578B;&#x63D0;&#x793A;</a>&#x3002; &#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Python 2&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>torch.jit.annotate</code>&#x3002;</p>
+<p>&#x793A;&#x4F8B;(Python 3 &#x7684;&#x7C7B;&#x578B;&#x6CE8;&#x91CA;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+from typing import Dict, List, Tuple
+
+class EmptyDataStructures(torch.nn.Module):
+    def __init__(self):
+        super(EmptyDataStructures, self).__init__()
+
+    def forward(self, x: torch.Tensor) -&gt; Tuple[List[Tuple[int, float]], Dict[str, int]]:
+        # This annotates the list to be a `List[Tuple[int, float]]`
+        my_list: List[Tuple[int, float]] = []
+        for i in range(10):
+            my_list.append((i, x.item()))
+
+        my_dict: Dict[str, int] = {}
+        return my_list, my_dict
+
+x = torch.jit.script(EmptyDataStructures())
+</code></pre><p>&#x793A;&#x4F8B;(&#x9002;&#x7528;&#x4E8E; Python 2 &#x7684;<code>torch.jit.annotate</code>&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+from typing import Dict, List, Tuple
+
+class EmptyDataStructures(torch.nn.Module):
+    def __init__(self):
+        super(EmptyDataStructures, self).__init__()
+
+    def forward(self, x):
+        # type: (Tensor) -&gt; Tuple[List[Tuple[int, float]], Dict[str, int]]
+
+        # This annotates the list to be a `List[Tuple[int, float]]`
+        my_list = torch.jit.annotate(List[Tuple[int, float]], [])
+        for i in range(10):
+            my_list.append((i, float(x.item())))
+
+        my_dict = torch.jit.annotate(Dict[str, int], {})
+        return my_list, my_dict
+
+x = torch.jit.script(EmptyDataStructures())
+</code></pre><h4 id="&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x7EC6;&#x5316;"><a href="#id23">&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x7EC6;&#x5316;</a></h4>
+<p>&#x5728; if &#x8BED;&#x53E5;&#x7684;&#x6761;&#x4EF6;&#x5185;&#x6216;&#x5728;<code>assert</code>&#x4E2D;&#x68C0;&#x67E5;&#x4E0E;<code>None</code>&#x7684;&#x6BD4;&#x8F83;&#x65F6;&#xFF0C;TorchScript &#x5C06;&#x4F18;&#x5316;<code>Optional[T]</code>&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x3002; &#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x63A8;&#x7406;&#x4E0E;<code>and</code>&#xFF0C;<code>or</code>&#x548C;<code>not</code>&#x7ED3;&#x5408;&#x7684;&#x591A;&#x4E2A;<code>None</code>&#x68C0;&#x67E5;&#x3002; &#x5BF9;&#x4E8E;&#x672A;&#x660E;&#x786E;&#x7F16;&#x5199;&#x7684; if &#x8BED;&#x53E5;&#x7684; else &#x5757;&#xFF0C;&#x4E5F;&#x4F1A;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;</p>
+<p><code>None</code>&#x68C0;&#x67E5;&#x5FC5;&#x987B;&#x5728; if &#x8BED;&#x53E5;&#x7684;&#x6761;&#x4EF6;&#x5185;&#xFF1B; &#x5C06;<code>None</code>&#x68C0;&#x67E5;&#x5206;&#x914D;&#x7ED9;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x5728; if &#x8BED;&#x53E5;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x5C06;&#x4E0D;&#x4F1A;&#x4F18;&#x5316;&#x68C0;&#x67E5;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#x3002; &#x4EC5;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5C06;&#x88AB;&#x7EC6;&#x5316;&#xFF0C;<code>self.x</code>&#x4E4B;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x5C06;&#x4E0D;&#x4F1A;&#x4E14;&#x5FC5;&#x987B;&#x5206;&#x914D;&#x7ED9;&#x8981;&#x7EC6;&#x5316;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x4F18;&#x5316;&#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+from typing import Optional
+
+class M(nn.Module):
+    z: Optional[int]
+
+    def __init__(self, z):
+        super(M, self).__init__()
+        # If `z` is None, its type cannot be inferred, so it must
+        # be specified (above)
+        self.z = z
+
+    def forward(self, x, y, z):
+        # type: (Optional[int], Optional[int], Optional[int]) -&gt; int
+        if x is None:
+            x = 1
+            x = x + 1
+
+        # Refinement for an attribute by assigning it to a local
+        z = self.z
+        if y is not None and z is not None:
+            x = y + z
+
+        # Refinement via an `assert`
+        assert z is not None
+        x += z
+        return x
+
+module = torch.jit.script(M(2))
+module = torch.jit.script(M(None))
+</code></pre><h4 id="torchscript-&#x7C7B;"><a href="#id24">TorchScript &#x7C7B;</a></h4>
+<p>&#x5982;&#x679C; Python &#x7C7B;&#x4F7F;&#x7528; <a href="#torch.jit.script" title="torch.jit.script"><code>@torch.jit.script</code></a> &#x6CE8;&#x91CA;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5728; TorchScript &#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x58F0;&#x660E; TorchScript &#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code>@torch.jit.script
+class Foo:
+  def __init__(self, x, y):
+    self.x = x
+
+  def aug_add_x(self, inc):
+    self.x += inc
+</code></pre><p>&#x6B64;&#x5B50;&#x96C6;&#x53D7;&#x9650;&#x5236;&#xFF1A;</p>
+<ul>
+<li><p>&#x6240;&#x6709;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x6709;&#x6548;&#x7684; TorchScript &#x51FD;&#x6570;(&#x5305;&#x62EC;<code>__init__()</code>&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x8FD9;&#x4E9B;&#x7C7B;&#x5FC5;&#x987B;&#x662F;&#x65B0;&#x578B;&#x7C7B;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>__new__()</code>&#x548C; pybind11 &#x6765;&#x6784;&#x9020;&#x5B83;&#x4EEC;&#x3002;</p>
+</li>
+<li><p>TorchScript &#x7C7B;&#x662F;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x7684;&#x3002; &#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x5728;<code>__init__()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x5206;&#x914D;&#x7ED9; self &#x6765;&#x58F0;&#x660E;&#x6210;&#x5458;&#x3002;</p>
+<p>&gt; &#x4F8B;&#x5982;&#xFF0C;&#x5728;<code>__init__()</code>&#x65B9;&#x6CD5;&#x4E4B;&#x5916;&#x5206;&#x914D;&#x7ED9;<code>self</code>&#xFF1A;
+&gt; 
+&gt; <code>&amp;gt; @torch.jit.script
+&amp;gt; class Foo:
+&amp;gt;   def assign_x(self):
+&amp;gt;     self.x = torch.rand(2, 3)
+&amp;gt; 
+&amp;gt;</code>
+&gt; 
+&gt; &#x5C06;&#x5BFC;&#x81F4;&#xFF1A;
+&gt; 
+&gt; <code>&amp;gt; RuntimeError:
+&amp;gt; Tried to set nonexistent attribute: x. Did you forget to initialize it in __init__()?:
+&amp;gt; def assign_x(self):
+&amp;gt;   self.x = torch.rand(2, 3)
+&amp;gt;   ~~~~~~~~~~~~~~~~~~~~~~~~ &amp;lt;--- HERE
+&amp;gt; 
+&amp;gt;</code></p>
+</li>
+<li><p>&#x7C7B;&#x7684;&#x4E3B;&#x4F53;&#x4E2D;&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x9664;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x4E4B;&#x5916;&#x7684;&#x4EFB;&#x4F55;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+</li>
+<li><p>&#x9664;&#x4E86;&#x4ECE;<code>object</code>&#x7EE7;&#x627F;&#x4EE5;&#x6307;&#x5B9A;&#x65B0;&#x6837;&#x5F0F;&#x7C7B;&#x5916;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x7EE7;&#x627F;&#x6216;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x591A;&#x6001;&#x7B56;&#x7565;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x50CF;&#x5176;&#x4ED6;&#x4EFB;&#x4F55; TorchScript &#x7C7B;&#x578B;&#x4E00;&#x6837;&#x5728; TorchScript &#x548C; Python &#x4E2D;&#x4E92;&#x6362;&#x4F7F;&#x7528;&#x8BE5;&#x7C7B;&#xFF1A;</p>
+<pre><code># Declare a TorchScript class
+@torch.jit.script
+class Pair:
+  def __init__(self, first, second):
+    self.first = first
+    self.second = second
+
+@torch.jit.script
+def sum_pair(p):
+  # type: (Pair) -&gt; Tensor
+  return p.first + p.second
+
+p = Pair(torch.rand(2, 3), torch.rand(2, 3))
+print(sum_pair(p))
+</code></pre><h4 id="&#x547D;&#x540D;&#x4E3A;&#x5143;&#x7EC4;"><a href="#id25">&#x547D;&#x540D;&#x4E3A;&#x5143;&#x7EC4;</a></h4>
+<p><code>collections.namedtuple</code>&#x4EA7;&#x751F;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x5728; TorchScript &#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code>import torch
+import collections
+
+Point = collections.namedtuple(&apos;Point&apos;, [&apos;x&apos;, &apos;y&apos;])
+
+@torch.jit.script
+def total(point):
+    # type: (Point) -&gt; Tensor
+    return point.x + point.y
+
+p = Point(x=torch.rand(3), y=torch.rand(3))
+print(total(p))
+</code></pre><h3 id="&#x8868;&#x8FBE;&#x5F0F;"><a href="#id26">&#x8868;&#x8FBE;&#x5F0F;</a></h3>
+<p>&#x652F;&#x6301;&#x4EE5;&#x4E0B; Python &#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<h4 id="&#x6587;&#x5B57;"><a href="#id27">&#x6587;&#x5B57;</a></h4>
+<pre><code>True
+False
+None
+&apos;string literals&apos;
+&quot;string literals&quot;
+3  # interpreted as int
+3.4  # interpreted as a float
+</code></pre><h5 id="&#x5217;&#x8868;&#x7ED3;&#x6784;"><a href="#id28">&#x5217;&#x8868;&#x7ED3;&#x6784;</a></h5>
+<p>&#x5047;&#x5B9A;&#x4E00;&#x4E2A;&#x7A7A;&#x5217;&#x8868;&#x5177;&#x6709;<code>List[Tensor]</code>&#x7C7B;&#x578B;&#x3002; &#x5176;&#x4ED6;&#x5217;&#x8868;&#x6587;&#x5B57;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4ECE;&#x6210;&#x5458;&#x7684;&#x7C7B;&#x578B;&#x6D3E;&#x751F;&#x7684;&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#default-types">&#x9ED8;&#x8BA4;&#x7C7B;&#x578B;</a>&#x3002;</p>
+<pre><code>[3, 4]
+[]
+[torch.rand(3), torch.rand(4)]
+</code></pre><h5 id="&#x5143;&#x7EC4;&#x7ED3;&#x6784;"><a href="#id29">&#x5143;&#x7EC4;&#x7ED3;&#x6784;</a></h5>
+<pre><code>(3, 4)
+(3,)
+</code></pre><h5 id="&#x5B57;&#x5178;&#x7ED3;&#x6784;"><a href="#id30">&#x5B57;&#x5178;&#x7ED3;&#x6784;</a></h5>
+<p>&#x5047;&#x5B9A;&#x4E00;&#x4E2A;&#x7A7A;&#x5B57;&#x5178;&#x4E3A;<code>Dict[str, Tensor]</code>&#x7C7B;&#x578B;&#x3002; &#x5176;&#x4ED6; dict &#x6587;&#x5B57;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4ECE;&#x6210;&#x5458;&#x7684;&#x7C7B;&#x578B;&#x6D3E;&#x751F;&#x7684;&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#default-types">&#x9ED8;&#x8BA4;&#x7C7B;&#x578B;</a>&#x3002;</p>
+<pre><code>{&apos;hello&apos;: 3}
+{}
+{&apos;a&apos;: torch.rand(3), &apos;b&apos;: torch.rand(4)}
+</code></pre><h4 id="&#x53D8;&#x91CF;"><a href="#id31">&#x53D8;&#x91CF;</a></h4>
+<p>&#x6709;&#x5173;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x53D8;&#x91CF;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#variable-resolution">&#x53D8;&#x91CF;&#x5206;&#x8FA8;&#x7387;</a>&#x3002;</p>
+<pre><code>my_variable_name
+</code></pre><h4 id="&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;"><a href="#id32">&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;</a></h4>
+<pre><code>a + b
+a - b
+a * b
+a / b
+a ^ b
+a @ b
+</code></pre><h4 id="&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;"><a href="#id33">&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;</a></h4>
+<pre><code>a == b
+a != b
+a &lt; b
+a &gt; b
+a &lt;= b
+a &gt;= b
+</code></pre><h4 id="&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;"><a href="#id34">&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</a></h4>
+<pre><code>a and b
+a or b
+not b
+</code></pre><h4 id="&#x4E0B;&#x6807;&#x548C;&#x5207;&#x7247;"><a href="#id35">&#x4E0B;&#x6807;&#x548C;&#x5207;&#x7247;</a></h4>
+<pre><code>t[0]
+t[-1]
+t[0:2]
+t[1:]
+t[:1]
+t[:]
+t[0, 1]
+t[0, 1:2]
+t[0, :1]
+t[-1, 1:, 0]
+t[1:, -1, 0]
+t[i:j, i]
+</code></pre><h4 id="&#x51FD;&#x6570;&#x8C03;&#x7528;"><a href="#id36">&#x51FD;&#x6570;&#x8C03;&#x7528;</a></h4>
+<p>&#x8C03;&#x7528;<a href="#builtin-functions">&#x5185;&#x7F6E;&#x51FD;&#x6570;</a></p>
+<pre><code>torch.rand(3, dtype=torch.int)
+</code></pre><p>&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x811A;&#x672C;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>import torch
+
+@torch.jit.script
+def foo(x):
+    return x + 1
+
+@torch.jit.script
+def bar(x):
+    return foo(x)
+</code></pre><h4 id="&#x65B9;&#x6CD5;&#x8C03;&#x7528;"><a href="#id37">&#x65B9;&#x6CD5;&#x8C03;&#x7528;</a></h4>
+<p>&#x8C03;&#x7528;&#x8BF8;&#x5982;&#x5F20;&#x91CF;&#x4E4B;&#x7C7B;&#x7684;&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;<code>x.mm(y)</code></p>
+<p>&#x5728;&#x6A21;&#x5757;&#x4E0A;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x7F16;&#x8BD1;&#x65B9;&#x6CD5;&#x624D;&#x80FD;&#x8C03;&#x7528;&#x5B83;&#x4EEC;&#x3002; TorchScript &#x7F16;&#x8BD1;&#x5668;&#x4EE5;&#x9012;&#x5F52;&#x65B9;&#x5F0F;&#x7F16;&#x8BD1;&#x5728;&#x7F16;&#x8BD1;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x65F6;&#x770B;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7F16;&#x8BD1;&#x4ECE;<code>forward</code>&#x65B9;&#x6CD5;&#x5F00;&#x59CB;&#x3002; &#x5C06;&#x7F16;&#x8BD1;<code>forward</code>&#x8C03;&#x7528;&#x7684;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF0C;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;&#x3002; &#x8981;&#x4EE5;<code>forward</code>&#x4EE5;&#x5916;&#x7684;&#x65B9;&#x6CD5;&#x5F00;&#x59CB;&#x7F16;&#x8BD1;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <a href="#torch.jit.export" title="torch.jit.export"><code>@torch.jit.export</code></a> &#x88C5;&#x9970;&#x5668;(<code>forward</code>&#x9690;&#x5F0F;&#x6807;&#x8BB0;&#x4E3A;<code>@torch.jit.export</code>&#xFF09;&#x3002;</p>
+<p>&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x5B50;&#x6A21;&#x5757;(&#x4F8B;&#x5982;<code>self.resnet(input)</code>&#xFF09;&#x7B49;&#x6548;&#x4E8E;&#x8C03;&#x7528;&#x5176;<code>forward</code>&#x65B9;&#x6CD5;(&#x4F8B;&#x5982;<code>self.resnet.forward(input)</code>&#xFF09;&#x3002;</p>
+<pre><code>import torch
+import torch.nn as nn
+import torchvision
+
+class MyModule(nn.Module):
+    def __init__(self):
+        super(MyModule, self).__init__()
+        means = torch.tensor([103.939, 116.779, 123.68])
+        self.means = torch.nn.Parameter(means.resize_(1, 3, 1, 1))
+        resnet = torchvision.models.resnet18()
+        self.resnet = torch.jit.trace(resnet, torch.rand(1, 3, 224, 224))
+
+    def helper(self, input):
+        return self.resnet(input - self.means)
+
+    def forward(self, input):
+        return self.helper(input)
+
+    # Since nothing in the model calls `top_level_method`, the compiler
+    # must be explicitly told to compile this method
+    @torch.jit.export
+    def top_level_method(self, input):
+        return self.other_helper(input)
+
+    def other_helper(self, input):
+        return input + 10
+
+# `my_script_module` will have the compiled methods `forward`, `helper`,
+# `top_level_method`, and `other_helper`
+my_script_module = torch.jit.script(MyModule())
+</code></pre><h4 id="&#x4E09;&#x5143;&#x8868;&#x8FBE;&#x5F0F;"><a href="#id38">&#x4E09;&#x5143;&#x8868;&#x8FBE;&#x5F0F;</a></h4>
+<pre><code>x if x &gt; y else y
+</code></pre><h4 id="&#x6F14;&#x5458;&#x8868;"><a href="#id39">&#x6F14;&#x5458;&#x8868;</a></h4>
+<pre><code>float(ten)
+int(3.5)
+bool(ten)
+str(2)``
+</code></pre><h4 id="&#x8BBF;&#x95EE;&#x6A21;&#x5757;&#x53C2;&#x6570;"><a href="#id40">&#x8BBF;&#x95EE;&#x6A21;&#x5757;&#x53C2;&#x6570;</a></h4>
+<pre><code>self.my_parameter
+self.my_submodule.my_parameter
+</code></pre><h3 id="&#x8BED;&#x53E5;"><a href="#id41">&#x8BED;&#x53E5;</a></h3>
+<p>TorchScript &#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x7C7B;&#x578B;&#x7684;&#x8BED;&#x53E5;&#xFF1A;</p>
+<h4 id="&#x7B80;&#x5355;&#x5206;&#x914D;"><a href="#id42">&#x7B80;&#x5355;&#x5206;&#x914D;</a></h4>
+<pre><code>a = b
+a += b # short-hand for a = a + b, does not operate in-place on a
+a -= b
+</code></pre><h4 id="&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5206;&#x914D;"><a href="#id43">&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5206;&#x914D;</a></h4>
+<pre><code>a, b = tuple_or_list
+a, b, *c = a_tuple
+</code></pre><p>&#x591A;&#x9879;&#x5206;&#x914D;</p>
+<pre><code>a = b, c = tup
+</code></pre><h4 id="&#x6253;&#x5370;&#x62A5;&#x8868;"><a href="#id44">&#x6253;&#x5370;&#x62A5;&#x8868;</a></h4>
+<pre><code>print(&quot;the result of an add:&quot;, a + b)
+</code></pre><h4 id="if-&#x8BED;&#x53E5;"><a href="#id45">If &#x8BED;&#x53E5;</a></h4>
+<pre><code>if a &lt; 4:
+    r = -a
+elif a &lt; 3:
+    r = a + a
+else:
+    r = 3 * a
+</code></pre><p>&#x9664;&#x5E03;&#x5C14;&#x503C;&#x5916;&#xFF0C;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x6574;&#x6570;&#x548C;&#x5F20;&#x91CF;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x6761;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x5C06;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;&#x5E03;&#x5C14;&#x503C;&#x3002;</p>
+<h4 id="while-&#x5FAA;&#x73AF;"><a href="#id46">While &#x5FAA;&#x73AF;</a></h4>
+<pre><code>a = 0
+while a &lt; 4:
+    print(a)
+    a += 1
+</code></pre><h4 id="&#x9002;&#x7528;&#x4E8E;&#x8303;&#x56F4;&#x4E3A;&#x7684;&#x5FAA;&#x73AF;"><a href="#id47">&#x9002;&#x7528;&#x4E8E;&#x8303;&#x56F4;&#x4E3A;</a>&#x7684;&#x5FAA;&#x73AF;</h4>
+<pre><code>x = 0
+for i in range(10):
+    x *= i
+</code></pre><h4 id="&#x7528;&#x4E8E;&#x904D;&#x5386;&#x5143;&#x7EC4;&#x7684;&#x5FAA;&#x73AF;"><a href="#id48">&#x7528;&#x4E8E;&#x904D;&#x5386;&#x5143;&#x7EC4;&#x7684;&#x5FAA;&#x73AF;</a></h4>
+<p>&#x8FD9;&#x4E9B;&#x5C55;&#x5F00;&#x5FAA;&#x73AF;&#xFF0C;&#x4E3A;&#x5143;&#x7EC4;&#x7684;&#x6BCF;&#x4E2A;&#x6210;&#x5458;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4E3B;&#x4F53;&#x3002; &#x4E3B;&#x4F53;&#x5FC5;&#x987B;&#x5BF9;&#x6BCF;&#x4E2A;&#x6210;&#x5458;&#x8FDB;&#x884C;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x3002;</p>
+<pre><code>tup = (3, torch.rand(4))
+for x in tup:
+    print(x)
+</code></pre><h4 id="&#x7528;&#x4E8E;&#x5728;&#x5E38;&#x91CF;-nnmodulelist-&#x4E0A;&#x5FAA;&#x73AF;"><a href="#id49">&#x7528;&#x4E8E;&#x5728;&#x5E38;&#x91CF; nn.ModuleList</a> &#x4E0A;&#x5FAA;&#x73AF;</h4>
+<p>&#x8981;&#x5728;&#x5DF2;&#x7F16;&#x8BD1;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;<code>nn.ModuleList</code>&#xFF0C;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x5C06;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x6DFB;&#x52A0;&#x5230;<code>__constants__</code>&#x5217;&#x8868;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x5C06;&#x5176;&#x6807;&#x8BB0;&#x4E3A;&#x5E38;&#x91CF;&#x3002; <code>nn.ModuleList</code>&#x4E0A;&#x7684; for &#x5FAA;&#x73AF;&#x5C06;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5C55;&#x5F00;&#x5FAA;&#x73AF;&#x7684;&#x4E3B;&#x4F53;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x6A21;&#x5757;&#x5217;&#x8868;&#x7684;&#x6BCF;&#x4E2A;&#x6210;&#x5458;&#x3002;</p>
+<pre><code>class SubModule(torch.nn.Module):
+    def __init__(self):
+        super(SubModule, self).__init__()
+        self.weight = nn.Parameter(torch.randn(2))
+
+    def forward(self, input):
+        return self.weight + input
+
+class MyModule(torch.nn.Module):
+    __constants__ = [&apos;mods&apos;]
+
+    def __init__(self):
+        super(MyModule, self).__init__()
+        self.mods = torch.nn.ModuleList([SubModule() for i in range(10)])
+
+    def forward(self, v):
+        for module in self.mods:
+            v = module(v)
+        return v
+
+m = torch.jit.script(MyModule())
+</code></pre><h4 id="&#x4E2D;&#x65AD;&#x5E76;&#x7EE7;&#x7EED;"><a href="#id50">&#x4E2D;&#x65AD;&#x5E76;&#x7EE7;&#x7EED;</a></h4>
+<pre><code>for i in range(5):
+    if i == 1:
+    continue
+    if i == 3:
+    break
+    print(i)
+</code></pre><h4 id="&#x8FD4;&#x56DE;"><a href="#id51">&#x8FD4;&#x56DE;</a></h4>
+<pre><code>return a, b
+</code></pre><h3 id="&#x53EF;&#x53D8;&#x5206;&#x8FA8;&#x7387;"><a href="#id52">&#x53EF;&#x53D8;&#x5206;&#x8FA8;&#x7387;</a></h3>
+<p>TorchScript &#x652F;&#x6301; Python &#x7684;&#x53EF;&#x53D8;&#x5206;&#x8FA8;&#x7387;(&#x5373;&#x4F5C;&#x7528;&#x57DF;&#xFF09;&#x89C4;&#x5219;&#x7684;&#x5B50;&#x96C6;&#x3002; &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x884C;&#x4E3A;&#x4E0E; Python &#x4E2D;&#x7684;&#x76F8;&#x540C;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#xFF0C;&#x5728;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x7684;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#x4E0A;&#xFF0C;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x3002; &#x5982;&#x679C;&#x53D8;&#x91CF;&#x5728; if &#x8BED;&#x53E5;&#x7684;&#x4E0D;&#x540C;&#x5206;&#x652F;&#x4E0A;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x5728; if &#x8BED;&#x53E5;&#x7ED3;&#x675F;&#x540E;&#x4F7F;&#x7528;&#x5B83;&#x662F;&#x9519;&#x8BEF;&#x7684;&#x3002;</p>
+<p>&#x540C;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x6CBF;&#x51FD;&#x6570;&#x7684;&#x67D0;&#x4E9B;&#x8DEF;&#x5F84;&#x4EC5;&#x5C06;<em>&#x5B9A;&#x4E49;&#x4E3A;</em>&#xFF0C;&#x5219;&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x8BE5;&#x53D8;&#x91CF;&#x3002;</p>
+<p>Example:</p>
+<pre><code>@torch.jit.script
+def foo(x):
+    if x &lt; 0:
+        y = 4
+    print(y)
+</code></pre><pre><code>Traceback (most recent call last):
+  ...
+RuntimeError: ...
+
+y is not defined in the false branch...
+@torch.jit.script...
+def foo(x):
+    if x &lt; 0:
+    ~~~~~~~~~...  &lt;--- HERE
+        y = 4
+    print(y)
+...
+</code></pre><p>&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5C06;&#x975E;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x89E3;&#x6790;&#x4E3A; Python &#x503C;&#x3002; &#x7136;&#x540E;&#x4F7F;&#x7528; <a href="#use-of-python-values">Python &#x503C;&#x4F7F;&#x7528;</a>&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x89C4;&#x5219;&#x5C06;&#x8FD9;&#x4E9B;&#x503C;&#x8F6C;&#x6362;&#x4E3A; TorchScript &#x503C;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;-python-&#x503C;"><a href="#id53">&#x4F7F;&#x7528; Python &#x503C;</a></h3>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x7F16;&#x5199; TorchScript &#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#xFF0C;&#x6211;&#x4EEC;&#x5141;&#x8BB8;&#x811A;&#x672C;&#x4EE3;&#x7801;&#x5F15;&#x7528;&#x5468;&#x56F4;&#x8303;&#x56F4;&#x4E2D;&#x7684; Python &#x503C;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x53EA;&#x8981;&#x5F15;&#x7528;<code>torch</code>&#xFF0C;&#x5F53;&#x58F0;&#x660E;&#x51FD;&#x6570;&#x65F6;&#xFF0C;TorchScript &#x7F16;&#x8BD1;&#x5668;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x4F1A;&#x5C06;&#x5176;&#x89E3;&#x6790;&#x4E3A;<code>torch</code> Python &#x6A21;&#x5757;&#x3002; &#x8FD9;&#x4E9B; Python &#x503C;&#x4E0D;&#x662F; TorchScript &#x7684;&#x4E00;&#x6D41;&#x90E8;&#x5206;&#x3002; &#x800C;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5C06;&#x5B83;&#x4EEC;&#x5206;&#x89E3;&#x4E3A; TorchScript &#x652F;&#x6301;&#x7684;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x3002; &#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x7F16;&#x8BD1;&#x53D1;&#x751F;&#x65F6;&#x5F15;&#x7528;&#x7684; Python &#x503C;&#x7684;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x3002; &#x672C;&#x8282;&#x4ECB;&#x7ECD;&#x5728; TorchScript &#x4E2D;&#x8BBF;&#x95EE; Python &#x503C;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x89C4;&#x5219;&#x3002;</p>
+<h4 id="&#x529F;&#x80FD;"><a href="#id54">&#x529F;&#x80FD;</a></h4>
+<p>TorchScript &#x53EF;&#x4EE5;&#x8C03;&#x7528; Python &#x51FD;&#x6570;&#x3002; &#x5F53;&#x5C06;&#x6A21;&#x578B;&#x9010;&#x6B65;&#x8F6C;&#x6362;&#x4E3A; TorchScript &#x65F6;&#xFF0C;&#x6B64;&#x529F;&#x80FD;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002; &#x53EF;&#x4EE5;&#x5C06;&#x6A21;&#x578B;&#x9010;&#x51FD;&#x6570;&#x79FB;&#x81F3; TorchScript&#xFF0C;&#x800C;&#x5BF9; Python &#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x4FDD;&#x7559;&#x5728;&#x539F;&#x5904;&#x3002; &#x8FD9;&#x6837;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x8FDB;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x9010;&#x6B65;&#x68C0;&#x67E5;&#x6A21;&#x578B;&#x7684;&#x6B63;&#x786E;&#x6027;&#x3002;</p>
+<hr>
+<pre><code>torch.jit.ignore(drop=False, **kwargs)&#xB6;
+</code></pre><p>&#x8BE5;&#x88C5;&#x9970;&#x5668;&#x5411;&#x7F16;&#x8BD1;&#x5668;&#x6307;&#x793A;&#x5E94;&#x5FFD;&#x7565;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x5C06;&#x5176;&#x4FDD;&#x7559;&#x4E3A; Python &#x51FD;&#x6570;&#x3002; &#x8FD9;&#x4F7F;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x4EE3;&#x7801;&#x4FDD;&#x7559;&#x5728;&#x5C1A;&#x672A;&#x4E0E; TorchScript &#x517C;&#x5BB9;&#x7684;&#x6A21;&#x578B;&#x4E2D;&#x3002; &#x5177;&#x6709;&#x5FFD;&#x7565;&#x529F;&#x80FD;&#x7684;&#x6A21;&#x578B;&#x65E0;&#x6CD5;&#x5BFC;&#x51FA;&#xFF1B; &#x8BF7;&#x6539;&#x7528; torch.jit.unused&#x3002;</p>
+<p>&#x793A;&#x4F8B;(&#x5728;&#x65B9;&#x6CD5;&#x4E0A;&#x4F7F;&#x7528;<code>@torch.jit.ignore</code>&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class MyModule(nn.Module):
+    @torch.jit.ignore
+    def debugger(self, x):
+        import pdb
+        pdb.set_trace()
+
+    def forward(self, x):
+        x += 10
+        # The compiler would normally try to compile `debugger`,
+        # but since it is `@ignore`d, it will be left as a call
+        # to Python
+        self.debugger(x)
+        return x
+
+m = torch.jit.script(MyModule())
+
+# Error! The call `debugger` cannot be saved since it calls into Python
+m.save(&quot;m.pt&quot;)
+</code></pre><p>&#x793A;&#x4F8B;(&#x5728;&#x65B9;&#x6CD5;&#x4E0A;&#x4F7F;&#x7528;<code>@torch.jit.ignore(drop=True)</code>&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class MyModule(nn.Module):
+    @torch.jit.ignore(drop=True)
+    def training_method(self, x):
+        import pdb
+        pdb.set_trace()
+
+    def forward(self, x):
+        if self.training:
+            self.training_method(x)
+        return x
+
+m = torch.jit.script(MyModule())
+
+# This is OK since `training_method` is not saved, the call is replaced
+# with a `raise`.
+m.save(&quot;m.pt&quot;)
+</code></pre><hr>
+<pre><code>torch.jit.unused(fn)&#xB6;
+</code></pre><p>&#x6B64;&#x88C5;&#x9970;&#x5668;&#x5411;&#x7F16;&#x8BD1;&#x5668;&#x6307;&#x793A;&#x5E94;&#x5FFD;&#x7565;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x7528;&#x5F15;&#x53D1;&#x5F02;&#x5E38;&#x7684;&#x65B9;&#x6CD5;&#x4EE3;&#x66FF;&#x3002; &#x8FD9;&#x6837;&#xFF0C;&#x60A8;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x5C1A;&#x4E0D;&#x517C;&#x5BB9; TorchScript &#x7684;&#x6A21;&#x578B;&#x4E2D;&#x4FDD;&#x7559;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x6A21;&#x578B;&#x3002;</p>
+<blockquote>
+<p>&#x793A;&#x4F8B;(&#x5728;&#x65B9;&#x6CD5;&#x4E0A;&#x4F7F;&#x7528;<code>@torch.jit.unused</code>&#xFF09;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class MyModule(nn.Module):
+    def __init__(self, use_memory_efficent):
+        super(MyModule, self).__init__()
+        self.use_memory_efficent = use_memory_efficent
+
+    @torch.jit.unused
+    def memory_efficient(self, x):
+        import pdb
+        pdb.set_trace()
+        return x + 10
+
+    def forward(self, x):
+        # Use not-yet-scriptable memory efficient mode
+        if self.use_memory_efficient:
+            return self.memory_efficient(x)
+        else:
+            return x + 10
+
+m = torch.jit.script(MyModule(use_memory_efficent=False))
+m.save(&quot;m.pt&quot;)
+
+m = torch.jit.script(MyModule(use_memory_efficient=True))
+# exception raised
+m(torch.rand(100))
+</code></pre></blockquote>
+<hr>
+<pre><code>torch.jit.is_scripting()&#xB6;
+</code></pre><p>&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x8FD4;&#x56DE; True &#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE; False &#x7684;&#x51FD;&#x6570;&#x3002; &#x8FD9;&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;@unused &#x88C5;&#x9970;&#x5668;&#x5C24;&#x5176;&#x6709;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5C1A;&#x4E0D;&#x517C;&#x5BB9; TorchScript &#x7684;&#x4EE3;&#x7801;&#x4FDD;&#x7559;&#x5728;&#x6A21;&#x578B;&#x4E2D;&#x3002; .. testcode&#xFF1A;</p>
+<pre><code>import torch
+
+@torch.jit.unused
+def unsupported_linear_op(x):
+    return x
+
+def linear(x):
+   if not torch.jit.is_scripting():
+      return torch.linear(x)
+   else:
+      return unsupported_linear_op(x)
+</code></pre><h4 id="python-&#x6A21;&#x5757;&#x4E0A;&#x7684;&#x5C5E;&#x6027;&#x67E5;&#x627E;"><a href="#id55">Python &#x6A21;&#x5757;&#x4E0A;&#x7684;&#x5C5E;&#x6027;&#x67E5;&#x627E;</a></h4>
+<p>TorchScript &#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x5757;&#x4E0A;&#x67E5;&#x627E;&#x5C5E;&#x6027;&#x3002; <a href="#builtin-functions">&#x50CF;<code>torch.add</code>&#x8FD9;&#x6837;&#x7684;&#x5185;&#x7F6E;&#x529F;&#x80FD;</a>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE;&#x200B;&#x200B;&#x3002; &#x8FD9;&#x4F7F; TorchScript &#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<h4 id="python-&#x5B9A;&#x4E49;&#x7684;&#x5E38;&#x91CF;"><a href="#id56">Python &#x5B9A;&#x4E49;&#x7684;&#x5E38;&#x91CF;</a></h4>
+<p>TorchScript &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x4F7F;&#x7528; Python &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5E38;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x8FD9;&#x4E9B;&#x53EF;&#x7528;&#x4E8E;&#x5C06;&#x8D85;&#x53C2;&#x6570;&#x786C;&#x7F16;&#x7801;&#x5230;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x6216;&#x5B9A;&#x4E49;&#x901A;&#x7528;&#x5E38;&#x91CF;&#x3002; &#x6709;&#x4E24;&#x79CD;&#x6307;&#x5B9A; Python &#x503C;&#x5E94;&#x89C6;&#x4E3A;&#x5E38;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<ol>
+<li>&#x67E5;&#x627E;&#x4E3A;&#x6A21;&#x5757;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x5047;&#x5B9A;&#x4E3A;&#x5E38;&#x91CF;&#xFF1A;</li>
+</ol>
+<pre><code>import math
+import torch
+
+@torch.jit.script
+def fn():
+    return math.pi
+</code></pre><ol>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>Final[T]</code>&#x6CE8;&#x91CA; ScriptModule &#x7684;&#x5C5E;&#x6027;&#x6765;&#x5C06;&#x5176;&#x6807;&#x8BB0;&#x4E3A;&#x5E38;&#x91CF;&#x3002;</li>
+</ol>
+<pre><code>import torch
+import torch.nn as nn
+
+class Foo(nn.Module):
+    # `Final` from the `typing_extensions` module can also be used
+    a : torch.jit.Final[int]
+
+    def __init__(self):
+        super(Foo, self).__init__()
+        self.a = 1 + 4
+
+    def forward(self, input):
+        return self.a + input
+
+f = torch.jit.script(Foo())
+</code></pre><p>&#x652F;&#x6301;&#x7684;&#x5E38;&#x91CF; Python &#x7C7B;&#x578B;&#x662F;</p>
+<ul>
+<li><p><code>int</code></p>
+</li>
+<li><p><code>float</code></p>
+</li>
+<li><p><code>bool</code></p>
+</li>
+<li><p><code>torch.device</code></p>
+</li>
+<li><p><code>torch.layout</code></p>
+</li>
+<li><p><code>torch.dtype</code></p>
+</li>
+<li><p>&#x5305;&#x542B;&#x53D7;&#x652F;&#x6301;&#x7C7B;&#x578B;&#x7684;&#x5143;&#x7EC4;</p>
+</li>
+<li><p><code>torch.nn.ModuleList</code>&#x53EF;&#x4EE5;&#x5728; TorchScript for &#x5FAA;&#x73AF;&#x4E2D;&#x4F7F;&#x7528;</p>
+</li>
+</ul>
+<p>Note</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Python 2&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x6DFB;&#x52A0;&#x5230;&#x7C7B;&#x7684;<code>__constants__</code>&#x5C5E;&#x6027;&#x4E2D;&#x6765;&#x5C06;&#x5176;&#x6807;&#x8BB0;&#x4E3A;&#x5E38;&#x91CF;&#xFF1A;</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class Foo(nn.Module):
+    __constants__ = [&apos;a&apos;]
+
+    def __init__(self):
+        super(Foo, self).__init__()
+        self.a = 1 + 4
+
+    def forward(self, input):
+        return self.a + input
+
+f = torch.jit.script(Foo())
+</code></pre><h4 id="&#x6A21;&#x5757;&#x5C5E;&#x6027;"><a href="#id57">&#x6A21;&#x5757;&#x5C5E;&#x6027;</a></h4>
+<p><code>torch.nn.Parameter</code>&#x5305;&#x88C5;&#x5668;&#x548C;<code>register_buffer</code>&#x53EF;&#x7528;&#x4E8E;&#x5C06;&#x5F20;&#x91CF;&#x5206;&#x914D;&#x7ED9;&#x6A21;&#x5757;&#x3002; &#x5982;&#x679C;&#x53EF;&#x4EE5;&#x63A8;&#x65AD;&#x51FA;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x5219;&#x5206;&#x914D;&#x7ED9;&#x5DF2;&#x7F16;&#x8BD1;&#x6A21;&#x5757;&#x7684;&#x5176;&#x4ED6;&#x503C;&#x5C06;&#x6DFB;&#x52A0;&#x5230;&#x5DF2;&#x7F16;&#x8BD1;&#x6A21;&#x5757;&#x4E2D;&#x3002; TorchScript &#x4E2D;&#x53EF;&#x7528;&#x7684;&#x6240;&#x6709;<a href="#types">&#x7C7B;&#x578B;</a>&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x6A21;&#x5757;&#x5C5E;&#x6027;&#x3002; &#x5F20;&#x91CF;&#x5C5E;&#x6027;&#x5728;&#x8BED;&#x4E49;&#x4E0A;&#x4E0E;&#x7F13;&#x51B2;&#x533A;&#x76F8;&#x540C;&#x3002; &#x7A7A;&#x5217;&#x8868;&#x548C;&#x5B57;&#x5178;&#x7684;&#x7C7B;&#x578B;&#x4EE5;&#x53CA;<code>None</code>&#x503C;&#x65E0;&#x6CD5;&#x63A8;&#x65AD;&#xFF0C;&#x5FC5;&#x987B;&#x901A;&#x8FC7; <a href="https://www.python.org/dev/peps/pep-0526/#class-and-instance-variable-annotations" target="_blank">PEP 526 &#x6837;&#x5F0F;</a>&#x7C7B;&#x6CE8;&#x91CA;&#x6307;&#x5B9A;&#x3002; &#x5982;&#x679C;&#x65E0;&#x6CD5;&#x63A8;&#x65AD;&#x51FA;&#x7C7B;&#x578B;&#x5E76;&#x4E14;&#x672A;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x663E;&#x5F0F;&#x6CE8;&#x91CA;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x7ED3;&#x679C; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x4E2D;&#x3002;</p>
+<p>Example:</p>
+<pre><code>from typing import List, Dict
+
+class Foo(nn.Module):
+    # `words` is initialized as an empty list, so its type must be specified
+    words: List[str]
+
+    # The type could potentially be inferred if `a_dict` (below) was not
+    # empty, but this annotation ensures `some_dict` will be made into the
+    # proper type
+    some_dict: Dict[str, int]
+
+    def __init__(self, a_dict):
+        super(Foo, self).__init__()
+        self.words = []
+        self.some_dict = a_dict
+
+        # `int`s can be inferred
+        self.my_int = 10
+
+    def forward(self, input):
+        # type: (str) -&gt; int
+        self.words.append(input)
+        return self.some_dict[input] + self.my_int
+
+f = torch.jit.script(Foo({&apos;hi&apos;: 2}))
+</code></pre><p>Note</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Python 2&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;&#x6DFB;&#x52A0;&#x5230;<code>__annotations__</code>&#x7C7B;&#x5C5E;&#x6027;&#x4E2D;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x540D;&#x5B57;&#x5178;&#x6765;&#x6807;&#x8BB0;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;</p>
+<pre><code>from typing import List, Dict
+
+class Foo(nn.Module):
+    __annotations__ = {&apos;words&apos;: List[str], &apos;some_dict&apos;: Dict[str, int]}
+
+    def __init__(self, a_dict):
+        super(Foo, self).__init__()
+        self.words = []
+        self.some_dict = a_dict
+
+        # `int`s can be inferred
+        self.my_int = 10
+
+    def forward(self, input):
+        # type: (str) -&gt; int
+        self.words.append(input)
+        return self.some_dict[input] + self.my_int
+
+f = torch.jit.script(Foo({&apos;hi&apos;: 2}))
+</code></pre><h3 id="&#x8C03;&#x8BD5;"><a href="#id58">&#x8C03;&#x8BD5;</a></h3>
+<h4 id="&#x7981;&#x7528;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x7684;-jit"><a href="#id59">&#x7981;&#x7528;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x7684; JIT</a></h4>
+<pre><code>PYTORCH_JIT&#xB6;
+</code></pre><p>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>PYTORCH_JIT=0</code>&#x5C06;&#x7981;&#x7528;&#x6240;&#x6709;&#x811A;&#x672C;&#x548C;&#x8DDF;&#x8E2A;&#x6CE8;&#x91CA;&#x3002; &#x5982;&#x679C;&#x60A8;&#x7684; TorchScript &#x6A21;&#x578B;&#x4E4B;&#x4E00;&#x5B58;&#x5728;&#x96BE;&#x4EE5;&#x8C03;&#x8BD5;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x6807;&#x5FD7;&#x6765;&#x5F3A;&#x5236;&#x4E00;&#x5207;&#x90FD;&#x4F7F;&#x7528;&#x672C;&#x673A; Python &#x8FD0;&#x884C;&#x3002; &#x7531;&#x4E8E;&#x6B64;&#x6807;&#x5FD7;&#x7981;&#x7528;&#x4E86; TorchScript(&#x811A;&#x672C;&#x7F16;&#x5199;&#x548C;&#x8DDF;&#x8E2A;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>pdb</code>&#x4E4B;&#x7C7B;&#x7684;&#x5DE5;&#x5177;&#x6765;&#x8C03;&#x8BD5;&#x6A21;&#x578B;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x811A;&#x672C;&#xFF1A;</p>
+<pre><code>@torch.jit.script
+def scripted_fn(x : torch.Tensor):
+    for i in range(12):
+        x = x + x
+    return x
+
+def fn(x):
+    x = torch.neg(x)
+    import pdb; pdb.set_trace()
+    return scripted_fn(x)
+
+traced_fn = torch.jit.trace(fn, (torch.rand(4, 5),))
+traced_fn(torch.rand(3, 4))
+</code></pre><p>&#x9664;&#x8C03;&#x7528;<a href="#torch.jit.script" title="torch.jit.script">&#xFF0C;<code>@torch.jit.script</code>&#xFF0C;</a>&#x51FD;&#x6570;&#x5916;&#xFF0C;&#x4F7F;&#x7528;<code>pdb</code>&#x8C03;&#x8BD5;&#x6B64;&#x811A;&#x672C;&#x662F;&#x53EF;&#x884C;&#x7684;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5168;&#x5C40;&#x7981;&#x7528; JIT&#xFF0C;&#x4EE5;&#x4FBF;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06; <a href="#torch.jit.script" title="torch.jit.script"><code>@torch.jit.script</code></a> &#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x666E;&#x901A;&#x7684; Python &#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3002; &#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x811A;&#x672C;&#x79F0;&#x4E3A;<code>disable_jit_example.py</code>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x8C03;&#x7528;&#x5B83;&#xFF1A;</p>
+<pre><code>$ PYTORCH_JIT=0 python disable_jit_example.py
+</code></pre><p>&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x5C06;&#x80FD;&#x591F;&#x50CF;&#x666E;&#x901A;&#x7684; Python &#x51FD;&#x6570;&#x4E00;&#x6837;&#x8FDB;&#x5165; <a href="#torch.jit.script" title="torch.jit.script"><code>@torch.jit.script</code></a> &#x51FD;&#x6570;&#x3002; &#x8981;&#x4E3A;&#x7279;&#x5B9A;&#x529F;&#x80FD;&#x7981;&#x7528; TorchScript &#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#torch.jit.ignore" title="torch.jit.ignore"><code>@torch.jit.ignore</code></a> &#x3002;</p>
+<h4 id="&#x68C0;&#x67E5;&#x7801;"><a href="#id60">&#x68C0;&#x67E5;&#x7801;</a></h4>
+<p>TorchScript &#x4E3A;&#x6240;&#x6709; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5B9E;&#x4F8B;&#x63D0;&#x4F9B;&#x4E86;&#x4EE3;&#x7801;&#x6F02;&#x4EAE;&#x7684;&#x6253;&#x5370;&#x673A;&#x3002; &#x8FD9;&#x4E2A;&#x6F02;&#x4EAE;&#x7684;&#x6253;&#x5370;&#x673A;&#x53EF;&#x4EE5;&#x5C06;&#x811A;&#x672C;&#x65B9;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x89E3;&#x91CA;&#x4E3A;&#x6709;&#x6548;&#x7684; Python &#x8BED;&#x6CD5;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>@torch.jit.script
+def foo(len):
+    # type: (int) -&gt; torch.Tensor
+    rv = torch.zeros(3, 4)
+    for i in range(len):
+        if i &lt; 10:
+            rv = rv - 1.0
+        else:
+            rv = rv + 1.0
+    return rv
+
+print(foo.code)
+</code></pre><p>&#x5177;&#x6709;&#x5355;&#x4E2A;<code>forward</code>&#x65B9;&#x6CD5;&#x7684; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5C06;&#x5177;&#x6709;&#x5C5E;&#x6027;<code>code</code>&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x5C5E;&#x6027;&#x68C0;&#x67E5; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x7684;&#x4EE3;&#x7801;&#x3002; &#x5982;&#x679C; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x5177;&#x6709;&#x591A;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;&#x65B9;&#x6CD5;&#x672C;&#x8EAB;&#x800C;&#x975E;&#x6A21;&#x5757;&#x4E0A;&#x8BBF;&#x95EE;<code>.code</code>&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBF;&#x95EE;<code>.foo.code</code>&#x5728; ScriptModule &#x4E0A;&#x68C0;&#x67E5;&#x540D;&#x4E3A;<code>foo</code>&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x3002; &#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EA7;&#x751F;&#x4EE5;&#x4E0B;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code>def foo(len: int) -&gt; Tensor:
+    rv = torch.zeros([3, 4], dtype=None, layout=None, device=None, pin_memory=None)
+    rv0 = rv
+    for i in range(len):
+        if torch.lt(i, 10):
+            rv1 = torch.sub(rv0, 1., 1)
+        else:
+            rv1 = torch.add(rv0, 1., 1)
+        rv0 = rv1
+    return rv0
+</code></pre><p>&#x8FD9;&#x662F; TorchScript &#x5BF9;<code>forward</code>&#x65B9;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x7F16;&#x8BD1;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x786E;&#x4FDD; TorchScript(&#x8DDF;&#x8E2A;&#x6216;&#x811A;&#x672C;&#xFF09;&#x6B63;&#x786E;&#x6355;&#x83B7;&#x4E86;&#x6A21;&#x578B;&#x4EE3;&#x7801;&#x3002;</p>
+<h4 id="&#x89E3;&#x91CA;&#x56FE;"><a href="#id61">&#x89E3;&#x91CA;&#x56FE;</a></h4>
+<p>TorchScript &#x8FD8;&#x4EE5; IR &#x56FE;&#x7684;&#x5F62;&#x5F0F;&#x5728;&#x6BD4;&#x4EE3;&#x7801;&#x6F02;&#x4EAE;&#x6253;&#x5370;&#x673A;&#x66F4;&#x4F4E;&#x7684;&#x5C42;&#x6B21;&#x4E0A;&#x8FDB;&#x884C;&#x8868;&#x793A;&#x3002;</p>
+<p>TorchScript &#x4F7F;&#x7528;&#x9759;&#x6001;&#x5355;&#x5206;&#x914D;(SSA&#xFF09;&#x4E2D;&#x95F4;&#x8868;&#x793A;(IR&#xFF09;&#x8868;&#x793A;&#x8BA1;&#x7B97;&#x3002; &#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#x7684;&#x6307;&#x4EE4;&#x7531; ATen(PyTorch &#x7684; C ++&#x540E;&#x7AEF;&#xFF09;&#x8FD0;&#x7B97;&#x7B26;&#x548C;&#x5176;&#x4ED6;&#x539F;&#x59CB;&#x8FD0;&#x7B97;&#x7B26;&#x7EC4;&#x6210;&#xFF0C;&#x5305;&#x62EC;&#x7528;&#x4E8E;&#x5FAA;&#x73AF;&#x548C;&#x6761;&#x4EF6;&#x7684;&#x63A7;&#x5236;&#x6D41;&#x8FD0;&#x7B97;&#x7B26;&#x3002; &#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code>@torch.jit.script
+def foo(len):
+    # type: (int) -&gt; torch.Tensor
+    rv = torch.zeros(3, 4)
+    for i in range(len):
+        if i &lt; 10:
+            rv = rv - 1.0
+        else:
+            rv = rv + 1.0
+    return rv
+
+print(foo.graph)
+</code></pre><p><code>graph</code>&#x9075;&#x5FAA;<a href="#inspecting-code">&#x68C0;&#x67E5;&#x4EE3;&#x7801;</a>&#x90E8;&#x5206;&#x4E2D;&#x5173;&#x4E8E;<code>forward</code>&#x65B9;&#x6CD5;&#x67E5;&#x627E;&#x6240;&#x8FF0;&#x7684;&#x76F8;&#x540C;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x811A;&#x672C;&#x751F;&#x6210;&#x56FE;&#x5F62;&#xFF1A;</p>
+<pre><code>graph(%len.1 : int):
+  %24 : int = prim::Constant[value=1]()
+  %17 : bool = prim::Constant[value=1]() # test.py:10:5
+  %12 : bool? = prim::Constant()
+  %10 : Device? = prim::Constant()
+  %6 : int? = prim::Constant()
+  %1 : int = prim::Constant[value=3]() # test.py:9:22
+  %2 : int = prim::Constant[value=4]() # test.py:9:25
+  %20 : int = prim::Constant[value=10]() # test.py:11:16
+  %23 : float = prim::Constant[value=1]() # test.py:12:23
+  %4 : int[] = prim::ListConstruct(%1, %2)
+  %rv.1 : Tensor = aten::zeros(%4, %6, %6, %10, %12) # test.py:9:10
+  %rv : Tensor = prim::Loop(%len.1, %17, %rv.1) # test.py:10:5
+    block0(%i.1 : int, %rv.14 : Tensor):
+      %21 : bool = aten::lt(%i.1, %20) # test.py:11:12
+      %rv.13 : Tensor = prim::If(%21) # test.py:11:9
+        block0():
+          %rv.3 : Tensor = aten::sub(%rv.14, %23, %24) # test.py:12:18
+          -&gt; (%rv.3)
+        block1():
+          %rv.6 : Tensor = aten::add(%rv.14, %23, %24) # test.py:14:18
+          -&gt; (%rv.6)
+      -&gt; (%17, %rv.13)
+  return (%rv)
+</code></pre><p>&#x4EE5;&#x6307;&#x4EE4;<code>%rv.1 : Tensor = aten::zeros(%4, %6, %6, %10, %12) # test.py:9:10</code>&#x4E3A;&#x4F8B;&#x3002;</p>
+<ul>
+<li><p><code>%rv.1 : Tensor</code>&#x8868;&#x793A;&#x6211;&#x4EEC;&#x5C06;&#x8F93;&#x51FA;&#x5206;&#x914D;&#x7ED9;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>rv.1</code>&#x7684;(&#x552F;&#x4E00;&#xFF09;&#x503C;&#xFF0C;&#x8BE5;&#x503C;&#x662F;<code>Tensor</code>&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x4E0D;&#x77E5;&#x9053;&#x5176;&#x5177;&#x4F53;&#x5F62;&#x72B6;&#x3002;</p>
+</li>
+<li><p><code>aten::zeros</code>&#x662F;&#x8FD0;&#x7B97;&#x7B26;(&#x4E0E;<code>torch.zeros</code>&#x7B49;&#x6548;&#xFF09;&#xFF0C;&#x8F93;&#x5165;&#x5217;&#x8868;<code>(%4, %6, %6, %10, %12)</code>&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x4E2D;&#x7684;&#x54EA;&#x4E9B;&#x503C;&#x5E94;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x4F20;&#x9012;&#x3002; &#x53EF;&#x4EE5;&#x5728;<a href="#builtin-functions">&#x5185;&#x7F6E;&#x51FD;&#x6570;</a>&#x4E2D;&#x627E;&#x5230;<code>aten::zeros</code>&#x7B49;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#x7684;&#x6A21;&#x5F0F;&#x3002;</p>
+</li>
+<li><p><code># test.py:9:10</code>&#x662F;&#x751F;&#x6210;&#x6B64;&#x6307;&#x4EE4;&#x7684;&#x539F;&#x59CB;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x662F;&#x7B2C; 9 &#x884C;&#x548C;&#x5B57;&#x7B26; 10 &#x5904;&#x540D;&#x4E3A; &lt;cite&gt;test.py&lt;/cite&gt; &#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+</ul>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x4E5F;&#x53EF;&#x4EE5;&#x5177;&#x6709;&#x5173;&#x8054;&#x7684;<code>blocks</code>&#xFF0C;&#x5373;<code>prim::Loop</code>&#x548C;<code>prim::If</code>&#x8FD0;&#x7B97;&#x7B26;&#x3002; &#x5728;&#x56FE;&#x5F62;&#x6253;&#x5370;&#x8F93;&#x51FA;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x8FD0;&#x7B97;&#x7B26;&#x88AB;&#x683C;&#x5F0F;&#x5316;&#x4EE5;&#x53CD;&#x6620;&#x5176;&#x7B49;&#x6548;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x5F62;&#x5F0F;&#xFF0C;&#x4EE5;&#x65B9;&#x4FBF;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x56FE;&#x8868;&#x4EE5;&#x786E;&#x8BA4; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x6240;&#x63CF;&#x8FF0;&#x7684;&#x8BA1;&#x7B97;&#x662F;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x81EA;&#x52A8;&#x65B9;&#x5F0F;&#x8FD8;&#x662F;&#x624B;&#x52A8;&#x65B9;&#x5F0F;&#x3002;</p>
+<h4 id="&#x8FFD;&#x8E2A;&#x6848;&#x4F8B;"><a href="#id62">&#x8FFD;&#x8E2A;&#x6848;&#x4F8B;</a></h4>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x6781;&#x7AEF;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7ED9;&#x5B9A; Python &#x51FD;&#x6570;/&#x6A21;&#x5757;&#x7684;&#x8DDF;&#x8E2A;&#x4E0D;&#x4F1A;&#x4EE3;&#x8868;&#x57FA;&#x7840;&#x4EE3;&#x7801;&#x3002; &#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li><p>&#x8DDF;&#x8E2A;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;&#x7684;&#x63A7;&#x5236;&#x6D41;(&#x4F8B;&#x5982;&#x5F20;&#x91CF;&#x5F62;&#x72B6;&#xFF09;</p>
+</li>
+<li><p>&#x8DDF;&#x8E2A;&#x5F20;&#x91CF;&#x89C6;&#x56FE;&#x7684;&#x5C31;&#x5730;&#x64CD;&#x4F5C;(&#x4F8B;&#x5982;&#xFF0C;&#x5206;&#x914D;&#x5DE6;&#x4FA7;&#x7684;&#x7D22;&#x5F15;&#xFF09;</p>
+</li>
+</ul>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#x5B9E;&#x9645;&#x4E0A;&#x5C06;&#x6765;&#x53EF;&#x80FD;&#x662F;&#x53EF;&#x8FFD;&#x6EAF;&#x7684;&#x3002;</p>
+<h4 id="&#x81EA;&#x52A8;&#x8DDF;&#x8E2A;&#x68C0;&#x67E5;"><a href="#id63">&#x81EA;&#x52A8;&#x8DDF;&#x8E2A;&#x68C0;&#x67E5;</a></h4>
+<p>&#x81EA;&#x52A8;&#x6355;&#x83B7;&#x8DDF;&#x8E2A;&#x4E2D;&#x8BB8;&#x591A;&#x9519;&#x8BEF;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;<code>torch.jit.trace()</code> API &#x4E0A;&#x7684;<code>check_inputs</code>&#x3002; <code>check_inputs</code>&#x63D0;&#x53D6;&#x8F93;&#x5165;&#x5143;&#x7EC4;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x8FD9;&#x4E9B;&#x5217;&#x8868;&#x5C06;&#x7528;&#x4E8E;&#x91CD;&#x65B0;&#x8FFD;&#x8E2A;&#x8BA1;&#x7B97;&#x5E76;&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>def loop_in_traced_fn(x):
+    result = x[0]
+    for i in range(x.size(0)):
+        result = result * x[i]
+    return result
+
+inputs = (torch.rand(3, 4, 5),)
+check_inputs = [(torch.rand(4, 5, 6),), (torch.rand(2, 3, 4),)]
+
+traced = torch.jit.trace(loop_in_traced_fn, inputs, check_inputs=check_inputs)
+</code></pre><p>&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x8BCA;&#x65AD;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>ERROR: Graphs differed across invocations!
+Graph diff:
+
+            graph(%x : Tensor) {
+            %1 : int = prim::Constant[value=0]()
+            %2 : int = prim::Constant[value=0]()
+            %result.1 : Tensor = aten::select(%x, %1, %2)
+            %4 : int = prim::Constant[value=0]()
+            %5 : int = prim::Constant[value=0]()
+            %6 : Tensor = aten::select(%x, %4, %5)
+            %result.2 : Tensor = aten::mul(%result.1, %6)
+            %8 : int = prim::Constant[value=0]()
+            %9 : int = prim::Constant[value=1]()
+            %10 : Tensor = aten::select(%x, %8, %9)
+        -   %result : Tensor = aten::mul(%result.2, %10)
+        +   %result.3 : Tensor = aten::mul(%result.2, %10)
+        ?          ++
+            %12 : int = prim::Constant[value=0]()
+            %13 : int = prim::Constant[value=2]()
+            %14 : Tensor = aten::select(%x, %12, %13)
+        +   %result : Tensor = aten::mul(%result.3, %14)
+        +   %16 : int = prim::Constant[value=0]()
+        +   %17 : int = prim::Constant[value=3]()
+        +   %18 : Tensor = aten::select(%x, %16, %17)
+        -   %15 : Tensor = aten::mul(%result, %14)
+        ?     ^                                 ^
+        +   %19 : Tensor = aten::mul(%result, %18)
+        ?     ^                                 ^
+        -   return (%15);
+        ?             ^
+        +   return (%19);
+        ?             ^
+            }
+</code></pre><p>&#x6B64;&#x6D88;&#x606F;&#x5411;&#x6211;&#x4EEC;&#x8868;&#x660E;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x7B2C;&#x4E00;&#x6B21;&#x8FFD;&#x8E2A;&#x5B83;&#x548C;&#x4F7F;&#x7528;<code>check_inputs</code>&#x8FFD;&#x8E2A;&#x5B83;&#x4E4B;&#x95F4;&#xFF0C;&#x8BA1;&#x7B97;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002; &#x5B9E;&#x9645;&#x4E0A;&#xFF0C;<code>loop_in_traced_fn</code>&#x4E3B;&#x4F53;&#x5185;&#x7684;&#x5FAA;&#x73AF;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;<code>x</code>&#x7684;&#x5F62;&#x72B6;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x53E6;&#x4E00;&#x79CD;&#x5F62;&#x72B6;&#x4E0D;&#x540C;&#x7684;<code>x</code>&#x65F6;&#xFF0C;&#x8FF9;&#x7EBF;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="#torch.jit.script" title="torch.jit.script"><code>torch.jit.script()</code></a> &#x6765;&#x6355;&#x83B7;&#x7C7B;&#x4F3C;&#x4E8E;&#x6570;&#x636E;&#x7684;&#x63A7;&#x5236;&#x6D41;&#xFF1A;</p>
+<pre><code>def fn(x):
+    result = x[0]
+    for i in range(x.size(0)):
+        result = result * x[i]
+    return result
+
+inputs = (torch.rand(3, 4, 5),)
+check_inputs = [(torch.rand(4, 5, 6),), (torch.rand(2, 3, 4),)]
+
+scripted_fn = torch.jit.script(fn)
+print(scripted_fn.graph)
+#print(str(scripted_fn.graph).strip())
+
+for input_tuple in [inputs] + check_inputs:
+    torch.testing.assert_allclose(fn(*input_tuple), scripted_fn(*input_tuple))
+</code></pre><p>&#x4EA7;&#x751F;&#xFF1A;</p>
+<pre><code>graph(%x : Tensor) {
+    %5 : bool = prim::Constant[value=1]()
+    %1 : int = prim::Constant[value=0]()
+    %result.1 : Tensor = aten::select(%x, %1, %1)
+    %4 : int = aten::size(%x, %1)
+    %result : Tensor = prim::Loop(%4, %5, %result.1)
+    block0(%i : int, %7 : Tensor) {
+        %10 : Tensor = aten::select(%x, %1, %i)
+        %result.2 : Tensor = aten::mul(%7, %10)
+        -&gt; (%5, %result.2)
+    }
+    return (%result);
+}
+</code></pre><h4 id="&#x8DDF;&#x8E2A;&#x5668;&#x8B66;&#x544A;"><a href="#id64">&#x8DDF;&#x8E2A;&#x5668;&#x8B66;&#x544A;</a></h4>
+<p>&#x8DDF;&#x8E2A;&#x5668;&#x4F1A;&#x9488;&#x5BF9;&#x8DDF;&#x8E2A;&#x8BA1;&#x7B97;&#x4E2D;&#x7684;&#x51E0;&#x79CD;&#x6709;&#x95EE;&#x9898;&#x7684;&#x6A21;&#x5F0F;&#x751F;&#x6210;&#x8B66;&#x544A;&#x3002; &#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x8FFD;&#x8E2A;&#x4E00;&#x4E2A;&#x5728; Tensor &#x7684;&#x5207;&#x7247;(&#x89C6;&#x56FE;&#xFF09;&#x4E0A;&#x5305;&#x542B;&#x5C31;&#x5730;&#x5206;&#x914D;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>def fill_row_zero(x):
+    x[0] = torch.rand(*x.shape[1:2])
+    return x
+
+traced = torch.jit.trace(fill_row_zero, (torch.rand(3, 4),))
+print(traced.graph)
+</code></pre><p>&#x4EA7;&#x751F;&#x51E0;&#x4E2A;&#x8B66;&#x544A;&#x548C;&#x4E00;&#x4E2A;&#x4EC5;&#x8FD4;&#x56DE;&#x8F93;&#x5165;&#x7684;&#x56FE;&#x5F62;&#xFF1A;</p>
+<pre><code>fill_row_zero.py:4: TracerWarning: There are 2 live references to the data region being modified when tracing in-place operator copy_ (possibly due to an assignment). This might cause the trace to be incorrect, because all other views that also reference this data will not reflect this change in the trace! On the other hand, if all other views use the same memory chunk, but are disjoint (e.g. are outputs of torch.split), this might still be safe.
+    x[0] = torch.rand(*x.shape[1:2])
+fill_row_zero.py:6: TracerWarning: Output nr 1\. of the traced function does not match the corresponding output of the Python function. Detailed error:
+Not within tolerance rtol=1e-05 atol=1e-05 at input[0, 1] (0.09115803241729736 vs. 0.6782537698745728) and 3 other locations (33.00%)
+    traced = torch.jit.trace(fill_row_zero, (torch.rand(3, 4),))
+graph(%0 : Float(3, 4)) {
+    return (%0);
+}
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x6765;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;&#xFF0C;&#x4F7F;&#x5176;&#x4E0D;&#x4F7F;&#x7528;&#x5C31;&#x5730;&#x66F4;&#x65B0;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;<code>torch.cat</code>&#x6765;&#x9519;&#x4F4D;&#x6784;&#x5EFA;&#x7ED3;&#x679C;&#x5F20;&#x91CF;&#xFF1A;</p>
+<pre><code>def fill_row_zero(x):
+    x = torch.cat((torch.rand(1, *x.shape[1:2]), x[1:2]), dim=0)
+    return x
+
+traced = torch.jit.trace(fill_row_zero, (torch.rand(3, 4),))
+print(traced.graph)
+</code></pre><h3 id="&#x5185;&#x7F6E;&#x51FD;&#x6570;"><a href="#id65">&#x5185;&#x7F6E;&#x51FD;&#x6570;</a></h3>
+<p>TorchScript &#x652F;&#x6301; PyTorch &#x63D0;&#x4F9B;&#x7684;&#x5185;&#x7F6E;&#x5F20;&#x91CF;&#x548C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x529F;&#x80FD;&#x7684;&#x5B50;&#x96C6;&#x3002; Tensor &#x4E0A;&#x7684;&#x5927;&#x591A;&#x6570;&#x65B9;&#x6CD5;&#x4EE5;&#x53CA;<code>torch</code>&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#xFF0C;<code>torch.nn.functional</code>&#x4E2D;&#x7684;&#x6240;&#x6709;&#x51FD;&#x6570;&#x4EE5;&#x53CA;<code>torch.nn</code>&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6A21;&#x5757;&#x5728; TorchScript &#x4E2D;&#x5747;&#x53D7;&#x652F;&#x6301;&#xFF0C;&#x4E0B;&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x5217;&#x51FA;&#x3002; &#x5BF9;&#x4E8E;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <a href="#torch.jit.trace" title="torch.jit.trace"><code>torch.jit.trace()</code></a> &#x3002;</p>
+<p>&#x4E0D;&#x652F;&#x6301;&#x7684;<code>torch.nn</code>&#x6A21;&#x5757;</p>
+<pre><code>torch.nn.modules.adaptive.AdaptiveLogSoftmaxWithLoss
+torch.nn.modules.normalization.CrossMapLRN2d
+torch.nn.modules.rnn.RNN
+</code></pre><p>&#x6709;&#x5173;&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;&#x7684;&#x5B8C;&#x6574;&#x53C2;&#x8003;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="jit_builtin_functions.html#builtin-functions">TorchScript &#x5185;&#x7F6E;&#x51FD;&#x6570;</a>&#x3002;</p>
+<h2 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x89E3;&#x7B54;"><a href="#id66">&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x89E3;&#x7B54;</a></h2>
+<p>&#x95EE;&#xFF1A;&#x6211;&#x60F3;&#x5728; GPU &#x4E0A;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x5E76;&#x5728; CPU &#x4E0A;&#x8FDB;&#x884C;&#x63A8;&#x7406;&#x3002; &#x6700;&#x4F73;&#x505A;&#x6CD5;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<blockquote>
+<p>&#x9996;&#x5148;&#x5C06;&#x6A21;&#x578B;&#x4ECE; GPU &#x8F6C;&#x6362;&#x4E3A; CPU&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>cpu_model = gpu_model.cpu()
+sample_input_cpu = sample_input_gpu.cpu()
+traced_cpu = torch.jit.trace(traced_cpu, sample_input_cpu)
+torch.jit.save(traced_cpu, &quot;cpu.pth&quot;)
+
+traced_gpu = torch.jit.trace(traced_gpu, sample_input_gpu)
+torch.jit.save(traced_gpu, &quot;gpu.pth&quot;)
+
+# ... later, when using the model:
+
+if use_gpu:
+  model = torch.jit.load(&quot;gpu.pth&quot;)
+else:
+  model = torch.jit.load(&quot;cpu.pth&quot;)
+
+model(input)
+</code></pre><p>&#x63A8;&#x8350;&#x8FD9;&#x6837;&#x505A;&#x662F;&#x56E0;&#x4E3A;&#x8DDF;&#x8E2A;&#x5668;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x7279;&#x5B9A;&#x8BBE;&#x5907;&#x4E0A;&#x89C1;&#x8BC1;&#x5F20;&#x91CF;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x56E0;&#x6B64;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;&#x6A21;&#x578B;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x6548;&#x679C;&#x3002; &#x5728;&#x4FDD;&#x5B58;&#x4E4B;&#x524D;&#x5BF9;&#x6A21;&#x578B;<em>&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x53EF;&#x786E;&#x4FDD;&#x8DDF;&#x8E2A;&#x5668;&#x5177;&#x6709;&#x6B63;&#x786E;&#x7684;&#x8BBE;&#x5907;&#x4FE1;&#x606F;&#x3002;</em></p>
+</blockquote>
+<p>&#x95EE;&#xFF1A;&#x5982;&#x4F55;&#x5728; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x4E0A;&#x5B58;&#x50A8;&#x5C5E;&#x6027;&#xFF1F;</p>
+<blockquote>
+<p>&#x8BF4;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#x6A21;&#x578B;&#xFF1A;</p>
+<pre><code>class Model(nn.Module):
+    def __init__(self):
+        super(Model, self).__init__()
+        self.x = 2
+
+    def forward(self):
+        return self.x
+
+m = torch.jit.script(Model())
+</code></pre><p>&#x5982;&#x679C;&#x5B9E;&#x4F8B;&#x5316;<code>Model</code>&#xFF0C;&#x5219;&#x5C06;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#xFF0C;&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x4E86;&#x89E3;<code>x</code>&#x3002; &#x6709;&#x56DB;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x901A;&#x77E5;&#x7F16;&#x8BD1;&#x5668; <a href="#torch.jit.ScriptModule" title="torch.jit.ScriptModule"><code>ScriptModule</code></a> &#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+<p>1. <code>nn.Parameter</code>-&#x5305;&#x88C5;&#x5728;<code>nn.Parameter</code>&#x4E2D;&#x7684;&#x503C;&#x5C06;&#x50CF;&#x5728;<code>nn.Module</code>&#x4E0A;&#x4E00;&#x6837;&#x5DE5;&#x4F5C;</p>
+<p>2. <code>register_buffer</code>-&#x5305;&#x88C5;&#x5728;<code>register_buffer</code>&#x4E2D;&#x7684;&#x503C;&#x5C06;&#x50CF;&#x5728;<code>nn.Module</code>&#x4E0A;&#x4E00;&#x6837;&#x5DE5;&#x4F5C;&#x3002; &#x8FD9;&#x7B49;&#x6548;&#x4E8E;<code>Tensor</code>&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;(&#x8BF7;&#x53C2;&#x89C1; 4&#xFF09;&#x3002;</p>
+<p>3.&#x5E38;&#x91CF;-&#x5C06;&#x7C7B;&#x6210;&#x5458;&#x6CE8;&#x91CA;&#x4E3A;<code>Final</code>(&#x6216;&#x5728;&#x7C7B;&#x5B9A;&#x4E49;&#x7EA7;&#x522B;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x540D;&#x4E3A;<code>__constants__</code>&#x7684;&#x5217;&#x8868;&#x4E2D;&#xFF09;&#x4F1A;&#x5C06;&#x5305;&#x542B;&#x7684;&#x540D;&#x79F0;&#x6807;&#x8BB0;&#x4E3A;&#x5E38;&#x91CF;&#x3002; &#x5E38;&#x6570;&#x76F4;&#x63A5;&#x4FDD;&#x5B58;&#x5728;&#x6A21;&#x578B;&#x4EE3;&#x7801;&#x4E2D;&#x3002; &#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#python-defined-constants">Python &#x5B9A;&#x4E49;&#x7684;&#x5E38;&#x91CF;</a>&#x3002;</p>
+<p>4.&#x5C5E;&#x6027;-&#x53EF;&#x4EE5;&#x5C06;<a href="#supported-type">&#x652F;&#x6301;&#x7684;&#x7C7B;&#x578B;</a>&#x7684;&#x503C;&#x6DFB;&#x52A0;&#x4E3A;&#x53EF;&#x53D8;&#x5C5E;&#x6027;&#x3002; &#x53EF;&#x4EE5;&#x63A8;&#x65AD;&#x5927;&#x591A;&#x6570;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x4E00;&#x4E9B;&#x7C7B;&#x578B;&#xFF0C;&#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="#module-attributes">&#x6A21;&#x5757;&#x5C5E;&#x6027;</a>&#x3002;</p>
+</blockquote>
+<p>&#x95EE;&#xFF1A;&#x6211;&#x60F3;&#x8DDF;&#x8E2A;&#x6A21;&#x5757;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x4E00;&#x76F4;&#x51FA;&#x73B0;&#x6B64;&#x9519;&#x8BEF;&#xFF1A;</p>
+<p><code>RuntimeError: Cannot insert a Tensor that requires grad as a constant. Consider making it a parameter or input, or detaching the gradient</code></p>
+<blockquote>
+<p>&#x6B64;&#x9519;&#x8BEF;&#x901A;&#x5E38;&#x8868;&#x793A;&#x60A8;&#x8981;&#x8DDF;&#x8E2A;&#x7684;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x6B63;&#x5728;&#x4F20;&#x9012;&#x6A21;&#x5757;&#x7684;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x662F;&#x6A21;&#x5757;&#x5B9E;&#x4F8B;(&#x4F8B;&#x5982;<code>my_module_instance.forward</code>&#x4E0E;<code>my_module_instance</code>&#xFF09;&#x3002;</p>
+<p>&gt; <em>   &#x4F7F;&#x7528;&#x6A21;&#x5757;&#x7684;&#x65B9;&#x6CD5;&#x8C03;&#x7528;<code>trace</code>&#x4F1A;&#x5C06;&#x6A21;&#x5757;&#x53C2;&#x6570;(&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6E10;&#x53D8;&#xFF09;&#x6355;&#x83B7;&#x4E3A;<strong>&#x5E38;&#x91CF;</strong>&#x3002;
+&gt;<br>&gt;<br>&gt; </em>   &#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x5B9E;&#x4F8B;(&#x4F8B;&#x5982;<code>my_module</code>&#xFF09;&#x8C03;&#x7528;<code>trace</code>&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x6A21;&#x5757;&#xFF0C;&#x5E76;&#x5C06;&#x53C2;&#x6570;&#x6B63;&#x786E;&#x590D;&#x5236;&#x5230;&#x65B0;&#x6A21;&#x5757;&#x4E2D;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x9700;&#x8981;&#x65F6;&#x53EF;&#x4EE5;&#x7D2F;&#x79EF;&#x68AF;&#x5EA6;&#x3002;</p>
+<p>&#x8981;&#x8DDF;&#x8E2A;&#x6A21;&#x5757;&#x4E0A;&#x7684;&#x7279;&#x5B9A;&#x65B9;&#x6CD5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#torch.jit.trace_module" title="torch.jit.trace_module"><code>torch.jit.trace_module</code></a></p>
+</blockquote>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="83.html" class="navigation navigation-prev " aria-label="Previous page: torch.hub">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="85.html" class="navigation navigation-next " aria-label="Next page: torch.nn.init">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"torch脚本","level":"1.17.11","depth":2,"next":{"title":"torch.nn.init","level":"1.17.12","depth":2,"path":"85.md","ref":"85.md","articles":[]},"previous":{"title":"torch.hub","level":"1.17.10","depth":2,"path":"83.md","ref":"83.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.4"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"84.md","mtime":"2021-04-12T06:14:20.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:16:19.672Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

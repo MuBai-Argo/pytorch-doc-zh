@@ -1,0 +1,2530 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用 PyTorch C++ 前端 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="tut_other_language.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    中文教程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="tut_getting_started.html">
+            
+                <a href="tut_getting_started.html">
+            
+                    
+                    起步
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="deep_learning_60min_blitz.html">
+            
+                <a href="deep_learning_60min_blitz.html">
+            
+                    
+                    PyTorch 深度学习: 60 分钟极速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="blitz_tensor_tutorial.html">
+            
+                <a href="blitz_tensor_tutorial.html">
+            
+                    
+                    什么是 PyTorch？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="blitz_autograd_tutorial.html">
+            
+                <a href="blitz_autograd_tutorial.html">
+            
+                    
+                    Autograd：自动求导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="blitz_neural_networks_tutorial.html">
+            
+                <a href="blitz_neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.4" data-path="blitz_cifar10_tutorial.html">
+            
+                <a href="blitz_cifar10_tutorial.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.5" data-path="blitz_data_parallel_tutorial.html">
+            
+                <a href="blitz_data_parallel_tutorial.html">
+            
+                    
+                    可选：数据并行处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="data_loading_tutorial.html">
+            
+                <a href="data_loading_tutorial.html">
+            
+                    
+                    数据加载和处理教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="pytorch_with_examples.html">
+            
+                <a href="pytorch_with_examples.html">
+            
+                    
+                    用例子学习 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="transfer_learning_tutorial.html">
+            
+                <a href="transfer_learning_tutorial.html">
+            
+                    
+                    迁移学习教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="deploy_seq2seq_hybrid_frontend_tutorial.html">
+            
+                <a href="deploy_seq2seq_hybrid_frontend_tutorial.html">
+            
+                    
+                    混合前端的 seq2seq 模型部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="saving_loading_models.html">
+            
+                <a href="saving_loading_models.html">
+            
+                    
+                    Saving and Loading Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="nn_tutorial.html">
+            
+                <a href="nn_tutorial.html">
+            
+                    
+                    What is torch.nn really?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="tut_image.html">
+            
+                <a href="tut_image.html">
+            
+                    
+                    图像
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="finetuning_torchvision_models_tutorial.html">
+            
+                <a href="finetuning_torchvision_models_tutorial.html">
+            
+                    
+                    Torchvision 模型微调
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="spatial_transformer_tutorial.html">
+            
+                <a href="spatial_transformer_tutorial.html">
+            
+                    
+                    空间变换器网络教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="neural_style_tutorial.html">
+            
+                <a href="neural_style_tutorial.html">
+            
+                    
+                    使用 PyTorch 进行图像风格转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="fgsm_tutorial.html">
+            
+                <a href="fgsm_tutorial.html">
+            
+                    
+                    对抗性示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="super_resolution_with_caffe2.html">
+            
+                <a href="super_resolution_with_caffe2.html">
+            
+                    
+                    使用 ONNX 将模型从 PyTorch 传输到 Caffe2 和移动端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="tut_text.html">
+            
+                <a href="tut_text.html">
+            
+                    
+                    文本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="chatbot_tutorial.html">
+            
+                <a href="chatbot_tutorial.html">
+            
+                    
+                    聊天机器人教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="char_rnn_generation_tutorial.html">
+            
+                <a href="char_rnn_generation_tutorial.html">
+            
+                    
+                    使用字符级别特征的 RNN 网络生成姓氏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="char_rnn_classification_tutorial.html">
+            
+                <a href="char_rnn_classification_tutorial.html">
+            
+                    
+                    使用字符级别特征的 RNN 网络进行姓氏分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="deep_learning_nlp_tutorial.html">
+            
+                <a href="deep_learning_nlp_tutorial.html">
+            
+                    
+                    Deep Learning for NLP with Pytorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.4.1" data-path="nlp_pytorch_tutorial.html">
+            
+                <a href="nlp_pytorch_tutorial.html">
+            
+                    
+                    PyTorch 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.2" data-path="nlp_deep_learning_tutorial.html">
+            
+                <a href="nlp_deep_learning_tutorial.html">
+            
+                    
+                    使用 PyTorch 进行深度学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.3" data-path="nlp_word_embeddings_tutorial.html">
+            
+                <a href="nlp_word_embeddings_tutorial.html">
+            
+                    
+                    Word Embeddings: Encoding Lexical Semantics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.4" data-path="nlp_sequence_models_tutorial.html">
+            
+                <a href="nlp_sequence_models_tutorial.html">
+            
+                    
+                    序列模型和 LSTM 网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.5" data-path="nlp_advanced_tutorial.html">
+            
+                <a href="nlp_advanced_tutorial.html">
+            
+                    
+                    Advanced: Making Dynamic Decisions and the Bi-LSTM CRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="seq2seq_translation_tutorial.html">
+            
+                <a href="seq2seq_translation_tutorial.html">
+            
+                    
+                    基于注意力机制的 seq2seq 神经网络翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="tut_generative.html">
+            
+                <a href="tut_generative.html">
+            
+                    
+                    生成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="dcgan_faces_tutorial.html">
+            
+                <a href="dcgan_faces_tutorial.html">
+            
+                    
+                    DCGAN Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="tut_reinforcement_learning.html">
+            
+                <a href="tut_reinforcement_learning.html">
+            
+                    
+                    强化学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="reinforcement_q_learning.html">
+            
+                <a href="reinforcement_q_learning.html">
+            
+                    
+                    Reinforcement Learning (DQN) Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="tut_extending_pytorch.html">
+            
+                <a href="tut_extending_pytorch.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="numpy_extensions_tutorial.html">
+            
+                <a href="numpy_extensions_tutorial.html">
+            
+                    
+                    用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="cpp_extension.html">
+            
+                <a href="cpp_extension.html">
+            
+                    
+                    Custom C++   and CUDA Extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="torch_script_custom_ops.html">
+            
+                <a href="torch_script_custom_ops.html">
+            
+                    
+                    Extending TorchScript with Custom C++   Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="tut_production_usage.html">
+            
+                <a href="tut_production_usage.html">
+            
+                    
+                    生产性使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="dist_tuto.html">
+            
+                <a href="dist_tuto.html">
+            
+                    
+                    Writing Distributed Applications with PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="aws_distributed_training_tutorial.html">
+            
+                <a href="aws_distributed_training_tutorial.html">
+            
+                    
+                    使用 Amazon AWS 进行分布式训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="ONNXLive.html">
+            
+                <a href="ONNXLive.html">
+            
+                    
+                    ONNX 现场演示教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="cpp_export.html">
+            
+                <a href="cpp_export.html">
+            
+                    
+                    在 C++ 中加载 PYTORCH 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="tut_other_language.html">
+            
+                <a href="tut_other_language.html">
+            
+                    
+                    其它语言中的 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.8.1" data-path="cpp_frontend.html">
+            
+                <a href="cpp_frontend.html">
+            
+                    
+                    使用 PyTorch C++ 前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    中文文档
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="docs_notes.html">
+            
+                <a href="docs_notes.html">
+            
+                    
+                    注解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="notes_autograd.html">
+            
+                <a href="notes_autograd.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="notes_broadcasting.html">
+            
+                <a href="notes_broadcasting.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="notes_cuda.html">
+            
+                <a href="notes_cuda.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="notes_extending.html">
+            
+                <a href="notes_extending.html">
+            
+                    
+                    Extending PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="notes_faq.html">
+            
+                <a href="notes_faq.html">
+            
+                    
+                    Frequently Asked Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="notes_multiprocessing.html">
+            
+                <a href="notes_multiprocessing.html">
+            
+                    
+                    Multiprocessing best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="notes_randomness.html">
+            
+                <a href="notes_randomness.html">
+            
+                    
+                    Reproducibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="notes_serialization.html">
+            
+                <a href="notes_serialization.html">
+            
+                    
+                    Serialization semantics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.9" data-path="notes_windows.html">
+            
+                <a href="notes_windows.html">
+            
+                    
+                    Windows FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="docs_package_ref.html">
+            
+                <a href="docs_package_ref.html">
+            
+                    
+                    包参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="torch.html">
+            
+                <a href="torch.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1.1" data-path="torch_tensors.html">
+            
+                <a href="torch_tensors.html">
+            
+                    
+                    Tensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.2" data-path="torch_random_sampling.html">
+            
+                <a href="torch_random_sampling.html">
+            
+                    
+                    Random sampling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.3" data-path="torch_serialization_parallelism_utilities.html">
+            
+                <a href="torch_serialization_parallelism_utilities.html">
+            
+                    
+                    Serialization, Parallelism, Utilities
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4" data-path="torch_math_operations.html">
+            
+                <a href="torch_math_operations.html">
+            
+                    
+                    Math operations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1.4.1" data-path="torch_math_operations_pointwise_ops.html">
+            
+                <a href="torch_math_operations_pointwise_ops.html">
+            
+                    
+                    Pointwise Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.2" data-path="torch_math_operations_reduction_ops.html">
+            
+                <a href="torch_math_operations_reduction_ops.html">
+            
+                    
+                    Reduction Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.3" data-path="torch_math_operations_comparison_ops.html">
+            
+                <a href="torch_math_operations_comparison_ops.html">
+            
+                    
+                    Comparison Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.4" data-path="torch_math_operations_spectral_ops.html">
+            
+                <a href="torch_math_operations_spectral_ops.html">
+            
+                    
+                    Spectral Ops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.5" data-path="torch_math_operations_other_ops.html">
+            
+                <a href="torch_math_operations_other_ops.html">
+            
+                    
+                    Other Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4.6" data-path="torch_math_operations_blas_lapack_ops.html">
+            
+                <a href="torch_math_operations_blas_lapack_ops.html">
+            
+                    
+                    BLAS and LAPACK Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="tensors.html">
+            
+                <a href="tensors.html">
+            
+                    
+                    torch.Tensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="tensor_attributes.html">
+            
+                <a href="tensor_attributes.html">
+            
+                    
+                    Tensor Attributes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="type_info.html">
+            
+                <a href="type_info.html">
+            
+                    
+                    数据类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="sparse.html">
+            
+                <a href="sparse.html">
+            
+                    
+                    torch.sparse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="cuda.html">
+            
+                <a href="cuda.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="storage.html">
+            
+                <a href="storage.html">
+            
+                    
+                    torch.Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="nn.html">
+            
+                <a href="nn.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="nn_functional.html">
+            
+                <a href="nn_functional.html">
+            
+                    
+                    torch.nn.functional
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="nn_init.html">
+            
+                <a href="nn_init.html">
+            
+                    
+                    torch.nn.init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="optim.html">
+            
+                <a href="optim.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="autograd.html">
+            
+                <a href="autograd.html">
+            
+                    
+                    Automatic differentiation package - torch.autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="distributed.html">
+            
+                <a href="distributed.html">
+            
+                    
+                    Distributed communication package - torch.distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="distributions.html">
+            
+                <a href="distributions.html">
+            
+                    
+                    Probability distributions - torch.distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="jit.html">
+            
+                <a href="jit.html">
+            
+                    
+                    Torch Script
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="multiprocessing.html">
+            
+                <a href="multiprocessing.html">
+            
+                    
+                    多进程包 - torch.multiprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.17" data-path="bottleneck.html">
+            
+                <a href="bottleneck.html">
+            
+                    
+                    torch.utils.bottleneck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.18" data-path="checkpoint.html">
+            
+                <a href="checkpoint.html">
+            
+                    
+                    torch.utils.checkpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.19" data-path="docs_cpp_extension.html">
+            
+                <a href="docs_cpp_extension.html">
+            
+                    
+                    torch.utils.cpp_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.20" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.21" data-path="dlpack.html">
+            
+                <a href="dlpack.html">
+            
+                    
+                    torch.utils.dlpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.22" data-path="hub.html">
+            
+                <a href="hub.html">
+            
+                    
+                    torch.hub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.23" data-path="model_zoo.html">
+            
+                <a href="model_zoo.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.24" data-path="onnx.html">
+            
+                <a href="onnx.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.25" data-path="distributed_deprecated.html">
+            
+                <a href="distributed_deprecated.html">
+            
+                    
+                    Distributed communication package (deprecated) - torch.distributed.deprecated
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="docs_torchvision_ref.html">
+            
+                <a href="docs_torchvision_ref.html">
+            
+                    
+                    torchvision 参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="torchvision_datasets.html">
+            
+                <a href="torchvision_datasets.html">
+            
+                    
+                    torchvision.datasets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="torchvision_models.html">
+            
+                <a href="torchvision_models.html">
+            
+                    
+                    torchvision.models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="torchvision_transforms.html">
+            
+                <a href="torchvision_transforms.html">
+            
+                    
+                    torchvision.transforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="torchvision_utils.html">
+            
+                <a href="torchvision_utils.html">
+            
+                    
+                    torchvision.utils
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >使用 PyTorch C++ 前端</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4F7F;&#x7528;-pytorch-c-&#x524D;&#x7AEF;">&#x4F7F;&#x7528; PyTorch C++ &#x524D;&#x7AEF;</h1>
+<blockquote>
+<p>&#x8BD1;&#x8005;&#xFF1A;<a href="https://github.com/solerji" target="_blank">solerji</a></p>
+</blockquote>
+<p>PyTorch C++ &#x524D;&#x7AEF; &#x662F;PyTorch&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x7684;&#x4E00;&#x4E2A;&#x7EAF;C++&#x63A5;&#x53E3;&#x3002;PyTorch&#x7684;&#x4E3B;&#x63A5;&#x53E3;&#x662F;Python&#xFF0C;Python API&#x4F4D;&#x4E8E;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x7684;C++&#x4EE3;&#x7801;&#x5E93;&#x4E4B;&#x4E0A;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x529F;&#x80FD;&#xFF0C;&#x4F8B;&#x5982;&#x5F20;&#x91CF;&#x548C;&#x81EA;&#x52A8;&#x6C42;&#x5BFC;&#x3002;C++&#x524D;&#x7AEF;&#x66B4;&#x9732;&#x4E86;&#x4E00;&#x4E2A;&#x7EAF;&#x7684;C++11&#x7684;API&#xFF0C;&#x5728;C++&#x5E95;&#x5C42;&#x4EE3;&#x7801;&#x5E93;&#x4E4B;&#x4E0A;&#x6269;&#x5C55;&#x4E86;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x8BAD;&#x7EC3;&#x548C;&#x63A8;&#x7406;&#x6240;&#x9700;&#x7684;&#x5DE5;&#x5177;&#x6269;&#x5C55;&#x3002;&#x8FD9;&#x5305;&#x62EC;&#x7528;&#x4E8E;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5EFA;&#x6A21;&#x7684;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#x96C6;&#x5408;&#xFF1B;&#x6269;&#x5C55;&#x6B64;&#x96C6;&#x5408;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x5757;API&#xFF1B;&#x6D41;&#x884C;&#x7684;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x5E93;(&#x5982;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF09;&#xFF1B;&#x4F7F;&#x7528;API&#x5B9A;&#x4E49;&#x548C;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5E76;&#x884C;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x7A0B;&#x5E8F;&#xFF1B;&#x5E8F;&#x5217;&#x5316;&#x4F8B;&#x884C;&#x7A0B;&#x5E8F;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x672C;&#x6559;&#x7A0B;&#x5C06;&#x4E3A;&#x60A8;&#x4ECB;&#x7ECD;&#x4E00;&#x4E2A;&#x7528;C++ &#x524D;&#x7AEF;&#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x793A;&#x4F8B;&#x3002;&#x5177;&#x4F53;&#x5730;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BAD;&#x7EC3;&#x4E00;&#x4E2A; DCGAN&#x2014;&#x2014;&#x4E00;&#x79CD;&#x751F;&#x6210;&#x6A21;&#x578B;&#x2014;&#x2014;&#x6765;&#x751F;&#x6210; MNIST&#x6570;&#x5B57;&#x7684;&#x56FE;&#x50CF;&#x3002;&#x867D;&#x7136;&#x770B;&#x8D77;&#x6765;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x4F46;&#x5B83;&#x8DB3;&#x4EE5;&#x8BA9;&#x4F60;&#x5BF9; PyTorch C++ frontend&#x6709;&#x4E00;&#x4E2A;&#x6DF1;&#x523B;&#x7684;&#x8BA4;&#x8BC6;&#xFF0C;&#x5E76;&#x52FE;&#x8D77;&#x4F60;&#x5BF9;&#x8BAD;&#x7EC3;&#x66F4;&#x590D;&#x6742;&#x6A21;&#x578B;&#x7684;&#x5174;&#x8DA3;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x8BBE;&#x8BA1;&#x5B83;&#x7684;&#x539F;&#x56E0;&#x5F00;&#x59CB;&#xFF0C;&#x544A;&#x8BC9;&#x4F60;&#x4E3A;&#x4EC0;&#x4E48;&#x4F60;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;C++&#x524D;&#x7AEF;&#xFF0C;&#x7136;&#x540E;&#x76F4;&#x63A5;&#x6DF1;&#x5165;&#x89E3;&#x91CA;&#x548C;&#x8BAD;&#x7EC3;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p>&#x53EF;&#x4EE5;&#x5728; <a href="https://www.youtube.com/watch?v=auRPXMMHJzc" target="_blank">this lightning talk from CppCon 2018</a> &#x7F51;&#x7AD9;&#x89C2;&#x770B;&#x6709;&#x5173;C++&#x524D;&#x7AEF;&#x7684;&#x5FEB;&#x901F;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p><a href="https://pytorch.org/cppdocs/frontend.html" target="_blank">&#x8FD9;&#x4EFD;&#x7B14;&#x8BB0;</a>&#x63D0;&#x4F9B;&#x4E86;C++&#x524D;&#x7AEF;&#x7EC4;&#x4EF6;&#x548C;&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#x7684;&#x5168;&#x9762;&#x6982;&#x8FF0;&#x3002;</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p>&#x5728; <a href="https://pytorch.org/cppdocs" target="_blank">https://pytorch.org/cppdocs</a>&#x4F60;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#x7684;API&#x8BF4;&#x660E;&#x6587;&#x6863;&#xFF0C;&#x8FD9;&#x4E9B;PyTorch C++ &#x751F;&#x6001;&#x7CFB;&#x7EDF;&#x7684;&#x6587;&#x6863;&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<h2 id="&#x52A8;&#x673A;">&#x52A8;&#x673A;</h2>
+<p>&#x5728;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x4EE4;&#x4EBA;&#x5174;&#x594B;&#x7684;GANs&#x548C;MNIST&#x6570;&#x5B57;&#x7684;&#x65C5;&#x7A0B;&#x4E4B;&#x524D;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5F80;&#x56DE;&#x770B;&#xFF0C;&#x8BA8;&#x8BBA;&#x4E00;&#x4E0B;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x4E00;&#x5F00;&#x59CB;&#x8981;&#x4F7F;&#x7528;C++&#x524D;&#x7AEF;&#x800C;&#x4E0D;&#x662F;Python&#x3002;&#x6211;&#x4EEC;(the PyTorch team&#xFF09;&#x521B;&#x5EFA;&#x4E86;C++&#x524D;&#x7AEF;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;Python&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x6216;&#x8005;&#x662F;&#x6CA1;&#x6709;&#x9002;&#x5408;&#x8BE5;&#x4F5C;&#x4E1A;&#x7684;&#x5DE5;&#x5177;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8FDB;&#x884C;&#x7814;&#x7A76;&#x3002;&#x6B64;&#x7C7B;&#x73AF;&#x5883;&#x7684;&#x793A;&#x4F8B;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li><strong>&#x4F4E;&#x5EF6;&#x8FDF;&#x7CFB;&#x7EDF;&#xFF1A;</strong>&#x60A8;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x5728;&#x5177;&#x6709;&#x9AD8;&#x5E27;/&#x79D2;&#x548C;&#x4F4E;&#x5EF6;&#x8FDF;&#x7684;&#x8981;&#x6C42;&#x7684;&#x7EAF;C++&#x6E38;&#x620F;&#x5F15;&#x64CE;&#x4E2D;&#x8FDB;&#x884C;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x7814;&#x7A76;&#x3002;&#x7531;&#x4E8E;Python&#x89E3;&#x91CA;&#x5668;&#x7684;&#x901F;&#x5EA6;&#x6162;&#xFF0C;Python&#x53EF;&#x80FD;&#x6839;&#x672C;&#x65E0;&#x6CD5;&#x88AB;&#x8DDF;&#x8E2A;&#xFF0C;&#x4F7F;&#x7528;&#x7EAF;C++&#x5E93;&#x8FD9;&#x6837;&#x7684;&#x73AF;&#x5883;&#x6BD4;Python&#x5E93;&#x66F4;&#x5408;&#x9002;&#x3002;</li>
+<li><strong>&#x9AD8;&#x5EA6;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#xFF1A;</strong>&#x7531;&#x4E8E;&#x5168;&#x5C40;&#x89E3;&#x91CA;&#x5668;&#x9501;(GIL&#xFF09;&#xFF0C;&#x4E00;&#x6B21;&#x4E0D;&#x80FD;&#x8FD0;&#x884C;&#x591A;&#x4E2A;&#x7CFB;&#x7EDF;&#x7EBF;&#x7A0B;&#x3002;&#x591A;&#x9053;&#x5904;&#x7406;&#x662F;&#x53E6;&#x4E00;&#x79CD;&#x9009;&#x62E9;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x5177;&#x6709;&#x53EF;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x663E;&#x8457;&#x7684;&#x7F3A;&#x70B9;&#x3002;C++&#x6CA1;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x7EBF;&#x7A0B;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x548C;&#x521B;&#x5EFA;&#x3002;&#x9700;&#x8981;&#x5927;&#x91CF;&#x5E76;&#x884C;&#x5316;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x50CF;&#x90A3;&#x4E9B;&#x7528;&#x4E8E;&#x6DF1;&#x5EA6;&#x795E;&#x7ECF;&#x8FDB;&#x5316; <a href="https://eng.uber.com/deep-neuroevolution/" target="_blank">Deep Neuroevolution</a>&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x4E2D;&#x53D7;&#x76CA;&#x3002;</li>
+<li><strong>&#x73B0;&#x6709;&#x7684;C++&#x4EE3;&#x7801;&#x5E93;&#xFF1A;</strong>&#x60A8;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x73B0;&#x6709;&#x7684;C++&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6240;&#x6709;&#x8005;&#xFF0C;&#x5728;&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x4E3A;Web&#x9875;&#x9762;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x4EE5;&#x5728;&#x7167;&#x7247;&#x7F16;&#x8F91;&#x8F6F;&#x4EF6;&#x4E2D;&#x7ED8;&#x5236;3D&#x56FE;&#x5F62;&#xFF0C;&#x5E76;&#x5E0C;&#x671B;&#x5C06;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x96C6;&#x6210;&#x5230;&#x60A8;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#x3002;C++&#x524D;&#x7AEF;&#x5141;&#x8BB8;&#x60A8;&#x4FDD;&#x7559;&#x5728;C++&#x4E2D;&#xFF0C;&#x514D;&#x9664;&#x4E86;&#x5728;Python&#x548C;C++&#x4E4B;&#x95F4;&#x6765;&#x56DE;&#x7ED1;&#x5B9A;&#x7684;&#x9EBB;&#x70E6;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x7559;&#x4E86;&#x4F20;&#x7EDF; PyTorch(Python&#xFF09;&#x4F53;&#x9A8C;&#x7684;&#x5927;&#x90E8;&#x5206;&#x7075;&#x6D3B;&#x6027;&#x548C;&#x76F4;&#x89C2;&#x6027;&#x3002;</li>
+</ul>
+<p>C++&#x524D;&#x7AEF;&#x4E0D;&#x6253;&#x7B97;&#x4E0E;Python&#x524D;&#x7AEF;&#x7ADE;&#x4E89;&#xFF0C;&#x5B83;&#x662F;&#x4E3A;&#x4E86;&#x8865;&#x5145;Python&#x524D;&#x7AEF;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x7531;&#x4E8E;&#x5B83;&#x7B80;&#x5355;&#x3001;&#x7075;&#x6D3B;&#x548C;&#x76F4;&#x89C2;&#x7684;API&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x548C;&#x5DE5;&#x7A0B;&#x5E08;&#x90FD;&#x559C;&#x6B22;PyTorch&#x3002;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;&#x662F;&#x786E;&#x4FDD;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x5229;&#x7528;&#x8FD9;&#x4E9B;&#x6838;&#x5FC3;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#xFF0C;&#x5305;&#x62EC;&#x4E0A;&#x9762;&#x63CF;&#x8FF0;&#x7684;&#x90A3;&#x4E9B;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E9B;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x63CF;&#x8FF0;&#x4E86;&#x4F60;&#x7684;&#x7528;&#x4F8B;&#xFF0C;&#x6216;&#x8005;&#x5982;&#x679C;&#x4F60;&#x53EA;&#x662F;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x8BDD;&#xFF0C;&#x8DDF;&#x7740;&#x6211;&#x4EEC;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x6587;&#x7AE0;&#x4E2D;&#x8BE6;&#x7EC6;&#x63A2;&#x7A76;C++&#x524D;&#x7AEF;&#x3002;</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p>C++&#x524D;&#x7AEF;&#x8BD5;&#x56FE;&#x63D0;&#x4F9B;&#x5C3D;&#x53EF;&#x80FD;&#x63A5;&#x8FD1;Python&#x524D;&#x7AEF;&#x7684;API&#x3002;&#x5982;&#x679C;&#x4F60;&#x5BF9;Python&#x524D;&#x7AEF;&#x6709;&#x7ECF;&#x9A8C;&#xFF0C;&#x5E76;&#x4E14;&#x60F3;&#x77E5;&#x9053;&#xFF1A;&#x201C;&#x6211;&#x5982;&#x4F55;&#x7528;C++&#x524D;&#x7AEF;&#x505A;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#xFF1F;&#x201D;&#x4F60;&#x53EF;&#x4EE5;&#x4EE5;Python&#x7684;&#x65B9;&#x5F0F;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x5728;Python&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0E;C++&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;(&#x53EA;&#x8981;&#x8BB0;&#x4F4F;&#x7528;&#x53CC;&#x5192;&#x53F7;&#x66FF;&#x6362;&#x70B9;&#xFF09;&#x3002;</p>
+<h2 id="&#x7F16;&#x5199;&#x57FA;&#x672C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;">&#x7F16;&#x5199;&#x57FA;&#x672C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</h2>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;C++&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x4EE5;&#x9A8C;&#x8BC1;&#x6211;&#x4EEC;&#x5728;&#x5B89;&#x88C5;&#x548C;&#x6784;&#x5EFA;&#x73AF;&#x5883;&#x4E0A;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x83B7;&#x53D6; <em>LibTorch</em>&#x5206;&#x53D1;&#x7684;&#x526F;&#x672C;&#x2014;&#x2014;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#x4E86;ZIP&#x5B58;&#x6863;&#xFF0C;&#x5B83;&#x5C01;&#x88C5;&#x4E86;&#x4F7F;&#x7528;C++&#x524D;&#x7AEF;&#x6240;&#x9700;&#x7684;&#x6240;&#x6709;&#x76F8;&#x5173;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x3001;&#x5E93;&#x548C; CMake &#x6784;&#x5EFA;&#x6587;&#x4EF6;&#x3002;Libtorch&#x53D1;&#x884C;&#x7248;&#x53EF;&#x5728;Linux, MacOS &#x548C; Windows&#x7684;<a href="https://pytorch.org/get-started/locally/" target="_blank">PyTorch website</a>&#x4E0A;&#x4E0B;&#x8F7D;&#x3002;&#x672C;&#x6559;&#x7A0B;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5C06;&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7684;Ubuntu Linux&#x73AF;&#x5883;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;MacOS&#x6216;Windows&#x4E0A;&#x7EE7;&#x7EED;&#x81EA;&#x7531;&#x5730;&#x5B66;&#x4E60;&#x3002;</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p>&#x5173;&#x4E8E;&#x5B89;&#x88C5;PyTrac C++  &#x5728; <a href="https://pytorch.org/cppdocs/installing.html" target="_blank">Installing C++ Distributions of PyTorch</a> &#x7684;&#x6587;&#x6863;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x63CF;&#x8FF0;&#x4E86;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x901A;&#x8FC7;&#x4ECE;PyTorch&#x7F51;&#x7AD9;&#x68C0;&#x7D22;&#x5230;&#x7684;&#x94FE;&#x63A5;&#x5728;&#x672C;&#x5730;&#x4E0B;&#x8F7D; LibTorch&#x53D1;&#x884C;&#x7248;&#x3002;&#x5BF9;&#x4E8E;&#x666E;&#x901A;&#x7684;Ubuntu Linux&#x73AF;&#x5883;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8FD0;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-py">wget https://download.pytorch.org/libtorch/nightly/cpu/libtorch-shared-<span class="hljs-keyword">with</span>-deps-latest.zip
+unzip libtorch-shared-<span class="hljs-keyword">with</span>-deps-latest.zip
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>dcgan.cpp</code> &#x7684;&#x5C0F;&#x578B;C++&#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x5305;&#x62EC; <code>torch/torch.h</code> &#xFF0C;&#x73B0;&#x5728;&#x53EA;&#x9700;&#x6253;&#x5370;&#x51FA;&#x4E09;*&#x4E09;&#x7684;&#x8EAB;&#x4EFD;&#x77E9;&#x9635;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-comment">#include &lt;torch/torch.h&gt;</span>
+<span class="hljs-comment">#include &lt;iostream&gt;</span>
+
+int main() {
+  torch::Tensor tensor = torch::eye(<span class="hljs-number">3</span>);
+  std::cout &lt;&lt; tensor &lt;&lt; std::endl;
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;<code>CMakeLists.txt</code>&#x6587;&#x4EF6;&#x6784;&#x5EFA;&#x8FD9;&#x4E2A;&#x5C0F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x7A0D;&#x540E;&#x7684;&#x5B8C;&#x6574;&#x8BAD;&#x7EC3;&#x811A;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-py">cmake_minimum_required(VERSION <span class="hljs-number">3.0</span> FATAL_ERROR)
+project(dcgan)
+
+find_package(Torch REQUIRED)
+
+add_executable(dcgan dcgan.cpp)
+target_link_libraries(dcgan <span class="hljs-string">&quot;${TORCH_LIBRARIES}&quot;</span>)
+set_property(TARGET dcgan PROPERTY CXX_STANDARD <span class="hljs-number">11</span>)
+</code></pre>
+<p>&#x7B14;&#x8BB0;</p>
+<p>&#x867D;&#x7136;CMake&#x662F;LibTorch&#x63A8;&#x8350;&#x7684;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F46;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x786C;&#x6027;&#x8981;&#x6C42;&#x3002;&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Visual Studio&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x3001;Qmake&#x3001;plain Makefiles&#x6216;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x60A8;&#x89C9;&#x5F97;&#x5408;&#x9002;&#x7684;&#x6784;&#x5EFA;&#x73AF;&#x5883;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x63D0;&#x4F9B;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#x652F;&#x6301;&#x3002;</p>
+<p>&#x8BB0;&#x4E0B;&#x4E0A;&#x8FF0;CMake&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x7B2C;4&#x884C;&#xFF1A; <code>find_package(Torch REQUIRED)</code>.&#x3002;&#x8FD9;&#x5C06;&#x6307;&#x793A;CMake&#x67E5;&#x627E;LibTorch&#x5E93;&#x7684;&#x6784;&#x5EFA;&#x914D;&#x7F6E;&#x3002;&#x4E3A;&#x4E86;&#x8BA9;CMake&#x77E5;&#x9053;&#x5728;&#x54EA;&#x91CC;&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5728;&#x8C03;&#x7528; <code>cmake</code>&#x65F6;&#x8BBE;&#x7F6E;   <code>CMAKE_PREFIX_PATH</code>  &#x3002;&#x5728;&#x8FDB;&#x884C;&#x6B64;&#x64CD;&#x4F5C;&#x4E4B;&#x524D;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5C31; <code>dcgan</code>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4EE5;&#x4E0B;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x8FBE;&#x6210;&#x4E00;&#x81F4;&#xFF1A;</p>
+<pre><code class="lang-py">dcgan/
+  CMakeLists.txt
+  dcgan.cpp
+</code></pre>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x6211;&#x5C06;&#x7279;&#x522B;&#x6307;&#x51FA;&#x89E3;&#x538B;LibTorch&#x5206;&#x53D1;&#x7684;&#x8DEF;&#x5F84; <code>/path/to/libtorch</code>&#x3002;<strong>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x5FC5;&#x987B;&#x662F;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</strong>&#x6211;&#x4EEC;&#x7528;&#x7F16;&#x5199; <code>$PWD/../../libtorch</code> &#x7684;&#x505A;&#x6CD5;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1B;&#x5982;&#x679C;&#x5C06; <code>CMAKE_PREFIX_PATH</code> &#x8BBE;&#x7F6E;&#x4E3A;<code>../../libtorch</code>&#x5B83;&#x5C06;&#x4EE5;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x65B9;&#x5F0F;&#x4E2D;&#x65AD;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#x6784;&#x5EFA;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+<pre><code class="lang-py">root@fa350df05ecf:/home<span class="hljs-comment"># mkdir build</span>
+root@fa350df05ecf:/home<span class="hljs-comment"># cd build</span>
+root@fa350df05ecf:/home/build<span class="hljs-comment"># cmake -DCMAKE_PREFIX_PATH=/path/to/libtorch ..</span>
+-- The C compiler identification <span class="hljs-keyword">is</span> GNU <span class="hljs-number">5.4</span><span class="hljs-number">.0</span>
+-- The CXX compiler identification <span class="hljs-keyword">is</span> GNU <span class="hljs-number">5.4</span><span class="hljs-number">.0</span>
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc
+-- Check <span class="hljs-keyword">for</span> working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++
+-- Check <span class="hljs-keyword">for</span> working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking <span class="hljs-keyword">for</span> pthread.h
+-- Looking <span class="hljs-keyword">for</span> pthread.h - found
+-- Looking <span class="hljs-keyword">for</span> pthread_create
+-- Looking <span class="hljs-keyword">for</span> pthread_create - <span class="hljs-keyword">not</span> found
+-- Looking <span class="hljs-keyword">for</span> pthread_create <span class="hljs-keyword">in</span> pthreads
+-- Looking <span class="hljs-keyword">for</span> pthread_create <span class="hljs-keyword">in</span> pthreads - <span class="hljs-keyword">not</span> found
+-- Looking <span class="hljs-keyword">for</span> pthread_create <span class="hljs-keyword">in</span> pthread
+-- Looking <span class="hljs-keyword">for</span> pthread_create <span class="hljs-keyword">in</span> pthread - found
+-- Found Threads: TRUE
+-- Found torch: /path/to/libtorch/lib/libtorch.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/build
+root@fa350df05ecf:/home/build<span class="hljs-comment"># make -j</span>
+Scanning dependencies of target dcgan
+[ <span class="hljs-number">50</span>%] Building CXX object CMakeFiles/dcgan.dir/dcgan.cpp.o
+[<span class="hljs-number">100</span>%] Linking CXX executable dcgan
+[<span class="hljs-number">100</span>%] Built target dcgan
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x6587;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5728; <code>dcgan</code> &#x76EE;&#x5F55;&#x4E2D;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; <code>build</code> &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x5165;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8FD0;&#x884C; <code>cmake</code> &#x547D;&#x4EE4;&#x751F;&#x6210;&#x5FC5;&#x8981;&#x7684;build(Make&#xFF09;&#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x540E;&#x901A;&#x8FC7;&#x8FD0;&#x884C; <code>make -j</code>.&#x6210;&#x529F;&#x7F16;&#x8BD1;&#x4E86;&#x9879;&#x76EE;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x9879;&#x76EE;&#x8BBE;&#x7F6E;&#x4E3A;&#x6267;&#x884C;&#x6700;&#x5C0F;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x57FA;&#x672C;&#x9879;&#x76EE;&#x914D;&#x7F6E;&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-py">root@fa350df05ecf:/home/build<span class="hljs-comment"># ./dcgan</span>
+<span class="hljs-number">1</span>  <span class="hljs-number">0</span>  <span class="hljs-number">0</span>
+<span class="hljs-number">0</span>  <span class="hljs-number">1</span>  <span class="hljs-number">0</span>
+<span class="hljs-number">0</span>  <span class="hljs-number">0</span>  <span class="hljs-number">1</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">3</span>,<span class="hljs-number">3</span>} ]
+</code></pre>
+<p>&#x5728;&#x6211;&#x770B;&#x6765;&#x5B83;&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x8EAB;&#x4EFD;&#x77E9;&#x9635;&#xFF01;</p>
+<h2 id="&#x5B9A;&#x4E49;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;">&#x5B9A;&#x4E49;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;</h2>
+<p>&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x4E86;&#x57FA;&#x672C;&#x73AF;&#x5883;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#x66F4;&#x6709;&#x8DA3;&#x7684;&#x90E8;&#x5206;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8BA8;&#x8BBA;&#x5982;&#x4F55;&#x5728;C++&#x524D;&#x7AEF;&#x4E2D;&#x5B9A;&#x4E49;&#x548C;&#x4EA4;&#x4E92;&#x6A21;&#x5757;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x57FA;&#x672C;&#x7684;&#x3001;&#x5C0F;&#x89C4;&#x6A21;&#x7684;&#x793A;&#x4F8B;&#x6A21;&#x5757;&#x5F00;&#x59CB;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;C++&#x524D;&#x7AEF;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x7F6E;&#x6A21;&#x5757;&#x7684;&#x5E7F;&#x6CDB;&#x5E93;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6210;&#x719F;&#x7684;GAN&#x3002;</p>
+<h3 id="&#x6A21;&#x5757;api&#x57FA;&#x7840;&#x77E5;&#x8BC6;">&#x6A21;&#x5757;API&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h3>
+<p>&#x4F9D;&#x636E;Python&#x63A5;&#x53E3;&#xFF0C;&#x57FA;&#x4E8E;C++&#x524D;&#x7AEF;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7531;&#x53EF;&#x91CD;&#x7528;&#x7684;&#x6A21;&#x5757;&#x7EC4;&#x6210;&#xFF0C;&#x79F0;&#x4E3A;<em>&#x6A21;&#x5757;</em>&#x3002;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x6A21;&#x5757;&#x7C7B;&#xFF0C;&#x4ECE;&#x4E2D;&#x6D3E;&#x751F;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x3002;&#x5728;Python&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F; <code>torch.nn.Module</code> &#xFF0C;&#x5728;C++&#x4E2D;&#x662F; <code>torch::nn::Module</code>&#x6A21;&#x5757;&#x3002;&#x9664;&#x4E86;&#x5B9E;&#x73B0;&#x6A21;&#x5757;&#x5C01;&#x88C5;&#x7684;&#x7B97;&#x6CD5;&#x7684; <code>forward()</code> &#x65B9;&#x6CD5;&#x5916;&#xFF0C;&#x6A21;&#x5757;&#x901A;&#x5E38;&#x8FD8;&#x5305;&#x542B;&#x4E09;&#x79CD;&#x5B50;&#x5BF9;&#x8C61;&#xFF1A;&#x53C2;&#x6570;&#x3001;&#x7F13;&#x51B2;&#x533A;&#x548C;&#x5B50;&#x6A21;&#x5757;&#x3002;</p>
+<p>&#x53C2;&#x6570;&#x548C;&#x7F13;&#x51B2;&#x533A;&#x4EE5;&#x5F20;&#x91CF;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x72B6;&#x6001;&#x3002;&#x53C2;&#x6570;&#x8BB0;&#x5F55;&#xFF0C;&#x800C;&#x7F13;&#x51B2;&#x533A;&#x4E0D;&#x8BB0;&#x5F55;&#x3002;&#x53C2;&#x6570;&#x901A;&#x5E38;&#x662F;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x53EF;&#x8BAD;&#x7EC3;&#x6743;&#x91CD;&#x3002;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x793A;&#x4F8B;&#x5305;&#x62EC;&#x7528;&#x4E8E;&#x6279;&#x5904;&#x7406;&#x89C4;&#x8303;&#x5316;&#x7684;&#x5E73;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x3002;&#x4E3A;&#x4E86;&#x91CD;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x903B;&#x8F91;&#x5757;&#x548C;&#x72B6;&#x6001;&#x5757;&#xFF0C;PyTorch API&#x5141;&#x8BB8;&#x5D4C;&#x5957;&#x6A21;&#x5757;&#x3002;&#x5D4C;&#x5957;&#x6A21;&#x5757;&#x79F0;&#x4E3A;<em>&#x5B50;&#x6A21;&#x5757;</em>&#x3002;</p>
+<p>&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x6CE8;&#x518C;&#x53C2;&#x6570;&#x3001;&#x7F13;&#x51B2;&#x533A;&#x548C;&#x5B50;&#x6A21;&#x5757;&#x3002;&#x6CE8;&#x518C;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>parameters()</code> or <code>buffers()</code>&#x7B49;&#x65B9;&#x6CD5;&#x6765;&#x68C0;&#x7D22;&#x6574;&#x4E2A;(&#x5D4C;&#x5957;&#xFF09;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x6240;&#x6709;&#x53C2;&#x6570;&#x7684;&#x5BB9;&#x5668;&#x3002;&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; <code>to(...)</code>&#x7684;&#x65B9;&#x6CD5;(&#x4F8B;&#x5982; <code>to(torch::kCUDA)</code> &#x5C06;&#x6240;&#x6709;&#x53C2;&#x6570;&#x548C;&#x7F13;&#x51B2;&#x533A;&#x4ECE;CPU&#x79FB;&#x52A8;&#x5230;CUDA&#x5185;&#x5B58;&#xFF09;&#x5728;&#x6574;&#x4E2A;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E0A;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h4 id="&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x5E76;&#x6CE8;&#x518C;&#x53C2;&#x6570;">&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x5E76;&#x6CE8;&#x518C;&#x53C2;&#x6570;</h4>
+<p>&#x4E3A;&#x4E86;&#x5C06;&#x8FD9;&#x4E9B;&#x968F;&#x673A;&#x6570;&#x653E;&#x5165;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x4E00;&#x4E0B;&#x5728;Python&#x63A5;&#x53E3;&#x4E2D;&#x7F16;&#x5199;&#x8FD9;&#x4E2A;&#x7B80;&#x5355;&#x6A21;&#x5757;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> torch
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Net</span><span class="hljs-params">(torch.nn.Module)</span>:</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, N, M)</span>:</span>
+    super(Net, self).__init__()
+    self.W = torch.nn.Parameter(torch.randn(N, M))
+    self.b = torch.nn.Parameter(torch.randn(M))
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, input)</span>:</span>
+    <span class="hljs-keyword">return</span> torch.addmm(self.b, input, self.W)
+</code></pre>
+<p>&#x5728;C++&#x4E2D;&#x5B83;&#x957F;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-comment">#include &lt;torch/torch.h&gt;</span>
+
+struct Net : torch::nn::Module {
+  Net(int64_t N, int64_t M) {
+    W = register_parameter(<span class="hljs-string">&quot;W&quot;</span>, torch::randn({N, M}));
+    b = register_parameter(<span class="hljs-string">&quot;b&quot;</span>, torch::randn(M));
+  }
+  torch::Tensor forward(torch::Tensor input) {
+    <span class="hljs-keyword">return</span> torch::admm(b, input, W);
+  }
+  torch::Tensor W, b;
+};
+</code></pre>
+<p>&#x5C31;&#x50CF;&#x5728;Python&#x4E2D;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B; <code>Net</code>  (&#x4E3A;&#x4E86;&#x7B80;&#x5355;&#x8D77;&#x89C1;&#xFF0C;&#x8FD9;&#x91CC;&#x662F; <code>struct</code> &#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A; <code>class</code>&#xFF09;&#x5E76;&#x4ECE;&#x6A21;&#x5757;&#x57FA;&#x7C7B;&#x6D3E;&#x751F;&#x5B83;&#x3002;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5185;&#x90E8;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; <code>torch::randn</code> &#x521B;&#x5EFA;&#x5F20;&#x91CF;&#xFF0C;&#x5C31;&#x50CF;&#x5728;Python&#x4E2D;&#x4F7F;&#x7528;<code>torch.randn</code>&#x4E00;&#x6837;&#x3002;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x533A;&#x522B;&#x662F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x6CE8;&#x518C;&#x53C2;&#x6570;&#x3002;&#x5728;Python&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7528;<code>torch.nn.Parameter</code>&#x7C7B;&#x6765;&#x5305;&#x88C5;&#x5F20;&#x91CF;&#xFF0C;&#x800C;&#x5728;C++&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x901A;&#x8FC7; <code>register_parameter</code> &#x53C2;&#x6570;&#x65B9;&#x6CD5;&#x6765;&#x4F20;&#x9012;&#x5F20;&#x91CF;&#x3002;&#x539F;&#x56E0;&#x662F;Python API&#x53EF;&#x4EE5;&#x68C0;&#x6D4B;&#x5230;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;&#x4E3A; <code>torch.nn.Parameter</code> &#xFF0C;&#x5E76;&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x8FD9;&#x4E9B;&#x5F20;&#x91CF;&#x3002;&#x5728;C++&#x4E2D;&#xFF0C;&#x53CD;&#x5C04;&#x662F;&#x975E;&#x5E38;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x66F4;&#x4F20;&#x7EDF;&#x7684;(&#x548C;&#x4E0D;&#x592A;&#x795E;&#x5947;&#x7684;&#xFF09;&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="&#x6CE8;&#x518C;&#x5B50;&#x6A21;&#x5757;&#x5E76;&#x904D;&#x5386;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x7ED3;&#x6784;">&#x6CE8;&#x518C;&#x5B50;&#x6A21;&#x5757;&#x5E76;&#x904D;&#x5386;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x7ED3;&#x6784;</h4>
+<p>&#x540C;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x53C2;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x5B50;&#x6A21;&#x5757;&#x3002;&#x5728;Python&#x4E2D;&#xFF0C;&#x5F53;&#x5B50;&#x6A21;&#x5757;&#x88AB;&#x6307;&#x5B9A;&#x4E3A;&#x6A21;&#x5757;&#x7684;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x5C06;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x548C;&#x6CE8;&#x518C;&#x5B50;&#x6A21;&#x5757;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Net</span><span class="hljs-params">(torch.nn.Module)</span>:</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, N, M)</span>:</span>
+      super(Net, self).__init__()
+      <span class="hljs-comment"># Registered as a submodule behind the scenes</span>
+      self.linear = torch.nn.Linear(N, M)
+      self.another_bias = torch.nn.Parameter(torch.rand(M))
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, input)</span>:</span>
+    <span class="hljs-keyword">return</span> self.linear(input) + self.another_bias
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x8FD9;&#x5141;&#x8BB8;&#x4F7F;&#x7528; <code>parameters()</code> &#x65B9;&#x6CD5;&#x9012;&#x5F52;&#x8BBF;&#x95EE;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-meta">&gt;&gt;&gt; </span>net = Net(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(list(net.parameters()))
+[Parameter containing:
+tensor([<span class="hljs-number">0.0808</span>, <span class="hljs-number">0.8613</span>, <span class="hljs-number">0.2017</span>, <span class="hljs-number">0.5206</span>, <span class="hljs-number">0.5353</span>], requires_grad=<span class="hljs-keyword">True</span>), Parameter containing:
+tensor([[<span class="hljs-number">-0.3740</span>, <span class="hljs-number">-0.0976</span>, <span class="hljs-number">-0.4786</span>, <span class="hljs-number">-0.4928</span>],
+ [<span class="hljs-number">-0.1434</span>,  <span class="hljs-number">0.4713</span>,  <span class="hljs-number">0.1735</span>, <span class="hljs-number">-0.3293</span>],
+ [<span class="hljs-number">-0.3467</span>, <span class="hljs-number">-0.3858</span>,  <span class="hljs-number">0.1980</span>,  <span class="hljs-number">0.1986</span>],
+ [<span class="hljs-number">-0.1975</span>,  <span class="hljs-number">0.4278</span>, <span class="hljs-number">-0.1831</span>, <span class="hljs-number">-0.2709</span>],
+ [ <span class="hljs-number">0.3730</span>,  <span class="hljs-number">0.4307</span>,  <span class="hljs-number">0.3236</span>, <span class="hljs-number">-0.0629</span>]], requires_grad=<span class="hljs-keyword">True</span>), Parameter containing:
+tensor([ <span class="hljs-number">0.2038</span>,  <span class="hljs-number">0.4638</span>, <span class="hljs-number">-0.2023</span>,  <span class="hljs-number">0.1230</span>, <span class="hljs-number">-0.0516</span>], requires_grad=<span class="hljs-keyword">True</span>)]
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x5728;C++&#x4E2D;&#x6CE8;&#x518C;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x4F7F;&#x7528;&#x6070;&#x5F53;&#x547D;&#x540D;&#x7684; <code>register_module()</code> &#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5C31;&#x50CF; <code>torch::nn::Linear</code>:&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<pre><code class="lang-py">struct Net : torch::nn::Module {
+  Net(int64_t N, int64_t M)
+      : linear(register_module(<span class="hljs-string">&quot;linear&quot;</span>, torch::nn::Linear(N, M))) {
+    another_bias = register_parameter(<span class="hljs-string">&quot;b&quot;</span>, torch::randn(M));
+  }
+  torch::Tensor forward(torch::Tensor input) {
+    <span class="hljs-keyword">return</span> linear(input) + another_bias;
+  }
+  torch::nn::Linear linear;
+  torch::Tensor another_bias;
+};
+</code></pre>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x7684; <code>torch::nn</code> &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6587;&#x6863;&#x4E2D;&#x627E;&#x5230;&#x53EF;&#x7528;&#x5185;&#x7F6E;&#x6A21;&#x5757;&#x7684;&#x5B8C;&#x6574;&#x5217;&#x8868;&#xFF0C;&#x5982; <code>torch::nn::Linear</code>, <code>torch::nn::Dropout</code> &#x548C; <code>torch::nn::Conv2d</code> &#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;&#x4E00;&#x4E2A;&#x5FAE;&#x5999;&#x4E4B;&#x5904;&#x5C31;&#x662F;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x8981;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x521D;&#x59CB;&#x503C;&#x8BBE;&#x5B9A;&#x9879;&#x5217;&#x8868;&#x4E2D;&#x521B;&#x5EFA;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x800C;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E3B;&#x4F53;&#x4E2D;&#x521B;&#x5EFA;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x7406;&#x7531;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4E0B;&#x9762;&#x8FDB;&#x4E00;&#x6B65;&#x8BA8;&#x8BBA;C++&#x524D;&#x7AEF;&#x7684; <em>ownership model</em> &#x3002;&#x6700;&#x7EC8;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x5728;Python&#x4E2D;&#x90A3;&#x6837;&#x9012;&#x5F52;&#x5730;&#x8BBF;&#x95EE;&#x6811;&#x7684;&#x6A21;&#x5757;&#x7684;&#x53C2;&#x6570;&#x3002;&#x8C03;&#x7528;&#x53C2;&#x6570; <code>parameters()</code> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FED;&#x4EE3;&#x7684; <code>std::vector&amp;lt;torch::Tensor&amp;gt;</code>&#xFF1A;</p>
+<pre><code class="lang-py">int main() {
+  Net net(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>);
+  <span class="hljs-keyword">for</span> (const auto&amp; p : net.parameters()) {
+    std::cout &lt;&lt; p &lt;&lt; std::endl;
+  }
+}
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-py">root@fa350df05ecf:/home/build<span class="hljs-comment"># ./dcgan</span>
+<span class="hljs-number">0.0345</span>
+<span class="hljs-number">1.4456</span>
+<span class="hljs-number">-0.6313</span>
+<span class="hljs-number">-0.3585</span>
+<span class="hljs-number">-0.4008</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">5</span>} ]
+<span class="hljs-number">-0.1647</span>  <span class="hljs-number">0.2891</span>  <span class="hljs-number">0.0527</span> <span class="hljs-number">-0.0354</span>
+<span class="hljs-number">0.3084</span>  <span class="hljs-number">0.2025</span>  <span class="hljs-number">0.0343</span>  <span class="hljs-number">0.1824</span>
+<span class="hljs-number">-0.4630</span> <span class="hljs-number">-0.2862</span>  <span class="hljs-number">0.2500</span> <span class="hljs-number">-0.0420</span>
+<span class="hljs-number">0.3679</span> <span class="hljs-number">-0.1482</span> <span class="hljs-number">-0.0460</span>  <span class="hljs-number">0.1967</span>
+<span class="hljs-number">0.2132</span> <span class="hljs-number">-0.1992</span>  <span class="hljs-number">0.4257</span>  <span class="hljs-number">0.0739</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">5</span>,<span class="hljs-number">4</span>} ]
+<span class="hljs-number">0.01</span> *
+<span class="hljs-number">3.6861</span>
+<span class="hljs-number">-10.1166</span>
+<span class="hljs-number">-45.0333</span>
+<span class="hljs-number">7.9983</span>
+<span class="hljs-number">-20.0705</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">5</span>} ]
+</code></pre>
+<p>&#x5C31;&#x50CF;&#x5728;Python&#x4E2D;&#x4E00;&#x6837;&#x8FD9;&#x91CC;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x4E3A;&#x4E86;&#x770B;&#x5230;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#xFF0C;C++ API&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; <code>named_parameters()</code>&#x53C2;&#x6570;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x50CF;Python&#x4E00;&#x6837;&#x8FD4;&#x56DE; <code>named_parameters()</code>&#xFF1A;</p>
+<pre><code class="lang-py">Net net(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>);
+<span class="hljs-keyword">for</span> (const auto&amp; pair : net.named_parameters()) {
+  std::cout &lt;&lt; pair.key() &lt;&lt; <span class="hljs-string">&quot;: &quot;</span> &lt;&lt; pair.value() &lt;&lt; std::endl;
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x518D;&#x6B21;&#x6267;&#x884C;&#x6765;&#x67E5;&#x770B;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">root@fa350df05ecf:/home/build<span class="hljs-comment"># make &amp;&amp; ./dcgan                                                                                                                                            11:13:48</span>
+Scanning dependencies of target dcgan
+[ <span class="hljs-number">50</span>%] Building CXX object CMakeFiles/dcgan.dir/dcgan.cpp.o
+[<span class="hljs-number">100</span>%] Linking CXX executable dcgan
+[<span class="hljs-number">100</span>%] Built target dcgan
+b: <span class="hljs-number">-0.1863</span>
+<span class="hljs-number">-0.8611</span>
+<span class="hljs-number">-0.1228</span>
+<span class="hljs-number">1.3269</span>
+<span class="hljs-number">0.9858</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">5</span>} ]
+linear.weight:  <span class="hljs-number">0.0339</span>  <span class="hljs-number">0.2484</span>  <span class="hljs-number">0.2035</span> <span class="hljs-number">-0.2103</span>
+<span class="hljs-number">-0.0715</span> <span class="hljs-number">-0.2975</span> <span class="hljs-number">-0.4350</span> <span class="hljs-number">-0.1878</span>
+<span class="hljs-number">-0.3616</span>  <span class="hljs-number">0.1050</span> <span class="hljs-number">-0.4982</span>  <span class="hljs-number">0.0335</span>
+<span class="hljs-number">-0.1605</span>  <span class="hljs-number">0.4963</span>  <span class="hljs-number">0.4099</span> <span class="hljs-number">-0.2883</span>
+<span class="hljs-number">0.1818</span> <span class="hljs-number">-0.3447</span> <span class="hljs-number">-0.1501</span> <span class="hljs-number">-0.0215</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">5</span>,<span class="hljs-number">4</span>} ]
+linear.bias: <span class="hljs-number">-0.0250</span>
+<span class="hljs-number">0.0408</span>
+<span class="hljs-number">0.3756</span>
+<span class="hljs-number">-0.2149</span>
+<span class="hljs-number">-0.3636</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">5</span>} ]
+</code></pre>
+<p>&#x7B14;&#x8BB0;</p>
+<p><code>torch::nn::Module</code> &#x7684;<a href="https://pytorch.org/cppdocs/api/classtorch_1_1nn_1_1_module.html#exhale-class-classtorch-1-1nn-1-1-module" target="_blank">&#x6587;&#x6863;</a> &#x5305;&#x542B;&#x5728;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E0A;&#x64CD;&#x4F5C;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x5B8C;&#x6574;&#x6E05;&#x5355;&#x3002;</p>
+<h4 id="&#x5728;&#x6B63;&#x5411;&#x6A21;&#x5F0F;&#x4E2D;&#x8FD0;&#x884C;&#x7F51;&#x7EDC;">&#x5728;&#x6B63;&#x5411;&#x6A21;&#x5F0F;&#x4E2D;&#x8FD0;&#x884C;&#x7F51;&#x7EDC;</h4>
+<p>&#x4E3A;&#x4E86;&#x5728;C++&#x4E2D;&#x8FD0;&#x884C;&#x7F51;&#x7EDC;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684; <code>forward()</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-py">int main() {
+  Net net(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>);
+  std::cout &lt;&lt; net.forward(torch::ones({<span class="hljs-number">2</span>, <span class="hljs-number">4</span>})) &lt;&lt; std::endl;
+}
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-py">root@fa350df05ecf:/home/build<span class="hljs-comment"># ./dcgan</span>
+<span class="hljs-number">0.8559</span>  <span class="hljs-number">1.1572</span>  <span class="hljs-number">2.1069</span> <span class="hljs-number">-0.1247</span>  <span class="hljs-number">0.8060</span>
+<span class="hljs-number">0.8559</span>  <span class="hljs-number">1.1572</span>  <span class="hljs-number">2.1069</span> <span class="hljs-number">-0.1247</span>  <span class="hljs-number">0.8060</span>
+[ Variable[CPUFloatType]{<span class="hljs-number">2</span>,<span class="hljs-number">5</span>} ]
+</code></pre>
+<h4 id="&#x6A21;&#x5757;&#x6240;&#x6709;&#x6743;">&#x6A21;&#x5757;&#x6240;&#x6709;&#x6743;</h4>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x5B9A;&#x4E49;C++&#x4E2D;&#x7684;&#x6A21;&#x5757;&#x3001;&#x5BC4;&#x5B58;&#x5668;&#x53C2;&#x6570;&#x3001;&#x5BC4;&#x5B58;&#x5668;&#x5B50;&#x6A21;&#x5757;&#x3001;&#x901A;&#x8FC7;&#x53C2;&#x6570; <code>parameters()</code> &#x7B49;&#x65B9;&#x6CD5;&#x904D;&#x5386;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#xFF0C;&#x548C;&#x6700;&#x540E;&#x8FD0;&#x884C;&#x6A21;&#x5757;&#x7684; <code>forward()</code> &#x65B9;&#x6CD5;&#x3002;&#x5728;C++ API&#x4E2D;&#x6709;&#x66F4;&#x591A;&#x7684;&#x65B9;&#x6CD5;&#x3001;&#x7C7B;&#x548C;&#x4E3B;&#x9898;&#x8981;&#x6211;&#x4EEC;&#x601D;&#x8003;&#xFF0C;&#x4F46;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4F1A;&#x5411;&#x4F60;&#x4ECB;&#x7ECD;&#x5B8C;&#x6574;&#x6E05;&#x5355; <a href="https://pytorch.org/cppdocs/api/namespace_torch__nn.html" target="_blank">&#x6587;&#x6863;</a> &#x3002;&#x6211;&#x4EEC;&#x5728;&#x4E00;&#x79D2;&#x949F;&#x5185;&#x5B9E;&#x73B0; DCGAN&#x6A21;&#x578B;&#x548C;&#x7AEF;&#x5230;&#x7AEF;&#x8BAD;&#x7EC3;&#x7BA1;&#x9053;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x8FD8;&#x5C06;&#x6D89;&#x53CA;&#x66F4;&#x591A;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x8FD9;&#x6837;&#x505A;&#x4E4B;&#x524D;&#xFF0C;&#x8BA9;&#x6211;&#x7B80;&#x5355;&#x5730;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;C++&#x524D;&#x7AEF;&#x7684;&#x6240;&#x6709;&#x6743;&#x6A21;&#x578B;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86; <code>torch::nn::Module</code>.&#x6A21;&#x5757;&#x7684;&#x5B50;&#x7C7B;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x8BBA;&#x8FF0;&#xFF0C;&#x6240;&#x6709;&#x6743;&#x6A21;&#x578B;&#x6307;&#x7684;&#x662F;&#x6A21;&#x5757;&#x7684;&#x5B58;&#x50A8;&#x548C;&#x4F20;&#x9012;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x51B3;&#x5B9A;&#x4E86;&#x8C01;&#x6216;&#x4EC0;&#x4E48;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x6A21;&#x5757;&#x5B9E;&#x4F8B;&#x3002;&#x5728;Python&#x4E2D;&#xFF0C;&#x5BF9;&#x8C61;&#x603B;&#x662F;&#x52A8;&#x6001;&#x5206;&#x914D;(&#x5728;&#x5806;&#x4E0A;&#xFF09;&#x5E76;&#x5177;&#x6709;&#x5F15;&#x7528;&#x8BED;&#x4E49;&#x3002;&#x8FD9;&#x5F88;&#x5BB9;&#x6613;&#x64CD;&#x4F5C;&#xFF0C;&#x4E5F;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5728;Python&#x4E2D;&#xFF0C;&#x60A8;&#x5927;&#x53EF;&#x4EE5;&#x5FD8;&#x8BB0;&#x5BF9;&#x8C61;&#x7684;&#x4F4D;&#x7F6E;&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x88AB;&#x5F15;&#x7528;&#x7684;&#xFF0C;&#x800C;&#x66F4;&#x4E13;&#x6CE8;&#x4E8E;&#x5B8C;&#x6210;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>C++&#x662F;&#x4E00;&#x79CD;&#x8FD9;&#x4E2A;&#x9886;&#x57DF;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x9009;&#x62E9;&#x7684;&#x4F4E;&#x7EA7;&#x8BED;&#x8A00;&#x3002;&#x5B83;&#x66F4;&#x52A0;&#x4E86;&#x590D;&#x6742;&#xFF0C;&#x5E76;&#x4E25;&#x91CD;&#x5F71;&#x54CD;&#x4E86;C++&#x524D;&#x7AEF;&#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x4EBA;&#x673A;&#x5DE5;&#x7A0B;&#x5B66;&#x3002;&#x7279;&#x522B;&#x5730;&#xFF0C;&#x5BF9;&#x4E8E;C++&#x524D;&#x7AEF;&#x4E2D;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x503C;&#x8BED;&#x4E49;&#x6216;&#x5F15;&#x7528;&#x8BED;&#x4E49;&#x3002;&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x5E76;&#x5728;&#x8FC4;&#x4ECA;&#x4E3A;&#x6B62;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#x663E;&#x793A;&#xFF1A;&#x5F53;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x5728;&#x5806;&#x6808;&#x4E0A;&#x5206;&#x914D;&#x7684;&#x6A21;&#x5757;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x590D;&#x5236;&#x3001;&#x79FB;&#x52A8;(&#x4F7F;&#x7528; <code>std::move</code>)&#xFF09;&#x6216;&#x901A;&#x8FC7;&#x5F15;&#x7528;&#x548C;&#x6307;&#x9488;&#x83B7;&#x53D6;&#xFF1A;</p>
+<pre><code class="lang-py">struct Net : torch::nn::Module { };
+
+void a(Net net) { }
+void b(Net&amp; net) { }
+void c(Net* net) { }
+
+int main() {
+  Net net;
+  a(net);
+  a(std::move(net));
+  b(net);
+  c(&amp;net);
+}
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;&#x2014;&#x2014;&#x5F15;&#x7528;&#x8BED;&#x4E49;&#x2014;&#x2014;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>std::shared_ptr</code>.&#x3002;&#x5F15;&#x7528;&#x8BED;&#x4E49;&#x7684;&#x4F18;&#x70B9;&#x5728;&#x4E8E;&#xFF0C;&#x4E0E;Python&#x4E00;&#x6837;&#xFF0C;&#x5B83;&#x51CF;&#x5C11;&#x4E86;&#x8BA4;&#x77E5;&#x6A21;&#x5757;&#x5982;&#x4F55;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x58F0;&#x660E;&#x53C2;&#x6570;(&#x5047;&#x8BBE;&#x5728;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x90FD;&#x4F7F;&#x7528;<code>shared_ptr</code> )&#x3002;</p>
+<pre><code class="lang-py">struct Net : torch::nn::Module {};
+
+void a(std::shared_ptr&lt;Net&gt; net) { }
+
+int main() {
+  auto net = std::make_shared&lt;Net&gt;();
+  a(net);
+}
+</code></pre>
+<p>&#x636E;&#x4EE5;&#x5F80;&#x7ECF;&#x9A8C;&#xFF0C;&#x6765;&#x81EA;&#x52A8;&#x6001;&#x8BED;&#x8A00;&#x7684;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x5F15;&#x7528;&#x8BED;&#x4E49;&#x800C;&#x4E0D;&#x662F;&#x503C;&#x8BED;&#x4E49;&#xFF0C;&#x5373;&#x4F7F;&#x540E;&#x8005;&#x5BF9;&#x4E8E;&#x800C;&#x8A00;C++&#x66F4;&#x4E3A;&#x201C;&#x672C;&#x571F;&#x201D;&#x3002;&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E3A;&#x4E86;&#x63A5;&#x8FD1;PythonAPI&#x7684;&#x4EBA;&#x673A;&#x5DE5;&#x7A0B;&#x5B66;&#xFF0C;<code>torch::nn::Module</code>&#x7684;&#x8BBE;&#x8BA1;&#x4F9D;&#x8D56;&#x4E8E;&#x6240;&#x6709;&#x6743;&#x7684;&#x5171;&#x4EAB;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x6211;&#x4EEC;&#x4E4B;&#x524D;(&#x6B64;&#x5904;&#x7B80;&#x79F0;&#xFF09;&#x5BF9;<code>Net</code>&#x7684;&#x5B9A;&#x4E49;&#x4E3A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-py">struct Net : torch::nn::Module {
+  Net(int64_t N, int64_t M)
+    : linear(register_module(<span class="hljs-string">&quot;linear&quot;</span>, torch::nn::Linear(N, M)))
+  { }
+  torch::nn::Linear linear;
+};
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x7528; <code>linear</code> &#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5C06;&#x5176;&#x76F4;&#x63A5;&#x5B58;&#x50A8;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x7C7B;&#x4E2D;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x5E0C;&#x671B;&#x6A21;&#x5757;&#x57FA;&#x7C7B;&#x4E86;&#x89E3;&#x5E76;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x5B58;&#x50A8;&#x5BF9;&#x6B64;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x5F15;&#x7528;&#x3002;&#x5728;&#x8FD9;&#x4E00;&#x70B9;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8FBE;&#x5230;&#x4E86;&#x6240;&#x6709;&#x6743;&#x5171;&#x4EAB;&#x7684;&#x9700;&#x6C42;&#x3002; <code>torch::nn::Module</code> &#x7C7B;&#x548C; &#x5177;&#x4F53;&#x7C7B; <code>Net</code> &#x90FD;&#x9700;&#x8981;&#x5F15;&#x7528;&#x5B50;&#x6A21;&#x5757;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x57FA;&#x7C7B;&#x5C06;&#x6A21;&#x5757;&#x5B58;&#x50A8;&#x4E3A;<code>shared_ptr</code>&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x4E5F;&#x5FC5;&#x987B;&#x5B58;&#x50A8;&#x3002;</p>
+<p>&#x7B49;&#x7B49;&#xFF01;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x6211;&#x6CA1;&#x6709;&#x770B;&#x5230;&#x5B83;&#x63D0;&#x53CA;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#xFF01;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#xFF1F;&#x56E0;&#x4E3A;<code>std::shared_ptr&amp;lt;MyModule&amp;gt;</code>&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x96BE;&#x8F93;&#x5165;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x7684;&#x5DE5;&#x4F5C;&#x6548;&#x7387;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x7CBE;&#x5FC3;&#x8BBE;&#x8BA1;&#x7684;&#x65B9;&#x6848;&#x6765;&#x9690;&#x85CF;&#x5E94;&#x8BE5;&#x63D0;&#x53CA;&#x7684;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x2014;&#x2014;&#x8FD9;&#x662F;&#x4FDD;&#x7559;&#x503C;&#x8BED;&#x4E49;&#x7684;&#x597D;&#x5904;&#xFF0C;&#x5B83;&#x540C;&#x65F6;&#x4FDD;&#x7559;&#x4E86;&#x5F15;&#x7528;&#x8BED;&#x4E49;&#x3002;&#x8981;&#x4E86;&#x89E3;&#x8FD9;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6838;&#x5FC3;&#x5E93;&#x4E2D;<code>torch::nn::Linear</code>&#x6A21;&#x5757;&#x7684;&#x7B80;&#x5316;&#x5B9A;&#x4E49;(&#x5B8C;&#x6574;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-py">struct LinearImpl : torch::nn::Module {
+  LinearImpl(int64_t <span class="hljs-keyword">in</span>, int64_t out);
+
+  Tensor forward(const Tensor&amp; input);
+
+  Tensor weight, bias;
+};
+
+TORCH_MODULE(Linear);
+</code></pre>
+<p>&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF1A;&#x6A21;&#x5757;&#x4E0D;&#x662F; <code>Linear</code>,&#x800C;&#x662F; <code>LinearImpl</code>.&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5B8F;&#x5B9A;&#x4E49;&#xFF0C;&#x5373; <code>TORCH_MODULE</code> &#x5B9A;&#x4E49;&#x7684;&#x771F;&#x6B63;&#x7684;  <code>Linear</code> &#x3002;&#x8FD9;&#x4E2A;&#x201C;&#x751F;&#x6210;&#x7684;&#x201D;&#x7C7B;&#x5B9E;&#x9645;&#x4E0A;&#x662F;<code>std::shared_ptr&amp;lt;LinearImpl&amp;gt;</code>&#x7684;&#x5C01;&#x88C5;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5C01;&#x88C5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x6309;&#x9884;&#x671F;&#x5DE5;&#x4F5C;&#xFF0C;&#x5373;&#x60A8;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x7F16;&#x5199; <code>torch::nn::Linear(3, 4)</code>&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5199; <code>std::make_shared&amp;lt;LinearImpl&amp;gt;(3, 4)</code>&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5B8F;&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x79F0;&#x4E3A;&#x6A21;&#x5757;&#x5BB9;&#x5668;&#x3002;&#x4E0E;(&#x5171;&#x4EAB;&#xFF09;&#x6307;&#x9488;&#x7C7B;&#x4F3C;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x64CD;&#x4F5C;&#x7B26;(&#x5982; <code>model-&amp;gt;forward(...)</code>)&#x8BBF;&#x95EE;&#x57FA;&#x7840;&#x5BF9;&#x8C61;&#x3002;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x4E0E;PythonAPI&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#x7684;&#x6240;&#x6709;&#x6743;&#x6A21;&#x578B;&#x3002;&#x5F15;&#x7528;&#x8BED;&#x4E49;&#x6210;&#x4E3A;&#x9ED8;&#x8BA4;&#x8BED;&#x4E49;&#xFF0C;&#x4F46;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x8F93;&#x5165;<code>std::shared_ptr</code> &#x6216;&#x8005; <code>std::make_shared</code>&#x3002;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x4FDD;&#x6301;&#x5668;API&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-py">struct NetImpl : torch::nn::Module {};
+TORCH_MODULE(Net);
+
+void a(Net net) { }
+
+int main() {
+  Net net;
+  a(net);
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x5FAE;&#x5999;&#x7684;&#x95EE;&#x9898;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x3002;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x7684; <code>std::shared_ptr</code> &#x4E3A;&#x201C;&#x7A7A;&#x201D;&#xFF0C;&#x5373;&#x5305;&#x542B;&#x7A7A;&#x6307;&#x9488;&#x3002;&#x4EC0;&#x4E48;&#x662F;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x7684; <code>Linear</code> &#x6216;&#x8005;<code>Net</code>&#xFF1F;&#x55EF;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x68D8;&#x624B;&#x7684;&#x9009;&#x62E9;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BF4;&#x5B83;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;(&#x7A7A;&#xFF09; <code>std::shared_ptr&amp;lt;LinearImpl&amp;gt</code>&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C; <code>Linear(3, 4)</code> &#x4E0E; <code>std::make_shared&amp;lt;LinearImpl&amp;gt;(3, 4)</code>&#x76F8;&#x540C;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x51B3;&#x5B9A; <code>Linear linear</code>&#xFF1B;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x6307;&#x9488;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x4E0D;&#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x6784;&#x9020;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x6216;&#x8005;&#x9ED8;&#x8BA4;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x5F53;&#x524D;API&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x7684;&#x6A21;&#x5757;&#x6301;&#x6709;&#x8005;(&#x5982; <code>Linear()</code>))&#x8C03;&#x7528;&#x5E95;&#x5C42;&#x6A21;&#x5757;&#x7684;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;(<code>LinearImpl()</code>&#xFF09;&#x3002;&#x5982;&#x679C;&#x5E95;&#x5C42;&#x6A21;&#x5757;&#x6CA1;&#x6709;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#x9519;&#x8BEF;&#x3002;&#x8981;&#x6784;&#x9020;&#x7A7A;&#x5BB9;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;<code>nullptr</code>&#x4F20;&#x9012;&#x7ED9;&#x5BB9;&#x5668;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x524D;&#x9762;&#x6240;&#x793A;&#x7684;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x5176;&#x4E2D;&#x6A21;&#x5757;&#x5728;&#x521D;&#x59CB;&#x503C; <em>initializer list</em>&#x4E2D;&#x6CE8;&#x518C;&#x548C;&#x6784;&#x9020;&#xFF1A;</p>
+<pre><code class="lang-py">struct Net : torch::nn::Module {
+  Net(int64_t N, int64_t M)
+    : linear(register_module(<span class="hljs-string">&quot;linear&quot;</span>, torch::nn::Linear(N, M)))
+  { }
+  torch::nn::Linear linear;
+};
+</code></pre>
+<p>&#x6216;&#x8005;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5148;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x6307;&#x9488;&#x6784;&#x9020;&#x6240;&#x6709;&#x8005;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5206;&#x914D;&#x7ED9;&#x5B83;(&#x5BF9;Pythonistas&#x66F4;&#x719F;&#x6089;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-py">struct Net : torch::nn::Module {
+  Net(int64_t N, int64_t M) {
+    linear = register_module(<span class="hljs-string">&quot;linear&quot;</span>, torch::nn::Linear(N, M));
+  }
+  torch::nn::Linear linear{nullptr}; // construct an empty holder
+};
+</code></pre>
+<p>&#x603B;&#x4E4B;&#xFF1A;&#x60A8;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x6240;&#x6709;&#x6743;&#x6A21;&#x578B;&#x2014;&#x2014;&#x54EA;&#x79CD;&#x8BED;&#x4E49;&#xFF1F;C++&#x524D;&#x7AEF;&#x7684;API&#x6700;&#x4F18;&#x5316;&#x652F;&#x6301;&#x6A21;&#x5757;&#x6301;&#x6709;&#x8005;&#x63D0;&#x4F9B;&#x7684;&#x6240;&#x6709;&#x6743;&#x6A21;&#x578B;&#x3002;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x7684;&#x552F;&#x4E00;&#x7F3A;&#x70B9;&#x662F;&#x5728;&#x6A21;&#x5757;&#x58F0;&#x660E;&#x4E0B;&#x9762;&#x591A;&#x4E86;&#x4E00;&#x884C;&#x6837;&#x677F;&#x6587;&#x4EF6;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x578B;&#x4ECD;&#x7136;&#x662F;&#x5728;C++&#x6A21;&#x5757;&#x7684;&#x4ECB;&#x7ECD;&#x4E2D;&#x6240;&#x663E;&#x793A;&#x7684;&#x503C;&#x8BED;&#x4E49;&#x6A21;&#x578B;&#x3002;&#x5BF9;&#x4E8E;&#x5C0F;&#x7684;&#x3001;&#x7B80;&#x5355;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x6446;&#x8131;&#x5B83;&#x3002;&#x4F46;&#x4F60;&#x8FDF;&#x65E9;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x51FA;&#x4E8E;&#x6280;&#x672F;&#x539F;&#x56E0;&#xFF0C;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x652F;&#x6301;&#x5B83;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5E8F;&#x5217;&#x5316;API(<code>torch::save</code> &#x548C; <code>torch::load</code>)&#x53EA;&#x652F;&#x6301;&#x6A21;&#x5757;&#x6301;&#x6709;&#x8005;(&#x6216;&#x7EAF; <code>shared_ptr</code>&#xFF09;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6A21;&#x5757;&#x6301;&#x6709;&#x8005;API&#x662F;&#x7528;C++&#x524D;&#x7AEF;&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x7684;&#x63A8;&#x8350;&#x65B9;&#x5F0F;&#xFF0C;&#x4ECA;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x8BE5;API&#x3002;</p>
+<h3 id="&#x5B9A;&#x4E49;dcgan&#x6A21;&#x5757;">&#x5B9A;&#x4E49;DCGAN&#x6A21;&#x5757;</h3>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E86;&#x5FC5;&#x8981;&#x7684;&#x80CC;&#x666F;&#x548C;&#x4ECB;&#x7ECD;&#xFF0C;&#x6765;&#x4E3A;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4EFB;&#x52A1;&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x3002;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#xFF1A;&#x6211;&#x4EEC;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x4ECE;<a href="http://yann.lecun.com/exdb/mnist/" target="_blank">MNIST &#x6570;&#x636E;&#x96C6;</a>&#x4E2D;&#x751F;&#x6210;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x3002;&#x6211;&#x4EEC;&#x60F3;&#x7528;<a href="https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf" target="_blank">&#x751F;&#x6210;&#x5BF9;&#x6297;&#x7F51;&#x7EDC; (GAN)</a> &#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x7279;&#x522B;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; <a href="https://arxiv.org/abs/1511.06434" target="_blank">DCGAN &#x4F53;&#x7CFB;&#x7ED3;&#x6784;</a>&#x2014;&#x2014;&#x5B83;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x4E5F;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4E4B;&#x4E00;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x6765;&#x8BF4;&#x5DF2;&#x7ECF;&#x5B8C;&#x5168;&#x8DB3;&#x591F;&#x4E86;&#x3002;</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6B64; <a href="https://github.com/pytorch/examples/tree/master/cpp/dcgan" target="_blank">&#x5B58;&#x50A8;&#x5E93;</a>&#x4E2D;&#x627E;&#x5230;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;&#x5B8C;&#x6574;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<h4 id="&#x4EC0;&#x4E48;&#x662F;-gan-agan&#xFF1F;">&#x4EC0;&#x4E48;&#x662F; GAN aGAN&#xFF1F;</h4>
+<p>GAN&#x7531;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x7EC4;&#x6210;&#xFF1A;&#x53D1;&#x751F;&#x5668;&#x548C;&#x9274;&#x522B;&#x5668;&#x3002;&#x751F;&#x6210;&#x5668;&#x63A5;&#x6536;&#x6765;&#x81EA;&#x566A;&#x58F0;&#x5206;&#x5E03;&#x7684;&#x6837;&#x672C;&#xFF0C;&#x5176;&#x76EE;&#x7684;&#x662F;&#x5C06;&#x6BCF;&#x4E2A;&#x566A;&#x58F0;&#x6837;&#x672C;&#x8F6C;&#x6362;&#x4E3A;&#x7C7B;&#x4F3C;&#x4E8E;&#x76EE;&#x6807;&#x5206;&#x5E03;&#x7684;&#x56FE;&#x50CF;&#x2014;&#x2014;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x662F;MNIST&#x6570;&#x636E;&#x96C6;&#x3002;&#x9274;&#x522B;&#x5668;&#x53CD;&#x8FC7;&#x6765;&#x63A5;&#x6536;&#x6765;&#x81EA;MNIST&#x6570;&#x636E;&#x96C6;&#x7684;&#x771F;&#x5B9E;&#x56FE;&#x50CF;&#x6216;&#x6765;&#x81EA;&#x751F;&#x6210;&#x5668;&#x7684;&#x5047;&#x56FE;&#x50CF;&#x3002;&#x5B83;&#x88AB;&#x8981;&#x6C42;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x6982;&#x7387;&#x6765;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x56FE;&#x50CF;&#x662F;&#x771F;&#x5B9E;&#x7684;(&#x63A5;&#x8FD1; <code>1</code>)&#xFF09;&#x8FD8;&#x662F;&#x865A;&#x5047;&#x7684;(&#x63A5;&#x8FD1; <code>0</code>)&#xFF09;&#x3002;&#x4ECE;&#x9274;&#x522B;&#x5668;&#x4E0A;&#x5F97;&#x5230;&#x7684;&#x751F;&#x6210;&#x5668;&#x751F;&#x6210;&#x56FE;&#x7247;&#x7684;&#x771F;&#x5B9E;&#x5EA6;&#x7684;&#x53CD;&#x9988;&#x88AB;&#x7528;&#x6765;&#x8BAD;&#x7EC3;&#x751F;&#x6210;&#x5668;&#xFF1B;&#x9274;&#x522B;&#x5668;&#x7684;&#x8FA8;&#x8BC6;&#x5EA6;&#x7684;&#x53CD;&#x9988;&#x5DF2;&#x7ECF;&#x88AB;&#x7528;&#x6765;&#x4F18;&#x5316;&#x9274;&#x522B;&#x5668;&#x3002;&#x7406;&#x8BBA;&#x4E0A;&#xFF0C;&#x53D1;&#x751F;&#x5668;&#x548C;&#x9274;&#x522B;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x5FAE;&#x5999;&#x5E73;&#x8861;&#x4F7F;&#x5B83;&#x4EEC;&#x4E32;&#x8054;&#x6539;&#x8FDB;&#xFF0C;&#x5BFC;&#x81F4;&#x53D1;&#x751F;&#x5668;&#x751F;&#x6210;&#x7684;&#x56FE;&#x50CF;&#x4E0E;&#x76EE;&#x6807;&#x5206;&#x5E03;&#x4E0D;&#x53EF;&#x533A;&#x5206;&#xFF0C;&#x4ECE;&#x800C;&#x611A;&#x5F04;&#x9274;&#x522B;&#x5668;&#x7684;&#x8FA8;&#x8BC6;&#xFF0C;&#x4F7F;&#x771F;&#x5B9E;&#x548C;&#x865A;&#x5047;&#x56FE;&#x50CF;&#x7684;&#x6982;&#x7387;&#x5747;&#x4E3A; <code>0.5</code> &#x3002;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x5B83;&#x63A5;&#x6536;&#x566A;&#x58F0;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x6570;&#x5B57;&#x7684;&#x771F;&#x5B9E;&#x56FE;&#x50CF;&#x4F5C;&#x4E3A;&#x8F93;&#x51FA;&#x3002;</p>
+<h4 id="&#x751F;&#x6210;&#x5668;&#x6A21;&#x5757;">&#x751F;&#x6210;&#x5668;&#x6A21;&#x5757;</h4>
+<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#x5668;&#x6A21;&#x5757;&#xFF0C;&#x5B83;&#x7531;&#x4E00;&#x7CFB;&#x5217;&#x8F6C;&#x7F6E;&#x7684;&#x4E8C;&#x7EF4;&#x5377;&#x79EF;&#x3001;&#x6279;&#x5904;&#x7406;&#x89C4;&#x8303;&#x5316;&#x548C;ReLU&#x6FC0;&#x6D3B;&#x5355;&#x5143;&#x7EC4;&#x6210;&#x3002;&#x4E0E;Python&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;PyTorch&#x4E3A;&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;API&#xFF1A;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x6027;&#x7684;API&#xFF0C;&#x8F93;&#x5165;&#x901A;&#x8FC7;&#x8FDE;&#x7EED;&#x7684;&#x51FD;&#x6570;&#x4F20;&#x9012;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;API&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x5176;&#x4E2D;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6574;&#x4E2A;&#x6A21;&#x578B;&#x4F5C;&#x4E3A;&#x5B50;&#x6A21;&#x5757;&#x7684; <code>Sequential</code> &#x6A21;&#x5757;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x6211;&#x4EEC;&#x7684;&#x751F;&#x6210;&#x5668;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x79CD;API&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x51B3;&#x5B9A;&#x60A8;&#x559C;&#x6B22;&#x54EA;&#x4E00;&#x79CD;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x4F7F;&#x7528; <code>Sequential</code>:&#xFF1A;</p>
+<pre><code class="lang-py">using namespace torch;
+
+nn::Sequential generator(
+    // Layer <span class="hljs-number">1</span>
+    nn::Conv2d(nn::Conv2dOptions(kNoiseSize, <span class="hljs-number">256</span>, <span class="hljs-number">4</span>)
+                   .with_bias(false)
+                   .transposed(true)),
+    nn::BatchNorm(<span class="hljs-number">256</span>),
+    nn::Functional(torch::relu),
+    // Layer <span class="hljs-number">2</span>
+    nn::Conv2d(nn::Conv2dOptions(<span class="hljs-number">256</span>, <span class="hljs-number">128</span>, <span class="hljs-number">3</span>)
+                   .stride(<span class="hljs-number">2</span>)
+                   .padding(<span class="hljs-number">1</span>)
+                   .with_bias(false)
+                   .transposed(true)),
+    nn::BatchNorm(<span class="hljs-number">128</span>),
+    nn::Functional(torch::relu),
+    // Layer <span class="hljs-number">3</span>
+    nn::Conv2d(nn::Conv2dOptions(<span class="hljs-number">128</span>, <span class="hljs-number">64</span>, <span class="hljs-number">4</span>)
+                   .stride(<span class="hljs-number">2</span>)
+                   .padding(<span class="hljs-number">1</span>)
+                   .with_bias(false)
+                   .transposed(true)),
+    nn::BatchNorm(<span class="hljs-number">64</span>),
+    nn::Functional(torch::relu),
+    // Layer <span class="hljs-number">4</span>
+    nn::Conv2d(nn::Conv2dOptions(<span class="hljs-number">64</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>)
+                   .stride(<span class="hljs-number">2</span>)
+                   .padding(<span class="hljs-number">1</span>)
+                   .with_bias(false)
+                   .transposed(true)),
+    nn::Functional(torch::tanh));
+</code></pre>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p> <code>Sequential</code> &#x6A21;&#x5757;&#x53EA;&#x6267;&#x884C;&#x51FD;&#x6570;&#x7EC4;&#x5408;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x6210;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x6210;&#x4E3A;&#x7B2C;&#x56DB;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+<p>&#x6240;&#x9009;&#x7684;&#x7279;&#x5B9A;&#x6A21;&#x5757;(&#x5982; <code>nn::Conv2d</code> &#x548C;<code>nn::BatchNorm</code>&#xFF09;&#x9075;&#x5FAA;&#x524D;&#x9762;&#x6982;&#x8FF0;&#x7684;&#x7ED3;&#x6784;&#x3002; <code>kNoiseSize</code>&#x5E38;&#x91CF;&#x786E;&#x5B9A;&#x8F93;&#x5165;&#x566A;&#x58F0;&#x77E2;&#x91CF;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x4E3A; <code>100</code>.&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;<code>torch::nn::Functional</code>&#x6A21;&#x5757;&#xFF0C;&#x5C06;&#x5185;&#x90E8;&#x5C42;&#x7684;<code>torch::relu</code>&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#xFF0C;&#x6700;&#x540E;&#x6FC0;&#x6D3B;&#x7684;&#x662F; <code>torch::tanh</code> &#x3002;&#x5F53;&#x7136;&#xFF0C;&#x8D85;&#x53C2;&#x6570;&#x662F;&#x901A;&#x8FC7;&#x68AF;&#x5EA6;&#x7684;&#x4E0B;&#x964D;&#x53D1;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x7B14;&#x8BB0;</p>
+<p>Python&#x524D;&#x7AEF;&#x4E3A;&#x6BCF;&#x4E2A;&#x6FC0;&#x6D3B;&#x529F;&#x80FD;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x6BD4;&#x5982; <code>torch.nn.ReLU</code> &#x6216;<code>torch.nn.Tanh</code>&#x3002;&#x5728;C++&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x63D0;&#x4F9B; <code>Functional</code> &#x6A21;&#x5757;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>Functional</code>&#x7684;&#x8F6C;&#x53D1;<code>forward()</code>&#x4E2D;&#x8C03;&#x7528;&#x7684;&#x4EFB;&#x4F55;C++&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x5BF9;&#x4E8E;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x6A21;&#x5757;&#x7684;<code>forward()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x663E;&#x5F0F;&#x5730;&#x5728;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x8F93;&#x5165;(&#x4EE5;&#x51FD;&#x6570;&#x65B9;&#x5F0F;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-py">struct GeneratorImpl : nn::Module {
+  GeneratorImpl()
+      : conv1(nn::Conv2dOptions(kNoiseSize, <span class="hljs-number">512</span>, <span class="hljs-number">4</span>)
+                  .with_bias(false)
+                  .transposed(true)),
+        batch_norm1(<span class="hljs-number">512</span>),
+        conv2(nn::Conv2dOptions(<span class="hljs-number">512</span>, <span class="hljs-number">256</span>, <span class="hljs-number">4</span>)
+                  .stride(<span class="hljs-number">2</span>)
+                  .padding(<span class="hljs-number">1</span>)
+                  .with_bias(false)
+                  .transposed(true)),
+        batch_norm2(<span class="hljs-number">256</span>),
+        conv3(nn::Conv2dOptions(<span class="hljs-number">256</span>, <span class="hljs-number">128</span>, <span class="hljs-number">4</span>)
+                  .stride(<span class="hljs-number">2</span>)
+                  .padding(<span class="hljs-number">1</span>)
+                  .with_bias(false)
+                  .transposed(true)),
+        batch_norm3(<span class="hljs-number">128</span>),
+        conv4(nn::Conv2dOptions(<span class="hljs-number">128</span>, <span class="hljs-number">64</span>, <span class="hljs-number">4</span>)
+                  .stride(<span class="hljs-number">2</span>)
+                  .padding(<span class="hljs-number">1</span>)
+                  .with_bias(false)
+                  .transposed(true)),
+        batch_norm4(<span class="hljs-number">64</span>),
+        conv5(nn::Conv2dOptions(<span class="hljs-number">64</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>)
+                  .stride(<span class="hljs-number">2</span>)
+                  .padding(<span class="hljs-number">1</span>)
+                  .with_bias(false)
+                  .transposed(true)) {}
+
+  torch::Tensor forward(torch::Tensor x) {
+    x = torch::relu(batch_norm1(conv1(x)));
+    x = torch::relu(batch_norm2(conv2(x)));
+    x = torch::relu(batch_norm3(conv3(x)));
+    x = torch::relu(batch_norm4(conv4(x)));
+    x = torch::tanh(conv5(x));
+    <span class="hljs-keyword">return</span> x;
+  }
+
+  nn::Conv2d conv1, conv2, conv3, conv4, conv5;
+  nn::BatchNorm batch_norm1, batch_norm2, batch_norm3, batch_norm4;
+};
+TORCH_MODULE(Generator);
+
+Generator generator;
+</code></pre>
+<p>&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x751F;&#x6210;&#x5668;&#x4E0A;&#x8C03;&#x7528; <code>forward()</code> &#x6765;&#x5C06;<code>Generator</code>&#x566A;&#x58F0;&#x6837;&#x672C;&#x6620;&#x5C04;&#x5230;&#x56FE;&#x50CF;&#x3002;</p>
+<p>&#x7B14;</p>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x77ED;&#x7684;&#x5173;&#x4E8E;&#x8DEF;&#x5F84;&#x9009;&#x62E9;&#x7684;&#x9009;&#x9879;&#x88AB;&#x4F20;&#x9012;&#x5230;C++&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x50CF; <code>Conv2d</code> &#x8FD9;&#x6837;&#x7684;&#x5185;&#x7F6E;&#x6A21;&#x5757;&#xFF1A;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x6709;&#x4E00;&#x4E9B;&#x5FC5;&#x9700;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x6BD4;&#x5982; <code>BatchNorm</code>.&#x7684;&#x7279;&#x5F81;&#x6570;&#x3002;&#x5982;&#x679C;&#x53EA;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x6240;&#x9700;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x76F4;&#x63A5;&#x4F20;&#x9012;&#x7ED9;&#x6A21;&#x5757;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5982;<code>BatchNorm(128)</code> &#x6216; <code>Dropout(0.5)</code> &#x6216; <code>Conv2d(8, 4, 2)</code> (&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x901A;&#x9053;&#x8BA1;&#x6570;&#x3001;&#x8F93;&#x51FA;&#x901A;&#x9053;&#x8BA1;&#x6570;&#x548C;&#x5185;&#x6838;&#x5927;&#x5C0F;&#xFF09;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5176;&#x4ED6;&#x9009;&#x9879;(&#x901A;&#x5E38;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#xFF09;&#xFF0C;&#x4F8B;&#x5982;&#x4F7F;&#x7528; <code>Conv2d</code>&#x7684; <code>with_bias</code> &#xFF0C;&#x5219;&#x9700;&#x8981;&#x6784;&#x9020;&#x5E76;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#x3002;C++&#x524D;&#x7AEF;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x5173;&#x7684;&#x9009;&#x9879;&#x7ED3;&#x6784;&#xFF0C;&#x79F0;&#x4E3A;&#x6A21;&#x5757;&#x9009;&#x9879;&#xFF0C;&#x5176;&#x4E2D;  <code>Module</code>  &#x662F;<code>ModuleOptions</code>  &#xFF0C;&#x6BD4;&#x5982; <code>Linear</code> &#x7684;<code>LinearOptions</code>  &#x3002;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x4E3A;&#x4E0A;&#x9762;&#x7684; <code>Conv2d</code> &#x6A21;&#x5757;&#x6240;&#x505A;&#x7684;&#x3002;</p>
+<h4 id="&#x9274;&#x522B;&#x5668;&#x6A21;&#x5757;">&#x9274;&#x522B;&#x5668;&#x6A21;&#x5757;</h4>
+<p>&#x9274;&#x522B;&#x5668;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E00;&#x7CFB;&#x5217;&#x5377;&#x79EF;&#x3001;&#x6279;&#x91CF;&#x89C4;&#x8303;&#x5316;&#x548C;&#x6FC0;&#x6D3B;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x73B0;&#x5728;&#x5377;&#x79EF;&#x662F;&#x5E38;&#x89C4;&#x7684;&#x800C;&#x4E0D;&#x662F;&#x8F6C;&#x7F6E;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;alpha&#x503C;&#x4E3A;0.2&#x7684;leaky ReLU&#x800C;&#x4E0D;&#x662F;vanilla ReLU&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x6FC0;&#x6D3B;&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;Sigmoid&#xFF0C;&#x5B83;&#x5C06;&#x503C;&#x538B;&#x7F29;&#x5230;0&#x5230;1&#x4E4B;&#x95F4;&#x7684;&#x8303;&#x56F4;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E9B;&#x538B;&#x7F29;&#x503C;&#x89E3;&#x91CA;&#x4E3A;&#x9274;&#x522B;&#x5668;&#x5206;&#x914D;&#x7ED9;&#x56FE;&#x50CF;&#x771F;&#x5B9E;&#x7684;&#x6982;&#x7387;&#xFF1A;</p>
+<pre><code class="lang-py">nn::Sequential discriminator(
+  // Layer <span class="hljs-number">1</span>
+  nn::Conv2d(
+      nn::Conv2dOptions(<span class="hljs-number">1</span>, <span class="hljs-number">64</span>, <span class="hljs-number">4</span>).stride(<span class="hljs-number">2</span>).padding(<span class="hljs-number">1</span>).with_bias(false)),
+  nn::Functional(torch::leaky_relu, <span class="hljs-number">0.2</span>),
+  // Layer <span class="hljs-number">2</span>
+  nn::Conv2d(
+      nn::Conv2dOptions(<span class="hljs-number">64</span>, <span class="hljs-number">128</span>, <span class="hljs-number">4</span>).stride(<span class="hljs-number">2</span>).padding(<span class="hljs-number">1</span>).with_bias(false)),
+  nn::BatchNorm(<span class="hljs-number">128</span>),
+  nn::Functional(torch::leaky_relu, <span class="hljs-number">0.2</span>),
+  // Layer <span class="hljs-number">3</span>
+  nn::Conv2d(
+      nn::Conv2dOptions(<span class="hljs-number">128</span>, <span class="hljs-number">256</span>, <span class="hljs-number">4</span>).stride(<span class="hljs-number">2</span>).padding(<span class="hljs-number">1</span>).with_bias(false)),
+  nn::BatchNorm(<span class="hljs-number">256</span>),
+  nn::Functional(torch::leaky_relu, <span class="hljs-number">0.2</span>),
+  // Layer <span class="hljs-number">4</span>
+  nn::Conv2d(
+      nn::Conv2dOptions(<span class="hljs-number">256</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>).stride(<span class="hljs-number">1</span>).padding(<span class="hljs-number">0</span>).with_bias(false)),
+  nn::Functional(torch::sigmoid));
+</code></pre>
+<p>&#x7B14;&#x8BB0;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x4F20;&#x9012;&#x7ED9; <code>Functional</code> &#x51FD;&#x6570;&#x63A5;&#x53D7;&#x7684;&#x53C2;&#x6570;&#x591A;&#x4E8E;&#x4E00;&#x4E2A;tensor&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x4F20;&#x9012;&#x7ED9; <code>Functional</code> &#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x540E;&#x8005;&#x5C06;&#x628A;&#x5B83;&#x4EEC;&#x8F6C;&#x53D1;&#x7ED9;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3002;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;leaky ReLU&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8C03;&#x7528;&#x4E86;<code>torch::leaky_relu(previous_output_tensor, 0.2)</code> &#x3002;</p>
+<h2 id="&#x52A0;&#x8F7D;&#x6570;&#x636E;">&#x52A0;&#x8F7D;&#x6570;&#x636E;</h2>
+<p>&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x4E86;&#x751F;&#x6210;&#x5668;&#x548C;&#x9274;&#x522B;&#x5668;&#x6A21;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BAD;&#x7EC3;&#x8FD9;&#x4E9B;&#x6A21;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;C++&#x524D;&#x7AEF;&#x4E0E;Python&#x4E00;&#x6837;&#xFF0C;&#x5177;&#x6709;&#x5F3A;&#x5927;&#x7684;&#x5E76;&#x884C;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x7A0B;&#x5E8F;&#x3002;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x4ECE;&#x6570;&#x636E;&#x96C6;(&#x60A8;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#xFF09;&#x4E2D;&#x8BFB;&#x53D6;&#x6279;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x8BB8;&#x591A;&#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x7B14;&#x8BB0;</p>
+<p>Python&#x6570;&#x636E;&#x88C5;&#x8F7D;&#x5668;&#x4F7F;&#x7528;&#x5E76;&#x884C;&#x5904;&#x7406;&#x3002;C++&#x6570;&#x636E;&#x88C5;&#x8F7D;&#x5668;&#x662F;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x542F;&#x52A8;&#x4EFB;&#x4F55;&#x65B0;&#x8FDB;&#x7A0B;&#x3002;</p>
+<p>&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x662F;C++&#x524D;&#x7AEF; <code>data</code> API&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x5305;&#x542B;&#x5728; <code>torch::data::</code> &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;&#x6B64;API&#x7531;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li>&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x7C7B;&#xFF0C;</li>
+<li>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x96C6;&#x7684;API&#xFF0C;</li>
+<li>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x8F6C;&#x6362;&#x7684;API&#xFF0C;&#x53EF;&#x5E94;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x96C6;&#xFF0C;</li>
+<li>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x91C7;&#x6837;&#x5668;&#x7684;API&#xFF0C;&#x8BE5;&#x91C7;&#x6837;&#x5668;&#x751F;&#x6210;&#x7528;&#x4E8E;&#x7D22;&#x5F15;&#x6570;&#x636E;&#x96C6;&#x7684;&#x7D22;&#x5F15;&#xFF0C;</li>
+<li>&#x73B0;&#x6709;&#x6570;&#x636E;&#x96C6;&#x3001;&#x8F6C;&#x6362;&#x548C;&#x91C7;&#x6837;&#x5668;&#x7684;&#x5E93;&#x3002;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x672C;&#x6559;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5E26;&#x6709;C++&#x524D;&#x7AEF;&#x7684; <code>MNIST</code> &#x6570;&#x636E;&#x96C6;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x4E3A;&#x6B64;&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;<code>torch::data::datasets::MNIST</code>&#xFF0C;&#x5E76;&#x5E94;&#x7528;&#x4E24;&#x79CD;&#x8F6C;&#x6362;&#xFF1A;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x56FE;&#x50CF;&#x8FDB;&#x884C;&#x89C4;&#x683C;&#x5316;&#xFF0C;&#x4F7F;&#x5176;&#x5728; <code>-1</code> &#x5230; <code>+1</code> &#x7684;&#x8303;&#x56F4;&#x5185;(&#x4ECE;&#x539F;&#x59CB;&#x8303;&#x56F4; <code>0</code> &#x5230;<code>1</code>&#xFF09;&#x3002;&#x5176;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x7528;&#x4E86;&#x5806;&#x6808;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF0C;&#x5B83;&#x5C06; a batch of tensors&#x6CBF;&#x7740;&#x7B2C;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x5806;&#x53E0;&#x6210;&#x4E00;&#x4E2A;tensor&#xFF1A;</p>
+<pre><code class="lang-py">auto dataset = torch::data::datasets::MNIST(<span class="hljs-string">&quot;./mnist&quot;</span>)
+    .map(torch::data::transforms::Normalize(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>))
+    .map(torch::data::transforms::Stack&lt;&gt;());
+</code></pre>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C; MNIST&#x6570;&#x636E;&#x96C6;&#x5E94;&#x8BE5;&#x4F4D;&#x4E8E;<code>./mnist</code>&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x6267;&#x884C;&#x8BAD;&#x7EC3;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="https://gist.github.com/goldsborough/6dd52a5e01ed73a642c1e772084bcd03" target="_blank">&#x6B64;&#x811A;&#x672C;</a> &#x4E0B;&#x8F7D;MNIST&#x6570;&#x636E;&#x96C6;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x5E76;&#x5C06;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#x3002;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>torch::data::make_data_loader</code>&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x6B63;&#x786E;&#x7C7B;&#x578B;&#x7684;<code>std::unique_ptr</code>(&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x6570;&#x636E;&#x96C6;&#x7684;&#x7C7B;&#x578B;&#x3001;&#x91C7;&#x6837;&#x5668;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-py">auto dataloader = torch::data::make_data_loader(std::move(dataset));
+</code></pre>
+<p>&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x786E;&#x5B9E;&#x6709;&#x5F88;&#x591A;&#x9009;&#x9879;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="https://github.com/pytorch/pytorch/blob/master/torch/csrc/api/include/torch/data/dataloader_options.h" target="_blank">&#x8FD9;&#x91CC;</a>&#x68C0;&#x67E5;&#x6574;&#x5957;&#x8BBE;&#x5907;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E3A;&#x4E86;&#x52A0;&#x901F;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x5DE5;&#x4EBA;&#x7684;&#x6570;&#x91CF;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x96F6;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5C06;&#x4F7F;&#x7528;&#x4E3B;&#x7EBF;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x5C06; <code>workers</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>2</code>,&#xFF0C;&#x5219;&#x4F1A;&#x540C;&#x65F6;&#x751F;&#x6210;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x6765;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x5E94;&#x8BE5;&#x5C06;&#x6279;&#x5927;&#x5C0F;&#x4ECE;&#x9ED8;&#x8BA4;&#x503C; <code>1</code> &#x589E;&#x52A0;&#x5230;&#x66F4;&#x5408;&#x7406;&#x7684;&#x503C;&#xFF0C;&#x6BD4;&#x5982; <code>64</code>  (<code>kBatchSize</code>)&#x7684;&#x503C;&#xFF09;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>DataLoaderOptions</code> &#x5BF9;&#x8C61;&#x5E76;&#x8BBE;&#x7F6E;&#x9002;&#x5F53;&#x7684;&#x5C5E;&#x6027;:</p>
+<pre><code class="lang-py">auto dataloader = torch::data::make_data_loader(
+    std::move(dataset),
+    torch::data::DataLoaderOptions().batch_size(kBatchSize).workers(<span class="hljs-number">2</span>));
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x6765;&#x52A0;&#x8F7D;&#x6279;&#x6570;&#x636E;&#xFF0C;&#x73B0;&#x5728;&#x53EA;&#x8F93;&#x51FA;&#x5230;&#x63A7;&#x5236;&#x53F0;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">for</span> (torch::data::Example&lt;&gt;&amp; batch : *data_loader) {
+  std::cout &lt;&lt; <span class="hljs-string">&quot;Batch size: &quot;</span> &lt;&lt; batch.data.size(<span class="hljs-number">0</span>) &lt;&lt; <span class="hljs-string">&quot; | Labels: &quot;</span>;
+  <span class="hljs-keyword">for</span> (int64_t i = <span class="hljs-number">0</span>; i &lt; batch.data.size(<span class="hljs-number">0</span>); ++i) {
+    std::cout &lt;&lt; batch.target[i].item&lt;int64_t&gt;() &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+  }
+  std::cout &lt;&lt; std::endl;
+}
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x7C7B;&#x578B;&#x662F; <code>torch::data::Example</code>.&#x3002;&#x6B64;&#x7C7B;&#x578B;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7ED3;&#x6784;&#xFF0C;&#x5177;&#x6709; <code>data</code> &#x5B57;&#x6BB5;&#x548C;&#x6807;&#x7B7E; <code>target</code> &#x5B57;&#x6BB5;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x5E94;&#x7528;&#x4E86; <code>Stack</code> &#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF0C;&#x6240;&#x4EE5;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x53EA;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x793A;&#x4F8B;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5E94;&#x7528;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF0C;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#x5C06;&#x751F;&#x6210; <code>std::vector&amp;lt;torch::data::Example&amp;lt;&amp;gt;&amp;gt;</code> &#xFF0C;&#x5728;&#x6279;&#x5904;&#x7406;&#x4E2D;&#x6BCF;&#x4E2A;&#x793A;&#x4F8B;&#x6709;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x5E76;&#x8FD0;&#x884C;&#x6B64;&#x4EE3;&#x7801;&#xFF0C;&#x5219;&#x5E94;&#x8BE5;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-py">root@fa350df05ecf:/home/build<span class="hljs-comment"># make</span>
+Scanning dependencies of target dcgan
+[ <span class="hljs-number">50</span>%] Building CXX object CMakeFiles/dcgan.dir/dcgan.cpp.o
+[<span class="hljs-number">100</span>%] Linking CXX executable dcgan
+[<span class="hljs-number">100</span>%] Built target dcgan
+root@fa350df05ecf:/home/build<span class="hljs-comment"># make</span>
+[<span class="hljs-number">100</span>%] Built target dcgan
+root@fa350df05ecf:/home/build<span class="hljs-comment"># ./dcgan</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">6</span> <span class="hljs-number">6</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span> <span class="hljs-number">9</span> <span class="hljs-number">9</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">7</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">9</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">9</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span>
+Batch size: <span class="hljs-number">64</span> | Labels: <span class="hljs-number">7</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">9</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">7</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">9</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">9</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">8</span> <span class="hljs-number">7</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span> <span class="hljs-number">6</span>
+...
+</code></pre>
+<p>&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x6210;&#x529F;&#x5730;&#x4ECE; MNIST &#x6570;&#x636E;&#x96C6;&#x4E2D;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="&#x7F16;&#x5199;&#x8FED;&#x4EE3;&#x8BAD;&#x7EC3;">&#x7F16;&#x5199;&#x8FED;&#x4EE3;&#x8BAD;&#x7EC3;</h2>
+<p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x793A;&#x4F8B;&#x4E2D;&#x7684;&#x7B97;&#x6CD5;&#x90E8;&#x5206;&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x751F;&#x6210;&#x5668;&#x548C;&#x9274;&#x522B;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x5FAE;&#x5999;&#x8DF3;&#x8DC3;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x4F18;&#x5316;&#x5668;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x9274;&#x522B;&#x5668;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x4F18;&#x5316;&#x5668;&#x5B9E;&#x73B0;&#x4E86; <a href="https://arxiv.org/pdf/1412.6980.pdf" target="_blank">Adam</a> &#x7B97;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-py">torch::optim::Adam generator_optimizer(
+    generator-&gt;parameters(), torch::optim::AdamOptions(2e-4).beta1(0.5));
+torch::optim::Adam discriminator_optimizer(
+    discriminator-&gt;parameters(), torch::optim::AdamOptions(5e-4).beta1(0.5));
+</code></pre>
+<p>&#x7B14;&#x8BB0;</p>
+<p>&#x5728;&#x672C;&#x6587;&#x4E2D;&#xFF0C;C++&#x524D;&#x7AEF;&#x63D0;&#x4F9B;&#x4E86;&#x5B9E;&#x73B0; Adagrad, Adam, LBFGS, RMSprop &#x548C; SGD&#x7684;&#x4F18;&#x5316;&#x5668;&#x3002;&#x8FD9;&#x4E2A;<a href="https://pytorch.org/cppdocs/api/namespace_torch__optim.html" target="_blank">&#x6587;&#x6863;</a>&#x662F;&#x6700;&#x65B0;&#x7684;&#x6E05;&#x5355;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6211;&#x4EEC;&#x7684;&#x8FED;&#x4EE3;&#x8BAD;&#x7EC3;&#x3002;&#x5728;&#x6BCF;&#x4E2A;&#x5468;&#x671F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5916;&#x5FAA;&#x73AF;&#x6765;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x7F16;&#x5199;GAN&#x7684;&#x8BAD;&#x7EC3;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-py">for (int64_t epoch = 1; epoch &lt;= kNumberOfEpochs; ++epoch) {
+  int64_t batch_index = 0;
+  for (torch::data::Example&lt;&gt;&amp; batch : *data_loader) {
+    // Train discriminator with real images.
+    discriminator-&gt;zero_grad();
+    torch::Tensor real_images = batch.data;
+    torch::Tensor real_labels = torch::empty(batch.data.size(0)).uniform_(0.8, 1.0);
+    torch::Tensor real_output = discriminator-&gt;forward(real_images);
+    torch::Tensor d_loss_real = torch::binary_cross_entropy(real_output, real_labels);
+    d_loss_real.backward();
+
+    // Train discriminator with fake images.
+    torch::Tensor noise = torch::randn({batch.data.size(0), kNoiseSize, 1, 1});
+    torch::Tensor fake_images = generator-&gt;forward(noise);
+    torch::Tensor fake_labels = torch::zeros(batch.data.size(0));
+    torch::Tensor fake_output = discriminator-&gt;forward(fake_images.detach());
+    torch::Tensor d_loss_fake = torch::binary_cross_entropy(fake_output, fake_labels);
+    d_loss_fake.backward();
+
+    torch::Tensor d_loss = d_loss_real + d_loss_fake;
+    discriminator_optimizer.step();
+
+    // Train generator.
+    generator-&gt;zero_grad();
+    fake_labels.fill_(1);
+    fake_output = discriminator-&gt;forward(fake_images);
+    torch::Tensor g_loss = torch::binary_cross_entropy(fake_output, fake_labels);
+    g_loss.backward();
+    generator_optimizer.step();
+
+    std::printf(
+        &quot;\r[%2ld/%2ld][%3ld/%3ld] D_loss: %.4f | G_loss: %.4f&quot;,
+        epoch,
+        kNumberOfEpochs,
+        ++batch_index,
+        batches_per_epoch,
+        d_loss.item&lt;float&gt;(),
+        g_loss.item&lt;float&gt;());
+  }
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5728;&#x771F;&#x5B9E;&#x56FE;&#x50CF;&#x4E0A;&#x5BF9;&#x9274;&#x522B;&#x5668;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#xFF0C;Adam&#x5E94;&#x8BE5;&#x4E3A;&#x5176;&#x5206;&#x914D;&#x9AD8;&#x8870;&#x51CF;&#x7387;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; <code>torch::empty(batch.data.size(0)).uniform_(0.8, 1.0)</code> &#x4F5C;&#x4E3A;&#x76EE;&#x6807;&#x6982;&#x7387;&#x3002;</p>
+<p>&#x7B14;&#x8BB0;</p>
+<p>&#x6211;&#x4EEC;&#x9009;&#x53D6;0.8&#x5230;1.0&#x4E4B;&#x95F4;&#x5747;&#x5300;&#x5206;&#x5E03;&#x7684;&#x968F;&#x673A;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;1.0&#xFF0C;&#x4EE5;&#x4F7F;&#x9274;&#x522B;&#x5668;&#x8BAD;&#x7EC3;&#x66F4;&#x52A0;&#x5065;&#x58EE;&#x3002;&#x8FD9;&#x4E2A;&#x6280;&#x5DE7;&#x53EB;&#x505A;label smoothing&#x3002;</p>
+<p>&#x5728;&#x8BC4;&#x4F30;&#x9274;&#x522B;&#x5668;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x53C2;&#x6570;&#x7684;&#x68AF;&#x5EA6;&#x5F52;&#x96F6;&#x3002;&#x8BA1;&#x7B97;&#x5B8C;&#x635F;&#x5931;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>d_loss.backward()</code> &#x6765;&#x8BA1;&#x7B97;&#x65B0;&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x4ECE;&#x800C;&#x5728;&#x7F51;&#x7EDC;&#x4E2D;&#x8FDB;&#x884C;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x5047;&#x56FE;&#x50CF;&#x4E0A;&#x4E0D;&#x65AD;&#x91CD;&#x590D;&#x3002;&#x6211;&#x4EEC;&#x4E0D;&#x4F7F;&#x7528;&#x6765;&#x81EA;&#x6570;&#x636E;&#x96C6;&#x7684;&#x56FE;&#x50CF;&#xFF0C;&#x800C;&#x662F;&#x8BA9;&#x751F;&#x6210;&#x5668;&#x901A;&#x8FC7;&#x5411;&#x5176;&#x63D0;&#x4F9B;&#x4E00;&#x6279;&#x968F;&#x673A;&#x566A;&#x58F0;&#x6765;&#x4E3A;&#x6B64;&#x521B;&#x5EFA;&#x5047;&#x56FE;&#x50CF;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E9B;&#x5047;&#x56FE;&#x50CF;&#x8F6C;&#x53D1;&#x7ED9;&#x9274;&#x522B;&#x5668;&#x3002;&#x8FD9;&#x4E00;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x9274;&#x522B;&#x5668;&#x53D1;&#x51FA;&#x4F4E;&#x6982;&#x7387;&#xFF0C;&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x4E0B;&#x5168;&#x90E8;&#x4E3A;0&#x3002;&#x4E00;&#x65E6;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x4E86;&#x4E00;&#x6279;&#x771F;&#x5B9E;&#x56FE;&#x50CF;&#x548C;&#x4E00;&#x6279;&#x5047;&#x56FE;&#x50CF;&#x7684;&#x9274;&#x522B;&#x5668;&#x635F;&#x5931;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x5730;&#x5BF9;&#x9274;&#x522B;&#x5668;&#x7684;&#x4F18;&#x5316;&#x5668;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#xFF0C;&#x4EE5;&#x66F4;&#x65B0;&#x5176;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8BAD;&#x7EC3;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x5C06;&#x5176;&#x68AF;&#x5EA6;&#x8C03;&#x96F6;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4F2A;&#x56FE;&#x50CF;&#x4E0A;&#x91CD;&#x65B0;&#x8BC4;&#x4F30;&#x9274;&#x522B;&#x5668;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x8FD9;&#x6B21;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x9274;&#x522B;&#x5668;&#x5206;&#x914D;&#x7684;&#x6982;&#x7387;&#x975E;&#x5E38;&#x63A5;&#x8FD1;1.0&#xFF0C;&#x8FD9;&#x5C06;&#x8868;&#x660E;&#x751F;&#x6210;&#x5668;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x56FE;&#x50CF;&#xFF0C;&#x6B3A;&#x9A97;&#x9274;&#x522B;&#x5668;&#x8BA4;&#x4E3A;&#x5B83;&#x4EEC;&#x662F;&#x771F;&#x5B9E;&#x7684;(&#x4ECE;&#x6570;&#x636E;&#x96C6;&#xFF09;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;<code>fake_labels</code>  tensor&#x586B;&#x5145;&#x4E3A;&#x6240;&#x6709; tensor&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x751F;&#x6210;&#x5668;&#x7684;&#x4F18;&#x5316;&#x5668;&#x6267;&#x884C;&#x6B65;&#x9AA4;&#xFF0C;&#x4EE5;&#x66F4;&#x65B0;&#x5176;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5E94;&#x8BE5;&#x51C6;&#x5907;&#x597D;&#x5728;CPU&#x4E0A;&#x8BAD;&#x7EC3;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x578B;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x6765;&#x6355;&#x83B7;&#x72B6;&#x6001;&#x6216;&#x793A;&#x4F8B;&#x8F93;&#x51FA;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x7A0D;&#x540E;&#x6DFB;&#x52A0;&#x6B64;&#x4EE3;&#x7801;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x89C2;&#x5BDF;&#x4E00;&#x4E0B;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x578B;&#x5728;&#x505A;&#x4EC0;&#x4E48;&#x2014;&#x2014;&#x7A0D;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x6839;&#x636E;&#x751F;&#x6210;&#x7684;&#x56FE;&#x50CF;&#x6765;&#x9A8C;&#x8BC1;&#x8FD9;&#x4EF6;&#x4E8B;&#x662F;&#x5426;&#x6709;&#x610F;&#x4E49;&#x3002;&#x91CD;&#x5EFA;&#x548C;&#x8FD0;&#x884C;&#x5E94;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-py">root@<span class="hljs-number">3</span>c0711f20896:/home/build<span class="hljs-comment"># make &amp;&amp; ./dcgan</span>
+Scanning dependencies of target dcgan
+[ <span class="hljs-number">50</span>%] Building CXX object CMakeFiles/dcgan.dir/dcgan.cpp.o
+[<span class="hljs-number">100</span>%] Linking CXX executable dcgan
+[<span class="hljs-number">100</span>%] Built target dcga
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">100</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.6876</span> | G_loss: <span class="hljs-number">4.1304</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">200</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.3776</span> | G_loss: <span class="hljs-number">4.3101</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">300</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.3652</span> | G_loss: <span class="hljs-number">4.6626</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">400</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.8057</span> | G_loss: <span class="hljs-number">2.2795</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">500</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.3531</span> | G_loss: <span class="hljs-number">4.4452</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">600</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.3501</span> | G_loss: <span class="hljs-number">5.0811</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">700</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.3581</span> | G_loss: <span class="hljs-number">4.5623</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">800</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.6423</span> | G_loss: <span class="hljs-number">1.7385</span>
+[ <span class="hljs-number">1</span>/<span class="hljs-number">10</span>][<span class="hljs-number">900</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.3592</span> | G_loss: <span class="hljs-number">4.7333</span>
+[ <span class="hljs-number">2</span>/<span class="hljs-number">10</span>][<span class="hljs-number">100</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.4660</span> | G_loss: <span class="hljs-number">2.5242</span>
+[ <span class="hljs-number">2</span>/<span class="hljs-number">10</span>][<span class="hljs-number">200</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.6364</span> | G_loss: <span class="hljs-number">2.0886</span>
+[ <span class="hljs-number">2</span>/<span class="hljs-number">10</span>][<span class="hljs-number">300</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.3717</span> | G_loss: <span class="hljs-number">3.8103</span>
+[ <span class="hljs-number">2</span>/<span class="hljs-number">10</span>][<span class="hljs-number">400</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">1.0201</span> | G_loss: <span class="hljs-number">1.3544</span>
+[ <span class="hljs-number">2</span>/<span class="hljs-number">10</span>][<span class="hljs-number">500</span>/<span class="hljs-number">938</span>] D_loss: <span class="hljs-number">0.4522</span> | G_loss: <span class="hljs-number">2.6545</span>
+...
+</code></pre>
+<h2 id="gpu&#x79FB;&#x52A8;&#x5230;gpu">GPU&#x79FB;&#x52A8;&#x5230;GPU</h2>
+<p>&#x867D;&#x7136;&#x6211;&#x4EEC;&#x5F53;&#x524D;&#x7684;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x5728;CPU&#x4E0A;&#x8FD0;&#x884C;&#x5F97;&#x5F88;&#x597D;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;&#x5728;GPU&#x4E0A;&#x5377;&#x79EF;&#x8981;&#x5FEB;&#x5F97;&#x591A;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x5FEB;&#x901F;&#x8BA8;&#x8BBA;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x5C06;&#x6211;&#x4EEC;&#x7684;&#x8BAD;&#x7EC3;&#x8F6C;&#x79FB;&#x5230;GPU&#x4E0A;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E3A;&#x6B64;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;&#xFF1A;&#x5C06;GPU&#x8BBE;&#x5907;&#x6307;&#x5B9A;&#x7684;&#x4F20;&#x9012;&#x7ED9;&#x6211;&#x4EEC;&#x5206;&#x914D;&#x7684; tensors &#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7; <code>to()</code> &#x65B9;&#x6CD5;&#x5C06;&#x5176;&#x4ED6;tensors&#x663E;&#x5F0F;&#x590D;&#x5236;&#x5230;&#x6240;&#x6709;tensors&#x548C;&#x6A21;&#x5757;&#x90FD;&#x5177;&#x6709;&#x7684;GPU&#x4E0A;&#x3002;&#x5B9E;&#x73B0;&#x8FD9;&#x4E24;&#x8005;&#x7684;&#x6700;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x8BAD;&#x7EC3;&#x811A;&#x672C;&#x9876;&#x5C42;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>torch::Device</code> &#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8BE5;&#x8BBE;&#x5907;&#x4F20;&#x9012;&#x7ED9;tensors&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x5982; <code>torch::zeros</code> &#x548C; <code>to()</code> &#x65B9;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;CPU&#x8BBE;&#x5907;&#x5F00;&#x59CB;&#xFF1A;</p>
+<pre><code class="lang-py">// Place this somewhere at the top of your training script.
+torch::Device device(torch::kCPU);
+</code></pre>
+<p>&#x50CF;&#x8FD9;&#x6837;&#x5206;&#x914D;&#x65B0;tensor</p>
+<pre><code class="lang-py">torch::Tensor fake_labels = torch::zeros(batch.data.size(<span class="hljs-number">0</span>));
+</code></pre>
+<p>&#x5E94;&#x66F4;&#x65B0;&#x4EE5;&#x5C06;<code>device</code>&#x4F5C;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-py">torch::Tensor fake_labels = torch::zeros(batch.data.size(<span class="hljs-number">0</span>), device);
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x521B;&#x5EFA;&#x4E0D;&#x5728;&#x6211;&#x4EEC;&#x624B;&#x4E2D;&#x7684; tensors&#xFF0C;&#x6BD4;&#x5982;&#x6765;&#x81EA; MNIST&#x6570;&#x636E;&#x96C6;&#x7684; tensors&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x63D2;&#x5165;&#x663E;&#x5F0F;<code>to()</code>&#x8C03;&#x7528;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;</p>
+<pre><code class="lang-py">torch::Tensor real_images = batch.data;
+</code></pre>
+<p>&#x53D8;&#x6210;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-py">torch::Tensor real_images = batch.data.to(device);
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x5E94;&#x8BE5;&#x88AB;&#x79FB;&#x52A8;&#x5230;&#x5408;&#x9002;&#x7684;&#x8BBE;&#x5907;&#x4E0A;</p>
+<pre><code class="lang-py">generator-&gt;to(device);
+discriminator-&gt;to(device);
+</code></pre>
+<p>&#x7B14;&#x8BB0;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A; tensor&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E8E;&#x63D0;&#x4F9B;<code>to()</code>&#x7ED9;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#xFF0C;&#x5219;&#x8C03;&#x7528;&#x662F;no-op&#x3002;&#x4E0D;&#x8FDB;&#x884C;&#x989D;&#x5916;&#x7684;&#x590D;&#x5236;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E00;&#x70B9;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x521A;&#x521A;&#x4F7F;&#x4EE5;&#x524D;&#x7684;CPU&#x9A7B;&#x7559;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x660E;&#x786E;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x73B0;&#x5728;&#x4E5F;&#x5F88;&#x5BB9;&#x6613;&#x5C06;&#x8BBE;&#x5907;&#x66F4;&#x6539;&#x4E3A;CUDA&#x8BBE;&#x5907;&#xFF1A;</p>
+<pre><code class="lang-py">torch::Device device(torch::kCUDA)
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6240;&#x6709;&#x7684; tensors&#x90FD;&#x5C06;&#x6D3B;&#x52A8;&#x5728;GPU&#x4E0A;&#xFF0C;&#x4E3A;&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x8C03;&#x7528;&#x5FEB;&#x901F;&#x7684;CUDA&#x5185;&#x6838;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x66F4;&#x6539;&#x4EFB;&#x4F55;&#x4E0B;&#x6E38;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x8BBE;&#x5907;&#x7D22;&#x5F15;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;<code>Device</code>&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4E0D;&#x540C;&#x7684;tensors&#x5B58;&#x5728;&#x4E8E;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x5355;&#x72EC;&#x7684;&#x8BBE;&#x5907;&#x5B9E;&#x4F8B;(&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x5728;CUDA&#x8BBE;&#x5907;0&#x4E0A;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5728;CUDA&#x8BBE;&#x5907;1&#x4E0A;&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5730;&#x8FDB;&#x884C;&#x6B64;&#x914D;&#x7F6E;&#xFF0C;&#x8FD9;&#x901A;&#x5E38;&#x6709;&#x52A9;&#x4E8E;&#x4F7F;&#x6211;&#x4EEC;&#x7684;&#x8BAD;&#x7EC3;&#x811A;&#x672C;&#x66F4;&#x6613;&#x4E8E;&#x79FB;&#x690D;&#xFF1A;</p>
+<pre><code class="lang-py">torch::Device device = torch::kCPU;
+<span class="hljs-keyword">if</span> (torch::cuda::is_available()) {
+  std::cout &lt;&lt; <span class="hljs-string">&quot;CUDA is available! Training on GPU.&quot;</span> &lt;&lt; std::endl;
+  device = torch::kCUDA;
+}
+</code></pre>
+<p>&#x751A;&#x81F3;&#x662F;&#x8FD9;&#x6837;</p>
+<pre><code class="lang-py">torch::Device device(torch::cuda::is_available() ? torch::kCUDA : torch::kCPU);
+</code></pre>
+<h2 id="&#x68C0;&#x67E5;&#x70B9;&#x548C;&#x6062;&#x590D;&#x8BAD;&#x7EC3;&#x72B6;&#x6001;">&#x68C0;&#x67E5;&#x70B9;&#x548C;&#x6062;&#x590D;&#x8BAD;&#x7EC3;&#x72B6;&#x6001;</h2>
+<p>&#x6211;&#x4EEC;&#x5BF9;&#x8BAD;&#x7EC3;&#x811A;&#x672C;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x589E;&#x5F3A;&#x70B9;&#x662F;&#x5B9A;&#x671F;&#x4FDD;&#x5B58;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x7684;&#x72B6;&#x6001;&#x3001;&#x4F18;&#x5316;&#x5668;&#x7684;&#x72B6;&#x6001;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x751F;&#x6210;&#x7684;&#x56FE;&#x50CF;&#x6837;&#x672C;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x5D29;&#x6E83;&#xFF0C;&#x524D;&#x4E24;&#x4E2A;&#x5C06;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x6062;&#x590D;&#x8BAD;&#x7EC3;&#x72B6;&#x6001;&#x3002;&#x5BF9;&#x4E8E;&#x957F;&#x671F;&#x7684;&#x8BAD;&#x7EC3;&#xFF0C;&#x8FD9;&#x662F;&#x7EDD;&#x5BF9;&#x5FC5;&#x8981;&#x7684;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;C++&#x524D;&#x7AEF;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;API&#x6765;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x6A21;&#x578B;&#x548C;&#x4F18;&#x5316;&#x5668;&#x72B6;&#x6001;&#xFF0C;&#x4EE5;&#x53CA;&#x72EC;&#x7ACB;&#x7684; tensors&#x3002;</p>
+<p>&#x5B83;&#x7684;&#x6838;&#x5FC3;API&#x662F; <code>torch::save(thing,filename)</code> &#x548C; <code>torch::load(thing,filename)</code>&#xFF0C;&#x5176;&#x4E2D;<code>thing</code>&#x53EF;&#x4EE5;&#x662F; <code>torch::nn::Module</code> &#x5B50;&#x7C7B;&#x6216;&#x4F18;&#x5316;&#x7A0B;&#x5E8F;&#x5B9E;&#x4F8B;&#xFF0C;&#x5982;&#x6211;&#x4EEC;&#x8BAD;&#x7EC3;&#x811A;&#x672C;&#x4E2D;&#x7684; <code>Adam</code> &#x5BF9;&#x8C61;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x66F4;&#x65B0;&#x6211;&#x4EEC;&#x7684;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#xFF0C;&#x4EE5;&#x68C0;&#x67E5;&#x6A21;&#x578B;&#x548C;&#x4F18;&#x5316;&#x5668;&#x5728;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code class="lang-py">if (batch_index % kCheckpointEvery == 0) {
+  // Checkpoint the model and optimizer state.
+  torch::save(generator, &quot;generator-checkpoint.pt&quot;);
+  torch::save(generator_optimizer, &quot;generator-optimizer-checkpoint.pt&quot;);
+  torch::save(discriminator, &quot;discriminator-checkpoint.pt&quot;);
+  torch::save(discriminator_optimizer, &quot;discriminator-optimizer-checkpoint.pt&quot;);
+  // Sample the generator and save the images.
+  torch::Tensor samples = generator-&gt;forward(torch::randn({8, kNoiseSize, 1, 1}, device));
+  torch::save((samples + 1.0) / 2.0, torch::str(&quot;dcgan-sample-&quot;, checkpoint_counter, &quot;.pt&quot;));
+  std::cout &lt;&lt; &quot;\n-&gt; checkpoint &quot; &lt;&lt; ++checkpoint_counter &lt;&lt; &apos;\n&apos;;
+}
+</code></pre>
+<p>&#x5176;&#x4E2D; <code>kCheckpointEvery</code> &#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A; <code>100</code> &#xFF0C;&#x6BCF; <code>100</code> &#x6279;&#x68C0;&#x67E5;&#x4E00;&#x6B21;&#xFF0C; <code>checkpoint_counter</code>&#x662F;&#x4E00;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x6BCF;&#x5F53;&#x6211;&#x4EEC;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x68C0;&#x67E5;&#x70B9;&#x65F6;&#x90FD;&#x4F1A;&#x51B2;&#x649E;&#x5230;&#x5B83;&#x3002;</p>
+<p>&#x8981;&#x6062;&#x590D;&#x8BAD;&#x7EC3;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x521B;&#x5EFA;&#x6240;&#x6709;&#x6A21;&#x578B;&#x548C;&#x4F18;&#x5316;&#x5668;&#x4E4B;&#x540E;&#x3002;&#x4F46;&#x5728;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#x4E4B;&#x524D;&#x6DFB;&#x52A0;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#x7684;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-py">torch::optim::Adam generator_optimizer(
+    generator-&gt;parameters(), torch::optim::AdamOptions(2e-4).beta1(0.5));
+torch::optim::Adam discriminator_optimizer(
+    discriminator-&gt;parameters(), torch::optim::AdamOptions(2e-4).beta1(0.5));
+
+if (kRestoreFromCheckpoint) {
+  torch::load(generator, &quot;generator-checkpoint.pt&quot;);
+  torch::load(generator_optimizer, &quot;generator-optimizer-checkpoint.pt&quot;);
+  torch::load(discriminator, &quot;discriminator-checkpoint.pt&quot;);
+  torch::load(
+      discriminator_optimizer, &quot;discriminator-optimizer-checkpoint.pt&quot;);
+}
+
+int64_t checkpoint_counter = 0;
+for (int64_t epoch = 1; epoch &lt;= kNumberOfEpochs; ++epoch) {
+  int64_t batch_index = 0;
+  for (torch::data::Example&lt;&gt;&amp; batch : *data_loader) {
+</code></pre>
+<h2 id="&#x68C0;&#x9A8C;&#x751F;&#x6210;&#x7684;&#x56FE;&#x50CF;">&#x68C0;&#x9A8C;&#x751F;&#x6210;&#x7684;&#x56FE;&#x50CF;</h2>
+<p>&#x6211;&#x4EEC;&#x7684;&#x8BAD;&#x7EC3;&#x811A;&#x672C;&#x73B0;&#x5728;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x5728;CPU&#x6216;&#x8005;GPU&#x4E0A;&#x51C6;&#x5907;&#x597D;&#x8BAD;&#x7EC3;&#x6211;&#x4EEC;&#x7684;GAN&#x3002;&#x4E3A;&#x4E86;&#x68C0;&#x67E5;&#x6211;&#x4EEC;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x7684;&#x4E2D;&#x95F4;&#x8F93;&#x51FA;&#xFF0C;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x4E86;&#x4EE3;&#x7801;&#x4EE5;&#x5B9A;&#x671F;&#x5C06;&#x56FE;&#x50CF;&#x6837;&#x672C;&#x4FDD;&#x5B58;&#x5230; <code>&quot;dcgan-sample-xxx.pt&quot;</code>&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;python&#x811A;&#x672C;&#x6765;&#x52A0;&#x8F7D;tensors&#x5E76;&#x7528;matplotlib&#x663E;&#x793A;&#x5B83;&#x4EEC;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function
+<span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> unicode_literals
+
+<span class="hljs-keyword">import</span> argparse
+
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> torch
+
+parser = argparse.ArgumentParser()
+parser.add_argument(<span class="hljs-string">&quot;-i&quot;</span>, <span class="hljs-string">&quot;--sample-file&quot;</span>, required=<span class="hljs-keyword">True</span>)
+parser.add_argument(<span class="hljs-string">&quot;-o&quot;</span>, <span class="hljs-string">&quot;--out-file&quot;</span>, default=<span class="hljs-string">&quot;out.png&quot;</span>)
+parser.add_argument(<span class="hljs-string">&quot;-d&quot;</span>, <span class="hljs-string">&quot;--dimension&quot;</span>, type=int, default=<span class="hljs-number">3</span>)
+options = parser.parse_args()
+
+module = torch.jit.load(options.sample_file)
+images = list(module.parameters())[<span class="hljs-number">0</span>]
+
+<span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> range(options.dimension * options.dimension):
+  image = images[index].detach().cpu().reshape(<span class="hljs-number">28</span>, <span class="hljs-number">28</span>).mul(<span class="hljs-number">255</span>).to(torch.uint8)
+  array = image.numpy()
+  axis = plt.subplot(options.dimension, options.dimension, <span class="hljs-number">1</span> + index)
+  plt.imshow(array, cmap=<span class="hljs-string">&quot;gray&quot;</span>)
+  axis.get_xaxis().set_visible(<span class="hljs-keyword">False</span>)
+  axis.get_yaxis().set_visible(<span class="hljs-keyword">False</span>)
+
+plt.savefig(options.out_file)
+print(<span class="hljs-string">&quot;Saved &quot;</span>, options.out_file)
+</code></pre>
+<p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x5927;&#x6982;30&#x6B21;&#xFF1A;</p>
+<pre><code class="lang-py">root@3c0711f20896:/home/build# make &amp;&amp; ./dcgan                                                                                                                                10:17:57
+Scanning dependencies of target dcgan
+[ 50%] Building CXX object CMakeFiles/dcgan.dir/dcgan.cpp.o
+[100%] Linking CXX executable dcgan
+[100%] Built target dcgan
+CUDA is available! Training on GPU.
+[ 1/30][200/938] D_loss: 0.4953 | G_loss: 4.0195
+-&gt; checkpoint 1
+[ 1/30][400/938] D_loss: 0.3610 | G_loss: 4.8148
+-&gt; checkpoint 2
+[ 1/30][600/938] D_loss: 0.4072 | G_loss: 4.36760
+-&gt; checkpoint 3
+[ 1/30][800/938] D_loss: 0.4444 | G_loss: 4.0250
+-&gt; checkpoint 4
+[ 2/30][200/938] D_loss: 0.3761 | G_loss: 3.8790
+-&gt; checkpoint 5
+[ 2/30][400/938] D_loss: 0.3977 | G_loss: 3.3315
+...
+-&gt; checkpoint 120
+[30/30][938/938] D_loss: 0.3610 | G_loss: 3.8084
+</code></pre>
+<p> &#x5E76;&#x5728;&#x7ED8;&#x56FE;&#x4E2D;&#x663E;&#x793A;&#x56FE;&#x50CF;&#xFF1A;</p>
+<pre><code class="lang-py">root@<span class="hljs-number">3</span>c0711f20896:/home/build<span class="hljs-comment"># python display.py -i dcgan-sample-100.pt</span>
+Saved out.png
+</code></pre>
+<p>  &#x5B83;&#x770B;&#x8D77;&#x6765;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#xFF1A;</p>
+<p><img src="img/931dea1655c975ec616a9e22c80c242f.jpg" alt="digits"></p>
+<p>&#x6570;&#x5B57;&#xFF01;&#x4E07;&#x5C81;&#xFF01;&#x73B0;&#x5728;&#x8F6E;&#x5230;&#x4F60;&#x4E86;&#xFF1A;&#x4F60;&#x80FD;&#x6539;&#x8FDB;&#x6A21;&#x578B;&#x4F7F;&#x6570;&#x5B57;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x597D;&#x5417;&#xFF1F;</p>
+<h2 id="&#x7ED3;&#x8BBA;">&#x7ED3;&#x8BBA;</h2>
+<p>&#x672C;&#x6559;&#x7A0B;&#x5E0C;&#x671B;&#x7ED9;&#x60A8;&#x4E00;&#x4E2A;&#x6613;&#x4E86;&#x89E3;&#x7684;PyTrac C++&#x524D;&#x7AEF;&#x7684;&#x6458;&#x8981;&#x3002;&#x50CF;PyTorch&#x8FD9;&#x6837;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5E93;&#x5FC5;&#x7136;&#x5177;&#x6709;&#x6570;&#x91CF;&#x5E9E;&#x5927;&#x7684;API&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8FD9;&#x91CC;&#x6709;&#x8BB8;&#x591A;&#x6982;&#x5FF5;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x65F6;&#x95F4;&#x6765;&#x8BA8;&#x8BBA;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x9F13;&#x52B1;&#x60A8;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;API&#xFF0C;&#x5E76;&#x5728;&#x9047;&#x5230;&#x56F0;&#x96BE;&#x65F6;&#x53C2;&#x8003; <a href="https://pytorch.org/cppdocs/" target="_blank">&#x6211;&#x4EEC;&#x7684;&#x6587;&#x6863;</a> &#xFF0C;&#x5C24;&#x5176;&#x662F;<a href="https://pytorch.org/cppdocs/api/library_root.html" target="_blank">&#x5E93;API</a> &#x90E8;&#x5206;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5C3D;&#x53EF;&#x80FD;&#x4F7F;C++&#x524D;&#x7AEF;&#x53EF;&#x4EE5;&#x9075;&#x5FAA;Python&#x524D;&#x7AEF;&#x7684;&#x8BED;&#x4E49;&#x548C;&#x8BBE;&#x8BA1;&#xFF0C;&#x8FD9;&#x6837;&#x60A8;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x7279;&#x70B9;&#x6765;&#x63D0;&#x9AD8;&#x5B66;&#x4E60;&#x901F;&#x5EA6;&#x3002;</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6B64;<a href="https://github.com/pytorch/examples/tree/master/cpp/dcgan" target="_blank">&#x5B58;&#x50A8;&#x5E93;</a>&#x4E2D;&#x627E;&#x5230;&#x672C;&#x6559;&#x7A0B;&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;&#x5B8C;&#x6574;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x548C;&#x5F80;&#x5E38;&#x4E00;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x9047;&#x5230;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#x6216;&#x6709;&#x4EFB;&#x4F55;&#x7591;&#x95EE;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684; <a href="https://discuss.pytorch.org/" target="_blank">&#x8BBA;&#x575B;</a> &#x6216;<a href="https://github.com/pytorch/pytorch/issues" target="_blank">GitHub issues</a>&#x95EE;&#x9898;&#x8054;&#x7CFB;&#x3002;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tut_other_language.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 其它语言中的 PyTorch">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用 PyTorch C++ 前端","level":"1.2.8.1","depth":3,"next":{"title":"中文文档","level":"1.3","depth":1,"ref":"","articles":[{"title":"注解","level":"1.3.1","depth":2,"path":"docs_notes.md","ref":"docs_notes.md","articles":[{"title":"自动求导机制","level":"1.3.1.1","depth":3,"path":"notes_autograd.md","ref":"notes_autograd.md","articles":[]},{"title":"广播语义","level":"1.3.1.2","depth":3,"path":"notes_broadcasting.md","ref":"notes_broadcasting.md","articles":[]},{"title":"CUDA 语义","level":"1.3.1.3","depth":3,"path":"notes_cuda.md","ref":"notes_cuda.md","articles":[]},{"title":"Extending PyTorch","level":"1.3.1.4","depth":3,"path":"notes_extending.md","ref":"notes_extending.md","articles":[]},{"title":"Frequently Asked Questions","level":"1.3.1.5","depth":3,"path":"notes_faq.md","ref":"notes_faq.md","articles":[]},{"title":"Multiprocessing best practices","level":"1.3.1.6","depth":3,"path":"notes_multiprocessing.md","ref":"notes_multiprocessing.md","articles":[]},{"title":"Reproducibility","level":"1.3.1.7","depth":3,"path":"notes_randomness.md","ref":"notes_randomness.md","articles":[]},{"title":"Serialization semantics","level":"1.3.1.8","depth":3,"path":"notes_serialization.md","ref":"notes_serialization.md","articles":[]},{"title":"Windows FAQ","level":"1.3.1.9","depth":3,"path":"notes_windows.md","ref":"notes_windows.md","articles":[]}]},{"title":"包参考","level":"1.3.2","depth":2,"path":"docs_package_ref.md","ref":"docs_package_ref.md","articles":[{"title":"torch","level":"1.3.2.1","depth":3,"path":"torch.md","ref":"torch.md","articles":[{"title":"Tensors","level":"1.3.2.1.1","depth":4,"path":"torch_tensors.md","ref":"torch_tensors.md","articles":[]},{"title":"Random sampling","level":"1.3.2.1.2","depth":4,"path":"torch_random_sampling.md","ref":"torch_random_sampling.md","articles":[]},{"title":"Serialization, Parallelism, Utilities","level":"1.3.2.1.3","depth":4,"path":"torch_serialization_parallelism_utilities.md","ref":"torch_serialization_parallelism_utilities.md","articles":[]},{"title":"Math operations","level":"1.3.2.1.4","depth":4,"path":"torch_math_operations.md","ref":"torch_math_operations.md","articles":[{"title":"Pointwise Ops","level":"1.3.2.1.4.1","depth":5,"path":"torch_math_operations_pointwise_ops.md","ref":"torch_math_operations_pointwise_ops.md","articles":[]},{"title":"Reduction Ops","level":"1.3.2.1.4.2","depth":5,"path":"torch_math_operations_reduction_ops.md","ref":"torch_math_operations_reduction_ops.md","articles":[]},{"title":"Comparison Ops","level":"1.3.2.1.4.3","depth":5,"path":"torch_math_operations_comparison_ops.md","ref":"torch_math_operations_comparison_ops.md","articles":[]},{"title":"Spectral Ops","level":"1.3.2.1.4.4","depth":5,"path":"torch_math_operations_spectral_ops.md","ref":"torch_math_operations_spectral_ops.md","articles":[]},{"title":"Other Operations","level":"1.3.2.1.4.5","depth":5,"path":"torch_math_operations_other_ops.md","ref":"torch_math_operations_other_ops.md","articles":[]},{"title":"BLAS and LAPACK Operations","level":"1.3.2.1.4.6","depth":5,"path":"torch_math_operations_blas_lapack_ops.md","ref":"torch_math_operations_blas_lapack_ops.md","articles":[]}]}]},{"title":"torch.Tensor","level":"1.3.2.2","depth":3,"path":"tensors.md","ref":"tensors.md","articles":[]},{"title":"Tensor Attributes","level":"1.3.2.3","depth":3,"path":"tensor_attributes.md","ref":"tensor_attributes.md","articles":[]},{"title":"数据类型信息","level":"1.3.2.4","depth":3,"path":"type_info.md","ref":"type_info.md","articles":[]},{"title":"torch.sparse","level":"1.3.2.5","depth":3,"path":"sparse.md","ref":"sparse.md","articles":[]},{"title":"torch.cuda","level":"1.3.2.6","depth":3,"path":"cuda.md","ref":"cuda.md","articles":[]},{"title":"torch.Storage","level":"1.3.2.7","depth":3,"path":"storage.md","ref":"storage.md","articles":[]},{"title":"torch.nn","level":"1.3.2.8","depth":3,"path":"nn.md","ref":"nn.md","articles":[]},{"title":"torch.nn.functional","level":"1.3.2.9","depth":3,"path":"nn_functional.md","ref":"nn_functional.md","articles":[]},{"title":"torch.nn.init","level":"1.3.2.10","depth":3,"path":"nn_init.md","ref":"nn_init.md","articles":[]},{"title":"torch.optim","level":"1.3.2.11","depth":3,"path":"optim.md","ref":"optim.md","articles":[]},{"title":"Automatic differentiation package - torch.autograd","level":"1.3.2.12","depth":3,"path":"autograd.md","ref":"autograd.md","articles":[]},{"title":"Distributed communication package - torch.distributed","level":"1.3.2.13","depth":3,"path":"distributed.md","ref":"distributed.md","articles":[]},{"title":"Probability distributions - torch.distributions","level":"1.3.2.14","depth":3,"path":"distributions.md","ref":"distributions.md","articles":[]},{"title":"Torch Script","level":"1.3.2.15","depth":3,"path":"jit.md","ref":"jit.md","articles":[]},{"title":"多进程包 - torch.multiprocessing","level":"1.3.2.16","depth":3,"path":"multiprocessing.md","ref":"multiprocessing.md","articles":[]},{"title":"torch.utils.bottleneck","level":"1.3.2.17","depth":3,"path":"bottleneck.md","ref":"bottleneck.md","articles":[]},{"title":"torch.utils.checkpoint","level":"1.3.2.18","depth":3,"path":"checkpoint.md","ref":"checkpoint.md","articles":[]},{"title":"torch.utils.cpp_extension","level":"1.3.2.19","depth":3,"path":"docs_cpp_extension.md","ref":"docs_cpp_extension.md","articles":[]},{"title":"torch.utils.data","level":"1.3.2.20","depth":3,"path":"data.md","ref":"data.md","articles":[]},{"title":"torch.utils.dlpack","level":"1.3.2.21","depth":3,"path":"dlpack.md","ref":"dlpack.md","articles":[]},{"title":"torch.hub","level":"1.3.2.22","depth":3,"path":"hub.md","ref":"hub.md","articles":[]},{"title":"torch.utils.model_zoo","level":"1.3.2.23","depth":3,"path":"model_zoo.md","ref":"model_zoo.md","articles":[]},{"title":"torch.onnx","level":"1.3.2.24","depth":3,"path":"onnx.md","ref":"onnx.md","articles":[]},{"title":"Distributed communication package (deprecated) - torch.distributed.deprecated","level":"1.3.2.25","depth":3,"path":"distributed_deprecated.md","ref":"distributed_deprecated.md","articles":[]}]},{"title":"torchvision 参考","level":"1.3.3","depth":2,"path":"docs_torchvision_ref.md","ref":"docs_torchvision_ref.md","articles":[{"title":"torchvision.datasets","level":"1.3.3.1","depth":3,"path":"torchvision_datasets.md","ref":"torchvision_datasets.md","articles":[]},{"title":"torchvision.models","level":"1.3.3.2","depth":3,"path":"torchvision_models.md","ref":"torchvision_models.md","articles":[]},{"title":"torchvision.transforms","level":"1.3.3.3","depth":3,"path":"torchvision_transforms.md","ref":"torchvision_transforms.md","articles":[]},{"title":"torchvision.utils","level":"1.3.3.4","depth":3,"path":"torchvision_utils.md","ref":"torchvision_utils.md","articles":[]}]}]},"previous":{"title":"其它语言中的 PyTorch","level":"1.2.8","depth":2,"path":"tut_other_language.md","ref":"tut_other_language.md","articles":[{"title":"使用 PyTorch C++ 前端","level":"1.2.8.1","depth":3,"path":"cpp_frontend.md","ref":"cpp_frontend.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.0"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"cpp_frontend.md","mtime":"2021-04-12T06:14:20.201Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:15:51.836Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

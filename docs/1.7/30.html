@@ -1,0 +1,2033 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>从零开始的 NLP：使用序列到序列网络和注意力的翻译 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="31.html" />
+    
+    
+    <link rel="prev" href="29.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 中文官方教程 1.7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.html">
+            
+                <a href="01.html">
+            
+                    
+                    学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="02.html">
+            
+                <a href="02.html">
+            
+                    
+                    PyTorch 深度学习：60 分钟的突击
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="03.html">
+            
+                <a href="03.html">
+            
+                    
+                    张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="04.html">
+            
+                <a href="04.html">
+            
+                    
+                    torch.autograd的简要介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="05.html">
+            
+                <a href="05.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="06.html">
+            
+                <a href="06.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="07.html">
+            
+                <a href="07.html">
+            
+                    
+                    通过示例学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="08.html">
+            
+                <a href="08.html">
+            
+                    
+                    热身：NumPy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="09.html">
+            
+                <a href="09.html">
+            
+                    
+                    PyTorch：张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    PyTorch：张量和 Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    PyTorch：定义新的 Autograd 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    PyTorch：nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    PyTorch：optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="14.html">
+            
+                <a href="14.html">
+            
+                    
+                    PyTorch：自定义nn模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    PyTorch：控制流 + 权重共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="16.html">
+            
+                <a href="16.html">
+            
+                    
+                    torch.nn到底是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    使用 TensorBoard 可视化模型，数据和训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    图片/视频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    torchvision对象检测微调教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    计算机视觉的迁移学习教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    对抗示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    DCGAN 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="23.html">
+            
+                <a href="23.html">
+            
+                    
+                    音频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="24.html">
+            
+                <a href="24.html">
+            
+                    
+                    音频 I/O 和torchaudio的预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="25.html">
+            
+                <a href="25.html">
+            
+                    
+                    使用torchaudio的语音命令识别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="26.html">
+            
+                <a href="26.html">
+            
+                    
+                    文本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="27.html">
+            
+                <a href="27.html">
+            
+                    
+                    使用nn.Transformer和torchtext的序列到序列建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="28.html">
+            
+                <a href="28.html">
+            
+                    
+                    从零开始的 NLP：使用字符级 RNN 分类名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="29.html">
+            
+                <a href="29.html">
+            
+                    
+                    从零开始的 NLP：使用字符级 RNN 生成名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="30.html">
+            
+                <a href="30.html">
+            
+                    
+                    从零开始的 NLP：使用序列到序列网络和注意力的翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    使用torchtext的文本分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="32.html">
+            
+                <a href="32.html">
+            
+                    
+                    torchtext语言翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="33.html">
+            
+                <a href="33.html">
+            
+                    
+                    强化学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="34.html">
+            
+                <a href="34.html">
+            
+                    
+                    强化学习（DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="35.html">
+            
+                <a href="35.html">
+            
+                    
+                    训练玩马里奥的 RL 智能体
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    在生产中部署 PyTorch 模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="37.html">
+            
+                <a href="37.html">
+            
+                    
+                    通过使用 Flask 的 REST API 在 Python 中部署 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="38.html">
+            
+                <a href="38.html">
+            
+                    
+                    TorchScript 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="39.html">
+            
+                <a href="39.html">
+            
+                    
+                    在 C++ 中加载 TorchScript 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="40.html">
+            
+                <a href="40.html">
+            
+                    
+                    将模型从 PyTorch 导出到 ONNX 并使用 ONNX 运行时运行它（可选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="41.html">
+            
+                <a href="41.html">
+            
+                    
+                    前端 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="42.html">
+            
+                <a href="42.html">
+            
+                    
+                    PyTorch 中的命名张量简介（原型）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="43.html">
+            
+                <a href="43.html">
+            
+                    
+                    PyTorch 中通道在最后的内存格式（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="44.html">
+            
+                <a href="44.html">
+            
+                    
+                    使用 PyTorch C++ 前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="45.html">
+            
+                <a href="45.html">
+            
+                    
+                    自定义 C++ 和 CUDA 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="46.html">
+            
+                <a href="46.html">
+            
+                    
+                    使用自定义 C++ 运算符扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="47.html">
+            
+                <a href="47.html">
+            
+                    
+                    使用自定义 C++ 类扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="48.html">
+            
+                <a href="48.html">
+            
+                    
+                    TorchScript 中的动态并行性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="49.html">
+            
+                <a href="49.html">
+            
+                    
+                    C++ 前端中的 Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="50.html">
+            
+                <a href="50.html">
+            
+                    
+                    在 C++ 中注册调度运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="51.html">
+            
+                <a href="51.html">
+            
+                    
+                    模型优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="52.html">
+            
+                <a href="52.html">
+            
+                    
+                    分析您的 PyTorch 模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="53.html">
+            
+                <a href="53.html">
+            
+                    
+                    使用 Ray Tune 的超参数调整
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="54.html">
+            
+                <a href="54.html">
+            
+                    
+                    模型剪裁教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="55.html">
+            
+                <a href="55.html">
+            
+                    
+                    LSTM 单词语言模型上的动态量化（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="56.html">
+            
+                <a href="56.html">
+            
+                    
+                    BERT 上的动态量化（Beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="57.html">
+            
+                <a href="57.html">
+            
+                    
+                    PyTorch 中使用 Eager 模式的静态量化（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="58.html">
+            
+                <a href="58.html">
+            
+                    
+                    计算机视觉的量化迁移学习教程（beta）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="59.html">
+            
+                <a href="59.html">
+            
+                    
+                    并行和分布式训练
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="60.html">
+            
+                <a href="60.html">
+            
+                    
+                    PyTorch 分布式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="61.html">
+            
+                <a href="61.html">
+            
+                    
+                    单机模型并行最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="62.html">
+            
+                <a href="62.html">
+            
+                    
+                    分布式数据并行入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="63.html">
+            
+                <a href="63.html">
+            
+                    
+                    用 PyTorch 编写分布式应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="64.html">
+            
+                <a href="64.html">
+            
+                    
+                    分布式 RPC 框架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="65.html">
+            
+                <a href="65.html">
+            
+                    
+                    使用分布式 RPC 框架实现参数服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="66.html">
+            
+                <a href="66.html">
+            
+                    
+                    使用 RPC 的分布式管道并行化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="67.html">
+            
+                <a href="67.html">
+            
+                    
+                    使用异步执行实现批量 RPC 处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="68.html">
+            
+                <a href="68.html">
+            
+                    
+                    将分布式DataParallel与分布式 RPC 框架相结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >从零开始的 NLP：使用序列到序列网络和注意力的翻译</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x7684;-nlp&#xFF1A;&#x4F7F;&#x7528;&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x7F51;&#x7EDC;&#x548C;&#x6CE8;&#x610F;&#x529B;&#x7684;&#x7FFB;&#x8BD1;">&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x7684; NLP&#xFF1A;&#x4F7F;&#x7528;&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x7F51;&#x7EDC;&#x548C;&#x6CE8;&#x610F;&#x529B;&#x7684;&#x7FFB;&#x8BD1;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A;<a href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html" target="_blank">https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html</a></p>
+</blockquote>
+<p><strong>&#x4F5C;&#x8005;</strong>&#xFF1A; <a href="https://github.com/spro/practical-pytorch" target="_blank">Sean Robertson</a></p>
+<p>&#x8FD9;&#x662F;&#x5173;&#x4E8E;&#x201C;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x8FDB;&#x884C; NLP&#x201D;&#x7684;&#x7B2C;&#x4E09;&#x7BC7;&#x4E5F;&#x662F;&#x6700;&#x540E;&#x4E00;&#x7BC7;&#x6559;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x5176;&#x4E2D;&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x7684;&#x7C7B;&#x548C;&#x51FD;&#x6570;&#x6765;&#x9884;&#x5904;&#x7406;&#x6570;&#x636E;&#x4EE5;&#x5B8C;&#x6210; NLP &#x5EFA;&#x6A21;&#x4EFB;&#x52A1;&#x3002; &#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5728;&#x5B8C;&#x6210;&#x672C;&#x6559;&#x7A0B;&#x540E;&#xFF0C;&#x60A8;&#x5C06;&#x7EE7;&#x7EED;&#x5B66;&#x4E60;&#x7D27;&#x63A5;&#x7740;&#x672C;&#x6559;&#x7A0B;&#x7684;&#x4E09;&#x672C;&#x6559;&#x7A0B;&#xFF0C;<code>torchtext</code>&#x5982;&#x4F55;&#x4E3A;&#x60A8;&#x5904;&#x7406;&#x8BB8;&#x591A;&#x6B64;&#x7C7B;&#x9884;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6559;&#x6388;&#x5C06;&#x6CD5;&#x8BED;&#x7FFB;&#x8BD1;&#x6210;&#x82F1;&#x8BED;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;</p>
+<pre><code class="lang-py">[KEY: &gt; input, = target, &lt; output]
+
+&gt; il est en train de peindre un tableau .
+= he is painting a picture .
+&lt; he is painting a picture .
+
+&gt; pourquoi ne pas essayer ce vin delicieux ?
+= why not try that delicious wine ?
+&lt; why not try that delicious wine ?
+
+&gt; elle n est pas poete mais romanciere .
+= she is not a poet but a novelist .
+&lt; she not not a poet but a novelist .
+
+&gt; vous etes trop maigre .
+= you re too skinny .
+&lt; you re all alone .
+</code></pre>
+<p>&#x2026;&#x2026;&#x53D6;&#x5F97;&#x4E0D;&#x540C;&#x7A0B;&#x5EA6;&#x7684;&#x6210;&#x529F;&#x3002;</p>
+<p>&#x901A;&#x8FC7;<a href="https://arxiv.org/abs/1409.3215" target="_blank">&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x7F51;&#x7EDC;</a>&#x7684;&#x7B80;&#x5355;&#x4F46;&#x5F3A;&#x5927;&#x7684;&#x6784;&#x60F3;&#xFF0C;&#x4F7F;&#x8FD9;&#x6210;&#x4E3A;&#x53EF;&#x80FD;&#xFF0C;&#x5176;&#x4E2D;&#x4E24;&#x4E2A;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x534F;&#x540C;&#x5DE5;&#x4F5C;&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x3002; &#x7F16;&#x7801;&#x5668;&#x7F51;&#x7EDC;&#x5C06;&#x8F93;&#x5165;&#x5E8F;&#x5217;&#x538B;&#x7F29;&#x4E3A;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x800C;&#x89E3;&#x7801;&#x5668;&#x7F51;&#x7EDC;&#x5C06;&#x8BE5;&#x5411;&#x91CF;&#x5C55;&#x5F00;&#x4E3A;&#x4E00;&#x4E2A;&#x65B0;&#x5E8F;&#x5217;&#x3002;</p>
+<p><img src="img/b01274082109b1019682274a0d4ca4d8.png" alt=""></p>
+<p>&#x4E3A;&#x4E86;&#x6539;&#x8FDB;&#x6B64;&#x6A21;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;<a href="https://arxiv.org/abs/1409.0473" target="_blank">&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</a>&#xFF0C;&#x8BE5;&#x673A;&#x5236;&#x53EF;&#x4F7F;&#x89E3;&#x7801;&#x5668;&#x5B66;&#x4F1A;&#x4E13;&#x6CE8;&#x4E8E;&#x8F93;&#x5165;&#x5E8F;&#x5217;&#x7684;&#x7279;&#x5B9A;&#x8303;&#x56F4;&#x3002;</p>
+<p><strong>&#x63A8;&#x8350;&#x8BFB;&#x7269;</strong>&#xFF1A;</p>
+<p>&#x6211;&#x5047;&#x8BBE;&#x60A8;&#x81F3;&#x5C11;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86; PyTorch&#xFF0C;Python &#x548C;&#x5F20;&#x91CF;&#xFF1A;</p>
+<ul>
+<li><a href="https://pytorch.org/" target="_blank">&#x5B89;&#x88C5;&#x8BF4;&#x660E;</a></li>
+<li><a href="../beginner/deep_learning_60min_blitz.html">&#x4F7F;&#x7528; PyTorch &#x8FDB;&#x884C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#xFF1A;60 &#x5206;&#x949F;&#x7684;&#x7A81;&#x51FB;</a>&#x901A;&#x5E38;&#x5F00;&#x59CB;&#x4F7F;&#x7528; PyTorch</li>
+<li>[&#x4F7F;&#x7528;&#x793A;&#x4F8B;]&#x5B66;&#x4E60; PyTorch(../beginner/pytorch_with_examples.html)</li>
+<li><a href="../beginner/former_torchies_tutorial.html">PyTorch&#xFF08;&#x9762;&#x5411;&#x4EE5;&#x524D;&#x7684; Torch &#x7528;&#x6237;&#xFF09;</a>&#xFF08;&#x5982;&#x679C;&#x60A8;&#x4EE5;&#x524D;&#x662F; Lua Torch &#x7528;&#x6237;&#xFF09;</li>
+</ul>
+<p>&#x4E86;&#x89E3;&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x7F51;&#x7EDC;&#x53CA;&#x5176;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x4E5F;&#x5C06;&#x5F88;&#x6709;&#x7528;&#xFF1A;</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1406.1078" target="_blank">&#x300A;&#x4F7F;&#x7528; RNN &#x7F16;&#x89E3;&#x7801;&#x5668;&#x5B66;&#x4E60;&#x77ED;&#x8BED;&#x8868;&#x793A;&#x6CD5;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x300B;</a></li>
+<li><a href="https://arxiv.org/abs/1409.3215" target="_blank">&#x300A;&#x5E8F;&#x5217;&#x5230;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x5E8F;&#x5217;&#x5B66;&#x4E60;&#x300B;</a></li>
+<li><a href="https://arxiv.org/abs/1409.0473" target="_blank">&#x300A;&#x901A;&#x8FC7;&#x5171;&#x540C;&#x5B66;&#x4E60;&#x5BF9;&#x9F50;&#x548C;&#x7FFB;&#x8BD1;&#x7684;&#x795E;&#x7ECF;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x300B;</a></li>
+<li><a href="https://arxiv.org/abs/1506.05869" target="_blank">&#x300A;&#x795E;&#x7ECF;&#x5BF9;&#x8BDD;&#x6A21;&#x578B;&#x300B;</a></li>
+</ul>
+<p>&#x60A8;&#x8FD8;&#x5C06;&#x627E;&#x5230;&#x6709;&#x5173;<a href="char_rnn_classification_tutorial.html">&#x300A;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x7684; NLP&#xFF1A;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x7EA7; RNN &#x5206;&#x7C7B;&#x540D;&#x79F0;&#x300B;</a>&#x548C;<a href="char_rnn_generation_tutorial.html">&#x300A;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x7684; NLP&#xFF1A;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x7EA7; RNN &#x751F;&#x6210;&#x540D;&#x79F0;&#x300B;</a>&#x7684;&#x5148;&#x524D;&#x6559;&#x7A0B;&#x3002; &#x5206;&#x522B;&#x4E0E;&#x7F16;&#x7801;&#x5668;&#x548C;&#x89E3;&#x7801;&#x5668;&#x6A21;&#x578B;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#x3002;</p>
+<p>&#x6709;&#x5173;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x9605;&#x8BFB;&#x4ECB;&#x7ECD;&#x4EE5;&#x4E0B;&#x4E3B;&#x9898;&#x7684;&#x8BBA;&#x6587;&#xFF1A;</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1406.1078" target="_blank">&#x300A;&#x4F7F;&#x7528; RNN &#x7F16;&#x89E3;&#x7801;&#x5668;&#x5B66;&#x4E60;&#x77ED;&#x8BED;&#x8868;&#x793A;&#x6CD5;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x300B;</a></li>
+<li><a href="https://arxiv.org/abs/1409.3215" target="_blank">&#x300A;&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x5B66;&#x4E60;&#x300B;</a></li>
+<li><a href="https://arxiv.org/abs/1409.0473" target="_blank">&#x300A;&#x901A;&#x8FC7;&#x5171;&#x540C;&#x5B66;&#x4E60;&#x5BF9;&#x9F50;&#x548C;&#x7FFB;&#x8BD1;&#x7684;&#x795E;&#x7ECF;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x300B;</a></li>
+<li><a href="https://arxiv.org/abs/1506.05869" target="_blank">&#x300A;&#x795E;&#x7ECF;&#x5BF9;&#x8BDD;&#x6A21;&#x578B;&#x300B;</a></li>
+</ul>
+<p><strong>&#x8981;&#x6C42;</strong></p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> unicode_literals, print_function, division
+<span class="hljs-keyword">from</span> io <span class="hljs-keyword">import</span> open
+<span class="hljs-keyword">import</span> unicodedata
+<span class="hljs-keyword">import</span> string
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> random
+
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> optim
+<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
+
+device = torch.device(<span class="hljs-string">&quot;cuda&quot;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)
+</code></pre>
+<h2 id="&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x6587;&#x4EF6;">&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x6587;&#x4EF6;</h2>
+<p>&#x8BE5;&#x9879;&#x76EE;&#x7684;&#x6570;&#x636E;&#x662F;&#x6210;&#x5343;&#x4E0A;&#x4E07;&#x7684;&#x82F1;&#x8BED;&#x5230;&#x6CD5;&#x8BED;&#x7FFB;&#x8BD1;&#x5BF9;&#x7684;&#x96C6;&#x5408;&#x3002;</p>
+<p><a href="https://opendata.stackexchange.com/questions/3888/dataset-of-sentences-translated-into-many-languages" target="_blank">&#x5F00;&#x653E;&#x6570;&#x636E;&#x6808;&#x4EA4;&#x6362;</a>&#x4E0A;&#x7684;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4F7F;&#x6211;&#x6307;&#x5411;<a href="https://tatoeba.org/" target="_blank">&#x5F00;&#x653E;&#x7FFB;&#x8BD1;&#x7AD9;&#x70B9;</a> &#xFF0C;&#x8BE5;&#x7AD9;&#x70B9;&#x53EF;&#x4ECE;<a href="https://tatoeba.org/eng/downloads" target="_blank">&#x8FD9;&#x91CC;</a>&#x4E0B;&#x8F7D;&#x3002;&#x66F4;&#x597D;&#x7684;&#x662F;&#xFF0C;&#x6709;&#x4EBA;&#x5728;&#x8FD9;&#x91CC;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;<a href="https://www.manythings.org/anki/" target="_blank">&#x5C06;&#x8BED;&#x8A00;&#x5BF9;&#x62C6;&#x5206;&#x4E3A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;</a>&#x3002;</p>
+<p>&#x82F1;&#x6587;&#x5BF9;&#x6CD5;&#x6587;&#x5BF9;&#x592A;&#x5927;&#xFF0C;&#x65E0;&#x6CD5;&#x5305;&#x542B;&#x5728;&#x4ED3;&#x5E93;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x8BF7;&#x5148;&#x4E0B;&#x8F7D;&#x5230;<code>data/eng-fra.txt</code>&#xFF0C;&#x7136;&#x540E;&#x518D;&#x7EE7;&#x7EED;&#x3002; &#x8BE5;&#x6587;&#x4EF6;&#x662F;&#x5236;&#x8868;&#x7B26;&#x5206;&#x9694;&#x7684;&#x7FFB;&#x8BD1;&#x5BF9;&#x5217;&#x8868;&#xFF1A;</p>
+<pre><code class="lang-py">I am cold.    J&apos;ai froid.
+</code></pre>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x4ECE;&#x7684;&#x4E0B;&#x8F7D;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x63D0;&#x53D6;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x4E0E;&#x5B57;&#x7B26;&#x7EA7; RNN &#x6559;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x7C7B;&#x4F3C;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x8868;&#x793A;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x5411;&#x5411;&#x91CF;&#xFF0C;&#x6216;&#x96F6;&#x4E2A;&#x5927;&#x5411;&#x91CF;&#xFF08;&#x9664;&#x5355;&#x4E2A;&#x5355;&#x5411;&#x7D22;&#x5F15;&#x5916;&#xFF09;&#xFF08;&#x5728;&#x5355;&#x8BCD;&#x7684;&#x7D22;&#x5F15;&#x5904;&#xFF09;&#x3002; &#x4E0E;&#x67D0;&#x79CD;&#x8BED;&#x8A00;&#x4E2D;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x6570;&#x5341;&#x4E2A;&#x5B57;&#x7B26;&#x76F8;&#x6BD4;&#xFF0C;&#x5355;&#x8BCD;&#x66F4;&#x591A;&#x5F88;&#x591A;&#xFF0C;&#x56E0;&#x6B64;&#x7F16;&#x7801;&#x5411;&#x91CF;&#x8981;&#x5927;&#x5F97;&#x591A;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F5C;&#x5F0A;&#x5E76;&#x6574;&#x7406;&#x6570;&#x636E;&#x4EE5;&#x4F7F;&#x6BCF;&#x79CD;&#x8BED;&#x8A00;&#x4EC5;&#x4F7F;&#x7528;&#x51E0;&#x5343;&#x4E2A;&#x5355;&#x8BCD;&#x3002;</p>
+<p><img src="img/7fa129004e942671707f8f2d4fb80a20.png" alt=""></p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x9700;&#x8981;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x4EE5;&#x4FBF;&#x4EE5;&#x540E;&#x7528;&#x4F5C;&#x7F51;&#x7EDC;&#x7684;&#x8F93;&#x5165;&#x548C;&#x76EE;&#x6807;&#x3002; &#x4E3A;&#x4E86;&#x8DDF;&#x8E2A;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>Lang</code>&#x7684;&#x5E2E;&#x52A9;&#x7A0B;&#x5E8F;&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x5177;&#x6709;&#x5355;&#x8BCD;&#x2192;&#x7D22;&#x5F15;&#xFF08;<code>word2index</code>&#xFF09;&#x548C;&#x7D22;&#x5F15;&#x2192;&#x5355;&#x8BCD;&#xFF08;<code>index2word</code>&#xFF09;&#x5B57;&#x5178;&#xFF0C;&#x4EE5;&#x53CA;&#x6BCF;&#x4E2A;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5355;&#x8BCD;<code>word2count</code>&#x7684;&#x8BA1;&#x6570;&#xFF0C;&#x4EE5;&#x4FBF;&#x4EE5;&#x540E;&#x66FF;&#x6362;&#x7A00;&#x6709;&#x8BCD;&#x3002;</p>
+<pre><code class="lang-py">SOS_token = <span class="hljs-number">0</span>
+EOS_token = <span class="hljs-number">1</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Lang</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span>
+        self.name = name
+        self.word2index = {}
+        self.word2count = {}
+        self.index2word = {<span class="hljs-number">0</span>: <span class="hljs-string">&quot;SOS&quot;</span>, <span class="hljs-number">1</span>: <span class="hljs-string">&quot;EOS&quot;</span>}
+        self.n_words = <span class="hljs-number">2</span>  <span class="hljs-comment"># Count SOS and EOS</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addSentence</span><span class="hljs-params">(self, sentence)</span>:</span>
+        <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> sentence.split(<span class="hljs-string">&apos; &apos;</span>):
+            self.addWord(word)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addWord</span><span class="hljs-params">(self, word)</span>:</span>
+        <span class="hljs-keyword">if</span> word <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self.word2index:
+            self.word2index[word] = self.n_words
+            self.word2count[word] = <span class="hljs-number">1</span>
+            self.index2word[self.n_words] = word
+            self.n_words += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            self.word2count[word] += <span class="hljs-number">1</span>
+</code></pre>
+<p>&#x6587;&#x4EF6;&#x5168;&#x90E8;&#x4E3A; Unicode&#xFF0C;&#x4E3A;&#x7B80;&#x5316;&#x8D77;&#x89C1;&#xFF0C;&#x6211;&#x4EEC;&#x5C06; Unicode &#x5B57;&#x7B26;&#x8F6C;&#x6362;&#x4E3A; ASCII&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x90FD;&#x8F6C;&#x6362;&#x4E3A;&#x5C0F;&#x5199;&#xFF0C;&#x5E76;&#x4FEE;&#x526A;&#x5927;&#x591A;&#x6570;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Turn a Unicode string to plain ASCII, thanks to</span>
+<span class="hljs-comment"># https://stackoverflow.com/a/518232/2809427</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">unicodeToAscii</span><span class="hljs-params">(s)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&apos;</span>.join(
+        c <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> unicodedata.normalize(<span class="hljs-string">&apos;NFD&apos;</span>, s)
+        <span class="hljs-keyword">if</span> unicodedata.category(c) != <span class="hljs-string">&apos;Mn&apos;</span>
+    )
+
+<span class="hljs-comment"># Lowercase, trim, and remove non-letter characters</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">normalizeString</span><span class="hljs-params">(s)</span>:</span>
+    s = unicodeToAscii(s.lower().strip())
+    s = re.sub(<span class="hljs-string">r&quot;([.!?])&quot;</span>, <span class="hljs-string">r&quot; \1&quot;</span>, s)
+    s = re.sub(<span class="hljs-string">r&quot;[^a-zA-Z.!?]+&quot;</span>, <span class="hljs-string">r&quot; &quot;</span>, s)
+    <span class="hljs-keyword">return</span> s
+</code></pre>
+<p>&#x8981;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6587;&#x4EF6;&#x62C6;&#x5206;&#x4E3A;&#x51E0;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x51E0;&#x884C;&#x62C6;&#x5206;&#x4E3A;&#x4E24;&#x5BF9;&#x3002; &#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x82F1;&#x8BED;&#x2192;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x4ECE;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x2192;&#x82F1;&#x8BED;&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;&#xFF0C;&#x6211;&#x6DFB;&#x52A0;&#x4E86;<code>reverse</code>&#x6807;&#x5FD7;&#x6765;&#x53CD;&#x8F6C;&#x5BF9;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">readLangs</span><span class="hljs-params">(lang1, lang2, reverse=False)</span>:</span>
+    print(<span class="hljs-string">&quot;Reading lines...&quot;</span>)
+
+    <span class="hljs-comment"># Read the file and split into lines</span>
+    lines = open(<span class="hljs-string">&apos;data/%s-%s.txt&apos;</span> % (lang1, lang2), encoding=<span class="hljs-string">&apos;utf-8&apos;</span>).\
+        read().strip().split(<span class="hljs-string">&apos;\n&apos;</span>)
+
+    <span class="hljs-comment"># Split every line into pairs and normalize</span>
+    pairs = [[normalizeString(s) <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> l.split(<span class="hljs-string">&apos;\t&apos;</span>)] <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> lines]
+
+    <span class="hljs-comment"># Reverse pairs, make Lang instances</span>
+    <span class="hljs-keyword">if</span> reverse:
+        pairs = [list(reversed(p)) <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> pairs]
+        input_lang = Lang(lang2)
+        output_lang = Lang(lang1)
+    <span class="hljs-keyword">else</span>:
+        input_lang = Lang(lang1)
+        output_lang = Lang(lang2)
+
+    <span class="hljs-keyword">return</span> input_lang, output_lang, pairs
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x793A;&#x4F8B;&#x53E5;&#x5B50;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x60F3;&#x5FEB;&#x901F;&#x8BAD;&#x7EC3;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x4FEE;&#x526A;&#x4E3A;&#x4EC5;&#x76F8;&#x5BF9;&#x7B80;&#x77ED;&#x7684;&#x53E5;&#x5B50;&#x3002; &#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x4E3A; 10 &#x4E2A;&#x5B57;&#xFF08;&#x5305;&#x62EC;&#x7ED3;&#x5C3E;&#x7684;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x8FC7;&#x6EE4;&#x7FFB;&#x8BD1;&#x6210;&#x201C;&#x6211;&#x662F;&#x201D;&#x6216;&#x201C;&#x4ED6;&#x662F;&#x201D;&#x7B49;&#x5F62;&#x5F0F;&#x7684;&#x53E5;&#x5B50;&#xFF08;&#x8003;&#x8651;&#x5230;&#x524D;&#x9762;&#x5DF2;&#x66FF;&#x6362;&#x6389;&#x6487;&#x53F7;&#x7684;&#x60C5;&#x51B5;&#xFF09;&#x3002;</p>
+<pre><code class="lang-py">MAX_LENGTH = <span class="hljs-number">10</span>
+
+eng_prefixes = (
+    <span class="hljs-string">&quot;i am &quot;</span>, <span class="hljs-string">&quot;i m &quot;</span>,
+    <span class="hljs-string">&quot;he is&quot;</span>, <span class="hljs-string">&quot;he s &quot;</span>,
+    <span class="hljs-string">&quot;she is&quot;</span>, <span class="hljs-string">&quot;she s &quot;</span>,
+    <span class="hljs-string">&quot;you are&quot;</span>, <span class="hljs-string">&quot;you re &quot;</span>,
+    <span class="hljs-string">&quot;we are&quot;</span>, <span class="hljs-string">&quot;we re &quot;</span>,
+    <span class="hljs-string">&quot;they are&quot;</span>, <span class="hljs-string">&quot;they re &quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">filterPair</span><span class="hljs-params">(p)</span>:</span>
+    <span class="hljs-keyword">return</span> len(p[<span class="hljs-number">0</span>].split(<span class="hljs-string">&apos; &apos;</span>)) &lt; MAX_LENGTH <span class="hljs-keyword">and</span> \
+        len(p[<span class="hljs-number">1</span>].split(<span class="hljs-string">&apos; &apos;</span>)) &lt; MAX_LENGTH <span class="hljs-keyword">and</span> \
+        p[<span class="hljs-number">1</span>].startswith(eng_prefixes)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">filterPairs</span><span class="hljs-params">(pairs)</span>:</span>
+    <span class="hljs-keyword">return</span> [pair <span class="hljs-keyword">for</span> pair <span class="hljs-keyword">in</span> pairs <span class="hljs-keyword">if</span> filterPair(pair)]
+</code></pre>
+<p>&#x51C6;&#x5907;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x8FC7;&#x7A0B;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x8BFB;&#x53D6;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x5E76;&#x62C6;&#x5206;&#x4E3A;&#x884C;&#xFF0C;&#x5C06;&#x884C;&#x62C6;&#x5206;&#x4E3A;&#x5076;&#x5BF9;</li>
+<li>&#x89C4;&#x8303;&#x6587;&#x672C;&#xFF0C;&#x6309;&#x957F;&#x5EA6;&#x548C;&#x5185;&#x5BB9;&#x8FC7;&#x6EE4;</li>
+<li>&#x6210;&#x5BF9;&#x5EFA;&#x7ACB;&#x53E5;&#x5B50;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x5217;&#x8868;</li>
+</ul>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">prepareData</span><span class="hljs-params">(lang1, lang2, reverse=False)</span>:</span>
+    input_lang, output_lang, pairs = readLangs(lang1, lang2, reverse)
+    print(<span class="hljs-string">&quot;Read %s sentence pairs&quot;</span> % len(pairs))
+    pairs = filterPairs(pairs)
+    print(<span class="hljs-string">&quot;Trimmed to %s sentence pairs&quot;</span> % len(pairs))
+    print(<span class="hljs-string">&quot;Counting words...&quot;</span>)
+    <span class="hljs-keyword">for</span> pair <span class="hljs-keyword">in</span> pairs:
+        input_lang.addSentence(pair[<span class="hljs-number">0</span>])
+        output_lang.addSentence(pair[<span class="hljs-number">1</span>])
+    print(<span class="hljs-string">&quot;Counted words:&quot;</span>)
+    print(input_lang.name, input_lang.n_words)
+    print(output_lang.name, output_lang.n_words)
+    <span class="hljs-keyword">return</span> input_lang, output_lang, pairs
+
+input_lang, output_lang, pairs = prepareData(<span class="hljs-string">&apos;eng&apos;</span>, <span class="hljs-string">&apos;fra&apos;</span>, <span class="hljs-keyword">True</span>)
+print(random.choice(pairs))
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">Reading lines...
+Read <span class="hljs-number">135842</span> sentence pairs
+Trimmed to <span class="hljs-number">10599</span> sentence pairs
+Counting words...
+Counted words:
+fra <span class="hljs-number">4345</span>
+eng <span class="hljs-number">2803</span>
+[<span class="hljs-string">&apos;il a l habitude des ordinateurs .&apos;</span>, <span class="hljs-string">&apos;he is familiar with computers .&apos;</span>]
+</code></pre>
+<h2 id="seq2seq-&#x6A21;&#x578B;">Seq2Seq &#x6A21;&#x578B;</h2>
+<p>&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;RNN&#xFF09;&#x662F;&#x5728;&#x5E8F;&#x5217;&#x4E0A;&#x8FD0;&#x884C;&#x5E76;&#x5C06;&#x5176;&#x81EA;&#x8EAB;&#x7684;&#x8F93;&#x51FA;&#x7528;&#x4F5C;&#x540E;&#x7EED;&#x6B65;&#x9AA4;&#x7684;&#x8F93;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x3002;</p>
+<p><a href="https://arxiv.org/abs/1409.3215" target="_blank">&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x7F51;&#x7EDC;</a>&#x6216; seq2seq &#x7F51;&#x7EDC;&#x6216;<a href="https://arxiv.org/pdf/1406.1078v3.pdf" target="_blank">&#x7F16;&#x7801;&#x5668;&#x89E3;&#x7801;&#x5668;&#x7F51;&#x7EDC;</a>&#x662F;&#x7531;&#x4E24;&#x4E2A;&#x79F0;&#x4E3A;&#x7F16;&#x7801;&#x5668;&#x548C;&#x89E3;&#x7801;&#x5668;&#x7684; RNN &#x7EC4;&#x6210;&#x7684;&#x6A21;&#x578B;&#x3002; &#x7F16;&#x7801;&#x5668;&#x8BFB;&#x53D6;&#x8F93;&#x5165;&#x5E8F;&#x5217;&#x5E76;&#x8F93;&#x51FA;&#x5355;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x800C;&#x89E3;&#x7801;&#x5668;&#x8BFB;&#x53D6;&#x8BE5;&#x5411;&#x91CF;&#x4EE5;&#x4EA7;&#x751F;&#x8F93;&#x51FA;&#x5E8F;&#x5217;&#x3002;</p>
+<p><img src="img/b01274082109b1019682274a0d4ca4d8.png" alt=""></p>
+<p>&#x4E0E;&#x4F7F;&#x7528;&#x5355;&#x4E2A; RNN &#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x9884;&#x6D4B;&#xFF08;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#xFF09;&#x4E0D;&#x540C;&#xFF0C;seq2seq &#x6A21;&#x578B;&#x4F7F;&#x6211;&#x4EEC;&#x6446;&#x8131;&#x4E86;&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#x548C;&#x987A;&#x5E8F;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x8FD9;&#x4F7F;&#x5176;&#x975E;&#x5E38;&#x9002;&#x5408;&#x4E24;&#x79CD;&#x8BED;&#x8A00;&#x4E4B;&#x95F4;&#x7684;&#x7FFB;&#x8BD1;&#x3002;</p>
+<p>&#x8003;&#x8651;&#x4E00;&#x4E0B;&#x53E5;&#x5B50;<code>Je ne suis pas le chat noir -&gt; I am not the black cat</code>&#x3002; &#x8F93;&#x5165;&#x53E5;&#x5B50;&#x4E2D;&#x7684;&#x5927;&#x591A;&#x6570;&#x5355;&#x8BCD;&#x5728;&#x8F93;&#x51FA;&#x53E5;&#x5B50;&#x4E2D;&#x5177;&#x6709;&#x76F4;&#x63A5;&#x7FFB;&#x8BD1;&#xFF0C;&#x4F46;&#x662F;&#x987A;&#x5E8F;&#x7565;&#x6709;&#x4E0D;&#x540C;&#xFF0C;&#x4F8B;&#x5982;<code>chat noir</code>&#x548C;<code>black cat</code>&#x3002; &#x7531;&#x4E8E;&#x91C7;&#x7528;<code>ne/pas</code>&#x7ED3;&#x6784;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x8F93;&#x5165;&#x53E5;&#x5B50;&#x4E2D;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x3002; &#x76F4;&#x63A5;&#x4ECE;&#x8F93;&#x5165;&#x5355;&#x8BCD;&#x7684;&#x5E8F;&#x5217;&#x4E2D;&#x4EA7;&#x751F;&#x6B63;&#x786E;&#x7684;&#x7FFB;&#x8BD1;&#x5C06;&#x662F;&#x56F0;&#x96BE;&#x7684;&#x3002;</p>
+<p>&#x4F7F;&#x7528; seq2seq &#x6A21;&#x578B;&#xFF0C;&#x7F16;&#x7801;&#x5668;&#x521B;&#x5EFA;&#x5355;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x5728;&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BE5;&#x5411;&#x91CF;&#x5C06;&#x8F93;&#x5165;&#x5E8F;&#x5217;&#x7684;&#x201C;&#x542B;&#x4E49;&#x201D;&#x7F16;&#x7801;&#x4E3A;&#x5355;&#x4E2A;&#x5411;&#x91CF;&#x2014;&#x5728;&#x53E5;&#x5B50;&#x7684; N &#x7EF4;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x5355;&#x4E2A;&#x70B9;&#x3002;</p>
+<h3 id="&#x7F16;&#x7801;&#x5668;">&#x7F16;&#x7801;&#x5668;</h3>
+<p>seq2seq &#x7F51;&#x7EDC;&#x7684;&#x7F16;&#x7801;&#x5668;&#x662F; RNN&#xFF0C;&#x5B83;&#x4E3A;&#x8F93;&#x5165;&#x53E5;&#x5B50;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x8F93;&#x51FA;&#x4E00;&#x4E9B;&#x503C;&#x3002; &#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x5B57;&#xFF0C;&#x7F16;&#x7801;&#x5668;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x548C;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x5C06;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x7528;&#x4E8E;&#x4E0B;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x5B57;&#x3002;</p>
+<p><img src="img/9b7e299515676cf41cd2c0fd6ab1295d.png" alt=""></p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EncoderRNN</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_size, hidden_size)</span>:</span>
+        super(EncoderRNN, self).__init__()
+        self.hidden_size = hidden_size
+
+        self.embedding = nn.Embedding(input_size, hidden_size)
+        self.gru = nn.GRU(hidden_size, hidden_size)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, input, hidden)</span>:</span>
+        embedded = self.embedding(input).view(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>)
+        output = embedded
+        output, hidden = self.gru(output, hidden)
+        <span class="hljs-keyword">return</span> output, hidden
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initHidden</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> torch.zeros(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, self.hidden_size, device=device)
+</code></pre>
+<h3 id="&#x89E3;&#x7801;&#x5668;">&#x89E3;&#x7801;&#x5668;</h3>
+<p>&#x89E3;&#x7801;&#x5668;&#x662F;&#x53E6;&#x4E00;&#x4E2A; RNN&#xFF0C;&#x5B83;&#x91C7;&#x7528;&#x7F16;&#x7801;&#x5668;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x5E76;&#x8F93;&#x51FA;&#x5355;&#x8BCD;&#x5E8F;&#x5217;&#x6765;&#x521B;&#x5EFA;&#x7FFB;&#x8BD1;&#x3002;</p>
+<h4 id="&#x7B80;&#x5355;&#x89E3;&#x7801;&#x5668;">&#x7B80;&#x5355;&#x89E3;&#x7801;&#x5668;</h4>
+<p>&#x5728;&#x6700;&#x7B80;&#x5355;&#x7684; seq2seq &#x89E3;&#x7801;&#x5668;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4EC5;&#x4F7F;&#x7528;&#x7F16;&#x7801;&#x5668;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x3002; &#x8BE5;&#x6700;&#x540E;&#x7684;&#x8F93;&#x51FA;&#x6709;&#x65F6;&#x79F0;&#x4E3A;<em>&#x4E0A;&#x4E0B;&#x6587;&#x5411;&#x91CF;</em>&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4ECE;&#x6574;&#x4E2A;&#x5E8F;&#x5217;&#x4E2D;&#x7F16;&#x7801;&#x4E0A;&#x4E0B;&#x6587;&#x3002; &#x8BE5;&#x4E0A;&#x4E0B;&#x6587;&#x5411;&#x91CF;&#x7528;&#x4F5C;&#x89E3;&#x7801;&#x5668;&#x7684;&#x521D;&#x59CB;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x5728;&#x89E3;&#x7801;&#x7684;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#xFF0C;&#x4E3A;&#x89E3;&#x7801;&#x5668;&#x63D0;&#x4F9B;&#x8F93;&#x5165;&#x6807;&#x8BB0;&#x548C;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x3002; &#x521D;&#x59CB;&#x8F93;&#x5165;&#x6807;&#x8BB0;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x59CB;<code>&lt;SOS&gt;</code>&#x6807;&#x8BB0;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x662F;&#x4E0A;&#x4E0B;&#x6587;&#x5411;&#x91CF;&#xFF08;&#x7F16;&#x7801;&#x5668;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x72B6;&#x6001;&#xFF09;&#x3002;</p>
+<p><img src="img/34b376e0c7299810f7349ab99c2c5497.png" alt=""></p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DecoderRNN</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, hidden_size, output_size)</span>:</span>
+        super(DecoderRNN, self).__init__()
+        self.hidden_size = hidden_size
+
+        self.embedding = nn.Embedding(output_size, hidden_size)
+        self.gru = nn.GRU(hidden_size, hidden_size)
+        self.out = nn.Linear(hidden_size, output_size)
+        self.softmax = nn.LogSoftmax(dim=<span class="hljs-number">1</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, input, hidden)</span>:</span>
+        output = self.embedding(input).view(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>)
+        output = F.relu(output)
+        output, hidden = self.gru(output, hidden)
+        output = self.softmax(self.out(output[<span class="hljs-number">0</span>]))
+        <span class="hljs-keyword">return</span> output, hidden
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initHidden</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> torch.zeros(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, self.hidden_size, device=device)
+</code></pre>
+<p>&#x6211;&#x9F13;&#x52B1;&#x60A8;&#x8BAD;&#x7EC3;&#x5E76;&#x89C2;&#x5BDF;&#x8BE5;&#x6A21;&#x578B;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;&#x8282;&#x7701;&#x7A7A;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x76F4;&#x63A5;&#x52AA;&#x529B;&#x5E76;&#x5F15;&#x5165;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x3002;</p>
+<h4 id="&#x6CE8;&#x610F;&#x529B;&#x89E3;&#x7801;&#x5668;">&#x6CE8;&#x610F;&#x529B;&#x89E3;&#x7801;&#x5668;</h4>
+<p>&#x5982;&#x679C;&#x4EC5;&#x4E0A;&#x4E0B;&#x6587;&#x5411;&#x91CF;&#x5728;&#x7F16;&#x7801;&#x5668;&#x548C;&#x89E3;&#x7801;&#x5668;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#xFF0C;&#x5219;&#x8BE5;&#x5355;&#x4E2A;&#x5411;&#x91CF;&#x627F;&#x62C5;&#x5BF9;&#x6574;&#x4E2A;&#x53E5;&#x5B50;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x7684;&#x8D1F;&#x62C5;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x4F7F;&#x89E3;&#x7801;&#x5668;&#x7F51;&#x7EDC;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x89E3;&#x7801;&#x5668;&#x81EA;&#x8EAB;&#x8F93;&#x51FA;&#x7684;&#x6BCF;&#x4E00;&#x6B65;&#xFF0C;&#x201C;&#x4E13;&#x6CE8;&#x201D;&#x4E8E;&#x7F16;&#x7801;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x4E0D;&#x540C;&#x90E8;&#x5206;&#x3002; &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x4E00;&#x7EC4;<em>&#x6CE8;&#x610F;&#x529B;&#x6743;&#x91CD;</em>&#x3002; &#x5C06;&#x8FD9;&#x4E9B;&#x4E0E;&#x7F16;&#x7801;&#x5668;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x76F8;&#x4E58;&#x4EE5;&#x521B;&#x5EFA;&#x52A0;&#x6743;&#x7EC4;&#x5408;&#x3002; &#x7ED3;&#x679C;&#xFF08;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x79F0;&#x4E3A;<code>attn_applied</code>&#xFF09;&#x5E94;&#x5305;&#x542B;&#x6709;&#x5173;&#x8F93;&#x5165;&#x5E8F;&#x5217;&#x7279;&#x5B9A;&#x90E8;&#x5206;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4ECE;&#x800C;&#x5E2E;&#x52A9;&#x89E3;&#x7801;&#x5668;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x7684;&#x8F93;&#x51FA;&#x5B57;&#x3002;</p>
+<p><img src="img/3313f4800c7d01049e2a2ef2079e5905.png" alt=""></p>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x524D;&#x9988;&#x5C42;<code>attn</code>&#x4F7F;&#x7528;&#x89E3;&#x7801;&#x5668;&#x7684;&#x8F93;&#x5165;&#x548C;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x6765;&#x8BA1;&#x7B97;&#x6CE8;&#x610F;&#x529B;&#x6743;&#x91CD;&#x3002; &#x7531;&#x4E8E;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E2D;&#x5305;&#x542B;&#x5404;&#x79CD;&#x5927;&#x5C0F;&#x7684;&#x53E5;&#x5B50;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x5B9E;&#x9645;&#x521B;&#x5EFA;&#x548C;&#x8BAD;&#x7EC3;&#x8BE5;&#x5C42;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x9009;&#x62E9;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x7684;&#x6700;&#x5927;&#x53E5;&#x5B50;&#x957F;&#x5EA6;&#xFF08;&#x8F93;&#x5165;&#x957F;&#x5EA6;&#x200B;&#x200B;&#xFF0C;&#x7528;&#x4E8E;&#x7F16;&#x7801;&#x5668;&#x8F93;&#x51FA;&#xFF09;&#x3002; &#x6700;&#x5927;&#x957F;&#x5EA6;&#x7684;&#x53E5;&#x5B50;&#x5C06;&#x4F7F;&#x7528;&#x6240;&#x6709;&#x6CE8;&#x610F;&#x6743;&#x91CD;&#xFF0C;&#x800C;&#x8F83;&#x77ED;&#x7684;&#x53E5;&#x5B50;&#x5C06;&#x4EC5;&#x4F7F;&#x7528;&#x524D;&#x51E0;&#x4E2A;&#x3002;</p>
+<p><img src="img/32ec68a6e0d29efae32b0f50db877598.png" alt=""></p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AttnDecoderRNN</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, hidden_size, output_size, dropout_p=<span class="hljs-number">0.1</span>, max_length=MAX_LENGTH)</span>:</span>
+        super(AttnDecoderRNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.output_size = output_size
+        self.dropout_p = dropout_p
+        self.max_length = max_length
+
+        self.embedding = nn.Embedding(self.output_size, self.hidden_size)
+        self.attn = nn.Linear(self.hidden_size * <span class="hljs-number">2</span>, self.max_length)
+        self.attn_combine = nn.Linear(self.hidden_size * <span class="hljs-number">2</span>, self.hidden_size)
+        self.dropout = nn.Dropout(self.dropout_p)
+        self.gru = nn.GRU(self.hidden_size, self.hidden_size)
+        self.out = nn.Linear(self.hidden_size, self.output_size)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, input, hidden, encoder_outputs)</span>:</span>
+        embedded = self.embedding(input).view(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>)
+        embedded = self.dropout(embedded)
+
+        attn_weights = F.softmax(
+            self.attn(torch.cat((embedded[<span class="hljs-number">0</span>], hidden[<span class="hljs-number">0</span>]), <span class="hljs-number">1</span>)), dim=<span class="hljs-number">1</span>)
+        attn_applied = torch.bmm(attn_weights.unsqueeze(<span class="hljs-number">0</span>),
+                                 encoder_outputs.unsqueeze(<span class="hljs-number">0</span>))
+
+        output = torch.cat((embedded[<span class="hljs-number">0</span>], attn_applied[<span class="hljs-number">0</span>]), <span class="hljs-number">1</span>)
+        output = self.attn_combine(output).unsqueeze(<span class="hljs-number">0</span>)
+
+        output = F.relu(output)
+        output, hidden = self.gru(output, hidden)
+
+        output = F.log_softmax(self.out(output[<span class="hljs-number">0</span>]), dim=<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> output, hidden, attn_weights
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initHidden</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> torch.zeros(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, self.hidden_size, device=device)
+</code></pre>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x5F62;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x65B9;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#x957F;&#x5EA6;&#x9650;&#x5236;&#x95EE;&#x9898;&#x3002; &#x5728;<a href="https://arxiv.org/abs/1508.04025" target="_blank">&#x300A;&#x57FA;&#x4E8E;&#x6CE8;&#x610F;&#x529B;&#x7684;&#x795E;&#x7ECF;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x7684;&#x6709;&#x6548;&#x65B9;&#x6CD5;&#x300B;</a>&#x4E2D;&#x9605;&#x8BFB;&#x201C;&#x672C;&#x5730;&#x6CE8;&#x610F;&#x529B;&#x201D;&#x3002;</p>
+<h2 id="&#x8BAD;&#x7EC3;">&#x8BAD;&#x7EC3;</h2>
+<h3 id="&#x51C6;&#x5907;&#x8BAD;&#x7EC3;&#x6570;&#x636E;">&#x51C6;&#x5907;&#x8BAD;&#x7EC3;&#x6570;&#x636E;</h3>
+<p>&#x4E3A;&#x4E86;&#x8BAD;&#x7EC3;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x5BF9;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#xFF08;&#x8F93;&#x5165;&#x53E5;&#x5B50;&#x4E2D;&#x5355;&#x8BCD;&#x7684;&#x7D22;&#x5F15;&#xFF09;&#x548C;&#x76EE;&#x6807;&#x5F20;&#x91CF;&#xFF08;&#x76EE;&#x6807;&#x53E5;&#x5B50;&#x4E2D;&#x5355;&#x8BCD;&#x7684;&#x7D22;&#x5F15;&#xFF09;&#x3002; &#x521B;&#x5EFA;&#x8FD9;&#x4E9B;&#x5411;&#x91CF;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5C06;<code>EOS</code>&#x6807;&#x8BB0;&#x9644;&#x52A0;&#x5230;&#x4E24;&#x4E2A;&#x5E8F;&#x5217;&#x4E0A;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">indexesFromSentence</span><span class="hljs-params">(lang, sentence)</span>:</span>
+    <span class="hljs-keyword">return</span> [lang.word2index[word] <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> sentence.split(<span class="hljs-string">&apos; &apos;</span>)]
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tensorFromSentence</span><span class="hljs-params">(lang, sentence)</span>:</span>
+    indexes = indexesFromSentence(lang, sentence)
+    indexes.append(EOS_token)
+    <span class="hljs-keyword">return</span> torch.tensor(indexes, dtype=torch.long, device=device).view(<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tensorsFromPair</span><span class="hljs-params">(pair)</span>:</span>
+    input_tensor = tensorFromSentence(input_lang, pair[<span class="hljs-number">0</span>])
+    target_tensor = tensorFromSentence(output_lang, pair[<span class="hljs-number">1</span>])
+    <span class="hljs-keyword">return</span> (input_tensor, target_tensor)
+</code></pre>
+<h3 id="&#x8BAD;&#x7EC3;&#x6A21;&#x578B;">&#x8BAD;&#x7EC3;&#x6A21;&#x578B;</h3>
+<p>&#x4E3A;&#x4E86;&#x8BAD;&#x7EC3;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7F16;&#x7801;&#x5668;&#x8FD0;&#x884C;&#x8F93;&#x5165;&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x8DDF;&#x8E2A;&#x6BCF;&#x4E2A;&#x8F93;&#x51FA;&#x548C;&#x6700;&#x65B0;&#x7684;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x3002; &#x7136;&#x540E;&#xFF0C;&#x4E3A;&#x89E3;&#x7801;&#x5668;&#x63D0;&#x4F9B;<code>&lt;SOS&gt;</code>&#x6807;&#x8BB0;&#x4F5C;&#x4E3A;&#x5176;&#x7B2C;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#xFF0C;&#x4E3A;&#x7F16;&#x7801;&#x5668;&#x63D0;&#x4F9B;&#x6700;&#x540E;&#x7684;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x4F5C;&#x4E3A;&#x5176;&#x7B2C;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x201C;&#x6559;&#x5E08;&#x5F3A;&#x5236;&#x201D;&#x7684;&#x6982;&#x5FF5;&#x662F;&#x4F7F;&#x7528;&#x5B9E;&#x9645;&#x76EE;&#x6807;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x6BCF;&#x4E2A;&#x4E0B;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F7F;&#x7528;&#x89E3;&#x7801;&#x5668;&#x7684;&#x731C;&#x6D4B;&#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x3002; &#x4F7F;&#x7528;&#x6559;&#x5E08;&#x5F3A;&#x5236;&#x4F1A;&#x5BFC;&#x81F4;&#x5176;&#x6536;&#x655B;&#x66F4;&#x5FEB;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x4F7F;&#x7528;&#x53D7;&#x8FC7;&#x8BAD;&#x7EC3;&#x7684;&#x7F51;&#x7EDC;&#x65F6;&#xFF0C;<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.378.4095&amp;rep=rep1&amp;type=pdf" target="_blank">&#x53EF;&#x80FD;&#x4F1A;&#x663E;&#x793A;&#x4E0D;&#x7A33;&#x5B9A;</a>&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x5230;&#x4EE5;&#x6559;&#x5E08;&#x4E3A;&#x4E3B;&#x5BFC;&#x7684;&#x7F51;&#x7EDC;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x8FD9;&#x4E9B;&#x8F93;&#x51FA;&#x9605;&#x8BFB;&#x7684;&#x662F;&#x8FDE;&#x8D2F;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x504F;&#x79BB;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x7FFB;&#x8BD1;-&#x76F4;&#x89C2;&#x5730;&#xFF0C;&#x5B83;&#x5DF2;&#x7ECF;&#x5B66;&#x4F1A;&#x4E86;&#x4EE3;&#x8868;&#x8F93;&#x51FA;&#x8BED;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x4E00;&#x65E6;&#x8001;&#x5E08;&#x8BF4;&#x4E86;&#x6700;&#x521D;&#x7684;&#x51E0;&#x4E2A;&#x5355;&#x8BCD;&#x5C31;&#x53EF;&#x4EE5;&#x201C;&#x7406;&#x89E3;&#x201D;&#x542B;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x9996;&#x5148;&#xFF0C;&#x5B83;&#x8FD8;&#x6CA1;&#x6709;&#x6B63;&#x786E;&#x5730;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x4ECE;&#x7FFB;&#x8BD1;&#x4E2D;&#x521B;&#x5EFA;&#x53E5;&#x5B50;&#x3002;</p>
+<p>&#x7531;&#x4E8E; PyTorch &#x7684; Autograd &#x5177;&#x6709;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x7531;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x7684;<code>if</code>&#x8BED;&#x53E5;&#x968F;&#x610F;&#x9009;&#x62E9;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x6559;&#x5E08;&#x5F3A;&#x8FEB;&#x3002; &#x8C03;&#x9AD8;<code>teacher_forcing_ratio</code>&#x4EE5;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x3002;</p>
+<pre><code class="lang-py">teacher_forcing_ratio = <span class="hljs-number">0.5</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">train</span><span class="hljs-params">(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH)</span>:</span>
+    encoder_hidden = encoder.initHidden()
+
+    encoder_optimizer.zero_grad()
+    decoder_optimizer.zero_grad()
+
+    input_length = input_tensor.size(<span class="hljs-number">0</span>)
+    target_length = target_tensor.size(<span class="hljs-number">0</span>)
+
+    encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
+
+    loss = <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">for</span> ei <span class="hljs-keyword">in</span> range(input_length):
+        encoder_output, encoder_hidden = encoder(
+            input_tensor[ei], encoder_hidden)
+        encoder_outputs[ei] = encoder_output[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>]
+
+    decoder_input = torch.tensor([[SOS_token]], device=device)
+
+    decoder_hidden = encoder_hidden
+
+    use_teacher_forcing = <span class="hljs-keyword">True</span> <span class="hljs-keyword">if</span> random.random() &lt; teacher_forcing_ratio <span class="hljs-keyword">else</span> <span class="hljs-keyword">False</span>
+
+    <span class="hljs-keyword">if</span> use_teacher_forcing:
+        <span class="hljs-comment"># Teacher forcing: Feed the target as the next input</span>
+        <span class="hljs-keyword">for</span> di <span class="hljs-keyword">in</span> range(target_length):
+            decoder_output, decoder_hidden, decoder_attention = decoder(
+                decoder_input, decoder_hidden, encoder_outputs)
+            loss += criterion(decoder_output, target_tensor[di])
+            decoder_input = target_tensor[di]  <span class="hljs-comment"># Teacher forcing</span>
+
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-comment"># Without teacher forcing: use its own predictions as the next input</span>
+        <span class="hljs-keyword">for</span> di <span class="hljs-keyword">in</span> range(target_length):
+            decoder_output, decoder_hidden, decoder_attention = decoder(
+                decoder_input, decoder_hidden, encoder_outputs)
+            topv, topi = decoder_output.topk(<span class="hljs-number">1</span>)
+            decoder_input = topi.squeeze().detach()  <span class="hljs-comment"># detach from history as input</span>
+
+            loss += criterion(decoder_output, target_tensor[di])
+            <span class="hljs-keyword">if</span> decoder_input.item() == EOS_token:
+                <span class="hljs-keyword">break</span>
+
+    loss.backward()
+
+    encoder_optimizer.step()
+    decoder_optimizer.step()
+
+    <span class="hljs-keyword">return</span> loss.item() / target_length
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5E2E;&#x52A9;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x7ED9;&#x5B9A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x548C;&#x8FDB;&#x5EA6;% &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6253;&#x5370;&#x7ECF;&#x8FC7;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x4F30;&#x8BA1;&#x7684;&#x5269;&#x4F59;&#x65F6;&#x95F4;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> math
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">asMinutes</span><span class="hljs-params">(s)</span>:</span>
+    m = math.floor(s / <span class="hljs-number">60</span>)
+    s -= m * <span class="hljs-number">60</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%dm %ds&apos;</span> % (m, s)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">timeSince</span><span class="hljs-params">(since, percent)</span>:</span>
+    now = time.time()
+    s = now - since
+    es = s / (percent)
+    rs = es - s
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s (- %s)&apos;</span> % (asMinutes(s), asMinutes(rs))
+</code></pre>
+<p>&#x6574;&#x4E2A;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<ul>
+<li>&#x542F;&#x52A8;&#x8BA1;&#x65F6;&#x5668;</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x4F18;&#x5316;&#x5668;&#x548C;&#x6807;&#x51C6;</li>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x7EC4;&#x8BAD;&#x7EC3;&#x5BF9;</li>
+<li>&#x542F;&#x52A8;&#x7A7A;&#x635F;&#x5931;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x7ED8;&#x56FE;</li>
+</ul>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x591A;&#x6B21;&#x8C03;&#x7528;<code>train</code>&#xFF0C;&#x5E76;&#x5076;&#x5C14;&#x6253;&#x5370;&#x8FDB;&#x5EA6;&#xFF08;&#x793A;&#x4F8B;&#x7684;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x4F30;&#x8BA1;&#x7684;&#x65F6;&#x95F4;&#xFF09;&#x548C;&#x5E73;&#x5747;&#x635F;&#x5931;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">trainIters</span><span class="hljs-params">(encoder, decoder, n_iters, print_every=<span class="hljs-number">1000</span>, plot_every=<span class="hljs-number">100</span>, learning_rate=<span class="hljs-number">0.01</span>)</span>:</span>
+    start = time.time()
+    plot_losses = []
+    print_loss_total = <span class="hljs-number">0</span>  <span class="hljs-comment"># Reset every print_every</span>
+    plot_loss_total = <span class="hljs-number">0</span>  <span class="hljs-comment"># Reset every plot_every</span>
+
+    encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
+    decoder_optimizer = optim.SGD(decoder.parameters(), lr=learning_rate)
+    training_pairs = [tensorsFromPair(random.choice(pairs))
+                      <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n_iters)]
+    criterion = nn.NLLLoss()
+
+    <span class="hljs-keyword">for</span> iter <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, n_iters + <span class="hljs-number">1</span>):
+        training_pair = training_pairs[iter - <span class="hljs-number">1</span>]
+        input_tensor = training_pair[<span class="hljs-number">0</span>]
+        target_tensor = training_pair[<span class="hljs-number">1</span>]
+
+        loss = train(input_tensor, target_tensor, encoder,
+                     decoder, encoder_optimizer, decoder_optimizer, criterion)
+        print_loss_total += loss
+        plot_loss_total += loss
+
+        <span class="hljs-keyword">if</span> iter % print_every == <span class="hljs-number">0</span>:
+            print_loss_avg = print_loss_total / print_every
+            print_loss_total = <span class="hljs-number">0</span>
+            print(<span class="hljs-string">&apos;%s (%d %d%%) %.4f&apos;</span> % (timeSince(start, iter / n_iters),
+                                         iter, iter / n_iters * <span class="hljs-number">100</span>, print_loss_avg))
+
+        <span class="hljs-keyword">if</span> iter % plot_every == <span class="hljs-number">0</span>:
+            plot_loss_avg = plot_loss_total / plot_every
+            plot_losses.append(plot_loss_avg)
+            plot_loss_total = <span class="hljs-number">0</span>
+
+    showPlot(plot_losses)
+</code></pre>
+<h3 id="&#x7ED8;&#x5236;&#x7ED3;&#x679C;">&#x7ED8;&#x5236;&#x7ED3;&#x679C;</h3>
+<p>&#x4F7F;&#x7528;&#x8BAD;&#x7EC3;&#x65F6;&#x4FDD;&#x5B58;&#x7684;&#x635F;&#x5931;&#x503C;&#x6570;&#x7EC4;<code>plot_losses</code>&#xFF0C;&#x4F7F;&#x7528; matplotlib &#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+plt.switch_backend(<span class="hljs-string">&apos;agg&apos;</span>)
+<span class="hljs-keyword">import</span> matplotlib.ticker <span class="hljs-keyword">as</span> ticker
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">showPlot</span><span class="hljs-params">(points)</span>:</span>
+    plt.figure()
+    fig, ax = plt.subplots()
+    <span class="hljs-comment"># this locator puts ticks at regular intervals</span>
+    loc = ticker.MultipleLocator(base=<span class="hljs-number">0.2</span>)
+    ax.yaxis.set_major_locator(loc)
+    plt.plot(points)
+</code></pre>
+<h2 id="&#x8BC4;&#x4F30;">&#x8BC4;&#x4F30;</h2>
+<p>&#x8BC4;&#x4F30;&#x4E0E;&#x8BAD;&#x7EC3;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x76EE;&#x6807;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x5C06;&#x89E3;&#x7801;&#x5668;&#x7684;&#x9884;&#x6D4B;&#x53CD;&#x9988;&#x7ED9;&#x6BCF;&#x4E00;&#x6B65;&#x3002; &#x6BCF;&#x5F53;&#x5B83;&#x9884;&#x6D4B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x4F1A;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x8F93;&#x51FA;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x9884;&#x6D4B;&#x5230;<code>EOS</code>&#x6807;&#x8BB0;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x6B64;&#x5904;&#x505C;&#x6B62;&#x3002; &#x6211;&#x4EEC;&#x8FD8;&#x5C06;&#x5B58;&#x50A8;&#x89E3;&#x7801;&#x5668;&#x7684;&#x6CE8;&#x610F;&#x8F93;&#x51FA;&#xFF0C;&#x4EE5;&#x4F9B;&#x4EE5;&#x540E;&#x663E;&#x793A;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">evaluate</span><span class="hljs-params">(encoder, decoder, sentence, max_length=MAX_LENGTH)</span>:</span>
+    <span class="hljs-keyword">with</span> torch.no_grad():
+        input_tensor = tensorFromSentence(input_lang, sentence)
+        input_length = input_tensor.size()[<span class="hljs-number">0</span>]
+        encoder_hidden = encoder.initHidden()
+
+        encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
+
+        <span class="hljs-keyword">for</span> ei <span class="hljs-keyword">in</span> range(input_length):
+            encoder_output, encoder_hidden = encoder(input_tensor[ei],
+                                                     encoder_hidden)
+            encoder_outputs[ei] += encoder_output[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>]
+
+        decoder_input = torch.tensor([[SOS_token]], device=device)  <span class="hljs-comment"># SOS</span>
+
+        decoder_hidden = encoder_hidden
+
+        decoded_words = []
+        decoder_attentions = torch.zeros(max_length, max_length)
+
+        <span class="hljs-keyword">for</span> di <span class="hljs-keyword">in</span> range(max_length):
+            decoder_output, decoder_hidden, decoder_attention = decoder(
+                decoder_input, decoder_hidden, encoder_outputs)
+            decoder_attentions[di] = decoder_attention.data
+            topv, topi = decoder_output.data.topk(<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">if</span> topi.item() == EOS_token:
+                decoded_words.append(<span class="hljs-string">&apos;&lt;EOS&gt;&apos;</span>)
+                <span class="hljs-keyword">break</span>
+            <span class="hljs-keyword">else</span>:
+                decoded_words.append(output_lang.index2word[topi.item()])
+
+            decoder_input = topi.squeeze().detach()
+
+        <span class="hljs-keyword">return</span> decoded_words, decoder_attentions[:di + <span class="hljs-number">1</span>]
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x8BC4;&#x4F30;&#x968F;&#x673A;&#x53E5;&#x5B50;&#xFF0C;&#x5E76;&#x6253;&#x5370;&#x51FA;&#x8F93;&#x5165;&#xFF0C;&#x76EE;&#x6807;&#x548C;&#x8F93;&#x51FA;&#x4EE5;&#x505A;&#x51FA;&#x4E00;&#x4E9B;&#x4E3B;&#x89C2;&#x7684;&#x8D28;&#x91CF;&#x5224;&#x65AD;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">evaluateRandomly</span><span class="hljs-params">(encoder, decoder, n=<span class="hljs-number">10</span>)</span>:</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n):
+        pair = random.choice(pairs)
+        print(<span class="hljs-string">&apos;&gt;&apos;</span>, pair[<span class="hljs-number">0</span>])
+        print(<span class="hljs-string">&apos;=&apos;</span>, pair[<span class="hljs-number">1</span>])
+        output_words, attentions = evaluate(encoder, decoder, pair[<span class="hljs-number">0</span>])
+        output_sentence = <span class="hljs-string">&apos; &apos;</span>.join(output_words)
+        print(<span class="hljs-string">&apos;&lt;&apos;</span>, output_sentence)
+        print(<span class="hljs-string">&apos;&apos;</span>)
+</code></pre>
+<h2 id="&#x8BAD;&#x7EC3;&#x548C;&#x8BC4;&#x4F30;">&#x8BAD;&#x7EC3;&#x548C;&#x8BC4;&#x4F30;</h2>
+<p>&#x6709;&#x4E86;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#xFF08;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x662F;&#x989D;&#x5916;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x5B83;&#x4F7F;&#x8FD0;&#x884C;&#x591A;&#x4E2A;&#x5B9E;&#x9A8C;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x521D;&#x59CB;&#x5316;&#x7F51;&#x7EDC;&#x5E76;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#x3002;</p>
+<p>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x8F93;&#x5165;&#x8BED;&#x53E5;&#x5DF2;&#x88AB;&#x5927;&#x91CF;&#x8FC7;&#x6EE4;&#x3002; &#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x5C0F;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5177;&#x6709; 256 &#x4E2A;&#x9690;&#x85CF;&#x8282;&#x70B9;&#x548C;&#x5355;&#x4E2A; GRU &#x5C42;&#x7684;&#x76F8;&#x5BF9;&#x8F83;&#x5C0F;&#x7684;&#x7F51;&#x7EDC;&#x3002; &#x5728; MacBook CPU &#x4E0A;&#x8FD0;&#x884C;&#x7EA6; 40 &#x5206;&#x949F;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x4E9B;&#x5408;&#x7406;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x6CE8;&#x610F;</p>
+<p>&#x5982;&#x679C;&#x8FD0;&#x884C;&#x6B64;&#x7B14;&#x8BB0;&#x672C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#xFF0C;&#x4E2D;&#x65AD;&#x5185;&#x6838;&#xFF0C;&#x8BC4;&#x4F30;&#x5E76;&#x5728;&#x4EE5;&#x540E;&#x7EE7;&#x7EED;&#x8BAD;&#x7EC3;&#x3002; &#x6CE8;&#x91CA;&#x6389;&#x7F16;&#x7801;&#x5668;&#x548C;&#x89E3;&#x7801;&#x5668;&#x5DF2;&#x521D;&#x59CB;&#x5316;&#x7684;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6B21;&#x8FD0;&#x884C;<code>trainIters</code>&#x3002;</p>
+<pre><code class="lang-py">hidden_size = <span class="hljs-number">256</span>
+encoder1 = EncoderRNN(input_lang.n_words, hidden_size).to(device)
+attn_decoder1 = AttnDecoderRNN(hidden_size, output_lang.n_words, dropout_p=<span class="hljs-number">0.1</span>).to(device)
+
+trainIters(encoder1, attn_decoder1, <span class="hljs-number">75000</span>, print_every=<span class="hljs-number">5000</span>)
+</code></pre>
+<ul>
+<li><img src="img/5015200eb4481feb8a71a658b384ec39.png" alt="../_img/sphx_glr_seq2seq_translation_tutorial_001.png"></li>
+<li><img src="img/89adff7333b116436cf785388029ba1a.png" alt="../_img/sphx_glr_seq2seq_translation_tutorial_002.png"></li>
+</ul>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-number">2</span>m <span class="hljs-number">6</span>s (- <span class="hljs-number">29</span>m <span class="hljs-number">28</span>s) (<span class="hljs-number">5000</span> <span class="hljs-number">6</span>%) <span class="hljs-number">2.8538</span>
+<span class="hljs-number">4</span>m <span class="hljs-number">7</span>s (- <span class="hljs-number">26</span>m <span class="hljs-number">49</span>s) (<span class="hljs-number">10000</span> <span class="hljs-number">13</span>%) <span class="hljs-number">2.3035</span>
+<span class="hljs-number">6</span>m <span class="hljs-number">10</span>s (- <span class="hljs-number">24</span>m <span class="hljs-number">40</span>s) (<span class="hljs-number">15000</span> <span class="hljs-number">20</span>%) <span class="hljs-number">1.9812</span>
+<span class="hljs-number">8</span>m <span class="hljs-number">13</span>s (- <span class="hljs-number">22</span>m <span class="hljs-number">37</span>s) (<span class="hljs-number">20000</span> <span class="hljs-number">26</span>%) <span class="hljs-number">1.7083</span>
+<span class="hljs-number">10</span>m <span class="hljs-number">15</span>s (- <span class="hljs-number">20</span>m <span class="hljs-number">31</span>s) (<span class="hljs-number">25000</span> <span class="hljs-number">33</span>%) <span class="hljs-number">1.5199</span>
+<span class="hljs-number">12</span>m <span class="hljs-number">17</span>s (- <span class="hljs-number">18</span>m <span class="hljs-number">26</span>s) (<span class="hljs-number">30000</span> <span class="hljs-number">40</span>%) <span class="hljs-number">1.3580</span>
+<span class="hljs-number">14</span>m <span class="hljs-number">18</span>s (- <span class="hljs-number">16</span>m <span class="hljs-number">20</span>s) (<span class="hljs-number">35000</span> <span class="hljs-number">46</span>%) <span class="hljs-number">1.2002</span>
+<span class="hljs-number">16</span>m <span class="hljs-number">18</span>s (- <span class="hljs-number">14</span>m <span class="hljs-number">16</span>s) (<span class="hljs-number">40000</span> <span class="hljs-number">53</span>%) <span class="hljs-number">1.0832</span>
+<span class="hljs-number">18</span>m <span class="hljs-number">21</span>s (- <span class="hljs-number">12</span>m <span class="hljs-number">14</span>s) (<span class="hljs-number">45000</span> <span class="hljs-number">60</span>%) <span class="hljs-number">0.9719</span>
+<span class="hljs-number">20</span>m <span class="hljs-number">22</span>s (- <span class="hljs-number">10</span>m <span class="hljs-number">11</span>s) (<span class="hljs-number">50000</span> <span class="hljs-number">66</span>%) <span class="hljs-number">0.8879</span>
+<span class="hljs-number">22</span>m <span class="hljs-number">23</span>s (- <span class="hljs-number">8</span>m <span class="hljs-number">8</span>s) (<span class="hljs-number">55000</span> <span class="hljs-number">73</span>%) <span class="hljs-number">0.8130</span>
+<span class="hljs-number">24</span>m <span class="hljs-number">25</span>s (- <span class="hljs-number">6</span>m <span class="hljs-number">6</span>s) (<span class="hljs-number">60000</span> <span class="hljs-number">80</span>%) <span class="hljs-number">0.7509</span>
+<span class="hljs-number">26</span>m <span class="hljs-number">27</span>s (- <span class="hljs-number">4</span>m <span class="hljs-number">4</span>s) (<span class="hljs-number">65000</span> <span class="hljs-number">86</span>%) <span class="hljs-number">0.6524</span>
+<span class="hljs-number">28</span>m <span class="hljs-number">27</span>s (- <span class="hljs-number">2</span>m <span class="hljs-number">1</span>s) (<span class="hljs-number">70000</span> <span class="hljs-number">93</span>%) <span class="hljs-number">0.6007</span>
+<span class="hljs-number">30</span>m <span class="hljs-number">30</span>s (- <span class="hljs-number">0</span>m <span class="hljs-number">0</span>s) (<span class="hljs-number">75000</span> <span class="hljs-number">100</span>%) <span class="hljs-number">0.5699</span>
+</code></pre>
+<pre><code class="lang-py">evaluateRandomly(encoder1, attn_decoder1)
+</code></pre>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">&gt; nous sommes desolees .
+= we re sorry .
+&lt; we re sorry . &lt;EOS&gt;
+
+&gt; tu plaisantes bien sur .
+= you re joking of course .
+&lt; you re joking of course . &lt;EOS&gt;
+
+&gt; vous etes trop stupide pour vivre .
+= you re too stupid to live .
+&lt; you re too stupid to live . &lt;EOS&gt;
+
+&gt; c est un scientifique de niveau international .
+= he s a world class scientist .
+&lt; he is a successful person . &lt;EOS&gt;
+
+&gt; j agis pour mon pere .
+= i am acting for my father .
+&lt; i m trying to my father . &lt;EOS&gt;
+
+&gt; ils courent maintenant .
+= they are running now .
+&lt; they are running now . &lt;EOS&gt;
+
+&gt; je suis tres heureux d etre ici .
+= i m very happy to be here .
+&lt; i m very happy to be here . &lt;EOS&gt;
+
+&gt; vous etes bonne .
+= you re good .
+&lt; you re good . &lt;EOS&gt;
+
+&gt; il a peur de la mort .
+= he is afraid of death .
+&lt; he is afraid of death . &lt;EOS&gt;
+
+&gt; je suis determine a devenir un scientifique .
+= i am determined to be a scientist .
+&lt; i m ready to make a cold . &lt;EOS&gt;
+</code></pre>
+<h3 id="&#x53EF;&#x89C6;&#x5316;&#x6CE8;&#x610F;&#x529B;">&#x53EF;&#x89C6;&#x5316;&#x6CE8;&#x610F;&#x529B;</h3>
+<p>&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x7684;&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x7279;&#x6027;&#x662F;&#x5176;&#x9AD8;&#x5EA6;&#x53EF;&#x89E3;&#x91CA;&#x7684;&#x8F93;&#x51FA;&#x3002; &#x56E0;&#x4E3A;&#x5B83;&#x7528;&#x4E8E;&#x52A0;&#x6743;&#x8F93;&#x5165;&#x5E8F;&#x5217;&#x7684;&#x7279;&#x5B9A;&#x7F16;&#x7801;&#x5668;&#x8F93;&#x51FA;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#x5728;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x957F;&#x4E0A;&#x7F51;&#x7EDC;&#x6700;&#x5173;&#x6CE8;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x8FD0;&#x884C;<code>plt.matshow(attentions)</code>&#x4EE5;&#x5C06;&#x6CE8;&#x610F;&#x529B;&#x8F93;&#x51FA;&#x663E;&#x793A;&#x4E3A;&#x77E9;&#x9635;&#xFF0C;&#x5176;&#x4E2D;&#x5217;&#x4E3A;&#x8F93;&#x5165;&#x6B65;&#x9AA4;&#xFF0C;&#x884C;&#x4E3A;&#x8F93;&#x51FA;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<pre><code class="lang-py">output_words, attentions = evaluate(
+    encoder1, attn_decoder1, <span class="hljs-string">&quot;je suis trop froid .&quot;</span>)
+plt.matshow(attentions.numpy())
+</code></pre>
+<p><img src="img/5412faceb18bc6fa2823be3ae1bdfd8d.png" alt="../_img/sphx_glr_seq2seq_translation_tutorial_003.png"></p>
+<p>&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x89C2;&#x770B;&#x4F53;&#x9A8C;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x505A;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x5DE5;&#x4F5C;&#x6765;&#x6DFB;&#x52A0;&#x8F74;&#x548C;&#x6807;&#x7B7E;&#xFF1A;</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">showAttention</span><span class="hljs-params">(input_sentence, output_words, attentions)</span>:</span>
+    <span class="hljs-comment"># Set up figure with colorbar</span>
+    fig = plt.figure()
+    ax = fig.add_subplot(<span class="hljs-number">111</span>)
+    cax = ax.matshow(attentions.numpy(), cmap=<span class="hljs-string">&apos;bone&apos;</span>)
+    fig.colorbar(cax)
+
+    <span class="hljs-comment"># Set up axes</span>
+    ax.set_xticklabels([<span class="hljs-string">&apos;&apos;</span>] + input_sentence.split(<span class="hljs-string">&apos; &apos;</span>) +
+                       [<span class="hljs-string">&apos;&lt;EOS&gt;&apos;</span>], rotation=<span class="hljs-number">90</span>)
+    ax.set_yticklabels([<span class="hljs-string">&apos;&apos;</span>] + output_words)
+
+    <span class="hljs-comment"># Show label at every tick</span>
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(<span class="hljs-number">1</span>))
+    ax.yaxis.set_major_locator(ticker.MultipleLocator(<span class="hljs-number">1</span>))
+
+    plt.show()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">evaluateAndShowAttention</span><span class="hljs-params">(input_sentence)</span>:</span>
+    output_words, attentions = evaluate(
+        encoder1, attn_decoder1, input_sentence)
+    print(<span class="hljs-string">&apos;input =&apos;</span>, input_sentence)
+    print(<span class="hljs-string">&apos;output =&apos;</span>, <span class="hljs-string">&apos; &apos;</span>.join(output_words))
+    showAttention(input_sentence, output_words, attentions)
+
+evaluateAndShowAttention(<span class="hljs-string">&quot;elle a cinq ans de moins que moi .&quot;</span>)
+
+evaluateAndShowAttention(<span class="hljs-string">&quot;elle est trop petit .&quot;</span>)
+
+evaluateAndShowAttention(<span class="hljs-string">&quot;je ne crains pas de mourir .&quot;</span>)
+
+evaluateAndShowAttention(<span class="hljs-string">&quot;c est un jeune directeur plein de talent .&quot;</span>)
+</code></pre>
+<ul>
+<li><img src="img/6e09db671ada03c61bdd1f32b6a7624b.png" alt="../_img/sphx_glr_seq2seq_translation_tutorial_004.png"></li>
+<li><img src="img/08bcfed65e8ab03ac7f380e20d421434.png" alt="../_img/sphx_glr_seq2seq_translation_tutorial_005.png"></li>
+<li><img src="img/b1ba956974f3e844b0b0cea490cc1148.png" alt="../_img/sphx_glr_seq2seq_translation_tutorial_006.png"></li>
+<li><img src="img/1226e2e8b7633b50c2c45ce699d8f71f.png" alt="../_img/sphx_glr_seq2seq_translation_tutorial_007.png"></li>
+</ul>
+<p>&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-py">input = elle a cinq ans de moins que moi .
+output = she s five years younger than i am . &lt;EOS&gt;
+input = elle est trop petit .
+output = she s too loud . &lt;EOS&gt;
+input = je ne crains pas de mourir .
+output = i m <span class="hljs-keyword">not</span> scared to die . &lt;EOS&gt;
+input = c est un jeune directeur plein de talent .
+output = he s a talented young writer . &lt;EOS&gt;
+</code></pre>
+<h2 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h2>
+<ul>
+<li>&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x96C6;<ul>
+<li>&#x53E6;&#x4E00;&#x5BF9;&#x8BED;&#x8A00;</li>
+<li>&#x4EBA;&#x673A; &#x2192; &#x673A;&#x5668;&#xFF08;&#x4F8B;&#x5982; IOT &#x547D;&#x4EE4;&#xFF09;</li>
+<li>&#x804A;&#x5929; &#x2192; &#x56DE;&#x590D;</li>
+<li>&#x95EE;&#x9898; &#x2192; &#x7B54;&#x6848;</li>
+</ul>
+</li>
+<li>&#x7528;&#x9884;&#x8BAD;&#x7EC3;&#x7684;&#x5355;&#x8BCD;&#x5D4C;&#x5165;&#xFF08;&#x4F8B;&#x5982; word2vec &#x6216; GloVe&#xFF09;&#x66FF;&#x6362;&#x5D4C;&#x5165;</li>
+<li>&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x7684;&#x5C42;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x9690;&#x85CF;&#x5355;&#x5143;&#x548C;&#x66F4;&#x591A;&#x7684;&#x53E5;&#x5B50;&#x3002; &#x6BD4;&#x8F83;&#x8BAD;&#x7EC3;&#x65F6;&#x95F4;&#x548C;&#x7ED3;&#x679C;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7FFB;&#x8BD1;&#x5BF9;&#xFF0C;&#x5176;&#x4E2D;&#x6210;&#x5BF9;&#x5177;&#x6709;&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x8BCD;&#x7EC4;&#xFF08;<code>I am test \t I am test</code>&#xFF09;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x7528;&#x4F5C;&#x81EA;&#x7F16;&#x7801;&#x5668;&#x3002; &#x5C1D;&#x8BD5;&#x8FD9;&#x4E2A;&#xFF1A;<ul>
+<li>&#x8BAD;&#x7EC3;&#x4E3A;&#x81EA;&#x7F16;&#x7801;&#x5668;</li>
+<li>&#x4EC5;&#x4FDD;&#x5B58;&#x7F16;&#x7801;&#x5668;&#x7F51;&#x7EDC;</li>
+<li>&#x4ECE;&#x90A3;&#x91CC;&#x8BAD;&#x7EC3;&#x65B0;&#x7684;&#x89E3;&#x7801;&#x5668;&#x8FDB;&#x884C;&#x7FFB;&#x8BD1;</li>
+</ul>
+</li>
+</ul>
+<p><strong>&#x811A;&#x672C;&#x7684;&#x603B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;</strong>&#xFF1A;&#xFF08;30 &#x5206;&#x949F; 37.929 &#x79D2;&#xFF09;</p>
+<p><a href="../_downloads/a96a2daac1918ec72f68233dfe3f2c47/seq2seq_translation_tutorial.py">&#x4E0B;&#x8F7D; Python &#x6E90;&#x7801;&#xFF1A;<code>seq2seq_translation_tutorial.py</code></a></p>
+<p><a href="../_downloads/a60617788061539b5449701ae76aee56/seq2seq_translation_tutorial.ipynb">&#x4E0B;&#x8F7D; Jupyter &#x7B14;&#x8BB0;&#x672C;&#xFF1A;<code>seq2seq_translation_tutorial.ipynb</code></a></p>
+<p><a href="https://sphinx-gallery.readthedocs.io" target="_blank">&#x7531; Sphinx &#x753B;&#x5ECA;</a>&#x751F;&#x6210;&#x7684;&#x753B;&#x5ECA;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="29.html" class="navigation navigation-prev " aria-label="Previous page: 从零开始的 NLP：使用字符级 RNN 生成名称">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="31.html" class="navigation navigation-next " aria-label="Next page: 使用torchtext的文本分类">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"从零开始的 NLP：使用序列到序列网络和注意力的翻译","level":"1.5.4","depth":2,"next":{"title":"使用torchtext的文本分类","level":"1.5.5","depth":2,"path":"31.md","ref":"31.md","articles":[]},"previous":{"title":"从零开始的 NLP：使用字符级 RNN 生成名称","level":"1.5.3","depth":2,"path":"29.md","ref":"29.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.7"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"30.md","mtime":"2021-04-12T06:14:20.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:16:46.997Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

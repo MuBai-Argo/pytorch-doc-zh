@@ -1,0 +1,3043 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>命名为 Tensors 操作员范围 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="103.html" />
+    
+    
+    <link rel="prev" href="101.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 1.4 教程&文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    入门
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    使用 PyTorch 进行深度学习：60 分钟的闪电战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="blitz/tensor_tutorial.html">
+            
+                <a href="blitz/tensor_tutorial.html">
+            
+                    
+                    什么是PyTorch？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="blitz/autograd_tutorial.html">
+            
+                <a href="blitz/autograd_tutorial.html">
+            
+                    
+                    Autograd：自动求导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="blitz/neural_networks_tutorial.html">
+            
+                <a href="blitz/neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="blitz/cifar10_tutorial.html">
+            
+                <a href="blitz/cifar10_tutorial.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="blitz/data_parallel_tutorial.html">
+            
+                <a href="blitz/data_parallel_tutorial.html">
+            
+                    
+                    可选：数据并行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    编写自定义数据集，数据加载器和转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    使用 TensorBoard 可视化模型，数据和训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    图片
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    TorchVision 对象检测微调教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    转移学习的计算机视觉教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    空间变压器网络教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    使用 PyTorch 进行神经传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    对抗示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    DCGAN 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    音频
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    torchaudio 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    文本
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    NLP From Scratch: 使用char-RNN对姓氏进行分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    NLP From Scratch: 生成名称与字符级RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    NLP From Scratch: 基于注意力机制的 seq2seq 神经网络翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    使用 TorchText 进行文本分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    使用 TorchText 进行语言翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    使用 nn.Transformer 和 TorchText 进行序列到序列建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    命名为 Tensor(实验性）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="24.html">
+            
+                <a href="24.html">
+            
+                    
+                    (实验性）PyTorch 中的命名张量简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    强化学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="26.html">
+            
+                <a href="26.html">
+            
+                    
+                    强化学习(DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    在生产中部署 PyTorch 模型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="28.html">
+            
+                <a href="28.html">
+            
+                    
+                    通过带有 Flask 的 REST API 在 Python 中部署 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="29.html">
+            
+                <a href="29.html">
+            
+                    
+                    TorchScript 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="30.html">
+            
+                <a href="30.html">
+            
+                    
+                    在 C ++中加载 TorchScript 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    (可选）将模型从 PyTorch 导出到 ONNX 并使用 ONNX Runtime 运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    并行和分布式训练
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="33.html">
+            
+                <a href="33.html">
+            
+                    
+                    单机模型并行最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="34.html">
+            
+                <a href="34.html">
+            
+                    
+                    分布式数据并行入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="35.html">
+            
+                <a href="35.html">
+            
+                    
+                    用 PyTorch 编写分布式应用程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    分布式 RPC 框架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="37.html">
+            
+                <a href="37.html">
+            
+                    
+                    (高级）带有 Amazon AWS 的 PyTorch 1.0 分布式训练师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    扩展 PyTorch
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="39.html">
+            
+                <a href="39.html">
+            
+                    
+                    使用自定义 C ++运算符扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="40.html">
+            
+                <a href="40.html">
+            
+                    
+                    使用自定义 C ++类扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="41.html">
+            
+                <a href="41.html">
+            
+                    
+                    使用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="42.html">
+            
+                <a href="42.html">
+            
+                    
+                    自定义 C ++和 CUDA 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    模型优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="44.html">
+            
+                <a href="44.html">
+            
+                    
+                    LSTM Word 语言模型上的(实验）动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="45.html">
+            
+                <a href="45.html">
+            
+                    
+                    (实验性）在 PyTorch 中使用 Eager 模式进行静态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="46.html">
+            
+                <a href="46.html">
+            
+                    
+                    (实验性）计算机视觉教程的量化转移学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="47.html">
+            
+                <a href="47.html">
+            
+                    
+                    (实验）BERT 上的动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="48.html">
+            
+                <a href="48.html">
+            
+                    
+                    修剪教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    PyTorch 用其他语言
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="50.html">
+            
+                <a href="50.html">
+            
+                    
+                    使用 PyTorch C ++前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    PyTorch 基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="52.html">
+            
+                <a href="52.html">
+            
+                    
+                    通过示例学习 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="53.html">
+            
+                <a href="53.html">
+            
+                    
+                    torch.nn 到底是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    文件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="56.html">
+            
+                <a href="56.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="57.html">
+            
+                <a href="57.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="58.html">
+            
+                <a href="58.html">
+            
+                    
+                    CPU 线程和 TorchScript 推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="59.html">
+            
+                <a href="59.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="60.html">
+            
+                <a href="60.html">
+            
+                    
+                    分布式 Autograd 设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="61.html">
+            
+                <a href="61.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="62.html">
+            
+                <a href="62.html">
+            
+                    
+                    经常问的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="63.html">
+            
+                <a href="63.html">
+            
+                    
+                    大规模部署的功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="64.html">
+            
+                <a href="64.html">
+            
+                    
+                    并行处理最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.10" data-path="65.html">
+            
+                <a href="65.html">
+            
+                    
+                    重现性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.11" data-path="66.html">
+            
+                <a href="66.html">
+            
+                    
+                    远程参考协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.12" data-path="67.html">
+            
+                <a href="67.html">
+            
+                    
+                    序列化语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.13" data-path="68.html">
+            
+                <a href="68.html">
+            
+                    
+                    Windows 常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.14" data-path="69.html">
+            
+                <a href="69.html">
+            
+                    
+                    XLA 设备上的 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    语言绑定
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="71.html">
+            
+                <a href="71.html">
+            
+                    
+                    PyTorch C ++ API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="72.html">
+            
+                <a href="72.html">
+            
+                    
+                    PyTorch Java API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="74.html">
+            
+                <a href="74.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="75.html">
+            
+                <a href="75.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="76.html">
+            
+                <a href="76.html">
+            
+                    
+                    torch功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="77.html">
+            
+                <a href="77.html">
+            
+                    
+                    torch张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="78.html">
+            
+                <a href="78.html">
+            
+                    
+                    张量属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.6" data-path="79.html">
+            
+                <a href="79.html">
+            
+                    
+                    自动差分包-Torch.Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.7" data-path="80.html">
+            
+                <a href="80.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.8" data-path="81.html">
+            
+                <a href="81.html">
+            
+                    
+                    分布式通讯包-Torch.Distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.9" data-path="82.html">
+            
+                <a href="82.html">
+            
+                    
+                    概率分布-torch分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.10" data-path="83.html">
+            
+                <a href="83.html">
+            
+                    
+                    torch.hub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.11" data-path="84.html">
+            
+                <a href="84.html">
+            
+                    
+                    torch脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.12" data-path="85.html">
+            
+                <a href="85.html">
+            
+                    
+                    torch.nn.init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.13" data-path="86.html">
+            
+                <a href="86.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.14" data-path="87.html">
+            
+                <a href="87.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.15" data-path="88.html">
+            
+                <a href="88.html">
+            
+                    
+                    量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.16" data-path="89.html">
+            
+                <a href="89.html">
+            
+                    
+                    分布式 RPC 框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.17" data-path="90.html">
+            
+                <a href="90.html">
+            
+                    
+                    torch随机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.18" data-path="91.html">
+            
+                <a href="91.html">
+            
+                    
+                    torch稀疏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.19" data-path="92.html">
+            
+                <a href="92.html">
+            
+                    
+                    torch存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.20" data-path="93.html">
+            
+                <a href="93.html">
+            
+                    
+                    torch.utils.bottleneck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.21" data-path="94.html">
+            
+                <a href="94.html">
+            
+                    
+                    torch.utils.checkpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.22" data-path="95.html">
+            
+                <a href="95.html">
+            
+                    
+                    torch.utils.cpp_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.23" data-path="96.html">
+            
+                <a href="96.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.24" data-path="97.html">
+            
+                <a href="97.html">
+            
+                    
+                    torch.utils.dlpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.25" data-path="98.html">
+            
+                <a href="98.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.26" data-path="99.html">
+            
+                <a href="99.html">
+            
+                    
+                    torch.utils.tensorboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.27" data-path="100.html">
+            
+                <a href="100.html">
+            
+                    
+                    类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.28" data-path="101.html">
+            
+                <a href="101.html">
+            
+                    
+                    命名张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17.29" data-path="102.html">
+            
+                <a href="102.html">
+            
+                    
+                    命名为 Tensors 操作员范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.30" data-path="103.html">
+            
+                <a href="103.html">
+            
+                    
+                    糟糕！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    torchvision参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="105.html">
+            
+                <a href="105.html">
+            
+                    
+                    torchvision
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    音频参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="107.html">
+            
+                <a href="107.html">
+            
+                    
+                    torchaudio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    torchtext参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="109.html">
+            
+                <a href="109.html">
+            
+                    
+                    torchtext
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    社区
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="111.html">
+            
+                <a href="111.html">
+            
+                    
+                    PyTorch 贡献指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="112.html">
+            
+                <a href="112.html">
+            
+                    
+                    PyTorch 治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="113.html">
+            
+                <a href="113.html">
+            
+                    
+                    PyTorch 治理| 感兴趣的人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >命名为 Tensors 操作员范围</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x547D;&#x540D;&#x4E3A;-tensors-&#x64CD;&#x4F5C;&#x5458;&#x8303;&#x56F4;">&#x547D;&#x540D;&#x4E3A; Tensors &#x64CD;&#x4F5C;&#x5458;&#x8303;&#x56F4;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A; <a href="https://pytorch.org/docs/stable/name_inference.html" target="_blank">https://pytorch.org/docs/stable/name_inference.html</a></p>
+</blockquote>
+<p>&#x8BF7;&#x9996;&#x5148;&#x9605;&#x8BFB;<a href="named_tensor.html#named-tensors-doc">&#x547D;&#x540D;&#x5F20;&#x91CF;</a>&#xFF0C;&#x4EE5;&#x4E86;&#x89E3;&#x547D;&#x540D;&#x5F20;&#x91CF;&#x3002;</p>
+<p>&#x672C;&#x6587;&#x6863;&#x662F;<em>&#x540D;&#x79F0;&#x63A8;&#x65AD;</em>&#x7684;&#x53C2;&#x8003;&#xFF0C;HTH1 &#x662F;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x5F20;&#x91CF;&#x547D;&#x540D;&#x65B9;&#x5F0F;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ol>
+<li><p>&#x4F7F;&#x7528;&#x540D;&#x79F0;&#x63D0;&#x4F9B;&#x5176;&#x4ED6;&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x65F6;&#x6B63;&#x786E;&#x6027;&#x68C0;&#x67E5;</p>
+</li>
+<li><p>&#x5C06;&#x540D;&#x79F0;&#x4ECE;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#x4F20;&#x64AD;&#x5230;&#x8F93;&#x51FA;&#x5F20;&#x91CF;</p>
+</li>
+</ol>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x547D;&#x540D;&#x5F20;&#x91CF;&#x53CA;&#x5176;&#x5173;&#x8054;&#x7684;&#x540D;&#x79F0;&#x63A8;&#x65AD;&#x89C4;&#x5219;&#x652F;&#x6301;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x7684;&#x5217;&#x8868;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6B64;&#x5904;&#x672A;&#x5217;&#x51FA;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x5BF9;&#x60A8;&#x7684;&#x7528;&#x4F8B;&#x6709;&#x5E2E;&#x52A9;&#xFF0C;&#x8BF7;<a href="https://github.com/pytorch/pytorch/issues?q=is%3Aopen+is%3Aissue+label%3A%22module%3A+named+tensor%22" target="_blank">&#x641C;&#x7D22;&#x95EE;&#x9898;&#x662F;&#x5426;&#x5DF2;&#x63D0;&#x4EA4;</a>&#xFF0C;&#x5426;&#x5219;&#x8BF7;<a href="https://github.com/pytorch/pytorch/issues/new/choose" target="_blank">&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x95EE;&#x9898;</a>&#x3002;</p>
+<p>&#x8B66;&#x544A;</p>
+<p>&#x547D;&#x540D;&#x7684;&#x5F20;&#x91CF; API &#x662F;&#x5B9E;&#x9A8C;&#x6027;&#x7684;&#xFF0C;&#x968F;&#x65F6;&#x53EF;&#x80FD;&#x66F4;&#x6539;&#x3002;</p>
+<caption>Supported Operations</caption>
+
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>&#x540D;&#x79F0;&#x63A8;&#x65AD;&#x89C4;&#x5219;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="tensors.html#torch.Tensor.abs" title="torch.Tensor.abs"><code>Tensor.abs()</code></a> &#xFF0C; <a href="torch.html#torch.abs" title="torch.abs"><code>torch.abs()</code></a></td>
+<td><a href="#keeps-input-names-doc">&#x4FDD;&#x7559;&#x8F93;&#x5165;&#x540D;&#x79F0;</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.abs_" title="torch.Tensor.abs_"><code>Tensor.abs_()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.acos" title="torch.Tensor.acos"><code>Tensor.acos()</code></a> &#xFF0C; <a href="torch.html#torch.acos" title="torch.acos"><code>torch.acos()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.acos_" title="torch.Tensor.acos_"><code>Tensor.acos_()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.add" title="torch.Tensor.add"><code>Tensor.add()</code></a> &#xFF0C; <a href="torch.html#torch.add" title="torch.add"><code>torch.add()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">&#x7EDF;&#x4E00;&#x8F93;&#x5165;</a>&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.add_" title="torch.Tensor.add_"><code>Tensor.add_()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.addmm" title="torch.Tensor.addmm"><code>Tensor.addmm()</code></a> &#xFF0C; <a href="torch.html#torch.addmm" title="torch.addmm"><code>torch.addmm()</code></a></td>
+<td><a href="#contracts-away-dims-doc">&#x7F29;&#x5C0F;&#x6697;&#x6DE1;</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.addmm_" title="torch.Tensor.addmm_"><code>Tensor.addmm_()</code></a></td>
+<td><a href="#contracts-away-dims-doc">Contracts away dims</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.addmv" title="torch.Tensor.addmv"><code>Tensor.addmv()</code></a> &#xFF0C; <a href="torch.html#torch.addmv" title="torch.addmv"><code>torch.addmv()</code></a></td>
+<td><a href="#contracts-away-dims-doc">Contracts away dims</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.addmv_" title="torch.Tensor.addmv_"><code>Tensor.addmv_()</code></a></td>
+<td><a href="#contracts-away-dims-doc">Contracts away dims</a></td>
+</tr>
+<tr>
+<td><a href="named_tensor.html#torch.Tensor.align_as" title="torch.Tensor.align_as"><code>Tensor.align_as()</code></a></td>
+<td>&#x67E5;&#x770B;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td><a href="named_tensor.html#torch.Tensor.align_to" title="torch.Tensor.align_to"><code>Tensor.align_to()</code></a></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><code>Tensor.all()</code>&#xFF0C;<code>torch.all()</code></td>
+<td>&#x6CA1;&#x6709;</td>
+</tr>
+<tr>
+<td><code>Tensor.any()</code>&#xFF0C;<code>torch.any()</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.asin" title="torch.Tensor.asin"><code>Tensor.asin()</code></a> &#xFF0C; <a href="torch.html#torch.asin" title="torch.asin"><code>torch.asin()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.asin_" title="torch.Tensor.asin_"><code>Tensor.asin_()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.atan" title="torch.Tensor.atan"><code>Tensor.atan()</code></a> &#xFF0C; <a href="torch.html#torch.atan" title="torch.atan"><code>torch.atan()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.atan2" title="torch.Tensor.atan2"><code>Tensor.atan2()</code></a> &#xFF0C; <a href="torch.html#torch.atan2" title="torch.atan2"><code>torch.atan2()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.atan2_" title="torch.Tensor.atan2_"><code>Tensor.atan2_()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.atan_" title="torch.Tensor.atan_"><code>Tensor.atan_()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.bernoulli" title="torch.Tensor.bernoulli"><code>Tensor.bernoulli()</code></a> &#xFF0C; <a href="torch.html#torch.bernoulli" title="torch.bernoulli"><code>torch.bernoulli()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.bernoulli_" title="torch.Tensor.bernoulli_"><code>Tensor.bernoulli_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.bfloat16" title="torch.Tensor.bfloat16"><code>Tensor.bfloat16()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.bitwise_not" title="torch.Tensor.bitwise_not"><code>Tensor.bitwise_not()</code></a> &#xFF0C; <a href="torch.html#torch.bitwise_not" title="torch.bitwise_not"><code>torch.bitwise_not()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.bitwise_not_" title="torch.Tensor.bitwise_not_"><code>Tensor.bitwise_not_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.bmm" title="torch.Tensor.bmm"><code>Tensor.bmm()</code></a> &#xFF0C; <a href="torch.html#torch.bmm" title="torch.bmm"><code>torch.bmm()</code></a></td>
+<td><a href="#contracts-away-dims-doc">Contracts away dims</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.bool" title="torch.Tensor.bool"><code>Tensor.bool()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.byte" title="torch.Tensor.byte"><code>Tensor.byte()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.cat" title="torch.cat"><code>torch.cat()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cauchy_" title="torch.Tensor.cauchy_"><code>Tensor.cauchy_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.ceil" title="torch.Tensor.ceil"><code>Tensor.ceil()</code></a> &#xFF0C; <a href="torch.html#torch.ceil" title="torch.ceil"><code>torch.ceil()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.ceil_" title="torch.Tensor.ceil_"><code>Tensor.ceil_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.char" title="torch.Tensor.char"><code>Tensor.char()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.chunk" title="torch.Tensor.chunk"><code>Tensor.chunk()</code></a> &#xFF0C; <a href="torch.html#torch.chunk" title="torch.chunk"><code>torch.chunk()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.clamp" title="torch.Tensor.clamp"><code>Tensor.clamp()</code></a> &#xFF0C; <a href="torch.html#torch.clamp" title="torch.clamp"><code>torch.clamp()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.clamp_" title="torch.Tensor.clamp_"><code>Tensor.clamp_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.copy_" title="torch.Tensor.copy_"><code>Tensor.copy_()</code></a></td>
+<td><a href="#out-function-semantics-doc">&#x8F93;&#x51FA;&#x529F;&#x80FD;&#x548C;&#x5C31;&#x5730;&#x53D8;&#x4F53;</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cos" title="torch.Tensor.cos"><code>Tensor.cos()</code></a> &#xFF0C; <a href="torch.html#torch.cos" title="torch.cos"><code>torch.cos()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cos_" title="torch.Tensor.cos_"><code>Tensor.cos_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cosh" title="torch.Tensor.cosh"><code>Tensor.cosh()</code></a> &#xFF0C; <a href="torch.html#torch.cosh" title="torch.cosh"><code>torch.cosh()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cosh_" title="torch.Tensor.cosh_"><code>Tensor.cosh_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cpu" title="torch.Tensor.cpu"><code>Tensor.cpu()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cuda" title="torch.Tensor.cuda"><code>Tensor.cuda()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cumprod" title="torch.Tensor.cumprod"><code>Tensor.cumprod()</code></a> &#xFF0C; <a href="torch.html#torch.cumprod" title="torch.cumprod"><code>torch.cumprod()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.cumsum" title="torch.Tensor.cumsum"><code>Tensor.cumsum()</code></a> &#xFF0C; <a href="torch.html#torch.cumsum" title="torch.cumsum"><code>torch.cumsum()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.data_ptr" title="torch.Tensor.data_ptr"><code>Tensor.data_ptr()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="autograd.html#torch.Tensor.detach" title="torch.Tensor.detach"><code>Tensor.detach()</code></a> &#xFF0C;<code>torch.detach()</code></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="autograd.html#torch.Tensor.detach_" title="torch.Tensor.detach_"><code>Tensor.detach_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.device" title="torch.Tensor.device"><code>Tensor.device</code></a> &#xFF0C; <a href="tensor_attributes.html#torch.torch.device" title="torch.torch.device"><code>torch.device()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.digamma" title="torch.Tensor.digamma"><code>Tensor.digamma()</code></a> &#xFF0C; <a href="torch.html#torch.digamma" title="torch.digamma"><code>torch.digamma()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.digamma_" title="torch.Tensor.digamma_"><code>Tensor.digamma_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.dim" title="torch.Tensor.dim"><code>Tensor.dim()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.div" title="torch.Tensor.div"><code>Tensor.div()</code></a> &#xFF0C; <a href="torch.html#torch.div" title="torch.div"><code>torch.div()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.div_" title="torch.Tensor.div_"><code>Tensor.div_()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.dot" title="torch.Tensor.dot"><code>Tensor.dot()</code></a> &#xFF0C; <a href="torch.html#torch.dot" title="torch.dot"><code>torch.dot()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.double" title="torch.Tensor.double"><code>Tensor.double()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.element_size" title="torch.Tensor.element_size"><code>Tensor.element_size()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.empty" title="torch.empty"><code>torch.empty()</code></a></td>
+<td><a href="#factory-doc">&#x5DE5;&#x5382;&#x529F;&#x80FD;</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.empty_like" title="torch.empty_like"><code>torch.empty_like()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.eq" title="torch.Tensor.eq"><code>Tensor.eq()</code></a> &#xFF0C; <a href="torch.html#torch.eq" title="torch.eq"><code>torch.eq()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.erf" title="torch.Tensor.erf"><code>Tensor.erf()</code></a> &#xFF0C; <a href="torch.html#torch.erf" title="torch.erf"><code>torch.erf()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.erf_" title="torch.Tensor.erf_"><code>Tensor.erf_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.erfc" title="torch.Tensor.erfc"><code>Tensor.erfc()</code></a> &#xFF0C; <a href="torch.html#torch.erfc" title="torch.erfc"><code>torch.erfc()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.erfc_" title="torch.Tensor.erfc_"><code>Tensor.erfc_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.erfinv" title="torch.Tensor.erfinv"><code>Tensor.erfinv()</code></a> &#xFF0C; <a href="torch.html#torch.erfinv" title="torch.erfinv"><code>torch.erfinv()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.erfinv_" title="torch.Tensor.erfinv_"><code>Tensor.erfinv_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.exp" title="torch.Tensor.exp"><code>Tensor.exp()</code></a> &#xFF0C; <a href="torch.html#torch.exp" title="torch.exp"><code>torch.exp()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.exp_" title="torch.Tensor.exp_"><code>Tensor.exp_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.expand" title="torch.Tensor.expand"><code>Tensor.expand()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.expm1" title="torch.Tensor.expm1"><code>Tensor.expm1()</code></a> &#xFF0C; <a href="torch.html#torch.expm1" title="torch.expm1"><code>torch.expm1()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.expm1_" title="torch.Tensor.expm1_"><code>Tensor.expm1_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.exponential_" title="torch.Tensor.exponential_"><code>Tensor.exponential_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.fill_" title="torch.Tensor.fill_"><code>Tensor.fill_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.flatten" title="torch.Tensor.flatten"><code>Tensor.flatten()</code></a> &#xFF0C; <a href="torch.html#torch.flatten" title="torch.flatten"><code>torch.flatten()</code></a></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.float" title="torch.Tensor.float"><code>Tensor.float()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.floor" title="torch.Tensor.floor"><code>Tensor.floor()</code></a> &#xFF0C; <a href="torch.html#torch.floor" title="torch.floor"><code>torch.floor()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.floor_" title="torch.Tensor.floor_"><code>Tensor.floor_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.frac" title="torch.Tensor.frac"><code>Tensor.frac()</code></a> &#xFF0C; <a href="torch.html#torch.frac" title="torch.frac"><code>torch.frac()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.frac_" title="torch.Tensor.frac_"><code>Tensor.frac_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.ge" title="torch.Tensor.ge"><code>Tensor.ge()</code></a> &#xFF0C; <a href="torch.html#torch.ge" title="torch.ge"><code>torch.ge()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.get_device" title="torch.Tensor.get_device"><code>Tensor.get_device()</code></a> &#xFF0C;<code>torch.get_device()</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="autograd.html#torch.Tensor.grad" title="torch.Tensor.grad"><code>Tensor.grad</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.gt" title="torch.Tensor.gt"><code>Tensor.gt()</code></a> &#xFF0C; <a href="torch.html#torch.gt" title="torch.gt"><code>torch.gt()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.half" title="torch.Tensor.half"><code>Tensor.half()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><code>Tensor.has_names()</code></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.index_fill" title="torch.Tensor.index_fill"><code>Tensor.index_fill()</code></a> &#xFF0C;<code>torch.index_fill()</code></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.index_fill_" title="torch.Tensor.index_fill_"><code>Tensor.index_fill_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.int" title="torch.Tensor.int"><code>Tensor.int()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.is_contiguous" title="torch.Tensor.is_contiguous"><code>Tensor.is_contiguous()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.is_cuda" title="torch.Tensor.is_cuda"><code>Tensor.is_cuda</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.is_floating_point" title="torch.Tensor.is_floating_point"><code>Tensor.is_floating_point()</code></a> &#xFF0C; <a href="torch.html#torch.is_floating_point" title="torch.is_floating_point"><code>torch.is_floating_point()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="autograd.html#torch.Tensor.is_leaf" title="torch.Tensor.is_leaf"><code>Tensor.is_leaf</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.is_pinned" title="torch.Tensor.is_pinned"><code>Tensor.is_pinned()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.is_shared" title="torch.Tensor.is_shared"><code>Tensor.is_shared()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.is_signed" title="torch.Tensor.is_signed"><code>Tensor.is_signed()</code></a> &#xFF0C;<code>torch.is_signed()</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.is_sparse" title="torch.Tensor.is_sparse"><code>Tensor.is_sparse</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.is_tensor" title="torch.is_tensor"><code>torch.is_tensor()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.item" title="torch.Tensor.item"><code>Tensor.item()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.kthvalue" title="torch.Tensor.kthvalue"><code>Tensor.kthvalue()</code></a> &#xFF0C; <a href="torch.html#torch.kthvalue" title="torch.kthvalue"><code>torch.kthvalue()</code></a></td>
+<td><a href="#removes-dimensions-doc">&#x79FB;&#x9664;&#x5C3A;&#x5BF8;</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.le" title="torch.Tensor.le"><code>Tensor.le()</code></a> &#xFF0C; <a href="torch.html#torch.le" title="torch.le"><code>torch.le()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log" title="torch.Tensor.log"><code>Tensor.log()</code></a> &#xFF0C; <a href="torch.html#torch.log" title="torch.log"><code>torch.log()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log10" title="torch.Tensor.log10"><code>Tensor.log10()</code></a> &#xFF0C; <a href="torch.html#torch.log10" title="torch.log10"><code>torch.log10()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log10_" title="torch.Tensor.log10_"><code>Tensor.log10_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log1p" title="torch.Tensor.log1p"><code>Tensor.log1p()</code></a> &#xFF0C; <a href="torch.html#torch.log1p" title="torch.log1p"><code>torch.log1p()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log1p_" title="torch.Tensor.log1p_"><code>Tensor.log1p_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log2" title="torch.Tensor.log2"><code>Tensor.log2()</code></a> &#xFF0C; <a href="torch.html#torch.log2" title="torch.log2"><code>torch.log2()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log2_" title="torch.Tensor.log2_"><code>Tensor.log2_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log_" title="torch.Tensor.log_"><code>Tensor.log_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.log_normal_" title="torch.Tensor.log_normal_"><code>Tensor.log_normal_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.logical_not" title="torch.Tensor.logical_not"><code>Tensor.logical_not()</code></a> &#xFF0C; <a href="torch.html#torch.logical_not" title="torch.logical_not"><code>torch.logical_not()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.logical_not_" title="torch.Tensor.logical_not_"><code>Tensor.logical_not_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.logsumexp" title="torch.Tensor.logsumexp"><code>Tensor.logsumexp()</code></a> &#xFF0C; <a href="torch.html#torch.logsumexp" title="torch.logsumexp"><code>torch.logsumexp()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.long" title="torch.Tensor.long"><code>Tensor.long()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.lt" title="torch.Tensor.lt"><code>Tensor.lt()</code></a> &#xFF0C; <a href="torch.html#torch.lt" title="torch.lt"><code>torch.lt()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.manual_seed" title="torch.manual_seed"><code>torch.manual_seed()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.masked_fill" title="torch.Tensor.masked_fill"><code>Tensor.masked_fill()</code></a> &#xFF0C;<code>torch.masked_fill()</code></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.masked_fill_" title="torch.Tensor.masked_fill_"><code>Tensor.masked_fill_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.masked_select" title="torch.Tensor.masked_select"><code>Tensor.masked_select()</code></a> &#xFF0C; <a href="torch.html#torch.masked_select" title="torch.masked_select"><code>torch.masked_select()</code></a></td>
+<td>&#x5C06;&#x906E;&#x7F69;&#x5BF9;&#x9F50;&#x5230;&#x8F93;&#x5165;&#xFF0C;&#x7136;&#x540E; unified_names_from_input_tensors</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.matmul" title="torch.Tensor.matmul"><code>Tensor.matmul()</code></a> &#xFF0C; <a href="torch.html#torch.matmul" title="torch.matmul"><code>torch.matmul()</code></a></td>
+<td><a href="#contracts-away-dims-doc">Contracts away dims</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.mean" title="torch.Tensor.mean"><code>Tensor.mean()</code></a> &#xFF0C; <a href="torch.html#torch.mean" title="torch.mean"><code>torch.mean()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.median" title="torch.Tensor.median"><code>Tensor.median()</code></a> &#xFF0C; <a href="torch.html#torch.median" title="torch.median"><code>torch.median()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.mm" title="torch.Tensor.mm"><code>Tensor.mm()</code></a> &#xFF0C; <a href="torch.html#torch.mm" title="torch.mm"><code>torch.mm()</code></a></td>
+<td><a href="#contracts-away-dims-doc">Contracts away dims</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.mode" title="torch.Tensor.mode"><code>Tensor.mode()</code></a> &#xFF0C; <a href="torch.html#torch.mode" title="torch.mode"><code>torch.mode()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.mul" title="torch.Tensor.mul"><code>Tensor.mul()</code></a> &#xFF0C; <a href="torch.html#torch.mul" title="torch.mul"><code>torch.mul()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.mul_" title="torch.Tensor.mul_"><code>Tensor.mul_()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.mv" title="torch.Tensor.mv"><code>Tensor.mv()</code></a> &#xFF0C; <a href="torch.html#torch.mv" title="torch.mv"><code>torch.mv()</code></a></td>
+<td><a href="#contracts-away-dims-doc">Contracts away dims</a></td>
+</tr>
+<tr>
+<td><a href="named_tensor.html#torch.Tensor.names" title="torch.Tensor.names"><code>Tensor.names</code></a></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.narrow" title="torch.Tensor.narrow"><code>Tensor.narrow()</code></a> &#xFF0C; <a href="torch.html#torch.narrow" title="torch.narrow"><code>torch.narrow()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.ndim" title="torch.Tensor.ndim"><code>Tensor.ndim</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.ndimension" title="torch.Tensor.ndimension"><code>Tensor.ndimension()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.ne" title="torch.Tensor.ne"><code>Tensor.ne()</code></a> &#xFF0C; <a href="torch.html#torch.ne" title="torch.ne"><code>torch.ne()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.neg" title="torch.Tensor.neg"><code>Tensor.neg()</code></a> &#xFF0C; <a href="torch.html#torch.neg" title="torch.neg"><code>torch.neg()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.neg_" title="torch.Tensor.neg_"><code>Tensor.neg_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.normal" title="torch.normal"><code>torch.normal()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.normal_" title="torch.Tensor.normal_"><code>Tensor.normal_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.numel" title="torch.Tensor.numel"><code>Tensor.numel()</code></a> &#xFF0C; <a href="torch.html#torch.numel" title="torch.numel"><code>torch.numel()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.ones" title="torch.ones"><code>torch.ones()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.pow" title="torch.Tensor.pow"><code>Tensor.pow()</code></a> &#xFF0C; <a href="torch.html#torch.pow" title="torch.pow"><code>torch.pow()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.pow_" title="torch.Tensor.pow_"><code>Tensor.pow_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.prod" title="torch.Tensor.prod"><code>Tensor.prod()</code></a> &#xFF0C; <a href="torch.html#torch.prod" title="torch.prod"><code>torch.prod()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.rand" title="torch.rand"><code>torch.rand()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.rand" title="torch.rand"><code>torch.rand()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.randn" title="torch.randn"><code>torch.randn()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.randn" title="torch.randn"><code>torch.randn()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.random_" title="torch.Tensor.random_"><code>Tensor.random_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.reciprocal" title="torch.Tensor.reciprocal"><code>Tensor.reciprocal()</code></a> &#xFF0C; <a href="torch.html#torch.reciprocal" title="torch.reciprocal"><code>torch.reciprocal()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.reciprocal_" title="torch.Tensor.reciprocal_"><code>Tensor.reciprocal_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="named_tensor.html#torch.Tensor.refine_names" title="torch.Tensor.refine_names"><code>Tensor.refine_names()</code></a></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><a href="autograd.html#torch.Tensor.register_hook" title="torch.Tensor.register_hook"><code>Tensor.register_hook()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="named_tensor.html#torch.Tensor.rename" title="torch.Tensor.rename"><code>Tensor.rename()</code></a></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><a href="named_tensor.html#torch.Tensor.rename_" title="torch.Tensor.rename_"><code>Tensor.rename_()</code></a></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><a href="autograd.html#torch.Tensor.requires_grad" title="torch.Tensor.requires_grad"><code>Tensor.requires_grad</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.requires_grad_" title="torch.Tensor.requires_grad_"><code>Tensor.requires_grad_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.resize_" title="torch.Tensor.resize_"><code>Tensor.resize_()</code></a></td>
+<td>&#x53EA;&#x5141;&#x8BB8;&#x4E0D;&#x6539;&#x53D8;&#x5F62;&#x72B6;&#x7684;&#x8C03;&#x6574;&#x5927;&#x5C0F;</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.resize_as_" title="torch.Tensor.resize_as_"><code>Tensor.resize_as_()</code></a></td>
+<td>Only allow resizes that do not change shape</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.round" title="torch.Tensor.round"><code>Tensor.round()</code></a> &#xFF0C; <a href="torch.html#torch.round" title="torch.round"><code>torch.round()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.round_" title="torch.Tensor.round_"><code>Tensor.round_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.rsqrt" title="torch.Tensor.rsqrt"><code>Tensor.rsqrt()</code></a> &#xFF0C; <a href="torch.html#torch.rsqrt" title="torch.rsqrt"><code>torch.rsqrt()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.rsqrt_" title="torch.Tensor.rsqrt_"><code>Tensor.rsqrt_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.select" title="torch.Tensor.select"><code>Tensor.select()</code></a> &#xFF0C;<code>torch.select()</code></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.short" title="torch.Tensor.short"><code>Tensor.short()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sigmoid" title="torch.Tensor.sigmoid"><code>Tensor.sigmoid()</code></a> &#xFF0C; <a href="torch.html#torch.sigmoid" title="torch.sigmoid"><code>torch.sigmoid()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sigmoid_" title="torch.Tensor.sigmoid_"><code>Tensor.sigmoid_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sign" title="torch.Tensor.sign"><code>Tensor.sign()</code></a> &#xFF0C; <a href="torch.html#torch.sign" title="torch.sign"><code>torch.sign()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sign_" title="torch.Tensor.sign_"><code>Tensor.sign_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sin" title="torch.Tensor.sin"><code>Tensor.sin()</code></a> &#xFF0C; <a href="torch.html#torch.sin" title="torch.sin"><code>torch.sin()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sin_" title="torch.Tensor.sin_"><code>Tensor.sin_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sinh" title="torch.Tensor.sinh"><code>Tensor.sinh()</code></a> &#xFF0C; <a href="torch.html#torch.sinh" title="torch.sinh"><code>torch.sinh()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sinh_" title="torch.Tensor.sinh_"><code>Tensor.sinh_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.size" title="torch.Tensor.size"><code>Tensor.size()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.split" title="torch.Tensor.split"><code>Tensor.split()</code></a> &#xFF0C; <a href="torch.html#torch.split" title="torch.split"><code>torch.split()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sqrt" title="torch.Tensor.sqrt"><code>Tensor.sqrt()</code></a> &#xFF0C; <a href="torch.html#torch.sqrt" title="torch.sqrt"><code>torch.sqrt()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sqrt_" title="torch.Tensor.sqrt_"><code>Tensor.sqrt_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.squeeze" title="torch.Tensor.squeeze"><code>Tensor.squeeze()</code></a> &#xFF0C; <a href="torch.html#torch.squeeze" title="torch.squeeze"><code>torch.squeeze()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.std" title="torch.Tensor.std"><code>Tensor.std()</code></a> &#xFF0C; <a href="torch.html#torch.std" title="torch.std"><code>torch.std()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.std_mean" title="torch.std_mean"><code>torch.std_mean()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.stride" title="torch.Tensor.stride"><code>Tensor.stride()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sub" title="torch.Tensor.sub"><code>Tensor.sub()</code></a> &#xFF0C;<code>torch.sub()</code></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sub_" title="torch.Tensor.sub_"><code>Tensor.sub_()</code></a></td>
+<td><a href="#unifies-names-from-inputs-doc">Unifies names from inputs</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.sum" title="torch.Tensor.sum"><code>Tensor.sum()</code></a> &#xFF0C; <a href="torch.html#torch.sum" title="torch.sum"><code>torch.sum()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.tan" title="torch.Tensor.tan"><code>Tensor.tan()</code></a> &#xFF0C; <a href="torch.html#torch.tan" title="torch.tan"><code>torch.tan()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.tan_" title="torch.Tensor.tan_"><code>Tensor.tan_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.tanh" title="torch.Tensor.tanh"><code>Tensor.tanh()</code></a> &#xFF0C; <a href="torch.html#torch.tanh" title="torch.tanh"><code>torch.tanh()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.tanh_" title="torch.Tensor.tanh_"><code>Tensor.tanh_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.tensor" title="torch.tensor"><code>torch.tensor()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.to" title="torch.Tensor.to"><code>Tensor.to()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.topk" title="torch.Tensor.topk"><code>Tensor.topk()</code></a> &#xFF0C; <a href="torch.html#torch.topk" title="torch.topk"><code>torch.topk()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.transpose" title="torch.Tensor.transpose"><code>Tensor.transpose()</code></a> &#xFF0C; <a href="torch.html#torch.transpose" title="torch.transpose"><code>torch.transpose()</code></a></td>
+<td><a href="#permutes-dimensions-doc">&#x6392;&#x5217;&#x5C3A;&#x5BF8;</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.trunc" title="torch.Tensor.trunc"><code>Tensor.trunc()</code></a> &#xFF0C; <a href="torch.html#torch.trunc" title="torch.trunc"><code>torch.trunc()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.trunc_" title="torch.Tensor.trunc_"><code>Tensor.trunc_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.type" title="torch.Tensor.type"><code>Tensor.type()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.type_as" title="torch.Tensor.type_as"><code>Tensor.type_as()</code></a></td>
+<td><a href="#keeps-input-names-doc">Keeps input names</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.unbind" title="torch.Tensor.unbind"><code>Tensor.unbind()</code></a> &#xFF0C; <a href="torch.html#torch.unbind" title="torch.unbind"><code>torch.unbind()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="named_tensor.html#torch.Tensor.unflatten" title="torch.Tensor.unflatten"><code>Tensor.unflatten()</code></a></td>
+<td>See documentation</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.uniform_" title="torch.Tensor.uniform_"><code>Tensor.uniform_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.var" title="torch.Tensor.var"><code>Tensor.var()</code></a> &#xFF0C; <a href="torch.html#torch.var" title="torch.var"><code>torch.var()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.var_mean" title="torch.var_mean"><code>torch.var_mean()</code></a></td>
+<td><a href="#removes-dimensions-doc">Removes dimensions</a></td>
+</tr>
+<tr>
+<td><a href="tensors.html#torch.Tensor.zero_" title="torch.Tensor.zero_"><code>Tensor.zero_()</code></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="torch.html#torch.zeros" title="torch.zeros"><code>torch.zeros()</code></a></td>
+<td><a href="#factory-doc">Factory functions</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4FDD;&#x7559;&#x8F93;&#x5165;&#x540D;&#x79F0;">&#x4FDD;&#x7559;&#x8F93;&#x5165;&#x540D;&#x79F0;</h2>
+<p>&#x6240;&#x6709;&#x9010;&#x70B9;&#x4E00;&#x5143;&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x4E00;&#x5143;&#x51FD;&#x6570;&#x90FD;&#x9075;&#x5FAA;&#x6B64;&#x89C4;&#x5219;&#x3002;</p>
+<ul>
+<li><p>&#x68C0;&#x67E5;&#x59D3;&#x540D;&#xFF1A;&#x65E0;</p>
+</li>
+<li><p>&#x4F20;&#x64AD;&#x540D;&#x79F0;&#xFF1A;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#x7684;&#x540D;&#x79F0;&#x4F1A;&#x4F20;&#x64AD;&#x5230;&#x8F93;&#x51FA;&#x3002;</p>
+</li>
+</ul>
+<pre><code>&gt;&gt;&gt; x = torch.randn(3, 3, names=(&apos;N&apos;, &apos;C&apos;))
+&gt;&gt;&gt; x.abs().names
+(&apos;N&apos;, &apos;C&apos;)
+</code></pre><h2 id="&#x79FB;&#x9664;&#x5C3A;&#x5BF8;">&#x79FB;&#x9664;&#x5C3A;&#x5BF8;</h2>
+<p>&#x6240;&#x6709;&#x7F29;&#x5C0F;&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982; <a href="tensors.html#torch.Tensor.sum" title="torch.Tensor.sum"><code>sum()</code></a> &#xFF0C;&#x90FD;&#x4F1A;&#x901A;&#x8FC7;&#x7F29;&#x5C0F;&#x6240;&#x9700;&#x5C3A;&#x5BF8;&#x6765;&#x5220;&#x9664;&#x5C3A;&#x5BF8;&#x3002; <a href="tensors.html#torch.Tensor.select" title="torch.Tensor.select"><code>select()</code></a> &#x548C; <a href="tensors.html#torch.Tensor.squeeze" title="torch.Tensor.squeeze"><code>squeeze()</code></a> &#x7B49;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x4F1A;&#x5220;&#x9664;&#x5C3A;&#x5BF8;&#x3002;</p>
+<p>&#x53EA;&#x8981;&#x6709;&#x4EBA;&#x53EF;&#x4EE5;&#x5C06;&#x6574;&#x6570;&#x7EF4;&#x5EA6;&#x7D22;&#x5F15;&#x4F20;&#x9012;&#x7ED9;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x7EF4;&#x5EA6;&#x540D;&#x79F0;&#x3002; &#x5305;&#x542B;&#x7EF4;&#x7D22;&#x5F15;&#x5217;&#x8868;&#x7684;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x7EF4;&#x540D;&#x79F0;&#x5217;&#x8868;&#x3002;</p>
+<ul>
+<li><p>&#x68C0;&#x67E5;&#x540D;&#x79F0;&#xFF1A;&#x5982;&#x679C;<code>dim</code>&#x6216;<code>dims</code>&#x4F5C;&#x4E3A;&#x540D;&#x79F0;&#x5217;&#x8868;&#x4F20;&#x5165;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;<code>self</code>&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8FD9;&#x4E9B;&#x540D;&#x79F0;&#x3002;</p>
+</li>
+<li><p>&#x4F20;&#x64AD;&#x540D;&#x79F0;&#xFF1A;&#x5982;&#x679C;&#x5728;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;<code>dim</code>&#x6216;<code>dims</code>&#x6307;&#x5B9A;&#x7684;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#x7684;&#x5C3A;&#x5BF8;&#xFF0C;&#x5219;&#x8FD9;&#x4E9B;&#x5C3A;&#x5BF8;&#x7684;&#x76F8;&#x5E94;&#x540D;&#x79F0;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;<code>output.names</code>&#x4E2D;&#x3002;</p>
+</li>
+</ul>
+<pre><code>&gt;&gt;&gt; x = torch.randn(1, 3, 3, 3, names=(&apos;N&apos;, &apos;C&apos;, &apos;H&apos;, &apos;W&apos;))
+&gt;&gt;&gt; x.squeeze(&apos;N&apos;).names
+(&apos;C&apos;, &apos;H&apos;, &apos;W&apos;)
+
+&gt;&gt;&gt; x = torch.randn(3, 3, 3, 3, names=(&apos;N&apos;, &apos;C&apos;, &apos;H&apos;, &apos;W&apos;))
+&gt;&gt;&gt; x.sum([&apos;N&apos;, &apos;C&apos;]).names
+(&apos;H&apos;, &apos;W&apos;)
+
+# Reduction ops with keepdim=True don&apos;t actually remove dimensions.
+&gt;&gt;&gt; x = torch.randn(3, 3, 3, 3, names=(&apos;N&apos;, &apos;C&apos;, &apos;H&apos;, &apos;W&apos;))
+&gt;&gt;&gt; x.sum([&apos;N&apos;, &apos;C&apos;], keepdim=True).names
+(&apos;N&apos;, &apos;C&apos;, &apos;H&apos;, &apos;W&apos;)
+</code></pre><h2 id="&#x7EDF;&#x4E00;&#x8F93;&#x5165;&#x4E2D;&#x7684;&#x540D;&#x79F0;">&#x7EDF;&#x4E00;&#x8F93;&#x5165;&#x4E2D;&#x7684;&#x540D;&#x79F0;</h2>
+<p>&#x6240;&#x6709;&#x4E8C;&#x8FDB;&#x5236;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x90FD;&#x9075;&#x5FAA;&#x6B64;&#x89C4;&#x5219;&#x3002; &#x5E7F;&#x64AD;&#x64CD;&#x4F5C;&#x4ECD;&#x7136;&#x4ECE;&#x53F3;&#x4FA7;&#x8FDB;&#x884C;&#x4F4D;&#x7F6E;&#x5E7F;&#x64AD;&#xFF0C;&#x4EE5;&#x4FDD;&#x6301;&#x4E0E;&#x672A;&#x547D;&#x540D;&#x5F20;&#x91CF;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x3002; &#x8981;&#x901A;&#x8FC7;&#x540D;&#x79F0;&#x6267;&#x884C;&#x663E;&#x5F0F;&#x5E7F;&#x64AD;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <a href="named_tensor.html#torch.Tensor.align_as" title="torch.Tensor.align_as"><code>Tensor.align_as()</code></a> &#x3002;</p>
+<ul>
+<li><p>&#x68C0;&#x67E5;&#x540D;&#x79F0;&#xFF1A;&#x6240;&#x6709;&#x540D;&#x79F0;&#x90FD;&#x5FC5;&#x987B;&#x4ECE;&#x53F3;&#x4FA7;&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x3002; &#x5373;&#xFF0C;&#x5728;<code>tensor + other</code>&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;<code>(-min(tensor.dim(), other.dim()) + 1, -1]</code>&#x4E2D;&#x7684;&#x6240;&#x6709;<code>i</code>&#xFF0C;<code>match(tensor.names[i], other.names[i])</code>&#x5FC5;&#x987B;&#x4E3A; true&#x3002;</p>
+</li>
+<li><p>&#x68C0;&#x67E5;&#x540D;&#x79F0;&#xFF1A;&#x6B64;&#x5916;&#xFF0C;&#x6240;&#x6709;&#x547D;&#x540D;&#x7684;&#x5C3A;&#x5BF8;&#x5FC5;&#x987B;&#x4ECE;&#x53F3;&#x5BF9;&#x9F50;&#x3002; &#x5728;&#x5339;&#x914D;&#x671F;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06;&#x547D;&#x540D;&#x5C3A;&#x5BF8;<code>A</code>&#x4E0E;&#x672A;&#x547D;&#x540D;&#x5C3A;&#x5BF8;<code>None</code>&#x5339;&#x914D;&#xFF0C;&#x5219;<code>A</code>&#x4E0D;&#x5F97;&#x51FA;&#x73B0;&#x5728;&#x5177;&#x6709;&#x672A;&#x547D;&#x540D;&#x5C3A;&#x5BF8;&#x7684;&#x5F20;&#x91CF;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x4F20;&#x64AD;&#x540D;&#x79F0;&#xFF1A;&#x4ECE;&#x4E24;&#x4E2A;&#x5F20;&#x91CF;&#x7684;&#x53F3;&#x8FB9;&#x5F00;&#x59CB;&#x7EDF;&#x4E00;&#x540D;&#x79F0;&#x5BF9;&#xFF0C;&#x4EE5;&#x4EA7;&#x751F;&#x8F93;&#x51FA;&#x540D;&#x79F0;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4F8B;&#x5982;&#xFF0C;</p>
+<pre><code># tensor: Tensor[   N, None]
+# other:  Tensor[None,    C]
+&gt;&gt;&gt; tensor = torch.randn(3, 3, names=(&apos;N&apos;, None))
+&gt;&gt;&gt; other = torch.randn(3, 3, names=(None, &apos;C&apos;))
+&gt;&gt;&gt; (tensor + other).names
+(&apos;N&apos;, &apos;C&apos;)
+</code></pre><p>&#x68C0;&#x67E5;&#x59D3;&#x540D;&#xFF1A;</p>
+<ul>
+<li><p><code>match(tensor.names[-1], other.names[-1])</code>&#x662F;<code>True</code></p>
+</li>
+<li><p><code>match(tensor.names[-2], tensor.names[-2])</code>&#x662F;<code>True</code></p>
+</li>
+<li><p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x5C06; <a href="torch.html#torch.tensor" title="torch.tensor"><code>tensor</code></a> &#x4E2D;&#x7684;<code>None</code>&#x4E0E;<code>&apos;C&apos;</code>&#x5339;&#x914D;&#xFF0C;&#x56E0;&#x6B64;&#x8BF7;&#x786E;&#x4FDD; <a href="torch.html#torch.tensor" title="torch.tensor"><code>tensor</code></a> &#x4E2D;&#x4E0D;&#x5B58;&#x5728;<code>&apos;C&apos;</code>&#x3002;</p>
+</li>
+<li><p>&#x68C0;&#x67E5;&#x4EE5;&#x786E;&#x4FDD;<code>other</code>&#x4E2D;&#x4E0D;&#x5B58;&#x5728;<code>&apos;N&apos;</code>(&#x4E0D;&#x5B58;&#x5728;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6700;&#x540E;&#xFF0C;&#x4F7F;&#x7528;<code>[unify(&apos;N&apos;, None), unify(None, &apos;C&apos;)] = [&apos;N&apos;, &apos;C&apos;]</code>&#x8BA1;&#x7B97;&#x8F93;&#x51FA;&#x540D;&#x79F0;</p>
+<p>&#x66F4;&#x591A;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code># Dimensions don&apos;t match from the right:
+# tensor: Tensor[N, C]
+# other:  Tensor[   N]
+&gt;&gt;&gt; tensor = torch.randn(3, 3, names=(&apos;N&apos;, &apos;C&apos;))
+&gt;&gt;&gt; other = torch.randn(3, names=(&apos;N&apos;,))
+&gt;&gt;&gt; (tensor + other).names
+RuntimeError: Error when attempting to broadcast dims [&apos;N&apos;, &apos;C&apos;] and dims
+[&apos;N&apos;]: dim &apos;C&apos; and dim &apos;N&apos; are at the same position from the right but do
+not match.
+
+# Dimensions aren&apos;t aligned when matching tensor.names[-1] and other.names[-1]:
+# tensor: Tensor[N, None]
+# other:  Tensor[      N]
+&gt;&gt;&gt; tensor = torch.randn(3, 3, names=(&apos;N&apos;, None))
+&gt;&gt;&gt; other = torch.randn(3, names=(&apos;N&apos;,))
+&gt;&gt;&gt; (tensor + other).names
+RuntimeError: Misaligned dims when attempting to broadcast dims [&apos;N&apos;] and
+dims [&apos;N&apos;, None]: dim &apos;N&apos; appears in a different position from the right
+across both lists.
+</code></pre><p>&#x6CE8;&#x610F;</p>
+<p>&#x5728;&#x6700;&#x540E;&#x4E24;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x540D;&#x79F0;&#x5BF9;&#x9F50;&#x5F20;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x52A0;&#x6CD5;&#x3002; &#x4F7F;&#x7528; <a href="named_tensor.html#torch.Tensor.align_as" title="torch.Tensor.align_as"><code>Tensor.align_as()</code></a> &#x6309;&#x540D;&#x79F0;&#x5BF9;&#x9F50;&#x5F20;&#x91CF;&#xFF0C;&#x6216;&#x4F7F;&#x7528; <a href="named_tensor.html#torch.Tensor.align_to" title="torch.Tensor.align_to"><code>Tensor.align_to()</code></a> &#x5C06;&#x5F20;&#x91CF;&#x5BF9;&#x9F50;&#x5230;&#x81EA;&#x5B9A;&#x4E49;&#x5C3A;&#x5BF8;&#x987A;&#x5E8F;&#x3002;</p>
+<h2 id="&#x6392;&#x5217;&#x5C3A;&#x5BF8;">&#x6392;&#x5217;&#x5C3A;&#x5BF8;</h2>
+<p>&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;(&#x4F8B;&#x5982; <a href="tensors.html#torch.Tensor.t" title="torch.Tensor.t"><code>Tensor.t()</code></a>)&#x4F1A;&#x7F6E;&#x6362;&#x5C3A;&#x5BF8;&#x987A;&#x5E8F;&#x3002; &#x7EF4;&#x5EA6;&#x540D;&#x79F0;&#x9644;&#x52A0;&#x5230;&#x5404;&#x4E2A;&#x7EF4;&#x5EA6;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x53EF;&#x4EE5;&#x6392;&#x5217;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x64CD;&#x4F5C;&#x5458;&#x8F93;&#x5165;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;<code>dim</code>&#xFF0C;&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x5C3A;&#x5BF8;&#x540D;&#x79F0;&#x4F5C;&#x4E3A;<code>dim</code>&#x3002;</p>
+<ul>
+<li><p>&#x68C0;&#x67E5;&#x540D;&#x79F0;&#xFF1A;&#x5982;&#x679C;&#x5C06;<code>dim</code>&#x4F5C;&#x4E3A;&#x540D;&#x79F0;&#x4F20;&#x9012;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x5176;&#x662F;&#x5426;&#x5728;&#x5F20;&#x91CF;&#x4E2D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p>&#x4F20;&#x64AD;&#x540D;&#x79F0;&#xFF1A;&#x4EE5;&#x4E0E;&#x8981;&#x6392;&#x5217;&#x7684;&#x7EF4;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x6392;&#x5217;&#x7EF4;&#x540D;&#x79F0;&#x3002;</p>
+</li>
+</ul>
+<pre><code>&gt;&gt;&gt; x = torch.randn(3, 3, names=(&apos;N&apos;, &apos;C&apos;))
+&gt;&gt;&gt; x.transpose(&apos;N&apos;, &apos;C&apos;).names
+(&apos;C&apos;, &apos;N&apos;)
+</code></pre><h2 id="&#x6536;&#x7F29;&#x6D88;&#x5931;">&#x6536;&#x7F29;&#x6D88;&#x5931;</h2>
+<p>&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x51FD;&#x6570;&#x9075;&#x5FAA;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x67D0;&#x4E9B;&#x53D8;&#x4F53;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x901A;&#x8FC7; <a href="torch.html#torch.mm" title="torch.mm"><code>torch.mm()</code></a> &#xFF0C;&#x7136;&#x540E;&#x6982;&#x62EC;&#x4E00;&#x4E0B;&#x6279;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x7684;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;<code>torch.mm(tensor, other)</code>&#xFF1A;</p>
+<ul>
+<li><p>Check names: None</p>
+</li>
+<li><p>&#x4F20;&#x64AD;&#x540D;&#x79F0;&#xFF1A;&#x7ED3;&#x679C;&#x540D;&#x79F0;&#x4E3A;<code>(tensor.names[-2], other.names[-1])</code>&#x3002;</p>
+</li>
+</ul>
+<pre><code>&gt;&gt;&gt; x = torch.randn(3, 3, names=(&apos;N&apos;, &apos;D&apos;))
+&gt;&gt;&gt; y = torch.randn(3, 3, names=(&apos;in&apos;, &apos;out&apos;))
+&gt;&gt;&gt; x.mm(y).names
+(&apos;N&apos;, &apos;out&apos;)
+</code></pre><p>&#x672C;&#x8D28;&#x4E0A;&#xFF0C;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x5728;&#x4E8C;&#x7EF4;&#x4E0A;&#x6267;&#x884C;&#x70B9;&#x79EF;&#x8FD0;&#x7B97;&#xFF0C;&#x4F7F;&#x5B83;&#x4EEC;&#x6298;&#x53E0;&#x3002; &#x5F53;&#x4E24;&#x4E2A;&#x5F20;&#x91CF;&#x77E9;&#x9635;&#x76F8;&#x4E58;&#x65F6;&#xFF0C;&#x6536;&#x7F29;&#x5C3A;&#x5BF8;&#x6D88;&#x5931;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x51FA;&#x73B0;&#x5728;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x4E2D;&#x3002;</p>
+<p><a href="torch.html#torch.mv" title="torch.mv"><code>torch.mv()</code></a> &#xFF0C; <a href="torch.html#torch.dot" title="torch.dot"><code>torch.dot()</code></a> &#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x7C7B;&#x4F3C;&#xFF1A;&#x540D;&#x79F0;&#x63A8;&#x65AD;&#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8F93;&#x5165;&#x540D;&#x79F0;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x5220;&#x9664;&#x70B9;&#x79EF;&#x6240;&#x6D89;&#x53CA;&#x7684;&#x5C3A;&#x5BF8;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; x = torch.randn(3, 3, names=(&apos;N&apos;, &apos;D&apos;))
+&gt;&gt;&gt; y = torch.randn(3, names=(&apos;something&apos;,))
+&gt;&gt;&gt; x.mv(y).names
+(&apos;N&apos;,)
+</code></pre><p>&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;<code>torch.matmul(tensor, other)</code>&#x3002; &#x5047;&#x8BBE;<code>tensor.dim() &amp;gt;= 2</code>&#x548C;<code>other.dim() &amp;gt;= 2</code>&#x3002;</p>
+<ul>
+<li><p>&#x68C0;&#x67E5;&#x540D;&#x79F0;&#xFF1A;&#x68C0;&#x67E5;&#x8F93;&#x5165;&#x7684;&#x6279;&#x6B21;&#x5C3A;&#x5BF8;&#x662F;&#x5426;&#x5BF9;&#x9F50;&#x5E76;&#x53EF;&#x4EE5;&#x5E7F;&#x64AD;&#x3002; &#x8BF7;&#x53C2;&#x89C1;<a href="#unifies-names-from-inputs-doc">&#x7EDF;&#x4E00;&#x8F93;&#x5165;</a>&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x4EE5;&#x4E86;&#x89E3;&#x5BF9;&#x9F50;&#x8F93;&#x5165;&#x7684;&#x542B;&#x4E49;&#x3002;</p>
+</li>
+<li><p>&#x4F20;&#x64AD;&#x540D;&#x79F0;&#xFF1A;&#x7ED3;&#x679C;&#x540D;&#x79F0;&#x662F;&#x901A;&#x8FC7;&#x7EDF;&#x4E00;&#x6279;&#x6B21;&#x5C3A;&#x5BF8;&#x5E76;&#x5220;&#x9664;&#x5408;&#x540C;&#x89C4;&#x5B9A;&#x7684;&#x5C3A;&#x5BF8;&#x83B7;&#x5F97;&#x7684;&#xFF1A;<code>unify(tensor.names[:-2], other.names[:-2]) + (tensor.names[-2], other.names[-1])</code>&#x3002;</p>
+</li>
+</ul>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code># Batch matrix multiply of matrices Tensor[&apos;C&apos;, &apos;D&apos;] and Tensor[&apos;E&apos;, &apos;F&apos;].
+# &apos;A&apos;, &apos;B&apos; are batch dimensions.
+&gt;&gt;&gt; x = torch.randn(3, 3, 3, 3, names=(&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D))
+&gt;&gt;&gt; y = torch.randn(3, 3, 3, names=(&apos;B&apos;, &apos;E&apos;, &apos;F))
+&gt;&gt;&gt; torch.matmul(x, y).names
+(&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;F&apos;)
+</code></pre><p>&#x6700;&#x540E;&#xFF0C;&#x8FD8;&#x6709;&#x8BB8;&#x591A;&#x529F;&#x80FD;&#x7684;&#x878D;&#x5408;<code>add</code>&#x7248;&#x672C;&#x3002; &#x5373; <a href="torch.html#torch.addmm" title="torch.addmm"><code>addmm()</code></a> &#x548C; <a href="torch.html#torch.addmv" title="torch.addmv"><code>addmv()</code></a> &#x3002; &#x8FD9;&#x4E9B;&#x88AB;&#x89C6;&#x4E3A;&#x6784;&#x6210; <a href="torch.html#torch.mm" title="torch.mm"><code>mm()</code></a> &#x7684;&#x540D;&#x79F0;&#x63A8;&#x65AD;&#x548C; <a href="torch.html#torch.add" title="torch.add"><code>add()</code></a> &#x7684;&#x547D;&#x540D;&#x63A8;&#x65AD;&#x3002;</p>
+<h2 id="&#x5DE5;&#x5382;&#x529F;&#x80FD;">&#x5DE5;&#x5382;&#x529F;&#x80FD;</h2>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x5DE5;&#x5382;&#x51FD;&#x6570;&#x91C7;&#x7528;&#x65B0;&#x7684;<code>names</code>&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x5C06;&#x540D;&#x79F0;&#x4E0E;&#x6BCF;&#x4E2A;&#x7EF4;&#x5EA6;&#x76F8;&#x5173;&#x8054;&#x3002;</p>
+<pre><code>&gt;&gt;&gt; torch.zeros(2, 3, names=(&apos;N&apos;, &apos;C&apos;))
+tensor([[0., 0., 0.],
+        [0., 0., 0.]], names=(&apos;N&apos;, &apos;C&apos;))
+</code></pre><h2 id="&#x8F93;&#x51FA;&#x529F;&#x80FD;&#x548C;&#x5C31;&#x5730;&#x53D8;&#x578B;">&#x8F93;&#x51FA;&#x529F;&#x80FD;&#x548C;&#x5C31;&#x5730;&#x53D8;&#x578B;</h2>
+<p>&#x6307;&#x5B9A;&#x4E3A;<code>out=</code>&#x5F20;&#x91CF;&#x7684;&#x5F20;&#x91CF;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x884C;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li><p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x547D;&#x540D;&#x7EF4;&#xFF0C;&#x5219;&#x5C06;&#x4ECE;&#x64CD;&#x4F5C;&#x4E2D;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x540D;&#x79F0;&#x4F20;&#x64AD;&#x5230;&#x5176;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x5B83;&#x5177;&#x6709;&#x4EFB;&#x4F55;&#x547D;&#x540D;&#x7EF4;&#xFF0C;&#x5219;&#x4ECE;&#x8BE5;&#x64CD;&#x4F5C;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x4E0E;&#x73B0;&#x6709;&#x540D;&#x79F0;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x3002; &#x5426;&#x5219;&#xFF0C;&#x64CD;&#x4F5C;&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6240;&#x6709;&#x5C31;&#x5730;&#x65B9;&#x6CD5;&#x90FD;&#x4F1A;&#x5C06;&#x8F93;&#x5165;&#x4FEE;&#x6539;&#x4E3A;&#x5177;&#x6709;&#x4E0E;&#x6839;&#x636E;&#x540D;&#x79F0;&#x63A8;&#x65AD;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x7684;&#x540D;&#x79F0;&#x3002; &#x4F8B;&#x5982;&#xFF0C;</p>
+<pre><code>&gt;&gt;&gt; x = torch.randn(3, 3)
+&gt;&gt;&gt; y = torch.randn(3, 3, names=(&apos;N&apos;, &apos;C&apos;))
+&gt;&gt;&gt; x.names
+(None, None)
+
+&gt;&gt;&gt; x += y
+&gt;&gt;&gt; x.names
+(&apos;N&apos;, &apos;C&apos;)
+</code></pre><p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="101.html" class="navigation navigation-prev " aria-label="Previous page: 命名张量">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="103.html" class="navigation navigation-next " aria-label="Next page: 糟糕！">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"命名为 Tensors 操作员范围","level":"1.17.29","depth":2,"next":{"title":"糟糕！","level":"1.17.30","depth":2,"path":"103.md","ref":"103.md","articles":[]},"previous":{"title":"命名张量","level":"1.17.28","depth":2,"path":"101.md","ref":"101.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.4"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"102.md","mtime":"2021-04-12T06:14:20.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:16:19.672Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

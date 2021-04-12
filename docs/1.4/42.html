@@ -1,0 +1,2827 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>自定义 C ++和 CUDA 扩展 · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="41.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 1.4 教程&文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    入门
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    使用 PyTorch 进行深度学习：60 分钟的闪电战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="blitz/tensor_tutorial.html">
+            
+                <a href="blitz/tensor_tutorial.html">
+            
+                    
+                    什么是PyTorch？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="blitz/autograd_tutorial.html">
+            
+                <a href="blitz/autograd_tutorial.html">
+            
+                    
+                    Autograd：自动求导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="blitz/neural_networks_tutorial.html">
+            
+                <a href="blitz/neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="blitz/cifar10_tutorial.html">
+            
+                <a href="blitz/cifar10_tutorial.html">
+            
+                    
+                    训练分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="blitz/data_parallel_tutorial.html">
+            
+                <a href="blitz/data_parallel_tutorial.html">
+            
+                    
+                    可选：数据并行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    编写自定义数据集，数据加载器和转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    使用 TensorBoard 可视化模型，数据和训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    图片
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    TorchVision 对象检测微调教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    转移学习的计算机视觉教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    空间变压器网络教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    使用 PyTorch 进行神经传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    对抗示例生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    DCGAN 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    音频
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    torchaudio 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    文本
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    NLP From Scratch: 使用char-RNN对姓氏进行分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    NLP From Scratch: 生成名称与字符级RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    NLP From Scratch: 基于注意力机制的 seq2seq 神经网络翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    使用 TorchText 进行文本分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    使用 TorchText 进行语言翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    使用 nn.Transformer 和 TorchText 进行序列到序列建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    命名为 Tensor(实验性）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="24.html">
+            
+                <a href="24.html">
+            
+                    
+                    (实验性）PyTorch 中的命名张量简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    强化学习
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="26.html">
+            
+                <a href="26.html">
+            
+                    
+                    强化学习(DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    在生产中部署 PyTorch 模型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="28.html">
+            
+                <a href="28.html">
+            
+                    
+                    通过带有 Flask 的 REST API 在 Python 中部署 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="29.html">
+            
+                <a href="29.html">
+            
+                    
+                    TorchScript 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="30.html">
+            
+                <a href="30.html">
+            
+                    
+                    在 C ++中加载 TorchScript 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    (可选）将模型从 PyTorch 导出到 ONNX 并使用 ONNX Runtime 运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    并行和分布式训练
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="33.html">
+            
+                <a href="33.html">
+            
+                    
+                    单机模型并行最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="34.html">
+            
+                <a href="34.html">
+            
+                    
+                    分布式数据并行入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="35.html">
+            
+                <a href="35.html">
+            
+                    
+                    用 PyTorch 编写分布式应用程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    分布式 RPC 框架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="37.html">
+            
+                <a href="37.html">
+            
+                    
+                    (高级）带有 Amazon AWS 的 PyTorch 1.0 分布式训练师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    扩展 PyTorch
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="39.html">
+            
+                <a href="39.html">
+            
+                    
+                    使用自定义 C ++运算符扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="40.html">
+            
+                <a href="40.html">
+            
+                    
+                    使用自定义 C ++类扩展 TorchScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="41.html">
+            
+                <a href="41.html">
+            
+                    
+                    使用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.4" data-path="42.html">
+            
+                <a href="42.html">
+            
+                    
+                    自定义 C ++和 CUDA 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    模型优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="44.html">
+            
+                <a href="44.html">
+            
+                    
+                    LSTM Word 语言模型上的(实验）动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="45.html">
+            
+                <a href="45.html">
+            
+                    
+                    (实验性）在 PyTorch 中使用 Eager 模式进行静态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="46.html">
+            
+                <a href="46.html">
+            
+                    
+                    (实验性）计算机视觉教程的量化转移学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="47.html">
+            
+                <a href="47.html">
+            
+                    
+                    (实验）BERT 上的动态量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="48.html">
+            
+                <a href="48.html">
+            
+                    
+                    修剪教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    PyTorch 用其他语言
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="50.html">
+            
+                <a href="50.html">
+            
+                    
+                    使用 PyTorch C ++前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    PyTorch 基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="52.html">
+            
+                <a href="52.html">
+            
+                    
+                    通过示例学习 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="53.html">
+            
+                <a href="53.html">
+            
+                    
+                    torch.nn 到底是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    文件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="56.html">
+            
+                <a href="56.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="57.html">
+            
+                <a href="57.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="58.html">
+            
+                <a href="58.html">
+            
+                    
+                    CPU 线程和 TorchScript 推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="59.html">
+            
+                <a href="59.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="60.html">
+            
+                <a href="60.html">
+            
+                    
+                    分布式 Autograd 设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="61.html">
+            
+                <a href="61.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="62.html">
+            
+                <a href="62.html">
+            
+                    
+                    经常问的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="63.html">
+            
+                <a href="63.html">
+            
+                    
+                    大规模部署的功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="64.html">
+            
+                <a href="64.html">
+            
+                    
+                    并行处理最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.10" data-path="65.html">
+            
+                <a href="65.html">
+            
+                    
+                    重现性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.11" data-path="66.html">
+            
+                <a href="66.html">
+            
+                    
+                    远程参考协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.12" data-path="67.html">
+            
+                <a href="67.html">
+            
+                    
+                    序列化语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.13" data-path="68.html">
+            
+                <a href="68.html">
+            
+                    
+                    Windows 常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.14" data-path="69.html">
+            
+                <a href="69.html">
+            
+                    
+                    XLA 设备上的 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    语言绑定
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="71.html">
+            
+                <a href="71.html">
+            
+                    
+                    PyTorch C ++ API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="72.html">
+            
+                <a href="72.html">
+            
+                    
+                    PyTorch Java API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    Python API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="74.html">
+            
+                <a href="74.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="75.html">
+            
+                <a href="75.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="76.html">
+            
+                <a href="76.html">
+            
+                    
+                    torch功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" data-path="77.html">
+            
+                <a href="77.html">
+            
+                    
+                    torch张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="78.html">
+            
+                <a href="78.html">
+            
+                    
+                    张量属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.6" data-path="79.html">
+            
+                <a href="79.html">
+            
+                    
+                    自动差分包-Torch.Autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.7" data-path="80.html">
+            
+                <a href="80.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.8" data-path="81.html">
+            
+                <a href="81.html">
+            
+                    
+                    分布式通讯包-Torch.Distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.9" data-path="82.html">
+            
+                <a href="82.html">
+            
+                    
+                    概率分布-torch分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.10" data-path="83.html">
+            
+                <a href="83.html">
+            
+                    
+                    torch.hub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.11" data-path="84.html">
+            
+                <a href="84.html">
+            
+                    
+                    torch脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.12" data-path="85.html">
+            
+                <a href="85.html">
+            
+                    
+                    torch.nn.init
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.13" data-path="86.html">
+            
+                <a href="86.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.14" data-path="87.html">
+            
+                <a href="87.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.15" data-path="88.html">
+            
+                <a href="88.html">
+            
+                    
+                    量化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.16" data-path="89.html">
+            
+                <a href="89.html">
+            
+                    
+                    分布式 RPC 框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.17" data-path="90.html">
+            
+                <a href="90.html">
+            
+                    
+                    torch随机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.18" data-path="91.html">
+            
+                <a href="91.html">
+            
+                    
+                    torch稀疏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.19" data-path="92.html">
+            
+                <a href="92.html">
+            
+                    
+                    torch存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.20" data-path="93.html">
+            
+                <a href="93.html">
+            
+                    
+                    torch.utils.bottleneck
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.21" data-path="94.html">
+            
+                <a href="94.html">
+            
+                    
+                    torch.utils.checkpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.22" data-path="95.html">
+            
+                <a href="95.html">
+            
+                    
+                    torch.utils.cpp_extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.23" data-path="96.html">
+            
+                <a href="96.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.24" data-path="97.html">
+            
+                <a href="97.html">
+            
+                    
+                    torch.utils.dlpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.25" data-path="98.html">
+            
+                <a href="98.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.26" data-path="99.html">
+            
+                <a href="99.html">
+            
+                    
+                    torch.utils.tensorboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.27" data-path="100.html">
+            
+                <a href="100.html">
+            
+                    
+                    类型信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.28" data-path="101.html">
+            
+                <a href="101.html">
+            
+                    
+                    命名张量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.29" data-path="102.html">
+            
+                <a href="102.html">
+            
+                    
+                    命名为 Tensors 操作员范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.30" data-path="103.html">
+            
+                <a href="103.html">
+            
+                    
+                    糟糕！
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    torchvision参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="105.html">
+            
+                <a href="105.html">
+            
+                    
+                    torchvision
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    音频参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="107.html">
+            
+                <a href="107.html">
+            
+                    
+                    torchaudio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    torchtext参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="109.html">
+            
+                <a href="109.html">
+            
+                    
+                    torchtext
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    社区
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="111.html">
+            
+                <a href="111.html">
+            
+                    
+                    PyTorch 贡献指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="112.html">
+            
+                <a href="112.html">
+            
+                    
+                    PyTorch 治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="113.html">
+            
+                <a href="113.html">
+            
+                    
+                    PyTorch 治理| 感兴趣的人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >自定义 C ++和 CUDA 扩展</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x81EA;&#x5B9A;&#x4E49;-c-&#x548C;-cuda-&#x6269;&#x5C55;">&#x81EA;&#x5B9A;&#x4E49; C ++&#x548C; CUDA &#x6269;&#x5C55;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#xFF1A; <a href="https://pytorch.org/tutorials/advanced/cpp_extension.html" target="_blank">https://pytorch.org/tutorials/advanced/cpp_extension.html</a></p>
+</blockquote>
+<p><strong>&#x4F5C;&#x8005;</strong>&#xFF1A; <a href="https://www.goldsborough.me/" target="_blank">Peter Goldsborough</a></p>
+<p>PyTorch &#x63D0;&#x4F9B;&#x4E86;&#x4E0E;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x4EFB;&#x610F;&#x5F20;&#x91CF;&#x4EE3;&#x6570;&#xFF0C;&#x6570;&#x636E;&#x6574;&#x7406;&#x548C;&#x5176;&#x4ED6;&#x76EE;&#x7684;&#x6709;&#x5173;&#x7684;&#x5927;&#x91CF;&#x64CD;&#x4F5C;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x60A8;&#x4ECD;&#x7136;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;&#x81EA;&#x5DF1;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x60F3;&#x4F7F;&#x7528;&#x8BBA;&#x6587;&#x4E2D;&#x53D1;&#x73B0;&#x7684;&#x65B0;&#x9896;&#x7684;&#x6FC0;&#x6D3B;&#x529F;&#x80FD;&#xFF0C;&#x6216;&#x8005;&#x5B9E;&#x73B0;&#x60A8;&#x5728;&#x7814;&#x7A76;&#x8FC7;&#x7A0B;&#x4E2D;&#x5F00;&#x53D1;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5728; PyTorch &#x4E2D;&#x96C6;&#x6210;&#x8FD9;&#x6837;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x7684;&#x6700;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x6269;&#x5C55;<a href="https://pytorch.org/docs/master/notes/extending.html" target="_blank">&#x6B64;&#x5904;</a>&#x6982;&#x8FF0;&#x7684;<code>Function</code>&#x548C;<code>Module</code>&#x5728; Python &#x4E2D;&#x7F16;&#x5199;&#x5B83;&#x3002; &#x8FD9;&#x4E3A;&#x60A8;&#x63D0;&#x4F9B;&#x4E86;&#x81EA;&#x52A8;&#x533A;&#x5206;&#x7684;&#x5168;&#x90E8;&#x529F;&#x80FD;(&#x4F7F;&#x60A8;&#x4E0D;&#x5FC5;&#x7F16;&#x5199;&#x6D3E;&#x751F;&#x51FD;&#x6570;&#xFF09;&#x4EE5;&#x53CA; Python &#x7684;&#x901A;&#x5E38;&#x8868;&#x8FBE;&#x80FD;&#x529B;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x6709;&#x65F6;&#x60A8;&#x7684;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x7528; C ++&#x66F4;&#x597D;&#x5730;&#x5B9E;&#x73B0;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x80FD;&#x9700;&#x8981;<em>&#x786E;&#x5B9E;</em>&#x5FEB;&#x901F;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x6A21;&#x578B;&#x4E2D;&#x5B83;&#x7ECF;&#x5E38;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x5373;&#x4F7F;&#x5F88;&#x5C11;&#x8C03;&#x7528;&#x4E5F;&#x5F88;&#x6602;&#x8D35;&#x3002; &#x53E6;&#x4E00;&#x4E2A;&#x5408;&#x7406;&#x7684;&#x539F;&#x56E0;&#x662F;&#x5B83;&#x4F9D;&#x8D56;&#x4E8E;&#x5176;&#x4ED6; C &#x6216; C ++&#x5E93;&#x6216;&#x4E0E;&#x4E4B;&#x4EA4;&#x4E92;&#x3002; &#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;PyTorch &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49; <em>C ++&#x6269;&#x5C55;</em>&#x3002;</p>
+<p>C ++&#x6269;&#x5C55;&#x662F;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x79CD;&#x673A;&#x5236;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;(&#x60A8;&#xFF09;&#x521B;&#x5EFA;&#x6E90;&#x5916;&#x5B9A;&#x4E49;&#x7684; PyTorch &#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5373;<em>&#xFF0C;&#x5373;&#x4E0E; PyTorch &#x540E;&#x7AEF;&#x5206;&#x5F00;&#x3002; &#x8BE5;&#x65B9;&#x6CD5;&#x4E0E;</em>&#x4E0E;<em>&#x4E0D;&#x540C;&#x4E8E;&#x672C;&#x673A; PyTorch &#x64CD;&#x4F5C;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x3002; C ++&#x6269;&#x5C55;&#x65E8;&#x5728;&#x4E3A;&#x60A8;&#x8282;&#x7701;&#x5927;&#x91CF;&#x4E0E;&#x5C06;&#x64CD;&#x4F5C;&#x4E0E; PyTorch &#x540E;&#x7AEF;&#x96C6;&#x6210;&#x5728;&#x4E00;&#x8D77;&#x76F8;&#x5173;&#x7684;&#x6837;&#x677F;&#xFF0C;&#x540C;&#x65F6;&#x4E3A;&#x57FA;&#x4E8E; PyTorch &#x7684;&#x9879;&#x76EE;&#x63D0;&#x4F9B;&#x9AD8;&#x5EA6;&#x7684;&#x7075;&#x6D3B;&#x6027;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x4E00;&#x65E6;&#x60A8;&#x5C06;&#x64CD;&#x4F5C;&#x5B9A;&#x4E49;&#x4E3A; C ++&#x6269;&#x5C55;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x672C;&#x5730; PyTorch &#x51FD;&#x6570;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x53D6;&#x51B3;&#x4E8E;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x51B3;&#x5B9A;&#x5728;&#x4E0A;&#x6E38;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;&#x3002;</em></p>
+<h2 id="&#x52A8;&#x673A;&#x4E0E;&#x699C;&#x6837;">&#x52A8;&#x673A;&#x4E0E;&#x699C;&#x6837;</h2>
+<p>&#x672C;&#x8BF4;&#x660E;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5C06;&#x9010;&#x6B65;&#x4ECB;&#x7ECD;&#x7F16;&#x5199;&#x548C;&#x4F7F;&#x7528; C ++(&#x548C; CUDA&#xFF09;&#x6269;&#x5C55;&#x7684;&#x5B9E;&#x9645;&#x793A;&#x4F8B;&#x3002; &#x5982;&#x679C;&#x60A8;&#x88AB;&#x8FFD;&#x6355;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4E00;&#x5929;&#x7ED3;&#x675F;&#x524D;&#x4ECD;&#x672A;&#x5B8C;&#x6210;&#x8BE5;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x4F1A;&#x6709;&#x4EBA;&#x5F00;&#x9664;&#x60A8;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x672C;&#x8282;&#xFF0C;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x5B9E;&#x65BD;&#x7EC6;&#x8282;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x60A8;&#x60F3;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x65B0;&#x578B;&#x7684;&#x5FAA;&#x73AF;&#x88C5;&#x7F6E;&#xFF0C;&#x53D1;&#x73B0;&#x4E0E;&#x73B0;&#x6709;&#x6280;&#x672F;&#x76F8;&#x6BD4;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#x3002; &#x8BE5;&#x5FAA;&#x73AF;&#x5355;&#x5143;&#x7C7B;&#x4F3C;&#x4E8E; LSTM&#xFF0C;&#x4F46;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5B83;&#x7F3A;&#x5C11;<em>&#x9057;&#x5FD8;&#x95E8;</em>&#xFF0C;&#x5E76;&#x4F7F;&#x7528;<em>&#x6307;&#x6570;&#x7EBF;&#x6027;&#x5355;&#x5143;</em>(ELU&#xFF09;&#x4F5C;&#x4E3A;&#x5176;&#x5185;&#x90E8;&#x6FC0;&#x6D3B;&#x529F;&#x80FD;&#x3002; &#x7531;&#x4E8E;&#x6B64;&#x8BBE;&#x5907;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x5FD8;&#x8BB0;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x79F0;&#x4E3A; <em>LLTM</em> &#x6216;<em>&#x957F;&#x671F;&#x5185;&#x5B58;</em>&#x5355;&#x5143;&#x3002;</p>
+<p>LLTM &#x4E0E;&#x666E;&#x901A; LSTM &#x7684;&#x4E24;&#x79CD;&#x533A;&#x522B;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x4EE5;&#x81F3;&#x4E8E;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x76EE;&#x7684;&#x914D;&#x7F6E; PyTorch &#x7684;<code>LSTMCell</code>&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5355;&#x5143;&#x3002; &#x8FD9;&#x6837;&#x505A;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4E5F;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x662F;&#x4F7F;&#x7528; Python &#x5728;&#x7EAF; PyTorch &#x4E2D;&#x5B9E;&#x73B0;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x7684;&#x529F;&#x80FD;&#x3002; &#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7EE7;&#x627F;<code>torch.nn.Module</code>&#xFF0C;&#x5E76;&#x5B9E;&#x73B0; LLTM &#x7684;&#x524D;&#x5411;&#x4F20;&#x9012;&#x3002; &#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>class LLTM(torch.nn.Module):
+    def __init__(self, input_features, state_size):
+        super(LLTM, self).__init__()
+        self.input_features = input_features
+        self.state_size = state_size
+        # 3 * state_size for input gate, output gate and candidate cell gate.
+        # input_features + state_size because we will multiply with [input, h].
+        self.weights = torch.nn.Parameter(
+            torch.empty(3 * state_size, input_features + state_size))
+        self.bias = torch.nn.Parameter(torch.empty(3 * state_size))
+        self.reset_parameters()
+
+    def reset_parameters(self):
+        stdv = 1.0 / math.sqrt(self.state_size)
+        for weight in self.parameters():
+            weight.data.uniform_(-stdv, +stdv)
+
+    def forward(self, input, state):
+        old_h, old_cell = state
+        X = torch.cat([old_h, input], dim=1)
+
+        # Compute the input, output and candidate cell gates with one MM.
+        gate_weights = F.linear(X, self.weights, self.bias)
+        # Split the combined gate weight matrix into its components.
+        gates = gate_weights.chunk(3, dim=1)
+
+        input_gate = torch.sigmoid(gates[0])
+        output_gate = torch.sigmoid(gates[1])
+        # Here we use an ELU instead of the usual tanh.
+        candidate_cell = F.elu(gates[2])
+
+        # Compute the new cell state.
+        new_cell = old_cell + candidate_cell * input_gate
+        # Compute the new hidden state and output.
+        new_h = torch.tanh(new_cell) * output_gate
+
+        return new_h, new_cell
+</code></pre><p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6309;&#x9884;&#x671F;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code>import torch
+
+X = torch.randn(batch_size, input_features)
+h = torch.randn(batch_size, state_size)
+C = torch.randn(batch_size, state_size)
+
+rnn = LLTM(input_features, state_size)
+
+new_h, new_C = rnn(X, (h, C))
+</code></pre><p>&#x81EA;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x53EF;&#x80FD;&#x7684;&#x8BDD;&#xFF0C;&#x60A8;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x6269;&#x5C55; PyTorch&#x3002; &#x7531;&#x4E8E; PyTorch &#x5BF9; CPU <em>&#x548C;</em> GPU &#x7684;&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x4E86;&#x9AD8;&#x5EA6;&#x4F18;&#x5316;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5E76;&#x7531; <a href="https://developer.nvidia.com/cudnn" target="_blank">NVIDIA cuDNN</a> &#xFF0C; <a href="https://software.intel.com/en-us/mkl" target="_blank">Intel MKL</a> &#x6216; <a href="https://github.com/Maratyszcza/NNPACK" target="_blank">NNPACK</a> &#x7B49;&#x5E93;&#x63D0;&#x4F9B;&#x652F;&#x6301; &#xFF0C;&#x4E0A;&#x9762;&#x7684; PyTorch &#x4EE3;&#x7801;&#x901A;&#x5E38;&#x4F1A;&#x8DB3;&#x591F;&#x5FEB;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x8FD8;&#x6709;&#x8FDB;&#x4E00;&#x6B65;&#x6539;&#x8FDB;&#x6027;&#x80FD;&#x7684;&#x7A7A;&#x95F4;&#x3002; &#x6700;&#x660E;&#x663E;&#x7684;&#x539F;&#x56E0;&#x662F; PyTorch &#x4E0D;&#x4E86;&#x89E3;&#x60A8;&#x8981;&#x5B9E;&#x73B0;&#x7684;<em>&#x7B97;&#x6CD5;</em>&#x3002; &#x5B83;&#x4EC5;&#x77E5;&#x9053;&#x60A8;&#x7528;&#x4E8E;&#x7EC4;&#x6210;&#x7B97;&#x6CD5;&#x7684;&#x5355;&#x4E2A;&#x64CD;&#x4F5C;&#x3002; &#x56E0;&#x6B64;&#xFF0C;PyTorch &#x5FC5;&#x987B;&#x4E00;&#x4E2A;&#x63A5;&#x4E00;&#x4E2A;&#x5730;&#x6267;&#x884C;&#x60A8;&#x7684;&#x64CD;&#x4F5C;&#x3002; &#x7531;&#x4E8E;&#x5BF9;&#x64CD;&#x4F5C;&#x7684;&#x5B9E;&#x73B0;(&#x6216;<em>&#x5185;&#x6838;</em>&#xFF09;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x72EC;&#x8C03;&#x7528;(&#x53EF;&#x80FD;&#x6D89;&#x53CA; CUDA &#x5185;&#x6838;&#x7684;&#x542F;&#x52A8;&#xFF09;&#x90FD;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x5F00;&#x9500;&#x5728;&#x8BB8;&#x591A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4E2D;&#x53EF;&#x80FD;&#x53D8;&#x5F97;&#x5F88;&#x91CD;&#x8981;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x8FD0;&#x884C;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x7684; Python &#x89E3;&#x91CA;&#x5668;&#x672C;&#x8EAB;&#x53EF;&#x80FD;&#x4F1A;&#x4F7F;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x53D8;&#x6162;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x4E00;&#x79CD;&#x786E;&#x5B9A;&#x7684;&#x52A0;&#x901F;&#x65B9;&#x6CD5;&#x662F;&#x7528; C ++(&#x6216; CUDA&#xFF09;&#x548C;<em>&#x7194;&#x65AD;</em>&#x7279;&#x5B9A;&#x64CD;&#x4F5C;&#x7EC4;&#x6765;&#x91CD;&#x5199;&#x96F6;&#x4EF6;&#x3002; &#x878D;&#x5408;&#x610F;&#x5473;&#x7740;&#x5C06;&#x8BB8;&#x591A;&#x529F;&#x80FD;&#x7684;&#x5B9E;&#x73B0;&#x7EC4;&#x5408;&#x5230;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x4E2D;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x4ECE;&#x66F4;&#x5C11;&#x7684;&#x5185;&#x6838;&#x542F;&#x52A8;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63D0;&#x9AD8;&#x5168;&#x5C40;&#x6570;&#x636E;&#x6D41;&#x53EF;&#x89C1;&#x6027;&#x800C;&#x6267;&#x884C;&#x7684;&#x5176;&#x4ED6;&#x4F18;&#x5316;&#x4E2D;&#x83B7;&#x5229;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x5982;&#x4F55;&#x4F7F;&#x7528; C ++&#x6269;&#x5C55;&#x6765;&#x5B9E;&#x73B0; LLTM &#x7684;<em>&#x878D;&#x5408;</em>&#x7248;&#x672C;&#x3002; &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; <a href="https://github.com/zdevito/ATen" target="_blank">ATen</a> &#x5E93;&#x4EE5;&#x666E;&#x901A;&#x7684; C ++&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x8BE5;&#x5E93;&#x4E3A; PyTorch &#x7684;&#x8BB8;&#x591A;&#x540E;&#x7AEF;&#x63D0;&#x4F9B;&#x4E86;&#x5F3A;&#x5927;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x5E76;&#x4E86;&#x89E3;&#x5B83;&#x4F7F;&#x6211;&#x4EEC;&#x8F7B;&#x677E;&#x8F6C;&#x6362; Python &#x4EE3;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x3002; &#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6A21;&#x578B;&#x7684;&#x67D0;&#x4E9B;&#x90E8;&#x5206;&#x79FB;&#x81F3; CUDA &#x5185;&#x6838;&#xFF0C;&#x4EE5;&#x4ECE; GPU &#x63D0;&#x4F9B;&#x7684;&#x5927;&#x91CF;&#x5E76;&#x884C;&#x5904;&#x7406;&#x4E2D;&#x53D7;&#x76CA;&#xFF0C;&#x4ECE;&#x800C;&#x8FDB;&#x4E00;&#x6B65;&#x52A0;&#x5FEB;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x3002;</p>
+<h2 id="&#x7F16;&#x5199;-c-&#x6269;&#x5C55;">&#x7F16;&#x5199; C ++&#x6269;&#x5C55;</h2>
+<p>C ++&#x6269;&#x5C55;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>setuptools</code>&#x63D0;&#x524D;&#x6784;&#x5EFA;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>torch.utils.cpp_extension.load()</code>&#x9002;&#x65F6;&#x6784;&#x5EFA;&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x5F00;&#x59CB;&#xFF0C;&#x7A0D;&#x540E;&#x518D;&#x8BA8;&#x8BBA;&#x540E;&#x8005;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;setuptools&#x6784;&#x5EFA;">&#x4F7F;&#x7528;<code>setuptools</code>&#x6784;&#x5EFA;</h3>
+<p>&#x4E3A;&#x4E86;&#x201C;&#x63D0;&#x524D;&#x201D;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7F16;&#x5199;&#x4E00;&#x4E2A;<code>setup.py</code>&#x811A;&#x672C;&#x6765;&#x6784;&#x5EFA; C ++&#x6269;&#x5C55;&#xFF0C;&#x8BE5;&#x811A;&#x672C;&#x4F7F;&#x7528; setuptools &#x7F16;&#x8BD1;&#x6211;&#x4EEC;&#x7684; C ++&#x4EE3;&#x7801;&#x3002; &#x5BF9;&#x4E8E; LLTM&#xFF0C;&#x5B83;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre><code>from setuptools import setup, Extension
+from torch.utils import cpp_extension
+
+setup(name=&apos;lltm_cpp&apos;,
+      ext_modules=[cpp_extension.CppExtension(&apos;lltm_cpp&apos;, [&apos;lltm.cpp&apos;])],
+      cmdclass={&apos;build_ext&apos;: cpp_extension.BuildExtension})
+</code></pre><p>&#x5728;&#x6B64;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>CppExtension</code>&#x662F;<code>setuptools.Extension</code>&#x7684;&#x4FBF;&#x5229;&#x5305;&#x88C5;&#xFF0C;&#x5B83;&#x4F20;&#x9012;&#x6B63;&#x786E;&#x7684;&#x5305;&#x542B;&#x8DEF;&#x5F84;&#x5E76;&#x5C06;&#x6269;&#x5C55;&#x8BED;&#x8A00;&#x8BBE;&#x7F6E;&#x4E3A; C ++&#x3002; &#x7B49;&#x6548;&#x7684;&#x539F;&#x59CB;<code>setuptools</code>&#x4EE3;&#x7801;&#x5C06;&#x662F;&#xFF1A;</p>
+<pre><code>Extension(
+   name=&apos;lltm_cpp&apos;,
+   sources=[&apos;lltm.cpp&apos;],
+   include_dirs=cpp_extension.include_paths(),
+   language=&apos;c++&apos;)
+</code></pre><p><code>BuildExtension</code>&#x6267;&#x884C;&#x8BB8;&#x591A;&#x5FC5;&#x9700;&#x7684;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;&#xFF0C;&#x5E76;&#x68C0;&#x67E5;&#x548C;&#x7BA1;&#x7406;&#x6DF7;&#x5408; C ++ / CUDA &#x6269;&#x5C55;&#x7684;&#x6DF7;&#x5408;&#x7F16;&#x8BD1;&#x3002; &#x8FD9;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x771F;&#x6B63;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x7684;&#x6709;&#x5173;&#x6784;&#x5EFA; C ++&#x6269;&#x5C55;&#x7684;&#x5168;&#x90E8;&#x4FE1;&#x606F;&#xFF01; &#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;<code>lltm.cpp</code>&#x4E2D; C ++&#x6269;&#x5C55;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<h3 id="&#x7F16;&#x5199;-c--op">&#x7F16;&#x5199; C ++ Op</h3>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x4EE5; C ++&#x5B9E;&#x73B0; LLTM&#xFF01; &#x6211;&#x4EEC;&#x9700;&#x8981;&#x5411;&#x540E;&#x4F20;&#x9012;&#x7684;&#x4E00;&#x9879;&#x529F;&#x80FD;&#x662F; S &#x5F62;&#x5BFC;&#x6570;&#x3002; &#x8FD9;&#x662F;&#x4E00;&#x5C0F;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x7528;&#x4E8E;&#x8BA8;&#x8BBA;&#x7F16;&#x5199; C ++&#x6269;&#x5C55;&#x65F6;&#x53EF;&#x4F9B;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x603B;&#x4F53;&#x73AF;&#x5883;&#xFF1A;</p>
+<pre><code>#include &lt;torch/extension.h&gt;
+
+#include &lt;iostream&gt;
+
+torch::Tensor d_sigmoid(torch::Tensor z) {
+  auto s = torch::sigmoid(z);
+  return (1 - s) * s;
+}
+</code></pre><p><code>&amp;lt;torch/extension.h&amp;gt;</code>&#x662F;&#x4E00;&#x7AD9;&#x5F0F;&#x6807;&#x5934;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7F16;&#x5199; C ++&#x6269;&#x5C55;&#x6240;&#x9700;&#x7684;&#x6240;&#x6709;&#x5FC5;&#x9700;&#x7684; PyTorch &#x4F4D;&#x3002; &#x8FD9;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>ATen &#x5E93;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x7528;&#x4E8E;&#x5F20;&#x91CF;&#x8BA1;&#x7B97;&#x7684;&#x4E3B;&#x8981; API&#xFF0C;</li>
+<li><a href="https://github.com/pybind/pybind11" target="_blank">pybind11</a> &#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x4E3A; C ++&#x4EE3;&#x7801;&#x521B;&#x5EFA; Python &#x7ED1;&#x5B9A;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;</li>
+<li>&#x6807;&#x5934;&#xFF0C;&#x7528;&#x4E8E;&#x7BA1;&#x7406; ATen &#x4E0E; pybind11 &#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+<p><code>d_sigmoid()</code>&#x7684;&#x5B9E;&#x73B0;&#x663E;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528; ATen API&#x3002; PyTorch &#x7684;&#x5F20;&#x91CF;&#x548C;&#x53D8;&#x91CF;&#x63A5;&#x53E3;&#x662F;&#x4ECE; ATen &#x5E93;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06; Python &#x5B9E;&#x73B0; 1&#xFF1A;1 &#x6216;&#x591A;&#x6216;&#x5C11;&#x5730;&#x8F6C;&#x6362;&#x4E3A; C ++&#x3002; &#x6211;&#x4EEC;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x8BA1;&#x7B97;&#x7684;&#x4E3B;&#x8981;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5C06;&#x4E3A;<code>torch::Tensor</code>&#x3002; &#x53EF;&#x4EE5;&#x5728;&#x4E2D;&#x68C0;&#x67E5;&#x5176;&#x5B8C;&#x6574;&#x7684; API&#x3002; &#x8FD8;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5305;&#x62EC;<code>&amp;lt;iostream&amp;gt;</code>&#x6216;<em>&#x4EFB;&#x4F55;&#x5176;&#x4ED6; C &#x6216; C ++&#x5934;&#x6587;&#x4EF6;</em> &#x2013;&#x6211;&#x4EEC;&#x62E5;&#x6709; C ++ 11 &#x7684;&#x5168;&#x90E8;&#x529F;&#x80FD;&#x3002;</p>
+<h4 id="&#x524D;&#x8FDB;&#x901A;&#x884C;&#x8BC1;">&#x524D;&#x8FDB;&#x901A;&#x884C;&#x8BC1;</h4>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x6574;&#x4E2A;&#x6B63;&#x5411;&#x4F20;&#x9012;&#x5230; C ++&#xFF1A;</p>
+<pre><code>#include &lt;vector&gt;
+
+std::vector&lt;at::Tensor&gt; lltm_forward(
+    torch::Tensor input,
+    torch::Tensor weights,
+    torch::Tensor bias,
+    torch::Tensor old_h,
+    torch::Tensor old_cell) {
+  auto X = torch::cat({old_h, input}, /*dim=*/1);
+
+  auto gate_weights = torch::addmm(bias, X, weights.transpose(0, 1));
+  auto gates = gate_weights.chunk(3, /*dim=*/1);
+
+  auto input_gate = torch::sigmoid(gates[0]);
+  auto output_gate = torch::sigmoid(gates[1]);
+  auto candidate_cell = torch::elu(gates[2], /*alpha=*/1.0);
+
+  auto new_cell = old_cell + candidate_cell * input_gate;
+  auto new_h = torch::tanh(new_cell) * output_gate;
+
+  return {new_h,
+          new_cell,
+          input_gate,
+          output_gate,
+          candidate_cell,
+          X,
+          gate_weights};
+}
+</code></pre><h4 id="&#x540E;&#x9000;&#x901A;&#x884C;&#x8BC1;">&#x540E;&#x9000;&#x901A;&#x884C;&#x8BC1;</h4>
+<p>C ++&#x6269;&#x5C55; API &#x5F53;&#x524D;&#x4E0D;&#x63D0;&#x4F9B;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x5411;&#x540E;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5FC5;&#x987B;&#x5B9E;&#x73B0; LLTM &#x7684;&#x540E;&#x5411;&#x4F20;&#x9012;&#xFF0C;&#x5B83;&#x8BA1;&#x7B97;&#x76F8;&#x5BF9;&#x4E8E;&#x524D;&#x5411;&#x4F20;&#x9012;&#x7684;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x7684;&#x635F;&#x8017;&#x5BFC;&#x6570;&#x3002; &#x6700;&#x7EC8;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x524D;&#x8FDB;&#x548C;&#x540E;&#x9000;&#x529F;&#x80FD;&#x653E;&#x5165;<code>torch.autograd.Function</code>&#x4E2D;&#xFF0C;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0D;&#x9519;&#x7684; Python &#x7ED1;&#x5B9A;&#x3002; &#x5411;&#x540E;&#x51FD;&#x6570;&#x7684;&#x529F;&#x80FD;&#x7A0D;&#x5FAE;&#x590D;&#x6742;&#x4E00;&#x4E9B;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5C06;&#x4E0D;&#x6DF1;&#x5165;&#x7814;&#x7A76;&#x4EE3;&#x7801;(&#x5982;&#x679C;&#x60A8;&#x6709;&#x5174;&#x8DA3;&#xFF0C;&#x8BF7;&#x9605;&#x8BFB; <a href="https://www.cs.toronto.edu/~graves/phd.pdf" target="_blank">Alex Graves &#x7684;&#x8BBA;&#x6587;</a>&#xFF0C;&#x4EE5;&#x83B7;&#x53D6;&#x6709;&#x5173;&#x6B64;&#x65B9;&#x9762;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF09;&#xFF1A;</p>
+<pre><code>// tanh&apos;(z) = 1 - tanh^2(z)
+torch::Tensor d_tanh(torch::Tensor z) {
+  return 1 - z.tanh().pow(2);
+}
+
+// elu&apos;(z) = relu&apos;(z) + { alpha * exp(z) if (alpha * (exp(z) - 1)) &lt; 0, else 0}
+torch::Tensor d_elu(torch::Tensor z, torch::Scalar alpha = 1.0) {
+  auto e = z.exp();
+  auto mask = (alpha * (e - 1)) &lt; 0;
+  return (z &gt; 0).type_as(z) + mask.type_as(z) * (alpha * e);
+}
+
+std::vector&lt;torch::Tensor&gt; lltm_backward(
+    torch::Tensor grad_h,
+    torch::Tensor grad_cell,
+    torch::Tensor new_cell,
+    torch::Tensor input_gate,
+    torch::Tensor output_gate,
+    torch::Tensor candidate_cell,
+    torch::Tensor X,
+    torch::Tensor gate_weights,
+    torch::Tensor weights) {
+  auto d_output_gate = torch::tanh(new_cell) * grad_h;
+  auto d_tanh_new_cell = output_gate * grad_h;
+  auto d_new_cell = d_tanh(new_cell) * d_tanh_new_cell + grad_cell;
+
+  auto d_old_cell = d_new_cell;
+  auto d_candidate_cell = input_gate * d_new_cell;
+  auto d_input_gate = candidate_cell * d_new_cell;
+
+  auto gates = gate_weights.chunk(3, /*dim=*/1);
+  d_input_gate *= d_sigmoid(gates[0]);
+  d_output_gate *= d_sigmoid(gates[1]);
+  d_candidate_cell *= d_elu(gates[2]);
+
+  auto d_gates =
+      torch::cat({d_input_gate, d_output_gate, d_candidate_cell}, /*dim=*/1);
+
+  auto d_weights = d_gates.t().mm(X);
+  auto d_bias = d_gates.sum(/*dim=*/0, /*keepdim=*/true);
+
+  auto d_X = d_gates.mm(weights);
+  const auto state_size = grad_h.size(1);
+  auto d_old_h = d_X.slice(/*dim=*/1, 0, state_size);
+  auto d_input = d_X.slice(/*dim=*/1, state_size);
+
+  return {d_old_h, d_input, d_weights, d_bias, d_old_cell};
+}
+</code></pre><h3 id="&#x7ED1;&#x5B9A;&#x5230;-python">&#x7ED1;&#x5B9A;&#x5230; Python</h3>
+<p>&#x4E00;&#x65E6;&#x7528; C ++&#x548C; ATen &#x7F16;&#x5199;&#x4E86;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; pybind11 &#x4EE5;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#x5C06; C ++&#x51FD;&#x6570;&#x6216;&#x7C7B;&#x7ED1;&#x5B9A;&#x5230; Python &#x4E2D;&#x3002; &#x60A8;&#x5BF9; PyTorch C ++&#x6269;&#x5C55;&#x90E8;&#x5206;&#x7684;&#x7591;&#x95EE;&#x6216;&#x95EE;&#x9898;&#x5C06;&#x5728; <a href="https://pybind11.readthedocs.io/en/master/" target="_blank">pybind11 &#x6587;&#x6863;</a>&#x4E2D;&#x5F97;&#x5230;&#x89E3;&#x51B3;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x5FC5;&#x8981;&#x7684;&#x7ED1;&#x5B9A;&#x4EE3;&#x7801;&#x4EC5;&#x8DE8;&#x8D8A;&#x56DB;&#x884C;&#xFF1A;</p>
+<pre><code>PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
+  m.def(&quot;forward&quot;, &amp;lltm_forward, &quot;LLTM forward&quot;);
+  m.def(&quot;backward&quot;, &amp;lltm_backward, &quot;LLTM backward&quot;);
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x70B9;&#x662F;&#x5B8F;<code>TORCH_EXTENSION_NAME</code>&#x3002; torch&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x6784;&#x5EFA;&#x4F1A;&#x5C06;&#x5176;&#x5B9A;&#x4E49;&#x4E3A;&#x60A8;&#x5728;<code>setup.py</code>&#x811A;&#x672C;&#x4E2D;&#x4E3A;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>TORCH_EXTENSION_NAME</code>&#x7684;&#x503C;&#x4E3A;&#x201C; lltm&#x201D;&#x3002; &#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x5FC5;&#x987B;&#x5728;&#x4E24;&#x4E2A;&#x4F4D;&#x7F6E;(&#x6784;&#x5EFA;&#x811A;&#x672C;&#x548C; C ++&#x4EE3;&#x7801;&#xFF09;&#x7EF4;&#x62A4;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x56E0;&#x4E3A;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x5339;&#x914D;&#x4F1A;&#x5BFC;&#x81F4;&#x4EE4;&#x4EBA;&#x8BA8;&#x538C;&#x4E14;&#x96BE;&#x4EE5;&#x8DDF;&#x8E2A;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;&#x6269;&#x5C55;">&#x4F7F;&#x7528;&#x6269;&#x5C55;</h3>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x51C6;&#x5907;&#x5C06;&#x6269;&#x5C55;&#x540D;&#x5BFC;&#x5165; PyTorch &#x4E2D;&#x3002; &#x6B64;&#x65F6;&#xFF0C;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x53EF;&#x80FD;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>pytorch/
+  lltm-extension/
+    lltm.cpp
+    setup.py
+</code></pre><p>&#x73B0;&#x5728;&#xFF0C;&#x8FD0;&#x884C;<code>python setup.py install</code>&#x6765;&#x6784;&#x5EFA;&#x548C;&#x5B89;&#x88C5;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x3002; &#x770B;&#x8D77;&#x6765;&#x5E94;&#x8BE5;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>running install
+running bdist_egg
+running egg_info
+creating lltm_cpp.egg-info
+writing lltm_cpp.egg-info/PKG-INFO
+writing dependency_links to lltm_cpp.egg-info/dependency_links.txt
+writing top-level names to lltm_cpp.egg-info/top_level.txt
+writing manifest file &apos;lltm_cpp.egg-info/SOURCES.txt&apos;
+reading manifest file &apos;lltm_cpp.egg-info/SOURCES.txt&apos;
+writing manifest file &apos;lltm_cpp.egg-info/SOURCES.txt&apos;
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_ext
+building &apos;lltm_cpp&apos; extension
+creating build
+creating build/temp.linux-x86_64-3.7
+gcc -pthread -B ~/local/miniconda/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I~/local/miniconda/lib/python3.7/site-packages/torch/include -I~/local/miniconda/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I~/local/miniconda/lib/python3.7/site-packages/torch/include/TH -I~/local/miniconda/lib/python3.7/site-packages/torch/include/THC -I~/local/miniconda/include/python3.7m -c lltm.cpp -o build/temp.linux-x86_64-3.7/lltm.o -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=lltm_cpp -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++11
+cc1plus: warning: command line option &apos;-Wstrict-prototypes&apos; is valid for C/ObjC but not for C++
+creating build/lib.linux-x86_64-3.7
+g++ -pthread -shared -B ~/local/miniconda/compiler_compat -L~/local/miniconda/lib -Wl,-rpath=~/local/miniconda/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-x86_64-3.7/lltm.o -o build/lib.linux-x86_64-3.7/lltm_cpp.cpython-37m-x86_64-linux-gnu.so
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+copying build/lib.linux-x86_64-3.7/lltm_cpp.cpython-37m-x86_64-linux-gnu.so -&gt; build/bdist.linux-x86_64/egg
+creating stub loader for lltm_cpp.cpython-37m-x86_64-linux-gnu.so
+byte-compiling build/bdist.linux-x86_64/egg/lltm_cpp.py to lltm_cpp.cpython-37.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying lltm_cpp.egg-info/PKG-INFO -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying lltm_cpp.egg-info/SOURCES.txt -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying lltm_cpp.egg-info/dependency_links.txt -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying lltm_cpp.egg-info/top_level.txt -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+writing build/bdist.linux-x86_64/egg/EGG-INFO/native_libs.txt
+zip_safe flag not set; analyzing archive contents...
+__pycache__.lltm_cpp.cpython-37: module references __file__
+creating &apos;dist/lltm_cpp-0.0.0-py3.7-linux-x86_64.egg&apos; and adding &apos;build/bdist.linux-x86_64/egg&apos; to it
+removing &apos;build/bdist.linux-x86_64/egg&apos; (and everything under it)
+Processing lltm_cpp-0.0.0-py3.7-linux-x86_64.egg
+removing &apos;~/local/miniconda/lib/python3.7/site-packages/lltm_cpp-0.0.0-py3.7-linux-x86_64.egg&apos; (and everything under it)
+creating ~/local/miniconda/lib/python3.7/site-packages/lltm_cpp-0.0.0-py3.7-linux-x86_64.egg
+Extracting lltm_cpp-0.0.0-py3.7-linux-x86_64.egg to ~/local/miniconda/lib/python3.7/site-packages
+lltm-cpp 0.0.0 is already the active version in easy-install.pth
+
+Installed ~/local/miniconda/lib/python3.7/site-packages/lltm_cpp-0.0.0-py3.7-linux-x86_64.egg
+Processing dependencies for lltm-cpp==0.0.0
+Finished processing dependencies for lltm-cpp==0.0.0
+</code></pre><p>&#x5173;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x5C0F;&#x6CE8;&#x91CA;&#xFF1A;&#x7531;&#x4E8E; ABI &#x7248;&#x672C;&#x95EE;&#x9898;&#xFF0C;&#x7528;&#x4E8E;&#x6784;&#x5EFA; C ++&#x6269;&#x5C55;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x5FC5;&#x987B;&#x4E3A;<em>&#xFF0C;&#x5E76;&#x4E14; PyTorch &#x7F16;&#x8BD1;&#x5668;&#x662F;&#x4E0E; ABI &#x517C;&#x5BB9;&#x7684;</em>&#x3002; &#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x60A8;&#x5FC5;&#x987B;&#x5728; Linux &#x4E0A;&#x4F7F;&#x7528; GCC 4.9 &#x53CA;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x3002; &#x5BF9;&#x4E8E; Ubuntu 16.04 &#x548C;&#x5176;&#x4ED6;&#x8F83;&#x65B0;&#x7684; Linux &#x53D1;&#x884C;&#x7248;&#xFF0C;&#x8FD9;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x662F;&#x9ED8;&#x8BA4;&#x7F16;&#x8BD1;&#x5668;&#x3002; &#x5728; MacOS &#x4E0A;&#xFF0C;&#x60A8;&#x5FC5;&#x987B;&#x4F7F;&#x7528; clang(&#x5B83;&#x6CA1;&#x6709;&#x4EFB;&#x4F55; ABI &#x7248;&#x672C;&#x63A7;&#x5236;&#x95EE;&#x9898;&#xFF09;&#x3002; &#x5728;&#x6700;&#x574F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7F16;&#x8BD1;&#x5668;&#x4ECE;&#x6E90;&#x4EE3;&#x7801;&#x6784;&#x5EFA; PyTorch&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x6784;&#x5EFA;&#x6269;&#x5C55;&#x3002;</p>
+<p>&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5728;<code>setup.py</code>&#x811A;&#x672C;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x7B80;&#x5355;&#x5730;&#x5C06;&#x5176;&#x5BFC;&#x5165; Python&#x3002; &#x53EA;&#x9700;&#x786E;&#x4FDD;&#x5148;<code>import torch</code>&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x5C06;&#x89E3;&#x51B3;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5668;&#x5FC5;&#x987B;&#x770B;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x7B26;&#x53F7;&#xFF1A;</p>
+<pre><code>In [1]: import torch
+In [2]: import lltm_cpp
+In [3]: lltm_cpp.forward
+Out[3]: &lt;function lltm.PyCapsule.forward&gt;
+</code></pre><p>&#x5982;&#x679C;&#x5728;&#x51FD;&#x6570;&#x6216;&#x6A21;&#x5757;&#x4E0A;&#x8C03;&#x7528;<code>help()</code>&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5176;&#x7B7E;&#x540D;&#x4E0E;&#x6211;&#x4EEC;&#x7684; C ++&#x4EE3;&#x7801;&#x5339;&#x914D;&#xFF1A;</p>
+<pre><code>In[4] help(lltm_cpp.forward)
+forward(...) method of builtins.PyCapsule instance
+    forward(arg0: torch::Tensor, arg1: torch::Tensor, arg2: torch::Tensor, arg3: torch::Tensor, arg4: torch::Tensor) -&gt; List[torch::Tensor]
+
+    LLTM forward
+</code></pre><p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x4ECE; Python &#x8C03;&#x7528; C ++&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x5305;&#x88C5;&#x4E3A;<code>torch.autograd.Function</code>&#x548C;<code>torch.nn.Module</code>&#x4EE5;&#x4F7F;&#x5176;&#x6210;&#x4E3A; PyTorch &#x7684;&#x4E00;&#x7B49;&#x516C;&#x6C11;&#xFF1A;</p>
+<pre><code>import math
+import torch
+
+# Our module!
+import lltm_cpp
+
+class LLTMFunction(torch.autograd.Function):
+    @staticmethod
+    def forward(ctx, input, weights, bias, old_h, old_cell):
+        outputs = lltm_cpp.forward(input, weights, bias, old_h, old_cell)
+        new_h, new_cell = outputs[:2]
+        variables = outputs[1:] + [weights]
+        ctx.save_for_backward(*variables)
+
+        return new_h, new_cell
+
+    @staticmethod
+    def backward(ctx, grad_h, grad_cell):
+        outputs = lltm_cpp.backward(
+            grad_h.contiguous(), grad_cell.contiguous(), *ctx.saved_variables)
+        d_old_h, d_input, d_weights, d_bias, d_old_cell = outputs
+        return d_input, d_weights, d_bias, d_old_h, d_old_cell
+
+class LLTM(torch.nn.Module):
+    def __init__(self, input_features, state_size):
+        super(LLTM, self).__init__()
+        self.input_features = input_features
+        self.state_size = state_size
+        self.weights = torch.nn.Parameter(
+            torch.empty(3 * state_size, input_features + state_size))
+        self.bias = torch.nn.Parameter(torch.empty(3 * state_size))
+        self.reset_parameters()
+
+    def reset_parameters(self):
+        stdv = 1.0 / math.sqrt(self.state_size)
+        for weight in self.parameters():
+            weight.data.uniform_(-stdv, +stdv)
+
+    def forward(self, input, state):
+        return LLTMFunction.apply(input, self.weights, self.bias, *state)
+</code></pre><h4 id="&#x6027;&#x80FD;&#x6BD4;&#x8F83;">&#x6027;&#x80FD;&#x6BD4;&#x8F83;</h4>
+<p>&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x548C;&#x8C03;&#x7528; PyTorch &#x7684; C ++&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x5C0F;&#x578B;&#x57FA;&#x51C6;&#x6D4B;&#x8BD5;&#xFF0C;&#x4EE5;&#x67E5;&#x770B;&#x901A;&#x8FC7;&#x7528; C ++&#x91CD;&#x5199; op &#x83B7;&#x5F97;&#x7684;&#x6027;&#x80FD;&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x5411;&#x524D;&#x548C;&#x5411;&#x540E;&#x8FD0;&#x884C; LLTM &#x51E0;&#x6B21;&#xFF0C;&#x5E76;&#x6D4B;&#x91CF;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#xFF1A;</p>
+<pre><code>import time
+
+import torch
+
+batch_size = 16
+input_features = 32
+state_size = 128
+
+X = torch.randn(batch_size, input_features)
+h = torch.randn(batch_size, state_size)
+C = torch.randn(batch_size, state_size)
+
+rnn = LLTM(input_features, state_size)
+
+forward = 0
+backward = 0
+for _ in range(100000):
+    start = time.time()
+    new_h, new_C = rnn(X, (h, C))
+    forward += time.time() - start
+
+    start = time.time()
+    (new_h.sum() + new_C.sum()).backward()
+    backward += time.time() - start
+
+print(&apos;Forward: {:.3f} us | Backward {:.3f} us&apos;.format(forward * 1e6/1e5, backward * 1e6/1e5))
+</code></pre><p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x672C;&#x6587;&#x5F00;&#x5934;&#x7528;&#x7EAF; Python &#x7F16;&#x5199;&#x7684;&#x539F;&#x59CB; LLTM &#x6765;&#x8FD0;&#x884C;&#x6B64;&#x4EE3;&#x7801;&#xFF0C;&#x5219;&#x4F1A;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x6570;&#x5B57;(&#x5728;&#x6211;&#x7684;&#x673A;&#x5668;&#x4E0A;&#xFF09;&#xFF1A;</p>
+<pre><code>Forward: 506.480 us | Backward 444.694 us
+</code></pre><p>&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x7684;&#x65B0; C ++&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code>Forward: 349.335 us | Backward 443.523 us
+</code></pre><p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x524D;&#x8FDB;&#x529F;&#x80FD;&#x7684;&#x663E;&#x7740;&#x63D0;&#x901F;(&#x8D85;&#x8FC7; 30&#xFF05;&#xFF09;&#x3002; &#x5BF9;&#x4E8E;&#x540E;&#x9000;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x52A0;&#x901F;&#xFF0C;&#x5C3D;&#x7BA1;&#x4E0D;&#x662F;&#x4E3B;&#x8981;&#x7684;&#x3002; &#x6211;&#x5728;&#x4E0A;&#x9762;&#x7F16;&#x5199;&#x7684;&#x540E;&#x5411;&#x901A;&#x884C;&#x8BC1;&#x6CA1;&#x6709;&#x7279;&#x522B;&#x4F18;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x80AF;&#x5B9A;&#x53EF;&#x4EE5;&#x6539;&#x8FDB;&#x3002; &#x800C;&#x4E14;&#xFF0C;PyTorch &#x7684;&#x81EA;&#x52A8;&#x5FAE;&#x5206;&#x5F15;&#x64CE;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x5E76;&#x884C;&#x5316;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x53EF;&#x4EE5;&#x6574;&#x4F53;&#x4E0A;&#x4F7F;&#x7528;&#x66F4;&#x9AD8;&#x6548;&#x7684;&#x64CD;&#x4F5C;&#x6D41;&#x7A0B;&#xFF0C;&#x5E76;&#x4E14;&#x4E5F;&#x53EF;&#x4EE5;&#x7528; C ++&#x5B9E;&#x73B0;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#x671B;&#x5B9E;&#x73B0;&#x66F4;&#x5FEB;&#x7684;&#x901F;&#x5EA6;&#x3002; &#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x826F;&#x597D;&#x7684;&#x5F00;&#x59CB;&#x3002;</p>
+<h4 id="gpu-&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x6027;&#x80FD;">GPU &#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x6027;&#x80FD;</h4>
+<p>&#x5173;&#x4E8E; PyTorch &#x7684; <em>ATen</em> &#x540E;&#x7AEF;&#x7684;&#x4E00;&#x4E2A;&#x5947;&#x5999;&#x4E8B;&#x5B9E;&#x662F;&#xFF0C;&#x5B83;&#x62BD;&#x8C61;&#x4E86;&#x60A8;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x8BA1;&#x7B97;&#x8BBE;&#x5907;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x4E3A; CPU &#x7F16;&#x5199;&#x7684;&#x76F8;&#x540C;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;<em>&#x4E5F;&#x53EF;&#x4EE5;</em>&#x5728; GPU &#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x5404;&#x4E2A;&#x64CD;&#x4F5C;&#x5C06;&#x76F8;&#x5E94;&#x5730;&#x5206;&#x6D3E;&#x5230; GPU &#x4F18;&#x5316;&#x7684;&#x5B9E;&#x73B0;&#x3002; &#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;&#x8FD0;&#x7B97;&#xFF0C;&#x4F8B;&#x5982;&#x77E9;&#x9635;&#x4E58;&#x6CD5;(&#x4F8B;&#x5982;<code>mm</code>&#x6216;<code>addmm</code>&#xFF09;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x80DC;&#x5229;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#x4F7F;&#x7528; CUDA &#x5F20;&#x91CF;&#x8FD0;&#x884C; C ++&#x4EE3;&#x7801;&#x6240;&#x83B7;&#x5F97;&#x7684;&#x6027;&#x80FD;&#x3002; &#x65E0;&#x9700;&#x66F4;&#x6539;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x9700;&#x5C06;&#x5F20;&#x91CF;&#x4ECE; Python &#x653E;&#x5230; GPU &#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x6DFB;&#x52A0;<code>device=cuda_device</code>&#x53C2;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x521B;&#x5EFA;&#x540E;&#x4F7F;&#x7528;<code>.to(cuda_device)</code>&#xFF1A;</p>
+<pre><code>import torch
+
+assert torch.cuda.is_available()
+cuda_device = torch.device(&quot;cuda&quot;)  # device object representing GPU
+
+batch_size = 16
+input_features = 32
+state_size = 128
+
+# Note the device=cuda_device arguments here
+X = torch.randn(batch_size, input_features, device=cuda_device)
+h = torch.randn(batch_size, state_size, device=cuda_device)
+C = torch.randn(batch_size, state_size, device=cuda_device)
+
+rnn = LLTM(input_features, state_size).to(cuda_device)
+
+forward = 0
+backward = 0
+for _ in range(100000):
+    start = time.time()
+    new_h, new_C = rnn(X, (h, C))
+    torch.cuda.synchronize()
+    forward += time.time() - start
+
+    start = time.time()
+    (new_h.sum() + new_C.sum()).backward()
+    torch.cuda.synchronize()
+    backward += time.time() - start
+
+print(&apos;Forward: {:.3f} us | Backward {:.3f} us&apos;.format(forward * 1e6/1e5, backward * 1e6/1e5))
+</code></pre><p>&#x518D;&#x6B21;&#x5C06;&#x666E;&#x901A;&#x7684; PyTorch &#x4EE3;&#x7801;&#x4E0E; C ++&#x7248;&#x672C;(&#x73B0;&#x5728;&#x90FD;&#x5728; CUDA &#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;&#xFF09;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x770B;&#x5230;&#x4E86;&#x6027;&#x80FD;&#x63D0;&#x5347;&#x3002; &#x5BF9;&#x4E8E; Python / PyTorch&#xFF1A;</p>
+<pre><code>Forward: 187.719 us | Backward 410.815 us
+</code></pre><p>&#x548C; C ++ / ATen&#xFF1A;</p>
+<pre><code>Forward: 149.802 us | Backward 393.458 us
+</code></pre><p>&#x4E0E;&#x975E; CUDA &#x4EE3;&#x7801;&#x76F8;&#x6BD4;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x6574;&#x4F53;&#x901F;&#x5EA6;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x901A;&#x8FC7;&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49; CUDA &#x5185;&#x6838;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE; C ++&#x4EE3;&#x7801;&#x4E2D;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x6027;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5F88;&#x5FEB;&#x6DF1;&#x5165;&#x5176;&#x4E2D;&#x3002; &#x5728;&#x6B64;&#x4E4B;&#x524D;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x6784;&#x5EFA; C ++&#x6269;&#x5C55;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="jit-&#x7F16;&#x8BD1;&#x6269;&#x5C55;">JIT &#x7F16;&#x8BD1;&#x6269;&#x5C55;</h3>
+<p>&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x63D0;&#x5230;&#x8FC7;&#x6709;&#x4E24;&#x79CD;&#x6784;&#x5EFA; C ++&#x6269;&#x5C55;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x4F7F;&#x7528;<code>setuptools</code>&#x6216;&#x5373;&#x65F6;(JIT&#xFF09;&#x3002; &#x5728;&#x4ECB;&#x7ECD;&#x4E86;&#x524D;&#x8005;&#x4E4B;&#x540E;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x540E;&#x8005;&#x3002; JIT &#x7F16;&#x8BD1;&#x673A;&#x5236;&#x901A;&#x8FC7;&#x8C03;&#x7528; PyTorch API &#x4E2D;&#x79F0;&#x4E3A;<code>torch.utils.cpp_extension.load()</code>&#x7684;&#x7B80;&#x5355;&#x51FD;&#x6570;&#xFF0C;&#x4E3A;&#x60A8;&#x52A8;&#x6001;&#x7F16;&#x8BD1;&#x548C;&#x52A0;&#x8F7D;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x3002; &#x5BF9;&#x4E8E; LLTM&#xFF0C;&#x8FD9;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre><code>from torch.utils.cpp_extension import load
+
+lltm_cpp = load(name=&quot;lltm_cpp&quot;, sources=[&quot;lltm.cpp&quot;])
+</code></pre><p>&#x5728;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x4E0E;<code>setuptools</code>&#x76F8;&#x540C;&#x7684;&#x4FE1;&#x606F;&#x3002; &#x5728;&#x540E;&#x53F0;&#xFF0C;&#x8FD9;&#x5C06;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x76EE;&#x5F55;<code>/tmp/torch_extensions/lltm</code>&#xFF0C;</li>
+<li>&#x5C06; <a href="https://ninja-build.org/" target="_blank">Ninja</a> &#x6784;&#x5EFA;&#x6587;&#x4EF6;&#x53D1;&#x9001;&#x5230;&#x8BE5;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;</li>
+<li>&#x5C06;&#x60A8;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x5230;&#x5171;&#x4EAB;&#x5E93;&#x4E2D;&#xFF0C;</li>
+<li>&#x5C06;&#x6B64;&#x5171;&#x4EAB;&#x5E93;&#x5BFC;&#x5165;&#x4E3A; Python &#x6A21;&#x5757;&#x3002;</li>
+</ol>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x5C06;<code>verbose=True</code>&#x4F20;&#x9012;&#x7ED9;<code>cpp_extension.load()</code>&#xFF0C;&#x5219;&#x4F1A;&#x901A;&#x77E5;&#x60A8;&#x6709;&#x5173;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<pre><code>Using /tmp/torch_extensions as PyTorch extensions root...
+Emitting ninja build file /tmp/torch_extensions/lltm_cpp/build.ninja...
+Building extension module lltm_cpp...
+Loading extension module lltm_cpp...
+</code></pre><p>&#x751F;&#x6210;&#x7684; Python &#x6A21;&#x5757;&#x5C06;&#x4E0E; setuptools &#x751F;&#x6210;&#x7684;&#x6A21;&#x5757;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x6D88;&#x9664;&#x4E86;&#x5FC5;&#x987B;&#x7EF4;&#x62A4;&#x5355;&#x72EC;&#x7684;<code>setup.py</code>&#x6784;&#x5EFA;&#x6587;&#x4EF6;&#x7684;&#x8981;&#x6C42;&#x3002; &#x5982;&#x679C;&#x60A8;&#x7684;&#x8BBE;&#x7F6E;&#x66F4;&#x52A0;&#x590D;&#x6742;&#xFF0C;&#x5E76;&#x4E14;&#x786E;&#x5B9E;&#x9700;&#x8981;<code>setuptools</code>&#x7684;&#x5168;&#x90E8;&#x529F;&#x80FD;&#xFF0C;&#x5219;<em>&#x53EF;&#x4EE5;</em>&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x7684;<code>setup.py</code> &#x2013;&#x4F46;&#x662F;&#x5728;&#x8BB8;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x79CD; JIT &#x6280;&#x672F;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002; &#x7B2C;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x6B64;&#x884C;&#x65F6;&#xFF0C;&#x5C06;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x65F6;&#x95F4;&#xFF0C;&#x56E0;&#x4E3A;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x662F;&#x5728;&#x540E;&#x53F0;&#x7F16;&#x8BD1;&#x7684;&#x3002; &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x4F7F;&#x7528; Ninja &#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x6765;&#x6784;&#x5EFA;&#x60A8;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x56E0;&#x6B64;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x662F;&#x589E;&#x91CF;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x60A8;&#x7B2C;&#x4E8C;&#x6B21;&#x8FD0;&#x884C; Python &#x6A21;&#x5757;&#x65F6;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x975E;&#x5E38;&#x5FEB;&#x6377;&#xFF0C;&#x800C;&#x4E14;&#x5982;&#x679C;&#x60A8;&#x4E0D;&#x66F4;&#x6539;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x5F00;&#x9500;&#x5F88;&#x4F4E;&#x3002;</p>
+<h2 id="&#x7F16;&#x5199;&#x6DF7;&#x5408;&#x7684;-c---cuda-&#x6269;&#x5C55;">&#x7F16;&#x5199;&#x6DF7;&#x5408;&#x7684; C ++ / CUDA &#x6269;&#x5C55;</h2>
+<p>&#x4E3A;&#x4E86;&#x5C06;&#x5B9E;&#x73B0;&#x771F;&#x6B63;&#x63D0;&#x5347;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6C34;&#x5E73;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49; CUDA &#x5185;&#x6838;&#x6765;&#x624B;&#x5199;&#x524D;&#x8FDB;&#x548C;&#x540E;&#x9000;&#x4F20;&#x9012;&#x7684;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x3002; &#x5BF9;&#x4E8E; LLTM&#xFF0C;&#x8FD9;&#x5177;&#x6709;&#x7279;&#x522B;&#x6709;&#x6548;&#x7684;&#x524D;&#x666F;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x5927;&#x91CF;&#x6309;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x7684;&#x9010;&#x70B9;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x5355;&#x4E2A; CUDA &#x5185;&#x6838;&#x4E2D;&#x878D;&#x5408;&#x548C;&#x5E76;&#x884C;&#x5316;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x8FD9;&#x79CD; CUDA &#x5185;&#x6838;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x6B64;&#x6269;&#x5C55;&#x673A;&#x5236;&#x5C06;&#x5176;&#x4E0E; PyTorch &#x96C6;&#x6210;&#x3002;</p>
+<p>&#x7F16;&#x5199; CUDA &#x6269;&#x5C55;&#x7684;&#x4E00;&#x822C;&#x7B56;&#x7565;&#x662F;&#x9996;&#x5148;&#x7F16;&#x5199;&#x4E00;&#x4E2A; C ++&#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x5C06;&#x4ECE; Python &#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; pybind11 &#x5C06;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x7ED1;&#x5B9A;&#x5230; Python&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x6B64;&#x6587;&#x4EF6;&#x8FD8;&#x5C06;<em>&#x58F0;&#x660E;&#x5728; CUDA(<code>.cu</code>&#xFF09;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;</em>&#x51FD;&#x6570;&#x3002; &#x7136;&#x540E;&#xFF0C;C ++&#x51FD;&#x6570;&#x5C06;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x68C0;&#x67E5;&#xFF0C;&#x5E76;&#x6700;&#x7EC8;&#x5C06;&#x5176;&#x8C03;&#x7528;&#x8F6C;&#x53D1;&#x7ED9; CUDA &#x51FD;&#x6570;&#x3002; &#x5728; CUDA &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E86;&#x5B9E;&#x9645;&#x7684; CUDA &#x5185;&#x6838;&#x3002; &#x7136;&#x540E;<code>cpp_extension</code>&#x5305;&#x5C06;&#x8D1F;&#x8D23;&#x4F7F;&#x7528;<code>gcc</code>&#x7B49; C ++&#x7F16;&#x8BD1;&#x5668;&#x6765;&#x7F16;&#x8BD1; C ++&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; NVIDIA &#x7684;<code>nvcc</code>&#x7F16;&#x8BD1;&#x5668;&#x6765;&#x7F16;&#x8BD1; CUDA &#x6E90;&#x3002; &#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x6BCF;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x7167;&#x987E;&#x6700;&#x4E86;&#x89E3;&#x8981;&#x7F16;&#x8BD1;&#x7684;&#x6587;&#x4EF6;&#x3002; &#x6700;&#x7EC8;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x88AB;&#x94FE;&#x63A5;&#x5230;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x5E93;&#x4E2D;&#xFF0C;&#x8BE5;&#x5E93;&#x53EF;&#x4EE5;&#x4ECE; Python &#x4EE3;&#x7801;&#x4E2D;&#x83B7;&#x5F97;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4ECE; C ++&#x6587;&#x4EF6;&#x5F00;&#x59CB;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x79F0;&#x4E3A;<code>lltm_cuda.cpp</code>&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>#include &lt;torch/extension.h&gt;
+
+#include &lt;vector&gt;
+
+// CUDA forward declarations
+
+std::vector&lt;torch::Tensor&gt; lltm_cuda_forward(
+    torch::Tensor input,
+    torch::Tensor weights,
+    torch::Tensor bias,
+    torch::Tensor old_h,
+    torch::Tensor old_cell);
+
+std::vector&lt;torch::Tensor&gt; lltm_cuda_backward(
+    torch::Tensor grad_h,
+    torch::Tensor grad_cell,
+    torch::Tensor new_cell,
+    torch::Tensor input_gate,
+    torch::Tensor output_gate,
+    torch::Tensor candidate_cell,
+    torch::Tensor X,
+    torch::Tensor gate_weights,
+    torch::Tensor weights);
+
+// C++ interface
+
+#define CHECK_CUDA(x) TORCH_CHECK(x.type().is_cuda(), #x &quot; must be a CUDA tensor&quot;)
+#define CHECK_CONTIGUOUS(x) TORCH_CHECK(x.is_contiguous(), #x &quot; must be contiguous&quot;)
+#define CHECK_INPUT(x) CHECK_CUDA(x); CHECK_CONTIGUOUS(x)
+
+std::vector&lt;torch::Tensor&gt; lltm_forward(
+    torch::Tensor input,
+    torch::Tensor weights,
+    torch::Tensor bias,
+    torch::Tensor old_h,
+    torch::Tensor old_cell) {
+  CHECK_INPUT(input);
+  CHECK_INPUT(weights);
+  CHECK_INPUT(bias);
+  CHECK_INPUT(old_h);
+  CHECK_INPUT(old_cell);
+
+  return lltm_cuda_forward(input, weights, bias, old_h, old_cell);
+}
+
+std::vector&lt;torch::Tensor&gt; lltm_backward(
+    torch::Tensor grad_h,
+    torch::Tensor grad_cell,
+    torch::Tensor new_cell,
+    torch::Tensor input_gate,
+    torch::Tensor output_gate,
+    torch::Tensor candidate_cell,
+    torch::Tensor X,
+    torch::Tensor gate_weights,
+    torch::Tensor weights) {
+  CHECK_INPUT(grad_h);
+  CHECK_INPUT(grad_cell);
+  CHECK_INPUT(input_gate);
+  CHECK_INPUT(output_gate);
+  CHECK_INPUT(candidate_cell);
+  CHECK_INPUT(X);
+  CHECK_INPUT(gate_weights);
+  CHECK_INPUT(weights);
+
+  return lltm_cuda_backward(
+      grad_h,
+      grad_cell,
+      new_cell,
+      input_gate,
+      output_gate,
+      candidate_cell,
+      X,
+      gate_weights,
+      weights);
+}
+
+PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
+  m.def(&quot;forward&quot;, &amp;lltm_forward, &quot;LLTM forward (CUDA)&quot;);
+  m.def(&quot;backward&quot;, &amp;lltm_backward, &quot;LLTM backward (CUDA)&quot;);
+}
+</code></pre><p>&#x5982;&#x60A8;&#x6240;&#x89C1;&#xFF0C;&#x5B83;&#x4E3B;&#x8981;&#x662F;&#x6837;&#x677F;&#x6587;&#x4EF6;&#xFF0C;&#x68C0;&#x67E5;&#x5E76;&#x8F6C;&#x53D1;&#x5230;&#x6211;&#x4EEC;&#x5C06;&#x5728; CUDA &#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x529F;&#x80FD;&#x3002; &#x6211;&#x4EEC;&#x5C06;&#x6B64;&#x6587;&#x4EF6;&#x547D;&#x540D;&#x4E3A;<code>lltm_cuda_kernel.cu</code>(&#x8BF7;&#x6CE8;&#x610F;<code>.cu</code>&#x6269;&#x5C55;&#x540D;&#xFF01;&#xFF09;&#x3002; NVCC &#x53EF;&#x4EE5;&#x5408;&#x7406;&#x5730;&#x7F16;&#x8BD1; C ++ 11&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ATen &#x548C; C ++&#x6807;&#x51C6;&#x5E93;(&#x4F46;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;<code>torch.h</code>&#xFF09;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;<code>setuptools</code>&#x65E0;&#x6CD5;&#x5904;&#x7406;&#x5177;&#x6709;&#x76F8;&#x540C;&#x540D;&#x79F0;&#x4F46;&#x6269;&#x5C55;&#x540D;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;<code>setup.py</code>&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x662F; JIT &#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x7ED9; CUDA &#x6587;&#x4EF6;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4E0E; C ++&#x6587;&#x4EF6;&#x4E0D;&#x540C;&#x7684;&#x540D;&#x79F0;(&#x5BF9;&#x4E8E; JIT &#x65B9;&#x6CD5;&#xFF0C; <code>lltm.cpp</code>&#x548C;<code>lltm.cu</code>&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF09;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x5916;&#x89C2;&#xFF1A;</p>
+<pre><code>#include &lt;torch/extension.h&gt;
+
+#include &lt;cuda.h&gt;
+#include &lt;cuda_runtime.h&gt;
+
+#include &lt;vector&gt;
+
+template &lt;typename scalar_t&gt;
+__device__ __forceinline__ scalar_t sigmoid(scalar_t z) {
+  return 1.0 / (1.0 + exp(-z));
+}
+</code></pre><p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;&#x6211;&#x521A;&#x521A;&#x63CF;&#x8FF0;&#x7684;&#x6807;&#x5934;&#xFF0C;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x4E8E; CUDA &#x7684;&#x58F0;&#x660E;(&#x4F8B;&#x5982;<code>__device__</code>&#x548C;<code>__forceinline__</code>&#xFF09;&#x4EE5;&#x53CA;&#x51FD;&#x6570;(&#x4F8B;&#x5982;<code>exp</code>&#xFF09;&#x7684;&#x4E8B;&#x5B9E;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x8F85;&#x52A9;&#x529F;&#x200B;&#x200B;&#x80FD;&#xFF1A;</p>
+<pre><code>template &lt;typename scalar_t&gt;
+__device__ __forceinline__ scalar_t d_sigmoid(scalar_t z) {
+  const auto s = sigmoid(z);
+  return (1.0 - s) * s;
+}
+
+template &lt;typename scalar_t&gt;
+__device__ __forceinline__ scalar_t d_tanh(scalar_t z) {
+  const auto t = tanh(z);
+  return 1 - (t * t);
+}
+
+template &lt;typename scalar_t&gt;
+__device__ __forceinline__ scalar_t elu(scalar_t z, scalar_t alpha = 1.0) {
+  return fmax(0.0, z) + fmin(0.0, alpha * (exp(z) - 1.0));
+}
+
+template &lt;typename scalar_t&gt;
+__device__ __forceinline__ scalar_t d_elu(scalar_t z, scalar_t alpha = 1.0) {
+  const auto e = exp(z);
+  const auto d_relu = z &lt; 0.0 ? 0.0 : 1.0;
+  return d_relu + (((alpha * (e - 1.0)) &lt; 0.0) ? (alpha * e) : 0.0);
+}
+</code></pre><p>&#x73B0;&#x5728;&#x8981;&#x771F;&#x6B63;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x518D;&#x6B21;&#x9700;&#x8981;&#x4E24;&#x4EF6;&#x4E8B;&#xFF1A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6267;&#x884C;&#x6211;&#x4EEC;&#x4E0D;&#x5E0C;&#x671B;&#x624B;&#x5DE5;&#x7F16;&#x5199;&#x5E76;&#x8C03;&#x7528; CUDA &#x5185;&#x6838;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x662F;&#x8981;&#x52A0;&#x901F;&#x7684;&#x90E8;&#x5206;&#x7684;&#x5B9E;&#x9645; CUDA &#x5185;&#x6838;&#x3002; &#x3002; &#x5BF9;&#x4E8E;&#x524D;&#x5411;&#x4F20;&#x9012;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E94;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>std::vector&lt;torch::Tensor&gt; lltm_cuda_forward(
+    torch::Tensor input,
+    torch::Tensor weights,
+    torch::Tensor bias,
+    torch::Tensor old_h,
+    torch::Tensor old_cell) {
+  auto X = torch::cat({old_h, input}, /*dim=*/1);
+  auto gates = torch::addmm(bias, X, weights.transpose(0, 1));
+
+  const auto batch_size = old_cell.size(0);
+  const auto state_size = old_cell.size(1);
+
+  auto new_h = torch::zeros_like(old_cell);
+  auto new_cell = torch::zeros_like(old_cell);
+  auto input_gate = torch::zeros_like(old_cell);
+  auto output_gate = torch::zeros_like(old_cell);
+  auto candidate_cell = torch::zeros_like(old_cell);
+
+  const int threads = 1024;
+  const dim3 blocks((state_size + threads - 1) / threads, batch_size);
+
+  AT_DISPATCH_FLOATING_TYPES(gates.type(), &quot;lltm_forward_cuda&quot;, ([&amp;] {
+    lltm_cuda_forward_kernel&lt;scalar_t&gt;&lt;&lt;&lt;blocks, threads&gt;&gt;&gt;(
+        gates.data&lt;scalar_t&gt;(),
+        old_cell.data&lt;scalar_t&gt;(),
+        new_h.data&lt;scalar_t&gt;(),
+        new_cell.data&lt;scalar_t&gt;(),
+        input_gate.data&lt;scalar_t&gt;(),
+        output_gate.data&lt;scalar_t&gt;(),
+        candidate_cell.data&lt;scalar_t&gt;(),
+        state_size);
+  }));
+
+  return {new_h, new_cell, input_gate, output_gate, candidate_cell, X, gates};
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x7684;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x70B9;&#x662F;<code>AT_DISPATCH_FLOATING_TYPES</code>&#x5B8F;&#x548C;&#x5185;&#x6838;&#x542F;&#x52A8;(&#x7531;<code>&amp;lt;&amp;lt;&amp;lt;...&amp;gt;&amp;gt;&amp;gt;</code>&#x6307;&#x793A;&#xFF09;&#x3002; &#x5C3D;&#x7BA1; ATen &#x63D0;&#x53D6;&#x4E86;&#x6211;&#x4EEC;&#x5904;&#x7406;&#x8FC7;&#x7684;&#x5F20;&#x91CF;&#x7684;&#x8BBE;&#x5907;&#x548C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x5F20;&#x91CF;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4ECD;&#x5C06;&#x7531;&#x5177;&#x4F53;&#x8BBE;&#x5907;&#x4E0A;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x7684;&#x5185;&#x5B58;&#x652F;&#x6301;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;&#x5F20;&#x91CF;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x6709;&#x9009;&#x62E9;&#x5730;&#x8C03;&#x7528;&#x5177;&#x6709;&#x76F8;&#x5E94;&#x6B63;&#x786E;&#x7C7B;&#x578B;&#x7B7E;&#x540D;&#x7684;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x624B;&#x52A8;&#x5B8C;&#x6210;&#x540E;&#xFF0C;(&#x5728;&#x6982;&#x5FF5;&#x4E0A;&#xFF09;&#x5C06;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>switch (tensor.type().scalarType()) {
+  case torch::ScalarType::Double:
+    return function&lt;double&gt;(tensor.data&lt;double&gt;());
+  case torch::ScalarType::Float:
+    return function&lt;float&gt;(tensor.data&lt;float&gt;());
+  ...
+}
+</code></pre><p><code>AT_DISPATCH_FLOATING_TYPES</code>&#x7684;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x6211;&#x4EEC;&#x5904;&#x7406;&#x6B64;&#x8C03;&#x5EA6;&#x3002; &#x5B83;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;(&#x5728;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#x4E3A;<code>gates.type()</code>&#xFF09;&#xFF0C;&#x4E00;&#x4E2A;&#x540D;&#x79F0;(&#x7528;&#x4E8E;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#xFF09;&#x548C;&#x4E00;&#x4E2A; lambda &#x51FD;&#x6570;&#x3002; &#x5728;&#x6B64; lambda &#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x7C7B;&#x578B;&#x522B;&#x540D;<code>scalar_t</code>&#x53EF;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5B9A;&#x4E49;&#x4E3A;&#x8BE5;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5F20;&#x91CF;&#x5B9E;&#x9645;&#x4E0A;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x7C7B;&#x578B;&#x3002; &#x8FD9;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x51FD;&#x6570;(CUDA &#x5185;&#x6838;&#x5C06;&#x4F7F;&#x7528;&#x5B83;&#xFF09;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;<code>scalar_t</code>&#x522B;&#x540D;&#x5B9E;&#x4F8B;&#x5316;&#x5B83;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8C03;&#x7528;&#x6B63;&#x786E;&#x7684;&#x51FD;&#x6570;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5E0C;&#x671B;&#x68C0;&#x7D22;&#x5F20;&#x91CF;&#x7684;&#x6570;&#x636E;&#x6307;&#x9488;&#x4F5C;&#x4E3A;<code>scalar_t</code>&#x7C7B;&#x578B;&#x7684;&#x6307;&#x9488;&#x3002; &#x5982;&#x679C;&#x60A8;&#x60F3;&#x5206;&#x6D3E;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x6D6E;&#x70B9;&#x7C7B;&#x578B;(<code>Float</code>&#x548C;<code>Double</code>&#xFF09;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>AT_DISPATCH_ALL_TYPES</code>&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684; ATen &#x6267;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x3002; &#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x4ECD;&#x5C06;&#x5728; GPU &#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x4F7F;&#x7528; ATen &#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002; &#x8FD9;&#x662F;&#x6709;&#x9053;&#x7406;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; ATen &#x4F1A;&#x9488;&#x5BF9;&#x77E9;&#x9635;&#x4E58;&#x6CD5;(&#x4F8B;&#x5982;<code>addmm</code>&#xFF09;&#x6216;&#x5377;&#x79EF;&#x4F7F;&#x7528;&#x9AD8;&#x5EA6;&#x4F18;&#x5316;&#x7684;&#x4F8B;&#x7A0B;&#xFF0C;&#x800C;&#x8FD9;&#x5C06;&#x5F88;&#x96BE;&#x5B9E;&#x73B0;&#x548C;&#x6539;&#x5584;&#x3002;</p>
+<p>&#x81F3;&#x4E8E;&#x5185;&#x6838;&#x542F;&#x52A8;&#x672C;&#x8EAB;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x6307;&#x5B9A;&#x6BCF;&#x4E2A; CUDA &#x5757;&#x5C06;&#x5177;&#x6709; 1024 &#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x6574;&#x4E2A; GPU &#x7F51;&#x683C;&#x5206;&#x4E3A;&#x6240;&#x9700;&#x7684;<code>1 x 1024</code>&#x7EBF;&#x7A0B;&#x5757;&#xFF0C;&#x4EE5;&#x4FBF;&#x7528;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x586B;&#x5145;&#x77E9;&#x9635;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x72B6;&#x6001;&#x5927;&#x5C0F;&#x4E3A; 2048&#xFF0C;&#x6279;&#x5904;&#x7406;&#x5927;&#x5C0F;&#x4E3A; 4&#xFF0C;&#x5219;&#x6211;&#x4EEC;&#x5C06;&#x4EE5;&#x6BCF; 1024 &#x4E2A;&#x7EBF;&#x7A0B;&#x603B;&#x5171;&#x542F;&#x52A8;<code>4 x 2 = 8</code>&#x5757;&#x3002; &#x5982;&#x679C;&#x60A8;&#x4EE5;&#x524D;&#x4ECE;&#x672A;&#x542C;&#x8BF4;&#x8FC7; CUDA &#x7684;&#x201C;&#x969C;&#x788D;&#x201D;&#x6216;&#x201C;&#x7F51;&#x683C;&#x201D;&#xFF0C;&#x90A3;&#x4E48;<a href="https://devblogs.nvidia.com/even-easier-introduction-cuda" target="_blank">&#x7B80;&#x4ECB; CUDA</a> &#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x7684; CUDA &#x5185;&#x6838;&#x975E;&#x5E38;&#x7B80;&#x5355;(&#x5982;&#x679C;&#x60A8;&#x66FE;&#x7ECF;&#x7F16;&#x7A0B;&#x8FC7; GPU&#xFF09;&#xFF1A;</p>
+<pre><code>template &lt;typename scalar_t&gt;
+__global__ void lltm_cuda_forward_kernel(
+    const scalar_t* __restrict__ gates,
+    const scalar_t* __restrict__ old_cell,
+    scalar_t* __restrict__ new_h,
+    scalar_t* __restrict__ new_cell,
+    scalar_t* __restrict__ input_gate,
+    scalar_t* __restrict__ output_gate,
+    scalar_t* __restrict__ candidate_cell,
+    size_t state_size) {
+  const int column = blockIdx.x * blockDim.x + threadIdx.x;
+  const int index = blockIdx.y * state_size + column;
+  const int gates_row = blockIdx.y * (state_size * 3);
+  if (column &lt; state_size) {
+    input_gate[index] = sigmoid(gates[gates_row + column]);
+    output_gate[index] = sigmoid(gates[gates_row + state_size + column]);
+    candidate_cell[index] = elu(gates[gates_row + 2 * state_size + column]);
+    new_cell[index] =
+        old_cell[index] + candidate_cell[index] * input_gate[index];
+    new_h[index] = tanh(new_cell[index]) * output_gate[index];
+  }
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x6700;&#x6709;&#x8DA3;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x4E3A;&#x95E8;&#x77E9;&#x9635;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x5E76;&#x884C;&#x5730;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x9010;&#x70B9;&#x8FD0;&#x7B97;&#x3002; &#x5982;&#x679C;&#x60A8;&#x60F3;&#x8C61;&#x5FC5;&#x987B;&#x7528;&#x4E00;&#x4E2A;&#x4E32;&#x884C;&#x7684;&#x767E;&#x4E07;&#x4E2A;&#x5143;&#x7D20;&#x7684;<code>for</code>&#x5DE8;&#x578B;&#x5FAA;&#x73AF;&#x6765;&#x6267;&#x884C;&#x6B64;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x4F1A;&#x660E;&#x767D;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x6837;&#x505A;&#x4F1A;&#x5FEB;&#x5F97;&#x591A;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;&#x8BBF;&#x95EE;&#x5668;">&#x4F7F;&#x7528;&#x8BBF;&#x95EE;&#x5668;</h3>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728; CUDA &#x5185;&#x6838;&#x4E2D;&#x770B;&#x5230;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x6B63;&#x786E;&#x7C7B;&#x578B;&#x7684;&#x6307;&#x9488;&#x3002; &#x786E;&#x5B9E;&#xFF0C;&#x76F4;&#x63A5;&#x5728; cuda &#x5185;&#x6838;&#x4E2D;&#x4F7F;&#x7528;&#x9AD8;&#x7EA7;&#x7C7B;&#x578B;&#x4E0D;&#x53EF;&#x77E5;&#x5F20;&#x91CF;&#x4F1A;&#x975E;&#x5E38;&#x4F4E;&#x6548;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x662F;&#x4EE5;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x548C;&#x53EF;&#x8BFB;&#x6027;&#x4E3A;&#x4EE3;&#x4EF7;&#x7684;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5BF9;&#x4E8E;&#x9AD8;&#x7EF4;&#x6570;&#x636E;&#x3002; &#x5728;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x8FDE;&#x7EED;&#x7684;<code>gates</code>&#x5F20;&#x91CF;&#x5177;&#x6709; 3 &#x4E2A;&#x7EF4;&#x5EA6;&#xFF1A;</p>
+<ol>
+<li>&#x6279;&#x6B21;&#xFF0C;<code>batch_size</code>&#x7684;&#x5927;&#x5C0F;&#x548C;<code>3*state_size</code>&#x7684;&#x6B65;&#x5E45;</li>
+<li><code>3</code>&#x7684;&#x884C;&#xFF0C;&#x5927;&#x5C0F;&#x548C;<code>state_size</code>&#x7684;&#x6B65;&#x5E45;</li>
+<li>&#x6307;&#x6570;&#xFF0C;<code>state_size</code>&#x7684;&#x5927;&#x5C0F;&#x548C;<code>1</code>&#x7684;&#x6B65;&#x5E45;</li>
+</ol>
+<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x8BBF;&#x95EE;&#x5185;&#x6838;&#x4E2D;&#x7684;&#x5143;&#x7D20;<code>gates[n][row][column]</code>&#xFF1F; &#x4E8B;&#x5B9E;&#x8BC1;&#x660E;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x7B97;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x5927;&#x6B65;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code>gates.data&lt;scalar_t&gt;()[n*3*state_size + row*state_size + column]
+</code></pre><p>&#x9664;&#x4E86;&#x5197;&#x957F;&#x4E4B;&#x5916;&#xFF0C;&#x8BE5;&#x8868;&#x8FBE;&#x5F0F;&#x8FD8;&#x9700;&#x8981;&#x8DE8;&#x6B65;&#x624D;&#x80FD;&#x88AB;&#x660E;&#x786E;&#x5730;&#x77E5;&#x9053;&#xFF0C;&#x5E76;&#x56E0;&#x6B64;&#x5728;&#x5176;&#x53C2;&#x6570;&#x4E2D;&#x4F20;&#x9012;&#x7ED9;&#x5185;&#x6838;&#x51FD;&#x6570;&#x3002; &#x60A8;&#x4F1A;&#x770B;&#x5230;&#xFF0C;&#x5728;&#x5185;&#x6838;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x5927;&#x5C0F;&#x7684;&#x591A;&#x4E2A;&#x5F20;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x5C06;&#x5F97;&#x5230;&#x5F88;&#x957F;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3002;</p>
+<p>&#x5BF9;&#x6211;&#x4EEC;&#x6765;&#x8BF4;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;ATen &#x63D0;&#x4F9B;&#x4E86;&#x901A;&#x8FC7;&#x52A8;&#x6001;&#x68C0;&#x67E5; Tensor &#x662F;&#x5C3A;&#x5BF8;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x6570;&#x91CF;&#x800C;&#x521B;&#x5EFA;&#x7684;&#x8BBF;&#x95EE;&#x5668;&#x3002; &#x7136;&#x540E;&#xFF0C;&#x8BBF;&#x95EE;&#x5668;&#x516C;&#x5F00;&#x4E00;&#x4E2A; API&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x5730;&#x8BBF;&#x95EE; Tensor &#x5143;&#x7D20;&#xFF0C;&#x800C;&#x4E0D;&#x5FC5;&#x8F6C;&#x6362;&#x4E3A;&#x5355;&#x4E2A;&#x6307;&#x9488;&#xFF1A;</p>
+<pre><code>torch::Tensor foo = torch::rand({12, 12});
+
+// assert foo is 2-dimensional and holds floats.
+auto foo_a = foo.accessor&lt;float,2&gt;();
+float trace = 0;
+
+for(int i = 0; i &lt; foo_a.size(0); i++) {
+  // use the accessor foo_a to get tensor data.
+  trace += foo_a[i][i];
+}
+</code></pre><p>&#x8BBF;&#x95EE;&#x5668;&#x5BF9;&#x8C61;&#x5177;&#x6709;&#x8F83;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5177;&#x6709;<code>.size()</code>&#x548C;<code>.stride()</code>&#x65B9;&#x6CD5;&#x4EE5;&#x53CA;&#x591A;&#x7EF4;&#x7D22;&#x5F15;&#x3002; <code>.accessor&amp;lt;&amp;gt;</code>&#x63A5;&#x53E3;&#x65E8;&#x5728;&#x5728; CPU &#x5F20;&#x91CF;&#x4E0A;&#x6709;&#x6548;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x3002; cuda &#x5F20;&#x91CF;&#x7684;&#x7B49;&#x6548;&#x9879;&#x662F;<code>packed_accessor64&amp;lt;&amp;gt;</code>&#x548C;<code>packed_accessor32&amp;lt;&amp;gt;</code>&#xFF0C;&#x5B83;&#x4EEC;&#x4EA7;&#x751F;&#x5177;&#x6709; 64 &#x4F4D;&#x6216; 32 &#x4F4D;&#x6574;&#x6570;&#x7D22;&#x5F15;&#x7684;&#x538B;&#x7F29;&#x8BBF;&#x95EE;&#x5668;&#x3002;</p>
+<p>&#x4E0E; Accessor &#x7684;&#x6839;&#x672C;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x6253;&#x5305;&#x7684; Accessor &#x5728;&#x5176;&#x7ED3;&#x6784;&#x5185;&#x90E8;&#x590D;&#x5236;&#x5927;&#x5C0F;&#x548C;&#x8DE8;&#x5EA6;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6307;&#x5411;&#x5B83;&#x3002; &#x5B83;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x4F20;&#x9012;&#x7ED9; CUDA &#x5185;&#x6838;&#x51FD;&#x6570;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x4F7F;&#x7528;&#x5176;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x538B;&#x7F29;&#x8BBF;&#x95EE;&#x5668;&#x800C;&#x4E0D;&#x662F;&#x6307;&#x9488;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code>__global__ void lltm_cuda_forward_kernel(
+    const torch::PackedTensorAccessor32&lt;scalar_t,3,torch::RestrictPtrTraits&gt; gates,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; old_cell,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; new_h,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; new_cell,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; input_gate,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; output_gate,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; candidate_cell)
+</code></pre><p>&#x8BA9;&#x6211;&#x4EEC;&#x5206;&#x89E3;&#x4E00;&#x4E0B;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x677F;&#x3002; &#x524D;&#x4E24;&#x4E2A;&#x53C2;&#x6570;<code>scalar_t</code>&#x548C;<code>2</code>&#x4E0E;&#x5E38;&#x89C4;&#x8BBF;&#x95EE;&#x5668;&#x76F8;&#x540C;&#x3002; &#x53C2;&#x6570;<code>torch::RestrictPtrTraits</code>&#x6307;&#x793A;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<code>__restrict__</code>&#x5173;&#x952E;&#x5B57;&#x3002; &#x53E6;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;<code>PackedAccessor32</code>&#x53D8;&#x4F53;&#xFF0C;&#x5C06;&#x53D8;&#x4F53;&#x548C;&#x6B65;&#x5E45;&#x5B58;&#x50A8;&#x5728;<code>int32_t</code>&#x4E2D;&#x3002; &#x8FD9;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;&#x4F7F;&#x7528; 64 &#x4F4D;&#x53D8;&#x4F53;(<code>PackedAccessor64</code>&#xFF09;&#x4F1A;&#x4F7F;&#x5185;&#x6838;&#x53D8;&#x6162;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x58F0;&#x660E;&#x53D8;&#x4E3A;</p>
+<pre><code>template &lt;typename scalar_t&gt;
+__global__ void lltm_cuda_forward_kernel(
+    const torch::PackedTensorAccessor32&lt;scalar_t,3,torch::RestrictPtrTraits&gt; gates,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; old_cell,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; new_h,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; new_cell,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; input_gate,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; output_gate,
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; candidate_cell) {
+  //batch index
+  const int n = blockIdx.y;
+  // column index
+  const int c = blockIdx.x * blockDim.x + threadIdx.x;
+  if (c &lt; gates.size(2)){
+    input_gate[n][c] = sigmoid(gates[n][0][c]);
+    output_gate[n][c] = sigmoid(gates[n][1][c]);
+    candidate_cell[n][c] = elu(gates[n][2][c]);
+    new_cell[n][c] =
+        old_cell[n][c] + candidate_cell[n][c] * input_gate[n][c];
+    new_h[n][c] = tanh(new_cell[n][c]) * output_gate[n][c];
+  }
+}
+</code></pre><p>&#x8BE5;&#x5B9E;&#x73B0;&#x66F4;&#x5177;&#x53EF;&#x8BFB;&#x6027;&#xFF01; &#x7136;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x5728;&#x4E3B;&#x673A;&#x51FD;&#x6570;&#x5185;&#x4F7F;&#x7528;<code>.packed_accessor32&amp;lt;&amp;gt;</code>&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x538B;&#x7F29;&#x8BBF;&#x95EE;&#x5668;&#x6765;&#x8C03;&#x7528;&#x6B64;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code>std::vector&lt;torch::Tensor&gt; lltm_cuda_forward(
+    torch::Tensor input,
+    torch::Tensor weights,
+    torch::Tensor bias,
+    torch::Tensor old_h,
+    torch::Tensor old_cell) {
+  auto X = torch::cat({old_h, input}, /*dim=*/1);
+  auto gate_weights = torch::addmm(bias, X, weights.transpose(0, 1));
+
+  const auto batch_size = old_cell.size(0);
+  const auto state_size = old_cell.size(1);
+
+  auto gates = gate_weights.reshape({batch_size, 3, state_size});
+  auto new_h = torch::zeros_like(old_cell);
+  auto new_cell = torch::zeros_like(old_cell);
+  auto input_gate = torch::zeros_like(old_cell);
+  auto output_gate = torch::zeros_like(old_cell);
+  auto candidate_cell = torch::zeros_like(old_cell);
+
+  const int threads = 1024;
+  const dim3 blocks((state_size + threads - 1) / threads, batch_size);
+
+  AT_DISPATCH_FLOATING_TYPES(gates.type(), &quot;lltm_forward_cuda&quot;, ([&amp;] {
+    lltm_cuda_forward_kernel&lt;scalar_t&gt;&lt;&lt;&lt;blocks, threads&gt;&gt;&gt;(
+        gates.packed_accessor32&lt;scalar_t,3,torch::RestrictPtrTraits&gt;(),
+        old_cell.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        new_h.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        new_cell.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        input_gate.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        output_gate.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        candidate_cell.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;());
+  }));
+
+  return {new_h, new_cell, input_gate, output_gate, candidate_cell, X, gates};
+}
+</code></pre><p>&#x5411;&#x540E;&#x4F20;&#x9012;&#x9075;&#x5FAA;&#x76F8;&#x540C;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x6B64;&#x6211;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#xFF1A;</p>
+<pre><code>template &lt;typename scalar_t&gt;
+__global__ void lltm_cuda_backward_kernel(
+    torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; d_old_cell,
+    torch::PackedTensorAccessor32&lt;scalar_t,3,torch::RestrictPtrTraits&gt; d_gates,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; grad_h,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; grad_cell,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; new_cell,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; input_gate,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; output_gate,
+    const torch::PackedTensorAccessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt; candidate_cell,
+    const torch::PackedTensorAccessor32&lt;scalar_t,3,torch::RestrictPtrTraits&gt; gate_weights) {
+  //batch index
+  const int n = blockIdx.y;
+  // column index
+  const int c = blockIdx.x * blockDim.x + threadIdx.x;
+  if (c &lt; d_gates.size(2)){
+    const auto d_output_gate = tanh(new_cell[n][c]) * grad_h[n][c];
+    const auto d_tanh_new_cell = output_gate[n][c] * grad_h[n][c];
+    const auto d_new_cell =
+        d_tanh(new_cell[n][c]) * d_tanh_new_cell + grad_cell[n][c];
+
+    d_old_cell[n][c] = d_new_cell;
+    const auto d_candidate_cell = input_gate[n][c] * d_new_cell;
+    const auto d_input_gate = candidate_cell[n][c] * d_new_cell;
+
+    d_gates[n][0][c] =
+        d_input_gate * d_sigmoid(gate_weights[n][0][c]);
+    d_gates[n][1][c] =
+        d_output_gate * d_sigmoid(gate_weights[n][1][c]);
+    d_gates[n][2][c] =
+        d_candidate_cell * d_elu(gate_weights[n][2][c]);
+  }
+}
+
+std::vector&lt;torch::Tensor&gt; lltm_cuda_backward(
+    torch::Tensor grad_h,
+    torch::Tensor grad_cell,
+    torch::Tensor new_cell,
+    torch::Tensor input_gate,
+    torch::Tensor output_gate,
+    torch::Tensor candidate_cell,
+    torch::Tensor X,
+    torch::Tensor gates,
+    torch::Tensor weights) {
+  auto d_old_cell = torch::zeros_like(new_cell);
+  auto d_gates = torch::zeros_like(gates);
+
+  const auto batch_size = new_cell.size(0);
+  const auto state_size = new_cell.size(1);
+
+  const int threads = 1024;
+  const dim3 blocks((state_size + threads - 1) / threads, batch_size);
+
+  AT_DISPATCH_FLOATING_TYPES(X.type(), &quot;lltm_forward_cuda&quot;, ([&amp;] {
+    lltm_cuda_backward_kernel&lt;scalar_t&gt;&lt;&lt;&lt;blocks, threads&gt;&gt;&gt;(
+        d_old_cell.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        d_gates.packed_accessor32&lt;scalar_t,3,torch::RestrictPtrTraits&gt;(),
+        grad_h.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        grad_cell.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        new_cell.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        input_gate.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        output_gate.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        candidate_cell.packed_accessor32&lt;scalar_t,2,torch::RestrictPtrTraits&gt;(),
+        gates.packed_accessor32&lt;scalar_t,3,torch::RestrictPtrTraits&gt;());
+  }));
+
+  auto d_gate_weights = d_gates.reshape({batch_size, 3*state_size});
+  auto d_weights = d_gate_weights.t().mm(X);
+  auto d_bias = d_gate_weights.sum(/*dim=*/0, /*keepdim=*/true);
+
+  auto d_X = d_gate_weights.mm(weights);
+  auto d_old_h = d_X.slice(/*dim=*/1, 0, state_size);
+  auto d_input = d_X.slice(/*dim=*/1, state_size);
+
+  return {d_old_h, d_input, d_weights, d_bias, d_old_cell, d_gates};
+}
+</code></pre><h3 id="&#x5C06;-c---cuda-&#x64CD;&#x4F5C;&#x4E0E;-pytorch-&#x96C6;&#x6210;">&#x5C06; C ++ / CUDA &#x64CD;&#x4F5C;&#x4E0E; PyTorch &#x96C6;&#x6210;</h3>
+<p>&#x540C;&#x6837;&#xFF0C;&#x5C06;&#x652F;&#x6301; CUDA &#x7684; op &#x4E0E; PyTorch &#x96C6;&#x6210;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x3002; &#x5982;&#x679C;&#x8981;&#x7F16;&#x5199;<code>setup.py</code>&#x811A;&#x672C;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>from setuptools import setup
+from torch.utils.cpp_extension import BuildExtension, CUDAExtension
+
+setup(
+    name=&apos;lltm&apos;,
+    ext_modules=[
+        CUDAExtension(&apos;lltm_cuda&apos;, [
+            &apos;lltm_cuda.cpp&apos;,
+            &apos;lltm_cuda_kernel.cu&apos;,
+        ])
+    ],
+    cmdclass={
+        &apos;build_ext&apos;: BuildExtension
+    })
+</code></pre><p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>CUDAExtension()</code>&#x4EE3;&#x66FF;<code>CppExtension()</code>&#x3002; &#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;<code>.cu</code>&#x6587;&#x4EF6;&#x548C;<code>.cpp</code>&#x6587;&#x4EF6;&#x5373;&#x53EF;&#x2013;&#x8BE5;&#x5E93;&#x5C06;&#x4E3A;&#x60A8;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x9EBB;&#x70E6;&#x3002; JIT &#x673A;&#x5236;&#x751A;&#x81F3;&#x66F4;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre><code>from torch.utils.cpp_extension import load
+
+lltm = load(name=&apos;lltm&apos;, sources=[&apos;lltm_cuda.cpp&apos;, &apos;lltm_cuda_kernel.cu&apos;])
+</code></pre><h4 id="performance-comparison">Performance Comparison</h4>
+<p>&#x6211;&#x4EEC;&#x7684;&#x5E0C;&#x671B;&#x662F;&#xFF0C;&#x5C06;&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x9010;&#x70B9;&#x64CD;&#x4F5C;&#x4E0E; CUDA &#x5E76;&#x884C;&#x5316;&#x548C;&#x878D;&#x5408;&#xFF0C;&#x5C06;&#x6539;&#x5584; LLTM &#x7684;&#x6027;&#x80FD;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x8FD9;&#x662F;&#x5426;&#x6210;&#x7ACB;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x524D;&#x9762;&#x5217;&#x51FA;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x8FD0;&#x884C;&#x57FA;&#x51C6;&#x6D4B;&#x8BD5;&#x3002; &#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x6700;&#x5FEB;&#x7684;&#x7248;&#x672C;&#x662F;&#x57FA;&#x4E8E; CUDA &#x7684; C ++&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>Forward: 149.802 us | Backward 393.458 us
+</code></pre><p>&#x73B0;&#x5728;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49; CUDA &#x5185;&#x6838;&#xFF1A;</p>
+<pre><code>Forward: 129.431 us | Backward 304.641 us
+</code></pre><p>&#x66F4;&#x591A;&#x6027;&#x80FD;&#x63D0;&#x5347;&#xFF01;</p>
+<h2 id="&#x7ED3;&#x8BBA;">&#x7ED3;&#x8BBA;</h2>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x60A8;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x5BF9; PyTorch &#x7684; C ++&#x6269;&#x5C55;&#x673A;&#x5236;&#x6709;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x5E76;&#x6709;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x7684;&#x52A8;&#x673A;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x5904;&#x627E;&#x5230;&#x672C;&#x8BF4;&#x660E;<a href="https://github.com/pytorch/extension-cpp" target="_blank">&#x4E2D;&#x663E;&#x793A;&#x7684;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x3002; &#x5982;&#x6709;&#x7591;&#x95EE;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;</a><a href="https://discuss.pytorch.org" target="_blank">&#x8BBA;&#x575B;</a>&#x3002; &#x5982;&#x679C;&#x60A8;&#x9047;&#x5230;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#xFF0C;&#x4E5F;&#x8BF7;&#x52A1;&#x5FC5;&#x67E5;&#x770B;&#x6211;&#x4EEC;&#x7684;<a href="https://pytorch.org/cppdocs/notes/faq.html" target="_blank">&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x89E3;&#x7B54;</a>&#x3002;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="41.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 使用 numpy 和 scipy 创建扩展">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"自定义 C ++和 CUDA 扩展","level":"1.10.4","depth":2,"next":{"title":"模型优化","level":"1.11","depth":1,"ref":"","articles":[{"title":"LSTM Word 语言模型上的(实验）动态量化","level":"1.11.1","depth":2,"path":"44.md","ref":"44.md","articles":[]},{"title":"(实验性）在 PyTorch 中使用 Eager 模式进行静态量化","level":"1.11.2","depth":2,"path":"45.md","ref":"45.md","articles":[]},{"title":"(实验性）计算机视觉教程的量化转移学习","level":"1.11.3","depth":2,"path":"46.md","ref":"46.md","articles":[]},{"title":"(实验）BERT 上的动态量化","level":"1.11.4","depth":2,"path":"47.md","ref":"47.md","articles":[]},{"title":"修剪教程","level":"1.11.5","depth":2,"path":"48.md","ref":"48.md","articles":[]}]},"previous":{"title":"使用 numpy 和 scipy 创建扩展","level":"1.10.3","depth":2,"path":"41.md","ref":"41.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/1.4"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"42.md","mtime":"2021-04-12T06:14:20.261Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:16:19.672Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1715 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用 ONNX 将模型从 PyTorch 迁移到 Caffe2 和 Mobile · Pytorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="c_extension.html" />
+    
+    
+    <link rel="prev" href="numpy_extensions_tutorial.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PyTorch 0.3 中文文档 & 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="tut.html">
+            
+                <a href="tut.html">
+            
+                    
+                    中文教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="beginner_tutorials.html">
+            
+                <a href="beginner_tutorials.html">
+            
+                    
+                    初学者教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="deep_learning_60min_blitz.html">
+            
+                <a href="deep_learning_60min_blitz.html">
+            
+                    
+                    PyTorch 深度学习: 60 分钟极速入门教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="blitz_tensor_tutorial.html">
+            
+                <a href="blitz_tensor_tutorial.html">
+            
+                    
+                    PyTorch 是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="blitz_autograd_tutorial.html">
+            
+                <a href="blitz_autograd_tutorial.html">
+            
+                    
+                    自动求导: 自动微分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="blitz_neural_networks_tutorial.html">
+            
+                <a href="blitz_neural_networks_tutorial.html">
+            
+                    
+                    神经网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.4" data-path="blitz_cifar10_tutorial.html">
+            
+                <a href="blitz_cifar10_tutorial.html">
+            
+                    
+                    训练一个分类器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.5" data-path="blitz_data_parallel_tutorial.html">
+            
+                <a href="blitz_data_parallel_tutorial.html">
+            
+                    
+                    可选: 数据并行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="former_torchies_tutorial.html">
+            
+                <a href="former_torchies_tutorial.html">
+            
+                    
+                    PyTorch for former Torch users
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="former_torchies_tensor_tutorial.html">
+            
+                <a href="former_torchies_tensor_tutorial.html">
+            
+                    
+                    Tensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="former_torchies_autograd_tutorial.html">
+            
+                <a href="former_torchies_autograd_tutorial.html">
+            
+                    
+                    Autograd (自动求导)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.3" data-path="former_torchies_nn_tutorial.html">
+            
+                <a href="former_torchies_nn_tutorial.html">
+            
+                    
+                    nn package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.4" data-path="former_torchies_parallelism_tutorial.html">
+            
+                <a href="former_torchies_parallelism_tutorial.html">
+            
+                    
+                    Multi-GPU examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="pytorch_with_examples.html">
+            
+                <a href="pytorch_with_examples.html">
+            
+                    
+                    跟着例子学习 PyTorch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="pytorch_with_examples_warm-up-numpy.html">
+            
+                <a href="pytorch_with_examples_warm-up-numpy.html">
+            
+                    
+                    Warm-up: numpy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="pytorch_with_examples_pytorch-tensors.html">
+            
+                <a href="pytorch_with_examples_pytorch-tensors.html">
+            
+                    
+                    PyTorch: Tensors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.3" data-path="pytorch_with_examples_pytorch-variables-and-autograd.html">
+            
+                <a href="pytorch_with_examples_pytorch-variables-and-autograd.html">
+            
+                    
+                    PyTorch: 变量和autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.4" data-path="pytorch_with_examples_pytorch-defining-new-autograd-functions.html">
+            
+                <a href="pytorch_with_examples_pytorch-defining-new-autograd-functions.html">
+            
+                    
+                    PyTorch: 定义新的autograd函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.5" data-path="pytorch_with_examples_tensorflow-static-graphs.html">
+            
+                <a href="pytorch_with_examples_tensorflow-static-graphs.html">
+            
+                    
+                    TensorFlow: 静态图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.6" data-path="pytorch_with_examples_pytorch-nn.html">
+            
+                <a href="pytorch_with_examples_pytorch-nn.html">
+            
+                    
+                    PyTorch: nn包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.7" data-path="pytorch_with_examples_pytorch-optim.html">
+            
+                <a href="pytorch_with_examples_pytorch-optim.html">
+            
+                    
+                    PyTorch: optim包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.8" data-path="pytorch_with_examples_pytorch-custom-nn-modules.html">
+            
+                <a href="pytorch_with_examples_pytorch-custom-nn-modules.html">
+            
+                    
+                    PyTorch: 定制化nn模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.9" data-path="pytorch_with_examples_pytorch-control-flow-weight-sharing.html">
+            
+                <a href="pytorch_with_examples_pytorch-control-flow-weight-sharing.html">
+            
+                    
+                    PyTorch: 动态控制流程 + 权重共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="transfer_learning_tutorial.html">
+            
+                <a href="transfer_learning_tutorial.html">
+            
+                    
+                    迁移学习教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="data_loading_tutorial.html">
+            
+                <a href="data_loading_tutorial.html">
+            
+                    
+                    数据加载和处理教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="deep_learning_nlp_tutorial.html">
+            
+                <a href="deep_learning_nlp_tutorial.html">
+            
+                    
+                    针对NLP的Pytorch深度学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.1" data-path="nlp_pytorch_tutorial.html">
+            
+                <a href="nlp_pytorch_tutorial.html">
+            
+                    
+                    PyTorch介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.2" data-path="nlp_deep_learning_tutorial.html">
+            
+                <a href="nlp_deep_learning_tutorial.html">
+            
+                    
+                    PyTorch深度学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3" data-path="nlp_word_embeddings_tutorial.html">
+            
+                <a href="nlp_word_embeddings_tutorial.html">
+            
+                    
+                    词汇嵌入:编码词汇语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.4" data-path="nlp_sequence_models_tutorial.html">
+            
+                <a href="nlp_sequence_models_tutorial.html">
+            
+                    
+                    序列模型和 LSTM 网络(长短记忆网络）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.5" data-path="nlp_advanced_tutorial.html">
+            
+                <a href="nlp_advanced_tutorial.html">
+            
+                    
+                    高级教程: 作出动态决策和 Bi-LSTM CRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="intermediate_tutorials.html">
+            
+                <a href="intermediate_tutorials.html">
+            
+                    
+                    中级教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="char_rnn_classification_tutorial.html">
+            
+                <a href="char_rnn_classification_tutorial.html">
+            
+                    
+                    用字符级RNN分类名称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="char_rnn_generation_tutorial.html">
+            
+                <a href="char_rnn_generation_tutorial.html">
+            
+                    
+                    基与字符级RNN(Char-RNN）的人名生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="seq2seq_translation_tutorial.html">
+            
+                <a href="seq2seq_translation_tutorial.html">
+            
+                    
+                    用基于注意力机制的seq2seq神经网络进行翻译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="reinforcement_q_learning.html">
+            
+                <a href="reinforcement_q_learning.html">
+            
+                    
+                    强化学习(DQN）教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="dist_tuto.html">
+            
+                <a href="dist_tuto.html">
+            
+                    
+                    Writing Distributed Applications with PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="spatial_transformer_tutorial.html">
+            
+                <a href="spatial_transformer_tutorial.html">
+            
+                    
+                    空间转换网络 (Spatial Transformer Networks) 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="advanced_tutorials.html">
+            
+                <a href="advanced_tutorials.html">
+            
+                    
+                    高级教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="neural_style_tutorial.html">
+            
+                <a href="neural_style_tutorial.html">
+            
+                    
+                    用 PyTorch 做 神经转换 (Neural Transfer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="numpy_extensions_tutorial.html">
+            
+                <a href="numpy_extensions_tutorial.html">
+            
+                    
+                    使用 numpy 和 scipy 创建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.3" data-path="super_resolution_with_caffe2.html">
+            
+                <a href="super_resolution_with_caffe2.html">
+            
+                    
+                    使用 ONNX 将模型从 PyTorch 迁移到 Caffe2 和 Mobile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="c_extension.html">
+            
+                <a href="c_extension.html">
+            
+                    
+                    为 pytorch 自定义 C 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="doc.html">
+            
+                <a href="doc.html">
+            
+                    
+                    中文文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="notes.html">
+            
+                <a href="notes.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="notes_autograd.html">
+            
+                <a href="notes_autograd.html">
+            
+                    
+                    自动求导机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="notes_broadcasting.html">
+            
+                <a href="notes_broadcasting.html">
+            
+                    
+                    广播语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="notes_cuda.html">
+            
+                <a href="notes_cuda.html">
+            
+                    
+                    CUDA 语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="notes_extending.html">
+            
+                <a href="notes_extending.html">
+            
+                    
+                    扩展 PyTorch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="notes_multiprocessing.html">
+            
+                <a href="notes_multiprocessing.html">
+            
+                    
+                    多进程的最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="notes_serialization.html">
+            
+                <a href="notes_serialization.html">
+            
+                    
+                    序列化语义
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="package_reference.html">
+            
+                <a href="package_reference.html">
+            
+                    
+                    Package 参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="torch.html">
+            
+                <a href="torch.html">
+            
+                    
+                    torch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="tensors.html">
+            
+                <a href="tensors.html">
+            
+                    
+                    torch.Tensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="sparse.html">
+            
+                <a href="sparse.html">
+            
+                    
+                    torch.sparse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="storage.html">
+            
+                <a href="storage.html">
+            
+                    
+                    torch.Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="nn.html">
+            
+                <a href="nn.html">
+            
+                    
+                    torch.nn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="optim.html">
+            
+                <a href="optim.html">
+            
+                    
+                    torch.optim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="autograd.html">
+            
+                <a href="autograd.html">
+            
+                    
+                    Automatic differentiation package - torch.autograd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="distributions.html">
+            
+                <a href="distributions.html">
+            
+                    
+                    Probability distributions - torch.distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="multiprocessing.html">
+            
+                <a href="multiprocessing.html">
+            
+                    
+                    Multiprocessing package - torch.multiprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="distributed.html">
+            
+                <a href="distributed.html">
+            
+                    
+                    Distributed communication package - torch.distributed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="legacy.html">
+            
+                <a href="legacy.html">
+            
+                    
+                    Legacy package - torch.legacy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="cuda.html">
+            
+                <a href="cuda.html">
+            
+                    
+                    torch.cuda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="ffi.html">
+            
+                <a href="ffi.html">
+            
+                    
+                    torch.utils.ffi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    torch.utils.data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="model_zoo.html">
+            
+                <a href="model_zoo.html">
+            
+                    
+                    torch.utils.model_zoo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="onnx.html">
+            
+                <a href="onnx.html">
+            
+                    
+                    torch.onnx
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="torchvision_reference.html">
+            
+                <a href="torchvision_reference.html">
+            
+                    
+                    torchvision 参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="torchvision.html">
+            
+                <a href="torchvision.html">
+            
+                    
+                    torchvision
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="datasets.html">
+            
+                <a href="datasets.html">
+            
+                    
+                    torchvision.datasets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="models.html">
+            
+                <a href="models.html">
+            
+                    
+                    torchvision.models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="transforms.html">
+            
+                <a href="transforms.html">
+            
+                    
+                    torchvision.transforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="utils.html">
+            
+                <a href="utils.html">
+            
+                    
+                    torchvision.utils
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >使用 ONNX 将模型从 PyTorch 迁移到 Caffe2 和 Mobile</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4F7F;&#x7528;-onnx-&#x5C06;&#x6A21;&#x578B;&#x4ECE;-pytorch-&#x8FC1;&#x79FB;&#x5230;-caffe2-&#x548C;-mobile">&#x4F7F;&#x7528; ONNX &#x5C06;&#x6A21;&#x578B;&#x4ECE; PyTorch &#x8FC1;&#x79FB;&#x5230; Caffe2 &#x548C; Mobile</h1>
+<blockquote>
+<p>&#x8BD1;&#x8005;&#xFF1A;<a href="https://github.com/jiangzhonglian" target="_blank">@&#x7247;&#x523B;</a></p>
+</blockquote>
+<p>&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;, &#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4F7F;&#x7528; ONNX &#x5C06; PyTorch &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x578B;&#x8F6C;&#x6362;&#x4E3A; ONNX &#x683C;&#x5F0F;, &#x7136;&#x540E;&#x5C06;&#x5176;&#x52A0;&#x8F7D;&#x5230; Caffe2 &#x4E2D;. &#x4E00;&#x65E6;&#x8FDB;&#x5165; Caffe2 , &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x8BE5;&#x6A21;&#x578B;&#x4EE5;&#x4ED4;&#x7EC6;&#x68C0;&#x67E5;&#x5B83;&#x662F;&#x5426;&#x6B63;&#x786E;&#x5BFC;&#x51FA;, &#x7136;&#x540E;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528; Caffe2 &#x529F;&#x80FD;(&#x4F8B;&#x5982;&#x79FB;&#x52A8;&#x5BFC;&#x51FA;&#x5668;&#xFF09;&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x6267;&#x884C;&#x6A21;&#x578B;.</p>
+<p>&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;, &#x60A8;&#x9700;&#x8981;&#x5B89;&#x88C5; <a href="https://github.com/onnx/onnx" target="_blank">onnx</a>, <a href="https://github.com/onnx/onnx-caffe2" target="_blank">onnx-caffe2</a> &#x548C; <a href="https://caffe2.ai/" target="_blank">Caffe2</a>. &#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>conda install -c ezyang onnx onnx-caffe2</code> &#x7528; onnx &#x548C; onnx-caffe2 &#x83B7;&#x5F97;&#x4E8C;&#x8FDB;&#x5236;&#x7248;&#x672C;.</p>
+<p><code>NOTE</code>: &#x672C;&#x6559;&#x7A0B;&#x9700;&#x8981; PyTorch &#x4E3B;&#x5206;&#x652F;, &#x53EF;&#x4EE5;&#x6309;&#x7167; <a href="https://github.com/pytorch/pytorch#from-source" target="_blank">here</a> &#x7684;&#x8BF4;&#x660E;&#x8FDB;&#x884C;&#x5B89;&#x88C5;</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Some standard imports</span>
+<span class="hljs-keyword">import</span> io
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> nn
+<span class="hljs-keyword">from</span> torch.autograd <span class="hljs-keyword">import</span> Variable
+<span class="hljs-keyword">import</span> torch.utils.model_zoo <span class="hljs-keyword">as</span> model_zoo
+<span class="hljs-keyword">import</span> torch.onnx
+</code></pre>
+<p>Super-resolution &#x662F;&#x63D0;&#x9AD8;&#x56FE;&#x50CF;, &#x89C6;&#x9891;&#x5206;&#x8FA8;&#x7387;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;, &#x5E7F;&#x6CDB;&#x7528;&#x4E8E;&#x56FE;&#x50CF;&#x5904;&#x7406;&#x6216;&#x89C6;&#x9891;&#x7F16;&#x8F91;. &#x5BF9;&#x4E8E;&#x672C;&#x6559;&#x7A0B;, &#x6211;&#x4EEC;&#x5C06;&#x9996;&#x5148;&#x4F7F;&#x7528;&#x5E26;&#x6709;&#x865A;&#x62DF;&#x8F93;&#x5165;&#x7684;&#x5C0F;&#x578B; super-resolution &#x6A21;&#x578B;.</p>
+<p>&#x9996;&#x5148;, &#x8BA9;&#x6211;&#x4EEC;&#x5728; PyTorch &#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; SuperResolution &#x6A21;&#x578B;. <a href="https://github.com/pytorch/examples/blob/master/super_resolution/model.py" target="_blank">&#x8FD9;&#x4E2A;&#x6A21;&#x578B;</a> &#x76F4;&#x63A5;&#x6765;&#x81EA; PyTorch &#x7684;&#x4F8B;&#x5B50;&#x800C;&#x6CA1;&#x6709;&#x4FEE;&#x6539;:</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Super Resolution model definition in PyTorch</span>
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.init <span class="hljs-keyword">as</span> init
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SuperResolutionNet</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, upscale_factor, inplace=False)</span>:</span>
+        super(SuperResolutionNet, self).__init__()
+
+        self.relu = nn.ReLU(inplace=inplace)
+        self.conv1 = nn.Conv2d(<span class="hljs-number">1</span>, <span class="hljs-number">64</span>, (<span class="hljs-number">5</span>, <span class="hljs-number">5</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))
+        self.conv2 = nn.Conv2d(<span class="hljs-number">64</span>, <span class="hljs-number">64</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+        self.conv3 = nn.Conv2d(<span class="hljs-number">64</span>, <span class="hljs-number">32</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+        self.conv4 = nn.Conv2d(<span class="hljs-number">32</span>, upscale_factor ** <span class="hljs-number">2</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+        self.pixel_shuffle = nn.PixelShuffle(upscale_factor)
+
+        self._initialize_weights()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
+        x = self.relu(self.conv1(x))
+        x = self.relu(self.conv2(x))
+        x = self.relu(self.conv3(x))
+        x = self.pixel_shuffle(self.conv4(x))
+        <span class="hljs-keyword">return</span> x
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_initialize_weights</span><span class="hljs-params">(self)</span>:</span>
+        init.orthogonal(self.conv1.weight, init.calculate_gain(<span class="hljs-string">&apos;relu&apos;</span>))
+        init.orthogonal(self.conv2.weight, init.calculate_gain(<span class="hljs-string">&apos;relu&apos;</span>))
+        init.orthogonal(self.conv3.weight, init.calculate_gain(<span class="hljs-string">&apos;relu&apos;</span>))
+        init.orthogonal(self.conv4.weight)
+
+<span class="hljs-comment"># Create the super-resolution model by using the above model definition.</span>
+torch_model = SuperResolutionNet(upscale_factor=<span class="hljs-number">3</span>)
+</code></pre>
+<p>&#x901A;&#x5E38;, &#x4F60;&#x73B0;&#x5728;&#x8981;&#x8BAD;&#x7EC3;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;; &#x4F46;&#x662F;, &#x5BF9;&#x4E8E;&#x672C;&#x6559;&#x7A0B;, &#x6211;&#x4EEC;&#x5C06;&#x4E0B;&#x8F7D;&#x4E00;&#x4E9B;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x6743;&#x91CD;. &#x8BF7;&#x6CE8;&#x610F;, &#x8BE5;&#x6A21;&#x578B;&#x6CA1;&#x6709;&#x5F97;&#x5230;&#x5145;&#x5206;&#x8BAD;&#x7EC3;&#x4EE5;&#x83B7;&#x5F97;&#x826F;&#x597D;&#x7684;&#x51C6;&#x786E;&#x6027;, &#x56E0;&#x6B64;&#x4EC5;&#x7528;&#x4E8E;&#x6F14;&#x793A;&#x76EE;&#x7684;.</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Load pretrained model weights</span>
+model_url = <span class="hljs-string">&apos;https://s3.amazonaws.com/pytorch/test_data/export/superres_epoch100-44c6958e.pth&apos;</span>
+batch_size = <span class="hljs-number">1</span>    <span class="hljs-comment"># just a random number</span>
+
+<span class="hljs-comment"># Initialize model with the pretrained weights</span>
+map_location = <span class="hljs-keyword">lambda</span> storage, loc: storage
+<span class="hljs-keyword">if</span> torch.cuda.is_available():
+    map_location = <span class="hljs-keyword">None</span>
+torch_model.load_state_dict(model_zoo.load_url(model_url, map_location=map_location))
+
+<span class="hljs-comment"># set the train mode to false since we will only run the forward pass.</span>
+torch_model.train(<span class="hljs-keyword">False</span>)
+</code></pre>
+<p>&#x5728;PyTorch&#x4E2D;&#x5BFC;&#x51FA;&#x6A21;&#x578B;&#x901A;&#x8FC7;&#x8DDF;&#x8E2A;&#x5DE5;&#x4F5C;.&#x8981;&#x5BFC;&#x51FA;&#x6A21;&#x578B;, &#x8BF7;&#x8C03;&#x7528;&#x8BE5; <code>torch.onnx._export()</code> &#x51FD;&#x6570;. &#x8FD9;&#x5C06;&#x6267;&#x884C;&#x6A21;&#x578B;, &#x8BB0;&#x5F55;&#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x8F93;&#x51FA;&#x7684;&#x8F68;&#x8FF9;.&#x7531;&#x4E8E; <code>_export</code> &#x8FD0;&#x884C;&#x6A21;&#x578B;, &#x6211;&#x4EEC;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x5F20;&#x91CF; <code>x</code>. &#x8FD9;&#x4E2A;&#x5F20;&#x91CF;&#x4E2D;&#x7684;&#x503C;&#x5E76;&#x4E0D;&#x91CD;&#x8981;; &#x53EA;&#x8981;&#x5C3A;&#x5BF8;&#x5408;&#x9002;, &#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x56FE;&#x50CF;&#x6216;&#x968F;&#x673A;&#x5F20;&#x91CF;.</p>
+<p>&#x8981;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5173;&#x4E8E; PyTorch &#x5BFC;&#x51FA;&#x754C;&#x9762;&#x7684;&#x7EC6;&#x8282;, &#x8BF7;&#x67E5;&#x770B; <a href="https://pytorch.org/docs/master/onnx.html" target="_blank">torch.onnx&#x6587;&#x6863;</a>.</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Input to the model</span>
+x = Variable(torch.randn(batch_size, <span class="hljs-number">1</span>, <span class="hljs-number">224</span>, <span class="hljs-number">224</span>), requires_grad=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># Export the model</span>
+torch_out = torch.onnx._export(torch_model,             <span class="hljs-comment"># model being run</span>
+                               x,                       <span class="hljs-comment"># model input (or a tuple for multiple inputs)</span>
+                               <span class="hljs-string">&quot;super_resolution.onnx&quot;</span>, <span class="hljs-comment"># where to save the model (can be a file or file-like object)</span>
+                               export_params=<span class="hljs-keyword">True</span>)      <span class="hljs-comment"># store the trained parameter weights inside the model file</span>
+</code></pre>
+<p><code>torch_out</code> &#x662F;&#x6267;&#x884C;&#x6A21;&#x578B;&#x540E;&#x7684;&#x8F93;&#x51FA;.&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;, &#x60A8;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x6B64;&#x8F93;&#x51FA;, &#x4F46;&#x5728;&#x6B64;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x9A8C;&#x8BC1;&#x6211;&#x4EEC;&#x5BFC;&#x51FA;&#x7684;&#x6A21;&#x578B;&#x5728; Caffe2 &#x4E2D;&#x8FD0;&#x884C;&#x65F6;&#x8BA1;&#x7B97;&#x76F8;&#x540C;&#x7684;&#x503C;.</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B; ONNX &#x8868;&#x793A;&#x6CD5;, &#x5E76;&#x5728; Caffe2 &#x4E2D;&#x4F7F;&#x7528;&#x5B83;. &#x8FD9;&#x90E8;&#x5206;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x5728;&#x5355;&#x72EC;&#x7684;&#x8FDB;&#x7A0B;&#x6216;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x5B8C;&#x6210;, &#x4F46;&#x6211;&#x4EEC;&#x5C06;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x8FC7;&#x7A0B;, &#x4EE5;&#x4FBF;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9A8C;&#x8BC1; Caffe2 &#x548C; PyTorch &#x662F;&#x5426;&#x4E3A;&#x7F51;&#x7EDC;&#x8BA1;&#x7B97;&#x76F8;&#x540C;&#x7684;&#x503C;:</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> onnx
+<span class="hljs-keyword">import</span> onnx_caffe2.backend
+
+<span class="hljs-comment"># Load the ONNX ModelProto object. model is a standard Python protobuf object</span>
+model = onnx.load(<span class="hljs-string">&quot;super_resolution.onnx&quot;</span>)
+
+<span class="hljs-comment"># prepare the caffe2 backend for executing the model this converts the ONNX model into a</span>
+<span class="hljs-comment"># Caffe2 NetDef that can execute it. Other ONNX backends, like one for CNTK will be</span>
+<span class="hljs-comment"># availiable soon.</span>
+prepared_backend = onnx_caffe2.backend.prepare(model)
+
+<span class="hljs-comment"># run the model in Caffe2</span>
+
+<span class="hljs-comment"># Construct a map from input names to Tensor data.</span>
+<span class="hljs-comment"># The graph of the model itself contains inputs for all weight parameters, after the input image.</span>
+<span class="hljs-comment"># Since the weights are already embedded, we just need to pass the input image.</span>
+<span class="hljs-comment"># Set the first input.</span>
+W = {model.graph.input[<span class="hljs-number">0</span>].name: x.data.numpy()}
+
+<span class="hljs-comment"># Run the Caffe2 net:</span>
+c2_out = prepared_backend.run(W)[<span class="hljs-number">0</span>]
+
+<span class="hljs-comment"># Verify the numerical correctness upto 3 decimal places</span>
+np.testing.assert_almost_equal(torch_out.data.cpu().numpy(), c2_out, decimal=<span class="hljs-number">3</span>)
+
+print(<span class="hljs-string">&quot;Exported model has been executed on Caffe2 backend, and the result looks good!&quot;</span>)
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x770B;&#x5230; PyTorch &#x548C; Caffe2 &#x7684;&#x8F93;&#x51FA;&#x5728;&#x6570;&#x5B57;&#x4E0A;&#x5339;&#x914D;&#x8FBE;&#x5230;3&#x4F4D;&#x5C0F;&#x6570;. &#x4F5C;&#x4E3A;&#x65C1;&#x6CE8;, &#x5982;&#x679C;&#x5B83;&#x4EEC;&#x4E0D;&#x5339;&#x914D;, &#x90A3;&#x4E48; Caffe2 &#x548C; PyTorch &#x4E2D;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;, &#x8BF7;&#x5728;&#x6B64;&#x60C5;&#x51B5;&#x4E0B;&#x4E0E;&#x6211;&#x4EEC;&#x8054;&#x7CFB;.</p>
+<h2 id="&#x4F7F;&#x7528;-onnx-&#x8FC1;&#x79FB;&#x5230;-srresnet">&#x4F7F;&#x7528; ONNX &#x8FC1;&#x79FB;&#x5230; SRResNet</h2>
+<p>&#x4F7F;&#x7528;&#x4E0E;&#x4E0A;&#x8FF0;&#x76F8;&#x540C;&#x7684;&#x8FC7;&#x7A0B;, &#x6211;&#x4EEC;&#x8FD8;&#x4E3A; <a href="https://arxiv.org/pdf/1609.04802.pdf" target="_blank">&#x672C;&#x6587;</a> &#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x65B0;&#x7684; super-resolution &#x6A21;&#x5F0F; &#x201C;SRResNet&#x201D; (&#x611F;&#x8C22; Twitter &#x4E0A;&#x7684;&#x4F5C;&#x8005;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4EE3;&#x7801;&#x548C;&#x9884;&#x8BAD;&#x7EC3;&#x53C2;&#x6570;, &#x4EE5;&#x7528;&#x4E8E;&#x672C;&#x6559;&#x7A0B;). &#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x548C;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x5728; <a href="https://gist.github.com/prigoyal/b245776903efbac00ee89699e001c9bd" target="_blank">&#x8FD9;&#x91CC;</a> &#x627E;&#x5230;. &#x4EE5;&#x4E0B;&#x662F; SRResNet &#x6A21;&#x578B;&#x8F93;&#x5165;, &#x8F93;&#x51FA;&#x7684;&#x6837;&#x5B50;. <img src="img/482b18dfec7f319f98d052e620b486aa.jpg" alt="SRResNet"></p>
+<h2 id="&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;&#x6A21;&#x578B;">&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;&#x6A21;&#x578B;</h2>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;, &#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4ECE; PyTorch &#x4E2D;&#x5BFC;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x6A21;&#x578B;, &#x5E76;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x52A0;&#x8F7D;&#x5B83;&#x5E76;&#x5728; Caffe2 &#x4E2D;&#x8FD0;&#x884C;&#x5B83;. &#x73B0;&#x5728;&#x8BE5;&#x6A21;&#x578B;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#x5230; Caffe2 &#x4E2D;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x9002;&#x5408; <a href="https://caffe2.ai/docs/mobile-integration.html" target="_blank">&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;</a> &#x7684;&#x683C;&#x5F0F;.</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528; Caffe2 &#x7684; <a href="https://github.com/caffe2/caffe2/blob/master/caffe2/python/predictor/mobile_exporter.py" target="_blank">mobile_exporter</a> &#x6765;&#x751F;&#x6210;&#x53EF;&#x4EE5;&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x4E24;&#x4E2A;&#x6A21;&#x578B; protobufs. &#x7B2C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x4F7F;&#x7528;&#x6B63;&#x786E;&#x7684;&#x6743;&#x91CD;&#x521D;&#x59CB;&#x5316;&#x7F51;&#x7EDC;, &#x7B2C;&#x4E8C;&#x4E2A;&#x5B9E;&#x9645;&#x8FD0;&#x884C;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x6A21;&#x578B;. &#x6211;&#x4EEC;&#x5C06;&#x7EE7;&#x7EED;&#x5728;&#x672C;&#x6559;&#x7A0B;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x5C0F;&#x578B; super-resolution &#x6A21;&#x578B;.</p>
+<pre><code class="lang-py"><span class="hljs-comment"># extract the workspace and the model proto from the internal representation</span>
+c2_workspace = prepared_backend.workspace
+c2_model = prepared_backend.predict_net
+
+<span class="hljs-comment"># Now import the caffe2 mobile exporter</span>
+<span class="hljs-keyword">from</span> caffe2.python.predictor <span class="hljs-keyword">import</span> mobile_exporter
+
+<span class="hljs-comment"># call the Export to get the predict_net, init_net. These nets are needed for running things on mobile</span>
+init_net, predict_net = mobile_exporter.Export(c2_workspace, c2_model, c2_model.external_input)
+
+<span class="hljs-comment"># Let&apos;s also save the init_net and predict_net to a file that we will later use for running them on mobile</span>
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;init_net.pb&apos;</span>, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> fopen:
+    fopen.write(init_net.SerializeToString())
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;predict_net.pb&apos;</span>, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> fopen:
+    fopen.write(predict_net.SerializeToString())
+</code></pre>
+<p><code>init_net</code> &#x5C06;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x548C;&#x6A21;&#x578B;&#x8F93;&#x5165;&#x5D4C;&#x5165;&#x5176;&#x4E2D;, <code>predict_net</code> &#x5E76;&#x5C06;&#x7528;&#x4E8E; <code>init_net</code> &#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6307;&#x5BFC;&#x6267;&#x884C;. &#x5728;&#x672C;&#x6587;&#x4E2D;, &#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528; <code>init_net</code> &#x4E0E; <code>predict_net</code> &#x4E0A;&#x9762;&#x751F;&#x6210;&#x548C;&#x5728;&#x6B63;&#x5E38; Caffe2 &#x540E;&#x7AEF;&#x548C;&#x79FB;&#x52A8;&#x8FD0;&#x884C;&#x5B83;&#x4EEC;, &#x5E76;&#x9A8C;&#x8BC1;&#x5728;&#x4E24;&#x4E2A;&#x8BD5;&#x9A8C;&#x4E2D;&#x4EA7;&#x751F;&#x7684;&#x8F93;&#x51FA;&#x7684;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#x56FE;&#x50CF;&#x732B;&#x662F;&#x76F8;&#x540C;&#x7684;.</p>
+<p>&#x5728;&#x672C;&#x6559;&#x7A0B;&#x4E2D;, &#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x8457;&#x540D;&#x7684;&#x732B;&#x54AA;&#x56FE;&#x50CF;, &#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
+<p><img src="img/767add5a069c7bef9b0a00a3ab52249b.jpg" alt="cat"></p>
+<pre><code class="lang-py"><span class="hljs-comment"># Some standard imports</span>
+<span class="hljs-keyword">from</span> caffe2.proto <span class="hljs-keyword">import</span> caffe2_pb2
+<span class="hljs-keyword">from</span> caffe2.python <span class="hljs-keyword">import</span> core, net_drawer, net_printer, visualize, workspace, utils
+
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> subprocess
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+<span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot
+<span class="hljs-keyword">from</span> skimage <span class="hljs-keyword">import</span> io, transform
+</code></pre>
+<p>&#x9996;&#x5148;, &#x6211;&#x4EEC;&#x52A0;&#x8F7D;&#x56FE;&#x50CF;, &#x4F7F;&#x7528;&#x6807;&#x51C6;&#x7684; skimage python &#x5E93;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x9884;&#x5904;&#x7406;. &#x8BF7;&#x6CE8;&#x610F;, &#x8FD9;&#x79CD;&#x9884;&#x5904;&#x7406;&#x662F; training/testing &#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x6807;&#x51C6;&#x5B9E;&#x8DF5;.</p>
+<pre><code class="lang-py"><span class="hljs-comment"># load the image</span>
+img_in = io.imread(<span class="hljs-string">&quot;./_static/img/cat.jpg&quot;</span>)
+
+<span class="hljs-comment"># resize the image to dimensions 224x224</span>
+img = transform.resize(img_in, [<span class="hljs-number">224</span>, <span class="hljs-number">224</span>])
+
+<span class="hljs-comment"># save this resized image to be used as input to the model</span>
+io.imsave(<span class="hljs-string">&quot;./_static/img/cat_224x224.jpg&quot;</span>, img)
+</code></pre>
+<p>&#x73B0;&#x5728;, &#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x6B65;, &#x6211;&#x4EEC;&#x6765;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x7684;&#x732B;&#x56FE;&#x50CF;, &#x5E76;&#x5728; Caffe2 &#x540E;&#x7AEF;&#x8FD0;&#x884C; super-resolution &#x6A21;&#x578B;&#x5E76;&#x4FDD;&#x5B58;&#x8F93;&#x51FA;&#x56FE;&#x50CF;. &#x56FE;&#x50CF;&#x5904;&#x7406;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#x5DF2;&#x4ECE; PyTorch &#x5B9E;&#x73B0; super-resolution &#x6A21;&#x578B;&#x91C7;&#x7528; <a href="https://github.com/pytorch/examples/blob/master/super_resolution/super_resolve.py" target="_blank">&#x8FD9;&#x91CC;</a></p>
+<pre><code class="lang-py"><span class="hljs-comment"># load the resized image and convert it to Ybr format</span>
+img = Image.open(<span class="hljs-string">&quot;./_static/img/cat_224x224.jpg&quot;</span>)
+img_ycbcr = img.convert(<span class="hljs-string">&apos;YCbCr&apos;</span>)
+img_y, img_cb, img_cr = img_ycbcr.split()
+
+<span class="hljs-comment"># Let&apos;s run the mobile nets that we generated above so that caffe2 workspace is properly initialized</span>
+workspace.RunNetOnce(init_net)
+workspace.RunNetOnce(predict_net)
+
+<span class="hljs-comment"># Caffe2 has a nice net_printer to be able to inspect what the net looks like and identify</span>
+<span class="hljs-comment"># what our input and output blob names are.</span>
+print(net_printer.to_string(predict_net))
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x8F93;&#x51FA;&#x4E2D;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8F93;&#x5165;&#x540D;&#x4E3A; &#x201C;9&#x201D;, &#x8F93;&#x51FA;&#x540D;&#x4E3A; &#x201C;27&#x201D;(&#x6709;&#x70B9;&#x5947;&#x602A;, &#x6211;&#x4EEC;&#x5C06;&#x6570;&#x5B57;&#x4F5C;&#x4E3A; blob &#x540D;&#x79F0;, &#x4F46;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x8DDF;&#x8E2A; JIT &#x4F1A;&#x4E3A;&#x6A21;&#x578B;&#x751F;&#x6210;&#x7F16;&#x53F7;&#x6761;&#x76EE;)</p>
+<pre><code class="lang-py"><span class="hljs-comment"># Now, let&apos;s also pass in the resized cat image for processing by the model.</span>
+workspace.FeedBlob(<span class="hljs-string">&quot;9&quot;</span>, np.array(img_y)[np.newaxis, np.newaxis, :, :].astype(np.float32))
+
+<span class="hljs-comment"># run the predict_net to get the model output</span>
+workspace.RunNetOnce(predict_net)
+
+<span class="hljs-comment"># Now let&apos;s get the model output blob</span>
+img_out = workspace.FetchBlob(<span class="hljs-string">&quot;27&quot;</span>)
+</code></pre>
+<p>&#x73B0;&#x5728;, &#x6211;&#x4EEC;&#x5C06;&#x8FD4;&#x56DE;&#x53C2;&#x8003; PyTorch &#x6267;&#x884C; super-resolution &#x6A21;&#x578B;&#x7684;&#x540E;&#x5904;&#x7406;&#x6B65;&#x9AA4;, <a href="https://github.com/pytorch/examples/blob/master/super_resolution/super_resolve.py" target="_blank">&#x5728;&#x8FD9;&#x91CC;</a> &#x6784;&#x5EFA;&#x56DE;&#x6700;&#x7EC8;&#x8F93;&#x51FA;&#x7684;&#x56FE;&#x50CF;&#x5E76;&#x4FDD;&#x5B58;&#x56FE;&#x50CF;.</p>
+<pre><code class="lang-py">img_out_y = Image.fromarray(np.uint8((img_out[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>]).clip(<span class="hljs-number">0</span>, <span class="hljs-number">255</span>)), mode=<span class="hljs-string">&apos;L&apos;</span>)
+
+<span class="hljs-comment"># get the output image follow post-processing step from PyTorch implementation</span>
+final_img = Image.merge(
+    <span class="hljs-string">&quot;YCbCr&quot;</span>, [
+        img_out_y,
+        img_cb.resize(img_out_y.size, Image.BICUBIC),
+        img_cr.resize(img_out_y.size, Image.BICUBIC),
+    ]).convert(<span class="hljs-string">&quot;RGB&quot;</span>)
+
+<span class="hljs-comment"># Save the image, we will compare this with the output image from mobile device</span>
+final_img.save(<span class="hljs-string">&quot;./_static/img/cat_superres.jpg&quot;</span>)
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x5728;&#x7EAF; Caffe2 &#x540E;&#x7AEF;&#x8FD0;&#x884C;&#x6211;&#x4EEC;&#x7684;&#x79FB;&#x52A8;&#x7F51;&#x7EDC;, &#x73B0;&#x5728;, &#x8BA9;&#x6211;&#x4EEC;&#x5728; Android &#x8BBE;&#x5907;&#x4E0A;&#x6267;&#x884C;&#x6A21;&#x578B;&#x5E76;&#x83B7;&#x53D6;&#x6A21;&#x578B;&#x8F93;&#x51FA;.</p>
+<p><code>NOTE</code>: &#x5BF9;&#x4E8E; Android &#x5F00;&#x53D1;, <code>adb</code> &#x9700;&#x8981;&#x4F7F;&#x7528; shell, &#x5426;&#x5219;&#x4EE5;&#x4E0B;&#x90E8;&#x5206;&#x6559;&#x7A0B;&#x5C06;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;.</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x7684;&#x79FB;&#x52A8;&#x8BBE;&#x5907; runnig &#x6A21;&#x578B;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x4E2D;, &#x6211;&#x4EEC;&#x5C06;&#x628A;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x7684;&#x672C;&#x5730;&#x901F;&#x5EA6;&#x57FA;&#x51C6;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x63A8;&#x9001;&#x5230; adb. &#x8FD9;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x6267;&#x884C;&#x6A21;&#x578B;, &#x4E5F;&#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x7A0D;&#x540E;&#x53EF;&#x4EE5;&#x68C0;&#x7D22;&#x7684;&#x6A21;&#x578B;&#x8F93;&#x51FA;. &#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6; <a href="https://github.com/caffe2/caffe2/blob/master/caffe2/binaries/speed_benchmark.cc" target="_blank">&#x5728;&#x8FD9;&#x91CC;</a> &#x53EF;&#x7528;. &#x4E3A;&#x4E86;&#x6784;&#x5EFA;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;, &#x8BF7; <code>build_android.sh</code> &#x6309;&#x7167; <a href="https://github.com/caffe2/caffe2/blob/master/scripts/build_android.sh" target="_blank">&#x6B64;&#x5904;</a> &#x7684;&#x8BF4;&#x660E;&#x6267;&#x884C;&#x811A;&#x672C;.</p>
+<p><code>NOTE</code>: &#x60A8;&#x9700;&#x8981; <code>ANDROID_NDK</code> &#x5B89;&#x88C5;&#x5E76;&#x8BBE;&#x7F6E;&#x60A8;&#x7684; env &#x53D8;&#x91CF; <code>ANDROID_NDK=path to ndk root</code></p>
+<pre><code class="lang-py"><span class="hljs-comment"># let&apos;s first push a bunch of stuff to adb, specify the path for the binary</span>
+CAFFE2_MOBILE_BINARY = (<span class="hljs-string">&apos;caffe2/binaries/speed_benchmark&apos;</span>)
+
+<span class="hljs-comment"># we had saved our init_net and proto_net in steps above, we use them now.</span>
+<span class="hljs-comment"># Push the binary and the model protos</span>
+os.system(<span class="hljs-string">&apos;adb push &apos;</span> + CAFFE2_MOBILE_BINARY + <span class="hljs-string">&apos; /data/local/tmp/&apos;</span>)
+os.system(<span class="hljs-string">&apos;adb push init_net.pb /data/local/tmp&apos;</span>)
+os.system(<span class="hljs-string">&apos;adb push predict_net.pb /data/local/tmp&apos;</span>)
+
+<span class="hljs-comment"># Let&apos;s serialize the input image blob to a blob proto and then send it to mobile for execution.</span>
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;input.blobproto&quot;</span>, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> fid:
+    fid.write(workspace.SerializeBlob(<span class="hljs-string">&quot;9&quot;</span>))
+
+<span class="hljs-comment"># push the input image blob to adb</span>
+os.system(<span class="hljs-string">&apos;adb push input.blobproto /data/local/tmp/&apos;</span>)
+
+<span class="hljs-comment"># Now we run the net on mobile, look at the speed_benchmark --help for what various options mean</span>
+os.system(
+    <span class="hljs-string">&apos;adb shell /data/local/tmp/speed_benchmark &apos;</span>                     <span class="hljs-comment"># binary to execute</span>
+    <span class="hljs-string">&apos;--init_net=/data/local/tmp/super_resolution_mobile_init.pb &apos;</span>    <span class="hljs-comment"># mobile init_net</span>
+    <span class="hljs-string">&apos;--net=/data/local/tmp/super_resolution_mobile_predict.pb &apos;</span>      <span class="hljs-comment"># mobile predict_net</span>
+    <span class="hljs-string">&apos;--input=9 &apos;</span>                                                     <span class="hljs-comment"># name of our input image blob</span>
+    <span class="hljs-string">&apos;--input_file=/data/local/tmp/input.blobproto &apos;</span>                  <span class="hljs-comment"># serialized input image</span>
+    <span class="hljs-string">&apos;--output_folder=/data/local/tmp &apos;</span>                               <span class="hljs-comment"># destination folder for saving mobile output</span>
+    <span class="hljs-string">&apos;--output=27,9 &apos;</span>                                                 <span class="hljs-comment"># output blobs we are interested in</span>
+    <span class="hljs-string">&apos;--iter=1 &apos;</span>                                                      <span class="hljs-comment"># number of net iterations to execute</span>
+    <span class="hljs-string">&apos;--caffe2_log_level=0 &apos;</span>
+)
+
+<span class="hljs-comment"># get the model output from adb and save to a file</span>
+os.system(<span class="hljs-string">&apos;adb pull /data/local/tmp/27 ./output.blobproto&apos;</span>)
+
+<span class="hljs-comment"># We can recover the output content and post-process the model using same steps as we followed earlier</span>
+blob_proto = caffe2_pb2.BlobProto()
+blob_proto.ParseFromString(open(<span class="hljs-string">&apos;./output.blobproto&apos;</span>).read())
+img_out = utils.Caffe2TensorToNumpyArray(blob_proto.tensor)
+img_out_y = Image.fromarray(np.uint8((img_out[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]).clip(<span class="hljs-number">0</span>, <span class="hljs-number">255</span>)), mode=<span class="hljs-string">&apos;L&apos;</span>)
+final_img = Image.merge(
+    <span class="hljs-string">&quot;YCbCr&quot;</span>, [
+        img_out_y,
+        img_cb.resize(img_out_y.size, Image.BICUBIC),
+        img_cr.resize(img_out_y.size, Image.BICUBIC),
+    ]).convert(<span class="hljs-string">&quot;RGB&quot;</span>)
+final_img.save(<span class="hljs-string">&quot;./_static/img/cat_superres_mobile.jpg&quot;</span>)
+</code></pre>
+<p>&#x73B0;&#x5728;, &#x60A8;&#x53EF;&#x4EE5;&#x6BD4;&#x8F83;&#x56FE;&#x50CF; <code>cat_superres.jpg</code> (&#x6765;&#x81EA;&#x7EAF; caffe2 &#x540E;&#x7AEF;&#x6267;&#x884C;&#x7684; <code>cat_superres_mobile.jpg</code> &#x6A21;&#x578B;&#x8F93;&#x51FA;) &#x548C; (&#x6765;&#x81EA;&#x79FB;&#x52A8;&#x6267;&#x884C;&#x7684;&#x6A21;&#x578B;&#x8F93;&#x51FA;) &#x5E76;&#x67E5;&#x770B;&#x8FD9;&#x4E24;&#x4E2A;&#x56FE;&#x50CF;&#x770B;&#x8D77;&#x6765;&#x76F8;&#x540C;. &#x5982;&#x679C;&#x5B83;&#x4EEC;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x4E00;&#x6837;, &#x90A3;&#x4E48;&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x6267;&#x884C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;, &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;, &#x8BF7;&#x8054;&#x7CFB; Caffe2 &#x793E;&#x533A;. &#x60A8;&#x5E94;&#x8BE5;&#x671F;&#x671B;&#x770B;&#x5230;&#x8F93;&#x51FA;&#x56FE;&#x50CF;&#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
+<p><img src="img/262e74fdabdfc72de8bf19433d47b097.jpg" alt="output\_cat"></p>
+<p>&#x4F7F;&#x7528;&#x4E0A;&#x8FF0;&#x6B65;&#x9AA4;, &#x60A8;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5730;&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x90E8;&#x7F72;&#x6A21;&#x578B;. &#x53E6;&#x5916;, &#x6709;&#x5173; caffe2 &#x79FB;&#x52A8;&#x540E;&#x7AEF;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;, &#x8BF7;&#x67E5;&#x770B; <a href="https://caffe2.ai/docs/AI-Camera-demo-android.html" target="_blank">caffe2-android-demo</a>.</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/pytorch-doc-zh/" target="_blank">apachecn/pytorch-doc-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=pytorch-doc-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102475051-10"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-102475051-10');
+    </script>
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '2e62dee5b9896e2eede6',
+        clientSecret: 'ca6819a54656af0d87960af15315320f8a628a53',
+        repo: 'pytorch-doc-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2021-04-12 06:14:20
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="numpy_extensions_tutorial.html" class="navigation navigation-prev " aria-label="Previous page: 使用 numpy 和 scipy 创建扩展">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="c_extension.html" class="navigation navigation-next " aria-label="Next page: 为 pytorch 自定义 C 扩展">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用 ONNX 将模型从 PyTorch 迁移到 Caffe2 和 Mobile","level":"1.2.3.3","depth":3,"next":{"title":"为 pytorch 自定义 C 扩展","level":"1.2.3.4","depth":3,"path":"c_extension.md","ref":"c_extension.md","articles":[]},"previous":{"title":"使用 numpy 和 scipy 创建扩展","level":"1.2.3.2","depth":3,"path":"numpy_extensions_tutorial.md","ref":"numpy_extensions_tutorial.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","katex","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/pytorch-doc-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://pytorch.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"}]},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/pytorch-doc-zh/blob/master/docs/0.3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"http://data.apachecn.org/img/logo.jpg"},"expandable-chapters":{}},"my_links":{"sidebar":{"Home":"https://www.baidu.com"}},"theme":"default","author":"ApacheCN","my_plugins":["donate","todo","-lunr","-search","expandable-chapters-small","chapter-fold","expandable-chapters","expandable-chapters-small","back-to-top-button","ga","baidu","sitemap","tbfed-pagefooter","advanced-emoji","sectionx","page-treeview","simple-page-toc","ancre-navigation","theme-apachecn@git+https://github.com/apachecn/theme-apachecn#HEAD","pagefooter-apachecn@git+https://github.com/apachecn/gitbook-plugin-pagefooter-apachecn#HEAD"],"my_pluginsConfig":{"page-treeview":{"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"ignores":["node_modules"],"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 你的名字","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"你的签名","copyrightColor":"#666","description":"modified at"},"donate":{"wechat":"微信收款的二维码URL","alipay":"支付宝收款的二维码URL","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"github-buttons":{"buttons":[{"user":"apachecn","repo":"pytorch-doc-zh","type":"star","count":true,"size":"small"},{"user":"apachecn","width":"160","type":"follow","count":true,"size":"small"}]},"ga":{"token":"UA-102475051-10"},"baidu":{"token":"75439e2cbd22bdd813226000e9dcc12f"},"pagefooter-apachecn":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"}},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Pytorch 中文文档","language":"zh-hans","gitbook":"*","description":"Pytorch 中文文档: 教程和文档"},"file":{"path":"super_resolution_with_caffe2.md","mtime":"2021-04-12T06:14:20.197Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-12T06:15:33.033Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
